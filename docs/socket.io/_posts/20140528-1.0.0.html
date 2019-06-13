@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introducing Socket.IO 1.0 &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../socket-io-with-apache-cordova.html" />
+    <link rel="prev" title="Native Socket.IO and Android" href="20150120-native-socket-io-and-android.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/index.html">Get started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">发布历史</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="20170624-2.0.x.html">Socket.IO 2.0.1, 2.0.2 and 2.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20170515-open-collective.html">Socket.IO is on Open Collective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20170513-2-0-0.html">Socket.IO 2.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20160127-1.4.5.html">Socket.IO 1.4.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20160111-1.4.4.html">Socket.IO 1.4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20160108-1.4.x.html">Socket.IO 1.4.1, 1.4.2 and 1.4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20160106-1.4.0.html">Socket.IO 1.4.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150715-1.3.6.html">Socket.IO 1.3.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150714-p2p.html">Socket.IO P2P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150413-socket-io-cpp.html">Socket.IO C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150309-ios.html">Socket.IO on iOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150303-1.3.5.html">Socket.IO 1.3.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150204-1.3.3.html">Socket.IO 1.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150120-native-socket-io-and-android.html">Native Socket.IO and Android</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introducing Socket.IO 1.0</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#new-engine">New engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#binary-support">Binary support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automated-testing">Automated Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integration">Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cdn-delivery">CDN delivery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#future-innovation">Future innovation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#credits">Credits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">发布历史</a> &raquo;</li>
+        
+      <li>Introducing Socket.IO 1.0</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/socket.io/_posts/20140528-1.0.0.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introducing-socket-io-1-0">
+<h1>Introducing Socket.IO 1.0<a class="headerlink" href="#introducing-socket-io-1-0" title="永久链接至标题">¶</a></h1>
+<p>The first version of Socket.IO was created shortly after Node.JS made
+its first appearance. I had been looking for a framework that easily
+enabled me to push data from a server to a client for a long time, and
+even had tried other approaches to server-side JavaScript.</p>
+<p>At the time, the main focus was on an interface equivalent to the
+upcoming <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> API that was in the process of standardization. I
+was lucky to receive a lot of feedback from the community at the time
+(including Node.JS’s creator) that helped shape the project into
+something significantly more useful.</p>
+<p>Socket.IO has thus become the <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> of the web. Today I want
+to talk about the work that has gone into 1.0 to round up this vision.</p>
+<p>There’s a lot to say about Socket.IO 1.0, so if you’re short in time,
+feel free to jump to the parts that are most interesting to you:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="#New-engine">New engine</a></p></li>
+<li><p><a class="reference external" href="#Binary-support">Binary support</a></p></li>
+<li><p><a class="reference external" href="#Automated-Testing">Automated testing</a></p></li>
+<li><p><a class="reference external" href="#Scalability">Scalability</a></p></li>
+<li><p><a class="reference external" href="#Integration">Integration</a></p></li>
+<li><p><a class="reference external" href="#Better-debugging">Better debugging</a></p></li>
+<li><p><a class="reference external" href="#Streamlined-APIs">Streamlined APIs</a></p></li>
+<li><p><a class="reference external" href="#CDN-delivery">CDN delivery</a></p></li>
+<li><p><a class="reference external" href="#Future-innovation">Future innovation</a></p></li>
+<li><p><a class="reference external" href="#Credits">Credits</a></p></li>
+</ol>
+<div class="section" id="new-engine">
+<h2>New engine<a class="headerlink" href="#new-engine" title="永久链接至标题">¶</a></h2>
+<p>The Socket.IO codebase no longer deals with transports and browser
+incompatibilities. That work has been relegated to a new module we’ve
+been perfecting for months called Engine.IO that implements a
+WebSocket-like API.</p>
+<p>The benefits of this particular modularization can’t be understated:</p>
+<ul class="simple">
+<li><p>For the Socket.IO end user, nothing changes. Just drop-in the new
+version!</p></li>
+<li><p>A tremendous simplification in terms of codebase size and testing
+surface</p>
+<ul>
+<li><p>The Socket.IO Server is now only 1234 lines of code.</p></li>
+<li><p>The Socket.IO Client is now only 976 lines of code.</p></li>
+</ul>
+</li>
+<li><p>Future-proof flexibility</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> is the only transport you want to support moving
+forward, Engine.IO (with all its browser hacks and workarounds)
+can be seamlessly removed.</p></li>
+<li><p>Alternative transports such as vanilla Node.JS TCP Sockets or
+Google Chrome Sockets can be trivially implemented.</p></li>
+</ul>
+</li>
+</ul>
+<p>This separation has also allowed us to innovate and perfect the
+transport layer. One of my favorite improvements was introducing the
+idea of what I call <em>transport feature detection</em>.</p>
+<p>Once upon a time in the web, it was extremely common to simply sniff
+User Agents to make decisions of what APIs to use or what behaviors to
+enable. As JavaScript codebases became more complex and mature, it
+became obvious that in order to <em>maximize reliability</em>, it made more
+sense to directly test the APIs to see if they would behave as expected.</p>
+<p>For example, simply checking that the <em>JSON</em> global is present does not
+mean that <em>JSON.stringify</em> works, or even exists. It could have simply
+meant that the user defined a JSON global of their own, or the
+environment could have a broken JSON implementation.</p>
+<p>Socket.IO never assumes that <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> will just work, because in
+practice there’s a good chance that it won’t. Instead, it establishes a
+connection with XHR or JSONP right away, and then attempts to
+<strong>upgrade</strong> the connection to WebSocket. Compared to the fallback method
+which relies on timeouts, this means that <em>none of your users will have
+a degraded experience</em>.</p>
+</div>
+<div class="section" id="binary-support">
+<h2>Binary support<a class="headerlink" href="#binary-support" title="永久链接至标题">¶</a></h2>
+<p>Users have been asking for the ability to send binary data for a while,
+especially after <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> added support for it.</p>
+<p>The main issue was that if we had modeled our binary support after the
+<code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> API, its usefulness would have been fairly limited.
+<code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> requires that you put your Socket either into “string
+mode” or “binary mode”:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost&#39;</span><span class="p">);</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">binaryType</span> <span class="o">=</span> <span class="s1">&#39;arraybuffer&#39;</span><span class="p">;</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayBuffer</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This is good for a low-level API, which is why Engine.IO now supports
+it, but application developers most likely don’t want to send <em>only
+blobs</em>, or encode everything as a blob manually prior to sending it out.</p>
+<p>Socket.IO now supports emitting <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> (from Node.JS), <code class="docutils literal notranslate"><span class="pre">Blob</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code> and even <code class="docutils literal notranslate"><span class="pre">File</span></code>, as part of any datastructure:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
+  <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;image.png&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">buf</span><span class="p">){</span>
+    <span class="c1">// it&#39;s possible to embed binary data</span>
+    <span class="c1">// within arbitrarily-complex objects</span>
+    <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">image</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">buffer</span><span class="o">:</span> <span class="nx">buf</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>To test how useful it would be to support binary in this particular way
+(and as a virtualization geek), I decided to replicate the Twitch Plays
+Pokemon experiment 100% in JavaScript. Using a JavaScript gameboy
+emulator, node-canvas, socket.io we came up with a server-rendered
+collaborative game that even works on IE8. Check it out on
+<a class="reference external" href="http://weplay.io">http://weplay.io</a> (source code here).</p>
+<video id="weplay-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%" poster="https://i.cloudup.com/aNZqxnZzHv.png"><source src="https://i.cloudup.com/transcoded/KL-0r-E2Gj.mp4" type="video/mp4"></video><p>The relevant code that sends the image data is:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">self</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">toBuffer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">buf</span><span class="p">){</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The next experiment was to run an instance of QEMU running an image of
+Windows XP, in honor of its retirement. Every player gets a 15 second
+turn to control the machine. Check out the demo on
+<a class="reference external" href="http://socket.computer">http://socket.computer</a>. Here’s a video of your typical inception
+scenario:</p>
+<video id="computer-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/Cuqn5OLmcl.mp4" type="video/mp4"></video><p>A key part of putting together this demo was connecting to the QEMU VNC
+server and implementing the RFB protocol. As it’s usually the case with
+Node.JS, the solution was a <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">search</span> <span class="pre">rfb</span></code> away.</p>
+<p>Essentially, in order to minimize latency and have the best performance,
+it’s best to notify clients <em>only</em> of the pieces of the screen that
+changed. For example, if you move your mouse around, only little pieces
+of the screen that surround the cursor are broadcasted. The node-rfb2
+module gives us a <code class="docutils literal notranslate"><span class="pre">rect</span></code> event with objects like the following:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nx">x</span><span class="o">:</span> <span class="mi">103</span><span class="p">,</span>
+  <span class="nx">y</span><span class="o">:</span> <span class="mi">150</span><span class="p">,</span>
+  <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="nx">height</span><span class="o">:</span> <span class="mi">250</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">Buffer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It then became clear to me that our support for binary data would be
+genuinely useful. All I had to do was call <code class="docutils literal notranslate"><span class="pre">io.emit</span></code> to pass that
+object around, and let Socket.IO do the rest.</p>
+<p>Just for fun, I also installed and ran one of my favorite first person
+shooters:</p>
+<video id="cs-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/Ra6PJnoLBq.mp4" type="video/mp4"></video></div>
+<div class="section" id="automated-testing">
+<h2>Automated Testing<a class="headerlink" href="#automated-testing" title="永久链接至标题">¶</a></h2>
+<p>Every commit to the Socket.IO codebase now triggers a testing matrix
+totaling to 25 browsers, including Android and iOS.</p>
+<p>We accomplish this by having <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> seamlessly set up a reverse
+tunnel to ephemeral ports in your computer (thus making it accessible
+from the outside world), and have them execute on the Sauce Labs cloud,
+which is in charge of virtualizing and executing browsers on all the
+environments we care about.</p>
+<p>## Scalability</p>
+<p>We simplified the approach towards rooms and multi-node scalability
+dramatically. Instead of storing and/or replicating data across nodes,
+Socket.IO is now only concerned with passing events around.</p>
+<p>If you want to scale out Socket.IO to multiple nodes, it now comes down
+to two simple steps:</p>
+<ul class="simple">
+<li><p>Turn on sticky load balancing (for example by origin IP address).
+This ensures that long-polling connections for example always route
+requests to the same node where buffers of messages could be stored.</p></li>
+<li><p>Implement the socket.io-redis adapter.</p></li>
+</ul>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mi">6379</span> <span class="p">}));</span>
+</pre></div>
+</div>
+<p>We have deprecated the <code class="docutils literal notranslate"><span class="pre">Socket#set</span></code> and <code class="docutils literal notranslate"><span class="pre">Socket#get</span></code> APIs. Packets
+now simply get encoded and distributed to other nodes whenever you
+broadcast, and we don’t deal with storage.</p>
+<p>This leads directly into our next goal: integration with other backends.</p>
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="永久链接至标题">¶</a></h2>
+<p>Chances are good that your existing application deployments are written
+in a variety of languages and frameworks, and are not just limited to
+Node.JS. Even if it was all Node.JS, you probably at some point want to
+separate concerns of your application into different processes.</p>
+<p>One of the processes might be in charge of hosting the Socket.IO server,
+accepting connections, performing authentication, etc, and then another
+part of your backend might end up in charge of <em>producing</em> messages.</p>
+<p>To that end we’re introducing the socket.io-emitter project which hooks
+into socket.io-redis to easily allow you to emit events to browsers from
+anywhere:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-emitter&#39;</span><span class="p">)();</span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Tony Kovanen already created a PHP implementation:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nx">$emitter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SocketIOEmitter</span><span class="p">(</span><span class="nx">array</span><span class="p">(</span><span class="s1">&#39;port&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;6379&#39;</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">));</span>
+<span class="nx">$emitter</span><span class="o">-&gt;</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;wow&#39;</span><span class="p">);</span>
+<span class="o">?&gt;</span>
+</pre></div>
+</div>
+<p>This makes it really easy to turn any existing application into a
+realtime application!</p>
+<p>## Better debugging</p>
+<p>Socket.IO is now completely instrumented by a minimalistic yet
+tremendously powerful utility called debug by TJ Holowaychuk.</p>
+<p>In the past, the Socket.IO server would default to logging everything
+out to the console. This turned out to be annoyingly verbose for many
+users (although extremely useful for others), and violates the Rule of
+Silence of the Unix Philosophy:</p>
+<blockquote><p><strong>Rule of Silence</strong> Developers should design programs so that they do
+not print unnecessary output. This rule aims to allow other programs and
+developers to pick out the information they need from a program’s output
+without having to parse verbosity.</p>
+</blockquote><p>The basic idea is that each module used by Socket.IO provides different
+debugging scopes that give you insight into the internals. By default,
+all output is suppressed, and you can opt into seeing messages by
+supplying the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> env variable (Node.JS) or the
+<code class="docutils literal notranslate"><span class="pre">localStorage.debug</span></code> property (Browsers).</p>
+<p>You can see it in action for example on our homepage:</p>
+<video id="debugging-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/IL9alTr0eO.mp4" type="video/mp4"></video><p>## Streamlined APIs</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">socket.io</span></code> module now exports the attachment function directly
+(previously <code class="docutils literal notranslate"><span class="pre">.listen</span></code>). It’s even easier now to attach socket.io to a
+HTTP server:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">srv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">Server</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">srv</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or to make it listen on some port:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">8080</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Before, to refer to everyone connected you had to use <code class="docutils literal notranslate"><span class="pre">io.sockets</span></code>.
+Now you can call directly on <code class="docutils literal notranslate"><span class="pre">io</span></code>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi everyone&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cdn-delivery">
+<h2>CDN delivery<a class="headerlink" href="#cdn-delivery" title="永久链接至标题">¶</a></h2>
+<p>One of the best decisions we made early on was that implementing a
+Socket.IO server would not only give you access to the realtime
+protocol, but Socket.IO itself would also serve the client.</p>
+<p>Normally, all you have to do is to include a snippet like this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>&lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+</pre></div>
+</div>
+<p>If you want to optimize access to the client by serving it near your
+users, provide the maximum level of gzip compression (thanks to Google’s
+zopfli and proper support for caching, you can now use our CDN. It’s
+free, forever, and has built-in SSL support:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>&lt;script src=&quot;https://cdn.socket.io/socket.io-1.0.0.js&quot;&gt;&lt;/script&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="future-innovation">
+<h2>Future innovation<a class="headerlink" href="#future-innovation" title="永久链接至标题">¶</a></h2>
+<p>The core Socket.IO projects will continue to improve with lots of more
+frequent releases, with the sole goal of improving reliability, speed
+and making the codebase smaller and easier to maintain. Socket.IO 2.0
+will probably see us ditching support for some older browsers, and not
+bundling some modules like the JSON serializer.</p>
+<p>Most of the innovation in the Socket.IO world will happen outside of the
+core codebases. The most important projects that I’ll be closely
+watching are the following:</p>
+<div class="section" id="socket-io-stream">
+<h3>socket.io-stream<a class="headerlink" href="#socket-io-stream" title="永久链接至标题">¶</a></h3>
+<p>By adding this plugin, you’ll be able to send <code class="docutils literal notranslate"><span class="pre">Stream</span></code> objects so that
+you can write memory-efficient programs. In the first example we loaded
+a file into memory prior to emitting it, but the following should be
+possible:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-stream&#39;</span><span class="p">)(</span><span class="nx">io</span><span class="p">);</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
+  <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s1">&#39;file.jpg&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>And on the client side you’ll receive a <code class="docutils literal notranslate"><span class="pre">Stream</span></code> object that emits
+<code class="docutils literal notranslate"><span class="pre">data</span></code> events.</p>
+</div>
+<div class="section" id="tooling">
+<h3>Tooling<a class="headerlink" href="#tooling" title="永久链接至标题">¶</a></h3>
+<p>When you use Socket.IO you don’t care about transports, packets, frames,
+TCP or WebSocket. You care about what events are sent back and forth.</p>
+<p>Our goal is to have plugins for Web Inspector, Firefox Developer Tools
+that allow you to easily introspect what events are being sent, when,
+and what their parameters are.</p>
+<p>This project is being led by the talented Nick LaGrow (Github), Samaan
+Ghani (Github) and David Cummings (Twitter).</p>
+<p>### New languages and frameworks</p>
+<p>A lot of effort has gone into specing and documenting the Engine.IO
+protocol and Socket.IO protocol.</p>
+<p>The main goal behind this is that the Node.JS servers and clients become
+the reference implementations for many other languages and frameworks.
+Interoperability within the larger ecosystem is one of our biggest goals
+for 2014 and beyond.</p>
+</div>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="永久链接至标题">¶</a></h2>
+<p>This release has been a big team effort. Special thanks go out to our
+new core team:</p>
+<ul class="simple">
+<li><p>Tony Kovanen (Github / Twitter) for his amazing work on Engine.IO
+binary support and research into a variety of workarounds to support
+all versions of iOS and Internet Explorer, his help in putting
+together this website and rounding up the docs.</p></li>
+<li><p>Kevin Roark (Github) for the entire development of the new Socket.IO
+parser on top of Engine, the Socket.IO Computer demo, and help with
+docs, issues and pull requests.</p></li>
+<li><p>Roman Shtylman (Github / Twitter) for his work on zuul and
+localtunnel, crucial to our testing architecture and our mission of
+reliability.</p></li>
+</ul>
+<p>And in no particular order:</p>
+<ul class="simple">
+<li><p>Jay Borenstein (LinkedIn) for selecting Socket.IO as one of the
+projects to mentor students on Open Source engineering as part of the
+Open Academy project.</p></li>
+<li><p>Michael Srb (Github), Mark Mokryn (Github), Eugen Dueck (Github),
+Afshin Mehrabani (Github), Christoph Dorn (Github) and Mikito Takada
+(Github) for several key Engine.IO patches.</p></li>
+<li><p>Grant Timmerman (Github / Twitter) for his outstanding work on the
+new Socket.IO example chat application, and multiple patches and
+issues investigation.</p></li>
+<li><p>Jxck (Github / Twitter) for his work on translation, documentations
+and patches. ありがとう</p></li>
+<li><p>Arnout Kazemier (Github / Twitter) for his multiple contributions to
+Engine.IO and Socket.IO</p></li>
+<li><p>Sauce Labs (Github / Twitter) for supporting open source projects
+with free testing infrastructure.</p></li>
+<li><p>Shihui Song (Github), Qiming Fang (Github) and Erluo Li for their
+work on testing infrastructure.</p></li>
+<li><p>Julian Salazar (Github) and Tianyiu Liu (Github) for their work on
+reconnection and ongoing research into resource sharing between
+browser tabs and messages synchronization.</p></li>
+<li><p>Gal Koren (Github) for his fantastic work into modularization of the
+codebases.</p></li>
+<li><p>Matt Walker (Twitter) for the beautiful Socket.IO logo.</p></li>
+</ul>
+<p>Finally, I’m very grateful to my company Automattic for being a great
+home to Open Source innovation.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../socket-io-with-apache-cordova.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="20150120-native-socket-io-and-android.html" class="btn btn-neutral float-left" title="Native Socket.IO and Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

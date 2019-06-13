@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CloseEvent &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="MessageEvent" href="MessageEvent.html" />
+    <link rel="prev" title="WebSocket" href="WebSocket.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">api</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WebSocket.html">WebSocket</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CloseEvent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">构造器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifications">Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#see-also">See also</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MessageEvent.html">MessageEvent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">api</a> &raquo;</li>
+        
+      <li>CloseEvent</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/CloseEvent.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="closeevent">
+<span id="api-closeevent"></span><h1>CloseEvent<a class="headerlink" href="#closeevent" title="永久链接至标题">¶</a></h1>
+<p>CloseEvent 会在连接关闭时发送给使用 WebSockets 的客户端. 它在 WebSocket 对象的 onclose 事件监听器中使用.</p>
+<div class="section" id="id1">
+<h2>构造器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="CloseEvent">
+<em class="property">class </em><code class="descname">CloseEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CloseEvent" title="永久链接至目标">¶</a></dt>
+<dd><p>创建一个 CloseEvent.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>属性<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>该接口也继承了其父类 Event 的属性.</p>
+<dl class="attribute">
+<dt id="CloseEvent.code">
+<code class="descclassname">CloseEvent.</code><code class="descname">code</code><a class="headerlink" href="#CloseEvent.code" title="永久链接至目标">¶</a></dt>
+<dd><p>只读 返回一个 unsigned short 类型的数字, 表示服务端发送的关闭码, 以下为已分配的状态码.</p>
+</dd></dl>
+
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 17%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>状态码</p></th>
+<th class="head"><p>名称</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0–999</p></td>
+<td></td>
+<td><p>保留段, 未使用.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1000</p></td>
+<td><p>CLOSE_NORMAL</p></td>
+<td><p>正常关闭; 无论为何目的而创建, 该链接都已成功完成任务.</p></td>
+</tr>
+<tr class="row-even"><td><p>1001</p></td>
+<td><p>CLOSE_GOING_AWAY</p></td>
+<td><p>终端离开, 可能因为服务端错误, 也可能因为浏览器正从打开连接的页面跳转离开.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1002</p></td>
+<td><p>CLOSE_PROTOCOL_ERROR</p></td>
+<td><p>由于协议错误而中断连接.</p></td>
+</tr>
+<tr class="row-even"><td><p>1003</p></td>
+<td><p>CLOSE_UNSUPPORTED</p></td>
+<td><p>由于接收到不允许的数据类型而断开连接 (如仅接收文本数据的终端接收到了二进制数据).</p></td>
+</tr>
+<tr class="row-odd"><td><p>1004</p></td>
+<td></td>
+<td><p>保留. 其意义可能会在未来定义.</p></td>
+</tr>
+<tr class="row-even"><td><p>1005</p></td>
+<td><p>CLOSE_NO_STATUS</p></td>
+<td><p>保留.  表示没有收到预期的状态码.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1006</p></td>
+<td><p>CLOSE_ABNORMAL</p></td>
+<td><p>保留. 用于期望收到状态码时连接非正常关闭 (也就是说, 没有发送关闭帧).</p></td>
+</tr>
+<tr class="row-even"><td><p>1007</p></td>
+<td><p>Unsupported Data</p></td>
+<td><p>由于收到了格式不符的数据而断开连接 (如文本消息中包含了非 UTF-8 数据).</p></td>
+</tr>
+<tr class="row-odd"><td><p>1008</p></td>
+<td><p>Policy Violation</p></td>
+<td><p>由于收到不符合约定的数据而断开连接. 这是一个通用状态码, 用于不适合使用 1003 和 1009 状态码的场景.</p></td>
+</tr>
+<tr class="row-even"><td><p>1009</p></td>
+<td><p>CLOSE_TOO_LARGE</p></td>
+<td><p>由于收到过大的数据帧而断开连接.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1010</p></td>
+<td><p>Missing Extension</p></td>
+<td><p>客户端期望服务器商定一个或多个拓展, 但服务器没有处理, 因此客户端断开连接.</p></td>
+</tr>
+<tr class="row-even"><td><p>1011</p></td>
+<td><p>Internal Error</p></td>
+<td><p>客户端由于遇到没有预料的情况阻止其完成请求, 因此服务端断开连接.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1012</p></td>
+<td><p>Service Restart</p></td>
+<td><p>服务器由于重启而断开连接. [Ref]</p></td>
+</tr>
+<tr class="row-even"><td><p>1013</p></td>
+<td><p>Try Again Later</p></td>
+<td><p>服务器由于临时原因断开连接, 如服务器过载因此断开一部分客户端连接. [Ref]</p></td>
+</tr>
+<tr class="row-odd"><td><p>1014</p></td>
+<td></td>
+<td><p>由 WebSocket 标准保留以便未来使用.</p></td>
+</tr>
+<tr class="row-even"><td><p>1015</p></td>
+<td><p>TLS Handshake</p></td>
+<td><p>保留. 表示连接由于无法完成 TLS 握手而关闭 (例如无法验证服务器证书).</p></td>
+</tr>
+<tr class="row-odd"><td><p>1016–1999</p></td>
+<td></td>
+<td><p>由 WebSocket 标准保留以便未来使用.</p></td>
+</tr>
+<tr class="row-even"><td><p>2000–2999</p></td>
+<td></td>
+<td><p>由 WebSocket 拓展保留使用.</p></td>
+</tr>
+<tr class="row-odd"><td><p>3000–3999</p></td>
+<td></td>
+<td><p>?可以由库或框架使用.? 不应由应用使用. 可以在 IANA 注册, 先到先得.</p></td>
+</tr>
+<tr class="row-even"><td><p>4000–4999</p></td>
+<td></td>
+<td><p>可以由应用使用.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="CloseEvent.reason">
+<code class="descclassname">CloseEvent.</code><code class="descname">reason</code><a class="headerlink" href="#CloseEvent.reason" title="永久链接至目标">¶</a></dt>
+<dd><p>只读 返回一个 DOMString 用以表示服务器关闭连接的原因. 这是由服务器和子协议决定的.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="CloseEvent.wasClean">
+<code class="descclassname">CloseEvent.</code><code class="descname">wasClean</code><a class="headerlink" href="#CloseEvent.wasClean" title="永久链接至目标">¶</a></dt>
+<dd><p>只读 返回一个 Boolean 用以表示连接是否完全关闭.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<p>该接口也继承了其父类 Event 的属性.</p>
+<dl class="function">
+<dt id="CloseEvent.initCloseEvent">
+<code class="descclassname">CloseEvent.</code><code class="descname">initCloseEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CloseEvent.initCloseEvent" title="永久链接至目标">¶</a></dt>
+<dd><p>初始化创建的 CloseEvent 的值. 如果该事件已经被处理, 这个方法什么也不做. 不要直接使用这个方法, 使用 CloseEvent() ?构造器来代替.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="永久链接至标题">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Specification</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HTML Living Standard The definition of ‘CloseEvent’ in that specification.</p></td>
+<td><p>Living Standard</p></td>
+<td><p>Initial definition.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="永久链接至标题">¶</a></h2>
+<p>WebSocket</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="MessageEvent.html" class="btn btn-neutral float-right" title="MessageEvent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="WebSocket.html" class="btn btn-neutral float-left" title="WebSocket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

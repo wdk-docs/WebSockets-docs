@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using multiple nodes &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Logging and debugging" href="logging-and-debugging.html" />
+    <link rel="prev" title="Migrating from 0.9" href="migrating-from-0-9.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/index.html">Get started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#rooms">Rooms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#sending-messages-from-the-outside-world">Sending messages from the outside-world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using multiple nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sticky-load-balancing">Sticky load balancing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nginx-configuration">NginX configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#haproxy-configuration">HAProxy configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-node-js-cluster">Using Node.JS Cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passing-events-between-nodes">Passing events between nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Dependency graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-api.html">Client API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-api.html#manager">Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-api.html#socket">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html">Server API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html#namespace">Namespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html#socket">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html#client">Client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using multiple nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/socket.io/docs/using-multiple-nodes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-multiple-nodes">
+<h1>Using multiple nodes<a class="headerlink" href="#using-multiple-nodes" title="永久链接至标题">¶</a></h1>
+<div class="section" id="sticky-load-balancing">
+<h2>Sticky load balancing<a class="headerlink" href="#sticky-load-balancing" title="永久链接至标题">¶</a></h2>
+<p>If you plan to distribute the load of connections among different
+processes or machines, you have to make sure that requests associated
+with a particular session id connect to the process that originated
+them.</p>
+<p>This is due to certain transports like XHR Polling or JSONP Polling
+relying on firing several requests during the lifetime of the “socket”.
+Failing to enable sticky balancing will result in the dreaded:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">Error</span> <span class="nx">during</span> <span class="nx">WebSocket</span> <span class="nx">handshake</span><span class="o">:</span> <span class="nx">Unexpected</span> <span class="nx">response</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">400</span>
+</pre></div>
+</div>
+<p>Which means that the upgrade request was sent to a node which did not
+know the given socket id, hence the HTTP 400 response.</p>
+<p>To illustrate why this is needed, consider the example of emitting an
+event to all connected clients:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;all sockets&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Chances are that some of those clients might have an active
+bi-directional communication channel like <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> that we can
+write to immediately, but some of them might be using long-polling.</p>
+<p>If they’re using long polling, they might or might not have sent a
+request that we can write to. They could be “in between” those requests.
+In those situations, it means we have to buffer messages in the process.
+In order for the client to successfully claim those messages when he
+sends his request, the easiest way is for him to connect to be routed to
+that same process.</p>
+<p>As noted above, <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> transport do not have this limitation,
+since the underlying TCP connection is kept open between the client and
+the given server. That’s why you might find some suggestions to only use
+the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> transport:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;https://io.yourhost.com&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="c1">// WARNING: in that case, there is no fallback to long-polling</span>
+  <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;websocket&#39;</span> <span class="p">]</span> <span class="c1">// or [ &#39;websocket&#39;, &#39;polling&#39; ], which is the same thing</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Both means that there is <strong>NO FALLBACK</strong> to long-polling when the
+websocket connection cannot be established, which is in fact one of the
+key feature of Socket.IO. In that case, you should maybe consider using
+raw
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">WebSocket</a>,
+or a thin wrapper like
+<a class="reference external" href="https://github.com/appuri/robust-websocket">robust-websocket</a>.</p>
+<p>To achieve sticky-session, there are two main solutions:</p>
+<ul class="simple">
+<li><p>routing clients based on their originating address</p></li>
+<li><p>routing clients based on a cookie</p></li>
+</ul>
+</div>
+<div class="section" id="nginx-configuration">
+<h2>NginX configuration<a class="headerlink" href="#nginx-configuration" title="永久链接至标题">¶</a></h2>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">{</span> <span class="pre">}</span></code> section of your <code class="docutils literal notranslate"><span class="pre">nginx.conf</span></code> file, you can
+declare a <code class="docutils literal notranslate"><span class="pre">upstream</span></code> section with a list of Socket.IO process you want
+to balance load between:</p>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">http</span> <span class="p">{</span>
+  <span class="kn">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">3000</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">io.yourhost.com</span><span class="p">;</span>
+
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+      <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+      <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+
+      <span class="kn">proxy_pass</span> <span class="s">http://nodes</span><span class="p">;</span>
+
+      <span class="c1"># enable WebSockets</span>
+      <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+      <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+      <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kn">upstream</span> <span class="s">nodes</span> <span class="p">{</span>
+    <span class="c1"># enable sticky session based on IP</span>
+    <span class="kn">ip_hash</span><span class="p">;</span>
+
+    <span class="kn">server</span> <span class="n">app01</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="n">app02</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="n">app03</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice the <code class="docutils literal notranslate"><span class="pre">ip_hash</span></code> instruction that indicates the connections will
+be sticky.</p>
+<p>Make sure you also configure <code class="docutils literal notranslate"><span class="pre">worker_processes</span></code> in the topmost level
+to indicate how many workers NginX should use. You might also want to
+look into tweaking the <code class="docutils literal notranslate"><span class="pre">worker_connections</span></code> setting within the
+<code class="docutils literal notranslate"><span class="pre">events</span> <span class="pre">{</span> <span class="pre">}</span></code> block.</p>
+<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx">Example</a></p>
+<p>## Apache HTTPD configuration</p>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">Header</span> add Set-Cookie <span class="s2">&quot;SERVERID=sticky.%{BALANCER_WORKER_ROUTE}e; path=/&quot;</span> env=BALANCER_ROUTE_CHANGED
+
+<span class="nt">&lt;Proxy</span> <span class="s">&quot;balancer://nodes_polling&quot;</span><span class="nt">&gt;</span>
+    <span class="nb">BalancerMember</span> <span class="s2">&quot;http://app01:3000&quot;</span> route=app01
+    <span class="nb">BalancerMember</span> <span class="s2">&quot;http://app02:3000&quot;</span> route=app02
+    <span class="nb">BalancerMember</span> <span class="s2">&quot;http://app03:3000&quot;</span> route=app03
+    <span class="nb">ProxySet</span> stickysession=SERVERID
+<span class="nt">&lt;/Proxy&gt;</span>
+
+<span class="nt">&lt;Proxy</span> <span class="s">&quot;balancer://nodes_ws&quot;</span><span class="nt">&gt;</span>
+    <span class="nb">BalancerMember</span> <span class="s2">&quot;ws://app01:3000&quot;</span> route=app01
+    <span class="nb">BalancerMember</span> <span class="s2">&quot;ws://app02:3000&quot;</span> route=app02
+    <span class="nb">BalancerMember</span> <span class="s2">&quot;ws://app03:3000&quot;</span> route=app03
+    <span class="nb">ProxySet</span> stickysession=SERVERID
+<span class="nt">&lt;/Proxy&gt;</span>
+
+<span class="nb">RewriteEngine</span> <span class="k">On</span>
+<span class="nb">RewriteCond</span> %{HTTP:Upgrade} =websocket [NC]
+<span class="nb">RewriteRule</span> /(.*) balancer://nodes_ws/$1 [P,L]
+<span class="nb">RewriteCond</span> %{HTTP:Upgrade} !=websocket [NC]
+<span class="nb">RewriteRule</span> /(.*) balancer://nodes_polling/$1 [P,L]
+
+<span class="nb">ProxyTimeout</span> <span class="m">3</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd">Example</a></p>
+</div>
+<div class="section" id="haproxy-configuration">
+<h2>HAProxy configuration<a class="headerlink" href="#haproxy-configuration" title="永久链接至标题">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span># Reference: http://blog.haproxy.com/2012/11/07/websockets-load-balancing-with-haproxy/
+
+listen chat
+  bind *:80
+  default_backend nodes
+
+backend nodes
+  option httpchk HEAD /health
+  http-check expect status 200
+  cookie io prefix indirect nocache # using the `io` cookie set upon handshake
+  server app01 app01:3000 check cookie app01
+  server app02 app02:3000 check cookie app02
+  server app03 app03:3000 check cookie app03
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy">Example</a></p>
+</div>
+<div class="section" id="using-node-js-cluster">
+<h2>Using Node.JS Cluster<a class="headerlink" href="#using-node-js-cluster" title="永久链接至标题">¶</a></h2>
+<p>Just like NginX, Node.JS comes with built-in clustering support through
+the <code class="docutils literal notranslate"><span class="pre">cluster</span></code> module.</p>
+<p>Fedor Indutny has created a module called <a class="reference external" href="https://github.com/indutny/sticky-session">sticky
+session</a> that ensures file
+descriptors (ie: connections) are routed based on the originating
+<code class="docutils literal notranslate"><span class="pre">remoteAddress</span></code> (ie: IP). Please note that this might lead to
+unbalanced routing, depending on the hashing method.</p>
+<p>You could also assign a different port to each worker of the cluster,
+based on the cluster worker ID, and balance the load with the
+configuration that you can find above.</p>
+</div>
+<div class="section" id="passing-events-between-nodes">
+<h2>Passing events between nodes<a class="headerlink" href="#passing-events-between-nodes" title="永久链接至标题">¶</a></h2>
+<p>Now that you have multiple Socket.IO nodes accepting connections, if you
+want to broadcast events to everyone (or even everyone in a certain
+<a class="reference external" href="/docs/rooms-and-namespaces/#Rooms">room</a>) you’ll need some way of
+passing messages between processes or computers.</p>
+<p>The interface in charge of routing messages is what we call the
+<code class="docutils literal notranslate"><span class="pre">Adapter</span></code>. You can implement your own on top of the
+<a class="reference external" href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a>
+(by inheriting from it) or you can use the one we provide on top of
+<a class="reference external" href="https://redis.io/">Redis</a>:
+<a class="reference external" href="https://github.com/socketio/socket.io-redis">socket.io-redis</a>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mi">6379</span> <span class="p">}));</span>
+</pre></div>
+</div>
+<p>Then the following call:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;all sockets&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>will be broadcast to every node through the <a class="reference external" href="https://redis.io/topics/pubsub">Pub/Sub
+mechanism</a> of Redis.</p>
+<p><strong>Note:</strong> sticky-session is still needed when using the Redis adapter.</p>
+<p>If you want to pass messages to it from non-socket.io processes, you
+should look into <a class="reference external" href="/docs/rooms-and-namespaces/#Sending-messages-from-the-outside-world">“Sending messages from the
+outside-world”</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="logging-and-debugging.html" class="btn btn-neutral float-right" title="Logging and debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="migrating-from-0-9.html" class="btn btn-neutral float-left" title="Migrating from 0.9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

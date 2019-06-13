@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Emit cheatsheet" href="emit-cheatsheet.html" />
+    <link rel="prev" title="Dependency graph" href="internals.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/index.html">Get started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#rooms">Rooms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#sending-messages-from-the-outside-world">Sending messages from the outside-world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Dependency graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#can-i-use-wildcards-in-events">Can I use wildcards in events?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#socket-io-with-apache-cordova">Socket.IO with Apache Cordova?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#socket-io-on-ios">Socket.IO on iOS?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#socket-io-on-android">Socket.IO on Android?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-api.html">Client API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-api.html#manager">Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client-api.html#socket">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html">Server API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html#namespace">Namespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html#socket">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server-api.html#client">Client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/socket.io/docs/faq.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h1>
+<div class="section" id="can-i-use-wildcards-in-events">
+<h2>Can I use wildcards in events?<a class="headerlink" href="#can-i-use-wildcards-in-events" title="永久链接至标题">¶</a></h2>
+<p>Not in Socket.IO directly, but check out <a class="reference external" href="https://github.com/hden/socketio-wildcard">this
+plugin</a> by Hao-kang Den.
+It provides a Socket.IO middleware to deal with wildcards.</p>
+</div>
+<div class="section" id="socket-io-with-apache-cordova">
+<h2>Socket.IO with Apache Cordova?<a class="headerlink" href="#socket-io-with-apache-cordova" title="永久链接至标题">¶</a></h2>
+<p>Take a look at <a class="reference external" href="/socket-io-with-apache-cordova/">this tutorial</a>.</p>
+</div>
+<div class="section" id="socket-io-on-ios">
+<h2>Socket.IO on iOS?<a class="headerlink" href="#socket-io-on-ios" title="永久链接至标题">¶</a></h2>
+<p>Take a look at <a class="reference external" href="https://github.com/MegaBits/SIOSocket">SIOSocket</a>.</p>
+</div>
+<div class="section" id="socket-io-on-android">
+<h2>Socket.IO on Android?<a class="headerlink" href="#socket-io-on-android" title="永久链接至标题">¶</a></h2>
+<p>Take a look at
+<a class="reference external" href="https://github.com/nkzawa/socket.io-client.java">socket.io-client.java</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="emit-cheatsheet.html" class="btn btn-neutral float-right" title="Emit cheatsheet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="internals.html" class="btn btn-neutral float-left" title="Dependency graph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docs &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Docs" href="info.html" />
+    <link rel="prev" title="Chat" href="../get-started.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Docs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="info.html">Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#rooms">Rooms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#sending-messages-from-the-outside-world">Sending messages from the outside-world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Dependency graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+      <li>Docs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/socket.io/docs/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docs">
+<h1>Docs<a class="headerlink" href="#docs" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="info.html#what-socket-io-is">What Socket.IO is</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#what-socket-io-is-not">What Socket.IO is not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#installing">Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#using-with-node-http-server">Using with Node http server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#sending-and-receiving-events">Sending and receiving events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#restricting-yourself-to-a-namespace">Restricting yourself to a namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#sending-volatile-messages">Sending volatile messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#sending-and-getting-data-acknowledgements">Sending and getting data (acknowledgements)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#broadcasting-messages">Broadcasting messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html#using-it-just-as-a-cross-browser-websocket">Using it just as a cross-browser WebSocket</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rooms-and-namespaces.html#default-namespace">Default namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rooms-and-namespaces.html#custom-namespaces">Custom namespaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rooms-and-namespaces.html#rooms">Rooms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rooms-and-namespaces.html#joining-and-leaving">Joining and leaving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rooms-and-namespaces.html#default-room">Default room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rooms-and-namespaces.html#disconnection">Disconnection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rooms-and-namespaces.html#sending-messages-from-the-outside-world">Sending messages from the outside-world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="migrating-from-0-9.html#authentication-differences">Authentication differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating-from-0-9.html#log-differences">Log differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating-from-0-9.html#shortcuts">Shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating-from-0-9.html#configuration-differences">Configuration differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating-from-0-9.html#parser-protocol-differences">Parser / Protocol differences</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using-multiple-nodes.html#sticky-load-balancing">Sticky load balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-multiple-nodes.html#nginx-configuration">NginX configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-multiple-nodes.html#haproxy-configuration">HAProxy configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-multiple-nodes.html#using-node-js-cluster">Using Node.JS Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-multiple-nodes.html#passing-events-between-nodes">Passing events between nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logging-and-debugging.html#available-debugging-scopes">Available debugging scopes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Dependency graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#engine-io-parser">engine.io-parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#engine-io">engine.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#socket-io-adapter">socket.io-adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#socket-io-redis">socket.io-redis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#socket-io-parser">socket.io-parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#socket-io-client">socket.io-client</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internals.html#upgrade">Upgrade</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#can-i-use-wildcards-in-events">Can I use wildcards in events?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#socket-io-with-apache-cordova">Socket.IO with Apache Cordova?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#socket-io-on-ios">Socket.IO on iOS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#socket-io-on-android">Socket.IO on Android?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="info.html" class="btn btn-neutral float-right" title="Docs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../get-started.html" class="btn btn-neutral float-left" title="Chat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

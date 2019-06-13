@@ -1,0 +1,103 @@
+Socket.IO 1.4.0
+================================
+
+
+Socket.IO 1.4.0 ship with new features like **automatic compression**
+for XHR and WebSockets, lots of bug fixes and significant performance
+and memory improvements.
+
+Compression is enabled by default, as it’s highly beneficial for most
+application payloads. The following example shows the savings for a
+realtime stream of tweets.
+
+.. container::
+   :name: tweets-compression-demo
+
+The compression gains will vary by transport. For example, WebSocket
+defaults to a window size of 32kb when **DEFLATE** compression is
+enabled. Repeated occurrences of strings within that window will be
+compressed. The following demo (inspired by Julia Evans work) will
+highlight what the LZ77 algorithm de-duplicates from the traffic sent by
+the Twitter stream that matches javascript.
+
+.. container::
+   :name: lz77-compression-demo
+
+.. raw:: html
+
+   <p style="font-size: 10px; color: #999">
+
+How this demo works: we re-implemented a part of LZ77 in JavaScript. A
+React component then renders the compressed strings.
+
+The longer the string, the darker the shade of yellow displayed.
+
+In addition to this default behavior, we’ve introduced the capability to
+perform selective per-message compression, by introducing the
+``compress`` flag when emitting an event.
+
+.. code:: js
+
+   socket.compress(true).emit(‘hi’, { some: ‘data’ });
+
+To configure the defaults, we’ve introduced the following two options
+that you can pass to socket.io (and engine.io) when starting the server:
+
+-  ``perMessageDeflate`` – options to customize WebSocket compression
+   (see here) or ``true`` for defaults (``true``).
+
+-  ``httpCompression`` – options to customize compression for HTTP
+   polling transports or ``true`` for defaults (``true``)
+
+The memory overhead when compression is enabled is not inexistent,
+however. Make sure to account for a 300kb~ overhead per connection in
+terms of memory allocation. Read here about the parameters you can
+customize to change how much memory is allocated and how aggressively
+data is compressed.
+
+The following improvements have been made to the **server**:
+
+-  Assume 443 port when passing ``https://`` to the ``origins``
+   parameter – Evan Lucas
+-  Improve detection of binary data inside events (in the ``has-binary``
+   module) – Gunther Brunner
+-  Warn about missing ``error`` event handlers on sockets to prevent
+   silent hard-to-debug situations
+-  Allow a custom function for the ``allowRequest`` function for origins
+   verification
+-  Fixes for “use strict” environments – Naoyuki Kanezawa
+-  Prevent users calling the ack function multiple times – Kevin Jose
+   Martin
+-  Fixed potential memory leaks with open sockets when upgrade fails –
+   Naoyuki Kanezawa
+-  Fix lingering requests when a polling error occurs – Naoyuki Kanezawa
+-  Drastically more memory efficient when keeping track of clients –
+   Damien Arrachequesne
+-  Drastically more memory efficient when keeping track of rooms –
+   Jérémy Lal
+-  Trigger callback if the client is already in the given room when
+   ``join`` is called – Damien Arrachequesne
+-  Minor parser fixes and performance improvements.
+
+The following improvements have been made to the **client**:
+
+-  Fix for specifying custom ports when connecting
+-  2 or more connections to the same namespace now create new sockets,
+   instead of reusing a single one.
+-  Added new reserved ``ping`` and ``pong`` events when a heartbeat is
+   emitted and received.
+-  Add support for environments that extend Object.prototype – Damien
+   Arrachequesne
+-  Fixes for “use strict” environments – Naoyuki Kanezawa
+-  Added an ``extraHeaders`` feature for custom headers in HTTP
+   transports (non-WebSocket)
+-  Fix handling of disconnection while in the ``opening`` state.
+-  Improved error handling for unmatched acknowledgements.
+-  Parser fixes and improvements.
+
+We’ve also released **socket.io-redis** ``0.2.0`` with significant
+performance improvements.
+
+Special thanks to Damien Arrachequesne, Naoyuki Kanezawa and Jérémy Lal
+for their amazing and continued contributions that made this release
+possible.

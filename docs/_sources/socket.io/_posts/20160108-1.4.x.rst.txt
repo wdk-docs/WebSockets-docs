@@ -1,0 +1,16 @@
+Socket.IO 1.4.1, 1.4.2 and 1.4.3
+===================================
+
+
+We published three minor releases right after ``1.4.0`` addressing build
+issues in different environments.
+
+-  Socket.IO-client now includes the latest version of engine.io-client
+
+-  Fixed an issue that was preventing bundling with webpack.
+
+-  Socket.IO now adds support for NativeScript!
+
+.. code:: html
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.3/socket.io.min.js"></script>

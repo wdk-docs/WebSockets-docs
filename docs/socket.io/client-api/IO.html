@@ -1,0 +1,989 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IO &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">socket.io 文档</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+      <li>IO</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/socket.io/client-api/IO.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="io">
+<h1>IO<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h1>
+<p>Exposed as the <code class="docutils literal notranslate"><span class="pre">io</span></code> namespace in the standalone build, or the result
+of calling <code class="docutils literal notranslate"><span class="pre">require('socket.io-client')</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/socket.io/socket.io.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-client&#39;</span><span class="p">);</span>
+<span class="c1">// or with import syntax</span>
+<span class="kr">import</span> <span class="nx">io</span> <span class="nx">from</span> <span class="s1">&#39;socket.io-client&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="section" id="io-protocol">
+<h2>io.protocol<a class="headerlink" href="#io-protocol" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><em>(Number)</em></p></li>
+</ul>
+<p>The protocol revision number.</p>
+</div>
+<div class="section" id="io-url-options">
+<h2>io([url][, options])<a class="headerlink" href="#io-url-options" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code> <em>(String)</em> (defaults to <code class="docutils literal notranslate"><span class="pre">window.location</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">forceNew</span></code> <em>(Boolean)</em> whether to reuse an existing connection</p></li>
+</ul>
+</li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p></li>
+</ul>
+<p>Creates a new <code class="docutils literal notranslate"><span class="pre">Manager</span></code> for the given URL, and attempts to reuse an
+existing <code class="docutils literal notranslate"><span class="pre">Manager</span></code> for subsequent calls, unless the <code class="docutils literal notranslate"><span class="pre">multiplex</span></code>
+option is passed with <code class="docutils literal notranslate"><span class="pre">false</span></code>. Passing this option is the equivalent
+of passing <code class="docutils literal notranslate"><span class="pre">'force</span> <span class="pre">new</span> <span class="pre">connection':</span> <span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">forceNew:</span> <span class="pre">true</span></code>.</p>
+<p>A new <code class="docutils literal notranslate"><span class="pre">Socket</span></code> instance is returned for the namespace specified by the
+pathname in the URL, defaulting to <code class="docutils literal notranslate"><span class="pre">/</span></code>. For example, if the <code class="docutils literal notranslate"><span class="pre">url</span></code> is
+<code class="docutils literal notranslate"><span class="pre">http://localhost/users</span></code>, a transport connection will be established
+to <code class="docutils literal notranslate"><span class="pre">http://localhost</span></code> and a Socket.IO connection will be established
+to <code class="docutils literal notranslate"><span class="pre">/users</span></code>.</p>
+<p>Query parameters can also be provided, either with the <code class="docutils literal notranslate"><span class="pre">query</span></code> option
+or directly in the url (example: <code class="docutils literal notranslate"><span class="pre">http://localhost/users?token=abc</span></code>).</p>
+<p>See <a class="reference external" href="#new-Manager-url-options">new Manager(url[, options])</a> for the
+the list of available <code class="docutils literal notranslate"><span class="pre">options</span></code>.</p>
+</div>
+<div class="section" id="initialization-examples">
+<h2>Initialization examples<a class="headerlink" href="#initialization-examples" title="永久链接至标题">¶</a></h2>
+<div class="section" id="with-multiplexing">
+<h3>With multiplexing<a class="headerlink" href="#with-multiplexing" title="永久链接至标题">¶</a></h3>
+<p>By default, a single connection is used when connecting to different
+namespaces (to minimize resources):</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">adminSocket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">);</span>
+<span class="c1">// a single connection will be established</span>
+</pre></div>
+</div>
+<p>That behaviour can be disabled with the <code class="docutils literal notranslate"><span class="pre">forceNew</span></code> option:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">adminSocket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">forceNew</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="c1">// will create two distinct connections</span>
+</pre></div>
+</div>
+<p>Note: reusing the same namespace will also create two connections</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">socket2</span> <span class="o">=</span> <span class="nx">io</span><span class="p">();</span>
+<span class="c1">// will also create two distinct connections</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-custom-path">
+<h3>With custom <code class="docutils literal notranslate"><span class="pre">path</span></code><a class="headerlink" href="#with-custom-path" title="永久链接至标题">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/myownpath&#39;</span>
+<span class="p">});</span>
+
+<span class="c1">// server-side</span>
+<span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)({</span>
+  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/myownpath&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The request URLs will look like:
+<code class="docutils literal notranslate"><span class="pre">localhost/myownpath/?EIO=3&amp;transport=polling&amp;sid=&lt;id&gt;</span></code></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost/admin&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/mypath&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Here, the socket connects to the <code class="docutils literal notranslate"><span class="pre">admin</span></code> namespace, with the custom
+path <code class="docutils literal notranslate"><span class="pre">mypath</span></code>.</p>
+<p>The request URLs will look like:
+<code class="docutils literal notranslate"><span class="pre">localhost/mypath/?EIO=3&amp;transport=polling&amp;sid=&lt;id&gt;</span></code> (the namespace is
+sent as part of the payload).</p>
+</div>
+<div class="section" id="with-query-parameters">
+<h3>With query parameters<a class="headerlink" href="#with-query-parameters" title="永久链接至标题">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost?token=abc&#39;</span><span class="p">);</span>
+
+<span class="c1">// server-side</span>
+<span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span>
+
+<span class="c1">// middleware</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">handshake</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">token</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">token</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">next</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;authentication error&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="c1">// then</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">socket</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">handshake</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">token</span><span class="p">;</span>
+  <span class="c1">// ...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-query-option">
+<h3>With query option<a class="headerlink" href="#with-query-option" title="永久链接至标题">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
+  <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">token</span><span class="o">:</span> <span class="s1">&#39;cde&#39;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The query content can also be updated on reconnection:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;reconnect_attempt&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">opts</span><span class="p">.</span><span class="nx">query</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">token</span><span class="o">:</span> <span class="s1">&#39;fgh&#39;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-extraheaders">
+<h3>With <code class="docutils literal notranslate"><span class="pre">extraHeaders</span></code><a class="headerlink" href="#with-extraheaders" title="永久链接至标题">¶</a></h3>
+<p>This only works if <code class="docutils literal notranslate"><span class="pre">polling</span></code> transport is enabled (which is the
+default). Custom headers will not be appended when using <code class="docutils literal notranslate"><span class="pre">websocket</span></code>
+as the transport. This happens because the WebSocket handshake does not
+honor custom headers. (For background see the <a class="reference external" href="https://tools.ietf.org/html/rfc6455#section-4">WebSocket protocol
+RFC</a>)</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
+  <span class="nx">transportOptions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">polling</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">extraHeaders</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;x-clientid&#39;</span><span class="o">:</span> <span class="s1">&#39;abc&#39;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// server-side</span>
+<span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span>
+
+<span class="c1">// middleware</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">clientId</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">handshake</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-clientid&#39;</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">clientId</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">next</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;authentication error&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-websocket-transport-only">
+<h3>With <code class="docutils literal notranslate"><span class="pre">websocket</span></code> transport only<a class="headerlink" href="#with-websocket-transport-only" title="永久链接至标题">¶</a></h3>
+<p>By default, a long-polling connection is established first, then
+upgraded to “better” transports (like WebSocket). If you like to live
+dangerously, this part can be skipped:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
+  <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;websocket&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="c1">// on reconnection, reset the transports option, as the Websocket</span>
+<span class="c1">// connection may have failed (caused by proxy, firewall, browser, ...)</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;reconnect_attempt&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">opts</span><span class="p">.</span><span class="nx">transports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;polling&#39;</span><span class="p">,</span> <span class="s1">&#39;websocket&#39;</span><span class="p">];</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-a-custom-parser">
+<h3>With a custom parser<a class="headerlink" href="#with-a-custom-parser" title="永久链接至标题">¶</a></h3>
+<p>The default <a class="reference external" href="https://github.com/socketio/socket.io-parser">parser</a>
+promotes compatibility (support for <code class="docutils literal notranslate"><span class="pre">Blob</span></code>, <code class="docutils literal notranslate"><span class="pre">File</span></code>, binary check) at
+the expense of performance. A custom parser can be provided to match the
+needs of your application. Please see the example
+<a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/custom-parsers">here</a>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-msgpack-parser&#39;</span><span class="p">);</span> <span class="c1">// or require(&#39;socket.io-json-parser&#39;)</span>
+<span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
+  <span class="nx">parser</span><span class="o">:</span> <span class="nx">parser</span>
+<span class="p">});</span>
+
+<span class="c1">// the server-side must have the same parser, to be able to communicate</span>
+<span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)({</span>
+  <span class="nx">parser</span><span class="o">:</span> <span class="nx">parser</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-a-self-signed-certificate">
+<h3>With a self-signed certificate<a class="headerlink" href="#with-a-self-signed-certificate" title="永久链接至标题">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// server-side</span>
+<span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;https&#39;</span><span class="p">).</span><span class="nx">createServer</span><span class="p">({</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;server-key.pem&#39;</span><span class="p">),</span>
+  <span class="nx">cert</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;server-cert.pem&#39;</span><span class="p">)</span>
+<span class="p">});</span>
+<span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">server</span><span class="p">);</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+
+<span class="c1">// client-side</span>
+<span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
+  <span class="c1">// option 1</span>
+  <span class="nx">ca</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;server-cert.pem&#39;</span><span class="p">),</span>
+
+  <span class="c1">// option 2. WARNING: it leaves you vulnerable to MITM attacks!</span>
+  <span class="nx">rejectUnauthorized</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="manager">
+<h1>Manager<a class="headerlink" href="#manager" title="永久链接至标题">¶</a></h1>
+<div class="section" id="new-manager-url-options">
+<h2>new Manager(url[, options])<a class="headerlink" href="#new-manager-url-options" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code> <em>(String)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager</span></code></p></li>
+</ul>
+<p>Available options:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 44%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/socket.io</span></code></p></td>
+<td><p> name of the path that
+is captured on the
+server side</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reconnect</span>
+<span class="pre">ion</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p> whether to reconnect
+automatically</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id1"><span class="problematic" id="id2">``</span></a>reconnect
+ionAttempts
+``</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Infinity</span></code></p></td>
+<td><p>number of reconnection
+attempts before giving
+up</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reconnect</span>
+<span class="pre">ionDelay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
+<td><p>how long to initially
+wait before attempting
+a new reconnection
+(<code class="docutils literal notranslate"><span class="pre">1000</span></code>). Affected by
++/-
+<code class="docutils literal notranslate"><span class="pre">randomizationFactor</span></code>
+,
+for example the default
+initial delay will be
+between 500 to 1500ms.</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id3"><span class="problematic" id="id4">``</span></a>reconnect
+ionDelayMax
+``</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></td>
+<td><p>maximum amount of time
+to wait between
+reconnections
+(<code class="docutils literal notranslate"><span class="pre">5000</span></code>). Each
+attempt increases the
+reconnection delay by
+2x along with a
+randomization as above</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id5"><span class="problematic" id="id6">``</span></a>randomiza
+tionFactor`
+`</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+<td><p>0 &lt;=
+randomizationFactor &lt;=
+1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20000</span></code></p></td>
+<td><p>connection timeout
+before a
+<code class="docutils literal notranslate"><span class="pre">connect_error</span></code> and
+<code class="docutils literal notranslate"><span class="pre">connect_timeout</span></code>
+events are emitted</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">autoConne</span>
+<span class="pre">ct</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p> by setting this false,
+you have to call
+<code class="docutils literal notranslate"><span class="pre">manager.open</span></code>
+whenever you decide
+it’s appropriate</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">query</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p>additional query
+parameters that are
+sent when connecting a
+namespace (then found
+in
+<code class="docutils literal notranslate"><span class="pre">socket.handshake.quer</span>
+<span class="pre">y</span></code>
+object on the
+server-side)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">parser</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>the parser to use.
+Defaults to an instance
+of the <code class="docutils literal notranslate"><span class="pre">Parser</span></code> that
+ships with socket.io.
+See
+<a class="reference external" href="https://github.com/socketio/socket.io-parser">socket.io-parser</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Available options for the underlying Engine.IO client:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 44%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">upgrade</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p>whether the client
+should try to upgrade
+the transport from
+long-polling to
+something better.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">forceJSON</span>
+<span class="pre">P</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>forces JSONP for
+polling transport.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jsonp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p>determines whether to
+use JSONP when
+necessary for polling.
+If disabled (by
+settings to false) an
+error will be emitted
+(saying “No transports
+available”) if no other
+transports are
+available. If another
+transport is available
+for opening a
+connection
+(e.g. WebSocket) that
+transport will be used
+instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">forceBase</span>
+<span class="pre">64</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>forces base 64 encoding
+for polling transport
+even when XHR2
+responseType is
+available and WebSocket
+even if the used
+standard supports
+binary.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enablesXD</span>
+<span class="pre">R</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>enables XDomainRequest
+for IE8 to avoid
+loading bar flashing
+with click sound.
+default to <code class="docutils literal notranslate"><span class="pre">false</span></code>
+because XDomainRequest
+has a flaw of not
+sending cookie.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">timestamp</span>
+<span class="pre">Requests</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>whether to add the
+timestamp with each
+transport request.
+Note: polling requests
+are always stamped
+unless this option is
+explicitly set to
+<code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">timestamp</span>
+<span class="pre">Param</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
+<td><p> the timestamp
+parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">policyPor</span>
+<span class="pre">t</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">843</span></code></p></td>
+<td><p>port the policy server
+listens on</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transport</span>
+<span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">['polling',</span> <span class="pre">'websocket']</span></code></p></td>
+<td><p>a list of transports to
+try (in order).
+<code class="docutils literal notranslate"><span class="pre">Engine</span></code> always
+attempts to connect
+directly with the first
+one, provided the
+feature detection test
+for it passes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transport</span>
+<span class="pre">Options</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p>hash of options,
+indexed by transport
+name, overriding the
+common options for the
+given transport</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rememberU</span>
+<span class="pre">pgrade</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>If true and if the
+previous websocket
+connection to the
+server succeeded, the
+connection attempt will
+bypass the normal
+upgrade process and
+will initially try
+websocket. A connection
+attempt following a
+transport error will
+use the normal upgrade
+process. It is
+recommended you turn
+this on only when using
+SSL/TLS connections, or
+if you know that your
+network does not block
+websockets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">onlyBinar</span>
+<span class="pre">yUpgrades</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>whether transport
+upgrades should be
+restricted to
+transports supporting
+binary data</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">requestTi</span>
+<span class="pre">meout</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>timeout for xhr-polling
+requests in
+milliseconds (<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+(<em>only for polling
+transport</em>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id7"><span class="problematic" id="id8">``</span></a>protocols
+``</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>a list of subprotocols
+(see <cite>MDN
+reference &lt;https://deve
+loper.mozilla.org/en-US
+/docs/Web/API/WebSocket
+s_API/Writing_WebSocket
+_servers#Subprotocols&gt;</cite>
+__)
+(<em>only for websocket
+transport</em>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Node.js-only options for the underlying Engine.IO client:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 44%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">agent</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>the <code class="docutils literal notranslate"><span class="pre">http.Agent</span></code> to
+use</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pfx</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Certificate, Private
+key and CA certificates
+to use for SSL.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Private key to use for
+SSL.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">passphras</span>
+<span class="pre">e</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>A string of passphrase
+for the private key or
+pfx.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cert</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Public x509 certificate
+to use.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ca</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>An authority
+certificate or array of
+authority certificates
+to check the remote
+host against.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ciphers</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>A string describing the
+ciphers to use or
+exclude. Consult the
+<a class="reference external" href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">cipher format
+list</a>
+for details on the
+format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rejectUna</span>
+<span class="pre">uthorized</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>If true, the server
+certificate is verified
+against the list of
+supplied CAs. An
+‘error’ event is
+emitted if verification
+fails. Verification
+happens at the
+connection level,
+before the HTTP request
+is sent.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">perMessag</span>
+<span class="pre">eDeflate</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p>parameters of the
+WebSocket
+permessage-deflate
+extension (see <a class="reference external" href="https://github.com/einaros/ws">ws
+module</a>
+api docs). Set to
+<code class="docutils literal notranslate"><span class="pre">false</span></code> to disable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">extraHead</span>
+<span class="pre">ers</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p>Headers that will be
+passed for each request
+to the server (via
+xhr-polling and via
+websockets). These
+values then can be used
+during handshake or for
+special proxies.</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id9"><span class="problematic" id="id10">``</span></a>forceNode
+``</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>Uses NodeJS
+implementation for
+websockets - even if
+there is a native
+Browser-Websocket
+available, which is
+preferred by default
+over the NodeJS
+implementation. (This
+is useful when using
+hybrid platforms like
+nw.js or electron)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">localAddr</span>
+<span class="pre">ess</span></code></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>the local IP address to
+connect to</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="manager-reconnection-value">
+<h2>manager.reconnection([value])<a class="headerlink" href="#manager-reconnection-value" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Boolean)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager|Boolean</span></code></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnection</span></code> option, or returns it if no parameters are
+passed.</p>
+</div>
+<div class="section" id="manager-reconnectionattempts-value">
+<h2>manager.reconnectionAttempts([value])<a class="headerlink" href="#manager-reconnectionattempts-value" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Number)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code> option, or returns it if no parameters
+are passed.</p>
+</div>
+<div class="section" id="manager-reconnectiondelay-value">
+<h2>manager.reconnectionDelay([value])<a class="headerlink" href="#manager-reconnectiondelay-value" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Number)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnectionDelay</span></code> option, or returns it if no parameters
+are passed.</p>
+</div>
+<div class="section" id="manager-reconnectiondelaymax-value">
+<h2>manager.reconnectionDelayMax([value])<a class="headerlink" href="#manager-reconnectiondelaymax-value" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Number)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnectionDelayMax</span></code> option, or returns it if no parameters
+are passed.</p>
+</div>
+<div class="section" id="manager-timeout-value">
+<h2>manager.timeout([value])<a class="headerlink" href="#manager-timeout-value" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Number)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> option, or returns it if no parameters are passed.</p>
+</div>
+<div class="section" id="manager-open-callback">
+<h2>manager.open([callback])<a class="headerlink" href="#manager-open-callback" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Manager</span></code></p></li>
+</ul>
+<p>If the manager was initiated with <code class="docutils literal notranslate"><span class="pre">autoConnect</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>, launch a
+new connection attempt.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">callback</span></code> argument is optional and will be called once the
+attempt fails/succeeds.</p>
+</div>
+<div class="section" id="manager-connect-callback">
+<h2>manager.connect([callback])<a class="headerlink" href="#manager-connect-callback" title="永久链接至标题">¶</a></h2>
+<p>Synonym of <a class="reference external" href="#manageropencallback">manager.open([callback])</a>.</p>
+</div>
+<div class="section" id="manager-socket-nsp-options">
+<h2>manager.socket(nsp, options)<a class="headerlink" href="#manager-socket-nsp-options" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nsp</span></code> <em>(String)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p></li>
+</ul>
+<p>Creates a new <code class="docutils literal notranslate"><span class="pre">Socket</span></code> for the given namespace.</p>
+</div>
+<div class="section" id="event-connect-error">
+<h2>Event: ‘connect_error’<a class="headerlink" href="#event-connect-error" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <em>(Object)</em> error object</p></li>
+</ul>
+<p>Fired upon a connection error.</p>
+</div>
+<div class="section" id="event-connect-timeout">
+<h2>Event: ‘connect_timeout’<a class="headerlink" href="#event-connect-timeout" title="永久链接至标题">¶</a></h2>
+<p>Fired upon a connection timeout.</p>
+</div>
+<div class="section" id="event-reconnect">
+<h2>Event: ‘reconnect’<a class="headerlink" href="#event-reconnect" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attempt</span></code> <em>(Number)</em> reconnection attempt number</p></li>
+</ul>
+<p>Fired upon a successful reconnection.</p>
+</div>
+<div class="section" id="event-reconnect-attempt">
+<h2>Event: ‘reconnect_attempt’<a class="headerlink" href="#event-reconnect-attempt" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attempt</span></code> <em>(Number)</em> reconnection attempt number</p></li>
+</ul>
+<p>Fired upon an attempt to reconnect.</p>
+</div>
+<div class="section" id="event-reconnecting">
+<h2>Event: ‘reconnecting’<a class="headerlink" href="#event-reconnecting" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attempt</span></code> <em>(Number)</em> reconnection attempt number</p></li>
+</ul>
+<p>Fired upon an attempt to reconnect.</p>
+</div>
+<div class="section" id="event-reconnect-error">
+<h2>Event: ‘reconnect_error’<a class="headerlink" href="#event-reconnect-error" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <em>(Object)</em> error object</p></li>
+</ul>
+<p>Fired upon a reconnection attempt error.</p>
+</div>
+<div class="section" id="event-reconnect-failed">
+<h2>Event: ‘reconnect_failed’<a class="headerlink" href="#event-reconnect-failed" title="永久链接至标题">¶</a></h2>
+<p>Fired when couldn’t reconnect within <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code>.</p>
+</div>
+<div class="section" id="event-ping">
+<h2>Event: ‘ping’<a class="headerlink" href="#event-ping" title="永久链接至标题">¶</a></h2>
+<p>Fired when a ping packet is written out to the server.</p>
+</div>
+<div class="section" id="event-pong">
+<h2>Event: ‘pong’<a class="headerlink" href="#event-pong" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ms</span></code> <em>(Number)</em> number of ms elapsed since <code class="docutils literal notranslate"><span class="pre">ping</span></code> packet (i.e.:
+latency).</p></li>
+</ul>
+<p>Fired when a pong is received from the server.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
