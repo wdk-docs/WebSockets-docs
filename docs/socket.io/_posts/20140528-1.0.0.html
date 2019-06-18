@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../socket-io-with-apache-cordova.html" />
+    <link rel="next" title="Socket.IO — Apache Cordova" href="../socket-io-with-apache-cordova.html" />
     <link rel="prev" title="Native Socket.IO and Android" href="20150120-native-socket-io-and-android.html" /> 
 </head>
 
@@ -83,13 +83,16 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started/index.html">Get started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">发布历史</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">发布历史记录</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="20170624-2.0.x.html">Socket.IO 2.0.1, 2.0.2 and 2.0.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20170515-open-collective.html">Socket.IO is on Open Collective</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20170513-2-0-0.html">Socket.IO 2.0.0</a></li>
@@ -97,27 +100,34 @@
 <li class="toctree-l3"><a class="reference internal" href="20160111-1.4.4.html">Socket.IO 1.4.4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20160108-1.4.x.html">Socket.IO 1.4.1, 1.4.2 and 1.4.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20160106-1.4.0.html">Socket.IO 1.4.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150921-1.3.7.html">Socket.IO 1.3.7</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150715-1.3.6.html">Socket.IO 1.3.6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150714-p2p.html">Socket.IO P2P</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150413-socket-io-cpp.html">Socket.IO C++</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150309-ios.html">Socket.IO on iOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150303-1.3.5.html">Socket.IO 1.3.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20150214-1.3.4.html">Socket.IO 1.3.4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150204-1.3.3.html">Socket.IO 1.3.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20150120-native-socket-io-and-android.html">Native Socket.IO and Android</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Introducing Socket.IO 1.0</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#new-engine">New engine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#binary-support">Binary support</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#automated-testing">Automated Testing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#integration">Integration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cdn-delivery">CDN delivery</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#future-innovation">Future innovation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#credits">Credits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">New engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Binary support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Automated Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Scalability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Better debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Streamlined APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">CDN delivery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Future innovation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Credits</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -165,7 +175,7 @@
         
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
         
-          <li><a href="index.html">发布历史</a> &raquo;</li>
+          <li><a href="index.html">发布历史记录</a> &raquo;</li>
         
       <li>Introducing Socket.IO 1.0</li>
     
@@ -213,8 +223,8 @@ feel free to jump to the parts that are most interesting to you:</p>
 <li><p><a class="reference external" href="#Future-innovation">Future innovation</a></p></li>
 <li><p><a class="reference external" href="#Credits">Credits</a></p></li>
 </ol>
-<div class="section" id="new-engine">
-<h2>New engine<a class="headerlink" href="#new-engine" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>New engine<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>The Socket.IO codebase no longer deals with transports and browser
 incompatibilities. That work has been relegated to a new module we’ve
 been perfecting for months called Engine.IO that implements a
@@ -259,8 +269,8 @@ connection with XHR or JSONP right away, and then attempts to
 which relies on timeouts, this means that <em>none of your users will have
 a degraded experience</em>.</p>
 </div>
-<div class="section" id="binary-support">
-<h2>Binary support<a class="headerlink" href="#binary-support" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>Binary support<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>Users have been asking for the ability to send binary data for a while,
 especially after <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> added support for it.</p>
 <p>The main issue was that if we had modeled our binary support after the
@@ -329,8 +339,8 @@ object around, and let Socket.IO do the rest.</p>
 <p>Just for fun, I also installed and ran one of my favorite first person
 shooters:</p>
 <video id="cs-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/Ra6PJnoLBq.mp4" type="video/mp4"></video></div>
-<div class="section" id="automated-testing">
-<h2>Automated Testing<a class="headerlink" href="#automated-testing" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>Automated Testing<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>Every commit to the Socket.IO codebase now triggers a testing matrix
 totaling to 25 browsers, including Android and iOS.</p>
 <p>We accomplish this by having <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> seamlessly set up a reverse
@@ -338,7 +348,9 @@ tunnel to ephemeral ports in your computer (thus making it accessible
 from the outside world), and have them execute on the Sauce Labs cloud,
 which is in charge of virtualizing and executing browsers on all the
 environments we care about.</p>
-<p>## Scalability</p>
+</div>
+<div class="section" id="id4">
+<h2>Scalability<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>We simplified the approach towards rooms and multi-node scalability
 dramatically. Instead of storing and/or replicating data across nodes,
 Socket.IO is now only concerned with passing events around.</p>
@@ -360,8 +372,8 @@ now simply get encoded and distributed to other nodes whenever you
 broadcast, and we don’t deal with storage.</p>
 <p>This leads directly into our next goal: integration with other backends.</p>
 </div>
-<div class="section" id="integration">
-<h2>Integration<a class="headerlink" href="#integration" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2>Integration<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>Chances are good that your existing application deployments are written
 in a variety of languages and frameworks, and are not just limited to
 Node.JS. Even if it was all Node.JS, you probably at some point want to
@@ -387,7 +399,9 @@ anywhere:</p>
 </div>
 <p>This makes it really easy to turn any existing application into a
 realtime application!</p>
-<p>## Better debugging</p>
+</div>
+<div class="section" id="id6">
+<h2>Better debugging<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>Socket.IO is now completely instrumented by a minimalistic yet
 tremendously powerful utility called debug by TJ Holowaychuk.</p>
 <p>In the past, the Socket.IO server would default to logging everything
@@ -404,7 +418,9 @@ all output is suppressed, and you can opt into seeing messages by
 supplying the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> env variable (Node.JS) or the
 <code class="docutils literal notranslate"><span class="pre">localStorage.debug</span></code> property (Browsers).</p>
 <p>You can see it in action for example on our homepage:</p>
-<video id="debugging-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/IL9alTr0eO.mp4" type="video/mp4"></video><p>## Streamlined APIs</p>
+<video id="debugging-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/IL9alTr0eO.mp4" type="video/mp4"></video></div>
+<div class="section" id="id7">
+<h2>Streamlined APIs<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">socket.io</span></code> module now exports the attachment function directly
 (previously <code class="docutils literal notranslate"><span class="pre">.listen</span></code>). It’s even easier now to attach socket.io to a
 HTTP server:</p>
@@ -425,8 +441,8 @@ Now you can call directly on <code class="docutils literal notranslate"><span cl
 </pre></div>
 </div>
 </div>
-<div class="section" id="cdn-delivery">
-<h2>CDN delivery<a class="headerlink" href="#cdn-delivery" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h2>CDN delivery<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>One of the best decisions we made early on was that implementing a
 Socket.IO server would not only give you access to the realtime
 protocol, but Socket.IO itself would also serve the client.</p>
@@ -442,8 +458,8 @@ free, forever, and has built-in SSL support:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="future-innovation">
-<h2>Future innovation<a class="headerlink" href="#future-innovation" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h2>Future innovation<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>The core Socket.IO projects will continue to improve with lots of more
 frequent releases, with the sole goal of improving reliability, speed
 and making the codebase smaller and easier to maintain. Socket.IO 2.0
@@ -478,7 +494,9 @@ that allow you to easily introspect what events are being sent, when,
 and what their parameters are.</p>
 <p>This project is being led by the talented Nick LaGrow (Github), Samaan
 Ghani (Github) and David Cummings (Twitter).</p>
-<p>### New languages and frameworks</p>
+</div>
+<div class="section" id="new-languages-and-frameworks">
+<h3>New languages and frameworks<a class="headerlink" href="#new-languages-and-frameworks" title="永久链接至标题">¶</a></h3>
 <p>A lot of effort has gone into specing and documenting the Engine.IO
 protocol and Socket.IO protocol.</p>
 <p>The main goal behind this is that the Node.JS servers and clients become
@@ -487,8 +505,8 @@ Interoperability within the larger ecosystem is one of our biggest goals
 for 2014 and beyond.</p>
 </div>
 </div>
-<div class="section" id="credits">
-<h2>Credits<a class="headerlink" href="#credits" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h2>Credits<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>This release has been a big team effort. Special thanks go out to our
 new core team:</p>
 <ul class="simple">
@@ -542,7 +560,7 @@ home to Open Source innovation.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../socket-io-with-apache-cordova.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../socket-io-with-apache-cordova.html" class="btn btn-neutral float-right" title="Socket.IO — Apache Cordova" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="20150120-native-socket-io-and-android.html" class="btn btn-neutral float-left" title="Native Socket.IO and Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,0 +1,258 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 22:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/get-started.rst:2
+msgid "Chat - Get Started"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:4
+msgid "In this guide we’ll create a basic chat application. It requires almost no basic prior knowledge of Node.JS or Socket.IO, so it’s ideal for users of all knowledge levels."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:9
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:11
+msgid "Writing a chat application with popular web applications stacks like LAMP (PHP) has traditionally been very hard. It involves polling the server for changes, keeping track of timestamps, and it’s a lot slower than it should be."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:16
+msgid "Sockets have traditionally been the solution around which most real-time chat systems are architected, providing a bi-directional communication channel between a client and a server."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:20
+msgid "This means that the server can *push* messages to clients. Whenever you write a chat message, the idea is that the server will get it and push it to all other connected clients."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:25
+msgid "The web framework"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:27
+msgid "The first goal is to setup a simple HTML webpage that serves out a form and a list of messages. We’re going to use the Node.JS web framework ``express`` to this end. Make sure `Node.JS <https://nodejs.org>`_ is installed."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:32
+msgid "First let’s create a ``package.json`` manifest file that describes our project. I recommend you place it in a dedicated empty directory (I’ll call mine ``chat-example``)."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:45
+msgid "Now, in order to easily populate the ``dependencies`` with the things we need, we’ll use ``npm install --save``:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:52
+msgid "Now that express is installed we can create an ``index.js`` file that will setup our application."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:68
+msgid "This translates into the following:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:70
+msgid "Express initializes ``app`` to be a function handler that you can supply to an HTTP server (as seen in line 2)."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:73
+msgid "We define a route handler ``/`` that gets called when we hit our website home."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:76
+msgid "We make the http server listen on port 3000."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:78
+msgid "If you run ``node index.js`` you should see the following:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:80
+msgid "And if you point your browser to ``http://localhost:3000``:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:83
+msgid "Serving HTML"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:85
+msgid "So far in ``index.js`` we’re calling ``res.send`` and pass it a HTML string. Our code would look very confusing if we just placed our entire application’s HTML there. Instead, we’re going to create a ``index.html`` file and serve it."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:90
+msgid "Let’s refactor our route handler to use ``sendFile`` instead:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:98
+msgid "And populate ``index.html`` with the following:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:125
+msgid "If you restart the process (by hitting Control+C and running ``node index`` again) and refresh the page it should look like this:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:129
+msgid "Integrating Socket.IO"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:131
+msgid "Socket.IO is composed of two parts:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:133
+msgid "A server that integrates with (or mounts on) the Node.JS HTTP Server: `socket.io <https://github.com/socketio/socket.io>`_"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:135
+msgid "A client library that loads on the browser side: `socket.io-client <https://github.com/socketio/socket.io-client>`_"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:138
+msgid "During development, ``socket.io`` serves the client automatically for us, as we’ll see, so for now we only have to install one module:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:145
+msgid "That will install the module and add the dependency to ``package.json``. Now let’s edit ``index.js`` to add it:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:166
+msgid "Notice that I initialize a new instance of ``socket.io`` by passing the ``http`` (the HTTP server) object. Then I listen on the ``connection`` event for incoming sockets, and I log it to the console."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:170
+msgid "Now in index.html I add the following snippet before the ``</body>``:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:179
+msgid "That’s all it takes to load the ``socket.io-client``, which exposes a ``io`` global (and the endpoint ``GET /socket.io/socket.io.js``), and then connect."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:183
+msgid "If you would like to use the local version of the client-side JS file, you can find it at ``node_modules/socket.io-client/dist/socket.io.js``."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:186
+msgid "Notice that I’m not specifying any URL when I call ``io()``, since it defaults to trying to connect to the host that serves the page."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:189
+msgid "If you now reload the server and the website you should see the console print “a user connected”."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:192
+msgid "Try opening several tabs, and you’ll see several messages:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:194
+msgid "Each socket also fires a special ``disconnect`` event:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:205
+msgid "Then if you refresh a tab several times you can see it in action:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:208
+msgid "Emitting events"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:210
+msgid "The main idea behind Socket.IO is that you can send and receive any events you want, with any data you want. Any objects that can be encoded as JSON will do, and `binary data </blog/introducing-socket-io-1-0/#binary>`_ is supported too."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:215
+msgid "Let’s make it so that when the user types in a message, the server gets it as a ``chat message`` event. The ``script`` section in ``index.html`` should now look as follows:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:235
+msgid "And in ``index.js`` we print out the ``chat message`` event:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:245
+msgid "The result should be like the following video:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:254
+msgid "Broadcasting"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:256
+msgid "The next goal is for us to emit the event from the server to the rest of the users."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:259
+msgid "In order to send an event to everyone, Socket.IO gives us the ``io.emit``:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:266
+msgid "If you want to send a message to everyone except for a certain socket, we have the ``broadcast`` flag:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:275
+msgid "In this case, for the sake of simplicity we’ll send the message to everyone, including the sender."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:286
+msgid "And on the client side when we capture a ``chat message`` event we’ll include it in the page. The total client-side JavaScript code now amounts to:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:307
+msgid "And that completes our chat application, in about 20 lines of code! This is what it looks like:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:317
+msgid "Homework"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:319
+msgid "Here are some ideas to improve the application:"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:321
+msgid "Broadcast a message to connected users when someone connects or disconnects."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:323
+msgid "Add support for nicknames."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:324
+msgid "Don’t send the same message to the user that sent it himself. Instead, append the message directly as soon as he presses enter."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:326
+msgid "Add “{user} is typing” functionality."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:327
+msgid "Show who’s online."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:328
+msgid "Add private messaging."
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:329
+msgid "Share your improvements!"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:332
+msgid "Getting this example"
+msgstr ""
+
+#: ../../source/socket.io/get-started.rst:334
+msgid "You can find it on GitHub `here <https://github.com/socketio/chat-example>`_."
+msgstr ""
+

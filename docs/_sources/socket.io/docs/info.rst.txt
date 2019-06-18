@@ -1,4 +1,4 @@
-Docs
+introduce
 ===========
 
 What Socket.IO is
@@ -8,12 +8,12 @@ Socket.IO is a library that enables real-time, bidirectional and
 event-based communication between the browser and the server. It
 consists of:
 
--  a Node.js server: `Source <https://github.com/socketio/socket.io>`__
-   \| `API </docs/server-api/>`__
+-  a Node.js server: `Source <https://github.com/socketio/socket.io>`_
+   \| `API </docs/server-api/>`_
 -  a Javascript client library for the browser (which can be also run
    from Node.js):
-   `Source <https://github.com/socketio/socket.io-client>`__ \|
-   `API </docs/client-api/>`__
+   `Source <https://github.com/socketio/socket.io-client>`_ \|
+   `API </docs/client-api/>`_
 
 Its main features are:
 
@@ -26,10 +26,10 @@ Connections are established even in the presence of:
 -  personal firewall and antivirus software.
 
 For this purpose, it relies on
-`Engine.IO <https://github.com/socketio/engine.io>`__, which first
+`Engine.IO <https://github.com/socketio/engine.io>`_, which first
 establishes a long-polling connection, then tries to upgrade to better
 transports that are “tested” on the side, like WebSocket. Please see the
-`Goals <https://github.com/socketio/engine.io#goals>`__ section for more
+`Goals <https://github.com/socketio/engine.io#goals>`_ section for more
 information.
 
 Auto-reconnection support
@@ -38,7 +38,7 @@ Auto-reconnection support
 Unless instructed otherwise a disconnected client will try to reconnect
 forever, until the server is available again. Please see the available
 reconnection options
-`here <https://socket.io/docs/client-api/#new-Manager-url-options>`__.
+`here <https://socket.io/docs/client-api/#new-Manager-url-options>`_.
 
 Disconnection detection
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,27 +58,27 @@ Binary support
 
 Any serializable data structures can be emitted, including:
 
--  `ArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`__
-   and `Blob <https://developer.mozilla.org/en-US/docs/Web/API/Blob>`__
+-  `ArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`_
+   and `Blob <https://developer.mozilla.org/en-US/docs/Web/API/Blob>`_
    in the browser
--  `ArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`__
-   and `Buffer <https://nodejs.org/api/buffer.html>`__ in Node.js
+-  `ArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`_
+   and `Buffer <https://nodejs.org/api/buffer.html>`_ in Node.js
 
 Multiplexing support
 ~~~~~~~~~~~~~~~~~~~~
 
 In order to create separation of concerns within your application (for
 example per module, or based on permissions), Socket.IO allows you to
-create several `Namespaces </docs/rooms-and-namespaces/#Namespaces>`__,
+create several `Namespaces </docs/rooms-and-namespaces/#Namespaces>`_,
 which will act as separate communication channels but will share the
 same underlying connection.
 
 Room support
 ~~~~~~~~~~~~
 
-Within each `Namespace </docs/rooms-and-namespaces/#Namespaces>`__, you
+Within each `Namespace </docs/rooms-and-namespaces/#Namespaces>`_, you
 can define arbitrary channels, called
-`Rooms </docs/rooms-and-namespaces/#Rooms>`__, that sockets can join and
+`Rooms </docs/rooms-and-namespaces/#Rooms>`_, that sockets can join and
 leave. You can then broadcast to any given room, reaching every socket
 that has joined it.
 
@@ -106,7 +106,7 @@ when a message acknowledgement is needed. That is why a WebSocket client
 will not be able to successfully connect to a Socket.IO server, and a
 Socket.IO client will not be able to connect to a WebSocket server
 either. Please see the protocol specification
-`here <https://github.com/socketio/socket.io-protocol>`__.
+`here <https://github.com/socketio/socket.io-protocol>`_.
 
 .. code:: js
 
@@ -119,11 +119,11 @@ Installing
 Server
 ~~~~~~
 
-::
+.. code:: sh
 
    npm install --save socket.io
 
-`Source <https://github.com/socketio/socket.io>`__
+`Source <https://github.com/socketio/socket.io>`_
 
 Javascript Client
 ~~~~~~~~~~~~~~~~~
@@ -132,18 +132,18 @@ A standalone build of the client is exposed by default by the server at
 ``/socket.io/socket.io.js``.
 
 It can also be served from a CDN, like
-`cdnjs <https://cdnjs.com/libraries/socket.io>`__.
+`cdnjs <https://cdnjs.com/libraries/socket.io>`_.
 
 To use it from Node.js, or with a bundler like
-`webpack <https://webpack.js.org/>`__ or
-`browserify <http://browserify.org/>`__, you can also install the
+`webpack <https://webpack.js.org/>`_ or
+`browserify <http://browserify.org/>`_, you can also install the
 package from npm:
 
-::
+.. code:: sh
 
    npm install --save socket.io-client
 
-`Source <https://github.com/socketio/socket.io-client>`__
+`Source <https://github.com/socketio/socket.io-client>`_
 
 Other client implementations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -206,9 +206,8 @@ Client (index.html)
      });
    </script>
 
-## Using with Express
-
-.. _server-app.js-1:
+Using with Express
+--------------------------
 
 Server (app.js)
 ~~~~~~~~~~~~~~~
@@ -315,7 +314,8 @@ Server (app.js)
        socket.emit('item', { news: 'item' });
      });
 
-### Client (index.html)
+Client (index.html)
+~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: html
 
@@ -346,7 +346,7 @@ receive ALL the tweets related to bieber your application won’t suffer.
 In that case, you might want to send those messages as volatile
 messages.
 
-### Server
+**Server**
 
 .. code:: js
 
@@ -431,8 +431,6 @@ Using it just as a cross-browser WebSocket
 If you just want the WebSocket semantics, you can do that too. Simply
 leverage ``send`` and listen on the ``message`` event:
 
-.. _server-app.js-4:
-
 Server (app.js)
 ~~~~~~~~~~~~~~~
 
@@ -444,8 +442,6 @@ Server (app.js)
      socket.on('message', function () { });
      socket.on('disconnect', function () { });
    });
-
-.. _client-index.html-3:
 
 Client (index.html)
 ~~~~~~~~~~~~~~~~~~~

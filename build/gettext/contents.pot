@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 16:53+0800\n"
+"POT-Creation-Date: 2019-06-18 16:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 msgid "WebSockets 文档"
 msgstr ""
 
-#: ../../source/contents.rst:18
+#: ../../source/contents.rst:20
 msgid "Indices and tables"
 msgstr ""
 
-#: ../../source/contents.rst:20
+#: ../../source/contents.rst:22
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../source/contents.rst:21
+#: ../../source/contents.rst:23
 msgid ":ref:`modindex`"
 msgstr ""
 
-#: ../../source/contents.rst:22
+#: ../../source/contents.rst:24
 msgid ":ref:`search`"
 msgstr ""
 

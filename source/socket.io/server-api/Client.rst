@@ -5,15 +5,13 @@ The ``Client`` class represents an incoming transport (engine.io)
 connection. A ``Client`` can be associated with many multiplexed
 ``Socket``\ s that belong to different ``Namespace``\ s.
 
-client.conn
------------
+.. function:: client.conn
 
 -  *(engine.Socket)*
 
 A reference to the underlying ``engine.io`` ``Socket`` connection.
 
-client.request
---------------
+.. function:: client.request
 
 -  *(Request)*
 

@@ -7,7 +7,8 @@ great projects (you may have heard about MochaJS, GulpJS or webpack,
 among lots of other awesome projects) in the quest to ensure the
 project’s sustainability.
 
-## What is an Open Collective?
+What is an Open Collective?
+-----------------------------------
 
 From their website:
 

@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" /> 
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="客户端" href="Client.html" />
+    <link rel="prev" title="命名空间" href="Namespace.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -79,11 +81,28 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">服务端API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="API.html">服务端 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Namespace.html">命名空间</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html">客户端</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -129,6 +148,10 @@
     
       <li><a href="../../contents.html">Docs</a> &raquo;</li>
         
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">服务端API</a> &raquo;</li>
+        
       <li>Socket</li>
     
     
@@ -166,16 +189,21 @@ any other <code class="docutils literal notranslate"><span class="pre">EventEmit
 also appear as <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> methods (apart from <code class="docutils literal notranslate"><span class="pre">emit</span></code>) are
 implemented by <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code>, and documentation for <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code>
 applies.</p>
-<div class="section" id="socket-id">
-<h2>socket.id<a class="headerlink" href="#socket-id" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.id">
+<code class="descclassname">socket.</code><code class="descname">id</code><a class="headerlink" href="#socket.id" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(String)</em></p></li>
 </ul>
 <p>A unique identifier for the session, that comes from the underlying
 <code class="docutils literal notranslate"><span class="pre">Client</span></code>.</p>
-</div>
-<div class="section" id="socket-rooms">
-<h2>socket.rooms<a class="headerlink" href="#socket-rooms" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.rooms">
+<code class="descclassname">socket.</code><code class="descname">rooms</code><a class="headerlink" href="#socket.rooms" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(Object)</em></p></li>
 </ul>
@@ -189,34 +217,42 @@ room name.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-client">
-<h2>socket.client<a class="headerlink" href="#socket-client" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.client">
+<code class="descclassname">socket.</code><code class="descname">client</code><a class="headerlink" href="#socket.client" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(Client)</em></p></li>
 </ul>
 <p>A reference to the underlying <code class="docutils literal notranslate"><span class="pre">Client</span></code> object.</p>
-</div>
-<div class="section" id="socket-conn">
-<h2>socket.conn<a class="headerlink" href="#socket-conn" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.conn">
+<code class="descclassname">socket.</code><code class="descname">conn</code><a class="headerlink" href="#socket.conn" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(engine.Socket)</em></p></li>
 </ul>
 <p>A reference to the underlying <code class="docutils literal notranslate"><span class="pre">Client</span></code> transport connection (engine.io
 <code class="docutils literal notranslate"><span class="pre">Socket</span></code> object). This allows access to the IO transport layer, which
 still (mostly) abstracts the actual TCP/IP socket.</p>
-</div>
-<div class="section" id="socket-request">
-<h2>socket.request<a class="headerlink" href="#socket-request" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.request">
+<code class="descclassname">socket.</code><code class="descname">request</code><a class="headerlink" href="#socket.request" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(Request)</em></p></li>
 </ul>
 <p>A getter proxy that returns the reference to the <code class="docutils literal notranslate"><span class="pre">request</span></code> that
 originated the underlying engine.io <code class="docutils literal notranslate"><span class="pre">Client</span></code>. Useful for accessing
 request headers such as <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> or <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code>.</p>
-</div>
-<div class="section" id="socket-handshake">
-<h2>socket.handshake<a class="headerlink" href="#socket-handshake" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.handshake">
+<code class="descclassname">socket.</code><code class="descname">handshake</code><a class="headerlink" href="#socket.handshake" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(Object)</em></p></li>
 </ul>
@@ -245,9 +281,11 @@ request headers such as <code class="docutils literal notranslate"><span class="
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-use-fn">
-<h2>socket.use(fn)<a class="headerlink" href="#socket-use-fn" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.use">
+<code class="descclassname">socket.</code><code class="descname">use</code><a class="headerlink" href="#socket.use" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fn</span></code> <em>(Function)</em></p></li>
 </ul>
@@ -264,9 +302,11 @@ packets to clients.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-send-args-ack">
-<h2>socket.send([…args][, ack])<a class="headerlink" href="#socket-send-args-ack" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.send">
+<code class="descclassname">socket.</code><code class="descname">send</code><a class="headerlink" href="#socket.send" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ack</span></code> <em>(Function)</em></p></li>
@@ -274,9 +314,11 @@ packets to clients.</p>
 </ul>
 <p>Sends a <code class="docutils literal notranslate"><span class="pre">message</span></code> event. See <a class="reference external" href="#socketemiteventname-args-ack">socket.emit(eventName[, …args][,
 ack])</a>.</p>
-</div>
-<div class="section" id="socket-emit-eventname-args-ack">
-<h2>socket.emit(eventName[, …args][, ack])<a class="headerlink" href="#socket-emit-eventname-args-ack" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.emit">
+<code class="descclassname">socket.</code><code class="descname">emit</code><a class="headerlink" href="#socket.emit" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p><em>(overrides ``EventEmitter.emit``)</em> - <code class="docutils literal notranslate"><span class="pre">eventName</span></code> <em>(String)</em> -
 <code class="docutils literal notranslate"><span class="pre">args</span></code> - <code class="docutils literal notranslate"><span class="pre">ack</span></code> <em>(Function)</em> - <strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p>
 <p>Emits an event to the socket identified by the string name. Any other
@@ -303,9 +345,11 @@ answer.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-on-eventname-callback">
-<h2>socket.on(eventName, callback)<a class="headerlink" href="#socket-on-eventname-callback" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.on">
+<code class="descclassname">socket.</code><code class="descname">on</code><a class="headerlink" href="#socket.on" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p><em>(inherited from ``EventEmitter``)</em> - <code class="docutils literal notranslate"><span class="pre">eventName</span></code> <em>(String)</em> -
 <code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em> - <strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p>
 <p>Register a new handler for the given event.</p>
@@ -322,23 +366,33 @@ answer.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-once-eventname-listener">
-<h2>socket.once(eventName, listener)<a class="headerlink" href="#socket-once-eventname-listener" title="永久链接至标题">¶</a></h2>
-</div>
-<div class="section" id="socket-removelistener-eventname-listener">
-<h2>socket.removeListener(eventName, listener)<a class="headerlink" href="#socket-removelistener-eventname-listener" title="永久链接至标题">¶</a></h2>
-</div>
-<div class="section" id="socket-removealllisteners-eventname">
-<h2>socket.removeAllListeners([eventName])<a class="headerlink" href="#socket-removealllisteners-eventname" title="永久链接至标题">¶</a></h2>
-</div>
-<div class="section" id="socket-eventnames">
-<h2>socket.eventNames()<a class="headerlink" href="#socket-eventnames" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.once">
+<code class="descclassname">socket.</code><code class="descname">once</code><a class="headerlink" href="#socket.once" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="socket.removeListener">
+<code class="descclassname">socket.</code><code class="descname">removeListener</code><a class="headerlink" href="#socket.removeListener" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="socket.removeAllListeners">
+<code class="descclassname">socket.</code><code class="descname">removeAllListeners</code><a class="headerlink" href="#socket.removeAllListeners" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="socket.eventNames">
+<code class="descclassname">socket.</code><code class="descname">eventNames</code><a class="headerlink" href="#socket.eventNames" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p>Inherited from <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> (along with other methods not mentioned
 here). See Node.js documentation for the <code class="docutils literal notranslate"><span class="pre">events</span></code> module.</p>
-</div>
-<div class="section" id="socket-join-room-callback">
-<h2>socket.join(room[, callback])<a class="headerlink" href="#socket-join-room-callback" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.join">
+<code class="descclassname">socket.</code><code class="descname">join</code><a class="headerlink" href="#socket.join" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">room</span></code> <em>(String)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
@@ -369,9 +423,11 @@ to other sockets:</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-join-rooms-callback">
-<h2>socket.join(rooms[, callback])<a class="headerlink" href="#socket-join-rooms-callback" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt>
+<code class="descclassname">socket.</code><code class="descname">join</code></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">rooms</span></code> <em>(Array)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
@@ -379,9 +435,11 @@ to other sockets:</p>
 </ul>
 <p>Adds the client to the list of room, and fires optionally a callback
 with <code class="docutils literal notranslate"><span class="pre">err</span></code> signature (if any).</p>
-</div>
-<div class="section" id="socket-leave-room-callback">
-<h2>socket.leave(room[, callback])<a class="headerlink" href="#socket-leave-room-callback" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.leave">
+<code class="descclassname">socket.</code><code class="descname">leave</code><a class="headerlink" href="#socket.leave" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">room</span></code> <em>(String)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
@@ -390,9 +448,11 @@ with <code class="docutils literal notranslate"><span class="pre">err</span></co
 <p>Removes the client from <code class="docutils literal notranslate"><span class="pre">room</span></code>, and fires optionally a callback with
 <code class="docutils literal notranslate"><span class="pre">err</span></code> signature (if any).</p>
 <p><strong>Rooms are left automatically upon disconnection</strong>.</p>
-</div>
-<div class="section" id="socket-to-room">
-<h2>socket.to(room)<a class="headerlink" href="#socket-to-room" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.to">
+<code class="descclassname">socket.</code><code class="descname">to</code><a class="headerlink" href="#socket.to" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">room</span></code> <em>(String)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code> for chaining</p></li>
@@ -417,14 +477,21 @@ socket itself being excluded).</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> acknowledgements are not supported when broadcasting.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>acknowledgements are not supported when broadcasting.</p>
 </div>
-<div class="section" id="socket-in-room">
-<h2>socket.in(room)<a class="headerlink" href="#socket-in-room" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.in">
+<code class="descclassname">socket.</code><code class="descname">in</code><a class="headerlink" href="#socket.in" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p>Synonym of <a class="reference external" href="#socket-to-room">socket.to(room)</a>.</p>
-</div>
-<div class="section" id="socket-compress-value">
-<h2>socket.compress(value)<a class="headerlink" href="#socket-compress-value" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.compress">
+<code class="descclassname">socket.</code><code class="descname">compress</code><a class="headerlink" href="#socket.compress" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Boolean)</em> whether to following packet will be compressed</p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code> for chaining</p></li>
@@ -437,9 +504,11 @@ you don’t call the method.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="socket-disconnect-close">
-<h2>socket.disconnect(close)<a class="headerlink" href="#socket-disconnect-close" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="socket.disconnect">
+<code class="descclassname">socket.</code><code class="descname">disconnect</code><a class="headerlink" href="#socket.disconnect" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">close</span></code> <em>(Boolean)</em> whether to close the underlying connection</p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p></li>
@@ -451,9 +520,11 @@ underlying connection. Otherwise, it just disconnects the namespace.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="flag-broadcast">
-<h2>Flag: ‘broadcast’<a class="headerlink" href="#flag-broadcast" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="Flag.broadcast">
+<code class="descclassname">Flag.</code><code class="descname">broadcast</code><a class="headerlink" href="#Flag.broadcast" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p>Sets a modifier for a subsequent event emission that the event data will
 only be <em>broadcast</em> to every sockets but the sender.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">socket</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -461,9 +532,11 @@ only be <em>broadcast</em> to every sockets but the sender.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="flag-volatile">
-<span id="flag-volatile-1"></span><h2>Flag: ‘volatile’<a class="headerlink" href="#flag-volatile" title="永久链接至标题">¶</a></h2>
+<span class="target" id="flag-volatile-1"></span><dl class="attribute">
+<dt id="Flag.volatile">
+<code class="descclassname">Flag.</code><code class="descname">volatile</code><a class="headerlink" href="#Flag.volatile" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p>Sets a modifier for a subsequent event emission that the event data may
 be lost if the client is not ready to receive messages (because of
 network slowness or other issues, or because they’re connected through
@@ -473,9 +546,11 @@ long polling and is in the middle of a request-response cycle).</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="flag-binary">
-<span id="flag-binary-1"></span><h2>Flag: ‘binary’<a class="headerlink" href="#flag-binary" title="永久链接至标题">¶</a></h2>
+<span class="target" id="flag-binary-1"></span><dl class="attribute">
+<dt id="Flag.binary">
+<code class="descclassname">Flag.</code><code class="descname">binary</code><a class="headerlink" href="#Flag.binary" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <p>Specifies whether there is binary data in the emitted data. Increases
 performance when specified. Can be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span>
@@ -484,9 +559,11 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="event-disconnect">
-<h2>Event: ‘disconnect’<a class="headerlink" href="#event-disconnect" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="Event.disconnect">
+<code class="descclassname">Event.</code><code class="descname">disconnect</code><a class="headerlink" href="#Event.disconnect" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">reason</span></code> <em>(String)</em> the reason of the disconnection (either client
 or server-side)</p></li>
@@ -502,8 +579,8 @@ or server-side)</p></li>
 <p>Possible reasons:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 19%" />
 <col style="width: 54%" />
 </colgroup>
 <thead>
@@ -518,21 +595,18 @@ or server-side)</p></li>
 <td><p>Server Side</p></td>
 <td><p>Transport error</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">``</span></a>server namesp
-ace disconnect`
-`</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">server</span> <span class="pre">namesp</span>
+<span class="pre">ace</span> <span class="pre">disconnect</span></code></p></td>
 <td><p>Server Side</p></td>
 <td><p>Server performs a
 <code class="docutils literal notranslate"><span class="pre">socket.disconnect()</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a href="#id3"><span class="problematic" id="id4">``</span></a>client namesp
-ace disconnect`
-`</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">client</span> <span class="pre">namesp</span>
+<span class="pre">ace</span> <span class="pre">disconnect</span></code></p></td>
 <td><p>Client Side</p></td>
 <td><p>Got disconnect packet from client</p></td>
 </tr>
-<tr class="row-odd"><td><p><a href="#id5"><span class="problematic" id="id6">``</span></a>ping timeout`
-`</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">timeout</span></code></p></td>
 <td><p>Client Side</p></td>
 <td><p>Client stopped responding to pings
 in the allowed amount of time (per
@@ -545,9 +619,11 @@ the <code class="docutils literal notranslate"><span class="pre">pingTimeout</sp
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="event-error">
-<h2>Event: ‘error’<a class="headerlink" href="#event-error" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="Event.error">
+<code class="descclassname">Event.</code><code class="descname">error</code><a class="headerlink" href="#Event.error" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <em>(Object)</em> error object</p></li>
 </ul>
@@ -559,9 +635,11 @@ the <code class="docutils literal notranslate"><span class="pre">pingTimeout</sp
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="event-disconnecting">
-<h2>Event: ‘disconnecting’<a class="headerlink" href="#event-disconnecting" title="永久链接至标题">¶</a></h2>
+<dl class="attribute">
+<dt id="Event.disconnecting">
+<code class="descclassname">Event.</code><code class="descname">disconnecting</code><a class="headerlink" href="#Event.disconnecting" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">reason</span></code> <em>(String)</em> the reason of the disconnection (either client
 or server-side)</p></li>
@@ -579,13 +657,21 @@ or server-side)</p></li>
 <p>These are reserved events (along with <code class="docutils literal notranslate"><span class="pre">connect</span></code>, <code class="docutils literal notranslate"><span class="pre">newListener</span></code> and
 <code class="docutils literal notranslate"><span class="pre">removeListener</span></code>) which cannot be used as event names.</p>
 </div>
-</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Client.html" class="btn btn-neutral float-right" title="客户端" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Namespace.html" class="btn btn-neutral float-left" title="命名空间" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

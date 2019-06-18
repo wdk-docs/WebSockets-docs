@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ws &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="ws: a Node.js WebSocket library" href="quick-start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">ws: a Node.js WebSocket library</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ws</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ws documentation</a> &raquo;</li>
+        
+      <li>ws</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ws/ws.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ws">
+<h1>ws<a class="headerlink" href="#ws" title="永久链接至标题">¶</a></h1>
+<dl class="class">
+<dt id="WebSocket.Server">
+<em class="property">class </em><code class="descclassname">WebSocket.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>{host</em>, <em>port</em>, <em>server</em>, <em>noServer...}</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.Server" title="永久链接至目标">¶</a></dt>
+<dd><p>此类表示WebSocket服务器。它扩展了 <cite>EventEmitter</cite> 。</p>
+<p>new WebSocket.Server(options[, callback])</p>
+<p>创建一个新的服务器实例。必须提供 <cite>port</cite>,  <cite>server</cite> 或 <cite>noServer</cite> 之一或抛出错误。</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>String</em>) – 主机名绑定服务器的位置。</p></li>
+<li><p><strong>port</strong> (<em>Number</em>) – 绑定服务器的端口。</p></li>
+<li><p><strong>backlog</strong> (<em>Number</em>) – 挂起连接队列的最大长度。</p></li>
+<li><p><strong>server</strong> (<em>http.Server | https.Server</em>) – 预先创建的 Node.js HTTP/S 服务器。</p></li>
+<li><p><strong>verifyClient</strong> (<em>Function</em>) – 一种可用于验证传入连接的功能。见下面的描述。</p></li>
+<li><p><strong>handleProtocols</strong> (<em>Function</em>) – 一种可用于处理WebSocket子协议的函数。见下面的描述。</p></li>
+<li><p><strong>path</strong> (<em>String</em>) – 仅接受与此路径匹配的连接。</p></li>
+<li><p><strong>noServer</strong> (<em>Boolean</em>) – 不启用服务器模式。</p></li>
+<li><p><strong>clientTracking</strong> (<em>Boolean</em>) – 指定是否跟踪客户端。</p></li>
+<li><p><strong>perMessageDeflate</strong> (<em>Boolean | Object</em>) – <p>启用/禁用渗透 - 放气。</p>
+<p><cite>perMessageDeflate</cite> can be used to control the behavior of <a class="reference external" href="permessage-deflate">permessage-deflate extension</a>.
+he extension is disabled when <cite>false</cite> (default value).</p>
+<p>如果提供了一个对象, 那么这就是扩展参数:</p>
+<blockquote>
+<div><ul>
+<li><p><strong>serverNoContextTakeover</strong>: (<em>Boolean</em>) - Whether to use context takeover or not.</p></li>
+<li><p><strong>clientNoContextTakeover</strong>: (<em>Boolean</em>) - Acknowledge disabling of client context takeover.</p></li>
+<li><p><strong>serverMaxWindowBits</strong>: (<em>Number</em>) - The value of <cite>windowBits</cite>.</p></li>
+<li><p><strong>clientMaxWindowBits</strong>: (<em>Number</em>) - Request a custom client window size.</p></li>
+<li><p><strong>zlibDeflateOptions</strong>: (<em>Object</em>) - Additional options &lt;zlib-options&gt;`_ to pass to zlib on deflate.</p></li>
+<li><p><strong>zlibInflateOptions</strong>: (<em>Object</em>) - Additional options &lt;zlib-options&gt;`_ to pass to zlib on inflate.</p></li>
+<li><p><strong>threshold</strong>: (<em>Number</em>) - Payloads smaller than this will not be compressed. Defaults to 1024 bytes.</p></li>
+<li><p><strong>concurrencyLimit</strong>: (<em>Number</em>) - The number of concurrent calls to zlib. Calls above this limit will be queued. Default 10. You usually won’t need to touch this option. See <a class="reference external" href="concurrency-limit">this issue</a> for more details.</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>maxPayload</strong> (<em>Number</em>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
+<li><p><strong>callback</strong> (<em>Function</em>) – 当不在 “noServer” 模式下运行时, <cite>callback</cite> 将被添加为HTTP服务器上 <cite>listening</cite> 事件的监听器。</p></li>
+</ul>
+</dd>
+</dl>
+<p>如果设置了 <cite>port</cite> , 则会自动创建, 启动和使用HTTP服务器。</p>
+<p>To use an external HTTP/S server instead, specify only <cite>server</cite> or <cite>noServer</cite>.
+In this case the HTTP/S server must be started manually. The “noServer” mode allows the WebSocket server to be completly detached from the HTTP/S server.
+This makes it possible, for example, to share a single HTTP/S server between multiple WebSocket servers.</p>
+<p>如果未设置 <cite>verifyClient</cite>, 则自动接受握手。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="verifyClient">
+<code class="descname">verifyClient</code><span class="sig-paren">(</span><em>{origin</em>, <em>req</em>, <em>secure}</em><span class="optional">[</span>, <em>cb</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient" title="永久链接至目标">¶</a></dt>
+<dd><p>如果它提供了单个参数, 那么就是:</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<em>String</em>) – The value in the Origin header indicated by the client.</p></li>
+<li><p><strong>req</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
+<li><p><strong>secure</strong> (<em>Boolean</em>) – <cite>true</cite> if <cite>req.connection.authorized</cite> or <cite>req.connection.encrypted</cite> is set.</p></li>
+</ul>
+</dd>
+</dl>
+<p>函数的返回值（布尔值）确定是否接受握手。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="verifyClient.cb">
+<code class="descclassname">verifyClient.</code><code class="descname">cb</code><span class="sig-paren">(</span><em>result</em>, <em>code</em>, <em>name</em>, <em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient.cb" title="永久链接至目标">¶</a></dt>
+<dd><p>如果`verifyClient`提供了两个参数, 那么它们就是:</p>
+<p>A callback that must be called by the user upon inspection of the <cite>info</cite> fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> (<em>Boolean</em>) – Whether or not to accept the handshake.</p></li>
+<li><p><strong>code</strong> (<em>Number</em>) – When <cite>result</cite> is <cite>false</cite> this field determines the HTTP error status code to be sent to the client.</p></li>
+<li><p><strong>name</strong> (<em>String</em>) – When <cite>result</cite> is <cite>false</cite> this field determines the HTTP reason phrase.</p></li>
+<li><p><strong>headers</strong> (<em>Object</em>) – When <cite>result</cite> is <cite>false</cite> this field determines additional HTTP headers to be sent to the client. For example, <cite>{ ‘Retry-After’: 120 }</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="handleProtocols">
+<code class="descname">handleProtocols</code><span class="sig-paren">(</span><em>protocols</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#handleProtocols" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocols</strong> (<em>Array</em>) – The list of WebSocket subprotocols indicated by the client in the <cite>Sec-WebSocket-Protocol</cite> header.</p></li>
+<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
+</ul>
+</dd>
+</dl>
+<p>返回值设置HTTP 101响应中的`Sec-WebSocket-Protocol`头的值。</p>
+<p>如果返回值为“false”, 则不在响应中添加标头。</p>
+<p>如果未设置 <cite>handleProtocols</cite>, 则使用客户端请求的第一个子协议。</p>
+</dd></dl>
+
+<p>If a property is empty then either an offered configuration or a default value is used. When sending a fragmented message the length of the first fragment is compared to the threshold.</p>
+<p>这确定是否对整个消息使用压缩。</p>
+<dl class="function">
+<dt id="ws.onEvent.close">
+<code class="descclassname">ws.onEvent.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.close" title="永久链接至目标">¶</a></dt>
+<dd><p>服务器关闭时发出。此事件仅在内部创建时依赖于HTTP服务器的“close”事件。</p>
+<p>在所有其他情况下, 事件是独立发出的。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.connection">
+<code class="descclassname">ws.onEvent.</code><code class="descname">connection</code><span class="sig-paren">(</span><em>socket</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.connection" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>socket</strong> (<a class="reference internal" href="../api/WebSocket.html#WebSocket" title="WebSocket"><em>WebSocket</em></a>) – </p></li>
+<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>握手完成时发出。 <a href="#id1"><span class="problematic" id="id2">`</span></a>request`是客户端发送的http GET请求。</p>
+<p>用于解析权限标头, cookie标头和其他信息。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.error">
+<code class="descclassname">ws.onEvent.</code><code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.error" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>error: Error</p></li>
+</ul>
+<p>在底层服务器上发生错误时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.headers">
+<code class="descclassname">ws.onEvent.</code><code class="descname">headers</code><span class="sig-paren">(</span><em>headers</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.headers" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>headers</strong> (<em>Array</em>) – </p></li>
+<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>在响应标头作为握手的一部分写入套接字之前发出。</p>
+<p>这允许您在发送标头之前检查/修改标头。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.listening">
+<code class="descclassname">ws.onEvent.</code><code class="descname">listening</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.listening" title="永久链接至目标">¶</a></dt>
+<dd><p>绑定基础服务器时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="server.address">
+<code class="descclassname">server.</code><code class="descname">address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.address" title="永久链接至目标">¶</a></dt>
+<dd><p>Returns an object with <cite>port</cite>, <cite>family</cite>, and <cite>address</cite> properties specifying the bound address, the address family name, and port of the server as reported by the operating system if listening on an IP socket.</p>
+<p>如果服务器正在侦听管道或UNIX域套接字, 则该名称将作为字符串返回。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="server.clients">
+<code class="descclassname">server.</code><code class="descname">clients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.clients" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Set}</p></li>
+</ul>
+<p>存储所有连接客户端的集合。请注意, 只有当`clientTracking`真实时, 才会添加此属性。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="server.close">
+<code class="descclassname">server.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="optional">[</span><em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标">¶</a></dt>
+<dd><p>如果在内部创建, 则关闭HTTP服务器, 终止所有客户端并在完成后调用回调。</p>
+<p>如果通过`server`或`noServer`构造函数选项使用外部HTTP服务器, 则必须手动关闭它。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="server.handleUpgrade">
+<code class="descclassname">server.</code><code class="descname">handleUpgrade</code><span class="sig-paren">(</span><em>request</em>, <em>socket</em>, <em>head</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#server.handleUpgrade" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
+<li><p><strong>socket</strong> (<em>net.Socket</em>) – The network socket between the server and client.</p></li>
+<li><p><strong>head</strong> (<em>Buffer</em>) – The first packet of the upgraded stream.</p></li>
+<li><p><strong>callback</strong> (<em>Function</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>处理HTTP升级请求。当在内部创建HTTP服务器或通过`server`选项传递HTTP服务器时，将自动调用此方法。</p>
+<p>在“noServer”模式下操作时, 必须手动调用此方法。</p>
+<p>如果升级成功, 则使用`WebSocket`对象作为参数调用`callback`。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="server.shouldHandle">
+<code class="descclassname">server.</code><code class="descname">shouldHandle</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#server.shouldHandle" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
+</ul>
+</dd>
+</dl>
+<p>查看此服务器是否应处理给定请求。</p>
+<p>默认情况下, 此方法验证请求的路径名, 并将其与`path`选项（如果提供）匹配。</p>
+<p>返回值“true”或“false”确定是否接受握手。</p>
+<p>当需要自定义处理逻辑时, 可以覆盖此方法。</p>
+</dd></dl>
+
+<p>就绪状态常数</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 10%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>不变</p></th>
+<th class="head"><p>值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CONNECTING</p></td>
+<td><p>0</p></td>
+<td><p>连接尚未打开。</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPEN</p></td>
+<td><p>1</p></td>
+<td><p>连接已打开并准备好进行通信。</p></td>
+</tr>
+<tr class="row-even"><td><p>CLOSING</p></td>
+<td><p>2</p></td>
+<td><p>连接正在关闭。</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLOSED</p></td>
+<td><p>3</p></td>
+<td><p>连接已关闭。</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="new WebSocket">
+<em class="property">class </em><code class="descname">new WebSocket</code><span class="sig-paren">(</span><em>address[, protocols][, {followRedirects,...}]</em><span class="sig-paren">)</span><a class="headerlink" href="#new WebSocket" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>String | url.URL</em>) – The URL to which to connect.</p></li>
+<li><p><strong>protocols</strong> (<em>String | Array</em>) – The list of subprotocols.</p></li>
+<li><p><strong>followRedirects</strong> (<em>Boolean</em>) – Whether or not to follow redirects. Defaults to <cite>false</cite>.</p></li>
+<li><p><strong>handshakeTimeout</strong> (<em>Number</em>) – Timeout in milliseconds for the handshake request. This is reset after every redirection.</p></li>
+<li><p><strong>maxRedirects</strong> (<em>Number</em>) – The maximum number of redirects allowed. Defaults to 10.</p></li>
+<li><p><strong>perMessageDeflate</strong> (<em>Boolean | Object</em>) – Enable/disable permessage-deflate. <cite>perMessageDeflate</cite> default value is <cite>true</cite>. When using an object, parameters are the same of the server.</p></li>
+<li><p><strong>protocolVersion</strong> (<em>Number</em>) – Value of the <cite>Sec-WebSocket-Version</cite> header.</p></li>
+<li><p><strong>origin</strong> (<em>String</em>) – Value of the <cite>Origin</cite> or <cite>Sec-WebSocket-Origin</cite> header depending on the <cite>protocolVersion</cite>.</p></li>
+<li><p><strong>maxPayload</strong> (<em>Number</em>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
+</ul>
+</dd>
+</dl>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>http.request（）`_或`https.request（）`_中允许的任何其他选项。</p>
+</dd></dl>
+
+<p>唯一的区别是请求的方向。</p>
+<p>例如, <a href="#id1"><span class="problematic" id="id2">`</span></a>serverNoContextTakeover`可用于请求服务器禁用上下文接管。</p>
+<p>创建一个新的WebSocket实例。</p>
+<p><strong>UNIX Domain Sockets</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>ws`支持向UNIX域套接字发出请求。要制作一个, 请使用以下URL方案：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ws+unix:///absolute/path/to/uds_socket:/pathname?search_params
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>：<a href="#id3"><span class="problematic" id="id4">`</span></a>是套接字路径和URL路径之间的分隔符。如果省略URL路径</p>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ws+unix:///absolute/path/to/uds_socket
+</pre></div>
+</div>
+<p>它默认为`/<a href="#id1"><span class="problematic" id="id2">`</span></a>。</p>
+<dl class="function">
+<dt>
+<code class="descclassname">ws.onEvent.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><ul class="simple">
+<li><p>code: Number}</p></li>
+<li><p>reason: String}</p></li>
+</ul>
+<p>连接关闭时发出。 <a href="#id1"><span class="problematic" id="id2">`</span></a>code`是一个数值, 表示状态代码, 解释连接关闭的原因。</p>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>reason`是一个人类可读的字符串, 解释连接已关闭的原因。</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">ws.onEvent.</code><code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><ul class="simple">
+<li><p>error: Error}</p></li>
+</ul>
+<p>发生错误时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.message">
+<code class="descclassname">ws.onEvent.</code><code class="descname">message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.message" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>data: String|Buffer|ArrayBuffer|Buffer[]}</p></li>
+</ul>
+<p>从服务器收到消息时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.open">
+<code class="descclassname">ws.onEvent.</code><code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.open" title="永久链接至目标">¶</a></dt>
+<dd><p>建立连接时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.ping">
+<code class="descclassname">ws.onEvent.</code><code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.ping" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>data: Buffer}</p></li>
+</ul>
+<p>从服务器收到ping时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.pong">
+<code class="descclassname">ws.onEvent.</code><code class="descname">pong</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.pong" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>data: Buffer}</p></li>
+</ul>
+<p>从服务器收到乒乓时发出。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.unexpected-response">
+<code class="descclassname">ws.onEvent.</code><code class="descname">unexpected-response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.unexpected-response" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>request: http.ClientRequest}</p></li>
+<li><p>response: http.IncomingMessage}</p></li>
+</ul>
+<p>当服务器响应不是预期的响应时发出, 例如401响应。</p>
+<p>此事件使您能够读取响应以提取有用信息。</p>
+<p>如果服务器发送无效响应并且没有此事件的侦听器, 则会发出错误。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ws.onEvent.upgrade">
+<code class="descclassname">ws.onEvent.</code><code class="descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.upgrade" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>response: http.IncomingMessage}</p></li>
+</ul>
+<p>在作为握手的一部分从服务器接收响应头时发出。</p>
+<p>这允许您从服务器读取标头, 例如“set-cookie”标头。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.addEventListener">
+<code class="descclassname">websocket.</code><code class="descname">addEventListener</code><span class="sig-paren">(</span><em>type</em>, <em>listener</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.addEventListener" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>type: String} A string representing the event type to listen for.</p></li>
+<li><p>listener: Function} The listener to add.</p></li>
+</ul>
+<p>注册一个模拟`EventTarget`接口的事件监听器。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.binaryType">
+<code class="descclassname">websocket.</code><code class="descname">binaryType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.binaryType" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{String}</p></li>
+</ul>
+<p>一个字符串, 指示连接传输的二进制数据的类型。</p>
+<p>这应该是“nodebuffer ”, “arraybuffer ”或“fragments ”之一。</p>
+<p>Defaults to “nodebuffer”.</p>
+<p>Type “fragments” will emit the array of fragments as received from the sender, without copyfull concatenation, which is useful for the performance of binary protocols transferring large messages with multiple fragments.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.bufferedAmount">
+<code class="descclassname">websocket.</code><code class="descname">bufferedAmount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.bufferedAmount" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Number}</p></li>
+</ul>
+<p>使用调用“send（）”但尚未传输到网络排队的数据的字节数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.close">
+<code class="descclassname">websocket.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="optional">[</span><em>code</em><span class="optional">[</span>, <em>reason</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.close" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>code: Number} A numeric value indicating the status code explaining why the connection is being closed.</p></li>
+<li><p>reason: String} A human-readable string explaining why the connection is closing.</p></li>
+</ul>
+<p>发起结束握手。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.extensions">
+<code class="descclassname">websocket.</code><code class="descname">extensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.extensions" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Object}</p></li>
+</ul>
+<p>包含协商扩展的对象。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.onclose">
+<code class="descclassname">websocket.</code><code class="descname">onclose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onclose" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Function}</p></li>
+</ul>
+<p>连接关闭时要调用的事件侦听器。</p>
+<p>监听器接收名为“close”的`CloseEvent`。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.onerror">
+<code class="descclassname">websocket.</code><code class="descname">onerror</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onerror" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Function}</p></li>
+</ul>
+<p>发生错误时要调用的事件侦听器。</p>
+<p>监听器收到一个名为“error”的`ErrorEvent`。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.onmessage">
+<code class="descclassname">websocket.</code><code class="descname">onmessage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onmessage" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Function}</p></li>
+</ul>
+<p>从服务器收到消息时要调用的事件侦听器。</p>
+<p>监听器接收名为“message”的`MessageEvent`。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.onopen">
+<code class="descclassname">websocket.</code><code class="descname">onopen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onopen" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Function}</p></li>
+</ul>
+<p>建立连接时要调用的事件侦听器。</p>
+<p>监听器接收名为“open”的`OpenEvent`。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.ping">
+<code class="descclassname">websocket.</code><code class="descname">ping</code><span class="sig-paren">(</span><em>[data[, mask]][, callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.ping" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>data: Any} The data to send in the ping frame.</p></li>
+<li><p>mask: Boolean} Specifies whether <cite>data</cite> should be masked or not. Defaults to <cite>true</cite> when <cite>websocket</cite> is not a server client.</p></li>
+<li><p>callback: Function} An optional callback which is invoked when the ping frame is written out.</p></li>
+</ul>
+<p>Send a ping.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.pong">
+<code class="descclassname">websocket.</code><code class="descname">pong</code><span class="sig-paren">(</span><em>[data[, mask]][, callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.pong" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>data: Any} The data to send in the pong frame.</p></li>
+<li><p>mask: Boolean} Specifies whether <cite>data</cite> should be masked or not. Defaults to <cite>true</cite> when <cite>websocket</cite> is not a server client.</p></li>
+<li><p>callback: Function} An optional callback which is invoked when the pong frame is written out.</p></li>
+</ul>
+<p>Send a pong.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.protocol">
+<code class="descclassname">websocket.</code><code class="descname">protocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.protocol" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{String}</p></li>
+</ul>
+<p>服务器选择的子协议。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.readyState">
+<code class="descclassname">websocket.</code><code class="descname">readyState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.readyState" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{Number}</p></li>
+</ul>
+<p>连接的当前状态。这是就绪状态常量之一。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.removeEventListener">
+<code class="descclassname">websocket.</code><code class="descname">removeEventListener</code><span class="sig-paren">(</span><em>type</em>, <em>listener</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.removeEventListener" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>type: String} A string representing the event type to remove.</p></li>
+<li><p>listener: Function} The listener to remove.</p></li>
+</ul>
+</dd></dl>
+
+<p>删除模拟`EventTarget`接口的事件侦听器。</p>
+<dl class="function">
+<dt id="websocket.send">
+<code class="descclassname">websocket.</code><code class="descname">send</code><span class="sig-paren">(</span><em>data[, options][, callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.send" title="永久链接至目标">¶</a></dt>
+<dd><ul>
+<li><p>data: Any} The data to send.</p></li>
+<li><p>options: Object}</p>
+<ul class="simple">
+<li><p>compress: Boolean} Specifies whether <cite>data</cite> should be compressed or not.Defaults to <cite>true</cite> when permessage-deflate is enabled.</p></li>
+<li><p>binary: Boolean} Specifies whether <cite>data</cite> should be sent as a binary or not. Default is autodetected.</p></li>
+<li><p>mask: Boolean} Specifies whether <cite>data</cite> should be masked or not. Defaults to <cite>true</cite> when <cite>websocket</cite> is not a server client.</p></li>
+<li><p>fin: Boolean} Specifies whether <cite>data</cite> is the last fragment of a message or not. Defaults to <cite>true</cite>.</p></li>
+</ul>
+</li>
+<li><p>callback: Function An optional callback which is invoked when <cite>data</cite> is written out.</p>
+<blockquote>
+<div><p>通过连接发送`data`。</p>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.terminate">
+<code class="descclassname">websocket.</code><code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.terminate" title="永久链接至目标">¶</a></dt>
+<dd><p>强行关闭连接。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="websocket.url">
+<code class="descclassname">websocket.</code><code class="descname">url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.url" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
+<li><p>{String}</p></li>
+</ul>
+<p>WebSocket服务器的URL。服务器客户端没有此属性。</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="quick-start.html" class="btn btn-neutral float-left" title="ws: a Node.js WebSocket library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -54,9 +54,9 @@ Both means that there is **NO FALLBACK** to long-polling when the
 websocket connection cannot be established, which is in fact one of the
 key feature of Socket.IO. In that case, you should maybe consider using
 raw
-`WebSocket <https://developer.mozilla.org/en-US/docs/Web/API/WebSocket>`__,
+`WebSocket <https://developer.mozilla.org/en-US/docs/Web/API/WebSocket>`_,
 or a thin wrapper like
-`robust-websocket <https://github.com/appuri/robust-websocket>`__.
+`robust-websocket <https://github.com/appuri/robust-websocket>`_.
 
 To achieve sticky-session, there are two main solutions:
 
@@ -109,9 +109,10 @@ to indicate how many workers NginX should use. You might also want to
 look into tweaking the ``worker_connections`` setting within the
 ``events { }`` block.
 
-`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx>`__
+`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx>`_
 
-## Apache HTTPD configuration
+Apache HTTPD configuration
+---------------------------------
 
 .. code:: apache
 
@@ -139,7 +140,7 @@ look into tweaking the ``worker_connections`` setting within the
 
    ProxyTimeout 3
 
-`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd>`__
+`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd>`_
 
 HAProxy configuration
 ---------------------
@@ -160,7 +161,7 @@ HAProxy configuration
      server app02 app02:3000 check cookie app02
      server app03 app03:3000 check cookie app03
 
-`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy>`__
+`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy>`_
 
 Using Node.JS Cluster
 ---------------------
@@ -169,7 +170,7 @@ Just like NginX, Node.JS comes with built-in clustering support through
 the ``cluster`` module.
 
 Fedor Indutny has created a module called `sticky
-session <https://github.com/indutny/sticky-session>`__ that ensures file
+session <https://github.com/indutny/sticky-session>`_ that ensures file
 descriptors (ie: connections) are routed based on the originating
 ``remoteAddress`` (ie: IP). Please note that this might lead to
 unbalanced routing, depending on the hashing method.
@@ -183,15 +184,15 @@ Passing events between nodes
 
 Now that you have multiple Socket.IO nodes accepting connections, if you
 want to broadcast events to everyone (or even everyone in a certain
-`room </docs/rooms-and-namespaces/#Rooms>`__) you’ll need some way of
+`room </docs/rooms-and-namespaces/#Rooms>`_) you’ll need some way of
 passing messages between processes or computers.
 
 The interface in charge of routing messages is what we call the
 ``Adapter``. You can implement your own on top of the
-`socket.io-adapter <https://github.com/socketio/socket.io-adapter>`__
+`socket.io-adapter <https://github.com/socketio/socket.io-adapter>`_
 (by inheriting from it) or you can use the one we provide on top of
-`Redis <https://redis.io/>`__:
-`socket.io-redis <https://github.com/socketio/socket.io-redis>`__:
+`Redis <https://redis.io/>`_:
+`socket.io-redis <https://github.com/socketio/socket.io-redis>`_:
 
 .. code:: js
 
@@ -206,10 +207,10 @@ Then the following call:
    io.emit('hi', 'all sockets');
 
 will be broadcast to every node through the `Pub/Sub
-mechanism <https://redis.io/topics/pubsub>`__ of Redis.
+mechanism <https://redis.io/topics/pubsub>`_ of Redis.
 
-**Note:** sticky-session is still needed when using the Redis adapter.
+.. note:: sticky-session is still needed when using the Redis adapter.
 
 If you want to pass messages to it from non-socket.io processes, you
 should look into `“Sending messages from the
-outside-world” </docs/rooms-and-namespaces/#Sending-messages-from-the-outside-world>`__.
+outside-world” </docs/rooms-and-namespaces/#Sending-messages-from-the-outside-world>`_.

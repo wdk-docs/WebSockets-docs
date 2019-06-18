@@ -1,5 +1,5 @@
-title: Socket.IO — Apache Cordova permalink:
-/socket-io-with-apache-cordova/ —
+Socket.IO — Apache Cordova
+=====================================
 
 Since Apache Cordova apps are written mostly in JS, it is actually
 really easy to use Socket.IO! Let’s walk through a small example.

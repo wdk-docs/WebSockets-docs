@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Client &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>客户端 &mdash; WebSockets Docs v2019.0613 文档</title>
   
 
   
@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" /> 
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="演示" href="../demos/index.html" />
+    <link rel="prev" title="Socket" href="Socket.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -79,11 +81,28 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">服务端API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="API.html">服务端 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Namespace.html">命名空间</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">客户端</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -129,7 +148,11 @@
     
       <li><a href="../../contents.html">Docs</a> &raquo;</li>
         
-      <li>Client</li>
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">服务端API</a> &raquo;</li>
+        
+      <li>客户端</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,19 +172,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="client">
-<h1>Client<a class="headerlink" href="#client" title="永久链接至标题">¶</a></h1>
+<h1>客户端<a class="headerlink" href="#client" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">Client</span></code> class represents an incoming transport (engine.io)
 connection. A <code class="docutils literal notranslate"><span class="pre">Client</span></code> can be associated with many multiplexed
 <code class="docutils literal notranslate"><span class="pre">Socket</span></code>s that belong to different <code class="docutils literal notranslate"><span class="pre">Namespace</span></code>s.</p>
-<div class="section" id="client-conn">
-<h2>client.conn<a class="headerlink" href="#client-conn" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="client.conn">
+<code class="descclassname">client.</code><code class="descname">conn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#client.conn" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(engine.Socket)</em></p></li>
 </ul>
 <p>A reference to the underlying <code class="docutils literal notranslate"><span class="pre">engine.io</span></code> <code class="docutils literal notranslate"><span class="pre">Socket</span></code> connection.</p>
-</div>
-<div class="section" id="client-request">
-<h2>client.request<a class="headerlink" href="#client-request" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="client.request">
+<code class="descclassname">client.</code><code class="descname">request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#client.request" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><em>(Request)</em></p></li>
 </ul>
@@ -169,13 +197,21 @@ connection. A <code class="docutils literal notranslate"><span class="pre">Clien
 originated the engine.io connection. Useful for accessing request
 headers such as <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> or <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code>.</p>
 </div>
-</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../demos/index.html" class="btn btn-neutral float-right" title="演示" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Socket.html" class="btn btn-neutral float-left" title="Socket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

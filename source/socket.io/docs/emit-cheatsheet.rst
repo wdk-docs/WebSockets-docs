@@ -55,7 +55,15 @@ Emit cheatsheet
 
    };
 
-**Note:** The following events are reserved and should not be used as
-event names by your application: - ``error`` - ``connect`` -
-``disconnect`` - ``disconnecting`` - ``newListener`` -
-``removeListener`` - ``ping`` - ``pong``
+.. note::
+   The following events are reserved and should not be used as
+   event names by your application:
+
+   - ``error``
+   - ``connect``
+   - ``disconnect``
+   - ``disconnecting``
+   - ``newListener``
+   - ``removeListener``
+   - ``ping``
+   - ``pong``

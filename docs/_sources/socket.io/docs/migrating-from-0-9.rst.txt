@@ -63,7 +63,11 @@ vs.
 Namespace authorization?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-\`\ ``js io.of('/namespace').use(function(socket, next) {   var handshakeData = socket.request;   next(); });``
+.. code:: js
+
+  io.of('/namespace').use(function(socket, next) {
+    var handshakeData = socket.request;   next();
+  });``
 
 Log differences
 ---------------
@@ -91,7 +95,7 @@ refresh the page. Everything is logged until you run
 ``localStorage.debug = ''``
 
 See more at the debug documentation
-`here <https://www.npmjs.org/package/debug>`__.
+`here <https://www.npmjs.org/package/debug>`_.
 
 Shortcuts
 ---------
@@ -192,7 +196,7 @@ Here’s an example:
 .. code:: js
 
    var encoding = parser.encode(packet);
-   console.log(encoding); // fully encoded packet`
+   console.log(encoding); // fully encoded packet
 
 vs.
 

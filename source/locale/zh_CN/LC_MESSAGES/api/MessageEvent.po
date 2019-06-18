@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 20:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/api/MessageEvent.rst:4
+msgid "MessageEvent"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:6
+msgid "MessageEvent 是接口代表一段被目标对象接收的消息。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:8
+msgid "用来代表下列情况的消息"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:10
+msgid "Server-sent events (参见 :attr:`EventSource.onmessage`)."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:11
+msgid "Web sockets (参见 :attr:`WebSocket.onmessage` 属性)."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:12
+msgid "Cross-document messaging (参见 Window.postMessage() 和 Window.onmessage)."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:13
+msgid "Channel messaging (参见 MessagePort.postMessage() 和MessagePort.onmessage)."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:14
+msgid ""
+"Cross-worker/document messaging (参见上面两个入口, 还有 Worker.postMessage(), "
+"Worker.onmessage, ServiceWorkerGlobalScope.onmessage, 等等.)"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:15
+msgid ""
+"Broadcast channels (参见 Broadcastchannel.postMessage()) 和 "
+"BroadcastChannel.onmessage)."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:16
+msgid "WebRTC data channels (参见 RTCDataChannel.onmessage)."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:18
+msgid "通过这个事件触发的动作被定义为一个函数，该函数作为相关message事件 (例如使用前文所列的onmessage 处理器)的事件处理器。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:20
+msgid "此特性在 Web Worker 中可用。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:23
+msgid "构造函数"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:27
+msgid "创建一个新的 **消息事件** 。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:30
+msgid "属性"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:32
+msgid "继承其父类 Event 的属性。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:36
+msgid "只读 返回 DOMString, Blob 或者 ArrayBuffer，包含来自发送者的数据。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:40
+msgid "返回一个表示消息发送者来源的USVString"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:44
+msgid "只读 DOMString representing a unique ID for the event."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:48
+msgid ""
+"MessageEventSource (可以是 WindowProxy, MessagePort, 或 ServiceWorker 对象) "
+"代表消息发送者."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:52
+msgid ""
+"MessagePort对象数组，表示消息正通过特定通道（数据通道）发送的相关端口（适用于通道消息传输或者向一个共享线程（shared work "
+"）发送消息时）。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:55
+msgid "方法"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:57
+msgid "继承父类 Event 的方法。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:61
+msgid "… 不要再使用: 使用 :func:`MessageEvent()`。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:65
+msgid "示例"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:67
+msgid ""
+"在我们的基础共享线程示例 Basic shared worker example (run shared worker)中,我们有两个HTML页,"
+" 每一页都用简单的js代码去执行简单的计算. 不同的脚本使用同一个worker文件去执行计算 — "
+"它们都可以访问那个worker文件，即使它们（scripts）运行在不同的窗口."
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:69
+msgid "下面的代码片段展示了使用SharedWorker()构造器创建一个 SharedWorker对象。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:76
+msgid "接下来两份脚本通过一个SharedWorker.port方法创建的MessagePort对象访问worker。如果onmessage事件通过addEventListener被绑定，端口可以用start()方法手动开启："
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:82
+msgid ""
+"当端口被打开，两份脚本各自都可用 port.postMessage() 向worker传消息并用  "
+"port.onmessage处理它（worker）传来的消息:"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:99
+msgid ""
+"在worker内部我们使用SharedWorkerGlobalScope.onconnect 处理器来连接前文说到相同端口. "
+"与worker相关联的端口可以在connect事件的ports 属性中访问到 — 接着我们使用MessagePort start() "
+"方法打开端口,  onmessage 处理器来处理主线程传来的消息。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:116
+msgid "规范"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:119
+msgid "Specification"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:119
+msgid "Status"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:119
+msgid "Comment"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:121
+msgid "HTML Living Standard MessageEvent"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:121
+msgid "``LS`` Living Standard"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:124
+msgid "浏览器兼容性"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:127
+msgid "参见"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:129
+msgid "ExtendableMessageEvent，与此接口类似，但适合用于更灵活的场景。"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:130
+msgid "WebSocket API"
+msgstr ""
+
+#: ../../source/api/MessageEvent.rst:131
+msgid "WebRTC API"
+msgstr ""
+

@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Client API" href="client-api.html" />
-    <link rel="prev" title="FAQ" href="faq.html" /> 
+    <link rel="next" title="内幕" href="internals.html" />
+    <link rel="prev" title="记录和调试" href="logging-and-debugging.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,35 +83,31 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started/index.html">Get started</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="info.html">Docs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#rooms">Rooms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html#sending-messages-from-the-outside-world">Sending messages from the outside-world</a></li>
-<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html">Dependency graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">房间和名称空间</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">从0.9迁移</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">使用多个节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">记录和调试</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Emit cheatsheet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="client-api.html">Client API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="client-api.html#manager">Manager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="client-api.html#socket">Socket</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html">Server API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html#namespace">Namespace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html#socket">Socket</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">内幕</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">在引擎盖下</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">常见问题</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -159,7 +155,7 @@
         
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
         
-          <li><a href="index.html">Docs</a> &raquo;</li>
+          <li><a href="index.html">文档</a> &raquo;</li>
         
       <li>Emit cheatsheet</li>
     
@@ -234,10 +230,20 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> The following events are reserved and should not be used as
-event names by your application: - <code class="docutils literal notranslate"><span class="pre">error</span></code> - <code class="docutils literal notranslate"><span class="pre">connect</span></code> -
-<code class="docutils literal notranslate"><span class="pre">disconnect</span></code> - <code class="docutils literal notranslate"><span class="pre">disconnecting</span></code> - <code class="docutils literal notranslate"><span class="pre">newListener</span></code> -
-<code class="docutils literal notranslate"><span class="pre">removeListener</span></code> - <code class="docutils literal notranslate"><span class="pre">ping</span></code> - <code class="docutils literal notranslate"><span class="pre">pong</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>以下事件是保留的，不应被应用程序用作事件名称</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">connect</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disconnect</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disconnecting</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newListener</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">removeListener</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ping</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pong</span></code></p></li>
+</ul>
+</div>
 </div>
 
 
@@ -248,10 +254,10 @@ event names by your application: - <code class="docutils literal notranslate"><s
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="client-api.html" class="btn btn-neutral float-right" title="Client API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="internals.html" class="btn btn-neutral float-right" title="内幕" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="faq.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="logging-and-debugging.html" class="btn btn-neutral float-left" title="记录和调试" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

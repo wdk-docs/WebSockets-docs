@@ -1,0 +1,600 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 16:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/socket.io/client-api/Manager.rst:3
+msgid "Manager"
+msgstr "Manager"
+
+#: ../../source/socket.io/client-api/Manager.rst:7
+msgid "new Manager(url[, options])"
+msgstr "new Manager(url[, options])"
+
+#: ../../source/socket.io/client-api/Manager.rst
+msgid "参数"
+msgstr ""
+
+#: ../../source/socket.io/client-api/Manager.rst
+msgid "Returns"
+msgstr "返回"
+
+#: ../../source/socket.io/client-api/Manager.rst:11
+#: ../../source/socket.io/client-api/Manager.rst:330
+msgid "``Manager``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/Manager.rst:13
+msgid "Available options:"
+msgstr "可用选项:"
+
+#: ../../source/socket.io/client-api/Manager.rst:16
+#: ../../source/socket.io/client-api/Manager.rst:87
+#: ../../source/socket.io/client-api/Manager.rst:209
+msgid "Option"
+msgstr "选项"
+
+#: ../../source/socket.io/client-api/Manager.rst:16
+#: ../../source/socket.io/client-api/Manager.rst:87
+#: ../../source/socket.io/client-api/Manager.rst:209
+msgid "Default value"
+msgstr "默认值"
+
+#: ../../source/socket.io/client-api/Manager.rst:16
+#: ../../source/socket.io/client-api/Manager.rst:87
+#: ../../source/socket.io/client-api/Manager.rst:209
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/socket.io/client-api/Manager.rst:18
+msgid "``path``"
+msgstr "``path``"
+
+#: ../../source/socket.io/client-api/Manager.rst:18
+msgid "``/socket.io``"
+msgstr "``/socket.io``"
+
+#: ../../source/socket.io/client-api/Manager.rst:18
+msgid "name of the path that is captured on the server side"
+msgstr "在服务器端捕获的路径的名称"
+
+#: ../../source/socket.io/client-api/Manager.rst:22
+msgid "``reconnection``"
+msgstr "``reconnection``"
+
+#: ../../source/socket.io/client-api/Manager.rst:22
+#: ../../source/socket.io/client-api/Manager.rst:58
+#: ../../source/socket.io/client-api/Manager.rst:89
+#: ../../source/socket.io/client-api/Manager.rst:98
+#: ../../source/socket.io/client-api/Manager.rst:257
+msgid "``true``"
+msgstr "``true``"
+
+#: ../../source/socket.io/client-api/Manager.rst:22
+msgid "whether to reconnect automatically"
+msgstr "是否自动重新连接"
+
+#: ../../source/socket.io/client-api/Manager.rst:24
+msgid "``reconnectionAttempts``"
+msgstr "``reconnectionAttempts``"
+
+#: ../../source/socket.io/client-api/Manager.rst:24
+msgid "``Infinity``"
+msgstr "``Infinity``"
+
+#: ../../source/socket.io/client-api/Manager.rst:24
+msgid "number of reconnection attempts before giving up"
+msgstr "放弃之前的重新连接尝试次数"
+
+#: ../../source/socket.io/client-api/Manager.rst:28
+msgid "``reconnectionDelay``"
+msgstr "``reconnectionDelay``"
+
+#: ../../source/socket.io/client-api/Manager.rst:28
+msgid "``1000``"
+msgstr "``1000``"
+
+#: ../../source/socket.io/client-api/Manager.rst:28
+msgid ""
+"how long to initially wait before attempting a new reconnection "
+"(``1000``). Affected by +/- ``randomizationFactor`` , for example the "
+"default initial delay will be between 500 to 1500ms."
+msgstr "在尝试重新连接之前最初等待多长时间(``1000``).受+/- ``randomizationFactor`` 的影响,例如默认的初始延迟将在500到1500ms之间."
+
+#: ../../source/socket.io/client-api/Manager.rst:39
+msgid "``reconnectionDelayMax``"
+msgstr "``reconnectionDelayMax``"
+
+#: ../../source/socket.io/client-api/Manager.rst:39
+msgid "``5000``"
+msgstr "``5000``"
+
+#: ../../source/socket.io/client-api/Manager.rst:39
+msgid ""
+"maximum amount of time to wait between reconnections (``5000``). Each "
+"attempt increases the reconnection delay by 2x along with a randomization"
+" as above"
+msgstr "重新连接之间等待的最长时间(``5000``).如上所述,每次尝试都将重新连接延迟增加2倍以及随机化"
+
+#: ../../source/socket.io/client-api/Manager.rst:48
+msgid "``randomizationFactor``"
+msgstr "``randomizationFactor``"
+
+#: ../../source/socket.io/client-api/Manager.rst:48
+msgid "``0.5``"
+msgstr "``0.5``"
+
+#: ../../source/socket.io/client-api/Manager.rst:48
+msgid "0 <= randomizationFactor <= 1"
+msgstr "0 <= randomizationFactor <= 1"
+
+#: ../../source/socket.io/client-api/Manager.rst:52
+msgid "``timeout``"
+msgstr "``timeout``"
+
+#: ../../source/socket.io/client-api/Manager.rst:52
+msgid "``20000``"
+msgstr "``20000``"
+
+#: ../../source/socket.io/client-api/Manager.rst:52
+msgid ""
+"connection timeout before a ``connect_error`` and ``connect_timeout`` "
+"events are emitted"
+msgstr "在发出 ``connect_error`` 和 ``connect_timeout`` 事件之前的连接超时"
+
+#: ../../source/socket.io/client-api/Manager.rst:58
+msgid "``autoConnect``"
+msgstr "``autoConnect``"
+
+#: ../../source/socket.io/client-api/Manager.rst:58
+msgid ""
+"by setting this false, you have to call ``manager.open`` whenever you "
+"decide it’s appropriate"
+msgstr "通过将此设置为false,只要您认为合适,就必须调用 ``manager.open``"
+
+#: ../../source/socket.io/client-api/Manager.rst:64
+msgid "``query``"
+msgstr "``query``"
+
+#: ../../source/socket.io/client-api/Manager.rst:64
+#: ../../source/socket.io/client-api/Manager.rst:157
+#: ../../source/socket.io/client-api/Manager.rst:266
+msgid "``{}``"
+msgstr "``{}``"
+
+#: ../../source/socket.io/client-api/Manager.rst:64
+msgid ""
+"additional query parameters that are sent when connecting a namespace "
+"(then found in ``socket.handshake.quer y`` object on the server-side)"
+msgstr "连接命名空间时发送的其他查询参数(然后在服务器端的 ``socket.handshake.quer y`` 对象中找到)"
+
+#: ../../source/socket.io/client-api/Manager.rst:74
+msgid "``parser``"
+msgstr "``parser``"
+
+#: ../../source/socket.io/client-api/Manager.rst:74
+msgid ""
+"the parser to use. Defaults to an instance of the ``Parser`` that ships "
+"with socket.io. See `socket.io-parser <https://github.com/socketio "
+"/socket.io-parser>`_."
+msgstr "要使用的解析器.默认为socket.io附带的 ``Parser`` 的实例.请参阅 `socket.io-parser <https://github.com/socketio/socket.io-parser>`_."
+
+#: ../../source/socket.io/client-api/Manager.rst:84
+msgid "Available options for the underlying Engine.IO client:"
+msgstr "底层Engine.IO客户端的可用选项:"
+
+#: ../../source/socket.io/client-api/Manager.rst:89
+msgid "``upgrade``"
+msgstr "``upgrade``"
+
+#: ../../source/socket.io/client-api/Manager.rst:89
+msgid ""
+"whether the client should try to upgrade the transport from long-polling "
+"to something better."
+msgstr "客户端是否应该尝试将传输从长轮询升级到更好的状态."
+
+#: ../../source/socket.io/client-api/Manager.rst:95
+msgid "``forceJSONP``"
+msgstr "``forceJSONP``"
+
+#: ../../source/socket.io/client-api/Manager.rst:95
+#: ../../source/socket.io/client-api/Manager.rst:115
+#: ../../source/socket.io/client-api/Manager.rst:124
+#: ../../source/socket.io/client-api/Manager.rst:163
+#: ../../source/socket.io/client-api/Manager.rst:183
+#: ../../source/socket.io/client-api/Manager.rst:211
+#: ../../source/socket.io/client-api/Manager.rst:245
+#: ../../source/socket.io/client-api/Manager.rst:275
+msgid "``false``"
+msgstr "``false``"
+
+#: ../../source/socket.io/client-api/Manager.rst:95
+msgid "forces JSONP for polling transport."
+msgstr "强制JSONP进行轮询传输."
+
+#: ../../source/socket.io/client-api/Manager.rst:98
+msgid "``jsonp``"
+msgstr "``jsonp``"
+
+#: ../../source/socket.io/client-api/Manager.rst:98
+msgid ""
+"determines whether to use JSONP when necessary for polling. If disabled "
+"(by settings to false) an error will be emitted (saying “No transports "
+"available”) if no other transports are available. If another transport is"
+" available for opening a connection (e.g. WebSocket) that transport will "
+"be used instead."
+msgstr "确定是否在必要时使用JSONP进行轮询.如果禁用(通过设置为false),则会发出错误(如果没有其他传输可用,则说“没有传输可用”).如果另一个传输可用于打开连接(例如WebSocket),则将使用该传输."
+
+#: ../../source/socket.io/client-api/Manager.rst:115
+msgid "``forceBase 64``"
+msgstr "``forceBase 64``"
+
+#: ../../source/socket.io/client-api/Manager.rst:115
+msgid ""
+"forces base 64 encoding for polling transport even when XHR2 responseType"
+" is available and WebSocket even if the used standard supports binary."
+msgstr "即使XHR2 responseType可用,也强制基本64编码用于轮询传输,即使使用的标准支持二进制,也使用WebSocket."
+
+#: ../../source/socket.io/client-api/Manager.rst:124
+msgid "``enablesXDR``"
+msgstr "``enablesXDR``"
+
+#: ../../source/socket.io/client-api/Manager.rst:124
+msgid ""
+"enables XDomainRequest for IE8 to avoid loading bar flashing with click "
+"sound. default to ``false`` because XDomainRequest has a flaw of not "
+"sending cookie."
+msgstr "为IE8启用XDomainRequest,以避免因点击声音加载条形闪烁.默认为 ``false``,因为XDomainRequest有一个不发送cookie的缺陷."
+
+#: ../../source/socket.io/client-api/Manager.rst:133
+msgid "``timestampRequests``"
+msgstr "``timestampRequests``"
+
+#: ../../source/socket.io/client-api/Manager.rst:133
+msgid ""
+"whether to add the timestamp with each transport request. Note: polling "
+"requests are always stamped unless this option is explicitly set to "
+"``false``"
+msgstr "是否为每个传输请求添加时间戳.注意：除非将此选项显式设置为 ``false``,否则始终会标记轮询请求"
+
+#: ../../source/socket.io/client-api/Manager.rst:142
+msgid "``timestampParam``"
+msgstr "``timestampParam``"
+
+#: ../../source/socket.io/client-api/Manager.rst:142
+msgid "``t``"
+msgstr "``t``"
+
+#: ../../source/socket.io/client-api/Manager.rst:142
+msgid "the timestamp parameter"
+msgstr "时间戳参数"
+
+#: ../../source/socket.io/client-api/Manager.rst:145
+msgid "``policyPort``"
+msgstr "``policyPort``"
+
+#: ../../source/socket.io/client-api/Manager.rst:145
+msgid "``843``"
+msgstr "``843``"
+
+#: ../../source/socket.io/client-api/Manager.rst:145
+msgid "port the policy server listens on"
+msgstr "策略服务器侦听的端口"
+
+#: ../../source/socket.io/client-api/Manager.rst:148
+msgid "``transports``"
+msgstr "``transports``"
+
+#: ../../source/socket.io/client-api/Manager.rst:148
+msgid "``['polling', 'websocket']``"
+msgstr "``['polling', 'websocket']``"
+
+#: ../../source/socket.io/client-api/Manager.rst:148
+msgid ""
+"a list of transports to try (in order). ``Engine`` always attempts to "
+"connect directly with the first one, provided the feature detection test "
+"for it passes."
+msgstr "要尝试的传输列表(按顺序). ``Engine`` 总是试图直接与第一个连接,前提是它的特征检测测试通过."
+
+#: ../../source/socket.io/client-api/Manager.rst:157
+msgid "``transportOptions``"
+msgstr "``transportOptions``"
+
+#: ../../source/socket.io/client-api/Manager.rst:157
+msgid ""
+"hash of options, indexed by transport name, overriding the common options"
+" for the given transport"
+msgstr "选项的哈希值,由传输名称索引,覆盖给定传输的公共选项"
+
+#: ../../source/socket.io/client-api/Manager.rst:163
+msgid "``rememberUpgrade``"
+msgstr "``rememberUpgrade``"
+
+#: ../../source/socket.io/client-api/Manager.rst:163
+msgid ""
+"If true and if the previous websocket connection to the server succeeded,"
+" the connection attempt will bypass the normal upgrade process and will "
+"initially try websocket. A connection attempt following a transport error"
+" will use the normal upgrade process. It is recommended you turn this on "
+"only when using SSL/TLS connections, or if you know that your network "
+"does not block websockets."
+msgstr "如果为true,并且先前与服务器的websocket连接成功,则连接尝试将绕过正常的升级过程并最初尝试websocket.传输错误后的连接尝试将使用正常的升级过程.建议您仅在使用SSL/TLS连接时打开此选项,或者如果您知道网络未阻止websockets."
+
+#: ../../source/socket.io/client-api/Manager.rst:183
+msgid "``onlyBinaryUpgrades``"
+msgstr "``onlyBinaryUpgrades``"
+
+#: ../../source/socket.io/client-api/Manager.rst:183
+msgid ""
+"whether transport upgrades should be restricted to transports supporting "
+"binary data"
+msgstr "运输升级是否应限于支持二进制数据的运输"
+
+#: ../../source/socket.io/client-api/Manager.rst:189
+msgid "``requestTimeout``"
+msgstr "``requestTimeout``"
+
+#: ../../source/socket.io/client-api/Manager.rst:189
+msgid "``0``"
+msgstr "``0``"
+
+#: ../../source/socket.io/client-api/Manager.rst:189
+msgid ""
+"timeout for xhr-polling requests in milliseconds (``0``) (*only for "
+"polling transport*)"
+msgstr "xhr-polling请求的超时(以毫秒为单位)(``0``)(*仅用于轮询传输*)"
+
+#: ../../source/socket.io/client-api/Manager.rst:195
+msgid "``protocols``"
+msgstr "``protocols``"
+
+#: ../../source/socket.io/client-api/Manager.rst:195
+msgid ""
+"a list of subprotocols (see `MDN reference <https://deve "
+"loper.mozilla.org/en-US /docs/Web/API/WebSocket s_API/Writing_WebSocket "
+"_servers#Subprotocols>`_) (*only for websocket transport*)"
+msgstr "子协议列表(参见`MDN参考 <https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers #Subprotocols>`_)(*仅适用于websocket传输*)"
+
+#: ../../source/socket.io/client-api/Manager.rst:206
+msgid "Node.js-only options for the underlying Engine.IO client:"
+msgstr "底层Engine.IO客户端的Node.js-only选项："
+
+#: ../../source/socket.io/client-api/Manager.rst:211
+msgid "``agent``"
+msgstr "``agent``"
+
+#: ../../source/socket.io/client-api/Manager.rst:211
+msgid "the ``http.Agent`` to use"
+msgstr "``http.Agent`` 使用"
+
+#: ../../source/socket.io/client-api/Manager.rst:214
+msgid "``pfx``"
+msgstr "``pfx``"
+
+#: ../../source/socket.io/client-api/Manager.rst:214
+msgid "Certificate, Private key and CA certificates to use for SSL."
+msgstr "用于SSL的证书,私钥和CA证书."
+
+#: ../../source/socket.io/client-api/Manager.rst:218
+msgid "``key``"
+msgstr "``key``"
+
+#: ../../source/socket.io/client-api/Manager.rst:218
+msgid "Private key to use for SSL."
+msgstr "用于SSL的私钥."
+
+#: ../../source/socket.io/client-api/Manager.rst:221
+msgid "``passphrase``"
+msgstr "``passphrase``"
+
+#: ../../source/socket.io/client-api/Manager.rst:221
+msgid "A string of passphrase for the private key or pfx."
+msgstr "私钥或pfx的密码短语."
+
+#: ../../source/socket.io/client-api/Manager.rst:225
+msgid "``cert``"
+msgstr "``cert``"
+
+#: ../../source/socket.io/client-api/Manager.rst:225
+msgid "Public x509 certificate to use."
+msgstr "公共x509证书使用."
+
+#: ../../source/socket.io/client-api/Manager.rst:228
+msgid "``ca``"
+msgstr "``ca``"
+
+#: ../../source/socket.io/client-api/Manager.rst:228
+msgid ""
+"An authority certificate or array of authority certificates to check the "
+"remote host against."
+msgstr "用于检查远程主机的授权证书或授权证书数组."
+
+#: ../../source/socket.io/client-api/Manager.rst:234
+msgid "``ciphers``"
+msgstr "``ciphers``"
+
+#: ../../source/socket.io/client-api/Manager.rst:234
+msgid ""
+"A string describing the ciphers to use or exclude. Consult the `cipher "
+"format list <http://www.openss l.org/docs/apps/ciphers "
+".html#CIPHER_LIST_FORMA T>`_ for details on the format."
+msgstr "描述要使用或排除的密码的字符串.有关格式的详细信息,请参阅 `cipher格式列表 <http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT>`_."
+
+#: ../../source/socket.io/client-api/Manager.rst:245
+msgid "``rejectUnauthorized``"
+msgstr "``rejectUnauthorized``"
+
+#: ../../source/socket.io/client-api/Manager.rst:245
+msgid ""
+"If true, the server certificate is verified against the list of supplied "
+"CAs. An ‘error’ event is emitted if verification fails. Verification "
+"happens at the connection level, before the HTTP request is sent."
+msgstr "如果为true,则根据提供的CA列表验证服务器证书.如果验证失败,则会发出“错误”事件.在发送HTTP请求之前,验证发生在连接级别."
+
+#: ../../source/socket.io/client-api/Manager.rst:257
+msgid "``perMessageDeflate``"
+msgstr "``perMessageDeflate``"
+
+#: ../../source/socket.io/client-api/Manager.rst:257
+msgid ""
+"parameters of the WebSocket permessage-deflate extension (see `ws module "
+"<https://github. com/einaros/ws>`_ api docs). Set to ``false`` to "
+"disable."
+msgstr "WebSocket permessage-deflate扩展的参数(参见 `ws module <https://github.com/einaros/ws>`_ api docs).设置为“false”以禁用."
+
+#: ../../source/socket.io/client-api/Manager.rst:266
+msgid "``extraHeaders``"
+msgstr "``extraHeaders``"
+
+#: ../../source/socket.io/client-api/Manager.rst:266
+msgid ""
+"Headers that will be passed for each request to the server (via xhr-"
+"polling and via websockets). These values then can be used during "
+"handshake or for special proxies."
+msgstr "将每个请求传递给服务器的标头(通过xhr-polling和websockets).然后可以在握手期间或特殊代理中使用这些值."
+
+#: ../../source/socket.io/client-api/Manager.rst:275
+msgid "``forceNode``"
+msgstr "``forceNode``"
+
+#: ../../source/socket.io/client-api/Manager.rst:275
+msgid ""
+"Uses NodeJS implementation for websockets - even if there is a native "
+"Browser-Websocket available, which is preferred by default over the "
+"NodeJS implementation. (This is useful when using hybrid platforms like "
+"nw.js or electron)"
+msgstr "对websockets使用NodeJS实现 - 即使有可用的本机Browser-Websocket,默认情况下优先于NodeJS实现. (这在使用nw.js或者电子等混合平台时非常有用)"
+
+#: ../../source/socket.io/client-api/Manager.rst:288
+msgid "``localAddress``"
+msgstr "``localAddress``"
+
+#: ../../source/socket.io/client-api/Manager.rst:288
+msgid "the local IP address to connect to"
+msgstr "要连接的本地IP地址"
+
+#: ../../source/socket.io/client-api/Manager.rst:294
+msgid ""
+"Sets the ``reconnection`` option, or returns it if no parameters are "
+"passed."
+msgstr "设置``reconnection`` 选项,如果没有传递参数则返回它."
+
+#: ../../source/socket.io/client-api/Manager.rst:297
+msgid "``Manager|Boolean``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/Manager.rst:302
+#: ../../source/socket.io/client-api/Manager.rst:309
+#: ../../source/socket.io/client-api/Manager.rst:316
+#: ../../source/socket.io/client-api/Manager.rst:323
+msgid "``Manager|Number``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/Manager.rst:304
+msgid ""
+"Sets the ``reconnectionAttempts`` option, or returns it if no parameters "
+"are passed."
+msgstr "设置 ``reconnectionAttempts`` 选项,如果没有传递参数则返回它."
+
+#: ../../source/socket.io/client-api/Manager.rst:311
+msgid ""
+"Sets the ``reconnectionDelay`` option, or returns it if no parameters are"
+" passed."
+msgstr "设置 ``reconnectionDelay`` 选项,如果没有传递参数则返回它."
+
+#: ../../source/socket.io/client-api/Manager.rst:318
+msgid ""
+"Sets the ``reconnectionDelayMax`` option, or returns it if no parameters "
+"are passed."
+msgstr "设置 ``reconnectionDelayMax`` 选项,如果没有传递参数则返回它."
+
+#: ../../source/socket.io/client-api/Manager.rst:325
+msgid "Sets the ``timeout`` option, or returns it if no parameters are passed."
+msgstr "设置 ``timeout`` 选项,如果没有传递参数则返回它."
+
+#: ../../source/socket.io/client-api/Manager.rst:332
+msgid ""
+"If the manager was initiated with ``autoConnect`` to ``false``, launch a "
+"new connection attempt."
+msgstr "如果管理器使用 ``autoConnect`` 启动到 ``false``,则启动新的连接尝试."
+
+#: ../../source/socket.io/client-api/Manager.rst:334
+msgid ""
+"The ``callback`` argument is optional and will be called once the attempt"
+" fails/succeeds."
+msgstr "``callback`` 参数是可选的,一旦尝试失败/成功就会被调用."
+
+#: ../../source/socket.io/client-api/Manager.rst:338
+msgid "Synonym of `manager.open([callback]) <#manageropencallback>`_."
+msgstr "同义词 `manager.open([callback]) <#manageropencallback>`_."
+
+#: ../../source/socket.io/client-api/Manager.rst:344
+msgid "``Socket``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/Manager.rst:346
+msgid "Creates a new ``Socket`` for the given namespace."
+msgstr "为给定的命名空间创建一个新的 ``Socket``."
+
+#: ../../source/socket.io/client-api/Manager.rst:350
+#: ../../source/socket.io/client-api/Manager.rst:378
+msgid "error object"
+msgstr "错误对象"
+
+#: ../../source/socket.io/client-api/Manager.rst:352
+msgid "Fired upon a connection error."
+msgstr "因连接错误而被解雇."
+
+#: ../../source/socket.io/client-api/Manager.rst:356
+msgid "Fired upon a connection timeout."
+msgstr "在连接超时时触发."
+
+#: ../../source/socket.io/client-api/Manager.rst:360
+#: ../../source/socket.io/client-api/Manager.rst:366
+#: ../../source/socket.io/client-api/Manager.rst:372
+msgid "reconnection attempt number"
+msgstr "重新连接尝试次数"
+
+#: ../../source/socket.io/client-api/Manager.rst:362
+msgid "Fired upon a successful reconnection."
+msgstr "成功重新连接后被解雇."
+
+#: ../../source/socket.io/client-api/Manager.rst:368
+#: ../../source/socket.io/client-api/Manager.rst:374
+msgid "Fired upon an attempt to reconnect."
+msgstr "试图重新连接时被解雇."
+
+#: ../../source/socket.io/client-api/Manager.rst:380
+msgid "Fired upon a reconnection attempt error."
+msgstr "在重新连接尝试错误时触发."
+
+#: ../../source/socket.io/client-api/Manager.rst:384
+msgid "Fired when couldn’t reconnect within ``reconnectionAttempts``."
+msgstr "在 ``reconnectionAttempts`` 中无法重新连接时被触发."
+
+#: ../../source/socket.io/client-api/Manager.rst:388
+msgid "Fired when a ping packet is written out to the server."
+msgstr "ping数据包写入服务器时触发."
+
+#: ../../source/socket.io/client-api/Manager.rst:392
+msgid "number of ms elapsed since ``ping`` packet (i.e.: latency)."
+msgstr "自 ``ping`` 包以来经过的ms数(即：等待时间)."
+
+#: ../../source/socket.io/client-api/Manager.rst:394
+msgid "Fired when a pong is received from the server."
+msgstr "从服务器收到乒乓时触发."

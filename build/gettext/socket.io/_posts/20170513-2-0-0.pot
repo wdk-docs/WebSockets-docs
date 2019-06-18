@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 21:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:2
+msgid "Socket.IO 2.0.0"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:4
+msgid "Socket.IO 2.0.0 is finally here! This major release brings several performance improvements:"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:7
+msgid "`uws <https://github.com/uWebSockets/uWebSockets>`_ is now the default Websocket engine. It should bring significant improvement in performance (particularly in terms of memory consumption) (`release note of Engine.IO <https://github.com/socketio/engine.io/releases/tag/2.0.0>`_)"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:13
+msgid "the Engine.IO and Socket.IO handshake packets were merged, reducing the number of roundtrips necessary to establish a connection. (`#2833 <https://github.com/socketio/socket.io/pull/2833>`_)"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:17
+msgid "it is now possible to provide a custom parser according to the needs of your application (`#2829 <https://github.com/socketio/socket.io/pull/2829>`_). Please take a look at the `example <https://github.com/socketio/socket.io/tree/master/examples/custom-parsers>`_ for more information."
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:24
+msgid "Please note that this release is not backward-compatible, due to:"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:26
+msgid "a breaking change related to utf-8 encoding in `engine.io-parser <https://github.com/socketio/engine.io-parser/pull/81>`_"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:29
+msgid "an update to make the socket id on the client match the id on the server-side (`#1058 <https://github.com/socketio/socket.io-client/pull/1058>`_)"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:33
+msgid "Related packages were updated accordingly:"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:35
+msgid "socket.io-redis version `5.x <https://github.com/socketio/socket.io-redis/releases/tag/5.0.0>`_"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:38
+msgid "socket.io-emitter version `3.x <https://github.com/socketio/socket.io-emitter/releases/tag/3.0.0>`_"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170513-2-0-0.rst:41
+msgid "Get the latest client from the CDN:"
+msgstr ""
+

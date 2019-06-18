@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Server API &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>服务端 API &mdash; WebSockets Docs v2019.0613 文档</title>
   
 
   
@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" /> 
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="命名空间" href="Namespace.html" />
+    <link rel="prev" title="服务端API" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -79,11 +81,28 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">服务端API</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">服务端 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Namespace.html">命名空间</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html">客户端</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -129,7 +148,11 @@
     
       <li><a href="../../contents.html">Docs</a> &raquo;</li>
         
-      <li>Server API</li>
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">服务端API</a> &raquo;</li>
+        
+      <li>服务端 API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,231 +172,30 @@
            <div itemprop="articleBody">
             
   <div class="section" id="server-api">
-<h1>Server API<a class="headerlink" href="#server-api" title="永久链接至标题">¶</a></h1>
+<h1>服务端 API<a class="headerlink" href="#server-api" title="永久链接至标题">¶</a></h1>
 <p>Exposed by <code class="docutils literal notranslate"><span class="pre">require('socket.io')</span></code>.</p>
-<div class="section" id="new-server-httpserver-options">
-<h2>new Server(httpServer[, options])<a class="headerlink" href="#new-server-httpserver-options" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">httpServer</span></code> <em>(http.Server)</em> the server to bind to.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
+<dl class="class">
+<dt id="new Server">
+<em class="property">class </em><code class="descname">new Server</code><span class="sig-paren">(</span><em>httpServer</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#new Server" title="永久链接至目标">¶</a></dt>
+<dd><p>Works with and without <code class="docutils literal notranslate"><span class="pre">new</span></code>:</p>
+<dl class="field-list">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>httpServer</strong> (<em>http.Server</em>) – he server to bind to.</p></li>
+<li><p><strong>options</strong> (<em>Object</em>) – </p></li>
 </ul>
-<p>Works with and without <code class="docutils literal notranslate"><span class="pre">new</span></code>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span>
+</dd>
+<dt class="field-even">Example</dt>
+<dd class="field-even"><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span>
 <span class="c1">// or</span>
 <span class="kr">const</span> <span class="nx">Server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Server</span><span class="p">();</span>
 </pre></div>
 </div>
+</dd>
+</dl>
 <p>Available options:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 44%" />
-<col style="width: 37%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Option</p></th>
-<th class="head"><p>Default value</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">/socket.io</span></code></p></td>
-<td><p>name of the path to
-capture</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">serveClie</span>
-<span class="pre">nt</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>whether to serve the
-client files</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">adapter</span></code></p></td>
-<td><ul class="simple">
-<li></li>
-</ul>
-</td>
-<td><p>the adapter to use.
-Defaults to an instance
-of the <code class="docutils literal notranslate"><span class="pre">Adapter</span></code> that
-ships with socket.io
-which is memory based.
-See
-<a class="reference external" href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">origins</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
-<td><p>the allowed origins</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">parser</span></code></p></td>
-<td><ul class="simple">
-<li></li>
-</ul>
-</td>
-<td><p>the parser to use.
-Defaults to an instance
-of the <code class="docutils literal notranslate"><span class="pre">Parser</span></code> that
-ships with socket.io.
-See
-<a class="reference external" href="https://github.com/socketio/socket.io-parser">socket.io-parser</a>.</p></td>
-</tr>
-</tbody>
-</table>
 <p>Available options for the underlying Engine.IO server:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 44%" />
-<col style="width: 37%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Option</p></th>
-<th class="head"><p>Default value</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pingTimeo</span>
-<span class="pre">ut</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></td>
-<td><p>how many ms without a
-pong packet to consider
-the connection closed</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pingInter</span>
-<span class="pre">val</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">25000</span></code></p></td>
-<td><p>how many ms before
-sending a new ping
-packet</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">upgradeTi</span>
-<span class="pre">meout</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10000</span></code></p></td>
-<td><p>how many ms before an
-uncompleted transport
-upgrade is cancelled</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">maxHttpBu</span>
-<span class="pre">fferSize</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10e7</span></code></p></td>
-<td><p>how many bytes or
-characters a message
-can be, before closing
-the session (to avoid
-DoS).</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">allowRequ</span>
-<span class="pre">est</span></code></p></td>
-<td></td>
-<td><p>A function that
-receives a given
-handshake or upgrade
-request as its first
-parameter, and can
-decide whether to
-continue or not. The
-second argument is a
-function that needs to
-be called with the
-decided information:
-<code class="docutils literal notranslate"><span class="pre">fn(err,</span> <span class="pre">success)</span></code>,
-where <code class="docutils literal notranslate"><span class="pre">success</span></code> is a
-boolean value where
-false means that the
-request is rejected,
-and err is an error
-code.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transport</span>
-<span class="pre">s</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">['polling',</span> <span class="pre">'websocket']</span></code></p></td>
-<td><p>transports to allow
-connections to</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">allowUpgr</span>
-<span class="pre">ades</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>whether to allow
-transport upgrades</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">perMessag</span>
-<span class="pre">eDeflate</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>parameters of the
-WebSocket
-permessage-deflate
-extension (see <a class="reference external" href="https://github.com/einaros/ws">ws
-module</a>
-api docs). Set to
-<code class="docutils literal notranslate"><span class="pre">false</span></code> to disable.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">httpCompr</span>
-<span class="pre">ession</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p> parameters of the http
-compression for the
-polling transports (see
-<a class="reference external" href="http://nodejs.org/api/zlib.html#zlib_options">zlib</a>
-api docs). Set to
-<code class="docutils literal notranslate"><span class="pre">false</span></code> to disable.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cookie</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">io</span></code></p></td>
-<td><p>name of the HTTP cookie
-that contains the
-client sid to send as
-part of handshake
-response headers. Set
-to <code class="docutils literal notranslate"><span class="pre">false</span></code> to not
-send one.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cookiePat</span>
-<span class="pre">h</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
-<td><p>path of the above
-<code class="docutils literal notranslate"><span class="pre">cookie</span></code> option. If
-false, no path will be
-sent, which means
-browsers will only send
-the cookie on the
-engine.io attached path
-(<code class="docutils literal notranslate"><span class="pre">/engine.io</span></code>). Set
-false to not save io
-cookie on all requests.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cookieHtt</span>
-<span class="pre">pOnly</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>if <code class="docutils literal notranslate"><span class="pre">true</span></code> HttpOnly io
-cookie cannot be
-accessed by client-side
-APIs, such as
-JavaScript. <em>This
-option has no effect if
-``cookie`` or
-``cookiePath`` is set
-to ``false``.</em></p></td>
-</tr>
-<tr class="row-even"><td><p><a href="#id1"><span class="problematic" id="id2">``</span></a>wsEngine`
-`</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">ws</span></code></p></td>
-<td><p> what WebSocket server
-implementation to use.
-Specified module must
-conform to the <code class="docutils literal notranslate"><span class="pre">ws</span></code>
-interface (see <a class="reference external" href="https://github.com/websockets/ws/blob/master/doc/ws.md">ws
-module api
-docs</a>).
-Default value is
-<code class="docutils literal notranslate"><span class="pre">ws</span></code>. An alternative
-c++ addon is also
-available by installing
-<code class="docutils literal notranslate"><span class="pre">uws</span></code> module.</p></td>
-</tr>
-</tbody>
-</table>
 <p>Among those options:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">pingTimeout</span></code> and <code class="docutils literal notranslate"><span class="pre">pingInterval</span></code> parameters will impact the
@@ -401,10 +223,12 @@ fallback if a WebSocket connection cannot be opened.</p></li>
 <span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="new-server-port-options">
-<h2>new Server(port[, options])<a class="headerlink" href="#new-server-port-options" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descname">new Server</code><span class="sig-paren">(</span><em>port</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">port</span></code> <em>(Number)</em> a port to listen to (a new <code class="docutils literal notranslate"><span class="pre">http.Server</span></code> will
 be created)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
@@ -421,14 +245,15 @@ be created)</p></li>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="new-server-options">
-<h2>new Server(options)<a class="headerlink" href="#new-server-options" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descname">new Server</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
 </ul>
-<p>See <a class="reference external" href="#new-Server-httpServer-options">above</a> for the list of available
-<code class="docutils literal notranslate"><span class="pre">options</span></code>.</p>
+<p>See <a class="reference external" href="#new-Server-httpServer-options">above</a> for the list of available <code class="docutils literal notranslate"><span class="pre">options</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)({</span>
   <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/test&#39;</span><span class="p">,</span>
   <span class="nx">serveClient</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -453,10 +278,12 @@ be created)</p></li>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-sockets">
-<h2>server.sockets<a class="headerlink" href="#server-sockets" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="attribute">
+<dt id="server.sockets">
+<code class="descclassname">server.</code><code class="descname">sockets</code><a class="headerlink" href="#server.sockets" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><em>(Namespace)</em></p></li>
 </ul>
 <p>An alias for the default (<code class="docutils literal notranslate"><span class="pre">/</span></code>) namespace.</p>
@@ -465,10 +292,12 @@ be created)</p></li>
 <span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;everyone&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-serveclient-value">
-<h2>server.serveClient([value])<a class="headerlink" href="#server-serveclient-value" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.serveClient">
+<code class="descclassname">server.</code><code class="descname">serveClient</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.serveClient" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Boolean)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server|Boolean</span></code></p></li>
 </ul>
@@ -485,10 +314,12 @@ method returns the current value.</p>
 <span class="nx">io</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">http</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-path-value">
-<h2>server.path([value])<a class="headerlink" href="#server-path-value" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.path">
+<code class="descclassname">server.</code><code class="descname">path</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.path" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(String)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server|String</span></code></p></li>
 </ul>
@@ -504,25 +335,29 @@ this method returns the current value.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-adapter-value">
-<h2>server.adapter([value])<a class="headerlink" href="#server-adapter-value" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.adapter">
+<code class="descclassname">server.</code><code class="descname">adapter</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.adapter" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Adapter)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server|Adapter</span></code></p></li>
 </ul>
 <p>Sets the adapter <code class="docutils literal notranslate"><span class="pre">value</span></code>. Defaults to an instance of the <code class="docutils literal notranslate"><span class="pre">Adapter</span></code>
 that ships with socket.io which is memory based. See
-<a class="reference external" href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a>.
+<a class="reference external" href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a> .
 If no arguments are supplied this method returns the current value.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">3000</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mi">6379</span> <span class="p">}));</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-origins-value">
-<h2>server.origins([value])<a class="headerlink" href="#server-origins-value" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="server.server.origins">
+<code class="descclassname">server.server.</code><code class="descname">origins</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.server.origins" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(String|String[])</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server|String</span></code></p></li>
@@ -533,10 +368,12 @@ value.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">origins</span><span class="p">([</span><span class="s1">&#39;https://foo.example.com:443&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-origins-fn">
-<h2>server.origins(fn)<a class="headerlink" href="#server-origins-fn" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.origins">
+<code class="descclassname">server.</code><code class="descname">origins</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#server.origins" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fn</span></code> <em>(Function)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server</span></code></p></li>
 </ul>
@@ -551,7 +388,7 @@ will be executed for every request, it is advised to make this function
 work as fast as possible * If <code class="docutils literal notranslate"><span class="pre">socket.io</span></code> is used together with
 <code class="docutils literal notranslate"><span class="pre">Express</span></code>, the CORS headers will be affected only for <code class="docutils literal notranslate"><span class="pre">socket.io</span></code>
 requests. For Express you can use
-<a class="reference external" href="https://github.com/expressjs/cors">cors</a>.</p>
+<a class="reference external" href="https://github.com/expressjs/cors">cors</a> .</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">origins</span><span class="p">((</span><span class="nx">origin</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">origin</span> <span class="o">!==</span> <span class="s1">&#39;https://foo.example.com&#39;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">callback</span><span class="p">(</span><span class="s1">&#39;origin not allowed&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
@@ -560,56 +397,68 @@ requests. For Express you can use
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-attach-httpserver-options">
-<h2>server.attach(httpServer[, options])<a class="headerlink" href="#server-attach-httpserver-options" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.attach">
+<code class="descclassname">server.</code><code class="descname">attach</code><span class="sig-paren">(</span><em>httpServer</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.attach" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">httpServer</span></code> <em>(http.Server)</em> the server to attach to</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
 </ul>
 <p>Attaches the <code class="docutils literal notranslate"><span class="pre">Server</span></code> to an engine.io instance on <code class="docutils literal notranslate"><span class="pre">httpServer</span></code> with
 the supplied <code class="docutils literal notranslate"><span class="pre">options</span></code> (optionally).</p>
-</div>
-<div class="section" id="server-attach-port-options">
-<h2>server.attach(port[, options])<a class="headerlink" href="#server-attach-port-options" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">server.</code><code class="descname">attach</code><span class="sig-paren">(</span><em>port</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">port</span></code> <em>(Number)</em> the port to listen on</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> <em>(Object)</em></p></li>
 </ul>
 <p>Attaches the <code class="docutils literal notranslate"><span class="pre">Server</span></code> to an engine.io instance on a new http.Server
 with the supplied <code class="docutils literal notranslate"><span class="pre">options</span></code> (optionally).</p>
-</div>
-<div class="section" id="server-listen-httpserver-options">
-<h2>server.listen(httpServer[, options])<a class="headerlink" href="#server-listen-httpserver-options" title="永久链接至标题">¶</a></h2>
-<p>Synonym of <a class="reference external" href="#server-attach-httpServer-options">server.attach(httpServer[,
-options])</a>.</p>
-</div>
-<div class="section" id="server-listen-port-options">
-<h2>server.listen(port[, options])<a class="headerlink" href="#server-listen-port-options" title="永久链接至标题">¶</a></h2>
-<p>Synonym of <a class="reference external" href="#server-attach-port-options">server.attach(port[,
-options])</a>.</p>
-</div>
-<div class="section" id="server-bind-engine">
-<h2>server.bind(engine)<a class="headerlink" href="#server-bind-engine" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.listen">
+<code class="descclassname">server.</code><code class="descname">listen</code><span class="sig-paren">(</span><em>httpServer</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.listen" title="永久链接至目标">¶</a></dt>
+<dd><p>Synonym of <a class="reference external" href="#server-attach-httpServer-options">server.attach(httpServer[,options])</a> .</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">server.</code><code class="descname">listen</code><span class="sig-paren">(</span><em>port</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><p>Synonym of <a class="reference external" href="#server-attach-port-options">server.attach(port[,options])</a> .</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="server.bind">
+<code class="descclassname">server.</code><code class="descname">bind</code><span class="sig-paren">(</span><em>engine</em><span class="sig-paren">)</span><a class="headerlink" href="#server.bind" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">engine</span></code> <em>(engine.Server)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server</span></code></p></li>
 </ul>
 <p>Advanced use only. Binds the server to a specific engine.io <code class="docutils literal notranslate"><span class="pre">Server</span></code>
 (or compatible API) instance.</p>
-</div>
-<div class="section" id="server-onconnection-socket">
-<h2>server.onconnection(socket)<a class="headerlink" href="#server-onconnection-socket" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.onconnection">
+<code class="descclassname">server.</code><code class="descname">onconnection</code><span class="sig-paren">(</span><em>socket</em><span class="sig-paren">)</span><a class="headerlink" href="#server.onconnection" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">socket</span></code> <em>(engine.Socket)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Server</span></code></p></li>
 </ul>
 <p>Advanced use only. Creates a new <code class="docutils literal notranslate"><span class="pre">socket.io</span></code> client from the incoming
 engine.io (or compatible API) <code class="docutils literal notranslate"><span class="pre">Socket</span></code>.</p>
-</div>
-<div class="section" id="server-of-nsp">
-<h2>server.of(nsp)<a class="headerlink" href="#server-of-nsp" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.of">
+<code class="descclassname">server.</code><code class="descname">of</code><span class="sig-paren">(</span><em>nsp</em><span class="sig-paren">)</span><a class="headerlink" href="#server.of" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nsp</span></code> <em>(String|RegExp|Function)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Namespace</span></code></p></li>
 </ul>
@@ -644,14 +493,15 @@ in a dynamic way:</p>
 <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">socket</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-close-callback">
-<h2>server.close([callback])<a class="headerlink" href="#server-close-callback" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="server.close">
+<code class="descclassname">server.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="optional">[</span><em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
 </ul>
-<p>Closes the socket.io server. The <code class="docutils literal notranslate"><span class="pre">callback</span></code> argument is optional and
-will be called when all connections are closed.</p>
+<p>Closes the socket.io server. The <code class="docutils literal notranslate"><span class="pre">callback</span></code> argument is optional and will be called when all connections are closed.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">PORT</span>   <span class="o">=</span> <span class="mi">3030</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">Server</span><span class="p">();</span>
@@ -665,18 +515,20 @@ will be called when all connections are closed.</p>
 <span class="nx">io</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">(</span><span class="nx">server</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="server-engine-generateid">
-<h2>server.engine.generateId<a class="headerlink" href="#server-engine-generateid" title="永久链接至标题">¶</a></h2>
-<p>Overwrites the default method to generate your custom socket id.</p>
-<p>The function is called with a node request object
-(<code class="docutils literal notranslate"><span class="pre">http.IncomingMessage</span></code>) as first parameter.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="server.engine.generateId">
+<code class="descclassname">server.engine.</code><code class="descname">generateId</code><a class="headerlink" href="#server.engine.generateId" title="永久链接至目标">¶</a></dt>
+<dd><p>Overwrites the default method to generate your custom socket id.</p>
+<p>The function is called with a node request object (<code class="docutils literal notranslate"><span class="pre">http.IncomingMessage</span></code>) as first parameter.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">engine</span><span class="p">.</span><span class="nx">generateId</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="s2">&quot;custom:id:&quot;</span> <span class="o">+</span> <span class="nx">custom_id</span><span class="o">++</span><span class="p">;</span> <span class="c1">// custom id must be unique</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</dd></dl>
+
 </div>
 
 
@@ -684,6 +536,15 @@ will be called when all connections are closed.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Namespace.html" class="btn btn-neutral float-right" title="命名空间" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="服务端API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

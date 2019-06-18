@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 12:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:2
+msgid "Socket.IO is on Open Collective"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:4
+msgid ""
+"Open Collective provides a transparent, sustainable, and secure way for "
+"people to support and sponsor open source projects. We are joining other "
+"great projects (you may have heard about MochaJS, GulpJS or webpack, "
+"among lots of other awesome projects) in the quest to ensure the "
+"project’s sustainability."
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:11
+msgid "What is an Open Collective?"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:13
+msgid "From their website:"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:15
+msgid ""
+"*An Open Collective is a group of people with a shared mission that "
+"operates in full transparency.*"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:18
+msgid ""
+"That allows both individuals and companies to sponsor our mission at "
+"Socket.IO (with potential tax benefits)."
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:22
+msgid "What would Socket.IO do with my sponsorship?"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:24
+msgid ""
+"That will enable the core contributors to spend more time assuring the "
+"maintenance of the project. That includes:"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:27
+msgid "triaging issues and pull requests"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:29
+msgid ""
+"answering questions on Slack and Stackoverflow (which have been somewhat "
+"neglected recently)"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:32
+msgid ""
+"updating the documentation (I think a lot has been done recently, but "
+"there is still room for improvement!)"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:35
+msgid ""
+"Personally I would like to be able to devote a few days a month to the "
+"project (I mean a whole day of work, not a few hours taken here and "
+"there, usually late in the evening)."
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:39
+msgid "The goals in the near future:"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:41
+msgid "keep the 2.0 version as stable as possible"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:42
+msgid "provide a complete documentation"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:43
+msgid "add more examples, besides the classic chat"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:46
+msgid "How can I help?"
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:48
+msgid ""
+"To become a sponsor or backer, visit our open collective page and follow "
+"the instructions for becoming a part of our collective. Please also take "
+"the time to explore the other awesome collectives that people are "
+"supporting."
+msgstr ""
+
+#: ../../source/socket.io/_posts/20170515-open-collective.rst:53
+msgid ""
+"And finally, a big thanks to Pia Mancini and her partners for making this"
+" possible."
+msgstr ""
+
+#~ msgid "## What is an Open Collective?"
+#~ msgstr ""
+

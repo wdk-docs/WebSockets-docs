@@ -2,364 +2,335 @@
 Socket
 ======
 
-socket.id
----------
+.. attribute:: socket.id
 
--  *(String)*
+   An unique identifier for the socket session. Set after the ``connect``
+   event is triggered, and updated after the ``reconnect`` event.
 
-An unique identifier for the socket session. Set after the ``connect``
-event is triggered, and updated after the ``reconnect`` event.
+   :type: String
+   :example:
+    .. code:: js
 
-.. code:: js
+      const socket = io('http://localhost');
 
-   const socket = io('http://localhost');
+      console.log(socket.id); // undefined
 
-   console.log(socket.id); // undefined
+      socket.on('connect', () => {
+        console.log(socket.id); // 'G5p5...'
+      });
 
-   socket.on('connect', () => {
-     console.log(socket.id); // 'G5p5...'
-   });
+.. attribute:: socket.connected
 
-socket.connected
-----------------
+   -  *(Boolean)*
 
--  *(Boolean)*
+   Whether or not the socket is connected to the server.
 
-Whether or not the socket is connected to the server.
+   .. code:: js
 
-.. code:: js
+      const socket = io('http://localhost');
 
-   const socket = io('http://localhost');
+      socket.on('connect', () => {
+        console.log(socket.connected); // true
+      });
 
-   socket.on('connect', () => {
-     console.log(socket.connected); // true
-   });
+   .. attribute:: socket.disconnected
 
-socket.disconnected
--------------------
+   -  *(Boolean)*
 
--  *(Boolean)*
+   Whether or not the socket is disconnected from the server.
 
-Whether or not the socket is disconnected from the server.
+   .. code:: js
 
-.. code:: js
+      const socket = io('http://localhost');
 
-   const socket = io('http://localhost');
+      socket.on('connect', () => {
+        console.log(socket.disconnected); // false
+      });
 
-   socket.on('connect', () => {
-     console.log(socket.disconnected); // false
-   });
+.. function:: socket.open()
 
-socket.open()
--------------
+   -  **Returns** ``Socket``
 
--  **Returns** ``Socket``
+   Manually opens the socket.
 
-Manually opens the socket.
+   .. code:: js
 
-.. code:: js
+      const socket = io({
+        autoConnect: false
+      });
 
-   const socket = io({
-     autoConnect: false
-   });
+      // ...
+      socket.open();
 
-   // ...
-   socket.open();
+   It can also be used to manually reconnect:
 
-It can also be used to manually reconnect:
+   .. code:: js
 
-.. code:: js
+      socket.on('disconnect', () => {
+        socket.open();
+      });
 
-   socket.on('disconnect', () => {
-     socket.open();
-   });
+.. function:: socket.connect()
 
-socket.connect()
-----------------
+   Synonym of `socket.open() <#socketopen>`_.
 
-Synonym of `socket.open() <#socketopen>`__.
+.. function:: socket.send([…args][, ack])
 
-socket.send([…args][, ack])
----------------------------
+   -  ``args``
+   -  ``ack`` *(Function)*
+   -  **Returns** ``Socket``
 
--  ``args``
--  ``ack`` *(Function)*
--  **Returns** ``Socket``
+   Sends a ``message`` event. See `socket.emit(eventName[, …args][,ack]) <#socketemiteventname-args-ack>`_.
 
-Sends a ``message`` event. See `socket.emit(eventName[, …args][,
-ack]) <#socketemiteventname-args-ack>`__.
+.. function:: socket.emit(eventName[, …args][, ack])
 
-socket.emit(eventName[, …args][, ack])
---------------------------------------
+   -  ``eventName`` *(String)*
+   -  ``args``
+   -  ``ack`` *(Function)*
+   -  **Returns** ``Socket``
 
--  ``eventName`` *(String)*
--  ``args``
--  ``ack`` *(Function)*
--  **Returns** ``Socket``
+   Emits an event to the socket identified by the string name. Any other
+   parameters can be included. All serializable datastructures are
+   supported, including ``Buffer``.
 
-Emits an event to the socket identified by the string name. Any other
-parameters can be included. All serializable datastructures are
-supported, including ``Buffer``.
+   .. code:: js
 
-.. code:: js
+      socket.emit('hello', 'world');
+      socket.emit('with-binary', 1, '2', { 3: '4', 5: new Buffer(6) });
 
-   socket.emit('hello', 'world');
-   socket.emit('with-binary', 1, '2', { 3: '4', 5: new Buffer(6) });
+   The ``ack`` argument is optional and will be called with the server
+   answer.
 
-The ``ack`` argument is optional and will be called with the server
-answer.
+   .. code:: js
 
-.. code:: js
+      socket.emit('ferret', 'tobi', (data) => {
+        console.log(data); // data will be 'woot'
+      });
 
-   socket.emit('ferret', 'tobi', (data) => {
-     console.log(data); // data will be 'woot'
-   });
+      // server:
+      //  io.on('connection', (socket) => {
+      //    socket.on('ferret', (name, fn) => {
+      //      fn('woot');
+      //    });
+      //  });
 
-   // server:
-   //  io.on('connection', (socket) => {
-   //    socket.on('ferret', (name, fn) => {
-   //      fn('woot');
-   //    });
-   //  });
+.. function:: socket.on(eventName, callback)
 
-socket.on(eventName, callback)
-------------------------------
+   -  ``eventName`` *(String)*
+   -  ``callback`` *(Function)*
+   -  **Returns** ``Socket``
 
--  ``eventName`` *(String)*
--  ``callback`` *(Function)*
--  **Returns** ``Socket``
+   Register a new handler for the given event.
 
-Register a new handler for the given event.
+   .. code:: js
 
-.. code:: js
+      socket.on('news', (data) => {
+        console.log(data);
+      });
 
-   socket.on('news', (data) => {
-     console.log(data);
-   });
+      // with multiple arguments
+      socket.on('news', (arg1, arg2, arg3, arg4) => {
+        // ...
+      });
+      // with callback
+      socket.on('news', (cb) => {
+        cb(0);
+      });
 
-   // with multiple arguments
-   socket.on('news', (arg1, arg2, arg3, arg4) => {
-     // ...
-   });
-   // with callback
-   socket.on('news', (cb) => {
-     cb(0);
-   });
+   The socket actually inherits every method of the `Emitter <https://github.com/component/emitter>`_ class, like ``hasListeners``, ``once`` or ``off`` (to remove an event listener).
 
-The socket actually inherits every method of the
-`Emitter <https://github.com/component/emitter>`__ class, like
-``hasListeners``, ``once`` or ``off`` (to remove an event listener).
+.. function:: socket.compress(value)
 
-socket.compress(value)
-----------------------
+   -  ``value`` *(Boolean)*
+   -  **Returns** ``Socket``
 
--  ``value`` *(Boolean)*
--  **Returns** ``Socket``
+   Sets a modifier for a subsequent event emission that the event data will
+   only be *compressed* if the value is ``true``. Defaults to ``true`` when
+   you don’t call the method.
 
-Sets a modifier for a subsequent event emission that the event data will
-only be *compressed* if the value is ``true``. Defaults to ``true`` when
-you don’t call the method.
+   .. code:: js
 
-.. code:: js
+      socket.compress(false).emit('an event', { some: 'data' });
 
-   socket.compress(false).emit('an event', { some: 'data' });
+.. function:: socket.binary(value)
 
-socket.binary(value)
---------------------
+   Specifies whether the emitted data contains binary. Increases
+   performance when specified. Can be ``true`` or ``false``.
 
-Specifies whether the emitted data contains binary. Increases
-performance when specified. Can be ``true`` or ``false``.
+   .. code:: js
 
-.. code:: js
+      socket.binary(false).emit('an event', { some: 'data' });
 
-   socket.binary(false).emit('an event', { some: 'data' });
+.. function:: socket.close()
 
-socket.close()
---------------
+   -  **Returns** ``Socket``
 
--  **Returns** ``Socket``
+   Disconnects the socket manually.
 
-Disconnects the socket manually.
+.. function:: socket.disconnect()
 
-socket.disconnect()
--------------------
+   Synonym of `socket.close() <#socketclose>`_.
 
-Synonym of `socket.close() <#socketclose>`__.
+.. function:: Event: ‘connect’
 
-Event: ‘connect’
-----------------
+   Fired upon a connection including a successful reconnection.
 
-Fired upon a connection including a successful reconnection.
+   .. code:: js
 
-.. code:: js
+      socket.on('connect', () => {
+        // ...
+      });
 
-   socket.on('connect', () => {
-     // ...
-   });
-
-   // note: you should register event handlers outside of connect,
-   // so they are not registered again on reconnection
-   socket.on('myevent', () => {
-     // ...
-   });
+      // note: you should register event handlers outside of connect,
+      // so they are not registered again on reconnection
+      socket.on('myevent', () => {
+        // ...
+      });
 
 .. _event-connect_error-1:
 
-Event: ‘connect_error’
-----------------------
+.. function:: Event: ‘connect_error’
 
--  ``error`` *(Object)* error object
+   -  ``error`` *(Object)* error object
 
-Fired upon a connection error.
+   Fired upon a connection error.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('connect_error', (error) => {
-     // ...
-   });
+      socket.on('connect_error', (error) => {
+        // ...
+      });
 
 .. _event-connect_timeout-1:
 
-Event: ‘connect_timeout’
-------------------------
+.. function:: Event: ‘connect_timeout’
 
-Fired upon a connection timeout.
+   Fired upon a connection timeout.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('connect_timeout', (timeout) => {
-     // ...
-   });
+      socket.on('connect_timeout', (timeout) => {
+        // ...
+      });
 
-Event: ‘error’
---------------
+.. function:: Event: ‘error’
 
--  ``error`` *(Object)* error object
+   -  ``error`` *(Object)* error object
 
-Fired when an error occurs.
+   Fired when an error occurs.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('error', (error) => {
-     // ...
-   });
+      socket.on('error', (error) => {
+        // ...
+      });
 
-Event: ‘disconnect’
--------------------
+.. function:: Event: ‘disconnect’
 
--  ``reason`` *(String)* either ‘io server disconnect’, ‘io client
-   disconnect’, or ‘ping timeout’
+   -  ``reason`` *(String)* either ‘io server disconnect’, ‘io client disconnect’, or ‘ping timeout’
 
-Fired upon a disconnection.
+   Fired upon a disconnection.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('disconnect', (reason) => {
-     if (reason === 'io server disconnect') {
-       // the disconnection was initiated by the server, you need to reconnect manually
-       socket.connect();
-     }
-     // else the socket will automatically try to reconnect
-   });
+      socket.on('disconnect', (reason) => {
+        if (reason === 'io server disconnect') {
+          // the disconnection was initiated by the server, you need to reconnect manually
+          socket.connect();
+        }
+        // else the socket will automatically try to reconnect
+      });
 
 .. _event-reconnect-1:
 
-Event: ‘reconnect’
-------------------
+.. function:: Event: ‘reconnect’
 
--  ``attempt`` *(Number)* reconnection attempt number
+   -  ``attempt`` *(Number)* reconnection attempt number
 
-Fired upon a successful reconnection.
+   Fired upon a successful reconnection.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('reconnect', (attemptNumber) => {
-     // ...
-   });
+      socket.on('reconnect', (attemptNumber) => {
+        // ...
+      });
 
 .. _event-reconnect_attempt-1:
 
-Event: ‘reconnect_attempt’
---------------------------
+.. function:: Event: ‘reconnect_attempt’
 
--  ``attempt`` *(Number)* reconnection attempt number
+   -  ``attempt`` *(Number)* reconnection attempt number
 
-Fired upon an attempt to reconnect.
+   Fired upon an attempt to reconnect.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('reconnect_attempt', (attemptNumber) => {
-     // ...
-   });
+      socket.on('reconnect_attempt', (attemptNumber) => {
+        // ...
+      });
 
 .. _event-reconnecting-1:
 
-Event: ‘reconnecting’
----------------------
+.. function:: Event: ‘reconnecting’
 
--  ``attempt`` *(Number)* reconnection attempt number
+   -  ``attempt`` *(Number)* reconnection attempt number
 
-Fired upon an attempt to reconnect.
+   Fired upon an attempt to reconnect.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('reconnecting', (attemptNumber) => {
-     // ...
-   });
+      socket.on('reconnecting', (attemptNumber) => {
+        // ...
+      });
 
 .. _event-reconnect_error-1:
 
-Event: ‘reconnect_error’
-------------------------
+.. function:: Event: ‘reconnect_error’
 
--  ``error`` *(Object)* error object
+   -  ``error`` *(Object)* error object
 
-Fired upon a reconnection attempt error.
+   Fired upon a reconnection attempt error.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('reconnect_error', (error) => {
-     // ...
-   });
+      socket.on('reconnect_error', (error) => {
+        // ...
+      });
 
 .. _event-reconnect_failed-1:
 
-Event: ‘reconnect_failed’
--------------------------
+.. function:: Event: ‘reconnect_failed’
 
-Fired when couldn’t reconnect within ``reconnectionAttempts``.
+   Fired when couldn’t reconnect within ``reconnectionAttempts``.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('reconnect_failed', () => {
-     // ...
-   });
+      socket.on('reconnect_failed', () => {
+        // ...
+      });
 
 .. _event-ping-1:
 
-Event: ‘ping’
--------------
+.. function:: Event.ping
 
-Fired when a ping packet is written out to the server.
+   Fired when a ping packet is written out to the server.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('ping', () => {
-     // ...
-   });
+      socket.on('ping', () => {
+        // ...
+      });
 
 .. _event-pong-1:
 
-Event: ‘pong’
--------------
+.. function:: Event.pong
 
--  ``ms`` *(Number)* number of ms elapsed since ``ping`` packet (i.e.:
-   latency).
+   -  ``ms`` *(Number)* number of ms elapsed since ``ping`` packet (i.e.: latency).
 
-Fired when a pong is received from the server.
+   Fired when a pong is received from the server.
 
-.. code:: js
+   .. code:: js
 
-   socket.on('pong', (latency) => {
-     // ...
-   });
+      socket.on('pong', (latency) => {
+        // ...
+      });

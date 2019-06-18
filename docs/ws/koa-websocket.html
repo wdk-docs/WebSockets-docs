@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>koa-websocket &mdash; WebSockets Docs v2019.0613 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="ws: a Node.js WebSocket library" href="quick-start.html" />
+    <link rel="prev" title="ws documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">koa-websocket</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">ws: a Node.js WebSocket library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws.html">ws</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">ws documentation</a> &raquo;</li>
+        
+      <li>koa-websocket</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ws/koa-websocket.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="koa-websocket">
+<h1>koa-websocket<a class="headerlink" href="#koa-websocket" title="永久链接至标题">¶</a></h1>
+<p>Koa v2 is now the default. For Koa v1 support install with koa-websocket&#64;2 and see the <cite>legacy</cite> branch.</p>
+<p>Supports <cite>ws://</cite> and <cite>wss://</cite></p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="永久链接至标题">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">koa</span><span class="o">-</span><span class="nx">websocket</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa&#39;</span><span class="p">),</span>
+  <span class="nx">route</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-route&#39;</span><span class="p">),</span>
+  <span class="nx">websockify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-websocket&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">websockify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Koa</span><span class="p">());</span>
+
+<span class="c1">// Regular middleware</span>
+<span class="c1">// Note it&#39;s app.ws.use and not app.use</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// return `next` to pass the context (ctx) on to the next ws middleware</span>
+  <span class="k">return</span> <span class="nx">next</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Using routes</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;/test/:id&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// `ctx` is the regular koa context created from the `ws` onConnection `socket.upgradeReq` object.</span>
+  <span class="c1">// the websocket is added to the context on `ctx.websocket`.</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something with the message from client</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}));</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Example with Let’s Encrypt ([the Greenlock package](<a class="reference external" href="https://git.daplie.com/Daplie/greenlock-koa">https://git.daplie.com/Daplie/greenlock-koa</a>)):</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">greenlock</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;greenlock-express&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">websockify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-websocket&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">le</span> <span class="o">=</span> <span class="nx">greenlock</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="c1">// all your sweet Let&#39;s Encrypt options here</span>
+<span class="p">});</span>
+
+<span class="c1">// the magic happens right here</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">websockify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Koa</span><span class="p">(),</span> <span class="nx">wsOptions</span><span class="p">,</span> <span class="nx">le</span><span class="p">.</span><span class="nx">httpsOptions</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="c1">// the websocket is added to the context as `ctx.websocket`.</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>With custom websocket options.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa&#39;</span><span class="p">),</span>
+  <span class="nx">route</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-route&#39;</span><span class="p">),</span>
+  <span class="nx">websockify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-websocket&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">wsOptions</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">websockify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Koa</span><span class="p">(),</span> <span class="nx">wsOptions</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="c1">// the websocket is added to the context as `ctx.websocket`.</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// print message from the client</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}));</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="websockify">
+<code class="descname">websockify</code><span class="sig-paren">(</span><em>KoaApp</em><span class="optional">[</span>, <em>WebSocketOptions</em><span class="optional">]</span><span class="optional">[</span>, <em>httpsOptions</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#websockify" title="永久链接至目标">¶</a></dt>
+<dd><p>The WebSocket options object just get passed right through to the <cite>new WebSocketServer(options)</cite> call.</p>
+<p>The optional HTTPS options object gets passed right into <cite>https.createServer(options)</cite>. If the HTTPS options are
+passed in, koa-websocket will use the built-in Node HTTPS server to provide support for the <cite>wss://</cite> protocol.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="永久链接至标题">¶</a></h2>
+<p>MIT</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quick-start.html" class="btn btn-neutral float-right" title="ws: a Node.js WebSocket library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="ws documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

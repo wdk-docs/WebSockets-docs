@@ -52,18 +52,19 @@ namespace:
 
    const socket = io('/my-namespace');
 
-**Important note:** The namespace is an implementation detail of the
-Socket.IO protocol, and is not related to the actual URL of the
-underlying transport, which defaults to ``/socket.io/…``.
+.. important::
+   The namespace is an implementation detail of the
+   Socket.IO protocol, and is not related to the actual URL of the
+   underlying transport, which defaults to ``/socket.io/…``.
 
 Rooms
-=====
+----------
 
 Within each namespace, you can also define arbitrary channels that
 sockets can ``join`` and ``leave``.
 
 Joining and leaving
--------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can call ``join`` to subscribe the socket to a given channel:
 
@@ -83,7 +84,7 @@ broadcasting or emitting:
 To leave a channel you call ``leave`` in the same fashion as ``join``.
 
 Default room
-------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each ``Socket`` in Socket.IO is identified by a random, unguessable,
 unique identifier ``Socket#id``. For your convenience, each socket
@@ -100,13 +101,13 @@ This makes it easy to broadcast messages to other sockets:
    });
 
 Disconnection
--------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upon disconnection, sockets ``leave`` all the channels they were part of
 automatically, and no special teardown is needed on your part.
 
 Sending messages from the outside-world
-=======================================
+-----------------------------------------------
 
 In some cases, you might want to emit events to sockets in Socket.IO
 namespaces / rooms from outside the context of your Socket.IO processes.
@@ -116,8 +117,8 @@ channel to send messages into the process.
 
 To facilitate this use case, we created two modules:
 
--  `socket.io-redis <https://github.com/socketio/socket.io-redis>`__
--  `socket.io-emitter <https://github.com/socketio/socket.io-emitter>`__
+-  `socket.io-redis <https://github.com/socketio/socket.io-redis>`_
+-  `socket.io-emitter <https://github.com/socketio/socket.io-emitter>`_
 
 By implementing the Redis ``Adapter``:
 

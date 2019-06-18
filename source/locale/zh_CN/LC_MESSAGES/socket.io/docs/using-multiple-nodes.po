@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 11:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:2
+msgid "Using multiple nodes"
+msgstr "使用多个节点"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:5
+msgid "Sticky load balancing"
+msgstr "粘性负载平衡"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:7
+msgid ""
+"If you plan to distribute the load of connections among different "
+"processes or machines, you have to make sure that requests associated "
+"with a particular session id connect to the process that originated them."
+msgstr "如果计划在不同进程或计算机之间分配连接负载,则必须确保与特定会话ID关联的请求连接到发起它们的进程."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:12
+msgid ""
+"This is due to certain transports like XHR Polling or JSONP Polling "
+"relying on firing several requests during the lifetime of the “socket”. "
+"Failing to enable sticky balancing will result in the dreaded:"
+msgstr "这是由于某些传输,如XHR轮询或JSONP轮询,依赖于在“套接字”的生命周期内触发多个请求.未能启用粘性平衡将导致可怕的:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:20
+msgid ""
+"Which means that the upgrade request was sent to a node which did not "
+"know the given socket id, hence the HTTP 400 response."
+msgstr "这意味着升级请求被发送到不知道给定套接字ID的节点,因此发送HTTP 400响应."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:23
+msgid ""
+"To illustrate why this is needed, consider the example of emitting an "
+"event to all connected clients:"
+msgstr "为了说明为什么需要这样做,请考虑向所有连接的客户端发送事件的示例:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:30
+msgid ""
+"Chances are that some of those clients might have an active bi-"
+"directional communication channel like ``WebSocket`` that we can write to"
+" immediately, but some of them might be using long-polling."
+msgstr "有可能这些客户端中的某些客户端可能有一个活跃的双向通信通道,如“WebSocket”,我们可以立即写入,但其中一些可能正在使用长轮询."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:34
+msgid ""
+"If they’re using long polling, they might or might not have sent a "
+"request that we can write to. They could be “in between” those requests. "
+"In those situations, it means we have to buffer messages in the process. "
+"In order for the client to successfully claim those messages when he "
+"sends his request, the easiest way is for him to connect to be routed to "
+"that same process."
+msgstr "如果他们使用长轮询,他们可能会或可能不会发送我们可以写入的请求.他们可能“介于”这些请求之间.在这些情况下,这意味着我们必须在此过程中缓冲消息.为了让客户端在发送请求时成功声明这些消息,最简单的方法是让他连接到路由到同一个进程."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:41
+msgid ""
+"As noted above, ``WebSocket`` transport do not have this limitation, "
+"since the underlying TCP connection is kept open between the client and "
+"the given server. That’s why you might find some suggestions to only use "
+"the ``WebSocket`` transport:"
+msgstr "如上所述,``WebSocket`` 传输没有此限制,因为底层TCP连接在客户端和给定服务器之间保持打开.这就是为什么你可能会找到一些只使用 ``WebSocket`` 传输的建议:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:53
+msgid ""
+"Both means that there is **NO FALLBACK** to long-polling when the "
+"websocket connection cannot be established, which is in fact one of the "
+"key feature of Socket.IO. In that case, you should maybe consider using "
+"raw `WebSocket <https://developer.mozilla.org/en-"
+"US/docs/Web/API/WebSocket>`_, or a thin wrapper like `robust-websocket "
+"<https://github.com/appuri/robust-websocket>`_."
+msgstr ""
+"两者都意味着当无法建立websocket连接时,长时间轮询没有 **FALLBACK**,这实际上是Socket.IO的关键特性之一.在这种情况下,您应该考虑使用原始的 `WebSocket <https://developer.mozilla.org/en-US/docs/Web/API/WebSocket>`_,或者像 `robust-websocket <https://github.com/appuri/robust-websocket>`_."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:61
+msgid "To achieve sticky-session, there are two main solutions:"
+msgstr "要实现粘性会话,有两个主要解决方案:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:63
+msgid "routing clients based on their originating address"
+msgstr "根据客户端的原始地址路由客户端"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:65
+msgid "routing clients based on a cookie"
+msgstr "基于cookie路由客户端"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:68
+msgid "NginX configuration"
+msgstr "NginX配置"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:70
+msgid ""
+"Within the ``http { }`` section of your ``nginx.conf`` file, you can "
+"declare a ``upstream`` section with a list of Socket.IO process you want "
+"to balance load between:"
+msgstr ""
+"在 ``nginx.conf`` 文件的 ``http "
+"{}`` 部分中,你可以声明一个 ``upstream`` 部分,其中包含一个Socket.IO进程列表,你希望在它之间平衡负载:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:104
+msgid ""
+"Notice the ``ip_hash`` instruction that indicates the connections will be"
+" sticky."
+msgstr "注意 ``ip_hash`` 指令,指示连接将是粘滞的."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:107
+msgid ""
+"Make sure you also configure ``worker_processes`` in the topmost level to"
+" indicate how many workers NginX should use. You might also want to look "
+"into tweaking the ``worker_connections`` setting within the ``events { "
+"}`` block."
+msgstr ""
+"确保你还在最顶层配置 ``worker_processes`` 来表示NginX应该使用多少工人.您可能还想调查 ``events "
+"{}`` 块中的 ``worker_connections`` 设置."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:112
+msgid ""
+"`Example <https://github.com/socketio/socket.io/tree/master/examples"
+"/cluster-nginx>`_"
+msgstr "`例 <https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx>`_"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:115
+msgid "Apache HTTPD configuration"
+msgstr "Apache HTTPD 配置"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:143
+msgid ""
+"`Example <https://github.com/socketio/socket.io/tree/master/examples"
+"/cluster-httpd>`_"
+msgstr "`例 <https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd>`_"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:146
+msgid "HAProxy configuration"
+msgstr "HAProxy 配置"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:164
+msgid ""
+"`Example <https://github.com/socketio/socket.io/tree/master/examples"
+"/cluster-haproxy>`_"
+msgstr "`例 <https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy>`_"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:167
+msgid "Using Node.JS Cluster"
+msgstr "使用 Node.JS 群集"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:169
+msgid ""
+"Just like NginX, Node.JS comes with built-in clustering support through "
+"the ``cluster`` module."
+msgstr "就像NginX一样, Node.JS通过 ``cluster`` 模块提供内置的集群支持."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:172
+msgid ""
+"Fedor Indutny has created a module called `sticky session "
+"<https://github.com/indutny/sticky-session>`_ that ensures file "
+"descriptors (ie: connections) are routed based on the originating "
+"``remoteAddress`` (ie: IP). Please note that this might lead to "
+"unbalanced routing, depending on the hashing method."
+msgstr "Fedor Indutny创建了一个名为 `sticky session <https://github.com/indutny/sticky-session>`_ 的模块,确保文件描述符(即:连接)基于原始的 ``remoteAddress`` 进行路由(即: IP).请注意,这可能会导致路由不平衡,具体取决于散列方法."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:178
+msgid ""
+"You could also assign a different port to each worker of the cluster, "
+"based on the cluster worker ID, and balance the load with the "
+"configuration that you can find above."
+msgstr "您还可以根据群集工作程序ID为群集的每个工作人员分配不同的端口,并使用上面可以找到的配置平衡负载."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:183
+msgid "Passing events between nodes"
+msgstr "在节点之间传递事件"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:185
+msgid ""
+"Now that you have multiple Socket.IO nodes accepting connections, if you "
+"want to broadcast events to everyone (or even everyone in a certain `room"
+" </docs/rooms-and-namespaces/#Rooms>`_) you’ll need some way of passing "
+"messages between processes or computers."
+msgstr "既然你有多个Socket.IO节点接受连接,如果你想向每个人(甚至是某个 `房间 </docs/rooms-and-namespaces/#Rooms>`_ 中的每个人)广播事件,你需要一些在进程或计算机之间传递消息的方法."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:190
+msgid ""
+"The interface in charge of routing messages is what we call the "
+"``Adapter``. You can implement your own on top of the `socket.io-adapter "
+"<https://github.com/socketio/socket.io-adapter>`_ (by inheriting from it)"
+" or you can use the one we provide on top of `Redis "
+"<https://redis.io/>`_: `socket.io-redis "
+"<https://github.com/socketio/socket.io-redis>`_:"
+msgstr "负责路由消息的接口就是我们所说的“适配器”.您可以在 `socket.io-adapter <https://github.com/socketio/socket.io-adapter>`_ (通过继承)上实现自己的,或者您可以使用我们提供的那个 `Redis <https://redis.io/>`_: `socket.io-redis <https://github.com/socketio/socket.io-redis>`_:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:203
+msgid "Then the following call:"
+msgstr "然后是以下电话:"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:209
+msgid ""
+"will be broadcast to every node through the `Pub/Sub mechanism "
+"<https://redis.io/topics/pubsub>`_ of Redis."
+msgstr "将通过Redis的 `Pub/Sub 机制 <https://redis.io/topics/pubsub>`_ 广播到每个节点."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:212
+msgid "sticky-session is still needed when using the Redis adapter."
+msgstr "使用Redis适配器时仍需要粘性会话."
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:214
+msgid ""
+"If you want to pass messages to it from non-socket.io processes, you "
+"should look into `“Sending messages from the outside-world” </docs/rooms-"
+"and-namespaces/#Sending-messages-from-the-outside-world>`_."
+msgstr "如果你想从nonsocket.io进程向它传递消息,你应该看看 `“发送来自外部世界的消息” </docs/rooms-and-namespaces/#Sending-messages-from-the-outside -world>`_."
+

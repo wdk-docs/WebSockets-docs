@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 16:53+0800\n"
+"POT-Creation-Date: 2019-06-13 19:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,786 +18,1543 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../source/awesome.md:1 ../../source/awesome.md:11
+#: ../../source/awesome.rst:2
 msgid "Awesome WebSockets"
 msgstr ""
 
-#: ../../source/awesome.md:3
+#: ../../source/awesome.rst:4
 msgid "A curated list of WebSockets related principles and technologies."
-msgstr ""
+msgstr "WebSockets相关原理和技术的精选列表。"
 
-#: ../../source/awesome.md:5
+#: ../../source/awesome.rst:6
 msgid ""
-"WebSocket is a computer communications protocol, providing full-duplex "
-"communication channels over a single TCP connection. The WebSocket "
-"protocol was standardized by the IETF as RFC 6455 in 2011, and the "
-"WebSocket API in Web IDL is being standardized by the W3C."
-msgstr ""
+"`WebSocket <https://en.wikipedia.org/wiki/WebSocket>`_ is a computer "
+"communications protocol, providing full-duplex communication channels "
+"over a single TCP connection. The WebSocket protocol was standardized by "
+"the IETF as RFC 6455 in 2011, and the WebSocket API in Web IDL is being "
+"standardized by the W3C."
+msgstr "`WebSocket <https://en.wikipedia.org/wiki/WebSocket>`_ 是一种计算机通信协议，通过单个TCP连接提供全双工通信信道。 WebSocket协议在2011年由IETF标准化为RFC 6455，Web IDL中的WebSocket API由W3C标准化。"
 
-#: ../../source/awesome.md:9
-msgid "Contents"
-msgstr ""
-
-#: ../../source/awesome.md:12 ../../source/awesome.md:46
+#: ../../source/awesome.rst:13
 msgid "Tools per Language"
 msgstr "每种语言的工具"
 
-#: ../../source/awesome.md:13 ../../source/awesome.md:48
+#: ../../source/awesome.rst:16
 msgid "Agnostic"
 msgstr ""
 
-#: ../../source/awesome.md:14 ../../source/awesome.md:56
+#: ../../source/awesome.rst:18
+msgid ""
+"`Websocketd <http://websocketd.com>`_ - WebSockets the UNIX way - Full "
+"duplex messaging between web browsers and servers."
+msgstr "`Websocketd <http://websocketd.com>`_ - UNIX方式的WebSockets  -  Web浏览器和服务器之间的全双工消息传递。"
+
+#: ../../source/awesome.rst:20
+msgid ""
+"`Nchan <https://nchan.slact.net>`_ - Nchan is a scalable, flexible "
+"pub/sub server for the modern web, built as a module for the Nginx web "
+"server."
+msgstr "`Nchan <https://nchan.slact.net>`_ - Nchan是一个可扩展，灵活的现代Web发布/订阅服务器，构建为Nginx Web服务器的模块。"
+
+#: ../../source/awesome.rst:23
+msgid ""
+"`Apache-websocket <https://github.com/disconnect/apache-websocket>`_ - "
+"Apache WebSocket module."
+msgstr "`Apache-websocket <https://github.com/disconnect/apache-websocket>`_ - Apache WebSocket模块。"
+
+#: ../../source/awesome.rst:25
+msgid ""
+"`MinnowServer <https://github.com/RealTimeLogic/MinnowServer>`_ - A super"
+" small and fast embedded HTTP(S) WebSocket server."
+msgstr "`MinnowServer <https://github.com/RealTimeLogic/MinnowServer>`_ - 超小型快速嵌入式HTTP（S）WebSocket服务器。"
+
+#: ../../source/awesome.rst:27
+msgid ""
+"`gwsocket <https://github.com/allinurl/gwsocket>`_ - Fast, standalone, "
+"language-agnostic WebSocket server RFC6455 compliant."
+msgstr "`gwsocket <https://github.com/allinurl/gwsocket>`_ - 快速，独立，与语言无关的WebSocket服务器RFC6455兼容。"
+
+#: ../../source/awesome.rst:31
 msgid "C"
 msgstr ""
 
-#: ../../source/awesome.md:15 ../../source/awesome.md:65
+#: ../../source/awesome.rst:33
+msgid ""
+"`Libwebsockets <https://libwebsockets.org>`_ - It’s a lightweight pure C "
+"library built to use minimal CPU and memory resources, and provide fast "
+"throughput in both directions as client or server."
+msgstr "`Libwebsockets <https://libwebsockets.org>`_ - 它是一个轻量级的纯C库，可以使用最少的CPU和内存资源，并在客户端或服务器的两个方向上提供快速吞吐量。"
+
+#: ../../source/awesome.rst:36
+msgid ""
+"`Libwebsock <https://github.com/payden/libwebsock>`_ - C library for easy"
+" WebSockets server."
+msgstr "`Libwebsock <https://github.com/payden/libwebsock>`_ - 用于简易WebSockets服务器的C库。"
+
+#: ../../source/awesome.rst:38
+msgid ""
+"`Websocket <https://github.com/mortzdk/Websocket>`_ - Websocket server "
+"written in C."
+msgstr ""
+
+#: ../../source/awesome.rst:40
+msgid ""
+"`facil.io <http://facil.io>`_ - A server/framework library for web "
+"applications, including Websockets and native pub/sub."
+msgstr ""
+
+#: ../../source/awesome.rst:42
+msgid ""
+"`libuwsc <https://github.com/zhaojh329/libuwsc>`_ - A Lightweight and "
+"fully asynchronous WebSocket client C library based on libubox for "
+"Embedded Linux."
+msgstr ""
+
+#: ../../source/awesome.rst:45
+msgid ""
+"`mongoose <https://github.com/cesanta/mongoose>`_ - Mongoose Embedded Web"
+" Server Library - Mongoose is more than an embedded webserver. It is a "
+"multi-protocol embedded networking library with functions including TCP, "
+"HTTP client and server, WebSocket client and server, MQTT client and "
+"broker and much more."
+msgstr ""
+
+#: ../../source/awesome.rst:54
 msgid "C++"
 msgstr ""
 
-#: ../../source/awesome.md:16
-msgid "[C](#c)"
-msgstr ""
-
-#: ../../source/awesome.md:17 ../../source/awesome.md:87
-msgid "Erlang"
-msgstr ""
-
-#: ../../source/awesome.md:18 ../../source/awesome.md:93
-msgid "Go"
-msgstr ""
-
-#: ../../source/awesome.md:19 ../../source/awesome.md:102
-msgid "Haskell"
-msgstr ""
-
-#: ../../source/awesome.md:20 ../../source/awesome.md:106
-msgid "Java VM"
-msgstr ""
-
-#: ../../source/awesome.md:21 ../../source/awesome.md:108
-msgid "Clojure"
-msgstr ""
-
-#: ../../source/awesome.md:22 ../../source/awesome.md:114
-msgid "Java"
-msgstr ""
-
-#: ../../source/awesome.md:23 ../../source/awesome.md:121
-msgid "Kotlin"
-msgstr ""
-
-#: ../../source/awesome.md:24 ../../source/awesome.md:125
-msgid "Scala"
-msgstr ""
-
-#: ../../source/awesome.md:25 ../../source/awesome.md:130
-msgid "Node.js"
-msgstr ""
-
-#: ../../source/awesome.md:26 ../../source/awesome.md:146
-msgid "Perl"
-msgstr ""
-
-#: ../../source/awesome.md:27 ../../source/awesome.md:150
-msgid "PHP"
-msgstr ""
-
-#: ../../source/awesome.md:28 ../../source/awesome.md:157
-msgid "Python"
-msgstr ""
-
-#: ../../source/awesome.md:29 ../../source/awesome.md:165
-msgid "Ruby"
-msgstr ""
-
-#: ../../source/awesome.md:30 ../../source/awesome.md:179
-msgid "Protocols and APIs"
-msgstr ""
-
-#: ../../source/awesome.md:31 ../../source/awesome.md:185
-msgid "Command-Line Interface (CLI) Tools"
-msgstr "命令行界面（CLI）工具"
-
-#: ../../source/awesome.md:32 ../../source/awesome.md:197
-msgid "Real Life Stories"
-msgstr "真实的人生故事"
-
-#: ../../source/awesome.md:33 ../../source/awesome.md:206
-msgid "Security"
-msgstr "安全"
-
-#: ../../source/awesome.md:34 ../../source/awesome.md:215
-msgid "Theory"
-msgstr "理论"
-
-#: ../../source/awesome.md:35 ../../source/awesome.md:217
-msgid "Articles & Papers"
-msgstr "文章和论文"
-
-#: ../../source/awesome.md:36 ../../source/awesome.md:232
-msgid "Talks"
-msgstr "会谈"
-
-#: ../../source/awesome.md:37 ../../source/awesome.md:236
-msgid "Tutorials"
-msgstr "教程"
-
-#: ../../source/awesome.md:38 ../../source/awesome.md:243
-msgid "Books"
-msgstr "图书"
-
-#: ../../source/awesome.md:39 ../../source/awesome.md:250
-msgid "Sites"
-msgstr "网站"
-
-#: ../../source/awesome.md:40 ../../source/awesome.md:255
-msgid "License"
-msgstr "执照"
-
-#: ../../source/awesome.md:41 ../../source/awesome.md:259
-msgid "Contributing"
-msgstr "特约"
-
-#: ../../source/awesome.md:42 ../../source/awesome.md:267
-msgid "Acknowledgments"
-msgstr "致谢"
-
-#: ../../source/awesome.md:50
+#: ../../source/awesome.rst:60
 msgid ""
-"Websocketd - WebSockets the UNIX way - Full duplex messaging between web "
-"browsers and servers."
-msgstr "Websocketd - WebSockets the UNIX way - Full duplex messaging between web browsers and servers."
+"`Websocketpp <https://github.com/zaphoyd/websocketpp>`_ - C++ Websocket "
+"client/server library."
+msgstr ""
 
-#: ../../source/awesome.md:51
+#: ../../source/awesome.rst:62
 msgid ""
-"Nchan - Nchan is a scalable, flexible pub/sub server for the modern web, "
-"built as a module for the Nginx web server."
+"`QtWebSockets <http://wiki.qt.io/QtWebSockets>`_ - The QtWebSockets "
+"module is an add-on for the Qt5 library."
 msgstr ""
 
-#: ../../source/awesome.md:52
-msgid "Apache-websocket - Apache WebSocket module."
-msgstr ""
-
-#: ../../source/awesome.md:53
-msgid "MinnowServer - A super small and fast embedded HTTP(S) WebSocket server."
-msgstr ""
-
-#: ../../source/awesome.md:54
+#: ../../source/awesome.rst:64
 msgid ""
-"gwsocket - Fast, standalone, language-agnostic WebSocket server RFC6455 "
-"compliant."
+"`Beast <https://github.com/boostorg/beast>`_ - HTTP and WebSocket built "
+"on Boost.Asio in C++11."
 msgstr ""
 
-#: ../../source/awesome.md:58
+#: ../../source/awesome.rst:66
 msgid ""
-"Libwebsockets - It's a lightweight pure C library built to use minimal "
-"CPU and memory resources, and provide fast throughput in both directions "
-"as client or server."
+"`µWebSockets <https://github.com/uNetworking/uWebSockets>`_ - Highly "
+"scalable WebSocket server & client library."
 msgstr ""
 
-#: ../../source/awesome.md:59
-msgid "Libwebsock - C library for easy WebSockets server."
-msgstr ""
-
-#: ../../source/awesome.md:60
-msgid "Websocket -  Websocket server written in C."
-msgstr ""
-
-#: ../../source/awesome.md:61
+#: ../../source/awesome.rst:68
 msgid ""
-"facil.io - A server/framework library for web applications, including "
-"Websockets and native pub/sub."
+"`Simple-WebSocket-Server <https://github.com/eidheim/Simple-WebSocket-"
+"Server>`_ - A very simple, fast, multithreaded, platform independent "
+"WebSocket (WS) and WebSocket Secure (WSS) server and client library "
+"implemented using C++11, Boost.Asio and OpenSSL."
 msgstr ""
 
-#: ../../source/awesome.md:62
+#: ../../source/awesome.rst:72
 msgid ""
-"libuwsc - A Lightweight and fully asynchronous WebSocket client C library"
-" based on libubox for Embedded Linux."
+"`UEWebsocket <https://github.com/feixuwu/UEWebsocket>`_ - Unreal engine 4"
+" websocket plugin for both c++ and blueprint developer."
 msgstr ""
 
-#: ../../source/awesome.md:63
+#: ../../source/awesome.rst:74
 msgid ""
-"mongoose - Mongoose Embedded Web Server Library - Mongoose is more than "
-"an embedded webserver. It is a multi-protocol embedded networking library"
-" with functions including TCP, HTTP client and server, WebSocket client "
-"and server, MQTT client and broker and much more."
+"`IXWebSocket <https://github.com/machinezone/IXWebSocket>`_ - Lightweight"
+" C++11 multi-threaded client library with TLS support."
 msgstr ""
 
-#: ../../source/awesome.md:68
-msgid "Websocketpp - C++ Websocket client/server library."
-msgstr ""
-
-#: ../../source/awesome.md:69
-msgid "QtWebSockets - The QtWebSockets module is an add-on for the Qt5 library."
-msgstr ""
-
-#: ../../source/awesome.md:70
-msgid "Beast - HTTP and WebSocket built on Boost.Asio in C++11."
-msgstr ""
-
-#: ../../source/awesome.md:71
-msgid "µWebSockets -  Highly scalable WebSocket server & client library."
-msgstr ""
-
-#: ../../source/awesome.md:72
-msgid ""
-"Simple-WebSocket-Server -  A very simple, fast, multithreaded, platform "
-"independent WebSocket (WS) and WebSocket Secure (WSS) server and client "
-"library implemented using C++11, Boost.Asio and OpenSSL."
-msgstr ""
-
-#: ../../source/awesome.md:73
-msgid ""
-"UEWebsocket - Unreal engine 4 websocket plugin for both c++ and blueprint"
-" developer."
-msgstr ""
-
-#: ../../source/awesome.md:74
-msgid ""
-"IXWebSocket - Lightweight C++11 multi-threaded client library with TLS "
-"support."
-msgstr ""
-
-#: ../../source/awesome.md:76
+#: ../../source/awesome.rst:80
 msgid "C#"
 msgstr ""
 
-#: ../../source/awesome.md:79
-msgid "ASP.NET SignalR - Incredibly simple real-time web for .NET."
-msgstr ""
-
-#: ../../source/awesome.md:80
+#: ../../source/awesome.rst:86
 msgid ""
-"WebSocketListener - Lightweight and highly scalable asynchronous "
-"WebSocket server for .NET/Mono."
+"`ASP.NET SignalR <http://signalr.net>`_ - Incredibly simple real-time web"
+" for .NET."
 msgstr ""
 
-#: ../../source/awesome.md:81
+#: ../../source/awesome.rst:88
 msgid ""
-"websocket-rpc - WebSocket RPC library for .NET with auto JavaScript "
-"client code generation, supporting ASP.NET Core."
+"`WebSocketListener <http://vtortola.github.io/WebSocketListener>`_ - "
+"Lightweight and highly scalable asynchronous WebSocket server for "
+".NET/Mono."
 msgstr ""
 
-#: ../../source/awesome.md:82
+#: ../../source/awesome.rst:91
 msgid ""
-"NetGain - A high performance websocket server library powering Stack "
-"Overflow."
+"`websocket-rpc <https://github.com/dajuric/websocket-rpc>`_ - WebSocket "
+"RPC library for .NET with auto JavaScript client code generation, "
+"supporting ASP.NET Core."
 msgstr ""
 
-#: ../../source/awesome.md:83
-msgid "websocket-manager - Real-Time library for ASP .NET Core."
-msgstr ""
-
-#: ../../source/awesome.md:84
+#: ../../source/awesome.rst:94
 msgid ""
-"WebSockets - Implementation of the WebSocket protocol, along with client "
-"and server integration components."
+"`NetGain <https://github.com/StackExchange/NetGain>`_ - A high "
+"performance websocket server library powering Stack Overflow."
 msgstr ""
 
-#: ../../source/awesome.md:85
+#: ../../source/awesome.rst:96
 msgid ""
-"WebSockets support in ASP.NET Core - This article explains how to get "
-"started with WebSockets in ASP.NET Core."
+"`websocket-manager <https://github.com/radu-matei/websocket-manager>`_ - "
+"Real-Time library for ASP .NET Core."
 msgstr ""
 
-#: ../../source/awesome.md:89
-msgid "Sockjs-erlang - WebSocket emulation - Erlang server."
-msgstr ""
-
-#: ../../source/awesome.md:90
-msgid "Cowboy - Small, fast, modular HTTP server written in Erlang."
-msgstr ""
-
-#: ../../source/awesome.md:91
-msgid "Kraken - Distributed Pubsub Server for Realtime Apps."
-msgstr ""
-
-#: ../../source/awesome.md:95
-msgid "Gorilla Websocket - WebSocket implementation for Go."
-msgstr ""
-
-#: ../../source/awesome.md:96
+#: ../../source/awesome.rst:98
 msgid ""
-"Websocket - Package Websocket implements a client and server for the "
-"WebSocket protocol as specified in RFC 6455."
+"`WebSockets <https://github.com/aspnet/WebSockets>`_ - Implementation of "
+"the WebSocket protocol, along with client and server integration "
+"components."
 msgstr ""
 
-#: ../../source/awesome.md:97
-msgid "Ws - Tiny WebSocket library for Go."
-msgstr ""
-
-#: ../../source/awesome.md:98
-msgid "1m-go-websockets - Handling 1M websockets connections in Go."
-msgstr ""
-
-#: ../../source/awesome.md:99
+#: ../../source/awesome.rst:101
 msgid ""
-"gotify/server - A simple server for sending and receiving messages in "
-"real-time per web socket."
+"`WebSockets support in ASP.NET Core <https://docs.microsoft.com/en-"
+"us/aspnet/core/fundamentals/websockets?view=aspnetcore-2.1>`_ - This "
+"article explains how to get started with WebSockets in ASP.NET Core."
 msgstr ""
 
-#: ../../source/awesome.md:100
-msgid "nhooyr/websocket - A minimal and idiomatic WebSocket library for Go."
+#: ../../source/awesome.rst:107
+msgid "Erlang"
 msgstr ""
 
-#: ../../source/awesome.md:104
-msgid "Websockets - A Haskell library for creating WebSocket-capable servers."
-msgstr ""
-
-#: ../../source/awesome.md:110
-msgid "Sente - Realtime web comms for Clojure/Script."
-msgstr ""
-
-#: ../../source/awesome.md:111
+#: ../../source/awesome.rst:109
 msgid ""
-"Chord - Library designed to bridge the gap between the triad of CLJ/CLJS,"
-" web-sockets and core.async."
+"`Sockjs-erlang <https://github.com/sockjs/sockjs-erlang>`_ - WebSocket "
+"emulation - Erlang server."
 msgstr ""
 
-#: ../../source/awesome.md:112
+#: ../../source/awesome.rst:111
 msgid ""
-"Luminusweb - Luminus is a Clojure micro-framework based on a set of "
-"lightweight libraries."
+"`Cowboy <https://github.com/ninenines/cowboy>`_ - Small, fast, modular "
+"HTTP server written in Erlang."
 msgstr ""
 
-#: ../../source/awesome.md:116
+#: ../../source/awesome.rst:113
 msgid ""
-"Project Tyrus - JSR 356: Java API for WebSocket - Reference "
-"Implementation."
+"`Kraken <https://github.com/Asana/kraken>`_ - Distributed Pubsub Server "
+"for Realtime Apps."
 msgstr ""
 
-#: ../../source/awesome.md:117
+#: ../../source/awesome.rst:117
+msgid "Go"
+msgstr ""
+
+#: ../../source/awesome.rst:119
 msgid ""
-"Java-WebSocket - Barebones WebSocket client and server implementation "
-"written in 100% Java."
+"`Gorilla Websocket <https://github.com/gorilla/websocket>`_ - WebSocket "
+"implementation for Go."
 msgstr ""
 
-#: ../../source/awesome.md:118
+#: ../../source/awesome.rst:121
 msgid ""
-"Atmosphere - Realtime Client Server Framework for the JVM, supporting "
-"WebSockets with Cross-Browser Fallbacks."
+"`Websocket <https://godoc.org/golang.org/x/net/websocket>`_ - Package "
+"Websocket implements a client and server for the WebSocket protocol as "
+"specified in RFC 6455."
 msgstr ""
 
-#: ../../source/awesome.md:119
-msgid "Webbit - Java event based WebSocket and HTTP server."
+#: ../../source/awesome.rst:124
+msgid "`Ws <https://github.com/gobwas/ws>`_ - Tiny WebSocket library for Go."
 msgstr ""
 
-#: ../../source/awesome.md:123
+#: ../../source/awesome.rst:126
 msgid ""
-"Scarlet - Tinder's Retrofit inspired WebSocket client for Kotlin, Java, "
-"and Android"
+"`1m-go-websockets <https://github.com/eranyanay/1m-go-websockets>`_ - "
+"Handling 1M websockets connections in Go."
 msgstr ""
 
-#: ../../source/awesome.md:127
-msgid "Play - The high velocity web framework for Java and Scala."
-msgstr ""
-
-#: ../../source/awesome.md:128
-msgid "Finagle-websocket - Finagle Websocket clients and servers."
-msgstr ""
-
-#: ../../source/awesome.md:132
-msgid "Socket.IO - Featuring the fastest and most reliable real-time engine."
-msgstr ""
-
-#: ../../source/awesome.md:133
-msgid "Nodejs-websocket - Node.js module for websocket server and client."
-msgstr ""
-
-#: ../../source/awesome.md:134
+#: ../../source/awesome.rst:128
 msgid ""
-"WebSocket-Node - WebSocket Implementation for Node.JS (Draft -08 through "
-"the final RFC 6455)."
+"`gotify/server <https://gotify.net/>`_ - A simple server for sending and "
+"receiving messages in real-time per web socket."
 msgstr ""
 
-#: ../../source/awesome.md:135
-msgid "Sockjs-node - WebSocket emulation - Node.js server."
-msgstr ""
-
-#: ../../source/awesome.md:136
+#: ../../source/awesome.rst:130
 msgid ""
-"Ws - ws: The fastest cross platform RFC-6455 WebSocket implementation for"
-" Node.js."
+"`nhooyr/websocket <hhttps://github.com/nhooyr/websocket>`_ - A minimal "
+"and idiomatic WebSocket library for Go."
 msgstr ""
 
-#: ../../source/awesome.md:137
+#: ../../source/awesome.rst:134
+msgid "Haskell"
+msgstr ""
+
+#: ../../source/awesome.rst:136
 msgid ""
-"deepstream.io - Open realtime server a fast, secure and scalable realtime"
-" server for mobile, web & iot."
+"`Websockets <https://github.com/jaspervdj/websockets>`_ - A Haskell "
+"library for creating WebSocket-capable servers."
 msgstr ""
 
-#: ../../source/awesome.md:138
+#: ../../source/awesome.rst:140
+msgid "Java VM"
+msgstr ""
+
+#: ../../source/awesome.rst:143
+msgid "Clojure"
+msgstr ""
+
+#: ../../source/awesome.rst:145
 msgid ""
-"websocket-as-promised - Promise-based W3C WebSocket wrapper: allows to "
-"use promises when connecting, disconnecting and messaging with WebSocket "
-"server."
+"`Sente <https://github.com/ptaoussanis/sente>`_ - Realtime web comms for "
+"Clojure/Script."
 msgstr ""
 
-#: ../../source/awesome.md:139
-msgid "faye-websocket-node - Standards-compliant WebSocket client and server."
-msgstr ""
-
-#: ../../source/awesome.md:140
+#: ../../source/awesome.rst:147
 msgid ""
-"ws-wrapper - Lightweight WebSocket wrapper that provides a socket.io-like"
-" event-handler API along with Promise-based requests."
+"`Chord <https://github.com/jarohen/chord>`_ - Library designed to bridge "
+"the gap between the triad of CLJ/CLJS, web-sockets and core.async."
 msgstr ""
 
-#: ../../source/awesome.md:141
-msgid "ws-server-wrapper - Companion library for ws-wrapper for the server-side."
-msgstr ""
-
-#: ../../source/awesome.md:142
+#: ../../source/awesome.rst:150
 msgid ""
-"uws - Tiny WebSockets (access to the C++ library, µWebSockets, via "
-"Node.js)"
+"`Luminusweb <http://www.luminusweb.net/docs/websockets.md>`_ - Luminus is"
+" a Clojure micro-framework based on a set of lightweight libraries."
 msgstr ""
 
-#: ../../source/awesome.md:143
+#: ../../source/awesome.rst:155
+msgid "Java"
+msgstr ""
+
+#: ../../source/awesome.rst:157
 msgid ""
-"netflux - JavaScript client and server side transport API based on WebRTC"
-" & WebSocket"
+"`Project Tyrus <https://tyrus.java.net/>`_ - JSR 356: Java API for "
+"WebSocket - Reference Implementation."
 msgstr ""
 
-#: ../../source/awesome.md:144
+#: ../../source/awesome.rst:159
 msgid ""
-"Sockette - WebSocket client that will automatically reconnect if the "
-"connection is lost."
+"`Java-WebSocket <https://github.com/TooTallNate/Java-WebSocket>`_ - "
+"Barebones WebSocket client and server implementation written in 100% "
+"Java."
 msgstr ""
 
-#: ../../source/awesome.md:148
+#: ../../source/awesome.rst:162
 msgid ""
-"Net::WebSocket::Server - Straightforward Perl WebSocket server with "
-"minimal dependencies."
+"`Atmosphere <https://github.com/Atmosphere/atmosphere>`_ - Realtime "
+"Client Server Framework for the JVM, supporting WebSockets with Cross-"
+"Browser Fallbacks."
 msgstr ""
 
-#: ../../source/awesome.md:152
+#: ../../source/awesome.rst:165
 msgid ""
-"Ratchet - Ratchet is a loosely coupled PHP library providing developers "
-"with tools to create real time, bi-directional applications between "
-"clients and servers over WebSockets."
+"`Webbit <https://github.com/webbit/webbit>`_ - Java event based WebSocket"
+" and HTTP server."
 msgstr ""
 
-#: ../../source/awesome.md:153
-msgid "Php-websocket - Simple PHP WebSocket implementation for PHP 5.3."
+#: ../../source/awesome.rst:169
+msgid "Kotlin"
 msgstr ""
 
-#: ../../source/awesome.md:154
-msgid "Phpws - PHP Web Socket server."
-msgstr ""
-
-#: ../../source/awesome.md:155
-msgid "Sandstone - Microframework to build a real time Rest API."
-msgstr ""
-
-#: ../../source/awesome.md:159
+#: ../../source/awesome.rst:171
 msgid ""
-"Websockets - Websockets is a library for developing WebSocket servers and"
-" clients in Python."
+"`Scarlet <https://github.com/Tinder/Scarlet>`_ - Tinder’s Retrofit "
+"inspired WebSocket client for Kotlin, Java, and Android"
 msgstr ""
 
-#: ../../source/awesome.md:160
-msgid "Ws4py - WebSocket package for Python."
+#: ../../source/awesome.rst:175
+msgid "Scala"
 msgstr ""
 
-#: ../../source/awesome.md:161
+#: ../../source/awesome.rst:177
 msgid ""
-"Autobahn.ws - Open-source real-time framework for Web, Mobile & Internet "
-"of Things."
+"`Play "
+"<https://www.playframework.com/documentation/2.5.x/ScalaWebSockets>`_ - "
+"The high velocity web framework for Java and Scala."
 msgstr ""
 
-#: ../../source/awesome.md:162
+#: ../../source/awesome.rst:179
 msgid ""
-"Tornado - Tornado is a Python web framework and asynchronous networking "
-"library, originally developed at FriendFeed."
+"`Finagle-websocket <https://github.com/finagle/finagle-websocket>`_ - "
+"Finagle Websocket clients and servers."
 msgstr ""
 
-#: ../../source/awesome.md:163
-msgid "Websockets - WebSocket implementation in Python 3."
+#: ../../source/awesome.rst:183
+msgid "Node.js"
 msgstr ""
 
-#: ../../source/awesome.md:167
+#: ../../source/awesome.rst:185
 msgid ""
-"AnyCable - Polyglot replacement for Ruby WebSocket servers with Action "
-"Cable protocol."
+"`Socket.IO <http://socket.io/>`_ - Featuring the fastest and most "
+"reliable real-time engine."
 msgstr ""
 
-#: ../../source/awesome.md:168
-msgid "Em-websocket - EventMachine based WebSocket server."
-msgstr ""
-
-#: ../../source/awesome.md:169
-msgid "Faye-websocket-ruby - Standards-compliant WebSocket client and server."
-msgstr ""
-
-#: ../../source/awesome.md:170
+#: ../../source/awesome.rst:187
 msgid ""
-"Iodine - WebSocket/HTTP server with integrated pub/sub and optional Redis"
-" support."
+"`Nodejs-websocket <https://github.com/sitegui/nodejs-websocket>`_ - "
+"Node.js module for websocket server and client."
 msgstr ""
 
-#: ../../source/awesome.md:171
-msgid "Websocket-driver-ruby - WebSocket protocol handler with pluggable I/O."
-msgstr ""
-
-#: ../../source/awesome.md:172
-msgid "Websocket-ruby - Universal Ruby library to handle WebSocket protocol."
-msgstr ""
-
-#: ../../source/awesome.md:173
-msgid "Scorched - Light-weight web framework for Ruby."
-msgstr ""
-
-#: ../../source/awesome.md:174
+#: ../../source/awesome.rst:189
 msgid ""
-"Firehose - Build realtime Ruby web applications. Created by the fine "
-"folks at Poll Everywhere."
+"`WebSocket-Node <https://github.com/theturtle32/WebSocket-Node>`_ - "
+"WebSocket Implementation for Node.JS (Draft -08 through the final RFC "
+"6455)."
 msgstr ""
 
-#: ../../source/awesome.md:175
-msgid "Slanger - Open Pusher implementation compatible with Pusher libraries."
-msgstr ""
-
-#: ../../source/awesome.md:176
-msgid "render_sync - Real-time Rails Partials."
-msgstr ""
-
-#: ../../source/awesome.md:177
-msgid "websocket-rails - Plug and play websocket support for ruby on rails."
-msgstr ""
-
-#: ../../source/awesome.md:181
-msgid "RFC6455 - The WebSocket Protocol."
-msgstr ""
-
-#: ../../source/awesome.md:182
-msgid "The WebSocket API - The W3C The WebSocket API."
-msgstr ""
-
-#: ../../source/awesome.md:183
-msgid "Hixie76 - The WebSocket protocol draft-hixie-thewebsocketprotocol-76"
-msgstr ""
-
-#: ../../source/awesome.md:187
+#: ../../source/awesome.rst:192
 msgid ""
-"claws - Awesome WebSocket Client - an interactive command line client for"
-" testing websocket servers."
+"`Sockjs-node <https://github.com/sockjs/sockjs-node>`_ - WebSocket "
+"emulation - Node.js server."
 msgstr ""
 
-#: ../../source/awesome.md:188
-msgid "wscat - WebSocket cat."
-msgstr ""
-
-#: ../../source/awesome.md:189
-msgid "wsta - A CLI development tool for WebSocket APIs."
-msgstr ""
-
-#: ../../source/awesome.md:190
-msgid "ws - websocket command line tool."
-msgstr ""
-
-#: ../../source/awesome.md:191
+#: ../../source/awesome.rst:194
 msgid ""
-"wssh - wssh (\"wish\") is a command-line utility/shell for WebSocket "
-"inspired by netcat."
+"`Ws <https://github.com/websockets/ws>`_ - ``ws``: The fastest cross "
+"platform RFC-6455 WebSocket implementation for Node.js."
 msgstr ""
 
-#: ../../source/awesome.md:192
-msgid "wsc - A tiny command line websocket client written in Go."
-msgstr ""
-
-#: ../../source/awesome.md:193
-msgid "ws-cli - WebSocket Command Line Client written in Go."
-msgstr ""
-
-#: ../../source/awesome.md:194
+#: ../../source/awesome.rst:196
 msgid ""
-"ws-tool - A Develop Tool to Test WebSocket, Socket.IO, Stomp, Bayeux, "
-"HTTP, TCP, UDP, WebRTC, DNS API."
+"`deepstream.io <https://deepstream.io/>`_ - Open realtime server a fast, "
+"secure and scalable realtime server for mobile, web & iot."
 msgstr ""
 
-#: ../../source/awesome.md:195
+#: ../../source/awesome.rst:198
 msgid ""
-"websocketd - Turn any program that uses STDIN/STDOUT into a WebSocket "
-"server. Like inetd, but for WebSockets."
+"`websocket-as-promised <https://github.com/vitalets/websocket-as-"
+"promised>`_ - Promise-based W3C WebSocket wrapper: allows to use promises"
+" when connecting, disconnecting and messaging with WebSocket server."
 msgstr ""
 
-#: ../../source/awesome.md:199
-msgid "The top 10 realtime web apps"
-msgstr ""
-
-#: ../../source/awesome.md:200
-msgid "Super sync sports"
-msgstr ""
-
-#: ../../source/awesome.md:201
-msgid "Firepad"
-msgstr ""
-
-#: ../../source/awesome.md:202
-msgid "JabbR"
-msgstr ""
-
-#: ../../source/awesome.md:203
-msgid "Kaazing"
-msgstr ""
-
-#: ../../source/awesome.md:204
-msgid "Taskade - Real-time collaborative task lists and outlines."
-msgstr ""
-
-#: ../../source/awesome.md:208
+#: ../../source/awesome.rst:201
 msgid ""
-"WebSockets - An Introduction - The problems and some security "
-"implications of websockets - Cross-site WebSockets Scripting (XSWS)."
+"`faye-websocket-node <https://github.com/faye/faye-websocket-node>`_ - "
+"Standards-compliant WebSocket client and server."
 msgstr ""
 
-#: ../../source/awesome.md:209
-msgid "Hacking with WebSockets - Talk on Blackhat USA 2012 Conference."
-msgstr ""
-
-#: ../../source/awesome.md:210
+#: ../../source/awesome.rst:203
 msgid ""
-"Testing WebSockets - This article is part of the new OWASP Testing Guide "
-"v4."
+"`ws-wrapper <https://github.com/bminer/ws-wrapper>`_ - Lightweight "
+"WebSocket wrapper that provides a socket.io-like event-handler API along "
+"with Promise-based requests."
 msgstr ""
 
-#: ../../source/awesome.md:211
-msgid "Websockets Auth - Journey into WebSockets Authentication/Authorization."
-msgstr ""
-
-#: ../../source/awesome.md:212
+#: ../../source/awesome.rst:206
 msgid ""
-"WebSocket Security - The WebSocket protocol is a young technology, and "
-"brings with it some risks. Decades of experience have taught the web "
-"community some best practices around HTTP security, but the security best"
-" practices in the WebSocket world aren’t firmly established, and continue"
-" to evolve. Nevertheless, some themes have emerged and they are described"
-" in this article."
+"`ws-server-wrapper <https://github.com/bminer/ws-server-wrapper>`_ - "
+"Companion library for ws-wrapper for the server-side."
 msgstr ""
 
-#: ../../source/awesome.md:213
+#: ../../source/awesome.rst:208
 msgid ""
-"Cross-Site WebSocket Hijacking - Cross-Site WebSocket Hijacking (CSWSH) -"
-" Web Application Security Blog."
+"`uws <https://github.com/uNetworking/uWebSockets.js>`_ - Tiny WebSockets "
+"(access to the C++ library, µWebSockets, via Node.js)"
 msgstr ""
 
-#: ../../source/awesome.md:219
+#: ../../source/awesome.rst:210
 msgid ""
-"An introduction to Websockets - Brief History of Real-Time Web "
+"`netflux <https://coast-team.github.io/netflux/>`_ - JavaScript client "
+"and server side transport API based on WebRTC & WebSocket"
+msgstr ""
+
+#: ../../source/awesome.rst:212
+msgid ""
+"`Sockette <https://github.com/lukeed/sockette>`_ - WebSocket client that "
+"will automatically reconnect if the connection is lost."
+msgstr ""
+
+#: ../../source/awesome.rst:216
+msgid "Perl"
+msgstr ""
+
+#: ../../source/awesome.rst:218
+msgid ""
+"`Net::WebSocket::Server <http://search.cpan.org/~topaz/Net-WebSocket-"
+"Server-0.001003/lib/Net/WebSocket/Server.pm>`_ - Straightforward Perl "
+"WebSocket server with minimal dependencies."
+msgstr ""
+
+#: ../../source/awesome.rst:222
+msgid "PHP"
+msgstr ""
+
+#: ../../source/awesome.rst:224
+msgid ""
+"`Ratchet <http://socketo.me/>`_ - Ratchet is a loosely coupled PHP "
+"library providing developers with tools to create real time, bi-"
+"directional applications between clients and servers over WebSockets."
+msgstr ""
+
+#: ../../source/awesome.rst:228
+msgid ""
+"`Php-websocket <https://github.com/nekudo/php-websocket>`_ - Simple PHP "
+"WebSocket implementation for PHP 5.3."
+msgstr ""
+
+#: ../../source/awesome.rst:230
+msgid "`Phpws <https://github.com/Devristo/phpws>`_ - PHP Web Socket server."
+msgstr ""
+
+#: ../../source/awesome.rst:232
+msgid ""
+"`Sandstone <https://eole-io.github.io/sandstone/>`_ - Microframework to "
+"build a real time Rest API."
+msgstr ""
+
+#: ../../source/awesome.rst:236
+msgid "Python"
+msgstr ""
+
+#: ../../source/awesome.rst:238
+msgid ""
+"`Websockets <https://websockets.readthedocs.io>`_ - Websockets is a "
+"library for developing WebSocket servers and clients in Python."
+msgstr ""
+
+#: ../../source/awesome.rst:240
+msgid ""
+"`Ws4py <https://ws4py.readthedocs.io/en/latest>`_ - WebSocket package for"
+" Python."
+msgstr ""
+
+#: ../../source/awesome.rst:242
+msgid ""
+"`Autobahn.ws <http://autobahn.ws>`_ - Open-source real-time framework for"
+" Web, Mobile & Internet of Things."
+msgstr ""
+
+#: ../../source/awesome.rst:244
+msgid ""
+"`Tornado <http://www.tornadoweb.org/>`_ - Tornado is a Python web "
+"framework and asynchronous networking library, originally developed at "
+"FriendFeed."
+msgstr ""
+
+#: ../../source/awesome.rst:247
+msgid ""
+"`Websockets <https://github.com/aaugustin/websockets>`_ - WebSocket "
+"implementation in Python 3."
+msgstr ""
+
+#: ../../source/awesome.rst:251
+msgid "Ruby"
+msgstr ""
+
+#: ../../source/awesome.rst:253
+msgid ""
+"`AnyCable <http://anycable.io/>`_ - Polyglot replacement for Ruby "
+"WebSocket servers with Action Cable protocol."
+msgstr ""
+
+#: ../../source/awesome.rst:255
+msgid ""
+"`Em-websocket <https://github.com/igrigorik/em-websocket>`_ - "
+"EventMachine based WebSocket server."
+msgstr ""
+
+#: ../../source/awesome.rst:257
+msgid ""
+"`Faye-websocket-ruby <https://github.com/faye/faye-websocket-ruby>`_ - "
+"Standards-compliant WebSocket client and server."
+msgstr ""
+
+#: ../../source/awesome.rst:259
+msgid ""
+"`Iodine <https://github.com/boazsegev/iodine>`_ - WebSocket/HTTP server "
+"with integrated pub/sub and optional Redis support."
+msgstr ""
+
+#: ../../source/awesome.rst:261
+msgid ""
+"`Websocket-driver-ruby <https://github.com/faye/websocket-driver-ruby>`_ "
+"- WebSocket protocol handler with pluggable I/O."
+msgstr ""
+
+#: ../../source/awesome.rst:263
+msgid ""
+"`Websocket-ruby <https://github.com/imanel/websocket-ruby>`_ - Universal "
+"Ruby library to handle WebSocket protocol."
+msgstr ""
+
+#: ../../source/awesome.rst:265
+msgid ""
+"`Scorched <https://github.com/wardrop/Scorched>`_ - Light-weight web "
+"framework for Ruby."
+msgstr ""
+
+#: ../../source/awesome.rst:267
+msgid ""
+"`Firehose <http://firehose.io/>`_ - Build realtime Ruby web applications."
+" Created by the fine folks at Poll Everywhere."
+msgstr ""
+
+#: ../../source/awesome.rst:269
+msgid ""
+"`Slanger <https://github.com/stevegraham/slanger>`_ - Open Pusher "
+"implementation compatible with Pusher libraries."
+msgstr ""
+
+#: ../../source/awesome.rst:271
+msgid ""
+"`render_sync <https://github.com/chrismccord/render_sync>`_ - Real-time "
+"Rails Partials."
+msgstr ""
+
+#: ../../source/awesome.rst:273
+msgid ""
+"`websocket-rails <https://github.com/websocket-rails/websocket-rails>`_ -"
+" Plug and play websocket support for ruby on rails."
+msgstr ""
+
+#: ../../source/awesome.rst:277
+msgid "Protocols and APIs"
+msgstr ""
+
+#: ../../source/awesome.rst:279
+msgid "`RFC6455 <https://tools.ietf.org/html/rfc6455>`_ - The WebSocket Protocol."
+msgstr ""
+
+#: ../../source/awesome.rst:281
+msgid ""
+"`The WebSocket API <https://www.w3.org/TR/websockets/>`_ - The W3C The "
+"WebSocket API."
+msgstr ""
+
+#: ../../source/awesome.rst:283
+msgid ""
+"`Hixie76 <https://tools.ietf.org/html/draft-hixie-"
+"thewebsocketprotocol-76>`_ - The WebSocket protocol draft-hixie-"
+"thewebsocketprotocol-76"
+msgstr ""
+
+#: ../../source/awesome.rst:287
+msgid "Command-Line Interface (CLI) Tools"
+msgstr "命令行界面（CLI）工具"
+
+#: ../../source/awesome.rst:289
+msgid ""
+"`claws <https://github.com/thehowl/claws>`_ - Awesome WebSocket Client - "
+"an interactive command line client for testing websocket servers."
+msgstr ""
+
+#: ../../source/awesome.rst:292
+msgid "`wscat <https://github.com/websockets/wscat>`_ - WebSocket cat."
+msgstr ""
+
+#: ../../source/awesome.rst:293
+msgid ""
+"`wsta <https://github.com/esphen/wsta>`_ - A CLI development tool for "
+"WebSocket APIs."
+msgstr ""
+
+#: ../../source/awesome.rst:295
+msgid "`ws <https://github.com/hashrocket/ws>`_ - websocket command line tool."
+msgstr ""
+
+#: ../../source/awesome.rst:297
+msgid ""
+"`wssh <https://github.com/progrium/wssh>`_ - wssh (“wish”) is a command-"
+"line utility/shell for WebSocket inspired by netcat."
+msgstr ""
+
+#: ../../source/awesome.rst:299
+msgid ""
+"`wsc <https://github.com/raphael/wsc>`_ - A tiny command line websocket "
+"client written in Go."
+msgstr ""
+
+#: ../../source/awesome.rst:301
+msgid ""
+"`ws-cli <https://github.com/kseo/ws-cli>`_ - WebSocket Command Line "
+"Client written in Go."
+msgstr ""
+
+#: ../../source/awesome.rst:303
+msgid ""
+"`ws-tool <https://github.com/plantain-00/ws-tool>`_ - A Develop Tool to "
+"Test WebSocket, Socket.IO, Stomp, Bayeux, HTTP, TCP, UDP, WebRTC, DNS "
+"API."
+msgstr ""
+
+#: ../../source/awesome.rst:306
+msgid ""
+"`websocketd <https://github.com/joewalnes/websocketd>`_ - Turn any "
+"program that uses STDIN/STDOUT into a WebSocket server. Like inetd, but "
+"for WebSockets."
+msgstr ""
+
+#: ../../source/awesome.rst:311
+msgid "Real Life Stories"
+msgstr "真实的人生故事"
+
+#: ../../source/awesome.rst:313
+msgid ""
+"`The top 10 realtime web apps <http://www.creativebloq.com/app-"
+"design/top-10-realtime-web-apps-5133752>`_"
+msgstr ""
+
+#: ../../source/awesome.rst:315
+msgid ""
+"`Super sync sports <https://blog.chromium.org/2013/02/on-track-with-"
+"chrome-super-sync-sports.html>`_"
+msgstr ""
+
+#: ../../source/awesome.rst:317
+msgid "`Firepad <https://firepad.io>`_"
+msgstr ""
+
+#: ../../source/awesome.rst:318
+msgid "`JabbR <http://about.jabbr.net/>`_"
+msgstr ""
+
+#: ../../source/awesome.rst:319
+msgid "`Kaazing <https://kaazing.com/>`_"
+msgstr ""
+
+#: ../../source/awesome.rst:320
+msgid ""
+"`Taskade <https://taskade.com>`_ - Real-time collaborative task lists and"
+" outlines."
+msgstr ""
+
+#: ../../source/awesome.rst:324
+msgid "Security"
+msgstr "安全"
+
+#: ../../source/awesome.rst:326
+msgid ""
+"`WebSockets - An Introduction "
+"<https://gist.github.com/subudeepak/9897212>`_ - The problems and some "
+"security implications of websockets - Cross-site WebSockets Scripting "
+"(XSWS)."
+msgstr ""
+
+#: ../../source/awesome.rst:330
+msgid ""
+"`Hacking with WebSockets <https://media.blackhat.com/bh-"
+"us-12/Briefings/Shekyan/BH_US_12_Shekyan_Toukharian_Hacking_Websocket_Slides.pdf>`_"
+" - Talk on Blackhat USA 2012 Conference."
+msgstr ""
+
+#: ../../source/awesome.rst:333
+msgid ""
+"`Testing WebSockets <https://www.owasp.org/index.php/Testing_WebSockets_"
+"(OTG-CLIENT-010)>`_ - This article is part of the new OWASP Testing Guide"
+" v4."
+msgstr ""
+
+#: ../../source/awesome.rst:336
+msgid ""
+"`Websockets Auth <http://stratumsecurity.ghost.io/2016/06/13/websockets-"
+"auth>`_ - Journey into WebSockets Authentication/Authorization."
+msgstr ""
+
+#: ../../source/awesome.rst:339
+msgid ""
+"`WebSocket Security <https://devcenter.heroku.com/articles/websocket-"
+"security>`_ - The WebSocket protocol is a young technology, and brings "
+"with it some risks. Decades of experience have taught the web community "
+"some best practices around HTTP security, but the security best practices"
+" in the WebSocket world aren’t firmly established, and continue to "
+"evolve. Nevertheless, some themes have emerged and they are described in "
+"this article."
+msgstr ""
+
+#: ../../source/awesome.rst:347
+msgid ""
+"`Cross-Site WebSocket Hijacking <http://www.christian-"
+"schneider.net/CrossSiteWebSocketHijacking.html>`_ - Cross-Site WebSocket "
+"Hijacking (CSWSH) - Web Application Security Blog."
+msgstr ""
+
+#: ../../source/awesome.rst:353
+msgid "Theory"
+msgstr "理论"
+
+#: ../../source/awesome.rst:356
+msgid "Articles & Papers"
+msgstr "文章和论文"
+
+#: ../../source/awesome.rst:358
+msgid ""
+"`An introduction to Websockets <http://blog.teamtreehouse.com/an-"
+"introduction-to-websockets>`_ - Brief History of Real-Time Web "
 "Applications."
 msgstr ""
 
-#: ../../source/awesome.md:220
+#: ../../source/awesome.rst:361
 msgid ""
-"Introducing WebSockets: Bringing Sockets to the Web - The Problem: Low "
-"Latency Client-Server and Server-Client Connections."
+"`Introducing WebSockets: Bringing Sockets to the Web "
+"<https://www.html5rocks.com/en/tutorials/websockets/basics/>`_ - The "
+"Problem: Low Latency Client-Server and Server-Client Connections."
 msgstr ""
 
-#: ../../source/awesome.md:221
-msgid "About HTML5 WebSocket - About HTML5 WebSocket."
-msgstr ""
-
-#: ../../source/awesome.md:222
-msgid "Node.js WebSocket - Finding the right Node.js WebSocket implementation."
-msgstr ""
-
-#: ../../source/awesome.md:223
+#: ../../source/awesome.rst:364
 msgid ""
-"Websockets 101 - Armin Ronacher's Thoughts and Writings (creator of "
-"Flask)."
+"`About HTML5 WebSocket <https://websocket.org/aboutwebsocket.html>`_ - "
+"About HTML5 WebSocket."
 msgstr ""
 
-#: ../../source/awesome.md:224
+#: ../../source/awesome.rst:366
 msgid ""
-"Real-time Apps - Building Real-time Apps with Websockets & Server-Sent "
-"Events."
+"`Node.js WebSocket <https://medium.com/@denizozger/finding-the-right-"
+"node-js-websocket-implementation-b63bfca0539#.q2313as8p>`_ - Finding the "
+"right Node.js WebSocket implementation."
 msgstr ""
 
-#: ../../source/awesome.md:225
-msgid "Real-Time Web by Paul Banks - The State of Real-Time Web in 2016."
-msgstr ""
-
-#: ../../source/awesome.md:226
-msgid "Are WebSockets the future? - WebSockets, caution required!"
-msgstr ""
-
-#: ../../source/awesome.md:227
+#: ../../source/awesome.rst:369
 msgid ""
-"MSDN Microsoft Blog - The Dangers of HTML5: WebSockets and Stable "
-"Standards."
+"`Websockets 101 <http://lucumr.pocoo.org/2012/9/24/websockets-101/>`_ - "
+"Armin Ronacher’s Thoughts and Writings (creator of Flask)."
 msgstr ""
 
-#: ../../source/awesome.md:228
-msgid "Webpush Internet-Draft - Generic Event Delivery Using HTTP Push."
-msgstr ""
-
-#: ../../source/awesome.md:229
-msgid "Full Stack Python - WebSockets on Python."
-msgstr ""
-
-#: ../../source/awesome.md:230
-msgid "Do you really need WebSockets? - WebSockets explanation."
-msgstr ""
-
-#: ../../source/awesome.md:234
+#: ../../source/awesome.rst:372
 msgid ""
-"Initial Steps to Use Websocket-rails - This is the very initial steps to "
-"use websocket-rails."
+"`Real-time Apps <https://www.sitepoint.com/real-time-apps-websockets-"
+"server-sent-events/>`_ - Building Real-time Apps with Websockets & "
+"Server-Sent Events."
 msgstr ""
 
-#: ../../source/awesome.md:238
-msgid "Honeybadger.IO - Building a simple websockets server from scratch in Ruby."
-msgstr ""
-
-#: ../../source/awesome.md:239
-msgid "Engineyard - Getting Started with Ruby and WebSockets."
-msgstr ""
-
-#: ../../source/awesome.md:240
-msgid "David Walsh - WebSocket and Socket.IO."
-msgstr ""
-
-#: ../../source/awesome.md:245
-msgid "WebSocket - Lightweight Client-Server Communications. Andrew Lombardi."
-msgstr ""
-
-#: ../../source/awesome.md:246
+#: ../../source/awesome.rst:375
 msgid ""
-"The Definitive Guide to HTML5 WebSocket - Build Real-Time Applications "
-"with HTML5. By Vanessa Wang, Frank Salim, and Peter Moskovits. Source "
-"Code here."
+"`Real-Time Web by Paul Banks <https://banksco.de/p/state-of-realtime-"
+"web-2016.html>`_ - The State of Real-Time Web in 2016."
 msgstr ""
 
-#: ../../source/awesome.md:247
+#: ../../source/awesome.rst:378
 msgid ""
-"High Performance Browser Networking - High Performance Browser "
-"Networking: WebSocket."
+"`Are WebSockets the future? <https://samsaffron.com/archive/2015/12/29"
+"/websockets-caution-required>`_ - WebSockets, caution required!"
 msgstr ""
 
-#: ../../source/awesome.md:252
-msgid "WebSocket ORG - The one-stop-shop for all your websocket needs."
-msgstr ""
-
-#: ../../source/awesome.md:253
-msgid "WebSockets MDN - WebSockets Mozilla Developer Network (MDN)."
-msgstr ""
-
-#: ../../source/awesome.md:261
+#: ../../source/awesome.rst:381
 msgid ""
-"Please, read the Contribution Guidelines before submitting your "
+"`MSDN Microsoft Blog <https://msdn.microsoft.com/en-us/hh563510.aspx>`_ -"
+" The Dangers of HTML5: WebSockets and Stable Standards."
+msgstr ""
+
+#: ../../source/awesome.rst:384
+msgid ""
+"`Webpush Internet-Draft <https://martinthomson.github.io/drafts/draft-"
+"thomson-webpush-http2.html>`_ - Generic Event Delivery Using HTTP Push."
+msgstr ""
+
+#: ../../source/awesome.rst:387
+msgid ""
+"`Full Stack Python <https://www.fullstackpython.com/websockets.html>`_ - "
+"WebSockets on Python."
+msgstr ""
+
+#: ../../source/awesome.rst:390
+msgid ""
+"`Do you really need WebSockets? <https://blog.stanko.io/do-you-really-"
+"need-websockets-343aed40aa9b>`_ - WebSockets explanation."
+msgstr ""
+
+#: ../../source/awesome.rst:395
+msgid "Talks"
+msgstr "会谈"
+
+#: ../../source/awesome.rst:397
+msgid ""
+"`Initial Steps to Use Websocket-rails "
+"<http://tgib23.github.io/blog/2014/08/03/first-post/>`_ - This is the "
+"very initial steps to use websocket-rails."
+msgstr ""
+
+#: ../../source/awesome.rst:402
+msgid "Tutorials"
+msgstr "教程"
+
+#: ../../source/awesome.rst:404
+msgid ""
+"`Honeybadger.IO <http://blog.honeybadger.io/building-a-simple-websockets-"
+"server-from-scratch-in-ruby>`_ - Building a simple websockets server from"
+" scratch in Ruby."
+msgstr ""
+
+#: ../../source/awesome.rst:406
+msgid ""
+"`Engineyard <https://blog.engineyard.com/2013/getting-started-with-ruby-"
+"and-websockets>`_ - Getting Started with Ruby and WebSockets."
+msgstr ""
+
+#: ../../source/awesome.rst:408
+msgid ""
+"`David Walsh <https://davidwalsh.name/websocket>`_ - WebSocket and "
+"Socket.IO."
+msgstr ""
+
+#: ../../source/awesome.rst:412
+msgid "Books"
+msgstr "图书"
+
+#: ../../source/awesome.rst:414
+msgid ""
+"`WebSocket <http://shop.oreilly.com/product/0636920030485.do>`_ - "
+"Lightweight Client-Server Communications. Andrew Lombardi."
+msgstr ""
+
+#: ../../source/awesome.rst:416
+msgid ""
+"`The Definitive Guide to HTML5 WebSocket "
+"<http://www.apress.com/gp/book/9781430247401>`_ - Build Real-Time "
+"Applications with HTML5. By Vanessa Wang, Frank Salim, and Peter "
+"Moskovits. Source Code `here <https://github.com/Apress/def-guide-to-"
+"html5-websocket>`_."
+msgstr ""
+
+#: ../../source/awesome.rst:421
+msgid ""
+"`High Performance Browser Networking <https://hpbn.co/websocket/>`_ - "
+"High Performance Browser Networking: WebSocket."
+msgstr ""
+
+#: ../../source/awesome.rst:425
+msgid "Sites"
+msgstr "网站"
+
+#: ../../source/awesome.rst:427
+msgid ""
+"`WebSocket ORG <https://websocket.org>`_ - The one-stop-shop for all your"
+" websocket needs."
+msgstr ""
+
+#: ../../source/awesome.rst:429
+msgid ""
+"`WebSockets MDN <https://developer.mozilla.org/en-"
+"US/docs/Web/API/WebSockets_API>`_ - WebSockets Mozilla Developer Network "
+"(MDN)."
+msgstr ""
+
+#: ../../source/awesome.rst:434
+msgid "License"
+msgstr "执照"
+
+#: ../../source/awesome.rst:436
+msgid "|CC0|"
+msgstr ""
+
+#: ../../source/awesome.rst:439
+msgid "Contributing"
+msgstr "特约"
+
+#: ../../source/awesome.rst:441
+msgid ""
+"Please, read the `Contribution Guidelines "
+"<https://github.com/facundofarias/awesome-"
+"websockets/blob/master/CONTRIBUTING.md>`_ before submitting your "
 "suggestion."
 msgstr ""
 
-#: ../../source/awesome.md:263
-msgid "Feel free to open an issue or create a pull request with your additions."
+#: ../../source/awesome.rst:445
+msgid ""
+"Feel free to `open an issue <https://github.com/facundofarias/awesome-"
+"websockets/issues>`_ or `create a pull request "
+"<https://github.com/facundofarias/awesome-websockets/pulls>`_ with your "
+"additions."
 msgstr ""
 
-#: ../../source/awesome.md:265
+#: ../../source/awesome.rst:451
 msgid "Thanks!"
 msgstr ""
 
-#: ../../source/awesome.md:269
-msgid "Table of contents generated with DocToc"
+#: ../../source/awesome.rst:454
+msgid "Acknowledgments"
+msgstr "致谢"
+
+#: ../../source/awesome.rst:456
+msgid ""
+"Table of contents generated with `DocToc "
+"<https://github.com/thlorenz/doctoc>`_"
 msgstr ""
+
+#~ msgid ""
+#~ "WebSocket is a computer communications "
+#~ "protocol, providing full-duplex communication"
+#~ " channels over a single TCP "
+#~ "connection. The WebSocket protocol was "
+#~ "standardized by the IETF as RFC "
+#~ "6455 in 2011, and the WebSocket "
+#~ "API in Web IDL is being "
+#~ "standardized by the W3C."
+#~ msgstr ""
+
+#~ msgid "Contents"
+#~ msgstr ""
+
+#~ msgid "[C](#c)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Nchan - Nchan is a scalable, "
+#~ "flexible pub/sub server for the modern"
+#~ " web, built as a module for the"
+#~ " Nginx web server."
+#~ msgstr ""
+
+#~ msgid "Apache-websocket - Apache WebSocket module."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MinnowServer - A super small and "
+#~ "fast embedded HTTP(S) WebSocket server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "gwsocket - Fast, standalone, language-"
+#~ "agnostic WebSocket server RFC6455 compliant."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Libwebsockets - It's a lightweight pure"
+#~ " C library built to use minimal "
+#~ "CPU and memory resources, and provide"
+#~ " fast throughput in both directions "
+#~ "as client or server."
+#~ msgstr ""
+
+#~ msgid "Libwebsock - C library for easy WebSockets server."
+#~ msgstr ""
+
+#~ msgid "Websocket -  Websocket server written in C."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "facil.io - A server/framework library "
+#~ "for web applications, including Websockets "
+#~ "and native pub/sub."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "libuwsc - A Lightweight and fully "
+#~ "asynchronous WebSocket client C library "
+#~ "based on libubox for Embedded Linux."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "mongoose - Mongoose Embedded Web Server"
+#~ " Library - Mongoose is more than "
+#~ "an embedded webserver. It is a "
+#~ "multi-protocol embedded networking library "
+#~ "with functions including TCP, HTTP "
+#~ "client and server, WebSocket client and"
+#~ " server, MQTT client and broker and"
+#~ " much more."
+#~ msgstr ""
+
+#~ msgid "Websocketpp - C++ Websocket client/server library."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "QtWebSockets - The QtWebSockets module "
+#~ "is an add-on for the Qt5 "
+#~ "library."
+#~ msgstr ""
+
+#~ msgid "Beast - HTTP and WebSocket built on Boost.Asio in C++11."
+#~ msgstr ""
+
+#~ msgid "µWebSockets -  Highly scalable WebSocket server & client library."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Simple-WebSocket-Server -  A very "
+#~ "simple, fast, multithreaded, platform "
+#~ "independent WebSocket (WS) and WebSocket "
+#~ "Secure (WSS) server and client library"
+#~ " implemented using C++11, Boost.Asio and"
+#~ " OpenSSL."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "UEWebsocket - Unreal engine 4 websocket"
+#~ " plugin for both c++ and blueprint"
+#~ " developer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "IXWebSocket - Lightweight C++11 multi-"
+#~ "threaded client library with TLS "
+#~ "support."
+#~ msgstr ""
+
+#~ msgid "ASP.NET SignalR - Incredibly simple real-time web for .NET."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WebSocketListener - Lightweight and highly "
+#~ "scalable asynchronous WebSocket server for "
+#~ ".NET/Mono."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "websocket-rpc - WebSocket RPC library"
+#~ " for .NET with auto JavaScript client"
+#~ " code generation, supporting ASP.NET Core."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "NetGain - A high performance websocket"
+#~ " server library powering Stack Overflow."
+#~ msgstr ""
+
+#~ msgid "websocket-manager - Real-Time library for ASP .NET Core."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WebSockets - Implementation of the "
+#~ "WebSocket protocol, along with client "
+#~ "and server integration components."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WebSockets support in ASP.NET Core - "
+#~ "This article explains how to get "
+#~ "started with WebSockets in ASP.NET Core."
+#~ msgstr ""
+
+#~ msgid "Sockjs-erlang - WebSocket emulation - Erlang server."
+#~ msgstr ""
+
+#~ msgid "Cowboy - Small, fast, modular HTTP server written in Erlang."
+#~ msgstr ""
+
+#~ msgid "Kraken - Distributed Pubsub Server for Realtime Apps."
+#~ msgstr ""
+
+#~ msgid "Gorilla Websocket - WebSocket implementation for Go."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Websocket - Package Websocket implements "
+#~ "a client and server for the "
+#~ "WebSocket protocol as specified in RFC"
+#~ " 6455."
+#~ msgstr ""
+
+#~ msgid "Ws - Tiny WebSocket library for Go."
+#~ msgstr ""
+
+#~ msgid "1m-go-websockets - Handling 1M websockets connections in Go."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "gotify/server - A simple server for "
+#~ "sending and receiving messages in "
+#~ "real-time per web socket."
+#~ msgstr ""
+
+#~ msgid "nhooyr/websocket - A minimal and idiomatic WebSocket library for Go."
+#~ msgstr ""
+
+#~ msgid "Websockets - A Haskell library for creating WebSocket-capable servers."
+#~ msgstr ""
+
+#~ msgid "Sente - Realtime web comms for Clojure/Script."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Chord - Library designed to bridge "
+#~ "the gap between the triad of "
+#~ "CLJ/CLJS, web-sockets and core.async."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Luminusweb - Luminus is a Clojure "
+#~ "micro-framework based on a set of "
+#~ "lightweight libraries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Project Tyrus - JSR 356: Java API"
+#~ " for WebSocket - Reference Implementation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Java-WebSocket - Barebones WebSocket "
+#~ "client and server implementation written "
+#~ "in 100% Java."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Atmosphere - Realtime Client Server "
+#~ "Framework for the JVM, supporting "
+#~ "WebSockets with Cross-Browser Fallbacks."
+#~ msgstr ""
+
+#~ msgid "Webbit - Java event based WebSocket and HTTP server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Scarlet - Tinder's Retrofit inspired "
+#~ "WebSocket client for Kotlin, Java, and"
+#~ " Android"
+#~ msgstr ""
+
+#~ msgid "Play - The high velocity web framework for Java and Scala."
+#~ msgstr ""
+
+#~ msgid "Finagle-websocket - Finagle Websocket clients and servers."
+#~ msgstr ""
+
+#~ msgid "Socket.IO - Featuring the fastest and most reliable real-time engine."
+#~ msgstr ""
+
+#~ msgid "Nodejs-websocket - Node.js module for websocket server and client."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WebSocket-Node - WebSocket Implementation "
+#~ "for Node.JS (Draft -08 through the "
+#~ "final RFC 6455)."
+#~ msgstr ""
+
+#~ msgid "Sockjs-node - WebSocket emulation - Node.js server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ws - ws: The fastest cross "
+#~ "platform RFC-6455 WebSocket implementation for"
+#~ " Node.js."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "deepstream.io - Open realtime server a"
+#~ " fast, secure and scalable realtime "
+#~ "server for mobile, web & iot."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "websocket-as-promised - Promise-based"
+#~ " W3C WebSocket wrapper: allows to use"
+#~ " promises when connecting, disconnecting "
+#~ "and messaging with WebSocket server."
+#~ msgstr ""
+
+#~ msgid "faye-websocket-node - Standards-compliant WebSocket client and server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ws-wrapper - Lightweight WebSocket "
+#~ "wrapper that provides a socket.io-like"
+#~ " event-handler API along with "
+#~ "Promise-based requests."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ws-server-wrapper - Companion library"
+#~ " for ws-wrapper for the server-"
+#~ "side."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "uws - Tiny WebSockets (access to "
+#~ "the C++ library, µWebSockets, via "
+#~ "Node.js)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "netflux - JavaScript client and server"
+#~ " side transport API based on WebRTC"
+#~ " & WebSocket"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Sockette - WebSocket client that will"
+#~ " automatically reconnect if the connection"
+#~ " is lost."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Net::WebSocket::Server - Straightforward Perl "
+#~ "WebSocket server with minimal dependencies."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Ratchet - Ratchet is a loosely "
+#~ "coupled PHP library providing developers "
+#~ "with tools to create real time, "
+#~ "bi-directional applications between clients "
+#~ "and servers over WebSockets."
+#~ msgstr ""
+
+#~ msgid "Php-websocket - Simple PHP WebSocket implementation for PHP 5.3."
+#~ msgstr ""
+
+#~ msgid "Phpws - PHP Web Socket server."
+#~ msgstr ""
+
+#~ msgid "Sandstone - Microframework to build a real time Rest API."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Websockets - Websockets is a library "
+#~ "for developing WebSocket servers and "
+#~ "clients in Python."
+#~ msgstr ""
+
+#~ msgid "Ws4py - WebSocket package for Python."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Autobahn.ws - Open-source real-time "
+#~ "framework for Web, Mobile & Internet "
+#~ "of Things."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tornado - Tornado is a Python web"
+#~ " framework and asynchronous networking "
+#~ "library, originally developed at FriendFeed."
+#~ msgstr ""
+
+#~ msgid "Websockets - WebSocket implementation in Python 3."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "AnyCable - Polyglot replacement for Ruby"
+#~ " WebSocket servers with Action Cable "
+#~ "protocol."
+#~ msgstr ""
+
+#~ msgid "Em-websocket - EventMachine based WebSocket server."
+#~ msgstr ""
+
+#~ msgid "Faye-websocket-ruby - Standards-compliant WebSocket client and server."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Iodine - WebSocket/HTTP server with "
+#~ "integrated pub/sub and optional Redis "
+#~ "support."
+#~ msgstr ""
+
+#~ msgid "Websocket-driver-ruby - WebSocket protocol handler with pluggable I/O."
+#~ msgstr ""
+
+#~ msgid "Websocket-ruby - Universal Ruby library to handle WebSocket protocol."
+#~ msgstr ""
+
+#~ msgid "Scorched - Light-weight web framework for Ruby."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Firehose - Build realtime Ruby web "
+#~ "applications. Created by the fine folks"
+#~ " at Poll Everywhere."
+#~ msgstr ""
+
+#~ msgid "Slanger - Open Pusher implementation compatible with Pusher libraries."
+#~ msgstr ""
+
+#~ msgid "render_sync - Real-time Rails Partials."
+#~ msgstr ""
+
+#~ msgid "websocket-rails - Plug and play websocket support for ruby on rails."
+#~ msgstr ""
+
+#~ msgid "RFC6455 - The WebSocket Protocol."
+#~ msgstr ""
+
+#~ msgid "The WebSocket API - The W3C The WebSocket API."
+#~ msgstr ""
+
+#~ msgid "Hixie76 - The WebSocket protocol draft-hixie-thewebsocketprotocol-76"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "claws - Awesome WebSocket Client - "
+#~ "an interactive command line client for"
+#~ " testing websocket servers."
+#~ msgstr ""
+
+#~ msgid "wscat - WebSocket cat."
+#~ msgstr ""
+
+#~ msgid "wsta - A CLI development tool for WebSocket APIs."
+#~ msgstr ""
+
+#~ msgid "ws - websocket command line tool."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "wssh - wssh (\"wish\") is a "
+#~ "command-line utility/shell for WebSocket "
+#~ "inspired by netcat."
+#~ msgstr ""
+
+#~ msgid "wsc - A tiny command line websocket client written in Go."
+#~ msgstr ""
+
+#~ msgid "ws-cli - WebSocket Command Line Client written in Go."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ws-tool - A Develop Tool to "
+#~ "Test WebSocket, Socket.IO, Stomp, Bayeux, "
+#~ "HTTP, TCP, UDP, WebRTC, DNS API."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "websocketd - Turn any program that "
+#~ "uses STDIN/STDOUT into a WebSocket "
+#~ "server. Like inetd, but for WebSockets."
+#~ msgstr ""
+
+#~ msgid "The top 10 realtime web apps"
+#~ msgstr ""
+
+#~ msgid "Super sync sports"
+#~ msgstr ""
+
+#~ msgid "Firepad"
+#~ msgstr ""
+
+#~ msgid "JabbR"
+#~ msgstr ""
+
+#~ msgid "Kaazing"
+#~ msgstr ""
+
+#~ msgid "Taskade - Real-time collaborative task lists and outlines."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WebSockets - An Introduction - The "
+#~ "problems and some security implications "
+#~ "of websockets - Cross-site WebSockets"
+#~ " Scripting (XSWS)."
+#~ msgstr ""
+
+#~ msgid "Hacking with WebSockets - Talk on Blackhat USA 2012 Conference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Testing WebSockets - This article is "
+#~ "part of the new OWASP Testing "
+#~ "Guide v4."
+#~ msgstr ""
+
+#~ msgid "Websockets Auth - Journey into WebSockets Authentication/Authorization."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "WebSocket Security - The WebSocket "
+#~ "protocol is a young technology, and "
+#~ "brings with it some risks. Decades "
+#~ "of experience have taught the web "
+#~ "community some best practices around "
+#~ "HTTP security, but the security best "
+#~ "practices in the WebSocket world aren’t"
+#~ " firmly established, and continue to "
+#~ "evolve. Nevertheless, some themes have "
+#~ "emerged and they are described in "
+#~ "this article."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Cross-Site WebSocket Hijacking - "
+#~ "Cross-Site WebSocket Hijacking (CSWSH) -"
+#~ " Web Application Security Blog."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "An introduction to Websockets - Brief"
+#~ " History of Real-Time Web "
+#~ "Applications."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Introducing WebSockets: Bringing Sockets to"
+#~ " the Web - The Problem: Low "
+#~ "Latency Client-Server and Server-Client"
+#~ " Connections."
+#~ msgstr ""
+
+#~ msgid "About HTML5 WebSocket - About HTML5 WebSocket."
+#~ msgstr ""
+
+#~ msgid "Node.js WebSocket - Finding the right Node.js WebSocket implementation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Websockets 101 - Armin Ronacher's "
+#~ "Thoughts and Writings (creator of "
+#~ "Flask)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Real-time Apps - Building Real-"
+#~ "time Apps with Websockets & Server-"
+#~ "Sent Events."
+#~ msgstr ""
+
+#~ msgid "Real-Time Web by Paul Banks - The State of Real-Time Web in 2016."
+#~ msgstr ""
+
+#~ msgid "Are WebSockets the future? - WebSockets, caution required!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "MSDN Microsoft Blog - The Dangers "
+#~ "of HTML5: WebSockets and Stable "
+#~ "Standards."
+#~ msgstr ""
+
+#~ msgid "Webpush Internet-Draft - Generic Event Delivery Using HTTP Push."
+#~ msgstr ""
+
+#~ msgid "Full Stack Python - WebSockets on Python."
+#~ msgstr ""
+
+#~ msgid "Do you really need WebSockets? - WebSockets explanation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Initial Steps to Use Websocket-rails "
+#~ "- This is the very initial steps"
+#~ " to use websocket-rails."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Honeybadger.IO - Building a simple "
+#~ "websockets server from scratch in Ruby."
+#~ msgstr ""
+
+#~ msgid "Engineyard - Getting Started with Ruby and WebSockets."
+#~ msgstr ""
+
+#~ msgid "David Walsh - WebSocket and Socket.IO."
+#~ msgstr ""
+
+#~ msgid "WebSocket - Lightweight Client-Server Communications. Andrew Lombardi."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Definitive Guide to HTML5 WebSocket"
+#~ " - Build Real-Time Applications with"
+#~ " HTML5. By Vanessa Wang, Frank Salim,"
+#~ " and Peter Moskovits. Source Code "
+#~ "here."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "High Performance Browser Networking - "
+#~ "High Performance Browser Networking: "
+#~ "WebSocket."
+#~ msgstr ""
+
+#~ msgid "WebSocket ORG - The one-stop-shop for all your websocket needs."
+#~ msgstr ""
+
+#~ msgid "WebSockets MDN - WebSockets Mozilla Developer Network (MDN)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please, read the Contribution Guidelines "
+#~ "before submitting your suggestion."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Feel free to open an issue or "
+#~ "create a pull request with your "
+#~ "additions."
+#~ msgstr ""
+
+#~ msgid "Table of contents generated with DocToc"
+#~ msgstr ""
 

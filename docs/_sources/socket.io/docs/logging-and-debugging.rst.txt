@@ -3,7 +3,7 @@ Logging and debugging
 
 Socket.IO is now completely instrumented by a minimalistic yet
 tremendously powerful utility called
-`debug <https://github.com/visionmedia/debug>`__ by TJ Holowaychuk.
+`debug <https://github.com/visionmedia/debug>`_ by TJ Holowaychuk.
 
 Before 1.0, the Socket.IO server would default to logging everything out
 to the console. This turned out to be annoyingly verbose for many users

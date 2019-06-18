@@ -18,16 +18,16 @@ to talk about the work that has gone into 1.0 to round up this vision.
 There’s a lot to say about Socket.IO 1.0, so if you’re short in time,
 feel free to jump to the parts that are most interesting to you:
 
-1.  `New engine <#New-engine>`__
-2.  `Binary support <#Binary-support>`__
-3.  `Automated testing <#Automated-Testing>`__
-4.  `Scalability <#Scalability>`__
-5.  `Integration <#Integration>`__
-6.  `Better debugging <#Better-debugging>`__
-7.  `Streamlined APIs <#Streamlined-APIs>`__
-8.  `CDN delivery <#CDN-delivery>`__
-9.  `Future innovation <#Future-innovation>`__
-10. `Credits <#Credits>`__
+1.  `New engine <#New-engine>`_
+2.  `Binary support <#Binary-support>`_
+3.  `Automated testing <#Automated-Testing>`_
+4.  `Scalability <#Scalability>`_
+5.  `Integration <#Integration>`_
+6.  `Better debugging <#Better-debugging>`_
+7.  `Streamlined APIs <#Streamlined-APIs>`_
+8.  `CDN delivery <#CDN-delivery>`_
+9.  `Future innovation <#Future-innovation>`_
+10. `Credits <#Credits>`_
 
 New engine
 ----------
@@ -210,7 +210,8 @@ from the outside world), and have them execute on the Sauce Labs cloud,
 which is in charge of virtualizing and executing browsers on all the
 environments we care about.
 
-## Scalability
+Scalability
+-------------------
 
 We simplified the approach towards rooms and multi-node scalability
 dramatically. Instead of storing and/or replicating data across nodes,
@@ -271,7 +272,8 @@ Tony Kovanen already created a PHP implementation:
 This makes it really easy to turn any existing application into a
 realtime application!
 
-## Better debugging
+Better debugging
+---------------------------
 
 Socket.IO is now completely instrumented by a minimalistic yet
 tremendously powerful utility called debug by TJ Holowaychuk.
@@ -314,7 +316,8 @@ You can see it in action for example on our homepage:
 
    </video>
 
-## Streamlined APIs
+Streamlined APIs
+---------------------------
 
 The ``socket.io`` module now exports the attachment function directly
 (previously ``.listen``). It’s even easier now to attach socket.io to a
@@ -409,7 +412,8 @@ and what their parameters are.
 This project is being led by the talented Nick LaGrow (Github), Samaan
 Ghani (Github) and David Cummings (Twitter).
 
-### New languages and frameworks
+New languages and frameworks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A lot of effort has gone into specing and documenting the Engine.IO
 protocol and Socket.IO protocol.

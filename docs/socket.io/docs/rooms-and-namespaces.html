@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Rooms and namespaces &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>房间和名称空间 &mdash; WebSockets Docs v2019.0613 文档</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Migrating from 0.9" href="migrating-from-0-9.html" />
-    <link rel="prev" title="Docs" href="info.html" /> 
+    <link rel="next" title="从0.9迁移" href="migrating-from-0-9.html" />
+    <link rel="prev" title="介绍" href="info.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,44 +83,37 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started/index.html">Get started</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="info.html">Docs</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Rooms and namespaces</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#default-namespace">Default namespace</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#custom-namespaces">Custom namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">介绍</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">房间和名称空间</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#default-namespace">默认命名空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-namespaces">自定义命名空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rooms">房间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-messages-from-the-outside-world">从外部世界发送消息</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#rooms">Rooms</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#joining-and-leaving">Joining and leaving</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#default-room">Default room</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#disconnection">Disconnection</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#sending-messages-from-the-outside-world">Sending messages from the outside-world</a></li>
-<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html">Dependency graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">从0.9迁移</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">使用多个节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">记录和调试</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="client-api.html">Client API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="client-api.html#manager">Manager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="client-api.html#socket">Socket</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html">Server API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html#namespace">Namespace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html#socket">Socket</a></li>
-<li class="toctree-l3"><a class="reference internal" href="server-api.html#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">内幕</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">在引擎盖下</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">常见问题</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -168,9 +161,9 @@
         
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
         
-          <li><a href="index.html">Docs</a> &raquo;</li>
+          <li><a href="index.html">文档</a> &raquo;</li>
         
-      <li>Rooms and namespaces</li>
+      <li>房间和名称空间</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,24 +183,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rooms-and-namespaces">
-<h1>Rooms and namespaces<a class="headerlink" href="#rooms-and-namespaces" title="永久链接至标题">¶</a></h1>
-<p>Socket.IO allows you to “namespace” your sockets, which essentially
-means assigning different <em>endpoints</em> or <em>paths</em>.</p>
-<p>This is a useful feature to minimize the number of resources (TCP
-connections) and at the same time separate concerns within your
-application by introducing separation between communication channels.</p>
+<h1>房间和名称空间<a class="headerlink" href="#rooms-and-namespaces" title="永久链接至标题">¶</a></h1>
+<p>Socket.IO允许您 “namespace” 套接字，这实际上意味着分配不同的 <em>endpoints</em> 或 <em>paths</em>。</p>
+<p>这是一个有用的功能，可以最大限度地减少资源(TCP连接)的数量，同时通过在通信通道之间引入分离来分离应用程序中的问题。</p>
 <div class="section" id="default-namespace">
-<h2>Default namespace<a class="headerlink" href="#default-namespace" title="永久链接至标题">¶</a></h2>
-<p>We call the default namespace <code class="docutils literal notranslate"><span class="pre">/</span></code> and it’s the one Socket.IO clients
-connect to by default, and the one the server listens to by default.</p>
-<p>This namespace is identified by <code class="docutils literal notranslate"><span class="pre">io.sockets</span></code> or simply <code class="docutils literal notranslate"><span class="pre">io</span></code>:</p>
+<h2>默认命名空间<a class="headerlink" href="#default-namespace" title="永久链接至标题">¶</a></h2>
+<p>我们调用默认命名空间 <code class="docutils literal notranslate"><span class="pre">/</span></code>，它是默认情况下连接到的一个 Socket.IO 客户端，默认情况下是服务器监听的。</p>
+<p>这个命名空间由 <code class="docutils literal notranslate"><span class="pre">io.sockets</span></code> 或简单的 <code class="docutils literal notranslate"><span class="pre">io</span></code> 标识:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// the following two will emit to all the sockets connected to `/`</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;everyone&#39;</span><span class="p">);</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;everyone&#39;</span><span class="p">);</span> <span class="c1">// short form</span>
 </pre></div>
 </div>
-<p>Each namespace emits a <code class="docutils literal notranslate"><span class="pre">connection</span></code> event that receives each
-<code class="docutils literal notranslate"><span class="pre">Socket</span></code> instance as a parameter</p>
+<p>每个命名空间都会发出一个 <code class="docutils literal notranslate"><span class="pre">connection</span></code> 事件，它接收每个 <code class="docutils literal notranslate"><span class="pre">Socket</span></code> 实例作为参数</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
   <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">});</span>
 <span class="p">});</span>
@@ -215,9 +203,8 @@ connect to by default, and the one the server listens to by default.</p>
 </div>
 </div>
 <div class="section" id="custom-namespaces">
-<h2>Custom namespaces<a class="headerlink" href="#custom-namespaces" title="永久链接至标题">¶</a></h2>
-<p>To set up a custom namespace, you can call the <code class="docutils literal notranslate"><span class="pre">of</span></code> function on the
-server-side:</p>
+<h2>自定义命名空间<a class="headerlink" href="#custom-namespaces" title="永久链接至标题">¶</a></h2>
+<p>要设置自定义命名空间，可以在服务器端调用 <code class="docutils literal notranslate"><span class="pre">of</span></code> 函数:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">nsp</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/my-namespace&#39;</span><span class="p">);</span>
 <span class="nx">nsp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;someone connected&#39;</span><span class="p">);</span>
@@ -225,41 +212,38 @@ server-side:</p>
 <span class="nx">nsp</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;everyone!&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>On the client side, you tell Socket.IO client to connect to that
-namespace:</p>
+<p>在客户端，您告诉Socket.IO客户端连接到该命名空间:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;/my-namespace&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Important note:</strong> The namespace is an implementation detail of the
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>The namespace is an implementation detail of the
 Socket.IO protocol, and is not related to the actual URL of the
 underlying transport, which defaults to <code class="docutils literal notranslate"><span class="pre">/socket.io/…</span></code>.</p>
 </div>
 </div>
 <div class="section" id="rooms">
-<h1>Rooms<a class="headerlink" href="#rooms" title="永久链接至标题">¶</a></h1>
-<p>Within each namespace, you can also define arbitrary channels that
-sockets can <code class="docutils literal notranslate"><span class="pre">join</span></code> and <code class="docutils literal notranslate"><span class="pre">leave</span></code>.</p>
+<h2>房间<a class="headerlink" href="#rooms" title="永久链接至标题">¶</a></h2>
+<p>在每个命名空间中，您还可以定义套接字可以 <code class="docutils literal notranslate"><span class="pre">join</span></code> 和 <code class="docutils literal notranslate"><span class="pre">leave</span></code> 的任意通道。</p>
 <div class="section" id="joining-and-leaving">
-<h2>Joining and leaving<a class="headerlink" href="#joining-and-leaving" title="永久链接至标题">¶</a></h2>
-<p>You can call <code class="docutils literal notranslate"><span class="pre">join</span></code> to subscribe the socket to a given channel:</p>
+<h3>加入和离开<a class="headerlink" href="#joining-and-leaving" title="永久链接至标题">¶</a></h3>
+<p>您可以调用 <code class="docutils literal notranslate"><span class="pre">join</span></code> 来订阅套接字到给定的通道：</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
   <span class="nx">socket</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;some room&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>And then simply use <code class="docutils literal notranslate"><span class="pre">to</span></code> or <code class="docutils literal notranslate"><span class="pre">in</span></code> (they are the same) when
-broadcasting or emitting:</p>
+<p>然后在广播或发射时简单地使用 <code class="docutils literal notranslate"><span class="pre">to</span></code> 或 <code class="docutils literal notranslate"><span class="pre">in</span></code> (它们是相同的):</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;some room&#39;</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;some event&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>To leave a channel you call <code class="docutils literal notranslate"><span class="pre">leave</span></code> in the same fashion as <code class="docutils literal notranslate"><span class="pre">join</span></code>.</p>
+<p>要离开一个频道，你可以像 <code class="docutils literal notranslate"><span class="pre">join</span></code> 一样调用 <code class="docutils literal notranslate"><span class="pre">leave</span></code> 。</p>
 </div>
 <div class="section" id="default-room">
-<h2>Default room<a class="headerlink" href="#default-room" title="永久链接至标题">¶</a></h2>
-<p>Each <code class="docutils literal notranslate"><span class="pre">Socket</span></code> in Socket.IO is identified by a random, unguessable,
-unique identifier <code class="docutils literal notranslate"><span class="pre">Socket#id</span></code>. For your convenience, each socket
-automatically joins a room identified by this id.</p>
-<p>This makes it easy to broadcast messages to other sockets:</p>
+<h3>默认房间<a class="headerlink" href="#default-room" title="永久链接至标题">¶</a></h3>
+<p>Socket.IO中的每个 <code class="docutils literal notranslate"><span class="pre">Socket</span></code> 都由一个随机的，不可思议的唯一标识符 <code class="docutils literal notranslate"><span class="pre">Socket＃id</span></code> 标识。为方便起见，每个套接字自动加入由此ID标识的房间。</p>
+<p>这样可以轻松地将消息广播到其他套接字:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
   <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;say to someone&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">msg</span><span class="p">){</span>
     <span class="nx">socket</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;my message&#39;</span><span class="p">,</span> <span class="nx">msg</span><span class="p">);</span>
@@ -269,34 +253,32 @@ automatically joins a room identified by this id.</p>
 </div>
 </div>
 <div class="section" id="disconnection">
-<h2>Disconnection<a class="headerlink" href="#disconnection" title="永久链接至标题">¶</a></h2>
-<p>Upon disconnection, sockets <code class="docutils literal notranslate"><span class="pre">leave</span></code> all the channels they were part of
-automatically, and no special teardown is needed on your part.</p>
+<h3>断开<a class="headerlink" href="#disconnection" title="永久链接至标题">¶</a></h3>
+<p>断开连接时，插座 <code class="docutils literal notranslate"><span class="pre">leave</span></code> 它们自动成为所有通道，并且不需要特殊的拆卸。</p>
 </div>
 </div>
 <div class="section" id="sending-messages-from-the-outside-world">
-<h1>Sending messages from the outside-world<a class="headerlink" href="#sending-messages-from-the-outside-world" title="永久链接至标题">¶</a></h1>
-<p>In some cases, you might want to emit events to sockets in Socket.IO
-namespaces / rooms from outside the context of your Socket.IO processes.</p>
-<p>There’s several ways to tackle this problem, like implementing your own
-channel to send messages into the process.</p>
-<p>To facilitate this use case, we created two modules:</p>
+<h2>从外部世界发送消息<a class="headerlink" href="#sending-messages-from-the-outside-world" title="永久链接至标题">¶</a></h2>
+<p>在某些情况下，您可能希望从Socket.IO进程的上下文之外向Socket.IO命名空间/房间中的套接字发出事件。</p>
+<p>有几种方法可以解决这个问题，比如实现自己的通道将消息发送到进程中。</p>
+<p>为了方便这个用例，我们创建了两个模块:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/socketio/socket.io-redis">socket.io-redis</a></p></li>
 <li><p><a class="reference external" href="https://github.com/socketio/socket.io-emitter">socket.io-emitter</a></p></li>
 </ul>
-<p>By implementing the Redis <code class="docutils literal notranslate"><span class="pre">Adapter</span></code>:</p>
+<p>通过实现Redis <code class="docutils literal notranslate"><span class="pre">Adapter</span></code>:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mi">3000</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mi">6379</span> <span class="p">}));</span>
 </pre></div>
 </div>
-<p>you can then <code class="docutils literal notranslate"><span class="pre">emit</span></code> messages from any other process to any channel</p>
+<p>然后，您可以从任何其他进程 <code class="docutils literal notranslate"><span class="pre">emit</span></code> 消息到任何通道</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-emitter&#39;</span><span class="p">)({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mi">6379</span> <span class="p">});</span>
 <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
 </pre></div>
+</div>
 </div>
 </div>
 
@@ -308,10 +290,10 @@ channel to send messages into the process.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="migrating-from-0-9.html" class="btn btn-neutral float-right" title="Migrating from 0.9" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="migrating-from-0-9.html" class="btn btn-neutral float-right" title="从0.9迁移" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="info.html" class="btn btn-neutral float-left" title="Docs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="info.html" class="btn btn-neutral float-left" title="介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

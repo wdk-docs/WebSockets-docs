@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 22:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/client-api/IO.rst:2
+msgid "IO"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:4
+msgid "Exposed as the ``io`` namespace in the standalone build, or the result of calling ``require('socket.io-client')``."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:23
+msgid "const io = require('socket.io-client');"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:27
+msgid "The protocol revision number."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:29
+msgid "*(Number)*"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:0
+msgid "参数"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:34
+msgid "defaults to ``window.location``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:35
+msgid "-  ``forceNew`` *(Boolean)* whether to reuse an existing connection"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:37
+msgid "``forceNew`` *(Boolean)* whether to reuse an existing connection"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:39
+msgid "``Socket``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:41
+msgid "Creates a new ``Manager`` for the given URL, and attempts to reuse an existing ``Manager`` for subsequent calls, unless the ``multiplex`` option is passed with ``false``. Passing this option is the equivalent of passing ``'force new connection': true`` or ``forceNew: true``."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:46
+msgid "A new ``Socket`` instance is returned for the namespace specified by the pathname in the URL, defaulting to ``/``. For example, if the ``url`` is ``http://localhost/users``, a transport connection will be established to ``http://localhost`` and a Socket.IO connection will be established to ``/users``."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:52
+msgid "Query parameters can also be provided, either with the ``query`` option or directly in the url (example: ``http://localhost/users?token=abc``)."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:55
+msgid "See `new Manager(url[, options]) <#new-Manager-url-options>`_ for the the list of available ``options``."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:59
+msgid "Initialization examples"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:62
+msgid "With multiplexing"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:64
+msgid "By default, a single connection is used when connecting to different namespaces (to minimize resources):"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:73
+msgid "That behaviour can be disabled with the ``forceNew`` option:"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:81
+msgid "Note: reusing the same namespace will also create two connections"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:90
+msgid "With custom ``path``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:103
+msgid "The request URLs will look like: ``localhost/myownpath/?EIO=3&transport=polling&sid=<id>``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:112
+msgid "Here, the socket connects to the ``admin`` namespace, with the custom path ``mypath``."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:115
+msgid "The request URLs will look like: ``localhost/mypath/?EIO=3&transport=polling&sid=<id>`` (the namespace is sent as part of the payload)."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:120
+msgid "With query parameters"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:145
+msgid "With query option"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:155
+msgid "The query content can also be updated on reconnection:"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:166
+msgid "With ``extraHeaders``"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:168
+msgid "This only works if ``polling`` transport is enabled (which is the default). Custom headers will not be appended when using ``websocket`` as the transport. This happens because the WebSocket handshake does not honor custom headers. (For background see the `WebSocket protocol RFC <https://tools.ietf.org/html/rfc6455#section-4>`_)"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:199
+msgid "With ``websocket`` transport only"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:201
+msgid "By default, a long-polling connection is established first, then upgraded to “better” transports (like WebSocket). If you like to live dangerously, this part can be skipped:"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:218
+msgid "With a custom parser"
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:220
+msgid "The default `parser <https://github.com/socketio/socket.io-parser>`_ promotes compatibility (support for ``Blob``, ``File``, binary check) at the expense of performance. A custom parser can be provided to match the needs of your application. Please see the example `here <https://github.com/socketio/socket.io/tree/master/examples/custom-parsers>`_."
+msgstr ""
+
+#: ../../source/socket.io/client-api/IO.rst:239
+msgid "With a self-signed certificate"
+msgstr ""
+

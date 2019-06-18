@@ -1,7 +1,8 @@
-title: Socket.IO — Internals permalink: /docs/internals/ type: docs —
+Internals
+================
 
 Dependency graph
-================
+-----------------------
 
 The Socket.IO codebase is split accross several repositories:
 
@@ -16,6 +17,8 @@ The Socket.IO codebase is split accross several repositories:
 
 The following diagram displays the relationships between each project:
 
+.. image:: https://socket.io/images/dependencies.jpg
+
 Each project brings its own set of features:
 
 engine.io-parser
@@ -23,8 +26,8 @@ engine.io-parser
 
 This is the JavaScript parser for the engine.io protocol encoding,
 shared by both
-`engine.io-client <https://github.com/socketio/engine.io-client>`__ and
-`engine.io <https://github.com/socketio/engine.io>`__.
+`engine.io-client <https://github.com/socketio/engine.io-client>`_ and
+`engine.io <https://github.com/socketio/engine.io>`_.
 
 The specification for the protocol can be found here:
 https://github.com/socketio/engine.io-protocol
@@ -38,28 +41,29 @@ Socket.IO.
 
 Its main feature is the ability to swap transports on the fly. A
 connection (initiated by an
-`engine.io-client <https://github.com/socketio/engine.io-client>`__
+`engine.io-client <https://github.com/socketio/engine.io-client>`_
 counterpart) starts with XHR polling, but can then switch to WebSocket
 if possible.
 
 It uses the
-`engine.io-parser <https://github.com/socketio/engine.io-parser>`__ to
+`engine.io-parser <https://github.com/socketio/engine.io-parser>`_ to
 encode/decode packets.
 
-## engine.io-client
+engine.io-client
+-----------------------
 
 This is the client for
-`Engine.IO <https://github.com/socketio/engine.io>`__, the
+`Engine.IO <https://github.com/socketio/engine.io>`_, the
 implementation of transport-based cross-browser/cross-device
 bi-directional communication layer for
-`Socket.IO <https://github.com/socketio/socket.io>`__.
+`Socket.IO <https://github.com/socketio/socket.io>`_.
 
 It runs in both the browser (including HTML5
-`WebWorker <https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API>`__)
+`WebWorker <https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API>`_)
 and Node.js.
 
 It uses the
-`engine.io-parser <https://github.com/socketio/engine.io-parser>`__ to
+`engine.io-parser <https://github.com/socketio/engine.io-parser>`_ to
 encode/decode packets.
 
 socket.io-adapter
@@ -69,57 +73,59 @@ This is the default Socket.IO in-memory adapter class.
 
 This module is not intended for end-user usage, but can be used as an
 interface to inherit from from other adapters you might want to build,
-like `socket.io-redis <https://github.com/socketio/socket.io-redis>`__.
+like `socket.io-redis <https://github.com/socketio/socket.io-redis>`_.
 
 socket.io-redis
 ---------------
 
 This is the adapter using the Redis
-`Pub/Sub <https://redis.io/topics/pubsub>`__ mechanism to broadcast
+`Pub/Sub <https://redis.io/topics/pubsub>`_ mechanism to broadcast
 messages between multiple nodes.
 
 socket.io-parser
 ----------------
 
 A socket.io encoder and decoder written in JavaScript complying with
-version 3 of `socket.io-protocol <>`__. Used by
-`socket.io <https://github.com/socketio/socket.io>`__ and
-`socket.io-client <https://github.com/socketio/socket.io-client>`__.
+version 3 of `socket.io-protocol <>`_. Used by
+`socket.io <https://github.com/socketio/socket.io>`_ and
+`socket.io-client <https://github.com/socketio/socket.io-client>`_.
 
-## socket.io
+socket.io
+-------------------
 
 Socket.IO brings some *syntactic sugar* over the Engine.IO “raw” API. It
 also brings two new concepts, ``Rooms`` and ``Namespaces``, which
 introduce a separation of concern between communication channels. Please
 see the associated documentation
-`there <https://socket.io/docs/rooms-and-namespaces/>`__.
+`there <https://socket.io/docs/rooms-and-namespaces/>`_.
 
 By default, it exposes a browser build of the client at
 ``/socket.io/socket.io.js``.
 
 It uses the
-`socket.io-parser <https://github.com/socketio/socket.io-parser>`__ to
+`socket.io-parser <https://github.com/socketio/socket.io-parser>`_ to
 encode/decode packets.
 
 socket.io-client
 ----------------
 
 This is the client for
-`Socket.IO <https://github.com/socketio/socket.io>`__. It relies on
-`engine.io-client <https://github.com/socketio/engine.io-client>`__,
+`Socket.IO <https://github.com/socketio/socket.io>`_. It relies on
+`engine.io-client <https://github.com/socketio/engine.io-client>`_,
 which manages the transport swapping and the disconnection detection.
 
 It handles reconnection automatically, in case the underlying connection
 is severed.
 
 It uses the
-`socket.io-parser <https://github.com/socketio/socket.io-parser>`__ to
+`socket.io-parser <https://github.com/socketio/socket.io-parser>`_ to
 encode/decode packets.
 
 Under the hood
 ==============
 
-## Connection
+Connection
+---------------------------
 
 .. code:: js
 

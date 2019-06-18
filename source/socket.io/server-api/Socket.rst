@@ -15,23 +15,21 @@ a convenient way to broadcast to a group of ``Socket``\ s (see
 ``Socket#to`` below).
 
 The ``Socket`` class inherits from
-`EventEmitter <https://nodejs.org/api/events.html#events_class_eventemitter>`__.
+`EventEmitter <https://nodejs.org/api/events.html#events_class_eventemitter>`_.
 The ``Socket`` class overrides the ``emit`` method, and does not modify
 any other ``EventEmitter`` method. All methods documented here which
 also appear as ``EventEmitter`` methods (apart from ``emit``) are
 implemented by ``EventEmitter``, and documentation for ``EventEmitter``
 applies.
 
-socket.id
----------
+.. attribute:: socket.id
 
 -  *(String)*
 
 A unique identifier for the session, that comes from the underlying
 ``Client``.
 
-socket.rooms
-------------
+.. attribute:: socket.rooms
 
 -  *(Object)*
 
@@ -47,15 +45,13 @@ room name.
      });
    });
 
-socket.client
--------------
+.. attribute:: socket.client
 
 -  *(Client)*
 
 A reference to the underlying ``Client`` object.
 
-socket.conn
------------
+.. attribute:: socket.conn
 
 -  *(engine.Socket)*
 
@@ -63,8 +59,7 @@ A reference to the underlying ``Client`` transport connection (engine.io
 ``Socket`` object). This allows access to the IO transport layer, which
 still (mostly) abstracts the actual TCP/IP socket.
 
-socket.request
---------------
+.. attribute:: socket.request
 
 -  *(Request)*
 
@@ -72,8 +67,7 @@ A getter proxy that returns the reference to the ``request`` that
 originated the underlying engine.io ``Client``. Useful for accessing
 request headers such as ``Cookie`` or ``User-Agent``.
 
-socket.handshake
-----------------
+.. attribute:: socket.handshake
 
 -  *(Object)*
 
@@ -106,8 +100,7 @@ Usage:
      // ...
    });
 
-socket.use(fn)
---------------
+.. attribute:: socket.use(fn)
 
 -  ``fn`` *(Function)*
 
@@ -127,18 +120,17 @@ packets to clients.
      });
    });
 
-socket.send([…args][, ack])
----------------------------
+.. attribute:: socket.send([…args][, ack])
+
 
 -  ``args``
 -  ``ack`` *(Function)*
 -  **Returns** ``Socket``
 
 Sends a ``message`` event. See `socket.emit(eventName[, …args][,
-ack]) <#socketemiteventname-args-ack>`__.
+ack]) <#socketemiteventname-args-ack>`_.
 
-socket.emit(eventName[, …args][, ack])
---------------------------------------
+.. attribute:: socket.emit(eventName[, …args][, ack])
 
 *(overrides ``EventEmitter.emit``)* - ``eventName`` *(String)* -
 ``args`` - ``ack`` *(Function)* - **Returns** ``Socket``
@@ -171,8 +163,7 @@ answer.
 
    });
 
-socket.on(eventName, callback)
-------------------------------
+.. attribute:: socket.on(eventName, callback)
 
 *(inherited from ``EventEmitter``)* - ``eventName`` *(String)* -
 ``callback`` *(Function)* - **Returns** ``Socket``
@@ -193,23 +184,20 @@ Register a new handler for the given event.
      callback(0);
    });
 
-socket.once(eventName, listener)
---------------------------------
+.. attribute:: socket.once(eventName, listener)
 
-socket.removeListener(eventName, listener)
-------------------------------------------
 
-socket.removeAllListeners([eventName])
---------------------------------------
+.. attribute:: socket.removeListener(eventName, listener)
 
-socket.eventNames()
--------------------
+
+.. attribute:: socket.removeAllListeners([eventName])
+
+.. attribute:: socket.eventNames()
 
 Inherited from ``EventEmitter`` (along with other methods not mentioned
 here). See Node.js documentation for the ``events`` module.
 
-socket.join(room[, callback])
------------------------------
+.. attribute:: socket.join(room[, callback])
 
 -  ``room`` *(String)*
 -  ``callback`` *(Function)*
@@ -230,7 +218,7 @@ Adds the client to the ``room``, and fires optionally a callback with
 
 The mechanics of joining rooms are handled by the ``Adapter`` that has
 been configured (see ``Server#adapter`` above), defaulting to
-`socket.io-adapter <https://github.com/socketio/socket.io-adapter>`__.
+`socket.io-adapter <https://github.com/socketio/socket.io-adapter>`_.
 
 For your convenience, each socket automatically joins a room identified
 by its id (see ``Socket#id``). This makes it easy to broadcast messages
@@ -245,8 +233,7 @@ to other sockets:
      });
    });
 
-socket.join(rooms[, callback])
-------------------------------
+.. attribute:: socket.join(rooms[, callback])
 
 -  ``rooms`` *(Array)*
 -  ``callback`` *(Function)*
@@ -255,8 +242,7 @@ socket.join(rooms[, callback])
 Adds the client to the list of room, and fires optionally a callback
 with ``err`` signature (if any).
 
-socket.leave(room[, callback])
-------------------------------
+.. attribute:: socket.leave(room[, callback])
 
 -  ``room`` *(String)*
 -  ``callback`` *(Function)*
@@ -267,8 +253,7 @@ Removes the client from ``room``, and fires optionally a callback with
 
 **Rooms are left automatically upon disconnection**.
 
-socket.to(room)
----------------
+.. attribute:: socket.to(room)
 
 -  ``room`` *(String)*
 -  **Returns** ``Socket`` for chaining
@@ -296,15 +281,13 @@ To emit to multiple rooms, you can call ``to`` several times.
      // named `socket.id` but the sender. Please use the classic `socket.emit()` instead.
    });
 
-**Note:** acknowledgements are not supported when broadcasting.
+.. note:: acknowledgements are not supported when broadcasting.
 
-socket.in(room)
----------------
+.. attribute:: socket.in(room)
 
-Synonym of `socket.to(room) <#socket-to-room>`__.
+Synonym of `socket.to(room) <#socket-to-room>`_.
 
-socket.compress(value)
-----------------------
+.. attribute:: socket.compress(value)
 
 -  ``value`` *(Boolean)* whether to following packet will be compressed
 -  **Returns** ``Socket`` for chaining
@@ -319,8 +302,7 @@ you don’t call the method.
      socket.compress(false).emit('uncompressed', "that's rough");
    });
 
-socket.disconnect(close)
-------------------------
+.. attribute:: socket.disconnect(close)
 
 -  ``close`` *(Boolean)* whether to close the underlying connection
 -  **Returns** ``Socket``
@@ -334,8 +316,7 @@ underlying connection. Otherwise, it just disconnects the namespace.
      setTimeout(() => socket.disconnect(true), 5000);
    });
 
-Flag: ‘broadcast’
------------------
+.. attribute:: Flag.broadcast
 
 Sets a modifier for a subsequent event emission that the event data will
 only be *broadcast* to every sockets but the sender.
@@ -348,8 +329,7 @@ only be *broadcast* to every sockets but the sender.
 
 .. _flag-volatile-1:
 
-Flag: ‘volatile’
-----------------
+.. attribute:: Flag.volatile
 
 Sets a modifier for a subsequent event emission that the event data may
 be lost if the client is not ready to receive messages (because of
@@ -364,8 +344,7 @@ long polling and is in the middle of a request-response cycle).
 
 .. _flag-binary-1:
 
-Flag: ‘binary’
---------------
+.. attribute:: Flag.binary
 
 Specifies whether there is binary data in the emitted data. Increases
 performance when specified. Can be ``true`` or ``false``.
@@ -377,8 +356,7 @@ performance when specified. Can be ``true`` or ``false``.
      socket.binary(false).emit('an event', { some: 'data' }); // The data to send has no binary data
    });
 
-Event: ‘disconnect’
--------------------
+.. attribute:: Event.disconnect
 
 -  ``reason`` *(String)* the reason of the disconnection (either client
    or server-side)
@@ -395,30 +373,30 @@ Fired upon disconnection.
 
 Possible reasons:
 
-+-----------------+--------------+-------------------------------------+
-| Reason          | Side         | Description                         |
-+=================+==============+=====================================+
-| ``transport err | Server Side  | Transport error                     |
-| or``            |              |                                     |
-+-----------------+--------------+-------------------------------------+
-| ``server namesp | Server Side  | Server performs a                   |
-| ace disconnect` |              | ``socket.disconnect()``             |
-| `               |              |                                     |
-+-----------------+--------------+-------------------------------------+
-| ``client namesp | Client Side  | Got disconnect packet from client   |
-| ace disconnect` |              |                                     |
-| `               |              |                                     |
-+-----------------+--------------+-------------------------------------+
-| ``ping timeout` | Client Side  | Client stopped responding to pings  |
-| `               |              | in the allowed amount of time (per  |
-|                 |              | the ``pingTimeout`` config setting) |
-+-----------------+--------------+-------------------------------------+
-| ``transport clo | Client Side  | Client stopped sending data         |
-| se``            |              |                                     |
-+-----------------+--------------+-------------------------------------+
++------------------+-------------+-------------------------------------+
+|      Reason      |    Side     |             Description             |
++==================+=============+=====================================+
+| ``transport err  | Server Side | Transport error                     |
+| or``             |             |                                     |
++------------------+-------------+-------------------------------------+
+| ``server namesp  | Server Side | Server performs a                   |
+| ace disconnect`` |             | ``socket.disconnect()``             |
+|                  |             |                                     |
++------------------+-------------+-------------------------------------+
+| ``client namesp  | Client Side | Got disconnect packet from client   |
+| ace disconnect`` |             |                                     |
+|                  |             |                                     |
++------------------+-------------+-------------------------------------+
+| ``ping timeout`` | Client Side | Client stopped responding to pings  |
+|                  |             | in the allowed amount of time (per  |
+|                  |             | the ``pingTimeout`` config setting) |
++------------------+-------------+-------------------------------------+
+| ``transport clo  | Client Side | Client stopped sending data         |
+| se``             |             |                                     |
++------------------+-------------+-------------------------------------+
 
-Event: ‘error’
---------------
+.. attribute:: Event.error
+
 
 -  ``error`` *(Object)* error object
 
@@ -432,8 +410,7 @@ Fired when an error occurs.
      });
    });
 
-Event: ‘disconnecting’
-----------------------
+.. attribute:: Event.disconnecting
 
 -  ``reason`` *(String)* the reason of the disconnection (either client
    or server-side)

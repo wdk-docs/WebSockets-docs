@@ -1,5 +1,5 @@
-Chat
-===========
+Chat - Get Started
+======================
 
 In this guide we’ll create a basic chat application. It requires almost
 no basic prior knowledge of Node.JS or Socket.IO, so it’s ideal for
@@ -26,7 +26,7 @@ The web framework
 
 The first goal is to setup a simple HTML webpage that serves out a form
 and a list of messages. We’re going to use the Node.JS web framework
-``express`` to this end. Make sure `Node.JS <https://nodejs.org>`__ is
+``express`` to this end. Make sure `Node.JS <https://nodejs.org>`_ is
 installed.
 
 First let’s create a ``package.json`` manifest file that describes our
@@ -45,7 +45,7 @@ call mine ``chat-example``).
 Now, in order to easily populate the ``dependencies`` with the things we
 need, we’ll use ``npm install --save``:
 
-::
+.. code:: sh
 
    npm install --save express@4.15.2
 
@@ -70,22 +70,10 @@ This translates into the following:
 -  Express initializes ``app`` to be a function handler that you can
    supply to an HTTP server (as seen in line 2).
 
-   .. raw:: html
-
-      </li>
-
 -  We define a route handler ``/`` that gets called when we hit our
    website home.
 
-   .. raw:: html
-
-      </li>
-
 -  We make the http server listen on port 3000.
-
-   .. raw:: html
-
-      </li>
 
 If you run ``node index.js`` you should see the following:
 
@@ -143,14 +131,14 @@ Integrating Socket.IO
 Socket.IO is composed of two parts:
 
 -  A server that integrates with (or mounts on) the Node.JS HTTP Server:
-   `socket.io <https://github.com/socketio/socket.io>`__
+   `socket.io <https://github.com/socketio/socket.io>`_
 -  A client library that loads on the browser side:
-   `socket.io-client <https://github.com/socketio/socket.io-client>`__
+   `socket.io-client <https://github.com/socketio/socket.io-client>`_
 
 During development, ``socket.io`` serves the client automatically for
 us, as we’ll see, so for now we only have to install one module:
 
-::
+.. code:: sh
 
    npm install --save socket.io
 
@@ -222,7 +210,7 @@ Emitting events
 The main idea behind Socket.IO is that you can send and receive any
 events you want, with any data you want. Any objects that can be encoded
 as JSON will do, and `binary
-data </blog/introducing-socket-io-1-0/#binary>`__ is supported too.
+data </blog/introducing-socket-io-1-0/#binary>`_ is supported too.
 
 Let’s make it so that when the user types in a message, the server gets
 it as a ``chat message`` event. The ``script`` section in ``index.html``
@@ -259,13 +247,7 @@ The result should be like the following video:
 .. raw:: html
 
    <video autoplay="" loop="" width="100%">
-
-.. raw:: html
-
    <source src="https://i.cloudup.com/transcoded/zboNrGSsai.mp4">
-
-.. raw:: html
-
    </video>
 
 Broadcasting
@@ -328,13 +310,7 @@ is what it looks like:
 .. raw:: html
 
    <video autoplay="" loop="" width="100%">
-
-.. raw:: html
-
    <source src="https://i.cloudup.com/transcoded/J4xwRU9DRn.mp4">
-
-.. raw:: html
-
    </video>
 
 Homework
@@ -356,8 +332,8 @@ Getting this example
 --------------------
 
 You can find it on GitHub
-`here <https://github.com/socketio/chat-example>`__.
+`here <https://github.com/socketio/chat-example>`_.
 
-::
+.. code:: sh
 
    git clone https://github.com/socketio/chat-example.git

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 16:53+0800\n"
+"POT-Creation-Date: 2019-06-13 19:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -600,7 +600,7 @@ msgstr ""
 
 #: ../../source/api/WebSocket.rst:117
 msgid "HTML Living Standard WebSocket"
-msgstr ""
+msgstr "生活标准网络插座"
 
 #: ../../source/api/WebSocket.rst:117
 msgid "初始定义"
@@ -608,7 +608,7 @@ msgstr ""
 
 #: ../../source/api/WebSocket.rst:123
 msgid "Update compatibility data on GitHub"
-msgstr ""
+msgstr "更新GitHub上的兼容性数据"
 
 #: ../../source/api/WebSocket.rst:126
 msgid "另见"
@@ -616,9 +616,12 @@ msgstr ""
 
 #: ../../source/api/WebSocket.rst:128
 msgid "Writing WebSocket client applications"
-msgstr ""
+msgstr "编写WebSocket客户端应用程序"
 
 #: ../../source/api/index.rst:2
-msgid "api"
-msgstr ""
+msgid "API documention"
+msgstr "API 文档"
+
+#~ msgid "api"
+#~ msgstr ""
 

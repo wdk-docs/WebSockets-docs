@@ -1,0 +1,394 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 22:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/socket.io/docs/info.rst:2
+msgid "introduce"
+msgstr "介绍"
+
+#: ../../source/socket.io/docs/info.rst:5
+msgid "What Socket.IO is"
+msgstr "Socket.IO是什么"
+
+#: ../../source/socket.io/docs/info.rst:7
+msgid ""
+"Socket.IO is a library that enables real-time, bidirectional and event-"
+"based communication between the browser and the server. It consists of:"
+msgstr "Socket.IO是一个库,可以在浏览器和服务器之间实现实时,双向和基于事件的通信.它包括："
+
+#: ../../source/socket.io/docs/info.rst:11
+msgid ""
+"a Node.js server: `Source <https://github.com/socketio/socket.io>`_ \\| "
+"`API </docs/server-api/>`_"
+msgstr "一个Node.js服务器: `Source <https://github.com/socketio/socket.io>`_ \\| `API </docs/server-api/>`_"
+
+#: ../../source/socket.io/docs/info.rst:13
+msgid ""
+"a Javascript client library for the browser (which can be also run from "
+"Node.js): `Source <https://github.com/socketio/socket.io-client>`_ \\| "
+"`API </docs/client-api/>`_"
+msgstr "浏览器的Javascript客户端库（也可以从Node.js运行）: `资源 <https://github.com/socketio/socket.io-client>`_ | `API </docs/client-api/>`_"
+
+#: ../../source/socket.io/docs/info.rst:18
+msgid "Its main features are:"
+msgstr "它的主要特点是:"
+
+#: ../../source/socket.io/docs/info.rst:21
+msgid "Reliability"
+msgstr "可靠性"
+
+#: ../../source/socket.io/docs/info.rst:23
+msgid "Connections are established even in the presence of:"
+msgstr "即使存在以下情况,也建立了连接："
+
+#: ../../source/socket.io/docs/info.rst:25
+msgid "proxies and load balancers."
+msgstr "代理和负载均衡器."
+
+#: ../../source/socket.io/docs/info.rst:26
+msgid "personal firewall and antivirus software."
+msgstr "个人防火墙和防病毒软件."
+
+#: ../../source/socket.io/docs/info.rst:28
+msgid ""
+"For this purpose, it relies on `Engine.IO "
+"<https://github.com/socketio/engine.io>`_, which first establishes a "
+"long-polling connection, then tries to upgrade to better transports that "
+"are “tested” on the side, like WebSocket. Please see the `Goals "
+"<https://github.com/socketio/engine.io#goals>`_ section for more "
+"information."
+msgstr "为此,它依赖于 `Engine.IO <https://github.com/socketio/engine.io>`_ ,它首先建立长轮询连接,然后尝试升级到更好的“经过测试”的传输在一边,像WebSocket.有关更多信息,请参阅 `目标 <https://github.com/socketio/engine.io#goals>`_ 部分."
+
+#: ../../source/socket.io/docs/info.rst:36
+msgid "Auto-reconnection support"
+msgstr "自动重新连接支持"
+
+#: ../../source/socket.io/docs/info.rst:38
+msgid ""
+"Unless instructed otherwise a disconnected client will try to reconnect "
+"forever, until the server is available again. Please see the available "
+"reconnection options `here <https://socket.io/docs/client-api/#new-"
+"Manager-url-options>`_."
+msgstr "除非另有说明,否则断开连接的客户端将尝试永久重新连接,直到服务器再次可用.请参阅可用的重新连接选项 `here <https://socket.io/docs/client-api/#new-Manager-url-options>`_ ."
+
+#: ../../source/socket.io/docs/info.rst:44
+msgid "Disconnection detection"
+msgstr "断线检测"
+
+#: ../../source/socket.io/docs/info.rst:46
+msgid ""
+"A heartbeat mechanism is implemented at the Engine.IO level, allowing "
+"both the server and the client to know when the other one is not "
+"responding anymore."
+msgstr "在Engine.IO级别实现心跳机制,允许服务器和客户端知道另一个机制何时不响应."
+
+#: ../../source/socket.io/docs/info.rst:50
+msgid ""
+"That functionality is achieved with timers set on both the server and the"
+" client, with timeout values (the pingInterval and pingTimeout "
+"parameters) shared during the connection handshake. Those timers require "
+"any subsequent client calls to be directed to the same server, hence the "
+"sticky-session requirement when using multiples nodes."
+msgstr "通过在服务器和客户端上设置定时器来实现该功能,在连接握手期间共享超时值（pingInterval和pingTimeout参数）.这些计时器需要将任何后续客户端调用定向到同一服务器,因此在使用多个节点时会出现粘性会话要求."
+
+#: ../../source/socket.io/docs/info.rst:57
+msgid "Binary support"
+msgstr "二进制支持"
+
+#: ../../source/socket.io/docs/info.rst:59
+msgid "Any serializable data structures can be emitted, including:"
+msgstr "可以发出任何可序列化的数据结构,包括:"
+
+#: ../../source/socket.io/docs/info.rst:61
+msgid ""
+"`ArrayBuffer <https://developer.mozilla.org/en-"
+"US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`_ and `Blob "
+"<https://developer.mozilla.org/en-US/docs/Web/API/Blob>`_ in the browser"
+msgstr "`ArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`_ 和 `Blob <https://developer.mozilla.org/en-US/docs/Web/API/Blob>`_ 在浏览器中"
+
+#: ../../source/socket.io/docs/info.rst:64
+msgid ""
+"`ArrayBuffer <https://developer.mozilla.org/en-"
+"US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`_ and "
+"`Buffer <https://nodejs.org/api/buffer.html>`_ in Node.js"
+msgstr "`ArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer>`_ 和 `Buffer <https://nodejs.org/api/buffer.html>`_ 在Node.js中"
+
+#: ../../source/socket.io/docs/info.rst:68
+msgid "Multiplexing support"
+msgstr "多路复用支持"
+
+#: ../../source/socket.io/docs/info.rst:70
+msgid ""
+"In order to create separation of concerns within your application (for "
+"example per module, or based on permissions), Socket.IO allows you to "
+"create several `Namespaces </docs/rooms-and-namespaces/#Namespaces>`_, "
+"which will act as separate communication channels but will share the same"
+" underlying connection."
+msgstr "为了在应用程序中创建关注点分离（例如,每个模块或基于权限）,Socket.IO `Namespaces </docs/rooms-and-namespaces/#Namespaces>`_ ,这将作为单独的沟通渠道,但将共享相同的基础连接."
+
+#: ../../source/socket.io/docs/info.rst:77
+msgid "Room support"
+msgstr "房间支持"
+
+#: ../../source/socket.io/docs/info.rst:79
+msgid ""
+"Within each `Namespace </docs/rooms-and-namespaces/#Namespaces>`_, you "
+"can define arbitrary channels, called `Rooms </docs/rooms-and-"
+"namespaces/#Rooms>`_, that sockets can join and leave. You can then "
+"broadcast to any given room, reaching every socket that has joined it."
+msgstr "在每个 `Namespace </docs/rooms-and-namespaces/#Namespaces>`_ 中,你可以定义任意通道,称为 `Rooms </docs/rooms-and-namespaces/＃Rooms>`_ ,套接字可以加入离开.然后,您可以广播到任何给定的房间,到达已加入它的每个套接字."
+
+#: ../../source/socket.io/docs/info.rst:85
+msgid ""
+"This is a useful feature to send notifications to a group of users, or to"
+" a given user connected on several devices for example."
+msgstr "这是一个非常有用的功能,可以将通知发送给一组用户,或者发送给连接在多个设备上的给定用户."
+
+#: ../../source/socket.io/docs/info.rst:88
+msgid ""
+"Those features come with a simple and convenient API, which looks like "
+"the following:"
+msgstr "这些功能带有一个简单方便的API,如下所示:"
+
+#: ../../source/socket.io/docs/info.rst:100
+msgid "What Socket.IO is not"
+msgstr "Socket.IO不是什么"
+
+#: ../../source/socket.io/docs/info.rst:102
+msgid ""
+"Socket.IO is **NOT** a WebSocket implementation. Although Socket.IO "
+"indeed uses WebSocket as a transport when possible, it adds some metadata"
+" to each packet: the packet type, the namespace and the ack id when a "
+"message acknowledgement is needed. That is why a WebSocket client will "
+"not be able to successfully connect to a Socket.IO server, and a "
+"Socket.IO client will not be able to connect to a WebSocket server "
+"either. Please see the protocol specification `here "
+"<https://github.com/socketio/socket.io-protocol>`_."
+msgstr "Socket.IO不是一个WebSocket实现. 尽管Socket.IO确实在可能的情况下使用WebSocket作为传输,但它会为每个数据包添加一些元数据：数据包类型,命名空间和需要消息确认时的确认ID. 这就是为什么WebSocket客户端无法成功连接到Socket.IO服务器,而Socket.IO客户端也无法连接到WebSocket服务器. 请参阅协议规范 `这里 <https://github.com/socketio/socket.io-protocol>`_ ."
+
+#: ../../source/socket.io/docs/info.rst:117
+msgid "Installing"
+msgstr "安装"
+
+#: ../../source/socket.io/docs/info.rst:120
+#: ../../source/socket.io/docs/info.rst:260
+#: ../../source/socket.io/docs/info.rst:418
+msgid "Server"
+msgstr "服务器"
+
+#: ../../source/socket.io/docs/info.rst:126
+msgid "`Source <https://github.com/socketio/socket.io>`_"
+msgstr "`Source <https://github.com/socketio/socket.io>`_"
+
+#: ../../source/socket.io/docs/info.rst:129
+msgid "Javascript Client"
+msgstr "Javascript客户端"
+
+#: ../../source/socket.io/docs/info.rst:131
+msgid ""
+"A standalone build of the client is exposed by default by the server at "
+"``/socket.io/socket.io.js``."
+msgstr "默认情况下,服务器在 ``/socket.io/socket.io.js`` 中公开了客户端的独立构建."
+
+#: ../../source/socket.io/docs/info.rst:134
+msgid ""
+"It can also be served from a CDN, like `cdnjs "
+"<https://cdnjs.com/libraries/socket.io>`_."
+msgstr "它也可以通过CDN提供,例如 `cdnjs <https://cdnjs.com/libraries/socket.io>`_ ."
+
+#: ../../source/socket.io/docs/info.rst:137
+msgid ""
+"To use it from Node.js, or with a bundler like `webpack "
+"<https://webpack.js.org/>`_ or `browserify <http://browserify.org/>`_, "
+"you can also install the package from npm:"
+msgstr "要从Node.js中使用它,或者使用像 `webpack <https://webpack.js.org/>`_ 或 `browserify <http://browserify.org/>`_ 这样的捆绑器,你也可以安装来自npm的包裹："
+
+#: ../../source/socket.io/docs/info.rst:146
+msgid "`Source <https://github.com/socketio/socket.io-client>`_"
+msgstr "`资源 <https://github.com/socketio/socket.io-client>`_"
+
+#: ../../source/socket.io/docs/info.rst:149
+msgid "Other client implementations"
+msgstr "其他客户端实现"
+
+#: ../../source/socket.io/docs/info.rst:151
+msgid ""
+"There are several client implementations in other languages, which are "
+"maintained by the community:"
+msgstr "其他语言有几种客户端实现,由社区维护："
+
+#: ../../source/socket.io/docs/info.rst:154
+msgid "Java: https://github.com/socketio/socket.io-client-java"
+msgstr "Java: https://github.com/socketio/socket.io-client-java"
+
+#: ../../source/socket.io/docs/info.rst:155
+msgid "C++: https://github.com/socketio/socket.io-client-cpp"
+msgstr "C++: https://github.com/socketio/socket.io-client-cpp"
+
+#: ../../source/socket.io/docs/info.rst:156
+msgid "Swift: https://github.com/socketio/socket.io-client-swift"
+msgstr "Swift: https://github.com/socketio/socket.io-client-swift"
+
+#: ../../source/socket.io/docs/info.rst:157
+msgid "Dart: https://github.com/rikulo/socket.io-client-dart"
+msgstr "Dart: https://github.com/rikulo/socket.io-client-dart"
+
+#: ../../source/socket.io/docs/info.rst:158
+msgid "Python: https://github.com/miguelgrinberg/python-socketio"
+msgstr "Python: https://github.com/miguelgrinberg/python-socketio"
+
+#: ../../source/socket.io/docs/info.rst:159
+msgid ".Net: https://github.com/Quobject/SocketIoClientDotNet"
+msgstr ".Net: https://github.com/Quobject/SocketIoClientDotNet"
+
+#: ../../source/socket.io/docs/info.rst:162
+msgid "Using with Node http server"
+msgstr "与Node http服务器一起使用"
+
+#: ../../source/socket.io/docs/info.rst:165
+#: ../../source/socket.io/docs/info.rst:213
+#: ../../source/socket.io/docs/info.rst:293
+#: ../../source/socket.io/docs/info.rst:380
+#: ../../source/socket.io/docs/info.rst:435
+msgid "Server (app.js)"
+msgstr "服务器 (app.js)"
+
+#: ../../source/socket.io/docs/info.rst:196
+#: ../../source/socket.io/docs/info.rst:238
+#: ../../source/socket.io/docs/info.rst:318
+#: ../../source/socket.io/docs/info.rst:395
+#: ../../source/socket.io/docs/info.rst:447
+msgid "Client (index.html)"
+msgstr "客户端 (index.html)"
+
+#: ../../source/socket.io/docs/info.rst:210
+msgid "Using with Express"
+msgstr "使用Express"
+
+#: ../../source/socket.io/docs/info.rst:252
+msgid "Sending and receiving events"
+msgstr "发送和接收事件"
+
+#: ../../source/socket.io/docs/info.rst:254
+msgid ""
+"Socket.IO allows you to emit and receive custom events. Besides "
+"``connect``, ``message`` and ``disconnect``, you can emit custom events:"
+msgstr "Socket.IO允许您发出和接收自定义事件.除了 ``connect``, ``message`` 和 ``disconnect``, 你可以发出自定义事件:"
+
+#: ../../source/socket.io/docs/info.rst:280
+msgid "Restricting yourself to a namespace"
+msgstr "限制自己使用命名空间"
+
+#: ../../source/socket.io/docs/info.rst:282
+msgid ""
+"If you have control over all the messages and events emitted for a "
+"particular application, using the default / namespace works. If you want "
+"to leverage 3rd-party code, or produce code to share with others, "
+"socket.io provides a way of namespacing a socket."
+msgstr "如果您可以控制为特定应用程序发出的所有消息和事件,则使用默认/命名空间.如果您想利用第三方代码,或生成与其他人共享的代码,socket.io提供了一种命名空间套接字的方法."
+
+#: ../../source/socket.io/docs/info.rst:287
+msgid ""
+"This has the benefit of ``multiplexing`` a single connection. Instead of "
+"socket.io using two ``WebSocket`` connections, it’ll use one."
+msgstr "这有一个连接 ``multiplexing`` 的好处.而不是使用两个 ``WebSocket`` 连接的socket.io,它将使用一个."
+
+#: ../../source/socket.io/docs/info.rst:336
+msgid "Sending volatile messages"
+msgstr "发送易失性消息"
+
+#: ../../source/socket.io/docs/info.rst:338
+msgid ""
+"Sometimes certain messages can be dropped. Let’s say you have an app that"
+" shows realtime tweets for the keyword ``bieber``."
+msgstr "有时可以删除某些消息.假设你有一个应用程序显示关键字 ``bieber`` 的实时推文."
+
+#: ../../source/socket.io/docs/info.rst:341
+msgid ""
+"If a certain client is not ready to receive messages (because of network "
+"slowness or other issues, or because they’re connected through long "
+"polling and is in the middle of a request-response cycle), if it doesn’t "
+"receive ALL the tweets related to bieber your application won’t suffer."
+msgstr "如果某个客户端尚未准备好接收消息（由于网络速度缓慢或其他问题,或者因为它们通过长轮询连接并处于请求 - 响应周期的中间）,如果它没有收到所有推文与bieber相关的申请不会受到影响."
+
+#: ../../source/socket.io/docs/info.rst:346
+msgid "In that case, you might want to send those messages as volatile messages."
+msgstr "在这种情况下,您可能希望将这些消息作为易失性消息发送."
+
+#: ../../source/socket.io/docs/info.rst:349
+msgid "**Server**"
+msgstr "**服务器**"
+
+#: ../../source/socket.io/docs/info.rst:368
+msgid "Sending and getting data (acknowledgements)"
+msgstr "发送和获取数据（确认）"
+
+#: ../../source/socket.io/docs/info.rst:370
+msgid ""
+"Sometimes, you might want to get a callback when the client confirmed the"
+" message reception."
+msgstr "有时,您可能希望在客户端确认消息接收时收到回调."
+
+#: ../../source/socket.io/docs/info.rst:373
+msgid ""
+"To do this, simply pass a function as the last parameter of ``.send`` or "
+"``.emit``. What’s more, when you use ``.emit``, the acknowledgement is "
+"done by you, which means you can also pass data along:"
+msgstr "要做到这一点,只需将函数作为 ``.send`` 或 ``.emit`` 的最后一个参数传递.更重要的是,当你使用 ``.emit`` 时,确认是由你完成的,这意味着你也可以传递数据："
+
+#: ../../source/socket.io/docs/info.rst:409
+msgid "Broadcasting messages"
+msgstr "广播消息"
+
+#: ../../source/socket.io/docs/info.rst:411
+msgid ""
+"To broadcast, simply add a ``broadcast`` flag to ``emit`` and ``send`` "
+"method calls. Broadcasting means sending a message to everyone else "
+"except for the socket that starts it."
+msgstr "要广播,只需在 ``emit`` 和 ``send`` 方法调用中添加一个 ``broadcast`` 标志.广播意味着向除了启动它的套接字之外的所有人发送消息."
+
+#: ../../source/socket.io/docs/info.rst:429
+msgid "Using it just as a cross-browser WebSocket"
+msgstr "使用它就像一个跨浏览器的WebSocket"
+
+#: ../../source/socket.io/docs/info.rst:431
+msgid ""
+"If you just want the WebSocket semantics, you can do that too. Simply "
+"leverage ``send`` and listen on the ``message`` event:"
+msgstr "如果您只想要WebSocket语义,那么您也可以这样做.只需利用 ``send`` 并听取 ``message`` 事件："
+
+#: ../../source/socket.io/docs/info.rst:462
+msgid ""
+"If you don’t care about reconnection logic and such, take a look at "
+"Engine.IO, which is the WebSocket semantics transport layer Socket.IO "
+"uses."
+msgstr "如果您不关心重新连接逻辑等,请查看Engine.IO,它是Socket.IO使用的WebSocket语义传输层."
+
+#~ msgid "Docs"
+#~ msgstr "文件"
+
+#~ msgid "## Using with Express"
+#~ msgstr ""
+
+#~ msgid "### Client (index.html)"
+#~ msgstr ""
+
+#~ msgid "### Server"
+#~ msgstr ""
+

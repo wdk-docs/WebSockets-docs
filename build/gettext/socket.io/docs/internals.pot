@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 15:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/docs/internals.rst:2
+msgid "Internals"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:5
+msgid "Dependency graph"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:7
+msgid "The Socket.IO codebase is split accross several repositories:"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:9
+msgid "https://github.com/socketio/socket.io"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:10
+msgid "https://github.com/socketio/socket.io-client"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:11
+msgid "https://github.com/socketio/socket.io-parser"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:12
+msgid "https://github.com/socketio/socket.io-adapter"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:13
+msgid "https://github.com/socketio/socket.io-redis"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:14
+msgid "https://github.com/socketio/engine.io"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:15
+msgid "https://github.com/socketio/engine.io-client"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:16
+msgid "https://github.com/socketio/engine.io-parser"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:18
+msgid "The following diagram displays the relationships between each project:"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:22
+msgid "Each project brings its own set of features:"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:25
+msgid "engine.io-parser"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:27
+msgid "This is the JavaScript parser for the engine.io protocol encoding, shared by both `engine.io-client <https://github.com/socketio/engine.io-client>`_ and `engine.io <https://github.com/socketio/engine.io>`_."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:32
+msgid "The specification for the protocol can be found here: https://github.com/socketio/engine.io-protocol"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:36
+msgid "engine.io"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:38
+msgid "Engine.IO is the implementation of transport-based cross-browser/cross-device bi-directional communication layer for Socket.IO."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:42
+msgid "Its main feature is the ability to swap transports on the fly. A connection (initiated by an `engine.io-client <https://github.com/socketio/engine.io-client>`_ counterpart) starts with XHR polling, but can then switch to WebSocket if possible."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:48
+#: ../../source/socket.io/docs/internals.rst:65
+msgid "It uses the `engine.io-parser <https://github.com/socketio/engine.io-parser>`_ to encode/decode packets."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:53
+msgid "engine.io-client"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:55
+msgid "This is the client for `Engine.IO <https://github.com/socketio/engine.io>`_, the implementation of transport-based cross-browser/cross-device bi-directional communication layer for `Socket.IO <https://github.com/socketio/socket.io>`_."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:61
+msgid "It runs in both the browser (including HTML5 `WebWorker <https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API>`_) and Node.js."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:70
+msgid "socket.io-adapter"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:72
+msgid "This is the default Socket.IO in-memory adapter class."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:74
+msgid "This module is not intended for end-user usage, but can be used as an interface to inherit from from other adapters you might want to build, like `socket.io-redis <https://github.com/socketio/socket.io-redis>`_."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:79
+msgid "socket.io-redis"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:81
+msgid "This is the adapter using the Redis `Pub/Sub <https://redis.io/topics/pubsub>`_ mechanism to broadcast messages between multiple nodes."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:86
+msgid "socket.io-parser"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:88
+msgid "A socket.io encoder and decoder written in JavaScript complying with version 3 of `socket.io-protocol <>`_. Used by `socket.io <https://github.com/socketio/socket.io>`_ and `socket.io-client <https://github.com/socketio/socket.io-client>`_."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:94
+msgid "socket.io"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:96
+msgid "Socket.IO brings some *syntactic sugar* over the Engine.IO “raw” API. It also brings two new concepts, ``Rooms`` and ``Namespaces``, which introduce a separation of concern between communication channels. Please see the associated documentation `there <https://socket.io/docs/rooms-and-namespaces/>`_."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:102
+msgid "By default, it exposes a browser build of the client at ``/socket.io/socket.io.js``."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:105
+#: ../../source/socket.io/docs/internals.rst:120
+msgid "It uses the `socket.io-parser <https://github.com/socketio/socket.io-parser>`_ to encode/decode packets."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:110
+msgid "socket.io-client"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:112
+msgid "This is the client for `Socket.IO <https://github.com/socketio/socket.io>`_. It relies on `engine.io-client <https://github.com/socketio/engine.io-client>`_, which manages the transport swapping and the disconnection detection."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:117
+msgid "It handles reconnection automatically, in case the underlying connection is severed."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:125
+msgid "Under the hood"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:128
+msgid "Connection"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:134
+msgid "The following steps take place:"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:136
+msgid "on the client-side, a new ``engine.io-client`` instance is created"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:138
+msgid "the ``engine.io-client`` instance tries to establish a ``polling`` transport"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:151
+msgid "the ``engine.io`` server responds with:"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:165
+msgid "the content is encoded by the ``engine.io-parser`` as:"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:182
+msgid "the content is then decoded by the ``engine.io-parser`` on the client-side"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:185
+msgid "an ``open`` event is emitted at the ``engine.io-client`` level"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:187
+msgid "a ``connect`` event is emitted at the ``socket.io-client`` level"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:190
+msgid "Upgrade"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:192
+msgid "Once all the buffers of the existing transport (XHR polling) are flushed, an upgrade gets tested on the side by sending a probe."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:205
+msgid "a “ping” packet is sent by the client in a WebSocket frame, encoded as ``2probe`` by the ``engine.io-parser``, with ``2`` being the “ping” message type."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:209
+msgid "the server responds with a “pong” packet, encoded as ``3probe``, with ``3`` being the “pong” message type."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:212
+msgid "upon receiving the “pong” packet, the upgrade is considered complete and all following messages go through the new transport."
+msgstr ""
+

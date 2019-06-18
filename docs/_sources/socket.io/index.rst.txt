@@ -1,4 +1,4 @@
-socket.io 文档
+socket.io documentation
 ===========================================
 
 .. toctree::
@@ -9,5 +9,6 @@ socket.io 文档
    client-api/index
    server-api/index
    demos/index
+   socket.io-protocol
    _posts/index
    socket-io-with-apache-cordova

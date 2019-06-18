@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Namespace &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>命名空间 &mdash; WebSockets Docs v2019.0613 文档</title>
   
 
   
@@ -35,7 +35,9 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" /> 
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Socket" href="Socket.html" />
+    <link rel="prev" title="服务端 API" href="API.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -79,11 +81,28 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">服务端API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="API.html">服务端 API</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">命名空间</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html">客户端</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -129,7 +148,11 @@
     
       <li><a href="../../contents.html">Docs</a> &raquo;</li>
         
-      <li>Namespace</li>
+          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
+        
+          <li><a href="index.html">服务端API</a> &raquo;</li>
+        
+      <li>命名空间</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -149,44 +172,49 @@
            <div itemprop="articleBody">
             
   <div class="section" id="namespace">
-<h1>Namespace<a class="headerlink" href="#namespace" title="永久链接至标题">¶</a></h1>
-<p>Represents a pool of sockets connected under a given scope identified by
-a pathname (eg: <code class="docutils literal notranslate"><span class="pre">/chat</span></code>).</p>
+<h1>命名空间<a class="headerlink" href="#namespace" title="永久链接至标题">¶</a></h1>
+<p>Represents a pool of sockets connected under a given scope identified by a pathname (eg: <code class="docutils literal notranslate"><span class="pre">/chat</span></code>).</p>
 <p>A client always connects to <code class="docutils literal notranslate"><span class="pre">/</span></code> (the main namespace), then potentially
 connect to other namespaces (while using the same underlying
 connection).</p>
-<p>For the how and why, please take a look at: <a class="reference external" href="/docs/rooms-and-namespaces/">Rooms and
-Namespaces</a>.</p>
-<div class="section" id="namespace-name">
-<h2>namespace.name<a class="headerlink" href="#namespace-name" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+<p>For the how and why, please take a look at: <a class="reference external" href="/docs/rooms-and-namespaces/">Rooms and Namespaces</a>.</p>
+<dl class="attribute">
+<dt id="namespace.name">
+<code class="descclassname">namespace.</code><code class="descname">name</code><a class="headerlink" href="#namespace.name" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><em>(String)</em></p></li>
 </ul>
 <p>The namespace identifier property.</p>
-</div>
-<div class="section" id="namespace-connected">
-<h2>namespace.connected<a class="headerlink" href="#namespace-connected" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="attribute">
+<dt id="namespace.connected">
+<code class="descclassname">namespace.</code><code class="descname">connected</code><a class="headerlink" href="#namespace.connected" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><em>(Object)</em></p></li>
 </ul>
-<p>The hash of <code class="docutils literal notranslate"><span class="pre">Socket</span></code> objects that are connected to this namespace,
-indexed by <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
-</div>
-<div class="section" id="namespace-adapter">
-<h2>namespace.adapter<a class="headerlink" href="#namespace-adapter" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+<p>The hash of <code class="docutils literal notranslate"><span class="pre">Socket</span></code> objects that are connected to this namespace, indexed by <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="namespace.adapter">
+<code class="descclassname">namespace.</code><code class="descname">adapter</code><a class="headerlink" href="#namespace.adapter" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><em>(Adapter)</em></p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">Adapter</span></code> used for the namespace. Useful when using the
-<code class="docutils literal notranslate"><span class="pre">Adapter</span></code> based on
-<a class="reference external" href="https://github.com/socketio/socket.io-redis">Redis</a>, as it exposes
-methods to manage sockets and rooms accross your cluster.</p>
-<p><strong>Note:</strong> the adapter of the main namespace can be accessed with
-<code class="docutils literal notranslate"><span class="pre">io.of('/').adapter</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">Adapter</span></code> based on <a class="reference external" href="https://github.com/socketio/socket.io-redis">Redis</a>,
+as it exposes methods to manage sockets and rooms accross your cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>the adapter of the main namespace can be accessed with <code class="docutils literal notranslate"><span class="pre">io.of('/').adapter</span></code>.</p>
 </div>
-<div class="section" id="namespace-to-room">
-<h2>namespace.to(room)<a class="headerlink" href="#namespace-to-room" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="attribute">
+<dt id="namespace.to">
+<code class="descclassname">namespace.</code><code class="descname">to</code><a class="headerlink" href="#namespace.to" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">room</span></code> <em>(String)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Namespace</span></code> for chaining</p></li>
 </ul>
@@ -199,13 +227,17 @@ be <em>broadcasted</em> to clients that have joined the given <code class="docut
 <span class="nx">adminNamespace</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;level1&#39;</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">some</span><span class="o">:</span> <span class="s1">&#39;data&#39;</span> <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="namespace-in-room">
-<h2>namespace.in(room)<a class="headerlink" href="#namespace-in-room" title="永久链接至标题">¶</a></h2>
-<p>Synonym of <a class="reference external" href="#namespace-to-room">namespace.to(room)</a>.</p>
-</div>
-<div class="section" id="namespace-emit-eventname-args">
-<h2>namespace.emit(eventName[, …args])<a class="headerlink" href="#namespace-emit-eventname-args" title="永久链接至标题">¶</a></h2>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="namespace.in">
+<code class="descclassname">namespace.</code><code class="descname">in</code><a class="headerlink" href="#namespace.in" title="永久链接至目标">¶</a></dt>
+<dd><p>Synonym of <a class="reference external" href="#namespace-to-room">namespace.to(room)</a>.</p>
+<dl class="attribute">
+<dt id="namespace.namespace.emit">
+<code class="descclassname">namespace.namespace.</code><code class="descname">emit</code><a class="headerlink" href="#namespace.namespace.emit" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">eventName</span></code> <em>(String)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code></p></li>
@@ -219,16 +251,19 @@ equivalent:</p>
 <span class="nx">chat</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event sent to all connected clients in chat namespace&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> acknowledgements are not supported when emitting from
-namespace.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>acknowledgements are not supported when emitting from namespace.</p>
 </div>
-<div class="section" id="namespace-clients-callback">
-<h2>namespace.clients(callback)<a class="headerlink" href="#namespace-clients-callback" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="attribute">
+<dt id="namespace.clients">
+<code class="descclassname">namespace.</code><code class="descname">clients</code><a class="headerlink" href="#namespace.clients" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
 </ul>
-<p>Gets a list of client IDs connected to this namespace (across all nodes
-if applicable).</p>
+<p>Gets a list of client IDs connected to this namespace (across all nodes if applicable).</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span>
 <span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/chat&#39;</span><span class="p">).</span><span class="nx">clients</span><span class="p">((</span><span class="nx">error</span><span class="p">,</span> <span class="nx">clients</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
@@ -251,10 +286,12 @@ namespace (‘/’):</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="namespace-use-fn">
-<h2>namespace.use(fn)<a class="headerlink" href="#namespace-use-fn" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="attribute">
+<dt id="namespace.use">
+<code class="descclassname">namespace.</code><code class="descname">use</code><a class="headerlink" href="#namespace.use" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fn</span></code> <em>(Function)</em></p></li>
 </ul>
 <p>Registers a middleware, which is a function that gets executed for every
@@ -269,10 +306,12 @@ packets to clients.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="event-connect">
-<h2>Event: ‘connect’<a class="headerlink" href="#event-connect" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
+</dd></dl>
+
+<dl class="function">
+<dt id="Event.connect">
+<code class="descclassname">Event.</code><code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect" title="永久链接至目标">¶</a></dt>
+<dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">socket</span></code> <em>(Socket)</em> socket connection with client</p></li>
 </ul>
 <p>Fired upon a connection from client.</p>
@@ -285,38 +324,46 @@ packets to clients.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="event-connection">
-<h2>Event: ‘connection’<a class="headerlink" href="#event-connection" title="永久链接至标题">¶</a></h2>
-<p>Synonym of <a class="reference external" href="#Event-‘connect’">Event: ‘connect’</a>.</p>
-</div>
-<div class="section" id="flag-volatile">
-<h2>Flag: ‘volatile’<a class="headerlink" href="#flag-volatile" title="永久链接至标题">¶</a></h2>
-<p>Sets a modifier for a subsequent event emission that the event data may
+</dd></dl>
+
+<dl class="function">
+<dt id="Event.connection">
+<code class="descclassname">Event.</code><code class="descname">connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connection" title="永久链接至目标">¶</a></dt>
+<dd><p>Synonym of <a class="reference external" href="#Event-‘connect’">Event: ‘connect’</a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Flag.volatile">
+<code class="descclassname">Flag.</code><code class="descname">volatile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Flag.volatile" title="永久链接至目标">¶</a></dt>
+<dd><p>Sets a modifier for a subsequent event emission that the event data may
 be lost if the clients are not ready to receive messages (because of
 network slowness or other issues, or because they’re connected through
 long polling and is in the middle of a request-response cycle).</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="kr">volatile</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">some</span><span class="o">:</span> <span class="s1">&#39;data&#39;</span> <span class="p">});</span> <span class="c1">// the clients may or may not receive it</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="flag-binary">
-<h2>Flag: ‘binary’<a class="headerlink" href="#flag-binary" title="永久链接至标题">¶</a></h2>
-<p>Specifies whether there is binary data in the emitted data. Increases
-performance when specified. Can be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Flag.binary">
+<code class="descclassname">Flag.</code><code class="descname">binary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Flag.binary" title="永久链接至目标">¶</a></dt>
+<dd><p>Specifies whether there is binary data in the emitted data.
+Increases performance when specified. Can be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">binary</span><span class="p">(</span><span class="kc">false</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">some</span><span class="o">:</span> <span class="s1">&#39;data&#39;</span> <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="flag-local">
-<h2>Flag: ‘local’<a class="headerlink" href="#flag-local" title="永久链接至标题">¶</a></h2>
-<p>Sets a modifier for a subsequent event emission that the event data will
-only be <em>broadcast</em> to the current node (when the <a class="reference external" href="https://github.com/socketio/socket.io-redis">Redis
-adapter</a> is used).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Flag.local">
+<code class="descclassname">Flag.</code><code class="descname">local</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Flag.local" title="永久链接至目标">¶</a></dt>
+<dd><p>Sets a modifier for a subsequent event emission that the event data will only be <em>broadcast</em> to the current node
+(when the <a class="reference external" href="https://github.com/socketio/socket.io-redis">Redis adapter</a> is used).</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">local</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">some</span><span class="o">:</span> <span class="s1">&#39;data&#39;</span> <span class="p">});</span>
 </pre></div>
 </div>
-</div>
+</dd></dl>
+
 </div>
 
 
@@ -324,6 +371,15 @@ adapter</a> is used).</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Socket.html" class="btn btn-neutral float-right" title="Socket" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="API.html" class="btn btn-neutral float-left" title="服务端 API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

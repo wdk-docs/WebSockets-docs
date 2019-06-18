@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Serve API &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>服务端API &mdash; WebSockets Docs v2019.0613 文档</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Server API" href="API.html" />
+    <link rel="next" title="服务端 API" href="API.html" />
     <link rel="prev" title="Manager" href="../client-api/Manager.html" /> 
 </head>
 
@@ -83,23 +83,26 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Serve API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="API.html">Server API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Namespace.html">Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">服务端API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="API.html">服务端 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Namespace.html">命名空间</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Client.html">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html">客户端</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
             
@@ -147,7 +150,7 @@
         
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
         
-      <li>Serve API</li>
+      <li>服务端API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -167,81 +170,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="serve-api">
-<h1>Serve API<a class="headerlink" href="#serve-api" title="永久链接至标题">¶</a></h1>
+<h1>服务端API<a class="headerlink" href="#serve-api" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="API.html">Server API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="API.html#new-server-httpserver-options">new Server(httpServer[, options])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#new-server-port-options">new Server(port[, options])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#new-server-options">new Server(options)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-sockets">server.sockets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-serveclient-value">server.serveClient([value])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-path-value">server.path([value])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-adapter-value">server.adapter([value])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-origins-value">server.origins([value])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-origins-fn">server.origins(fn)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-attach-httpserver-options">server.attach(httpServer[, options])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-attach-port-options">server.attach(port[, options])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-listen-httpserver-options">server.listen(httpServer[, options])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-listen-port-options">server.listen(port[, options])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-bind-engine">server.bind(engine)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-onconnection-socket">server.onconnection(socket)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-of-nsp">server.of(nsp)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-close-callback">server.close([callback])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="API.html#server-engine-generateid">server.engine.generateId</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Namespace.html">Namespace</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-name">namespace.name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-connected">namespace.connected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-adapter">namespace.adapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-to-room">namespace.to(room)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-in-room">namespace.in(room)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-emit-eventname-args">namespace.emit(eventName[, …args])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-clients-callback">namespace.clients(callback)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace-use-fn">namespace.use(fn)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#event-connect">Event: ‘connect’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#event-connection">Event: ‘connection’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#flag-volatile">Flag: ‘volatile’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#flag-binary">Flag: ‘binary’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Namespace.html#flag-local">Flag: ‘local’</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Socket.html">Socket</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-id">socket.id</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-rooms">socket.rooms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-client">socket.client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-conn">socket.conn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-request">socket.request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-handshake">socket.handshake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-use-fn">socket.use(fn)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-send-args-ack">socket.send([…args][, ack])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-emit-eventname-args-ack">socket.emit(eventName[, …args][, ack])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-on-eventname-callback">socket.on(eventName, callback)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-once-eventname-listener">socket.once(eventName, listener)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-removelistener-eventname-listener">socket.removeListener(eventName, listener)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-removealllisteners-eventname">socket.removeAllListeners([eventName])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-eventnames">socket.eventNames()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-join-room-callback">socket.join(room[, callback])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-join-rooms-callback">socket.join(rooms[, callback])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-leave-room-callback">socket.leave(room[, callback])</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-to-room">socket.to(room)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-in-room">socket.in(room)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-compress-value">socket.compress(value)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket-disconnect-close">socket.disconnect(close)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#flag-broadcast">Flag: ‘broadcast’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#flag-volatile">Flag: ‘volatile’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#flag-binary">Flag: ‘binary’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#event-disconnect">Event: ‘disconnect’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#event-error">Event: ‘error’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Socket.html#event-disconnecting">Event: ‘disconnecting’</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Client.html">Client</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Client.html#client-conn">client.conn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Client.html#client-request">client.request</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">服务端 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Namespace.html">命名空间</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Client.html">客户端</a></li>
 </ul>
 </div>
 </div>
@@ -254,7 +189,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="API.html" class="btn btn-neutral float-right" title="Server API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="API.html" class="btn btn-neutral float-right" title="服务端 API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../client-api/Manager.html" class="btn btn-neutral float-left" title="Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
