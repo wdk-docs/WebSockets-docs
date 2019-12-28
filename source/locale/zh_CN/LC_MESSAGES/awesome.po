@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/awesome.rst:2
 msgid "Awesome WebSockets"
-msgstr ""
+msgstr "令人敬畏的WebSockets"
 
 #: ../../source/awesome.rst:4
 msgid "A curated list of WebSockets related principles and technologies."
@@ -41,7 +41,7 @@ msgstr "每种语言的工具"
 
 #: ../../source/awesome.rst:16
 msgid "Agnostic"
-msgstr ""
+msgstr "Agnostic"
 
 #: ../../source/awesome.rst:18
 msgid ""
@@ -76,7 +76,7 @@ msgstr "`gwsocket <https://github.com/allinurl/gwsocket>`_ - 快速，独立，�
 
 #: ../../source/awesome.rst:31
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: ../../source/awesome.rst:33
 msgid ""
@@ -95,20 +95,20 @@ msgstr "`Libwebsock <https://github.com/payden/libwebsock>`_ - 用于简易WebSo
 msgid ""
 "`Websocket <https://github.com/mortzdk/Websocket>`_ - Websocket server "
 "written in C."
-msgstr ""
+msgstr "`Websocket <https://github.com/mortzdk/Websocket>`_ - 用C编写的Websocket服务器"
 
 #: ../../source/awesome.rst:40
 msgid ""
 "`facil.io <http://facil.io>`_ - A server/framework library for web "
 "applications, including Websockets and native pub/sub."
-msgstr ""
+msgstr "`facil.io <http://facil.io>`_ - 用于Web应用程序的服务器/框架库，包括Websockets和本机 pub/sub 。"
 
 #: ../../source/awesome.rst:42
 msgid ""
 "`libuwsc <https://github.com/zhaojh329/libuwsc>`_ - A Lightweight and "
 "fully asynchronous WebSocket client C library based on libubox for "
 "Embedded Linux."
-msgstr ""
+msgstr "`libuwsc <https://github.com/zhaojh329/libuwsc>`_ - 基于libubox for Embedded Linux的轻量级和完全异步的WebSocket客户端C库。"
 
 #: ../../source/awesome.rst:45
 msgid ""
@@ -117,35 +117,35 @@ msgid ""
 "multi-protocol embedded networking library with functions including TCP, "
 "HTTP client and server, WebSocket client and server, MQTT client and "
 "broker and much more."
-msgstr ""
+msgstr "`mongoose <https://github.com/cesanta/mongoose>`_ - Mongoose嵌入式Web服务器库 - Mongoose不仅仅是一个嵌入式网络服务器。它是一个多协议嵌入式网络库，具有TCP，HTTP客户端和服务器，WebSocket客户端和服务器，MQTT客户端和代理等功能。"
 
 #: ../../source/awesome.rst:54
 msgid "C++"
-msgstr ""
+msgstr "C++"
 
 #: ../../source/awesome.rst:60
 msgid ""
 "`Websocketpp <https://github.com/zaphoyd/websocketpp>`_ - C++ Websocket "
 "client/server library."
-msgstr ""
+msgstr "`Websocketpp <https://github.com/zaphoyd/websocketpp>`_ - C ++ Websocket客户端/服务器库。"
 
 #: ../../source/awesome.rst:62
 msgid ""
 "`QtWebSockets <http://wiki.qt.io/QtWebSockets>`_ - The QtWebSockets "
 "module is an add-on for the Qt5 library."
-msgstr ""
+msgstr "`QtWebSockets <http://wiki.qt.io/QtWebSockets>`_ - QtWebSockets模块是Qt5库的附加组件。"
 
 #: ../../source/awesome.rst:64
 msgid ""
 "`Beast <https://github.com/boostorg/beast>`_ - HTTP and WebSocket built "
 "on Boost.Asio in C++11."
-msgstr ""
+msgstr "`Beast <https://github.com/boostorg/beast>`_ - HTTP和WebSocket构建于C ++ 11中的Boost.Asio上。"
 
 #: ../../source/awesome.rst:66
 msgid ""
 "`µWebSockets <https://github.com/uNetworking/uWebSockets>`_ - Highly "
 "scalable WebSocket server & client library."
-msgstr ""
+msgstr "`µWebSockets <https://github.com/uNetworking/uWebSockets>`_ - 高度可扩展的WebSocket服务器和客户端库。"
 
 #: ../../source/awesome.rst:68
 msgid ""
@@ -153,472 +153,472 @@ msgid ""
 "Server>`_ - A very simple, fast, multithreaded, platform independent "
 "WebSocket (WS) and WebSocket Secure (WSS) server and client library "
 "implemented using C++11, Boost.Asio and OpenSSL."
-msgstr ""
+msgstr "`简单的WebSocket，服务器 <https://github.com/eidheim/Simple-WebSocket-Server>`_ - 一个非常简单，快速，多线程，独立于平台的WebSocket（WS）和WebSocket安全（WSS）服务器和客户端库，使用C ++ 11，Boost.Asio和OpenSSL实现。"
 
 #: ../../source/awesome.rst:72
 msgid ""
 "`UEWebsocket <https://github.com/feixuwu/UEWebsocket>`_ - Unreal engine 4"
 " websocket plugin for both c++ and blueprint developer."
-msgstr ""
+msgstr "`UEWebsocket <https://github.com/feixuwu/UEWebsocket>`_ - 适用于c ++和蓝图开发人员的虚幻引擎4 websocket插件。"
 
 #: ../../source/awesome.rst:74
 msgid ""
 "`IXWebSocket <https://github.com/machinezone/IXWebSocket>`_ - Lightweight"
 " C++11 multi-threaded client library with TLS support."
-msgstr ""
+msgstr "`IXWebSocket <https://github.com/machinezone/IXWebSocket>`_ - 支持TLS的轻量级C ++ 11多线程客户端库。"
 
 #: ../../source/awesome.rst:80
 msgid "C#"
-msgstr ""
+msgstr "C#"
 
 #: ../../source/awesome.rst:86
 msgid ""
 "`ASP.NET SignalR <http://signalr.net>`_ - Incredibly simple real-time web"
 " for .NET."
-msgstr ""
+msgstr "`ASP.NET SignalR <http://signalr.net>`_ - 令人难以置信的简单的.NET实时网络。"
 
 #: ../../source/awesome.rst:88
 msgid ""
 "`WebSocketListener <http://vtortola.github.io/WebSocketListener>`_ - "
 "Lightweight and highly scalable asynchronous WebSocket server for "
 ".NET/Mono."
-msgstr ""
+msgstr "`WebSocketListener <http://vtortola.github.io/WebSocketListener>`_ - 用于.NET / Mono的轻量级且高度可扩展的异步WebSocket服务器。"
 
 #: ../../source/awesome.rst:91
 msgid ""
 "`websocket-rpc <https://github.com/dajuric/websocket-rpc>`_ - WebSocket "
 "RPC library for .NET with auto JavaScript client code generation, "
 "supporting ASP.NET Core."
-msgstr ""
+msgstr "`websocket-rpc <https://github.com/dajuric/websocket-rpc>`_ - 用于.NET的WebSocket RPC库，具有自动JavaScript客户端代码生成功能，支持ASP.NET Core。"
 
 #: ../../source/awesome.rst:94
 msgid ""
 "`NetGain <https://github.com/StackExchange/NetGain>`_ - A high "
 "performance websocket server library powering Stack Overflow."
-msgstr ""
+msgstr "`NetGain <https://github.com/StackExchange/NetGain>`_ - 一个支持Stack Overflow的高性能websocket服务器库。"
 
 #: ../../source/awesome.rst:96
 msgid ""
 "`websocket-manager <https://github.com/radu-matei/websocket-manager>`_ - "
 "Real-Time library for ASP .NET Core."
-msgstr ""
+msgstr "`websocket-manager <https://github.com/radu-matei/websocket-manager>`_ - ASP .NET Core的实时库。"
 
 #: ../../source/awesome.rst:98
 msgid ""
 "`WebSockets <https://github.com/aspnet/WebSockets>`_ - Implementation of "
 "the WebSocket protocol, along with client and server integration "
 "components."
-msgstr ""
+msgstr "`WebSockets <https://github.com/aspnet/WebSockets>`_ - WebSocket协议的实现，以及客户端和服务器集成组件。"
 
 #: ../../source/awesome.rst:101
 msgid ""
 "`WebSockets support in ASP.NET Core <https://docs.microsoft.com/en-"
 "us/aspnet/core/fundamentals/websockets?view=aspnetcore-2.1>`_ - This "
 "article explains how to get started with WebSockets in ASP.NET Core."
-msgstr ""
+msgstr "`WebSockets support in ASP.NET Core <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets?view=aspnetcore-2.1>`_ - 本文介绍如何在ASP.NET Core中开始使用WebSockets。"
 
 #: ../../source/awesome.rst:107
 msgid "Erlang"
-msgstr ""
+msgstr "Erlang"
 
 #: ../../source/awesome.rst:109
 msgid ""
 "`Sockjs-erlang <https://github.com/sockjs/sockjs-erlang>`_ - WebSocket "
 "emulation - Erlang server."
-msgstr ""
+msgstr "`Sockjs-erlang <https://github.com/sockjs/sockjs-erlang>`_ - WebSocket仿真 -  Erlang服务器。"
 
 #: ../../source/awesome.rst:111
 msgid ""
 "`Cowboy <https://github.com/ninenines/cowboy>`_ - Small, fast, modular "
 "HTTP server written in Erlang."
-msgstr ""
+msgstr "`Cowboy <https://github.com/ninenines/cowboy>`_ - 用Erlang编写的小型，快速，模块化的HTTP服务器。"
 
 #: ../../source/awesome.rst:113
 msgid ""
 "`Kraken <https://github.com/Asana/kraken>`_ - Distributed Pubsub Server "
 "for Realtime Apps."
-msgstr ""
+msgstr "`Kraken <https://github.com/Asana/kraken>`_ - 用于实时应用程序的分布式Pubsub服务器。"
 
 #: ../../source/awesome.rst:117
 msgid "Go"
-msgstr ""
+msgstr "Go"
 
 #: ../../source/awesome.rst:119
 msgid ""
 "`Gorilla Websocket <https://github.com/gorilla/websocket>`_ - WebSocket "
 "implementation for Go."
-msgstr ""
+msgstr "`Gorilla Websocket <https://github.com/gorilla/websocket>`_ - Go的WebSocket实现。"
 
 #: ../../source/awesome.rst:121
 msgid ""
 "`Websocket <https://godoc.org/golang.org/x/net/websocket>`_ - Package "
 "Websocket implements a client and server for the WebSocket protocol as "
 "specified in RFC 6455."
-msgstr ""
+msgstr "`Websocket <https://godoc.org/golang.org/x/net/websocket>`_ - Package Websocket实现了RFC 6455中指定的WebSocket协议的客户端和服务器。"
 
 #: ../../source/awesome.rst:124
 msgid "`Ws <https://github.com/gobwas/ws>`_ - Tiny WebSocket library for Go."
-msgstr ""
+msgstr "`Ws <https://github.com/gobwas/ws>`_ - Go的Tiny WebSocket库。"
 
 #: ../../source/awesome.rst:126
 msgid ""
 "`1m-go-websockets <https://github.com/eranyanay/1m-go-websockets>`_ - "
 "Handling 1M websockets connections in Go."
-msgstr ""
+msgstr "`1m-go-websockets <https://github.com/eranyanay/1m-go-websockets>`_ - 在Go中处理1M websockets连接。"
 
 #: ../../source/awesome.rst:128
 msgid ""
 "`gotify/server <https://gotify.net/>`_ - A simple server for sending and "
 "receiving messages in real-time per web socket."
-msgstr ""
+msgstr "`gotify/server <https://gotify.net/>`_ - 一个简单的服务器，用于每个Web套接字实时发送和接收消息。"
 
 #: ../../source/awesome.rst:130
 msgid ""
 "`nhooyr/websocket <hhttps://github.com/nhooyr/websocket>`_ - A minimal "
 "and idiomatic WebSocket library for Go."
-msgstr ""
+msgstr "`nhooyr/websocket <hhttps://github.com/nhooyr/websocket>`_ - Go的最小和惯用的WebSocket库。"
 
 #: ../../source/awesome.rst:134
 msgid "Haskell"
-msgstr ""
+msgstr "Haskell"
 
 #: ../../source/awesome.rst:136
 msgid ""
 "`Websockets <https://github.com/jaspervdj/websockets>`_ - A Haskell "
 "library for creating WebSocket-capable servers."
-msgstr ""
+msgstr "`Websockets <https://github.com/jaspervdj/websockets>`_ - 用于创建支持WebSocket的服务器的Haskell库。"
 
 #: ../../source/awesome.rst:140
 msgid "Java VM"
-msgstr ""
+msgstr "Java VM"
 
 #: ../../source/awesome.rst:143
 msgid "Clojure"
-msgstr ""
+msgstr "Clojure"
 
 #: ../../source/awesome.rst:145
 msgid ""
 "`Sente <https://github.com/ptaoussanis/sente>`_ - Realtime web comms for "
 "Clojure/Script."
-msgstr ""
+msgstr "`Sente <https://github.com/ptaoussanis/sente>`_ - Clojure / Script的实时网络通信。"
 
 #: ../../source/awesome.rst:147
 msgid ""
 "`Chord <https://github.com/jarohen/chord>`_ - Library designed to bridge "
 "the gap between the triad of CLJ/CLJS, web-sockets and core.async."
-msgstr ""
+msgstr "`Chord <https://github.com/jarohen/chord>`_ - 库旨在弥合CLJ / CLJS三元组，web-socket和core.async之间的差距。"
 
 #: ../../source/awesome.rst:150
 msgid ""
 "`Luminusweb <http://www.luminusweb.net/docs/websockets.md>`_ - Luminus is"
 " a Clojure micro-framework based on a set of lightweight libraries."
-msgstr ""
+msgstr "`Luminusweb <http://www.luminusweb.net/docs/websockets.md>`_ - Luminus是一个基于一组轻量级库的Clojure微框架。"
 
 #: ../../source/awesome.rst:155
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: ../../source/awesome.rst:157
 msgid ""
 "`Project Tyrus <https://tyrus.java.net/>`_ - JSR 356: Java API for "
 "WebSocket - Reference Implementation."
-msgstr ""
+msgstr "`Project Tyrus <https://tyrus.java.net/>`_ - JSR 356：用于WebSocket的Java API  - 参考实现。"
 
 #: ../../source/awesome.rst:159
 msgid ""
 "`Java-WebSocket <https://github.com/TooTallNate/Java-WebSocket>`_ - "
 "Barebones WebSocket client and server implementation written in 100% "
 "Java."
-msgstr ""
+msgstr "`Java-WebSocket <https://github.com/TooTallNate/Java-WebSocket>`_ - Barebones WebSocket客户端和服务器实现用100％Java编写。"
 
 #: ../../source/awesome.rst:162
 msgid ""
 "`Atmosphere <https://github.com/Atmosphere/atmosphere>`_ - Realtime "
 "Client Server Framework for the JVM, supporting WebSockets with Cross-"
 "Browser Fallbacks."
-msgstr ""
+msgstr "`Atmosphere <https://github.com/Atmosphere/atmosphere>`_ - 用于JVM的实时客户端服务器框架，支持具有跨浏览器回退的WebSocket。"
 
 #: ../../source/awesome.rst:165
 msgid ""
 "`Webbit <https://github.com/webbit/webbit>`_ - Java event based WebSocket"
 " and HTTP server."
-msgstr ""
+msgstr "`Webbit <https://github.com/webbit/webbit>`_ - 基于Java事件的WebSocket和HTTP服务器。"
 
 #: ../../source/awesome.rst:169
 msgid "Kotlin"
-msgstr ""
+msgstr "Kotlin"
 
 #: ../../source/awesome.rst:171
 msgid ""
 "`Scarlet <https://github.com/Tinder/Scarlet>`_ - Tinder’s Retrofit "
 "inspired WebSocket client for Kotlin, Java, and Android"
-msgstr ""
+msgstr "`Scarlet <https://github.com/Tinder/Scarlet>`_ - Tinder的Retrofit启发了Kotlin，Java和Android的WebSocket客户端"
 
 #: ../../source/awesome.rst:175
 msgid "Scala"
-msgstr ""
+msgstr "Scala"
 
 #: ../../source/awesome.rst:177
 msgid ""
 "`Play "
 "<https://www.playframework.com/documentation/2.5.x/ScalaWebSockets>`_ - "
 "The high velocity web framework for Java and Scala."
-msgstr ""
+msgstr "`Play <https://www.playframework.com/documentation/2.5.x/ScalaWebSockets>`_ - Java和Scala的高速Web框架。"
 
 #: ../../source/awesome.rst:179
 msgid ""
 "`Finagle-websocket <https://github.com/finagle/finagle-websocket>`_ - "
 "Finagle Websocket clients and servers."
-msgstr ""
+msgstr "`Finagle-websocket <https://github.com/finagle/finagle-websocket>`_ - Finagle Websocket客户端和服务器。"
 
 #: ../../source/awesome.rst:183
 msgid "Node.js"
-msgstr ""
+msgstr "Node.js"
 
 #: ../../source/awesome.rst:185
 msgid ""
 "`Socket.IO <http://socket.io/>`_ - Featuring the fastest and most "
 "reliable real-time engine."
-msgstr ""
+msgstr "`Socket.IO <http://socket.io/>`_ - 拥有最快，最可靠的实时引擎。"
 
 #: ../../source/awesome.rst:187
 msgid ""
 "`Nodejs-websocket <https://github.com/sitegui/nodejs-websocket>`_ - "
 "Node.js module for websocket server and client."
-msgstr ""
+msgstr "`Nodejs-websocket <https://github.com/sitegui/nodejs-websocket>`_ - 用于websocket服务器和客户端的Node.js模块。"
 
 #: ../../source/awesome.rst:189
 msgid ""
 "`WebSocket-Node <https://github.com/theturtle32/WebSocket-Node>`_ - "
 "WebSocket Implementation for Node.JS (Draft -08 through the final RFC "
 "6455)."
-msgstr ""
+msgstr "`WebSocket-Node <https://github.com/theturtle32/WebSocket-Node>`_ - Node.JS的WebSocket实现（草案-08到最终的RFC 6455）。"
 
 #: ../../source/awesome.rst:192
 msgid ""
 "`Sockjs-node <https://github.com/sockjs/sockjs-node>`_ - WebSocket "
 "emulation - Node.js server."
-msgstr ""
+msgstr "`Sockjs-node <https://github.com/sockjs/sockjs-node>`_ - WebSocket仿真 -  Node.js服务器。"
 
 #: ../../source/awesome.rst:194
 msgid ""
 "`Ws <https://github.com/websockets/ws>`_ - ``ws``: The fastest cross "
 "platform RFC-6455 WebSocket implementation for Node.js."
-msgstr ""
+msgstr "`Ws <https://github.com/websockets/ws>`_ - ``ws``: Node.js最快的跨平台RFC-6455 WebSocket实现。"
 
 #: ../../source/awesome.rst:196
 msgid ""
 "`deepstream.io <https://deepstream.io/>`_ - Open realtime server a fast, "
 "secure and scalable realtime server for mobile, web & iot."
-msgstr ""
+msgstr "`deepstream.io <https://deepstream.io/>`_ - 为实时移动，Web和iot提供快速，安全，可扩展的实时服务器。"
 
 #: ../../source/awesome.rst:198
 msgid ""
 "`websocket-as-promised <https://github.com/vitalets/websocket-as-"
 "promised>`_ - Promise-based W3C WebSocket wrapper: allows to use promises"
 " when connecting, disconnecting and messaging with WebSocket server."
-msgstr ""
+msgstr "`websocket-as-promised <https://github.com/vitalets/websocket-as-promised>`_ - 基于Promise的W3C WebSocket包装器：允许在与WebSocket服务器连接，断开连接和消息传递时使用promises。"
 
 #: ../../source/awesome.rst:201
 msgid ""
 "`faye-websocket-node <https://github.com/faye/faye-websocket-node>`_ - "
 "Standards-compliant WebSocket client and server."
-msgstr ""
+msgstr "`faye-websocket-node <https://github.com/faye/faye-websocket-node>`_ - 符合标准的WebSocket客户端和服务器。"
 
 #: ../../source/awesome.rst:203
 msgid ""
 "`ws-wrapper <https://github.com/bminer/ws-wrapper>`_ - Lightweight "
 "WebSocket wrapper that provides a socket.io-like event-handler API along "
 "with Promise-based requests."
-msgstr ""
+msgstr "`ws-wrapper <https://github.com/bminer/ws-wrapper>`_ - 轻量级WebSocket包装器，提供类似socket.io的事件处理程序API以及基于Promise的请求。"
 
 #: ../../source/awesome.rst:206
 msgid ""
 "`ws-server-wrapper <https://github.com/bminer/ws-server-wrapper>`_ - "
 "Companion library for ws-wrapper for the server-side."
-msgstr ""
+msgstr "`ws-server-wrapper <https://github.com/bminer/ws-server-wrapper>`_ - 用于服务器端的ws-wrapper的配套库。"
 
 #: ../../source/awesome.rst:208
 msgid ""
 "`uws <https://github.com/uNetworking/uWebSockets.js>`_ - Tiny WebSockets "
 "(access to the C++ library, µWebSockets, via Node.js)"
-msgstr ""
+msgstr "`uws <https://github.com/uNetworking/uWebSockets.js>`_ - Tiny WebSockets（通过Node.js访问C ++库，μWebSockets）"
 
 #: ../../source/awesome.rst:210
 msgid ""
 "`netflux <https://coast-team.github.io/netflux/>`_ - JavaScript client "
 "and server side transport API based on WebRTC & WebSocket"
-msgstr ""
+msgstr "`netflux <https://coast-team.github.io/netflux/>`_ - 基于WebRTC和WebSocket的JavaScript客户端和服务器端传输API"
 
 #: ../../source/awesome.rst:212
 msgid ""
 "`Sockette <https://github.com/lukeed/sockette>`_ - WebSocket client that "
 "will automatically reconnect if the connection is lost."
-msgstr ""
+msgstr "`Sockette <https://github.com/lukeed/sockette>`_ - WebSocket客户端，如果连接丢失，将自动重新连接。"
 
 #: ../../source/awesome.rst:216
 msgid "Perl"
-msgstr ""
+msgstr "Perl"
 
 #: ../../source/awesome.rst:218
 msgid ""
 "`Net::WebSocket::Server <http://search.cpan.org/~topaz/Net-WebSocket-"
 "Server-0.001003/lib/Net/WebSocket/Server.pm>`_ - Straightforward Perl "
 "WebSocket server with minimal dependencies."
-msgstr ""
+msgstr "`Net::WebSocket::Server <http://search.cpan.org/~topaz/Net-WebSocket-Server-0.001003/lib/Net/WebSocket/Server.pm>`_ - 简单易懂的Perl WebSocket服务器，具有最小的依赖性。"
 
 #: ../../source/awesome.rst:222
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: ../../source/awesome.rst:224
 msgid ""
 "`Ratchet <http://socketo.me/>`_ - Ratchet is a loosely coupled PHP "
 "library providing developers with tools to create real time, bi-"
 "directional applications between clients and servers over WebSockets."
-msgstr ""
+msgstr "`Ratchet <http://socketo.me/>`_ - Ratchet是一个松散耦合的PHP库，为开发人员提供了通过WebSockets在客户端和服务器之间创建实时双向应用程序的工具。"
 
 #: ../../source/awesome.rst:228
 msgid ""
 "`Php-websocket <https://github.com/nekudo/php-websocket>`_ - Simple PHP "
 "WebSocket implementation for PHP 5.3."
-msgstr ""
+msgstr "`Php-websocket <https://github.com/nekudo/php-websocket>`_ - PHP 5.3的简单PHP WebSocket实现。"
 
 #: ../../source/awesome.rst:230
 msgid "`Phpws <https://github.com/Devristo/phpws>`_ - PHP Web Socket server."
-msgstr ""
+msgstr "`Phpws <https://github.com/Devristo/phpws>`_ - PHP Web Socket服务器。"
 
 #: ../../source/awesome.rst:232
 msgid ""
 "`Sandstone <https://eole-io.github.io/sandstone/>`_ - Microframework to "
 "build a real time Rest API."
-msgstr ""
+msgstr "`Sandstone <https://eole-io.github.io/sandstone/>`_ - Microframework构建实时Rest API。"
 
 #: ../../source/awesome.rst:236
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../source/awesome.rst:238
 msgid ""
 "`Websockets <https://websockets.readthedocs.io>`_ - Websockets is a "
 "library for developing WebSocket servers and clients in Python."
-msgstr ""
+msgstr "`Websockets <https://websockets.readthedocs.io>`_ - Websockets是一个用于在Python中开发WebSocket服务器和客户端的库。"
 
 #: ../../source/awesome.rst:240
 msgid ""
 "`Ws4py <https://ws4py.readthedocs.io/en/latest>`_ - WebSocket package for"
 " Python."
-msgstr ""
+msgstr "`Ws4py <https://ws4py.readthedocs.io/en/latest>`_ - 适用于Python的WebSocket包。"
 
 #: ../../source/awesome.rst:242
 msgid ""
 "`Autobahn.ws <http://autobahn.ws>`_ - Open-source real-time framework for"
 " Web, Mobile & Internet of Things."
-msgstr ""
+msgstr "`Autobahn.ws <http://autobahn.ws>`_ - 适用于Web，移动和物联网的开源实时框架。"
 
 #: ../../source/awesome.rst:244
 msgid ""
 "`Tornado <http://www.tornadoweb.org/>`_ - Tornado is a Python web "
 "framework and asynchronous networking library, originally developed at "
 "FriendFeed."
-msgstr ""
+msgstr "`Tornado <http://www.tornadoweb.org/>`_ - Tornado是一个Python Web框架和异步网络库，最初是在FriendFeed上开发的。"
 
 #: ../../source/awesome.rst:247
 msgid ""
 "`Websockets <https://github.com/aaugustin/websockets>`_ - WebSocket "
 "implementation in Python 3."
-msgstr ""
+msgstr "`Websockets <https://github.com/aaugustin/websockets>`_ - Python 3中的WebSocket实现。"
 
 #: ../../source/awesome.rst:251
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #: ../../source/awesome.rst:253
 msgid ""
 "`AnyCable <http://anycable.io/>`_ - Polyglot replacement for Ruby "
 "WebSocket servers with Action Cable protocol."
-msgstr ""
+msgstr "`AnyCable <http://anycable.io/>`_ - 使用Action Cable协议替换Ruby WebSocket服务器的Polyglot。"
 
 #: ../../source/awesome.rst:255
 msgid ""
 "`Em-websocket <https://github.com/igrigorik/em-websocket>`_ - "
 "EventMachine based WebSocket server."
-msgstr ""
+msgstr "`Em-websocket <https://github.com/igrigorik/em-websocket>`_ - 基于EventMachine的WebSocket服务器。"
 
 #: ../../source/awesome.rst:257
 msgid ""
 "`Faye-websocket-ruby <https://github.com/faye/faye-websocket-ruby>`_ - "
 "Standards-compliant WebSocket client and server."
-msgstr ""
+msgstr "`Faye-websocket-ruby <https://github.com/faye/faye-websocket-ruby>`_ - 符合标准的WebSocket客户端和服务器。"
 
 #: ../../source/awesome.rst:259
 msgid ""
 "`Iodine <https://github.com/boazsegev/iodine>`_ - WebSocket/HTTP server "
 "with integrated pub/sub and optional Redis support."
-msgstr ""
+msgstr "`Iodine <https://github.com/boazsegev/iodine>`_ - WebSocket / HTTP服务器，集成了pub / sub和可选的Redis支持。"
 
 #: ../../source/awesome.rst:261
 msgid ""
 "`Websocket-driver-ruby <https://github.com/faye/websocket-driver-ruby>`_ "
 "- WebSocket protocol handler with pluggable I/O."
-msgstr ""
+msgstr "`Websocket-driver-ruby <https://github.com/faye/websocket-driver-ruby>`_ - 具有可插入I / O的WebSocket协议处理程序。"
 
 #: ../../source/awesome.rst:263
 msgid ""
 "`Websocket-ruby <https://github.com/imanel/websocket-ruby>`_ - Universal "
 "Ruby library to handle WebSocket protocol."
-msgstr ""
+msgstr "`Websocket-ruby <https://github.com/imanel/websocket-ruby>`_ - 通用Ruby库来处理WebSocket协议。"
 
 #: ../../source/awesome.rst:265
 msgid ""
 "`Scorched <https://github.com/wardrop/Scorched>`_ - Light-weight web "
 "framework for Ruby."
-msgstr ""
+msgstr "`Scorched <https://github.com/wardrop/Scorched>`_ - Ruby的轻量级Web框架。"
 
 #: ../../source/awesome.rst:267
 msgid ""
 "`Firehose <http://firehose.io/>`_ - Build realtime Ruby web applications."
 " Created by the fine folks at Poll Everywhere."
-msgstr ""
+msgstr "`Firehose <http://firehose.io/>`_ - 构建实时Ruby Web应用程序。由Poll Everywhere的优秀人员创建。"
 
 #: ../../source/awesome.rst:269
 msgid ""
 "`Slanger <https://github.com/stevegraham/slanger>`_ - Open Pusher "
 "implementation compatible with Pusher libraries."
-msgstr ""
+msgstr "`Slanger <https://github.com/stevegraham/slanger>`_ - 与Pusher库兼容的Open Pusher实现。"
 
 #: ../../source/awesome.rst:271
 msgid ""
 "`render_sync <https://github.com/chrismccord/render_sync>`_ - Real-time "
 "Rails Partials."
-msgstr ""
+msgstr "`render_sync <https://github.com/chrismccord/render_sync>`_ - 实时Rails部分。"
 
 #: ../../source/awesome.rst:273
 msgid ""
 "`websocket-rails <https://github.com/websocket-rails/websocket-rails>`_ -"
 " Plug and play websocket support for ruby on rails."
-msgstr ""
+msgstr "`websocket-rails <https://github.com/websocket-rails/websocket-rails>`_ - 即插即用的websocket支持轨道上的红宝石。"
 
 #: ../../source/awesome.rst:277
 msgid "Protocols and APIs"
-msgstr ""
+msgstr "协议和API"
 
 #: ../../source/awesome.rst:279
 msgid "`RFC6455 <https://tools.ietf.org/html/rfc6455>`_ - The WebSocket Protocol."
-msgstr ""
+msgstr "`RFC6455 <https://tools.ietf.org/html/rfc6455>`_ - WebSocket协议。"
 
 #: ../../source/awesome.rst:281
 msgid ""
 "`The WebSocket API <https://www.w3.org/TR/websockets/>`_ - The W3C The "
 "WebSocket API."
-msgstr ""
+msgstr "`The WebSocket API <https://www.w3.org/TR/websockets/>`_ - W3C WebSocket API。"
 
 #: ../../source/awesome.rst:283
 msgid ""
 "`Hixie76 <https://tools.ietf.org/html/draft-hixie-"
 "thewebsocketprotocol-76>`_ - The WebSocket protocol draft-hixie-"
 "thewebsocketprotocol-76"
-msgstr ""
+msgstr "`Hixie76 <https://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-76>`_ - WebSocket协议draft-hixie-thewebsocketprotocol-76"
 
 #: ../../source/awesome.rst:287
 msgid "Command-Line Interface (CLI) Tools"
@@ -628,53 +628,53 @@ msgstr "命令行界面（CLI）工具"
 msgid ""
 "`claws <https://github.com/thehowl/claws>`_ - Awesome WebSocket Client - "
 "an interactive command line client for testing websocket servers."
-msgstr ""
+msgstr "`claws <https://github.com/thehowl/claws>`_ - 令人敬畏的WebSocket客户端 - 用于测试websocket服务器的交互式命令行客户端。"
 
 #: ../../source/awesome.rst:292
 msgid "`wscat <https://github.com/websockets/wscat>`_ - WebSocket cat."
-msgstr ""
+msgstr "`wscat <https://github.com/websockets/wscat>`_ -WebSocket猫。"
 
 #: ../../source/awesome.rst:293
 msgid ""
 "`wsta <https://github.com/esphen/wsta>`_ - A CLI development tool for "
 "WebSocket APIs."
-msgstr ""
+msgstr "`wsta <https://github.com/esphen/wsta>`_ - 用于WebSocket API的CLI开发工具。"
 
 #: ../../source/awesome.rst:295
 msgid "`ws <https://github.com/hashrocket/ws>`_ - websocket command line tool."
-msgstr ""
+msgstr "`ws <https://github.com/hashrocket/ws>`_ - websocket命令行工具。"
 
 #: ../../source/awesome.rst:297
 msgid ""
 "`wssh <https://github.com/progrium/wssh>`_ - wssh (“wish”) is a command-"
 "line utility/shell for WebSocket inspired by netcat."
-msgstr ""
+msgstr "`wssh <https://github.com/progrium/wssh>`_ -wssh（“wish”）是受netcat启发的WebSocket的命令行实用程序/ shell。"
 
 #: ../../source/awesome.rst:299
 msgid ""
 "`wsc <https://github.com/raphael/wsc>`_ - A tiny command line websocket "
 "client written in Go."
-msgstr ""
+msgstr "`wsc <https://github.com/raphael/wsc>`_ - 一个用Go编写的小命令行websocket客户端。"
 
 #: ../../source/awesome.rst:301
 msgid ""
 "`ws-cli <https://github.com/kseo/ws-cli>`_ - WebSocket Command Line "
 "Client written in Go."
-msgstr ""
+msgstr "`ws-cli <https://github.com/kseo/ws-cli>`_ - 用Go编写的WebSocket命令行客户端。"
 
 #: ../../source/awesome.rst:303
 msgid ""
 "`ws-tool <https://github.com/plantain-00/ws-tool>`_ - A Develop Tool to "
 "Test WebSocket, Socket.IO, Stomp, Bayeux, HTTP, TCP, UDP, WebRTC, DNS "
 "API."
-msgstr ""
+msgstr "`ws-tool <https://github.com/plantain-00/ws-tool>`_ - 用于测试WebSocket，Socket.IO，Stomp，Bayeux，HTTP，TCP，UDP，WebRTC，DNS API的开发工具。"
 
 #: ../../source/awesome.rst:306
 msgid ""
 "`websocketd <https://github.com/joewalnes/websocketd>`_ - Turn any "
 "program that uses STDIN/STDOUT into a WebSocket server. Like inetd, but "
 "for WebSockets."
-msgstr ""
+msgstr "`websocketd <https://github.com/joewalnes/websocketd>`_ - 将任何使用STDIN / STDOUT的程序转换为WebSocket服务器。像inetd一样，但对于WebSockets。"
 
 #: ../../source/awesome.rst:311
 msgid "Real Life Stories"
@@ -684,31 +684,31 @@ msgstr "真实的人生故事"
 msgid ""
 "`The top 10 realtime web apps <http://www.creativebloq.com/app-"
 "design/top-10-realtime-web-apps-5133752>`_"
-msgstr ""
+msgstr "`十大实时网络应用程序 <http://www.creativebloq.com/app-design/top-10-realtime-web-apps-5133752>`_"
 
 #: ../../source/awesome.rst:315
 msgid ""
 "`Super sync sports <https://blog.chromium.org/2013/02/on-track-with-"
 "chrome-super-sync-sports.html>`_"
-msgstr ""
+msgstr "`超级同步运动 <https://blog.chromium.org/2013/02/on-track-with-chrome-super-sync-sports.html>`_"
 
 #: ../../source/awesome.rst:317
 msgid "`Firepad <https://firepad.io>`_"
-msgstr ""
+msgstr "`Firepad <https://firepad.io>`_"
 
 #: ../../source/awesome.rst:318
 msgid "`JabbR <http://about.jabbr.net/>`_"
-msgstr ""
+msgstr "`JabbR <http://about.jabbr.net/>`_"
 
 #: ../../source/awesome.rst:319
 msgid "`Kaazing <https://kaazing.com/>`_"
-msgstr ""
+msgstr "`Kaazing <https://kaazing.com/>`_"
 
 #: ../../source/awesome.rst:320
 msgid ""
 "`Taskade <https://taskade.com>`_ - Real-time collaborative task lists and"
 " outlines."
-msgstr ""
+msgstr "`Taskade <https://taskade.com>`_ - 实时协作任务列表和概述。"
 
 #: ../../source/awesome.rst:324
 msgid "Security"
@@ -720,27 +720,27 @@ msgid ""
 "<https://gist.github.com/subudeepak/9897212>`_ - The problems and some "
 "security implications of websockets - Cross-site WebSockets Scripting "
 "(XSWS)."
-msgstr ""
+msgstr "`WebSockets - 一个介绍 <https://gist.github.com/subudeepak/9897212>`_ - websockets的问题和一些安全隐患 - 跨站点WebSockets脚本（XSWS）。"
 
 #: ../../source/awesome.rst:330
 msgid ""
 "`Hacking with WebSockets <https://media.blackhat.com/bh-"
 "us-12/Briefings/Shekyan/BH_US_12_Shekyan_Toukharian_Hacking_Websocket_Slides.pdf>`_"
 " - Talk on Blackhat USA 2012 Conference."
-msgstr ""
+msgstr "`使用WebSockets进行黑客攻击 <https://media.blackhat.com/bh-us-12/Briefings/Shekyan/BH_US_12_Shekyan_Toukharian_Hacking_Websocket_Slides.pdf>`_ - 谈谈Blackhat USA 2012会议。"
 
 #: ../../source/awesome.rst:333
 msgid ""
 "`Testing WebSockets <https://www.owasp.org/index.php/Testing_WebSockets_"
 "(OTG-CLIENT-010)>`_ - This article is part of the new OWASP Testing Guide"
 " v4."
-msgstr ""
+msgstr "`测试WebSockets <https://www.owasp.org/index.php/Testing_WebSockets_(OTG-CLIENT-010)>`_ - 本文是新的OWASP测试指南v4的一部分。"
 
 #: ../../source/awesome.rst:336
 msgid ""
 "`Websockets Auth <http://stratumsecurity.ghost.io/2016/06/13/websockets-"
 "auth>`_ - Journey into WebSockets Authentication/Authorization."
-msgstr ""
+msgstr "`Websockets 验证 <http://stratumsecurity.ghost.io/2016/06/13/websockets-auth>`_ - 进入WebSockets身份验证/授权之旅。"
 
 #: ../../source/awesome.rst:339
 msgid ""
@@ -751,14 +751,14 @@ msgid ""
 " in the WebSocket world aren’t firmly established, and continue to "
 "evolve. Nevertheless, some themes have emerged and they are described in "
 "this article."
-msgstr ""
+msgstr "`WebSocket安全 <https://devcenter.heroku.com/articles/websocket-security>`_ - WebSocket协议是一项年轻的技术，并带来一些风险。数十年的经验教会了Web社区围绕HTTP安全性的一些最佳实践，但WebSocket世界中的安全性最佳实践尚未确立，并且还在不断发展。尽管如此，已经出现了一些主题，本文对它们进行了描述。"
 
 #: ../../source/awesome.rst:347
 msgid ""
 "`Cross-Site WebSocket Hijacking <http://www.christian-"
 "schneider.net/CrossSiteWebSocketHijacking.html>`_ - Cross-Site WebSocket "
 "Hijacking (CSWSH) - Web Application Security Blog."
-msgstr ""
+msgstr "`跨站点WebSocket劫持 <http://www.christian-schneider.net/CrossSiteWebSocketHijacking.html>`_ - 跨站点WebSocket劫持(CSWSH) - Web应用程序安全博客。"
 
 #: ../../source/awesome.rst:353
 msgid "Theory"
@@ -773,76 +773,76 @@ msgid ""
 "`An introduction to Websockets <http://blog.teamtreehouse.com/an-"
 "introduction-to-websockets>`_ - Brief History of Real-Time Web "
 "Applications."
-msgstr ""
+msgstr "`Websockets简介 <http://blog.teamtreehouse.com/an-introduction-to-websockets>`_ - 实时Web应用程序的简史。"
 
 #: ../../source/awesome.rst:361
 msgid ""
 "`Introducing WebSockets: Bringing Sockets to the Web "
 "<https://www.html5rocks.com/en/tutorials/websockets/basics/>`_ - The "
 "Problem: Low Latency Client-Server and Server-Client Connections."
-msgstr ""
+msgstr "`WebSockets简介：将套接字引入Web <https://www.html5rocks.com/en/tutorials/websockets/basics/>`_ - 问题：低延迟客户端 - 服务器和服务器 - 客户端连接。"
 
 #: ../../source/awesome.rst:364
 msgid ""
 "`About HTML5 WebSocket <https://websocket.org/aboutwebsocket.html>`_ - "
 "About HTML5 WebSocket."
-msgstr ""
+msgstr "`关于HTML5 WebSocket <https://websocket.org/aboutwebsocket.html>`_ - 关于HTML5 WebSocket。"
 
 #: ../../source/awesome.rst:366
 msgid ""
 "`Node.js WebSocket <https://medium.com/@denizozger/finding-the-right-"
 "node-js-websocket-implementation-b63bfca0539#.q2313as8p>`_ - Finding the "
 "right Node.js WebSocket implementation."
-msgstr ""
+msgstr "`Node.js WebSocket <https://medium.com/@denizozger/finding-the-right-node-js-websocket-implementation-b63bfca0539#.q2313as8p>`_ - 找到正确的Node.js WebSocket实现."
 
 #: ../../source/awesome.rst:369
 msgid ""
 "`Websockets 101 <http://lucumr.pocoo.org/2012/9/24/websockets-101/>`_ - "
 "Armin Ronacher’s Thoughts and Writings (creator of Flask)."
-msgstr ""
+msgstr "`Websockets 101 <http://lucumr.pocoo.org/2012/9/24/websockets-101/>`_ - Armin Ronacher的思想和着作（Flask的创造者）。"
 
 #: ../../source/awesome.rst:372
 msgid ""
 "`Real-time Apps <https://www.sitepoint.com/real-time-apps-websockets-"
 "server-sent-events/>`_ - Building Real-time Apps with Websockets & "
 "Server-Sent Events."
-msgstr ""
+msgstr "`实时应用 <https://www.sitepoint.com/real-time-apps-websockets-server-sent-events/>`_ - 使用Websockets和服务器发送的事件构建实时应用程序。"
 
 #: ../../source/awesome.rst:375
 msgid ""
 "`Real-Time Web by Paul Banks <https://banksco.de/p/state-of-realtime-"
 "web-2016.html>`_ - The State of Real-Time Web in 2016."
-msgstr ""
+msgstr "`保罗班克斯的实时网络 <https://banksco.de/p/state-of-realtime-web-2016.html>`_ - 2016年的实时网状态。"
 
 #: ../../source/awesome.rst:378
 msgid ""
 "`Are WebSockets the future? <https://samsaffron.com/archive/2015/12/29"
 "/websockets-caution-required>`_ - WebSockets, caution required!"
-msgstr ""
+msgstr "`WebSockets是未来吗？ <https://samsaffron.com/archive/2015/12/29/websockets-caution-required>`_ - WebSockets，需要谨慎！"
 
 #: ../../source/awesome.rst:381
 msgid ""
 "`MSDN Microsoft Blog <https://msdn.microsoft.com/en-us/hh563510.aspx>`_ -"
 " The Dangers of HTML5: WebSockets and Stable Standards."
-msgstr ""
+msgstr "`MSDN微软博客 <https://msdn.microsoft.com/en-us/hh563510.aspx>`_ - HTML5的危险：WebSockets和稳定标准。"
 
 #: ../../source/awesome.rst:384
 msgid ""
 "`Webpush Internet-Draft <https://martinthomson.github.io/drafts/draft-"
 "thomson-webpush-http2.html>`_ - Generic Event Delivery Using HTTP Push."
-msgstr ""
+msgstr "`webpush互联网草案 <https://martinthomson.github.io/drafts/draft-thomson-webpush-http2.html>`_ - 使用HTTP推送进行通用事件传递。"
 
 #: ../../source/awesome.rst:387
 msgid ""
 "`Full Stack Python <https://www.fullstackpython.com/websockets.html>`_ - "
 "WebSockets on Python."
-msgstr ""
+msgstr "`全栈Python <https://www.fullstackpython.com/websockets.html>`_ - Python上的WebSockets。"
 
 #: ../../source/awesome.rst:390
 msgid ""
 "`Do you really need WebSockets? <https://blog.stanko.io/do-you-really-"
 "need-websockets-343aed40aa9b>`_ - WebSockets explanation."
-msgstr ""
+msgstr "`你真的需要WebSockets吗？ <https://blog.stanko.io/do-you-really-need-websockets-343aed40aa9b>`_ - WebSockets说明。"
 
 #: ../../source/awesome.rst:395
 msgid "Talks"
@@ -853,7 +853,7 @@ msgid ""
 "`Initial Steps to Use Websocket-rails "
 "<http://tgib23.github.io/blog/2014/08/03/first-post/>`_ - This is the "
 "very initial steps to use websocket-rails."
-msgstr ""
+msgstr "`使用Websocket-rails的初始步骤 <http://tgib23.github.io/blog/2014/08/03/first-post/>`_ - 这是使用websocket-rails的最初步骤。"
 
 #: ../../source/awesome.rst:402
 msgid "Tutorials"
@@ -864,19 +864,19 @@ msgid ""
 "`Honeybadger.IO <http://blog.honeybadger.io/building-a-simple-websockets-"
 "server-from-scratch-in-ruby>`_ - Building a simple websockets server from"
 " scratch in Ruby."
-msgstr ""
+msgstr "`Honeybadger.IO <http://blog.honeybadger.io/building-a-simple-websockets-server-from-scratch-in-ruby>`_ - 在Ruby中从头开始构建一个简单的websockets服务器。"
 
 #: ../../source/awesome.rst:406
 msgid ""
 "`Engineyard <https://blog.engineyard.com/2013/getting-started-with-ruby-"
 "and-websockets>`_ - Getting Started with Ruby and WebSockets."
-msgstr ""
+msgstr "`Engineyard <https://blog.engineyard.com/2013/getting-started-with-ruby-and-websockets>`_ - Ruby和WebSockets入门。"
 
 #: ../../source/awesome.rst:408
 msgid ""
 "`David Walsh <https://davidwalsh.name/websocket>`_ - WebSocket and "
 "Socket.IO."
-msgstr ""
+msgstr "`大卫沃尔什 <https://davidwalsh.name/websocket>`_ - WebSocket和Socket.IO。"
 
 #: ../../source/awesome.rst:412
 msgid "Books"
@@ -886,7 +886,7 @@ msgstr "图书"
 msgid ""
 "`WebSocket <http://shop.oreilly.com/product/0636920030485.do>`_ - "
 "Lightweight Client-Server Communications. Andrew Lombardi."
-msgstr ""
+msgstr "`WebSocket <http://shop.oreilly.com/product/0636920030485.do>`_ - 轻量级客户端 - 服务器通信。安德鲁隆巴迪。"
 
 #: ../../source/awesome.rst:416
 msgid ""
@@ -895,13 +895,13 @@ msgid ""
 "Applications with HTML5. By Vanessa Wang, Frank Salim, and Peter "
 "Moskovits. Source Code `here <https://github.com/Apress/def-guide-to-"
 "html5-websocket>`_."
-msgstr ""
+msgstr "`HTML5 WebSocket权威指南 <http://www.apress.com/gp/book/9781430247401>`_ - 使用HTML5构建实时应用程序。由Vanessa Wang，Frank Salim和Peter Moskovits撰写。 源代码 `这里 <https://github.com/Apress/def-guide-to-html5-websocket>`_."
 
 #: ../../source/awesome.rst:421
 msgid ""
 "`High Performance Browser Networking <https://hpbn.co/websocket/>`_ - "
 "High Performance Browser Networking: WebSocket."
-msgstr ""
+msgstr "`高性能浏览器网络 <https://hpbn.co/websocket/>`_ - 高性能浏览器网络：WebSocket。"
 
 #: ../../source/awesome.rst:425
 msgid "Sites"
@@ -911,14 +911,14 @@ msgstr "网站"
 msgid ""
 "`WebSocket ORG <https://websocket.org>`_ - The one-stop-shop for all your"
 " websocket needs."
-msgstr ""
+msgstr "`WebSocket ORG <https://websocket.org>`_ - 满足您所有websocket需求的一站式服务。"
 
 #: ../../source/awesome.rst:429
 msgid ""
 "`WebSockets MDN <https://developer.mozilla.org/en-"
 "US/docs/Web/API/WebSockets_API>`_ - WebSockets Mozilla Developer Network "
 "(MDN)."
-msgstr ""
+msgstr "`WebSockets MDN <https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API>`_ - WebSockets Mozilla开发者网络（MDN）。"
 
 #: ../../source/awesome.rst:434
 msgid "License"
@@ -926,7 +926,7 @@ msgstr "执照"
 
 #: ../../source/awesome.rst:436
 msgid "|CC0|"
-msgstr ""
+msgstr "|CC0|"
 
 #: ../../source/awesome.rst:439
 msgid "Contributing"
@@ -938,7 +938,7 @@ msgid ""
 "<https://github.com/facundofarias/awesome-"
 "websockets/blob/master/CONTRIBUTING.md>`_ before submitting your "
 "suggestion."
-msgstr ""
+msgstr "在提交您的建议之前，请阅读 `贡献指南 <https://github.com/facundofarias/awesome-websockets/blob/master/CONTRIBUTING.md>`_ 。"
 
 #: ../../source/awesome.rst:445
 msgid ""
@@ -946,11 +946,11 @@ msgid ""
 "websockets/issues>`_ or `create a pull request "
 "<https://github.com/facundofarias/awesome-websockets/pulls>`_ with your "
 "additions."
-msgstr ""
+msgstr "随意 `打开问题 <https://github.com/facundofarias/awesome-websockets/issues>`_ 或 `创建拉取请求 <https://github.com/facundofarias/awesome-websockets/pulls>`_ 添加你的。"
 
 #: ../../source/awesome.rst:451
 msgid "Thanks!"
-msgstr ""
+msgstr "感谢!"
 
 #: ../../source/awesome.rst:454
 msgid "Acknowledgments"
@@ -960,7 +960,7 @@ msgstr "致谢"
 msgid ""
 "Table of contents generated with `DocToc "
 "<https://github.com/thlorenz/doctoc>`_"
-msgstr ""
+msgstr "用 `DocToc <https://github.com/thlorenz/doctoc>`_ 生成的目录"
 
 #~ msgid ""
 #~ "WebSocket is a computer communications "
