@@ -1,182 +1,101 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ws &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="prev" title="ws: a Node.js WebSocket library" href="quick-start.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="koa-websocket.html">koa-websocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html">ws: a Node.js WebSocket library</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ws</a></li>
 </ul>
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">ws documentation</a> &raquo;</li>
-        
       <li>ws</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/ws/ws.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/ws/ws.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="ws">
-<h1>ws<a class="headerlink" href="#ws" title="永久链接至标题">¶</a></h1>
-<dl class="class">
-<dt id="WebSocket.Server">
-<em class="property">class </em><code class="descclassname">WebSocket.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>{host</em>, <em>port</em>, <em>server</em>, <em>noServer...}</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.Server" title="永久链接至目标">¶</a></dt>
+             
+  <section id="ws">
+<h1>ws<a class="headerlink" href="#ws" title="永久链接至标题"></a></h1>
+<dl class="js class">
+<dt class="sig sig-object js" id="WebSocket.Server">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">Server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">{host</span></em>, <em class="sig-param"><span class="pre">port</span></em>, <em class="sig-param"><span class="pre">server</span></em>, <em class="sig-param"><span class="pre">noServer...}</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.Server" title="永久链接至目标"></a></dt>
 <dd><p>此类表示WebSocket服务器。它扩展了 <cite>EventEmitter</cite> 。</p>
 <p>new WebSocket.Server(options[, callback])</p>
 <p>创建一个新的服务器实例。必须提供 <cite>port</cite>,  <cite>server</cite> 或 <cite>noServer</cite> 之一或抛出错误。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>host</strong> (<em>String</em>) – 主机名绑定服务器的位置。</p></li>
-<li><p><strong>port</strong> (<em>Number</em>) – 绑定服务器的端口。</p></li>
-<li><p><strong>backlog</strong> (<em>Number</em>) – 挂起连接队列的最大长度。</p></li>
-<li><p><strong>server</strong> (<em>http.Server | https.Server</em>) – 预先创建的 Node.js HTTP/S 服务器。</p></li>
-<li><p><strong>verifyClient</strong> (<em>Function</em>) – 一种可用于验证传入连接的功能。见下面的描述。</p></li>
-<li><p><strong>handleProtocols</strong> (<em>Function</em>) – 一种可用于处理WebSocket子协议的函数。见下面的描述。</p></li>
-<li><p><strong>path</strong> (<em>String</em>) – 仅接受与此路径匹配的连接。</p></li>
-<li><p><strong>noServer</strong> (<em>Boolean</em>) – 不启用服务器模式。</p></li>
-<li><p><strong>clientTracking</strong> (<em>Boolean</em>) – 指定是否跟踪客户端。</p></li>
-<li><p><strong>perMessageDeflate</strong> (<em>Boolean | Object</em>) – <p>启用/禁用渗透 - 放气。</p>
+<li><p><strong>host</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – 主机名绑定服务器的位置。</p></li>
+<li><p><strong>port</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 绑定服务器的端口。</p></li>
+<li><p><strong>backlog</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 挂起连接队列的最大长度。</p></li>
+<li><p><strong>server</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.Server</span> <span class="pre">|</span> <span class="pre">https.Server()</span></code></span>) – 预先创建的 Node.js HTTP/S 服务器。</p></li>
+<li><p><strong>verifyClient</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – 一种可用于验证传入连接的功能。见下面的描述。</p></li>
+<li><p><strong>handleProtocols</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – 一种可用于处理WebSocket子协议的函数。见下面的描述。</p></li>
+<li><p><strong>path</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – 仅接受与此路径匹配的连接。</p></li>
+<li><p><strong>noServer</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – 不启用服务器模式。</p></li>
+<li><p><strong>clientTracking</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – 指定是否跟踪客户端。</p></li>
+<li><p><strong>perMessageDeflate</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean</span> <span class="pre">|</span> <span class="pre">Object()</span></code></span>) – <p>启用/禁用渗透 - 放气。</p>
 <p><cite>perMessageDeflate</cite> can be used to control the behavior of <a class="reference external" href="permessage-deflate">permessage-deflate extension</a>.
 he extension is disabled when <cite>false</cite> (default value).</p>
 <p>如果提供了一个对象, 那么这就是扩展参数:</p>
@@ -193,8 +112,8 @@ he extension is disabled when <cite>false</cite> (default value).</p>
 </ul>
 </div></blockquote>
 </p></li>
-<li><p><strong>maxPayload</strong> (<em>Number</em>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
-<li><p><strong>callback</strong> (<em>Function</em>) – 当不在 “noServer” 模式下运行时, <cite>callback</cite> 将被添加为HTTP服务器上 <cite>listening</cite> 事件的监听器。</p></li>
+<li><p><strong>maxPayload</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
+<li><p><strong>callback</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – 当不在 “noServer” 模式下运行时, <cite>callback</cite> 将被添加为HTTP服务器上 <cite>listening</cite> 事件的监听器。</p></li>
 </ul>
 </dd>
 </dl>
@@ -205,47 +124,47 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>如果未设置 <cite>verifyClient</cite>, 则自动接受握手。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="verifyClient">
-<code class="descname">verifyClient</code><span class="sig-paren">(</span><em>{origin</em>, <em>req</em>, <em>secure}</em><span class="optional">[</span>, <em>cb</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="verifyClient">
+<span class="sig-name descname"><span class="pre">verifyClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">{origin</span></em>, <em class="sig-param"><span class="pre">req</span></em>, <em class="sig-param"><span class="pre">secure}</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">cb</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient" title="永久链接至目标"></a></dt>
 <dd><p>如果它提供了单个参数, 那么就是:</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>origin</strong> (<em>String</em>) – The value in the Origin header indicated by the client.</p></li>
-<li><p><strong>req</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
-<li><p><strong>secure</strong> (<em>Boolean</em>) – <cite>true</cite> if <cite>req.connection.authorized</cite> or <cite>req.connection.encrypted</cite> is set.</p></li>
+<li><p><strong>origin</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – The value in the Origin header indicated by the client.</p></li>
+<li><p><strong>req</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.IncomingMessage()</span></code></span>) – The client HTTP GET request.</p></li>
+<li><p><strong>secure</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – <cite>true</cite> if <cite>req.connection.authorized</cite> or <cite>req.connection.encrypted</cite> is set.</p></li>
 </ul>
 </dd>
 </dl>
 <p>函数的返回值（布尔值）确定是否接受握手。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="verifyClient.cb">
-<code class="descclassname">verifyClient.</code><code class="descname">cb</code><span class="sig-paren">(</span><em>result</em>, <em>code</em>, <em>name</em>, <em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient.cb" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="verifyClient.cb">
+<span class="sig-prename descclassname"><span class="pre">verifyClient.</span></span><span class="sig-name descname"><span class="pre">cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">result</span></em>, <em class="sig-param"><span class="pre">code</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">headers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient.cb" title="永久链接至目标"></a></dt>
 <dd><p>如果`verifyClient`提供了两个参数, 那么它们就是:</p>
 <p>A callback that must be called by the user upon inspection of the <cite>info</cite> fields.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>result</strong> (<em>Boolean</em>) – Whether or not to accept the handshake.</p></li>
-<li><p><strong>code</strong> (<em>Number</em>) – When <cite>result</cite> is <cite>false</cite> this field determines the HTTP error status code to be sent to the client.</p></li>
-<li><p><strong>name</strong> (<em>String</em>) – When <cite>result</cite> is <cite>false</cite> this field determines the HTTP reason phrase.</p></li>
-<li><p><strong>headers</strong> (<em>Object</em>) – When <cite>result</cite> is <cite>false</cite> this field determines additional HTTP headers to be sent to the client. For example, <cite>{ ‘Retry-After’: 120 }</cite>.</p></li>
+<li><p><strong>result</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – Whether or not to accept the handshake.</p></li>
+<li><p><strong>code</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – When <cite>result</cite> is <cite>false</cite> this field determines the HTTP error status code to be sent to the client.</p></li>
+<li><p><strong>name</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – When <cite>result</cite> is <cite>false</cite> this field determines the HTTP reason phrase.</p></li>
+<li><p><strong>headers</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – When <cite>result</cite> is <cite>false</cite> this field determines additional HTTP headers to be sent to the client. For example, <cite>{ ‘Retry-After’: 120 }</cite>.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="handleProtocols">
-<code class="descname">handleProtocols</code><span class="sig-paren">(</span><em>protocols</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#handleProtocols" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="handleProtocols">
+<span class="sig-name descname"><span class="pre">handleProtocols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">protocols</span></em>, <em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#handleProtocols" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>protocols</strong> (<em>Array</em>) – The list of WebSocket subprotocols indicated by the client in the <cite>Sec-WebSocket-Protocol</cite> header.</p></li>
-<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
+<li><p><strong>protocols</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Array()</span></code></span>) – The list of WebSocket subprotocols indicated by the client in the <cite>Sec-WebSocket-Protocol</cite> header.</p></li>
+<li><p><strong>request</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.IncomingMessage()</span></code></span>) – The client HTTP GET request.</p></li>
 </ul>
 </dd>
 </dl>
@@ -256,21 +175,21 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 
 <p>If a property is empty then either an offered configuration or a default value is used. When sending a fragmented message the length of the first fragment is compared to the threshold.</p>
 <p>这确定是否对整个消息使用压缩。</p>
-<dl class="function">
-<dt id="ws.onEvent.close">
-<code class="descclassname">ws.onEvent.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.close" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.close">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.close" title="永久链接至目标"></a></dt>
 <dd><p>服务器关闭时发出。此事件仅在内部创建时依赖于HTTP服务器的“close”事件。</p>
 <p>在所有其他情况下, 事件是独立发出的。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.connection">
-<code class="descclassname">ws.onEvent.</code><code class="descname">connection</code><span class="sig-paren">(</span><em>socket</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.connection" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.connection">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">socket</span></em>, <em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.connection" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>socket</strong> (<a class="reference internal" href="../api/WebSocket.html#WebSocket" title="WebSocket"><em>WebSocket</em></a>) – </p></li>
-<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – </p></li>
+<li><p><strong>socket</strong> (<span><a class="reference internal" href="../api/WebSocket.html#id0" title="WebSocket"><code class="xref js js-func docutils literal notranslate"><span class="pre">WebSocket()</span></code></a></span>) – </p></li>
+<li><p><strong>request</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.IncomingMessage()</span></code></span>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -278,23 +197,23 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>用于解析权限标头, cookie标头和其他信息。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.error">
-<code class="descclassname">ws.onEvent.</code><code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.error" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.error">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.error" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>error: Error</p></li>
 </ul>
 <p>在底层服务器上发生错误时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.headers">
-<code class="descclassname">ws.onEvent.</code><code class="descname">headers</code><span class="sig-paren">(</span><em>headers</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.headers" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.headers">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">headers</span></em>, <em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.headers" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>headers</strong> (<em>Array</em>) – </p></li>
-<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – </p></li>
+<li><p><strong>headers</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Array()</span></code></span>) – </p></li>
+<li><p><strong>request</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.IncomingMessage()</span></code></span>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -302,45 +221,45 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>这允许您在发送标头之前检查/修改标头。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.listening">
-<code class="descclassname">ws.onEvent.</code><code class="descname">listening</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.listening" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.listening">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">listening</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.listening" title="永久链接至目标"></a></dt>
 <dd><p>绑定基础服务器时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="server.address">
-<code class="descclassname">server.</code><code class="descname">address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.address" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="server.address">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.address" title="永久链接至目标"></a></dt>
 <dd><p>Returns an object with <cite>port</cite>, <cite>family</cite>, and <cite>address</cite> properties specifying the bound address, the address family name, and port of the server as reported by the operating system if listening on an IP socket.</p>
 <p>如果服务器正在侦听管道或UNIX域套接字, 则该名称将作为字符串返回。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="server.clients">
-<code class="descclassname">server.</code><code class="descname">clients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.clients" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="server.clients">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">clients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.clients" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Set}</p></li>
 </ul>
 <p>存储所有连接客户端的集合。请注意, 只有当`clientTracking`真实时, 才会添加此属性。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="server.close">
-<code class="descclassname">server.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="optional">[</span><em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="server.close">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标"></a></dt>
 <dd><p>如果在内部创建, 则关闭HTTP服务器, 终止所有客户端并在完成后调用回调。</p>
 <p>如果通过`server`或`noServer`构造函数选项使用外部HTTP服务器, 则必须手动关闭它。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="server.handleUpgrade">
-<code class="descclassname">server.</code><code class="descname">handleUpgrade</code><span class="sig-paren">(</span><em>request</em>, <em>socket</em>, <em>head</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#server.handleUpgrade" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="server.handleUpgrade">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">handleUpgrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">request</span></em>, <em class="sig-param"><span class="pre">socket</span></em>, <em class="sig-param"><span class="pre">head</span></em>, <em class="sig-param"><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.handleUpgrade" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
-<li><p><strong>socket</strong> (<em>net.Socket</em>) – The network socket between the server and client.</p></li>
-<li><p><strong>head</strong> (<em>Buffer</em>) – The first packet of the upgraded stream.</p></li>
-<li><p><strong>callback</strong> (<em>Function</em>) – </p></li>
+<li><p><strong>request</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.IncomingMessage()</span></code></span>) – The client HTTP GET request.</p></li>
+<li><p><strong>socket</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">net.Socket()</span></code></span>) – The network socket between the server and client.</p></li>
+<li><p><strong>head</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Buffer()</span></code></span>) – The first packet of the upgraded stream.</p></li>
+<li><p><strong>callback</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -349,13 +268,13 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>如果升级成功, 则使用`WebSocket`对象作为参数调用`callback`。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="server.shouldHandle">
-<code class="descclassname">server.</code><code class="descname">shouldHandle</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#server.shouldHandle" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="server.shouldHandle">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">shouldHandle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.shouldHandle" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>request</strong> (<em>http.IncomingMessage</em>) – The client HTTP GET request.</p></li>
+<li><p><strong>request</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.IncomingMessage()</span></code></span>) – The client HTTP GET request.</p></li>
 </ul>
 </dd>
 </dl>
@@ -397,21 +316,21 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </tr>
 </tbody>
 </table>
-<dl class="class">
-<dt id="new WebSocket">
-<em class="property">class </em><code class="descname">new WebSocket</code><span class="sig-paren">(</span><em>address[, protocols][, {followRedirects,...}]</em><span class="sig-paren">)</span><a class="headerlink" href="#new WebSocket" title="永久链接至目标">¶</a></dt>
+<dl class="js class">
+<dt class="sig sig-object js" id="new-WebSocket">
+<span id="new WebSocket"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">new</span> <span class="pre">WebSocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">address[,</span> <span class="pre">protocols][,</span> <span class="pre">{followRedirects,...}]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new-WebSocket" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>address</strong> (<em>String | url.URL</em>) – The URL to which to connect.</p></li>
-<li><p><strong>protocols</strong> (<em>String | Array</em>) – The list of subprotocols.</p></li>
-<li><p><strong>followRedirects</strong> (<em>Boolean</em>) – Whether or not to follow redirects. Defaults to <cite>false</cite>.</p></li>
-<li><p><strong>handshakeTimeout</strong> (<em>Number</em>) – Timeout in milliseconds for the handshake request. This is reset after every redirection.</p></li>
-<li><p><strong>maxRedirects</strong> (<em>Number</em>) – The maximum number of redirects allowed. Defaults to 10.</p></li>
-<li><p><strong>perMessageDeflate</strong> (<em>Boolean | Object</em>) – Enable/disable permessage-deflate. <cite>perMessageDeflate</cite> default value is <cite>true</cite>. When using an object, parameters are the same of the server.</p></li>
-<li><p><strong>protocolVersion</strong> (<em>Number</em>) – Value of the <cite>Sec-WebSocket-Version</cite> header.</p></li>
-<li><p><strong>origin</strong> (<em>String</em>) – Value of the <cite>Origin</cite> or <cite>Sec-WebSocket-Origin</cite> header depending on the <cite>protocolVersion</cite>.</p></li>
-<li><p><strong>maxPayload</strong> (<em>Number</em>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
+<li><p><strong>address</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String</span> <span class="pre">|</span> <span class="pre">url.URL()</span></code></span>) – The URL to which to connect.</p></li>
+<li><p><strong>protocols</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String</span> <span class="pre">|</span> <span class="pre">Array()</span></code></span>) – The list of subprotocols.</p></li>
+<li><p><strong>followRedirects</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – Whether or not to follow redirects. Defaults to <cite>false</cite>.</p></li>
+<li><p><strong>handshakeTimeout</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – Timeout in milliseconds for the handshake request. This is reset after every redirection.</p></li>
+<li><p><strong>maxRedirects</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – The maximum number of redirects allowed. Defaults to 10.</p></li>
+<li><p><strong>perMessageDeflate</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean</span> <span class="pre">|</span> <span class="pre">Object()</span></code></span>) – Enable/disable permessage-deflate. <cite>perMessageDeflate</cite> default value is <cite>true</cite>. When using an object, parameters are the same of the server.</p></li>
+<li><p><strong>protocolVersion</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – Value of the <cite>Sec-WebSocket-Version</cite> header.</p></li>
+<li><p><strong>origin</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – Value of the <cite>Origin</cite> or <cite>Sec-WebSocket-Origin</cite> header depending on the <cite>protocolVersion</cite>.</p></li>
+<li><p><strong>maxPayload</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
 </ul>
 </dd>
 </dl>
@@ -434,9 +353,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </pre></div>
 </div>
 <p>它默认为`/<a href="#id1"><span class="problematic" id="id2">`</span></a>。</p>
-<dl class="function">
-<dt>
-<code class="descclassname">ws.onEvent.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="id0">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>code: Number}</p></li>
 <li><p>reason: String}</p></li>
@@ -445,51 +364,51 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p><a href="#id1"><span class="problematic" id="id2">`</span></a>reason`是一个人类可读的字符串, 解释连接已关闭的原因。</p>
 </dd></dl>
 
-<dl class="function">
-<dt>
-<code class="descclassname">ws.onEvent.</code><code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="id1">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>error: Error}</p></li>
 </ul>
 <p>发生错误时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.message">
-<code class="descclassname">ws.onEvent.</code><code class="descname">message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.message" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.message">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.message" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>data: String|Buffer|ArrayBuffer|Buffer[]}</p></li>
 </ul>
 <p>从服务器收到消息时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.open">
-<code class="descclassname">ws.onEvent.</code><code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.open" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.open">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.open" title="永久链接至目标"></a></dt>
 <dd><p>建立连接时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.ping">
-<code class="descclassname">ws.onEvent.</code><code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.ping" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.ping">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.ping" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>data: Buffer}</p></li>
 </ul>
 <p>从服务器收到ping时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.pong">
-<code class="descclassname">ws.onEvent.</code><code class="descname">pong</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.pong" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.pong">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.pong" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>data: Buffer}</p></li>
 </ul>
 <p>从服务器收到乒乓时发出。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.unexpected-response">
-<code class="descclassname">ws.onEvent.</code><code class="descname">unexpected-response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.unexpected-response" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.unexpected-response">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">unexpected-response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.unexpected-response" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>request: http.ClientRequest}</p></li>
 <li><p>response: http.IncomingMessage}</p></li>
@@ -499,9 +418,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>如果服务器发送无效响应并且没有此事件的侦听器, 则会发出错误。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="ws.onEvent.upgrade">
-<code class="descclassname">ws.onEvent.</code><code class="descname">upgrade</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.upgrade" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="ws.onEvent.upgrade">
+<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">upgrade</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.upgrade" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>response: http.IncomingMessage}</p></li>
 </ul>
@@ -509,9 +428,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>这允许您从服务器读取标头, 例如“set-cookie”标头。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.addEventListener">
-<code class="descclassname">websocket.</code><code class="descname">addEventListener</code><span class="sig-paren">(</span><em>type</em>, <em>listener</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.addEventListener" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.addEventListener">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">addEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span></em>, <em class="sig-param"><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.addEventListener" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>type: String} A string representing the event type to listen for.</p></li>
 <li><p>listener: Function} The listener to add.</p></li>
@@ -519,9 +438,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>注册一个模拟`EventTarget`接口的事件监听器。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.binaryType">
-<code class="descclassname">websocket.</code><code class="descname">binaryType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.binaryType" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.binaryType">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">binaryType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.binaryType" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{String}</p></li>
 </ul>
@@ -531,18 +450,18 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>Type “fragments” will emit the array of fragments as received from the sender, without copyfull concatenation, which is useful for the performance of binary protocols transferring large messages with multiple fragments.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.bufferedAmount">
-<code class="descclassname">websocket.</code><code class="descname">bufferedAmount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.bufferedAmount" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.bufferedAmount">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">bufferedAmount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.bufferedAmount" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Number}</p></li>
 </ul>
 <p>使用调用“send（）”但尚未传输到网络排队的数据的字节数。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.close">
-<code class="descclassname">websocket.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="optional">[</span><em>code</em><span class="optional">[</span>, <em>reason</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.close" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.close">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">code</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">reason</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.close" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>code: Number} A numeric value indicating the status code explaining why the connection is being closed.</p></li>
 <li><p>reason: String} A human-readable string explaining why the connection is closing.</p></li>
@@ -550,18 +469,18 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>发起结束握手。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.extensions">
-<code class="descclassname">websocket.</code><code class="descname">extensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.extensions" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.extensions">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">extensions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.extensions" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Object}</p></li>
 </ul>
 <p>包含协商扩展的对象。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.onclose">
-<code class="descclassname">websocket.</code><code class="descname">onclose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onclose" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.onclose">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onclose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onclose" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
@@ -569,9 +488,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>监听器接收名为“close”的`CloseEvent`。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.onerror">
-<code class="descclassname">websocket.</code><code class="descname">onerror</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onerror" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.onerror">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onerror</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onerror" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
@@ -579,9 +498,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>监听器收到一个名为“error”的`ErrorEvent`。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.onmessage">
-<code class="descclassname">websocket.</code><code class="descname">onmessage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onmessage" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.onmessage">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onmessage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onmessage" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
@@ -589,9 +508,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>监听器接收名为“message”的`MessageEvent`。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.onopen">
-<code class="descclassname">websocket.</code><code class="descname">onopen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onopen" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.onopen">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onopen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onopen" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
@@ -599,9 +518,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>监听器接收名为“open”的`OpenEvent`。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.ping">
-<code class="descclassname">websocket.</code><code class="descname">ping</code><span class="sig-paren">(</span><em>[data[, mask]][, callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.ping" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.ping">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[data[,</span> <span class="pre">mask]][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.ping" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>data: Any} The data to send in the ping frame.</p></li>
 <li><p>mask: Boolean} Specifies whether <cite>data</cite> should be masked or not. Defaults to <cite>true</cite> when <cite>websocket</cite> is not a server client.</p></li>
@@ -610,9 +529,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>Send a ping.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.pong">
-<code class="descclassname">websocket.</code><code class="descname">pong</code><span class="sig-paren">(</span><em>[data[, mask]][, callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.pong" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.pong">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[data[,</span> <span class="pre">mask]][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.pong" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>data: Any} The data to send in the pong frame.</p></li>
 <li><p>mask: Boolean} Specifies whether <cite>data</cite> should be masked or not. Defaults to <cite>true</cite> when <cite>websocket</cite> is not a server client.</p></li>
@@ -621,27 +540,27 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>Send a pong.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.protocol">
-<code class="descclassname">websocket.</code><code class="descname">protocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.protocol" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.protocol">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">protocol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.protocol" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{String}</p></li>
 </ul>
 <p>服务器选择的子协议。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.readyState">
-<code class="descclassname">websocket.</code><code class="descname">readyState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.readyState" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.readyState">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">readyState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.readyState" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{Number}</p></li>
 </ul>
 <p>连接的当前状态。这是就绪状态常量之一。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.removeEventListener">
-<code class="descclassname">websocket.</code><code class="descname">removeEventListener</code><span class="sig-paren">(</span><em>type</em>, <em>listener</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.removeEventListener" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.removeEventListener">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">removeEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span></em>, <em class="sig-param"><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.removeEventListener" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>type: String} A string representing the event type to remove.</p></li>
 <li><p>listener: Function} The listener to remove.</p></li>
@@ -649,9 +568,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </dd></dl>
 
 <p>删除模拟`EventTarget`接口的事件侦听器。</p>
-<dl class="function">
-<dt id="websocket.send">
-<code class="descclassname">websocket.</code><code class="descname">send</code><span class="sig-paren">(</span><em>data[, options][, callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.send" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.send">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data[,</span> <span class="pre">options][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.send" title="永久链接至目标"></a></dt>
 <dd><ul>
 <li><p>data: Any} The data to send.</p></li>
 <li><p>options: Object}</p>
@@ -670,68 +589,51 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.terminate">
-<code class="descclassname">websocket.</code><code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.terminate" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.terminate">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.terminate" title="永久链接至目标"></a></dt>
 <dd><p>强行关闭连接。</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="websocket.url">
-<code class="descclassname">websocket.</code><code class="descname">url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.url" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="websocket.url">
+<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.url" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p>{String}</p></li>
 </ul>
 <p>WebSocket服务器的URL。服务器客户端没有此属性。</p>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="quick-start.html" class="btn btn-neutral float-left" title="ws: a Node.js WebSocket library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quick-start.html" class="btn btn-neutral float-left" title="ws: a Node.js WebSocket library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

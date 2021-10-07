@@ -1,90 +1,47 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>从0.9迁移 &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="使用多个节点" href="using-multiple-nodes.html" />
     <link rel="prev" title="房间和名称空间" href="rooms-and-namespaces.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">文档</a><ul class="current">
@@ -117,83 +74,43 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-        
           <li><a href="index.html">文档</a> &raquo;</li>
-        
       <li>从0.9迁移</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/socket.io/docs/migrating-from-0-9.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../../_sources/socket.io/docs/migrating-from-0-9.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="migrating-from-0-9">
-<h1>从0.9迁移<a class="headerlink" href="#migrating-from-0-9" title="永久链接至标题">¶</a></h1>
+             
+  <section id="migrating-from-0-9">
+<h1>从0.9迁移<a class="headerlink" href="#migrating-from-0-9" title="永久链接至标题"></a></h1>
 <p>对于大多数应用程序, 过渡到1.0应该是完全无缝的, 没有任何打嗝.也就是说, 我们已经完成了一些简化某些API的工作, 并且我们已经更改了一些内部结构, 因此对于大多数现有用户来说, 这是一个推荐的读取.</p>
-<div class="section" id="authentication-differences">
-<h2>验证差异<a class="headerlink" href="#authentication-differences" title="永久链接至标题">¶</a></h2>
-<div class="section" id="socket-io-uses-middleware-now">
-<h3>Socket.io现在使用中间件<a class="headerlink" href="#socket-io-uses-middleware-now" title="永久链接至标题">¶</a></h3>
+<section id="authentication-differences">
+<h2>验证差异<a class="headerlink" href="#authentication-differences" title="永久链接至标题"></a></h2>
+<section id="socket-io-uses-middleware-now">
+<h3>Socket.io现在使用中间件<a class="headerlink" href="#socket-io-uses-middleware-now" title="永久链接至标题"></a></h3>
 <p>您可以通过 <code class="docutils literal notranslate"><span class="pre">io.use()</span></code> 为Socket.io服务器提供任意函数, 这些函数在创建套接字时运行.看看这个例子:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">srv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">createServer</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">srv</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">run</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">run</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
   <span class="nx">run</span><span class="o">++</span><span class="p">;</span> <span class="c1">// 0 -&gt; 1</span>
   <span class="nx">next</span><span class="p">();</span>
@@ -208,9 +125,9 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="so-its-cleaner-to-do-auth-via-middleware-now">
-<h3>… 所以它更干净, 现在通过中间件做auth<a class="headerlink" href="#so-its-cleaner-to-do-auth-via-middleware-now" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="so-its-cleaner-to-do-auth-via-middleware-now">
+<h3>… 所以它更干净, 现在通过中间件做auth<a class="headerlink" href="#so-its-cleaner-to-do-auth-via-middleware-now" title="永久链接至标题"></a></h3>
 <p>不推荐使用旧的 <code class="docutils literal notranslate"><span class="pre">io.set()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">io.get()</span></code> 方法, 仅支持向后兼容.以下是旧授权示例到中间件样式的转换.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;authorization&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">handshakeData</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// make sure the handshake data looks good</span>
@@ -229,20 +146,20 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="namespace-authorization">
-<h3>命名空间授权？<a class="headerlink" href="#namespace-authorization" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="namespace-authorization">
+<h3>命名空间授权？<a class="headerlink" href="#namespace-authorization" title="永久链接至标题"></a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/namespace&#39;</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">handshakeData</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">request</span><span class="p">;</span>   <span class="nx">next</span><span class="p">();</span>
 <span class="p">});</span><span class="sb">``</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="log-differences">
-<h2>记录差异<a class="headerlink" href="#log-differences" title="永久链接至标题">¶</a></h2>
-<div class="section" id="logging-is-now-based-on-debug">
-<h3>现在, 日志记录基于调试<a class="headerlink" href="#logging-is-now-based-on-debug" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="log-differences">
+<h2>记录差异<a class="headerlink" href="#log-differences" title="永久链接至标题"></a></h2>
+<section id="logging-is-now-based-on-debug">
+<h3>现在, 日志记录基于调试<a class="headerlink" href="#logging-is-now-based-on-debug" title="永久链接至标题"></a></h3>
 <p>要打印所有调试日志记录, 请将环境变量DEBUG设置为<em>.即: ``DEBUG=</em> node index.js``</p>
 <p>仅打印与socket.io相关的日志记录: <code class="docutils literal notranslate"><span class="pre">DEBUG=socket.io:*</span> <span class="pre">node</span> <span class="pre">index.js</span></code>.</p>
 <p>仅从套接字对象打印日志记录: <code class="docutils literal notranslate"><span class="pre">DEBUG=socket.io:socket</span> <span class="pre">node</span> <span class="pre">index.js</span></code>.</p>
@@ -250,13 +167,13 @@
 <p>调试也适用于浏览器;日志将持久保存到localstorage.</p>
 <p>要使用: 打开开发人员控制台并输入 <code class="docutils literal notranslate"><span class="pre">localStorage.debug</span> <span class="pre">=</span> <span class="pre">'socket.io:</span> <span class="pre">*'</span></code> (或任何调试级别), 然后刷新页面.一切都记录下来, 直到你运行 <code class="docutils literal notranslate"><span class="pre">localStorage.debug</span> <span class="pre">=</span> <span class="pre">''</span></code></p>
 <p>有关详细信息, 请参阅调试文档 <a class="reference external" href="https://www.npmjs.org/package/debug">here</a>.</p>
-</div>
-</div>
-<div class="section" id="shortcuts">
-<h2>快捷键<a class="headerlink" href="#shortcuts" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="shortcuts">
+<h2>快捷键<a class="headerlink" href="#shortcuts" title="永久链接至标题"></a></h2>
 <p>一般情况下, 常见事物有一些新的快捷方式.旧版本应该仍然有用, 但快捷方式很好.</p>
-<div class="section" id="broadcasting-to-all-clients-in-default-namespace">
-<h3>广播到默认命名空间中的所有客户端<a class="headerlink" href="#broadcasting-to-all-clients-in-default-namespace" title="永久链接至标题">¶</a></h3>
+<section id="broadcasting-to-all-clients-in-default-namespace">
+<h3>广播到默认命名空间中的所有客户端<a class="headerlink" href="#broadcasting-to-all-clients-in-default-namespace" title="永久链接至标题"></a></h3>
 <p>先前:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;eventname&#39;</span><span class="p">,</span> <span class="s1">&#39;eventdata&#39;</span><span class="p">);</span>
 </pre></div>
@@ -266,12 +183,12 @@
 </pre></div>
 </div>
 <p>整齐.请注意, 在这两种情况下, 这些消息都会到达连接到默认 ‘/’ 命名空间的所有客户端, 但不会到达其他命名空间中的客户端.</p>
-</div>
-<div class="section" id="starting-the-server">
-<h3>启动服务器<a class="headerlink" href="#starting-the-server" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="starting-the-server">
+<h3>启动服务器<a class="headerlink" href="#starting-the-server" title="永久链接至标题"></a></h3>
 <p>先前:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* options */</span> <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">80</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* options */</span> <span class="p">});</span>
 </pre></div>
 </div>
 <p>现在:</p>
@@ -279,12 +196,12 @@
 <span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span> <span class="cm">/* options */</span> <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="configuration-differences">
-<h2>配置差异<a class="headerlink" href="#configuration-differences" title="永久链接至标题">¶</a></h2>
-<div class="section" id="io-set-is-gone">
-<h3>io.set消失了<a class="headerlink" href="#io-set-is-gone" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="configuration-differences">
+<h2>配置差异<a class="headerlink" href="#configuration-differences" title="永久链接至标题"></a></h2>
+<section id="io-set-is-gone">
+<h3>io.set消失了<a class="headerlink" href="#io-set-is-gone" title="永久链接至标题"></a></h3>
 <p>而是像这样在服务器初始化中进行配置:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)({</span>
   <span class="c1">// options go here</span>
@@ -292,9 +209,9 @@
 </pre></div>
 </div>
 <p>日志级别等选项已不复存在. <code class="docutils literal notranslate"><span class="pre">io.set('transports')</span></code>, <code class="docutils literal notranslate"><span class="pre">io.set('heartbeat</span> <span class="pre">interval')</span></code>, <code class="docutils literal notranslate"><span class="pre">io.set('heartbeat</span> <span class="pre">timeout'</span></code> 和 <code class="docutils literal notranslate"><span class="pre">io.set('resource'</span> <span class="pre">)</span></code> 仍然支持向后兼容性.</p>
-</div>
-<div class="section" id="setting-resource-path">
-<h3>设置资源路径<a class="headerlink" href="#setting-resource-path" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="setting-resource-path">
+<h3>设置资源路径<a class="headerlink" href="#setting-resource-path" title="永久链接至标题"></a></h3>
 <p>之前的 <code class="docutils literal notranslate"><span class="pre">resource</span></code> 选项相当于新的 <code class="docutils literal notranslate"><span class="pre">path</span></code> 选项, 但在开头需要一个 <code class="docutils literal notranslate"><span class="pre">/</span></code> .例如, 以下配置:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;localhost:3000&#39;</span><span class="p">,</span> <span class="p">{</span>
   <span class="s1">&#39;resource&#39;</span><span class="o">:</span> <span class="s1">&#39;path/to/socket.io&#39;</span><span class="p">;</span>
@@ -307,95 +224,77 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="parser-protocol-differences">
-<h2>解析器/协议差异<a class="headerlink" href="#parser-protocol-differences" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="parser-protocol-differences">
+<h2>解析器/协议差异<a class="headerlink" href="#parser-protocol-differences" title="永久链接至标题"></a></h2>
 <p>这仅适用于更新其他语言的socket.io实现, 自定义socket.io客户端等.</p>
-<div class="section" id="difference-1-packet-encoding">
-<h3>差异1  - 数据包编码<a class="headerlink" href="#difference-1-packet-encoding" title="永久链接至标题">¶</a></h3>
+<section id="difference-1-packet-encoding">
+<h3>差异1  - 数据包编码<a class="headerlink" href="#difference-1-packet-encoding" title="永久链接至标题"></a></h3>
 <p>解析现在是基于类和异步的.编码调用使用编码数组作为唯一参数调用回调, 而不是返回单个编码字符串.应按顺序将每个编码写入传输.这更灵活, 使二进制数据传输工作.这是一个例子:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">encoding</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">packet</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">encoding</span><span class="p">);</span> <span class="c1">// fully encoded packet</span>
 </pre></div>
 </div>
 <p>vs.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">encoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">Encoder</span><span class="p">();</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">encoder</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">Encoder</span><span class="p">();</span>
 <span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">packet</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">encodings</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">encodings</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">encodings</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">encodings</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span> <span class="c1">// encoded parts of the packet</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="difference-2-packet-decoding">
-<h3>差异2  - 分组解码<a class="headerlink" href="#difference-2-packet-decoding" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="difference-2-packet-decoding">
+<h3>差异2  - 分组解码<a class="headerlink" href="#difference-2-packet-decoding" title="永久链接至标题"></a></h3>
 <p>解码更进一步, 并且基于事件.这样做是因为一些对象(包含二进制的)在多个部分中被编码和解码.这个例子应该有帮助:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">packet</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">decoding</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">packet</span><span class="p">);</span> <span class="c1">// formed socket.io packet to handle</span>
 </pre></div>
 </div>
 <p>vs.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">decoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">Decoder</span><span class="p">();</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">decoder</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">Decoder</span><span class="p">();</span>
 <span class="nx">decoder</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;decoded&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">packet</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">packet</span><span class="p">);</span> <span class="c1">// formed socket.io packet to handle</span>
 <span class="p">});</span>
-<span class="nx">decoder</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">encodings</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// say encodings is array of two encodings received from transport</span>
-<span class="nx">decoder</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">encodings</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// after adding the last element, &#39;decoded&#39; is emitted from decoder</span>
+<span class="nx">decoder</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">encodings</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span> <span class="c1">// say encodings is array of two encodings received from transport</span>
+<span class="nx">decoder</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">encodings</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span> <span class="c1">// after adding the last element, &#39;decoded&#39; is emitted from decoder</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="using-multiple-nodes.html" class="btn btn-neutral float-right" title="使用多个节点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="rooms-and-namespaces.html" class="btn btn-neutral float-left" title="房间和名称空间" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rooms-and-namespaces.html" class="btn btn-neutral float-left" title="房间和名称空间" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="using-multiple-nodes.html" class="btn btn-neutral float-right" title="使用多个节点" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

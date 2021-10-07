@@ -1,90 +1,47 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>socket.io-protocol &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="发布历史记录" href="_posts/index.html" />
     <link rel="prev" title="白板演示" href="demos/whiteboard.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="get-started.html">聊天 - 入门</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/index.html">文档</a></li>
@@ -112,108 +69,69 @@
 <li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws documentation</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">socket.io 文档</a> &raquo;</li>
-        
       <li>socket.io-protocol</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/socket.io/socket.io-protocol.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/socket.io/socket.io-protocol.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="socket-io-protocol">
-<h1>socket.io-protocol<a class="headerlink" href="#socket-io-protocol" title="永久链接至标题">¶</a></h1>
+             
+  <section id="socket-io-protocol">
+<h1>socket.io-protocol<a class="headerlink" href="#socket-io-protocol" title="永久链接至标题"></a></h1>
 <p>本文档描述了Socket.IO协议.有关参考JavaScript实现,请查看 <a class="reference external" href="https://github.com/learnboost/socket.io-parser">socket.io-parser</a>, <a class="reference external" href="https://github.com/learnboost/socket.io-client">socket.io-client</a> 和 <a class="reference external" href="https://github.com/learnboost/socket.io">socket.io</a>.</p>
-<div class="section" id="protocol-version">
-<h2>协议版本<a class="headerlink" href="#protocol-version" title="永久链接至标题">¶</a></h2>
+<section id="protocol-version">
+<h2>协议版本<a class="headerlink" href="#protocol-version" title="永久链接至标题"></a></h2>
 <p><strong>当前协议修订:</strong> <cite>4</cite>.</p>
-</div>
-<div class="section" id="parser-api">
-<h2>API解析器<a class="headerlink" href="#parser-api" title="永久链接至标题">¶</a></h2>
-<div class="section" id="parser-encoder">
-<h3>解析器#编码器<a class="headerlink" href="#parser-encoder" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="parser-api">
+<h2>API解析器<a class="headerlink" href="#parser-api" title="永久链接至标题"></a></h2>
+<section id="parser-encoder">
+<h3>解析器#编码器<a class="headerlink" href="#parser-encoder" title="永久链接至标题"></a></h3>
 <p>将socket.io数据包编码为engine.io-transportable形式的对象.它唯一的公共方法是 Encoder#coding.</p>
-<div class="section" id="encoder-encode-object-packet-function-callback">
-<h4>Encoder#encode(Object:packet, Function:callback)<a class="headerlink" href="#encoder-encode-object-packet-function-callback" title="永久链接至标题">¶</a></h4>
+<section id="encoder-encode-object-packet-function-callback">
+<h4>Encoder#encode(Object:packet, Function:callback)<a class="headerlink" href="#encoder-encode-object-packet-function-callback" title="永久链接至标题"></a></h4>
 <p>将 <cite>Packet</cite> 对象编码为engine.io兼容编码数组.如果对象是纯JSON,则数组将包含单个项,即socket.io编码的字符串.如果对象包含二进制数据(ArrayBuffer,Buffer,Blob或File),则数组的第一项将是包含数据包相关元数据的字符串,而JSON将包含占位符,其中二进制数据保存在初始数据包中.其余项目将是原始二进制数据,以填充解码后的占位符.</p>
 <p>调用回调函数时,编码数组作为唯一参数.在socket.io-parser实现中,回调将数组中的每个项目写入engine.io进行传输.任何实现的期望是数组中的每个项目按顺序传输.</p>
-</div>
-</div>
-<div class="section" id="parser-decoder">
-<h3>解析器#解码器<a class="headerlink" href="#parser-decoder" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="parser-decoder">
+<h3>解析器#解码器<a class="headerlink" href="#parser-decoder" title="永久链接至标题"></a></h3>
 <p>将engine.io中的数据解码为完整的socket.io数据包的对象.</p>
 <p>使用解码器的预期工作流程是在从engine.io接收任何编码时(按照接收编码的顺序)调用 <cite>Decoder#add</cite> 方法,并监听解码器的 ‘decoded’ 事件以完全处理解码后的包.</p>
-<div class="section" id="decoder-add-object-encoding">
-<h4>Decoder#add(Object:encoding)<a class="headerlink" href="#decoder-add-object-encoding" title="永久链接至标题">¶</a></h4>
+<section id="decoder-add-object-encoding">
+<h4>Decoder#add(Object:encoding)<a class="headerlink" href="#decoder-add-object-encoding" title="永久链接至标题"></a></h4>
 <p>从engine.io传输解码单个编码对象.在非二进制分组的情况下,一个编码参数用于重建完整分组.如果数据包的类型为 <cite>BINARY_EVENT</cite> 或者 <cite>ACK</cite>,则需要额外的add添加调用,一个用于原始数据包中的每个二进制数据.一旦最终的二进制数据编码被传递给add,就会重建完整的socket.io数据包.</p>
 <p>在完全解码分组之后,解码器发出“解码”事件(通过发射器),其中解码的分组作为唯一参数.此事件的监听者应将数据包视为准备就绪.</p>
-</div>
-<div class="section" id="decoder-destroy">
-<h4>Decoder#destroy()<a class="headerlink" href="#decoder-destroy" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="decoder-destroy">
+<h4>Decoder#destroy()<a class="headerlink" href="#decoder-destroy" title="永久链接至标题"></a></h4>
 <p>释放Decoder实例的资源.应该在断开中间解码等情况下调用,以防止内存泄漏.</p>
-</div>
-</div>
-<div class="section" id="parser-types">
-<h3>Parser#types<a class="headerlink" href="#parser-types" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="parser-types">
+<h3>Parser#types<a class="headerlink" href="#parser-types" title="永久链接至标题"></a></h3>
 <p>数据包类型键的数组.</p>
-</div>
-<div class="section" id="packet">
-<h3>Packet<a class="headerlink" href="#packet" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="packet">
+<h3>Packet<a class="headerlink" href="#packet" title="永久链接至标题"></a></h3>
 <p>每个数据包都表示为一个带有 <cite>nsp</cite> 键的 vanilla <cite>Object</cite>, 它指示它所属的命名空间(参见 “Multiplexing”)和一个 <cite>type</cite> 键,它可以是以下之一:</p>
 <ul class="simple">
 <li><p><cite>Packet#CONNECT</cite> (<cite>0</cite>)</p></li>
@@ -224,110 +142,92 @@
 <li><p><cite>Packet#BINARY_EVENT</cite> (<cite>5</cite>)</p></li>
 <li><p><cite>Packet#BINARY_ACK</cite> (<cite>6</cite>)</p></li>
 </ul>
-<div class="section" id="event">
-<h4>EVENT<a class="headerlink" href="#event" title="永久链接至标题">¶</a></h4>
+<section id="event">
+<h4>EVENT<a class="headerlink" href="#event" title="永久链接至标题"></a></h4>
 <ul class="simple">
 <li><p><cite>data</cite> (<cite>Array</cite>) 参数列表, 第一个是事件名称. 参数可以包含任何类型的可以导致 <cite>JSON</cite> 解码的字段, 包括任意大小的对象和数组.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) 如果存在 <cite>id</cite> 标识符, 则表示服务器希望确认接收到该事件.</p></li>
 </ul>
-</div>
-<div class="section" id="binary-event">
-<h4>BINARY_EVENT<a class="headerlink" href="#binary-event" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="binary-event">
+<h4>BINARY_EVENT<a class="headerlink" href="#binary-event" title="永久链接至标题"></a></h4>
 <ul class="simple">
 <li><p><cite>data</cite> (<cite>Array</cite>) 参见 <cite>EVENT</cite> <cite>data</cite>, 但除此之外, 任何参数都可能包含非JSON任意二进制数据. 对于编码, 二进制数据被认为是Buffer, ArrayBuffer, Blob或File. 解码时, 所有二进制数据服务器端都是Buffer;在现代客户端上, 二进制数据是一个ArrayBuffer. 在不支持二进制文件的旧浏览器中, 每个二进制数据项都被替换为如下对象: <cite>{base64:true, data:&lt;base64_bin_encoding&gt;}</cite>. 当最初解码“BINARY_EVENT”或“ACK”数据包时, 所有二进制数据项都将是占位符, 并且将通过对“Decoder＃add”的附加调用来填充.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) see <cite>EVENT</cite> <cite>id</cite>.</p></li>
 </ul>
-</div>
-<div class="section" id="ack">
-<h4>ACK<a class="headerlink" href="#ack" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="ack">
+<h4>ACK<a class="headerlink" href="#ack" title="永久链接至标题"></a></h4>
 <ul class="simple">
 <li><p><cite>data</cite> (<cite>Array</cite>) 参见 <cite>EVENT</cite> <cite>data</cite>. 编码为字符串，如上面的“EVENT”类型. 在没有使用二进制数据调用ACK函数时应该使用.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) see <cite>EVENT</cite> <cite>id</cite>.</p></li>
 </ul>
-</div>
-<div class="section" id="binary-ack">
-<h4>BINARY_ACK<a class="headerlink" href="#binary-ack" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="binary-ack">
+<h4>BINARY_ACK<a class="headerlink" href="#binary-ack" title="永久链接至标题"></a></h4>
 <ul class="simple">
 <li><p><cite>data</cite> (<cite>Array</cite>) see <cite>ACK</cite> <cite>data</cite>. 当ACK函数的参数包含二进制数据时使用;以上面记录的 <cite>BINARY_EVENT</cite> 样式对数据包进行编码.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) see <cite>EVENT</cite> <cite>id</cite>.</p></li>
 </ul>
-</div>
-<div class="section" id="error">
-<h4>错误<a class="headerlink" href="#error" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="error">
+<h4>错误<a class="headerlink" href="#error" title="永久链接至标题"></a></h4>
 <ul class="simple">
 <li><p><cite>data</cite> (<cite>Mixed</cite>) 错误数据</p></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="transport">
-<h2>运输<a class="headerlink" href="#transport" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="transport">
+<h2>运输<a class="headerlink" href="#transport" title="永久链接至标题"></a></h2>
 <p>socket.io协议可以通过各种传输方式提供. <a class="reference external" href="http://github.com/learnboost/socket.io-client">socket.io-client</a></p>
 <p>是通过 <a class="reference external" href="http://github.com/learnboost/engine.io-client">engine.io-client</a> 实现浏览器和Node.JS的协议.</p>
 <p><a class="reference external" href="http://github.com/learnboost/socket.io">socket.io</a> 是 <a class="reference external" href="http://github.com/learnboost/engine.io">engine.io</a> 上协议的服务器实现.</p>
-</div>
-<div class="section" id="multiplexing">
-<h2>复<a class="headerlink" href="#multiplexing" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="multiplexing">
+<h2>复<a class="headerlink" href="#multiplexing" title="永久链接至标题"></a></h2>
 <p>Socket.IO具有内置的多路复用支持,这意味着每个 <cite>命名空间</cite>, 由路径字符串(如 <cite>/this</cite>)标识. <cite>Packet</cite> 对象中的对应键是 <cite>nsp</cite>.</p>
 <p>当建立socket.io传输连接时,假定连接尝试到 <cite>/</cite> 命名空间(即:服务器的行为就好像客户端已将 <cite>CONNECT</cite> 包发送到 <cite>/</cite> 命名空间).</p>
 <p>为了支持在同一传输下多路复用多个套接字,客户端可以将额外的 <cite>CONNECT</cite> 数据包发送到任意名称空间URI(例如: <cite>/another</cite>).</p>
 <p>当服务器以 <cite>CONNECT</cite> 数据包响应相应的命名空间时,多路复用的套接字被认为是连接的.</p>
 <p>或者,服务器可以使用 <cite>ERROR</cite> 数据包进行响应,以指示多路复用的套接字连接错误,例如身份验证错误.相关的错误有效负载根据每个错误而变化,并且可以是用户定义的.</p>
 <p>在服务器接收到给定 <cite>nsp</cite> 的 <cite>CONNECT</cite> 包后,客户端可以发送和接收 <cite>EVENT</cite> 包.如果任何一方接收到具有 <cite>id</cite> 字段的 <cite>EVENT</cite> 分组,则期望“ACK”分组确认所述分组的接收.</p>
-</div>
-<div class="section" id="license">
-<h2>执照<a class="headerlink" href="#license" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="license">
+<h2>执照<a class="headerlink" href="#license" title="永久链接至标题"></a></h2>
 <p>MIT</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="_posts/index.html" class="btn btn-neutral float-right" title="发布历史记录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="demos/whiteboard.html" class="btn btn-neutral float-left" title="白板演示" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="demos/whiteboard.html" class="btn btn-neutral float-left" title="白板演示" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="_posts/index.html" class="btn btn-neutral float-right" title="发布历史记录" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

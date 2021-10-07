@@ -1,90 +1,47 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Socket.IO P2P &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Socket.IO C++" href="20150413-socket-io-cpp.html" />
     <link rel="prev" title="Socket.IO 1.3.6" href="20150715-1.3.6.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
@@ -122,74 +79,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-        
           <li><a href="index.html">发布历史记录</a> &raquo;</li>
-        
       <li>Socket.IO P2P</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/socket.io/_posts/20150714-p2p.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../../_sources/socket.io/_posts/20150714-p2p.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="socket-io-p2p">
-<h1>Socket.IO P2P<a class="headerlink" href="#socket-io-p2p" title="永久链接至标题">¶</a></h1>
+             
+  <section id="socket-io-p2p">
+<h1>Socket.IO P2P<a class="headerlink" href="#socket-io-p2p" title="永久链接至标题"></a></h1>
 <p>Today were very happy to introduce Socket.IO P2P, the easiest way to
 establish <strong>a bidirectional events channel between two peers</strong> with a
 server fallback to provide maximum reliability.</p>
@@ -203,8 +120,8 @@ clients where the WebRTC <code class="docutils literal notranslate"><span class=
 simple piece of middleware to your socket.io setup enables this – no
 need to hand roll your own signaling exchange or set up, deploy and
 scale new servers.</p>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="永久链接至标题"></a></h2>
 <p>It only takes a few lines of code to set up the server and client.</p>
 <p>Server:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">server</span><span class="p">);</span>
@@ -216,7 +133,7 @@ scale new servers.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">P2P</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-p2p&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-client&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">p2p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">P2P</span><span class="p">(</span><span class="nx">socket</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">p2p</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">P2P</span><span class="p">(</span><span class="nx">socket</span><span class="p">);</span>
 <span class="nx">p2p</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;peer-msg&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;From a peer %s&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -225,15 +142,15 @@ scale new servers.</p>
 <p>There are various options for the advanced user. Once signaling data has
 been exchanged an <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> event is triggered and an optional
 callback is called.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">numClients</span><span class="o">:</span> <span class="mi">10</span> <span class="p">};</span> <span class="c1">// connect up to 10 clients at a time</span>
-<span class="kd">var</span> <span class="nx">p2p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">P2P</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">opts</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">numClients</span><span class="o">:</span> <span class="mf">10</span> <span class="p">};</span> <span class="c1">// connect up to 10 clients at a time</span>
+<span class="kd">var</span> <span class="nx">p2p</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">P2P</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">opts</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;We all speak WebRTC now&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-chat-example">
-<h2>The Chat example<a class="headerlink" href="#the-chat-example" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="the-chat-example">
+<h2>The Chat example<a class="headerlink" href="#the-chat-example" title="永久链接至标题"></a></h2>
 <p>We will build a simple chat application, as our tradition dictates, but
 with P2P capabilities! In this application:</p>
 <ul class="simple">
@@ -250,8 +167,8 @@ maximum of 10 clients</p></li>
 <p>We first setup the client with <code class="docutils literal notranslate"><span class="pre">autoUpgrade</span></code> set to false so that
 clients can upgrade the connection themselves. Set <code class="docutils literal notranslate"><span class="pre">numClients</span></code> to
 <code class="docutils literal notranslate"><span class="pre">10</span></code> to allow up to 10 clients to connect with each other.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span><span class="nx">autoUpgrade</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">numClients</span><span class="o">:</span> <span class="mi">10</span><span class="p">};</span>
-<span class="kd">var</span> <span class="nx">p2psocket</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">P2P</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">opts</span><span class="p">)</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span><span class="nx">autoUpgrade</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">numClients</span><span class="o">:</span> <span class="mf">10</span><span class="p">};</span>
+<span class="kd">var</span> <span class="nx">p2psocket</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">P2P</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">opts</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Setup the event listeners:</p>
@@ -273,7 +190,7 @@ like this.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">createServer</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">p2pserver</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-p2p-server&#39;</span><span class="p">).</span><span class="nx">Server</span>
 <span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">server</span><span class="p">);</span>
-<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3030</span><span class="p">)</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3030</span><span class="p">)</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">p2pserver</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -299,56 +216,38 @@ Aboukhadijeh (&#64;feross) for providing the underlying WebRTC abstraction
 simple-peer.</p>
 <p>Pull requests, issues, comments and general rantings are all welcome
 over at the GitHub repo.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="20150413-socket-io-cpp.html" class="btn btn-neutral float-right" title="Socket.IO C++" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="20150715-1.3.6.html" class="btn btn-neutral float-left" title="Socket.IO 1.3.6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="20150715-1.3.6.html" class="btn btn-neutral float-left" title="Socket.IO 1.3.6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="20150413-socket-io-cpp.html" class="btn btn-neutral float-right" title="Socket.IO C++" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

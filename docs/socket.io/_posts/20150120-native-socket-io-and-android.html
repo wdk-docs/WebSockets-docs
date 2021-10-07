@@ -1,90 +1,47 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Native Socket.IO and Android &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Introducing Socket.IO 1.0" href="20140528-1.0.0.html" />
     <link rel="prev" title="Socket.IO 1.3.3" href="20150204-1.3.3.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
@@ -127,80 +84,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-        
           <li><a href="index.html">发布历史记录</a> &raquo;</li>
-        
       <li>Native Socket.IO and Android</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/socket.io/_posts/20150120-native-socket-io-and-android.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../../_sources/socket.io/_posts/20150120-native-socket-io-and-android.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="native-socket-io-and-android">
-<h1>Native Socket.IO and Android<a class="headerlink" href="#native-socket-io-and-android" title="永久链接至标题">¶</a></h1>
+             
+  <section id="native-socket-io-and-android">
+<h1>Native Socket.IO and Android<a class="headerlink" href="#native-socket-io-and-android" title="永久链接至标题"></a></h1>
 <p>In this tutorial well learn how to create a chat client that
 communicates with a Socket.IO Node.JS chat server, with our native
 Android Client! If you want to jump straight to the code, its on GitHub.
 Otherwise, read on!</p>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
 <p>To follow along, start by cloning the repository:
 socket.io-android-chat.</p>
 <p>The app has the following features:</p>
@@ -213,9 +130,9 @@ socket.io-android-chat.</p>
 devices and browsers. Its incredibly robust (works even behind corporate
 proxies!) and highly performant, which is very suitable for multiplayer
 games or realtime communication.</p>
-</div>
-<div class="section" id="installing-the-dependencies">
-<h2>Installing the Dependencies<a class="headerlink" href="#installing-the-dependencies" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="installing-the-dependencies">
+<h2>Installing the Dependencies<a class="headerlink" href="#installing-the-dependencies" title="永久链接至标题"></a></h2>
 <p>The first step is to install the Java Socket.IO client with Gradle.</p>
 <p>For this app, we just add the dependency to <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code>:</p>
 <div class="highlight-gradle notranslate"><div class="highlight"><pre><span></span>// app/build.gradle
@@ -235,25 +152,25 @@ dependencies {
 </pre></div>
 </div>
 <p>Now we can use Socket.IO on Android!</p>
-</div>
-<div class="section" id="using-socket-in-activity-and-fragment">
-<h2>Using socket in Activity and Fragment<a class="headerlink" href="#using-socket-in-activity-and-fragment" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="using-socket-in-activity-and-fragment">
+<h2>Using socket in Activity and Fragment<a class="headerlink" href="#using-socket-in-activity-and-fragment" title="永久链接至标题"></a></h2>
 <p>First, we have to initialize a new instance of Socket.IO as follows:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">com.github.nkzawa.socketio.client.IO</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.github.nkzawa.socketio.client.Socket</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">com.github.nkzawa.socketio.client.IO</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.github.nkzawa.socketio.client.Socket</span><span class="p">;</span>
 
-<span class="kd">private</span> <span class="n">Socket</span> <span class="n">mSocket</span><span class="o">;</span>
-<span class="o">{</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="n">mSocket</span> <span class="o">=</span> <span class="n">IO</span><span class="o">.</span><span class="na">socket</span><span class="o">(</span><span class="s">&quot;http://chat.socket.io&quot;</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">URISyntaxException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
-<span class="o">}</span>
+<span class="kd">private</span> <span class="n">Socket</span> <span class="n">mSocket</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">mSocket</span> <span class="o">=</span> <span class="n">IO</span><span class="p">.</span><span class="na">socket</span><span class="p">(</span><span class="s">&quot;http://chat.socket.io&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">URISyntaxException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="n">mSocket</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+    <span class="n">mSocket</span><span class="p">.</span><span class="na">connect</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">IO.socket()</span></code> returns a socket for <code class="docutils literal notranslate"><span class="pre">http://chat.socket.io</span></code> with the
@@ -263,68 +180,68 @@ Fragment. And we explicitly call <code class="docutils literal notranslate"><spa
 connection here (unlike the JavaScript client). In this app, we use
 <code class="docutils literal notranslate"><span class="pre">onCreate</span></code> lifecycle callback for that, but it actually depends on
 your application.</p>
-</div>
-<div class="section" id="emitting-events">
-<h2>Emitting events<a class="headerlink" href="#emitting-events" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="emitting-events">
+<h2>Emitting events<a class="headerlink" href="#emitting-events" title="永久链接至标题"></a></h2>
 <p>Sending data looks as follows. In this case, we send a string but you
 can do JSON data too with the org.json package, and even binary data is
 supported as well!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">EditText</span> <span class="n">mInputMessageView</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">EditText</span> <span class="n">mInputMessageView</span><span class="p">;</span>
 
-<span class="kd">private</span> <span class="kt">void</span> <span class="nf">attemptSend</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">mInputMessageView</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">message</span><span class="o">))</span> <span class="o">{</span>
-        <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">attemptSend</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">mInputMessageView</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">TextUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">message</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="n">mInputMessageView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">);</span>
-    <span class="n">mSocket</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="s">&quot;new message&quot;</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-<span class="o">}</span>
+    <span class="n">mInputMessageView</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="n">mSocket</span><span class="p">.</span><span class="na">emit</span><span class="p">(</span><span class="s">&quot;new message&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="listening-on-events">
-<h2>Listening on events<a class="headerlink" href="#listening-on-events" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="listening-on-events">
+<h2>Listening on events<a class="headerlink" href="#listening-on-events" title="永久链接至标题"></a></h2>
 <p>Like I mentioned earlier, Socket.IO is <strong>bidirectional</strong>, which means we
 can send events to the server, but also at any time during the
 communication the server can send events to us.</p>
 <p>We then can make the socket listen an event on <code class="docutils literal notranslate"><span class="pre">onCreate</span></code> lifecycle
 callback.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
 
-    <span class="n">mSocket</span><span class="o">.</span><span class="na">on</span><span class="o">(</span><span class="s">&quot;new message&quot;</span><span class="o">,</span> <span class="n">onNewMessage</span><span class="o">);</span>
-    <span class="n">mSocket</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
-<span class="o">}</span>
+    <span class="n">mSocket</span><span class="p">.</span><span class="na">on</span><span class="p">(</span><span class="s">&quot;new message&quot;</span><span class="p">,</span> <span class="n">onNewMessage</span><span class="p">);</span>
+    <span class="n">mSocket</span><span class="p">.</span><span class="na">connect</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>With this we listen on the <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">message</span></code> event to receive messages
 from other users.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">com.github.nkzawa.emitter.Emitter</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">com.github.nkzawa.emitter.Emitter</span><span class="p">;</span>
 
-<span class="kd">private</span> <span class="n">Emitter</span><span class="o">.</span><span class="na">Listener</span> <span class="n">onNewMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Emitter</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+<span class="kd">private</span> <span class="n">Emitter</span><span class="p">.</span><span class="na">Listener</span> <span class="n">onNewMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Emitter</span><span class="p">.</span><span class="na">Listener</span><span class="p">()</span> <span class="p">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="kd">final</span> <span class="n">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">getActivity</span><span class="o">().</span><span class="na">runOnUiThread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="kd">final</span> <span class="n">Object</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">getActivity</span><span class="p">().</span><span class="na">runOnUiThread</span><span class="p">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="p">()</span> <span class="p">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-                <span class="n">JSONObject</span> <span class="n">data</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONObject</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-                <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
-                <span class="n">String</span> <span class="n">message</span><span class="o">;</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="n">username</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;username&quot;</span><span class="o">);</span>
-                    <span class="n">message</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;message&quot;</span><span class="o">);</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JSONException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="k">return</span><span class="o">;</span>
-                <span class="o">}</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">JSONObject</span> <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">JSONObject</span><span class="p">)</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">String</span> <span class="n">username</span><span class="p">;</span>
+                <span class="n">String</span> <span class="n">message</span><span class="p">;</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="n">username</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;username&quot;</span><span class="p">);</span>
+                    <span class="n">message</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">JSONException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
 
                 <span class="c1">// add the message to view</span>
-                <span class="n">addMessage</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-    <span class="o">}</span>
-<span class="o">};</span>
+                <span class="n">addMessage</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>This is what <code class="docutils literal notranslate"><span class="pre">onNewMessage</span></code> looks like. A listener is an instance of
@@ -333,26 +250,26 @@ notice that inside of <code class="docutils literal notranslate"><span class="pr
 <code class="docutils literal notranslate"><span class="pre">Activity#runOnUiThread()</span></code>, that is because the callback is always
 called on another thread from Android UI thread, thus we have to make
 sure that adding a message to view happens on the UI thread.</p>
-</div>
-<div class="section" id="managing-socket-state">
-<h2>Managing Socket State<a class="headerlink" href="#managing-socket-state" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="managing-socket-state">
+<h2>Managing Socket State<a class="headerlink" href="#managing-socket-state" title="永久链接至标题"></a></h2>
 <p>Since an Android Activity has its own lifecycle, we should carefully
 manage the state of the socket also to avoid problems like memory leaks.
 In this app, we’ll close the socket connection and remove all listeners
 on <code class="docutils literal notranslate"><span class="pre">onDestroy</span></code> callback of Activity.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">();</span>
 
-    <span class="n">mSocket</span><span class="o">.</span><span class="na">disconnect</span><span class="o">();</span>
-    <span class="n">mSocket</span><span class="o">.</span><span class="na">off</span><span class="o">(</span><span class="s">&quot;new message&quot;</span><span class="o">,</span> <span class="n">onNewMessage</span><span class="o">);</span>
-<span class="o">}</span>
+    <span class="n">mSocket</span><span class="p">.</span><span class="na">disconnect</span><span class="p">();</span>
+    <span class="n">mSocket</span><span class="p">.</span><span class="na">off</span><span class="p">(</span><span class="s">&quot;new message&quot;</span><span class="p">,</span> <span class="n">onNewMessage</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Calling <code class="docutils literal notranslate"><span class="pre">off()</span></code> removes the listener of the <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">message</span></code> event.</p>
-</div>
-<div class="section" id="further-reading">
-<h2>Further reading<a class="headerlink" href="#further-reading" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="永久链接至标题"></a></h2>
 <p>If you want to explore more, I recommend you look into:</p>
 <ul class="simple">
 <li><p>Other features of this app. They are just implemented with
@@ -361,56 +278,38 @@ on <code class="docutils literal notranslate"><span class="pre">onDestroy</span>
 client does.</p></li>
 <li><p>Many other great Socket.IO implementations created by the community!</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="20140528-1.0.0.html" class="btn btn-neutral float-right" title="Introducing Socket.IO 1.0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="20150204-1.3.3.html" class="btn btn-neutral float-left" title="Socket.IO 1.3.3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="20150204-1.3.3.html" class="btn btn-neutral float-left" title="Socket.IO 1.3.3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="20140528-1.0.0.html" class="btn btn-neutral float-right" title="Introducing Socket.IO 1.0" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

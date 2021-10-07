@@ -1,90 +1,47 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manager &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="服务端API" href="../server-api/index.html" />
     <link rel="prev" title="Socket" href="Socket.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
@@ -104,83 +61,43 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-        
           <li><a href="index.html">客户端 API</a> &raquo;</li>
-        
       <li>Manager</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/socket.io/client-api/Manager.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../../_sources/socket.io/client-api/Manager.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="manager">
-<h1>Manager<a class="headerlink" href="#manager" title="永久链接至标题">¶</a></h1>
-<dl class="class">
-<dt id="new Manager">
-<em class="property">class </em><code class="descname">new Manager</code><span class="sig-paren">(</span><em>url</em><span class="optional">[</span>, <em>options</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#new Manager" title="永久链接至目标">¶</a></dt>
+             
+  <section id="manager">
+<h1>Manager<a class="headerlink" href="#manager" title="永久链接至标题"></a></h1>
+<dl class="js class">
+<dt class="sig sig-object js" id="new-Manager">
+<span id="new Manager"></span><em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">new</span> <span class="pre">Manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">url</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">options</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#new-Manager" title="永久链接至目标"></a></dt>
 <dd><p>new Manager(url[, options])</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>url</strong> (<em>String</em>) – </p></li>
-<li><p><strong>options</strong> (<em>Object</em>) – </p></li>
+<li><p><strong>url</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – </p></li>
+<li><p><strong>options</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -414,14 +331,14 @@ randomizationFactor &lt;=
 </tr>
 </tbody>
 </table>
-<dl class="function">
-<dt id="manager.reconnection">
-<code class="descclassname">manager.</code><code class="descname">reconnection</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnection" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.reconnection">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnection</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnection" title="永久链接至目标"></a></dt>
 <dd><p>设置``reconnection`` 选项,如果没有传递参数则返回它.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Boolean</em>) – </p></li>
+<li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -430,14 +347,14 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.reconnectionAttempts">
-<code class="descclassname">manager.</code><code class="descname">reconnectionAttempts</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionAttempts" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.reconnectionAttempts">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnectionAttempts</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionAttempts" title="永久链接至目标"></a></dt>
 <dd><p>设置 <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code> 选项,如果没有传递参数则返回它.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Number</em>) – </p></li>
+<li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -446,14 +363,14 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.reconnectionDelay">
-<code class="descclassname">manager.</code><code class="descname">reconnectionDelay</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionDelay" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.reconnectionDelay">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnectionDelay</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionDelay" title="永久链接至目标"></a></dt>
 <dd><p>设置 <code class="docutils literal notranslate"><span class="pre">reconnectionDelay</span></code> 选项,如果没有传递参数则返回它.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Number</em>) – </p></li>
+<li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -462,14 +379,14 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.reconnectionDelayMax">
-<code class="descclassname">manager.</code><code class="descname">reconnectionDelayMax</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionDelayMax" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.reconnectionDelayMax">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnectionDelayMax</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionDelayMax" title="永久链接至目标"></a></dt>
 <dd><p>设置 <code class="docutils literal notranslate"><span class="pre">reconnectionDelayMax</span></code> 选项,如果没有传递参数则返回它.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Number</em>) – </p></li>
+<li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -478,14 +395,14 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.timeout">
-<code class="descclassname">manager.</code><code class="descname">timeout</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.timeout" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.timeout">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">timeout</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.timeout" title="永久链接至目标"></a></dt>
 <dd><p>设置 <code class="docutils literal notranslate"><span class="pre">timeout</span></code> 选项,如果没有传递参数则返回它.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Number</em>) – </p></li>
+<li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -494,15 +411,15 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.open">
-<code class="descclassname">manager.</code><code class="descname">open</code><span class="sig-paren">(</span><span class="optional">[</span><em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.open" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.open">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.open" title="永久链接至目标"></a></dt>
 <dd><p>如果管理器使用 <code class="docutils literal notranslate"><span class="pre">autoConnect</span></code> 启动到 <code class="docutils literal notranslate"><span class="pre">false</span></code>,则启动新的连接尝试.</p>
 <p><code class="docutils literal notranslate"><span class="pre">callback</span></code> 参数是可选的,一旦尝试失败/成功就会被调用.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>callback</strong> (<em>Function</em>) – </p></li>
+<li><p><strong>callback</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -511,21 +428,21 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.connect">
-<code class="descclassname">manager.</code><code class="descname">connect</code><span class="sig-paren">(</span><span class="optional">[</span><em>callback</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.connect" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.connect">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.connect" title="永久链接至目标"></a></dt>
 <dd><p>同义词 <a class="reference external" href="#manageropencallback">manager.open([callback])</a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="manager.socket">
-<code class="descclassname">manager.</code><code class="descname">socket</code><span class="sig-paren">(</span><em>nsp</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#manager.socket" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="manager.socket">
+<span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">socket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nsp</span></em>, <em class="sig-param"><span class="pre">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manager.socket" title="永久链接至目标"></a></dt>
 <dd><p>为给定的命名空间创建一个新的 <code class="docutils literal notranslate"><span class="pre">Socket</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nsp</strong> (<em>String</em>) – </p></li>
-<li><p><strong>options</strong> (<em>Object</em>) – </p></li>
+<li><p><strong>nsp</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – </p></li>
+<li><p><strong>options</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -534,151 +451,133 @@ randomizationFactor &lt;=
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.connect_error">
-<code class="descclassname">Event.</code><code class="descname">connect_error</code><span class="sig-paren">(</span><em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect_error" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.connect_error">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">connect_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect_error" title="永久链接至目标"></a></dt>
 <dd><p>因连接错误而被解雇.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>error</strong> (<em>Object</em>) – 错误对象</p></li>
+<li><p><strong>error</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – 错误对象</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.connect_timeout">
-<code class="descclassname">Event.</code><code class="descname">connect_timeout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect_timeout" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.connect_timeout">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">connect_timeout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect_timeout" title="永久链接至目标"></a></dt>
 <dd><p>在连接超时时触发.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.reconnect">
-<code class="descclassname">Event.</code><code class="descname">reconnect</code><span class="sig-paren">(</span><em>attempt</em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.reconnect">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">attempt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect" title="永久链接至目标"></a></dt>
 <dd><p>成功重新连接后被解雇.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>attempt</strong> (<em>Number</em>) – 重新连接尝试次数</p></li>
+<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 重新连接尝试次数</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.reconnect_attempt">
-<code class="descclassname">Event.</code><code class="descname">reconnect_attempt</code><span class="sig-paren">(</span><em>attempt</em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_attempt" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.reconnect_attempt">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect_attempt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">attempt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_attempt" title="永久链接至目标"></a></dt>
 <dd><p>试图重新连接时被解雇.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>attempt</strong> (<em>Number</em>) – 重新连接尝试次数</p></li>
+<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 重新连接尝试次数</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.reconnecting">
-<code class="descclassname">Event.</code><code class="descname">reconnecting</code><span class="sig-paren">(</span><em>attempt</em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnecting" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.reconnecting">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnecting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">attempt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnecting" title="永久链接至目标"></a></dt>
 <dd><p>试图重新连接时被解雇.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>attempt</strong> (<em>Number</em>) – 重新连接尝试次数</p></li>
+<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 重新连接尝试次数</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.reconnect_error">
-<code class="descclassname">Event.</code><code class="descname">reconnect_error</code><span class="sig-paren">(</span><em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_error" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.reconnect_error">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_error" title="永久链接至目标"></a></dt>
 <dd><p>在重新连接尝试错误时触发.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>error</strong> (<em>Object</em>) – 错误对象</p></li>
+<li><p><strong>error</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – 错误对象</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.reconnect_failed">
-<code class="descclassname">Event.</code><code class="descname">reconnect_failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_failed" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.reconnect_failed">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect_failed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_failed" title="永久链接至目标"></a></dt>
 <dd><p>在 <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code> 中无法重新连接时被触发.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.ping">
-<code class="descclassname">Event.</code><code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.ping" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.ping">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.ping" title="永久链接至目标"></a></dt>
 <dd><p>ping数据包写入服务器时触发.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event.pong">
-<code class="descclassname">Event.</code><code class="descname">pong</code><span class="sig-paren">(</span><em>ms</em><span class="sig-paren">)</span><a class="headerlink" href="#Event.pong" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.pong">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.pong" title="永久链接至目标"></a></dt>
 <dd><p>从服务器收到乒乓时触发.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ms</strong> (<em>Number</em>) – 自 <code class="docutils literal notranslate"><span class="pre">ping</span></code> 包以来经过的ms数(即：等待时间).</p></li>
+<li><p><strong>ms</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 自 <code class="docutils literal notranslate"><span class="pre">ping</span></code> 包以来经过的ms数(即：等待时间).</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../server-api/index.html" class="btn btn-neutral float-right" title="服务端API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Socket.html" class="btn btn-neutral float-left" title="Socket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Socket.html" class="btn btn-neutral float-left" title="Socket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../server-api/index.html" class="btn btn-neutral float-right" title="服务端API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

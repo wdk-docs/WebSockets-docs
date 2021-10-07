@@ -1,90 +1,47 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<html class="writer-html5" lang="zh-CN" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Socket &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Manager" href="Manager.html" />
     <link rel="prev" title="IO" href="IO.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
@@ -104,77 +61,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../contents.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-        
           <li><a href="index.html">客户端 API</a> &raquo;</li>
-        
       <li>Socket</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/socket.io/client-api/Socket.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../../_sources/socket.io/client-api/Socket.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="socket">
-<h1>Socket<a class="headerlink" href="#socket" title="永久链接至标题">¶</a></h1>
-<dl class="attribute">
-<dt id="socket.id">
-<code class="descclassname">socket.</code><code class="descname">id</code><a class="headerlink" href="#socket.id" title="永久链接至目标">¶</a></dt>
+             
+  <section id="socket">
+<h1>Socket<a class="headerlink" href="#socket" title="永久链接至标题"></a></h1>
+<dl class="js attribute">
+<dt class="sig sig-object js" id="socket.id">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#socket.id" title="永久链接至目标"></a></dt>
 <dd><p>An unique identifier for the socket session. Set after the <code class="docutils literal notranslate"><span class="pre">connect</span></code>
 event is triggered, and updated after the <code class="docutils literal notranslate"><span class="pre">reconnect</span></code> event.</p>
 <dl class="field-list">
@@ -182,7 +99,7 @@ event is triggered, and updated after the <code class="docutils literal notransl
 <dd class="field-odd"><p>String</p>
 </dd>
 <dt class="field-even">Example</dt>
-<dd class="field-even"><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
+<dd class="field-even"><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span> <span class="c1">// undefined</span>
 
@@ -195,30 +112,30 @@ event is triggered, and updated after the <code class="docutils literal notransl
 </dl>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="socket.connected">
-<code class="descclassname">socket.</code><code class="descname">connected</code><a class="headerlink" href="#socket.connected" title="永久链接至目标">¶</a></dt>
+<dl class="js attribute">
+<dt class="sig sig-object js" id="socket.connected">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">connected</span></span><a class="headerlink" href="#socket.connected" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><em>(Boolean)</em></p></li>
 </ul>
 <p>Whether or not the socket is connected to the server.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
 
 <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">connected</span><span class="p">);</span> <span class="c1">// true</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<dl class="attribute">
-<dt id="socket.socket.disconnected">
-<code class="descclassname">socket.socket.</code><code class="descname">disconnected</code><a class="headerlink" href="#socket.socket.disconnected" title="永久链接至目标">¶</a></dt>
+<dl class="js attribute">
+<dt class="sig sig-object js" id="socket.socket.disconnected">
+<span class="sig-prename descclassname"><span class="pre">socket.socket.</span></span><span class="sig-name descname"><span class="pre">disconnected</span></span><a class="headerlink" href="#socket.socket.disconnected" title="永久链接至目标"></a></dt>
 <dd></dd></dl>
 
 <ul class="simple">
 <li><p><em>(Boolean)</em></p></li>
 </ul>
 <p>Whether or not the socket is disconnected from the server.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">);</span>
 
 <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">disconnected</span><span class="p">);</span> <span class="c1">// false</span>
@@ -227,14 +144,14 @@ event is triggered, and updated after the <code class="docutils literal notransl
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.open">
-<code class="descclassname">socket.</code><code class="descname">open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.open" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.open">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.open" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p></li>
 </ul>
 <p>Manually opens the socket.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span>
   <span class="nx">autoConnect</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">});</span>
 
@@ -250,15 +167,15 @@ event is triggered, and updated after the <code class="docutils literal notransl
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.connect">
-<code class="descclassname">socket.</code><code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.connect" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.connect">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.connect" title="永久链接至目标"></a></dt>
 <dd><p>Synonym of <a class="reference external" href="#socketopen">socket.open()</a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.send">
-<code class="descclassname">socket.</code><code class="descname">send</code><span class="sig-paren">(</span><em>[…args][, ack]</em><span class="sig-paren">)</span><a class="headerlink" href="#socket.send" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.send">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[…args][,</span> <span class="pre">ack]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.send" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ack</span></code> <em>(Function)</em></p></li>
@@ -267,9 +184,9 @@ event is triggered, and updated after the <code class="docutils literal notransl
 <p>Sends a <code class="docutils literal notranslate"><span class="pre">message</span></code> event. See <a class="reference external" href="#socketemiteventname-args-ack">socket.emit(eventName[, …args][,ack])</a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.emit">
-<code class="descclassname">socket.</code><code class="descname">emit</code><span class="sig-paren">(</span><em>eventName[, …args][, ack]</em><span class="sig-paren">)</span><a class="headerlink" href="#socket.emit" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.emit">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">eventName[,</span> <span class="pre">…args][,</span> <span class="pre">ack]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.emit" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">eventName</span></code> <em>(String)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">args</span></code></p></li>
@@ -280,7 +197,7 @@ event is triggered, and updated after the <code class="docutils literal notransl
 parameters can be included. All serializable datastructures are
 supported, including <code class="docutils literal notranslate"><span class="pre">Buffer</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">);</span>
-<span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;with-binary&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="mi">3</span><span class="o">:</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="p">});</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;with-binary&#39;</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="mf">3</span><span class="o">:</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="mf">5</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="mf">6</span><span class="p">)</span> <span class="p">});</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ack</span></code> argument is optional and will be called with the server
@@ -299,9 +216,9 @@ answer.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.on">
-<code class="descclassname">socket.</code><code class="descname">on</code><span class="sig-paren">(</span><em>eventName</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#socket.on" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.on">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">eventName</span></em>, <em class="sig-param"><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.on" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">eventName</span></code> <em>(String)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
@@ -318,16 +235,16 @@ answer.</p>
 <span class="p">});</span>
 <span class="c1">// with callback</span>
 <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="nx">cb</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="nx">cb</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>The socket actually inherits every method of the <a class="reference external" href="https://github.com/component/emitter">Emitter</a> class, like <code class="docutils literal notranslate"><span class="pre">hasListeners</span></code>, <code class="docutils literal notranslate"><span class="pre">once</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code> (to remove an event listener).</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.compress">
-<code class="descclassname">socket.</code><code class="descname">compress</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#socket.compress" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.compress">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">compress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.compress" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> <em>(Boolean)</em></p></li>
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p></li>
@@ -340,9 +257,9 @@ you don’t call the method.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.binary">
-<code class="descclassname">socket.</code><code class="descname">binary</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#socket.binary" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.binary">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.binary" title="永久链接至目标"></a></dt>
 <dd><p>Specifies whether the emitted data contains binary. Increases
 performance when specified. Can be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">binary</span><span class="p">(</span><span class="kc">false</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">some</span><span class="o">:</span> <span class="s1">&#39;data&#39;</span> <span class="p">});</span>
@@ -350,24 +267,24 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.close">
-<code class="descclassname">socket.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.close" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.close">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.close" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Socket</span></code></p></li>
 </ul>
 <p>Disconnects the socket manually.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="socket.disconnect">
-<code class="descclassname">socket.</code><code class="descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.disconnect" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="socket.disconnect">
+<span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.disconnect" title="永久链接至目标"></a></dt>
 <dd><p>Synonym of <a class="reference external" href="#socketclose">socket.close()</a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event: ‘connect’">
-<code class="descname">Event: ‘connect’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘connect’" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event-connect">
+<span id="Event: ‘connect’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘connect’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-connect" title="永久链接至目标"></a></dt>
 <dd><p>Fired upon a connection including a successful reconnection.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="c1">// ...</span>
@@ -382,9 +299,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-connect-error-1"></span><dl class="function">
-<dt id="Event: ‘connect_error’">
-<code class="descname">Event: ‘connect_error’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘connect_error’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-connect-error-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-connect_error">
+<span id="Event: ‘connect_error’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘connect_error’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-connect_error" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <em>(Object)</em> error object</p></li>
 </ul>
@@ -396,9 +313,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-connect-timeout-1"></span><dl class="function">
-<dt id="Event: ‘connect_timeout’">
-<code class="descname">Event: ‘connect_timeout’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘connect_timeout’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-connect-timeout-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-connect_timeout">
+<span id="Event: ‘connect_timeout’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘connect_timeout’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-connect_timeout" title="永久链接至目标"></a></dt>
 <dd><p>Fired upon a connection timeout.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect_timeout&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">timeout</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="c1">// ...</span>
@@ -407,9 +324,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event: ‘error’">
-<code class="descname">Event: ‘error’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘error’" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event-error">
+<span id="Event: ‘error’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘error’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-error" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <em>(Object)</em> error object</p></li>
 </ul>
@@ -421,9 +338,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="Event: ‘disconnect’">
-<code class="descname">Event: ‘disconnect’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘disconnect’" title="永久链接至目标">¶</a></dt>
+<dl class="js function">
+<dt class="sig sig-object js" id="Event-disconnect">
+<span id="Event: ‘disconnect’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘disconnect’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-disconnect" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">reason</span></code> <em>(String)</em> either ‘io server disconnect’, ‘io client disconnect’, or ‘ping timeout’</p></li>
 </ul>
@@ -439,9 +356,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-reconnect-1"></span><dl class="function">
-<dt id="Event: ‘reconnect’">
-<code class="descname">Event: ‘reconnect’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘reconnect’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-reconnect-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-reconnect">
+<span id="Event: ‘reconnect’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘reconnect’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-reconnect" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">attempt</span></code> <em>(Number)</em> reconnection attempt number</p></li>
 </ul>
@@ -453,9 +370,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-reconnect-attempt-1"></span><dl class="function">
-<dt id="Event: ‘reconnect_attempt’">
-<code class="descname">Event: ‘reconnect_attempt’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘reconnect_attempt’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-reconnect-attempt-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-reconnect_attempt">
+<span id="Event: ‘reconnect_attempt’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘reconnect_attempt’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-reconnect_attempt" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">attempt</span></code> <em>(Number)</em> reconnection attempt number</p></li>
 </ul>
@@ -467,9 +384,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-reconnecting-1"></span><dl class="function">
-<dt id="Event: ‘reconnecting’">
-<code class="descname">Event: ‘reconnecting’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘reconnecting’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-reconnecting-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-reconnecting">
+<span id="Event: ‘reconnecting’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘reconnecting’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-reconnecting" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">attempt</span></code> <em>(Number)</em> reconnection attempt number</p></li>
 </ul>
@@ -481,9 +398,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-reconnect-error-1"></span><dl class="function">
-<dt id="Event: ‘reconnect_error’">
-<code class="descname">Event: ‘reconnect_error’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘reconnect_error’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-reconnect-error-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-reconnect_error">
+<span id="Event: ‘reconnect_error’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘reconnect_error’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-reconnect_error" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <em>(Object)</em> error object</p></li>
 </ul>
@@ -495,9 +412,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-reconnect-failed-1"></span><dl class="function">
-<dt id="Event: ‘reconnect_failed’">
-<code class="descname">Event: ‘reconnect_failed’</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event: ‘reconnect_failed’" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-reconnect-failed-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event-reconnect_failed">
+<span id="Event: ‘reconnect_failed’"></span><span class="sig-name descname"><span class="pre">Event:</span> <span class="pre">‘reconnect_failed’</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event-reconnect_failed" title="永久链接至目标"></a></dt>
 <dd><p>Fired when couldn’t reconnect within <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;reconnect_failed&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="c1">// ...</span>
@@ -506,9 +423,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-ping-1"></span><dl class="function">
-<dt id="Event.ping">
-<code class="descclassname">Event.</code><code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.ping" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-ping-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event.ping">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.ping" title="永久链接至目标"></a></dt>
 <dd><p>Fired when a ping packet is written out to the server.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="c1">// ...</span>
@@ -517,9 +434,9 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-<span class="target" id="event-pong-1"></span><dl class="function">
-<dt id="Event.pong">
-<code class="descclassname">Event.</code><code class="descname">pong</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.pong" title="永久链接至目标">¶</a></dt>
+<span class="target" id="event-pong-1"></span><dl class="js function">
+<dt class="sig sig-object js" id="Event.pong">
+<span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.pong" title="永久链接至目标"></a></dt>
 <dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ms</span></code> <em>(Number)</em> number of ms elapsed since <code class="docutils literal notranslate"><span class="pre">ping</span></code> packet (i.e.: latency).</p></li>
 </ul>
@@ -531,55 +448,37 @@ performance when specified. Can be <code class="docutils literal notranslate"><s
 </div>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Manager.html" class="btn btn-neutral float-right" title="Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="IO.html" class="btn btn-neutral float-left" title="IO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="IO.html" class="btn btn-neutral float-left" title="IO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="Manager.html" class="btn btn-neutral float-right" title="Manager" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, BandCap
-
-    </p>
+    <p>&#169; 版权所有 2019, BandCap.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
