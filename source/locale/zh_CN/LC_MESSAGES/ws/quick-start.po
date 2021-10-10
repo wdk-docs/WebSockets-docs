@@ -2,37 +2,37 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-18 20:30+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/ws/quick-start.rst:2
 msgid "ws: a Node.js WebSocket library"
-msgstr "ws: a Node.js WebSocket library"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:4
 msgid ""
 "ws is a simple to use, blazing fast, and thoroughly tested WebSocket "
 "client and server implementation."
-msgstr "ws是一个简单易用, 快速且经过全面测试的WebSocket客户端和服务器实现."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:6
 msgid ""
 "Passes the quite extensive Autobahn test suite: `server <server-"
 "report>`_, `client <client-report>`_."
-msgstr "通过相当广泛的Autobahn测试套件: `server <server-report>`_, `client <client-report>`_."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:9
 msgid ""
@@ -42,30 +42,28 @@ msgid ""
 "To make the same code work seamlessly on Node.js and the browser, you can"
 " use one of the many wrappers available on npm, like `isomorphic-ws`_."
 msgstr ""
-"此模块在浏览器中不起作用.文档中的客户端是对WebSocket通信中客户端角色的后端的引用.浏览器客户端必须使用本机 `WebSocket`_ "
-"对象.为了使相同的代码在Node.js和浏览器上无缝地工作, 你可以使用npm上可用的众多包装器之一, 比如 `isomorphic-ws`_"
 
 #: ../../source/ws/quick-start.rst:17
 msgid "Protocol support"
-msgstr "协议支持"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:19
 msgid "**HyBi drafts 07-12** (Use the option `protocolVersion: 8`)"
-msgstr "**HyBi drafts 07-12** (使用该选项 `protocolVersion: 8`)"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:20
 msgid ""
 "**HyBi drafts 13-17** (Current default, alternatively option "
 "`protocolVersion: 13`)"
-msgstr "**HyBi drafts 13-17** (当前默认值, 或者选项 `protocolVersion: 13`)"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:23
 msgid "Installing"
-msgstr "安装"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:30
 msgid "Opt-in for performance and spec compliance"
-msgstr "选择性能和规格合规性"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:32
 msgid ""
@@ -75,8 +73,6 @@ msgid ""
 "platforms so you don't necessarily need to have a C++ compiler installed "
 "on your machine."
 msgstr ""
-"有两个可选模块可以与ws模块一起安装.这些模块是二进制插件, 可以改善某些操作.预构建的二进制文件可用于最流行的平台, "
-"因此您不一定需要在计算机上安装C ++编译器."
 
 #: ../../source/ws/quick-start.rst:36
 msgid ""
@@ -84,26 +80,24 @@ msgid ""
 "operations such as masking and unmasking the data payload of the "
 "WebSocket frames."
 msgstr ""
-"`npm install --save-optional bufferutil`: "
-"允许有效地执行诸如屏蔽和取消屏蔽WebSocket帧的数据有效载荷之类的操作."
 
 #: ../../source/ws/quick-start.rst:37
 msgid ""
 "`npm install --save-optional utf-8-validate`: Allows to efficiently check"
 " if a message contains valid UTF-8 as required by the spec."
-msgstr "`npm install --save-optional utf-8-validate`: 允许有效地检查消息是否包含规范要求的有效UTF-8."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:40
 msgid "API docs"
-msgstr "API 文档"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:42
 msgid "See :doc:`ws` for Node.js-like docs for the ws classes."
-msgstr "请参阅 :doc:`ws`, 用于ws类的类似Node.js的文档."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:45
 msgid "WebSocket compression"
-msgstr "WebSocket 压缩"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:47
 msgid ""
@@ -112,8 +106,6 @@ msgid ""
 "and its parameters, and then selectively apply it to the data payloads of"
 " each WebSocket message."
 msgstr ""
-"ws支持 `permessage-deflate扩展 <permessage-deflate>`_ , "
-"它使客户端和服务器能够协商压缩算法及其参数, 然后有选择地将其应用于每个WebSocket消息的数据有效负载."
 
 #: ../../source/ws/quick-start.rst:51
 msgid ""
@@ -121,7 +113,7 @@ msgid ""
 " on the client. It adds a significant overhead in terms of performance "
 "and memory consumption so we suggest to enable it only if it is really "
 "needed."
-msgstr "默认情况下, 在服务器上禁用该扩展, 并在客户端上默认启用该扩展.它在性能和内存消耗方面增加了显着的开销, 因此我们建议仅在真正需要时启用它."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:55
 msgid ""
@@ -132,9 +124,6 @@ msgid ""
 "up a test representative of your workload and ensure Node.js/zlib will "
 "handle it with acceptable performance and memory usage."
 msgstr ""
-"Node.js存在高性能压缩的各种问题, 其中增加的并发性（尤其是在Linux上）会导致 `灾难性内存碎片 <node-zlib-bug>`_ "
-"并降低性能.如果您打算在生产中使用 permessage-deflate, 则值得设置一个代表您的工作负载的测试, 并确保 "
-"Node.js/zlib 将以可接受的性能和内存使用情况处理它."
 
 #: ../../source/ws/quick-start.rst:62
 msgid ""
@@ -143,13 +132,10 @@ msgid ""
 "passed directly into the creation of `raw deflate/inflate streams <node-"
 "zlib-deflaterawdocs>`_."
 msgstr ""
-"可以通过下面定义的选项来完成渗透 - 收缩的调整. 您还可以使用 `zlibDeflateOptions` 和 "
-"`zlibInflateOptions`, 它直接传递给 `raw deflate/inflate streams <node-zlib-"
-"deflaterawdocs>`_ 的创建."
 
 #: ../../source/ws/quick-start.rst:66
 msgid "See `the docs <ws-server-options>`_ for more options."
-msgstr "有关更多选项, 请参阅 `docs <ws-server-options>`_ ."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:96
 msgid ""
@@ -157,126 +143,124 @@ msgid ""
 "the server. To always disable the extension on the client set the "
 "`perMessageDeflate` option to `false`."
 msgstr ""
-"如果在服务器上支持并启用了扩展, 则客户端将仅使用该扩展.要始终禁用客户端上的扩展, "
-"请将`perMessageDeflate`选项设置为`false`."
 
 #: ../../source/ws/quick-start.rst:109
 msgid "Usage examples"
-msgstr "用法示例"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:112
 msgid "Sending and receiving text data"
-msgstr "发送和接收文本数据"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:130
 msgid "Sending binary data"
-msgstr "发送二进制数据"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:150
 msgid "Simple server"
-msgstr "简单服务器"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:167
 msgid "External HTTP/S server"
-msgstr "外部 HTTP/S 服务器"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:193
 msgid "Multiple servers sharing a single HTTP/S server"
-msgstr "多个服务器共享一个 HTTP/S 服务器"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:232
 msgid "Server broadcast"
-msgstr "服务器广播"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:261
 msgid "echo.websocket.org demo"
-msgstr "echo.websocket.org 演示"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:289
 msgid "Other examples"
-msgstr "其他例子"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:291
 msgid ""
 "For a full example with a browser client communicating with a ws server, "
 "see the examples folder."
-msgstr "有关浏览器客户端与ws服务器通信的完整示例, 请参阅示例文件夹."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:293
 msgid "Otherwise, see the test cases."
-msgstr "否则, 请参阅测试用例."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:296
 msgid "FAQ"
-msgstr "常问问题"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:298
 msgid "... How to get the IP address of the client?"
-msgstr "... 如何获取客户端的IP地址？"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:300
 msgid "The remote IP address can be obtained from the raw socket."
-msgstr "远程IP地址可以从原始套接字获得."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:310
 msgid ""
 "When the server runs behind a proxy like NGINX, the de-facto standard is "
 "to use the `X-Forwarded-For` header."
-msgstr "当服务器在像NGINX这样的代理后面运行时，事实上的标准就是使用 `X-Forwarded-For` 标头。"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:318
 msgid "... How to detect and close broken connections?"
-msgstr "... 如何检测和关闭断开的连接？"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:320
 msgid ""
 "Sometimes the link between the server and the client can be interrupted "
 "in a way that keeps both the server and the client unaware of the broken "
 "state of the connection (e.g. when pulling the cord)."
-msgstr "有时, 服务器和客户端之间的链接可以以使得服务器和客户端都不知道连接的断开状态（例如, 拉动线缆时）的方式中断."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:324
 msgid ""
 "In these cases ping messages can be used as a means to verify that the "
 "remote endpoint is still responsive."
-msgstr "在这些情况下, ping消息可用作验证远程端点是否仍然响应的方法."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:352
 msgid ""
 "Pong messages are automatically sent in response to ping messages as "
 "required by the spec."
-msgstr "根据规范的要求, 自动发送Pong消息以响应ping消息."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:354
 msgid ""
 "Just like the server example above your clients might as well lose "
 "connection without knowing it. You might want to add a ping listener on "
 "your clients to prevent that. A simple implementation would be:"
-msgstr "就像上面的服务器示例一样, 客户端可能会在不知情的情况下丢失连接.您可能希望在客户端上添加ping侦听器以防止这种情况发生.一个简单的实现是:"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:381
 msgid "... How to connect via a proxy?"
-msgstr "... 如何通过代理连接？"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:383
 msgid ""
 "Use a custom `http.Agent` implementation like `https-proxy-agent`_ or "
 "`socks-proxy-agent`_ ."
-msgstr "使用自定义 `http.Agent` 实现, 如 `https-proxy-agent`_ 或 `socks-proxy-agent`_ ."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:386
 msgid "Changelog"
-msgstr "更新日志"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:388
 msgid "We're using the GitHub `releases <changelog>`_ for changelog entries."
-msgstr "我们正在使用GitHub `release <changelog>`_ 来更改日志条目."
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:391
 msgid "License"
-msgstr "证书"
+msgstr ""
 
 #: ../../source/ws/quick-start.rst:393
 msgid "[MIT](LICENSE)"
-msgstr "[MIT](证书)"
+msgstr ""
 

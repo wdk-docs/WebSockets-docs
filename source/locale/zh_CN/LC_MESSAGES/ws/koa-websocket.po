@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/ws/koa-websocket.rst:2
+msgid "koa-websocket"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:4
+msgid ""
+"Koa v2 is now the default. For Koa v1 support install with koa-"
+"websocket@2 and see the `legacy` branch."
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:6
+msgid "Supports `ws://` and `wss://`"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:9
+msgid "Installation"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:16
+msgid "Usage"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:46
+msgid ""
+"Example with Let's Encrypt ([the Greenlock "
+"package](https://git.daplie.com/Daplie/greenlock-koa)):"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:70
+msgid "With custom websocket options."
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:92
+msgid "Example"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:94
+msgid "koa router"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:119
+msgid "simple"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:147
+msgid "Test"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:306
+msgid "Source"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:376
+msgid "FAQ"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:378
+msgid "... Get total number of connected clients on each new connection"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:380
+msgid "> https://github.com/websockets/ws/issues/1087"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:387
+msgid "API"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:391
+msgid ""
+"The WebSocket options object just get passed right through to the `new "
+"WebSocketServer(options)` call."
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:393
+msgid ""
+"The optional HTTPS options object gets passed right into "
+"`https.createServer(options)`. If the HTTPS options are passed in, koa-"
+"websocket will use the built-in Node HTTPS server to provide support for "
+"the `wss://` protocol."
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:397
+msgid "License"
+msgstr ""
+
+#: ../../source/ws/koa-websocket.rst:399
+msgid "MIT"
+msgstr ""
+

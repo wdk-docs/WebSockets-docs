@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2021, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 22:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/server-api/Namespace.rst:2
+msgid "Namespace"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:4
+msgid "Represents a pool of sockets connected under a given scope identified by a pathname (eg: ``/chat``)."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:6
+msgid "A client always connects to ``/`` (the main namespace), then potentially connect to other namespaces (while using the same underlying connection)."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:10
+msgid "For the how and why, please take a look at: `Rooms and Namespaces </docs/rooms-and-namespaces/>`_."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:14
+msgid "*(String)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:16
+msgid "The namespace identifier property."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:20
+msgid "*(Object)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:22
+msgid "The hash of ``Socket`` objects that are connected to this namespace, indexed by ``id``."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:26
+msgid "*(Adapter)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:28
+msgid "The ``Adapter`` used for the namespace. Useful when using the ``Adapter`` based on `Redis <https://github.com/socketio/socket.io-redis>`_, as it exposes methods to manage sockets and rooms accross your cluster."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:32
+msgid "the adapter of the main namespace can be accessed with ``io.of('/').adapter``."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:36
+msgid "``room`` *(String)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:37
+msgid "**Returns** ``Namespace`` for chaining"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:39
+msgid "Sets a modifier for a subsequent event emission that the event will only be *broadcasted* to clients that have joined the given ``room``."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:42
+msgid "To emit to multiple rooms, you can call ``to`` several times."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:53
+msgid "Synonym of `namespace.to(room) <#namespace-to-room>`_."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:57
+msgid "``eventName`` *(String)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:58
+msgid "``args``"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:60
+msgid "Emits an event to all connected clients. The following two are equivalent:"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:71
+msgid "acknowledgements are not supported when emitting from namespace."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:75
+msgid "``callback`` *(Function)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:77
+msgid "Gets a list of client IDs connected to this namespace (across all nodes if applicable)."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:87
+msgid "An example to get all clients in namespace’s room:"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:96
+msgid "As with broadcasting, the default is all clients from the default namespace (‘/’):"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:108
+msgid "``fn`` *(Function)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:110
+msgid "Registers a middleware, which is a function that gets executed for every incoming ``Socket``, and receives as parameters the socket and a function to optionally defer execution to the next registered middleware."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:115
+msgid "Errors passed to middleware callbacks are sent as special ``error`` packets to clients."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:127
+msgid "``socket`` *(Socket)* socket connection with client"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:129
+msgid "Fired upon a connection from client."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:143
+msgid "Synonym of `Event: ‘connect’ <#Event-‘connect’>`_."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:147
+msgid "Sets a modifier for a subsequent event emission that the event data may be lost if the clients are not ready to receive messages (because of network slowness or other issues, or because they’re connected through long polling and is in the middle of a request-response cycle)."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:158
+msgid "Specifies whether there is binary data in the emitted data. Increases performance when specified. Can be ``true`` or ``false``."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Namespace.rst:167
+msgid "Sets a modifier for a subsequent event emission that the event data will only be *broadcast* to the current node (when the `Redis adapter <https://github.com/socketio/socket.io-redis>`_ is used)."
+msgstr ""

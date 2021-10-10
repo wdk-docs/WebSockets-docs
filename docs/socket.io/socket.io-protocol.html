@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="发布历史记录" href="_posts/index.html" />
-    <link rel="prev" title="白板演示" href="demos/whiteboard.html" /> 
+    <link rel="next" title="Release history" href="_posts/index.html" />
+    <link rel="prev" title="Whiteboard demos" href="demos/whiteboard.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,32 +41,34 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="get-started.html">聊天 - 入门</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/index.html">文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="client-api/index.html">客户端 API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server-api/index.html">服务端API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demos/index.html">演示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/index.html">Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client-api/index.html">Client API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server-api/index.html">Serve API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/index.html">Demos</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">socket.io-protocol</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#protocol-version">协议版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#parser-api">API解析器</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#parser-encoder">解析器#编码器</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#parser-decoder">解析器#解码器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#protocol-version">Protocol version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parser-api">Parser API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parser-encoder">Parser#Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parser-decoder">Parser#Decoder</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#parser-types">Parser#types</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#packet">Packet</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#transport">运输</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multiplexing">复</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#license">执照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transport">Transport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiplexing">Multiplexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_posts/index.html">Release history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -83,7 +85,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">socket.io 文档</a> &raquo;</li>
+          <li><a href="index.html">socket.io documentation</a> &raquo;</li>
       <li>socket.io-protocol</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/socket.io/socket.io-protocol.rst.txt" rel="nofollow"> 查看页面源码</a>
@@ -96,43 +98,70 @@
              
   <section id="socket-io-protocol">
 <h1>socket.io-protocol<a class="headerlink" href="#socket-io-protocol" title="永久链接至标题"></a></h1>
-<p>本文档描述了Socket.IO协议.有关参考JavaScript实现,请查看 <a class="reference external" href="https://github.com/learnboost/socket.io-parser">socket.io-parser</a>, <a class="reference external" href="https://github.com/learnboost/socket.io-client">socket.io-client</a> 和 <a class="reference external" href="https://github.com/learnboost/socket.io">socket.io</a>.</p>
+<p>This document describes the Socket.IO protocol. For a reference JavaScript
+implementation, take a look at
+<a class="reference external" href="https://github.com/learnboost/socket.io-parser">socket.io-parser</a>,
+<a class="reference external" href="https://github.com/learnboost/socket.io-client">socket.io-client</a>
+and <a class="reference external" href="https://github.com/learnboost/socket.io">socket.io</a>.</p>
 <section id="protocol-version">
-<h2>协议版本<a class="headerlink" href="#protocol-version" title="永久链接至标题"></a></h2>
-<p><strong>当前协议修订:</strong> <cite>4</cite>.</p>
+<h2>Protocol version<a class="headerlink" href="#protocol-version" title="永久链接至标题"></a></h2>
+<p><strong>Current protocol revision:</strong> <cite>4</cite>.</p>
 </section>
 <section id="parser-api">
-<h2>API解析器<a class="headerlink" href="#parser-api" title="永久链接至标题"></a></h2>
+<h2>Parser API<a class="headerlink" href="#parser-api" title="永久链接至标题"></a></h2>
 <section id="parser-encoder">
-<h3>解析器#编码器<a class="headerlink" href="#parser-encoder" title="永久链接至标题"></a></h3>
-<p>将socket.io数据包编码为engine.io-transportable形式的对象.它唯一的公共方法是 Encoder#coding.</p>
+<h3>Parser#Encoder<a class="headerlink" href="#parser-encoder" title="永久链接至标题"></a></h3>
+<p>An object that encodes socket.io packets to engine.io-transportable form.
+Its only public method is Encoder#encode.</p>
 <section id="encoder-encode-object-packet-function-callback">
 <h4>Encoder#encode(Object:packet, Function:callback)<a class="headerlink" href="#encoder-encode-object-packet-function-callback" title="永久链接至标题"></a></h4>
-<p>将 <cite>Packet</cite> 对象编码为engine.io兼容编码数组.如果对象是纯JSON,则数组将包含单个项,即socket.io编码的字符串.如果对象包含二进制数据(ArrayBuffer,Buffer,Blob或File),则数组的第一项将是包含数据包相关元数据的字符串,而JSON将包含占位符,其中二进制数据保存在初始数据包中.其余项目将是原始二进制数据,以填充解码后的占位符.</p>
-<p>调用回调函数时,编码数组作为唯一参数.在socket.io-parser实现中,回调将数组中的每个项目写入engine.io进行传输.任何实现的期望是数组中的每个项目按顺序传输.</p>
+<p>Encodes a <cite>Packet</cite> object into an array of engine.io-compatible encodings.
+If the object is pure JSON the array will contain a single item, a socket.io
+encoded string. If the object contains binary data (ArrayBuffer, Buffer,
+Blob, or File) the array’s first item will be a string with packet-relevant
+metadata and JSON with placeholders where the binary data was held in the
+initial packet. The remaining items will be the raw binary data to fill in
+the placeholders post-decoding.</p>
+<p>The callback function is called with the encoded array as its only argument.
+In the socket.io-parser implementation, the callback writes each item in the
+array to engine.io for transport. The expectation for any implementation is
+that each item in the array is transported sequentially.</p>
 </section>
 </section>
 <section id="parser-decoder">
-<h3>解析器#解码器<a class="headerlink" href="#parser-decoder" title="永久链接至标题"></a></h3>
-<p>将engine.io中的数据解码为完整的socket.io数据包的对象.</p>
-<p>使用解码器的预期工作流程是在从engine.io接收任何编码时(按照接收编码的顺序)调用 <cite>Decoder#add</cite> 方法,并监听解码器的 ‘decoded’ 事件以完全处理解码后的包.</p>
+<h3>Parser#Decoder<a class="headerlink" href="#parser-decoder" title="永久链接至标题"></a></h3>
+<p>An object that decodes data from engine.io into complete socket.io packets.</p>
+<p>The expected workflow for using the Decoder is to call the <cite>Decoder#add</cite>
+method upon receiving any encoding from engine.io (in the sequential order in
+which the encodings are received) and to listen to the Decoder’s ‘decoded’
+events to handle fully decoded packets.</p>
 <section id="decoder-add-object-encoding">
 <h4>Decoder#add(Object:encoding)<a class="headerlink" href="#decoder-add-object-encoding" title="永久链接至标题"></a></h4>
-<p>从engine.io传输解码单个编码对象.在非二进制分组的情况下,一个编码参数用于重建完整分组.如果数据包的类型为 <cite>BINARY_EVENT</cite> 或者 <cite>ACK</cite>,则需要额外的add添加调用,一个用于原始数据包中的每个二进制数据.一旦最终的二进制数据编码被传递给add,就会重建完整的socket.io数据包.</p>
-<p>在完全解码分组之后,解码器发出“解码”事件(通过发射器),其中解码的分组作为唯一参数.此事件的监听者应将数据包视为准备就绪.</p>
+<p>Decodes a single encoded object from engine.io transport. In the case of a
+non-binary packet, the one encoding argument is used to reconstruct the full
+packet. If the packet is of type <cite>BINARY_EVENT</cite> or <cite>ACK</cite>, then additional calls
+to add are expected, one for each piece of binary data in the original packet.
+Once the final binary data encoding is passed to add, the full socket.io
+packet is reconstructed.</p>
+<p>After a packet is fully decoded, the Decoder emits a ‘decoded’ event (via
+Emitter) with the decoded packet as the sole argument. Listeners to this event
+should treat the packet as ready-to-go.</p>
 </section>
 <section id="decoder-destroy">
 <h4>Decoder#destroy()<a class="headerlink" href="#decoder-destroy" title="永久链接至标题"></a></h4>
-<p>释放Decoder实例的资源.应该在断开中间解码等情况下调用,以防止内存泄漏.</p>
+<p>Deallocates the Decoder instance’s resources. Should be called in the event
+of a disconnect mid-decoding, etc. to prevent memory leaks.</p>
 </section>
 </section>
 <section id="parser-types">
 <h3>Parser#types<a class="headerlink" href="#parser-types" title="永久链接至标题"></a></h3>
-<p>数据包类型键的数组.</p>
+<p>Array of packet type keys.</p>
 </section>
 <section id="packet">
 <h3>Packet<a class="headerlink" href="#packet" title="永久链接至标题"></a></h3>
-<p>每个数据包都表示为一个带有 <cite>nsp</cite> 键的 vanilla <cite>Object</cite>, 它指示它所属的命名空间(参见 “Multiplexing”)和一个 <cite>type</cite> 键,它可以是以下之一:</p>
+<p>Each packet is represented as a vanilla <cite>Object</cite> with a <cite>nsp</cite> key that
+indicates what namespace it belongs to (see “Multiplexing”) and a
+<cite>type</cite> key that can be one of the following:</p>
 <ul class="simple">
 <li><p><cite>Packet#CONNECT</cite> (<cite>0</cite>)</p></li>
 <li><p><cite>Packet#DISCONNECT</cite> (<cite>1</cite>)</p></li>
@@ -145,56 +174,73 @@
 <section id="event">
 <h4>EVENT<a class="headerlink" href="#event" title="永久链接至标题"></a></h4>
 <ul class="simple">
-<li><p><cite>data</cite> (<cite>Array</cite>) 参数列表, 第一个是事件名称. 参数可以包含任何类型的可以导致 <cite>JSON</cite> 解码的字段, 包括任意大小的对象和数组.</p></li>
-<li><p><cite>id</cite> (<cite>Number</cite>) 如果存在 <cite>id</cite> 标识符, 则表示服务器希望确认接收到该事件.</p></li>
+<li><p><cite>data</cite> (<cite>Array</cite>) a list of arguments, the first of which is the event name. Arguments can contain any type of field that can result of <cite>JSON</cite> decoding, including objects and arrays of arbitrary size.</p></li>
+<li><p><cite>id</cite> (<cite>Number</cite>) if the <cite>id</cite> identifier is present, it indicates that the server wishes to be acknowledged of the reception of this event.</p></li>
 </ul>
 </section>
 <section id="binary-event">
 <h4>BINARY_EVENT<a class="headerlink" href="#binary-event" title="永久链接至标题"></a></h4>
 <ul class="simple">
-<li><p><cite>data</cite> (<cite>Array</cite>) 参见 <cite>EVENT</cite> <cite>data</cite>, 但除此之外, 任何参数都可能包含非JSON任意二进制数据. 对于编码, 二进制数据被认为是Buffer, ArrayBuffer, Blob或File. 解码时, 所有二进制数据服务器端都是Buffer;在现代客户端上, 二进制数据是一个ArrayBuffer. 在不支持二进制文件的旧浏览器中, 每个二进制数据项都被替换为如下对象: <cite>{base64:true, data:&lt;base64_bin_encoding&gt;}</cite>. 当最初解码“BINARY_EVENT”或“ACK”数据包时, 所有二进制数据项都将是占位符, 并且将通过对“Decoder＃add”的附加调用来填充.</p></li>
+<li><p><cite>data</cite> (<cite>Array</cite>) see <cite>EVENT</cite> <cite>data</cite>, but with addition that any of the arguments may contain non-JSON arbitrary binary data. For encoding, binary data is considered either a Buffer, ArrayBuffer, Blob, or File. When decoding, all binary data server-side is a Buffer; on modern clients binary data is an ArrayBuffer. On older browsers that don’t support binary, every binary data item is replaced with an object like so: <cite>{base64: true, data: &lt;base64_bin_encoding&gt;}</cite>. When a <cite>BINARY_EVENT</cite> or <cite>ACK</cite> packet is initially decoded, all of the binary data items will be placeholders, and will be filled by additional calls to <cite>Decoder#add</cite>.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) see <cite>EVENT</cite> <cite>id</cite>.</p></li>
 </ul>
 </section>
 <section id="ack">
 <h4>ACK<a class="headerlink" href="#ack" title="永久链接至标题"></a></h4>
 <ul class="simple">
-<li><p><cite>data</cite> (<cite>Array</cite>) 参见 <cite>EVENT</cite> <cite>data</cite>. 编码为字符串，如上面的“EVENT”类型. 在没有使用二进制数据调用ACK函数时应该使用.</p></li>
+<li><p><cite>data</cite> (<cite>Array</cite>) see <cite>EVENT</cite> <cite>data</cite>. Encoded as string like the <cite>EVENT</cite> type above. Should be used when an ACK function is not called with binary data.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) see <cite>EVENT</cite> <cite>id</cite>.</p></li>
 </ul>
 </section>
 <section id="binary-ack">
 <h4>BINARY_ACK<a class="headerlink" href="#binary-ack" title="永久链接至标题"></a></h4>
 <ul class="simple">
-<li><p><cite>data</cite> (<cite>Array</cite>) see <cite>ACK</cite> <cite>data</cite>. 当ACK函数的参数包含二进制数据时使用;以上面记录的 <cite>BINARY_EVENT</cite> 样式对数据包进行编码.</p></li>
+<li><p><cite>data</cite> (<cite>Array</cite>) see <cite>ACK</cite> <cite>data</cite>. Used when the arguments for an ACK function contain binary data; encodes packet in the <cite>BINARY_EVENT</cite> style documented above.</p></li>
 <li><p><cite>id</cite> (<cite>Number</cite>) see <cite>EVENT</cite> <cite>id</cite>.</p></li>
 </ul>
 </section>
 <section id="error">
-<h4>错误<a class="headerlink" href="#error" title="永久链接至标题"></a></h4>
+<h4>ERROR<a class="headerlink" href="#error" title="永久链接至标题"></a></h4>
 <ul class="simple">
-<li><p><cite>data</cite> (<cite>Mixed</cite>) 错误数据</p></li>
+<li><p><cite>data</cite> (<cite>Mixed</cite>) error data</p></li>
 </ul>
 </section>
 </section>
 </section>
 <section id="transport">
-<h2>运输<a class="headerlink" href="#transport" title="永久链接至标题"></a></h2>
-<p>socket.io协议可以通过各种传输方式提供. <a class="reference external" href="http://github.com/learnboost/socket.io-client">socket.io-client</a></p>
-<p>是通过 <a class="reference external" href="http://github.com/learnboost/engine.io-client">engine.io-client</a> 实现浏览器和Node.JS的协议.</p>
-<p><a class="reference external" href="http://github.com/learnboost/socket.io">socket.io</a> 是 <a class="reference external" href="http://github.com/learnboost/engine.io">engine.io</a> 上协议的服务器实现.</p>
+<h2>Transport<a class="headerlink" href="#transport" title="永久链接至标题"></a></h2>
+<p>The socket.io protocol can be delivered over a variety of transports.
+<a class="reference external" href="http://github.com/learnboost/socket.io-client">socket.io-client</a></p>
+<p>is the implementation of the protocol for the browser and Node.JS over
+<a class="reference external" href="http://github.com/learnboost/engine.io-client">engine.io-client</a>.</p>
+<p><a class="reference external" href="http://github.com/learnboost/socket.io">socket.io</a> is the server
+implementation of the protocol over
+<a class="reference external" href="http://github.com/learnboost/engine.io">engine.io</a>.</p>
 </section>
 <section id="multiplexing">
-<h2>复<a class="headerlink" href="#multiplexing" title="永久链接至标题"></a></h2>
-<p>Socket.IO具有内置的多路复用支持,这意味着每个 <cite>命名空间</cite>, 由路径字符串(如 <cite>/this</cite>)标识. <cite>Packet</cite> 对象中的对应键是 <cite>nsp</cite>.</p>
-<p>当建立socket.io传输连接时,假定连接尝试到 <cite>/</cite> 命名空间(即:服务器的行为就好像客户端已将 <cite>CONNECT</cite> 包发送到 <cite>/</cite> 命名空间).</p>
-<p>为了支持在同一传输下多路复用多个套接字,客户端可以将额外的 <cite>CONNECT</cite> 数据包发送到任意名称空间URI(例如: <cite>/another</cite>).</p>
-<p>当服务器以 <cite>CONNECT</cite> 数据包响应相应的命名空间时,多路复用的套接字被认为是连接的.</p>
-<p>或者,服务器可以使用 <cite>ERROR</cite> 数据包进行响应,以指示多路复用的套接字连接错误,例如身份验证错误.相关的错误有效负载根据每个错误而变化,并且可以是用户定义的.</p>
-<p>在服务器接收到给定 <cite>nsp</cite> 的 <cite>CONNECT</cite> 包后,客户端可以发送和接收 <cite>EVENT</cite> 包.如果任何一方接收到具有 <cite>id</cite> 字段的 <cite>EVENT</cite> 分组,则期望“ACK”分组确认所述分组的接收.</p>
+<h2>Multiplexing<a class="headerlink" href="#multiplexing" title="永久链接至标题"></a></h2>
+<p>Socket.IO has built-in multiplexing support, which means that each packet
+always belongs to a given <cite>namespace</cite>, identified by a path string (like
+<cite>/this</cite>). The corresponding key in the <cite>Packet</cite> object is <cite>nsp</cite>.</p>
+<p>When the socket.io transport connection is established, a connection
+attempt to the <cite>/</cite> namespace is assumed (ie: the server behaves as if
+the client had sent a <cite>CONNECT</cite> packet to the <cite>/</cite> namespace).</p>
+<p>In order to support multiplexing of multiple sockets under
+the same transport, additional <cite>CONNECT</cite> packets can be sent by the
+client to arbitrary namespace URIs (eg: <cite>/another</cite>).</p>
+<p>When the server responds with a <cite>CONNECT</cite> packet to the corresponding
+namespace, the multiplexed socket is considered connected.</p>
+<p>Alternatively, the server can respond with an <cite>ERROR</cite> packet to indicate
+a multiplexed socket connection error, such as authentication errors.
+The associated error payload varies according to each error, and can
+be user-defined.</p>
+<p>After a <cite>CONNECT</cite> packet is received by the server for a given <cite>nsp</cite>,
+the client can then send and receive <cite>EVENT</cite> packets. If any of the
+parties receives an <cite>EVENT</cite> packet with an <cite>id</cite> field, an <cite>ACK</cite> packet is
+expected to confirm the reception of said packet.</p>
 </section>
 <section id="license">
-<h2>执照<a class="headerlink" href="#license" title="永久链接至标题"></a></h2>
+<h2>License<a class="headerlink" href="#license" title="永久链接至标题"></a></h2>
 <p>MIT</p>
 </section>
 </section>
@@ -203,14 +249,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="demos/whiteboard.html" class="btn btn-neutral float-left" title="白板演示" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="_posts/index.html" class="btn btn-neutral float-right" title="发布历史记录" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="demos/whiteboard.html" class="btn btn-neutral float-left" title="Whiteboard demos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="_posts/index.html" class="btn btn-neutral float-right" title="Release history" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

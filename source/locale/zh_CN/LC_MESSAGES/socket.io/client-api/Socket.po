@@ -2,21 +2,21 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 11:04+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/client-api/Socket.rst:3
 msgid "Socket"
@@ -216,85 +216,4 @@ msgstr ""
 #: ../../source/socket.io/client-api/Socket.rst:330
 msgid "Fired when a pong is received from the server."
 msgstr ""
-
-#~ msgid "socket.id"
-#~ msgstr ""
-
-#~ msgid "*(String)*"
-#~ msgstr ""
-
-#~ msgid "socket.connected"
-#~ msgstr ""
-
-#~ msgid "socket.disconnected"
-#~ msgstr ""
-
-#~ msgid "socket.open()"
-#~ msgstr ""
-
-#~ msgid "socket.connect()"
-#~ msgstr ""
-
-#~ msgid "socket.send([…args][, ack])"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Sends a ``message`` event. See "
-#~ "`socket.emit(eventName[, …args][, ack]) "
-#~ "<#socketemiteventname-args-ack>`_."
-#~ msgstr ""
-
-#~ msgid "socket.emit(eventName[, …args][, ack])"
-#~ msgstr ""
-
-#~ msgid "socket.on(eventName, callback)"
-#~ msgstr ""
-
-#~ msgid "socket.compress(value)"
-#~ msgstr ""
-
-#~ msgid "socket.binary(value)"
-#~ msgstr ""
-
-#~ msgid "socket.close()"
-#~ msgstr ""
-
-#~ msgid "socket.disconnect()"
-#~ msgstr ""
-
-#~ msgid "Event: ‘connect’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘connect_error’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘connect_timeout’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘error’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘disconnect’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘reconnect’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘reconnect_attempt’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘reconnecting’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘reconnect_error’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘reconnect_failed’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘ping’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘pong’"
-#~ msgstr ""
 

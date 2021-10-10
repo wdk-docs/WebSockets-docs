@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>使用多个节点 &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Using multiple nodes &mdash; WebSockets Docs v2019.0613 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="记录和调试" href="logging-and-debugging.html" />
-    <link rel="prev" title="从0.9迁移" href="migrating-from-0-9.html" /> 
+    <link rel="next" title="Logging and debugging" href="logging-and-debugging.html" />
+    <link rel="prev" title="Migrating from 0.9" href="migrating-from-0-9.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,38 +41,40 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="info.html">介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">房间和名称空间</a></li>
-<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">从0.9迁移</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">使用多个节点</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sticky-load-balancing">粘性负载平衡</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nginx-configuration">NginX配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#apache-httpd-configuration">Apache HTTPD 配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#haproxy-configuration">HAProxy 配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-node-js-cluster">使用 Node.JS 群集</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#passing-events-between-nodes">在节点之间传递事件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">introduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using multiple nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sticky-load-balancing">Sticky load balancing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nginx-configuration">NginX configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apache-httpd-configuration">Apache HTTPD configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#haproxy-configuration">HAProxy configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-node-js-cluster">Using Node.JS Cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passing-events-between-nodes">Passing events between nodes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">记录和调试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html">内幕</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">在引擎盖下</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faq.html">常见问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Internals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">Serve API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">Release history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -89,9 +91,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-          <li><a href="index.html">文档</a> &raquo;</li>
-      <li>使用多个节点</li>
+          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
+          <li><a href="index.html">Docs</a> &raquo;</li>
+      <li>Using multiple nodes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/docs/using-multiple-nodes.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -102,38 +104,63 @@
            <div itemprop="articleBody">
              
   <section id="using-multiple-nodes">
-<h1>使用多个节点<a class="headerlink" href="#using-multiple-nodes" title="永久链接至标题"></a></h1>
+<h1>Using multiple nodes<a class="headerlink" href="#using-multiple-nodes" title="永久链接至标题"></a></h1>
 <section id="sticky-load-balancing">
-<h2>粘性负载平衡<a class="headerlink" href="#sticky-load-balancing" title="永久链接至标题"></a></h2>
-<p>如果计划在不同进程或计算机之间分配连接负载,则必须确保与特定会话ID关联的请求连接到发起它们的进程.</p>
-<p>这是由于某些传输,如XHR轮询或JSONP轮询,依赖于在“套接字”的生命周期内触发多个请求.未能启用粘性平衡将导致可怕的:</p>
+<h2>Sticky load balancing<a class="headerlink" href="#sticky-load-balancing" title="永久链接至标题"></a></h2>
+<p>If you plan to distribute the load of connections among different
+processes or machines, you have to make sure that requests associated
+with a particular session id connect to the process that originated
+them.</p>
+<p>This is due to certain transports like XHR Polling or JSONP Polling
+relying on firing several requests during the lifetime of the “socket”.
+Failing to enable sticky balancing will result in the dreaded:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span> <span class="nx">during</span> <span class="nx">WebSocket</span> <span class="nx">handshake</span><span class="o">:</span> <span class="nx">Unexpected</span> <span class="nx">response</span> <span class="nx">code</span><span class="o">:</span> <span class="mf">400</span>
 </pre></div>
 </div>
-<p>这意味着升级请求被发送到不知道给定套接字ID的节点,因此发送HTTP 400响应.</p>
-<p>为了说明为什么需要这样做,请考虑向所有连接的客户端发送事件的示例:</p>
+<p>Which means that the upgrade request was sent to a node which did not
+know the given socket id, hence the HTTP 400 response.</p>
+<p>To illustrate why this is needed, consider the example of emitting an
+event to all connected clients:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;all sockets&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>有可能这些客户端中的某些客户端可能有一个活跃的双向通信通道,如“WebSocket”,我们可以立即写入,但其中一些可能正在使用长轮询.</p>
-<p>如果他们使用长轮询,他们可能会或可能不会发送我们可以写入的请求.他们可能“介于”这些请求之间.在这些情况下,这意味着我们必须在此过程中缓冲消息.为了让客户端在发送请求时成功声明这些消息,最简单的方法是让他连接到路由到同一个进程.</p>
-<p>如上所述,``WebSocket`` 传输没有此限制,因为底层TCP连接在客户端和给定服务器之间保持打开.这就是为什么你可能会找到一些只使用 <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> 传输的建议:</p>
+<p>Chances are that some of those clients might have an active
+bi-directional communication channel like <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> that we can
+write to immediately, but some of them might be using long-polling.</p>
+<p>If they’re using long polling, they might or might not have sent a
+request that we can write to. They could be “in between” those requests.
+In those situations, it means we have to buffer messages in the process.
+In order for the client to successfully claim those messages when he
+sends his request, the easiest way is for him to connect to be routed to
+that same process.</p>
+<p>As noted above, <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> transport do not have this limitation,
+since the underlying TCP connection is kept open between the client and
+the given server. That’s why you might find some suggestions to only use
+the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> transport:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;https://io.yourhost.com&#39;</span><span class="p">,</span> <span class="p">{</span>
   <span class="c1">// WARNING: in that case, there is no fallback to long-polling</span>
   <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;websocket&#39;</span> <span class="p">]</span> <span class="c1">// or [ &#39;websocket&#39;, &#39;polling&#39; ], which is the same thing</span>
 <span class="p">})</span>
 </pre></div>
 </div>
-<p>两者都意味着当无法建立websocket连接时,长时间轮询没有 <strong>FALLBACK</strong>,这实际上是Socket.IO的关键特性之一.在这种情况下,您应该考虑使用原始的 <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">WebSocket</a>,或者像 <a class="reference external" href="https://github.com/appuri/robust-websocket">robust-websocket</a>.</p>
-<p>要实现粘性会话,有两个主要解决方案:</p>
+<p>Both means that there is <strong>NO FALLBACK</strong> to long-polling when the
+websocket connection cannot be established, which is in fact one of the
+key feature of Socket.IO. In that case, you should maybe consider using
+raw
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">WebSocket</a>,
+or a thin wrapper like
+<a class="reference external" href="https://github.com/appuri/robust-websocket">robust-websocket</a>.</p>
+<p>To achieve sticky-session, there are two main solutions:</p>
 <ul class="simple">
-<li><p>根据客户端的原始地址路由客户端</p></li>
-<li><p>基于cookie路由客户端</p></li>
+<li><p>routing clients based on their originating address</p></li>
+<li><p>routing clients based on a cookie</p></li>
 </ul>
 </section>
 <section id="nginx-configuration">
-<h2>NginX配置<a class="headerlink" href="#nginx-configuration" title="永久链接至标题"></a></h2>
-<p>在 <code class="docutils literal notranslate"><span class="pre">nginx.conf</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">{}</span></code> 部分中,你可以声明一个 <code class="docutils literal notranslate"><span class="pre">upstream</span></code> 部分,其中包含一个Socket.IO进程列表,你希望在它之间平衡负载:</p>
+<h2>NginX configuration<a class="headerlink" href="#nginx-configuration" title="永久链接至标题"></a></h2>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">{</span> <span class="pre">}</span></code> section of your <code class="docutils literal notranslate"><span class="pre">nginx.conf</span></code> file, you can
+declare a <code class="docutils literal notranslate"><span class="pre">upstream</span></code> section with a list of Socket.IO process you want
+to balance load between:</p>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">http</span> <span class="p">{</span>
   <span class="kn">server</span> <span class="p">{</span>
     <span class="kn">listen</span> <span class="mi">3000</span><span class="p">;</span>
@@ -163,12 +190,16 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>注意 <code class="docutils literal notranslate"><span class="pre">ip_hash</span></code> 指令,指示连接将是粘滞的.</p>
-<p>确保你还在最顶层配置 <code class="docutils literal notranslate"><span class="pre">worker_processes</span></code> 来表示NginX应该使用多少工人.您可能还想调查 <code class="docutils literal notranslate"><span class="pre">events</span> <span class="pre">{}</span></code> 块中的 <code class="docutils literal notranslate"><span class="pre">worker_connections</span></code> 设置.</p>
-<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx">例</a></p>
+<p>Notice the <code class="docutils literal notranslate"><span class="pre">ip_hash</span></code> instruction that indicates the connections will
+be sticky.</p>
+<p>Make sure you also configure <code class="docutils literal notranslate"><span class="pre">worker_processes</span></code> in the topmost level
+to indicate how many workers NginX should use. You might also want to
+look into tweaking the <code class="docutils literal notranslate"><span class="pre">worker_connections</span></code> setting within the
+<code class="docutils literal notranslate"><span class="pre">events</span> <span class="pre">{</span> <span class="pre">}</span></code> block.</p>
+<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx">Example</a></p>
 </section>
 <section id="apache-httpd-configuration">
-<h2>Apache HTTPD 配置<a class="headerlink" href="#apache-httpd-configuration" title="永久链接至标题"></a></h2>
+<h2>Apache HTTPD configuration<a class="headerlink" href="#apache-httpd-configuration" title="永久链接至标题"></a></h2>
 <div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">Header</span> add Set-Cookie <span class="s2">&quot;SERVERID=sticky.%{BALANCER_WORKER_ROUTE}e; path=/&quot;</span> env=BALANCER_ROUTE_CHANGED
 
 <span class="nt">&lt;Proxy</span> <span class="s">&quot;balancer://nodes_polling&quot;</span><span class="nt">&gt;</span>
@@ -194,10 +225,10 @@
 <span class="nb">ProxyTimeout</span> <span class="m">3</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd">例</a></p>
+<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd">Example</a></p>
 </section>
 <section id="haproxy-configuration">
-<h2>HAProxy 配置<a class="headerlink" href="#haproxy-configuration" title="永久链接至标题"></a></h2>
+<h2>HAProxy configuration<a class="headerlink" href="#haproxy-configuration" title="永久链接至标题"></a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span># Reference: http://blog.haproxy.com/2012/11/07/websockets-load-balancing-with-haproxy/
 
 listen chat
@@ -213,33 +244,51 @@ backend nodes
   server app03 app03:3000 check cookie app03
 </pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy">例</a></p>
+<p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy">Example</a></p>
 </section>
 <section id="using-node-js-cluster">
-<h2>使用 Node.JS 群集<a class="headerlink" href="#using-node-js-cluster" title="永久链接至标题"></a></h2>
-<p>就像NginX一样, Node.JS通过 <code class="docutils literal notranslate"><span class="pre">cluster</span></code> 模块提供内置的集群支持.</p>
-<p>Fedor Indutny创建了一个名为 <a class="reference external" href="https://github.com/indutny/sticky-session">sticky session</a> 的模块,确保文件描述符(即:连接)基于原始的 <code class="docutils literal notranslate"><span class="pre">remoteAddress</span></code> 进行路由(即: IP).请注意,这可能会导致路由不平衡,具体取决于散列方法.</p>
-<p>您还可以根据群集工作程序ID为群集的每个工作人员分配不同的端口,并使用上面可以找到的配置平衡负载.</p>
+<h2>Using Node.JS Cluster<a class="headerlink" href="#using-node-js-cluster" title="永久链接至标题"></a></h2>
+<p>Just like NginX, Node.JS comes with built-in clustering support through
+the <code class="docutils literal notranslate"><span class="pre">cluster</span></code> module.</p>
+<p>Fedor Indutny has created a module called <a class="reference external" href="https://github.com/indutny/sticky-session">sticky
+session</a> that ensures file
+descriptors (ie: connections) are routed based on the originating
+<code class="docutils literal notranslate"><span class="pre">remoteAddress</span></code> (ie: IP). Please note that this might lead to
+unbalanced routing, depending on the hashing method.</p>
+<p>You could also assign a different port to each worker of the cluster,
+based on the cluster worker ID, and balance the load with the
+configuration that you can find above.</p>
 </section>
 <section id="passing-events-between-nodes">
-<h2>在节点之间传递事件<a class="headerlink" href="#passing-events-between-nodes" title="永久链接至标题"></a></h2>
-<p>既然你有多个Socket.IO节点接受连接,如果你想向每个人(甚至是某个 <a class="reference external" href="/docs/rooms-and-namespaces/#Rooms">房间</a> 中的每个人)广播事件,你需要一些在进程或计算机之间传递消息的方法.</p>
-<p>负责路由消息的接口就是我们所说的“适配器”.您可以在 <a class="reference external" href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a> (通过继承)上实现自己的,或者您可以使用我们提供的那个 <a class="reference external" href="https://redis.io/">Redis</a>: <a class="reference external" href="https://github.com/socketio/socket.io-redis">socket.io-redis</a>:</p>
+<h2>Passing events between nodes<a class="headerlink" href="#passing-events-between-nodes" title="永久链接至标题"></a></h2>
+<p>Now that you have multiple Socket.IO nodes accepting connections, if you
+want to broadcast events to everyone (or even everyone in a certain
+<a class="reference external" href="/docs/rooms-and-namespaces/#Rooms">room</a>) you’ll need some way of
+passing messages between processes or computers.</p>
+<p>The interface in charge of routing messages is what we call the
+<code class="docutils literal notranslate"><span class="pre">Adapter</span></code>. You can implement your own on top of the
+<a class="reference external" href="https://github.com/socketio/socket.io-adapter">socket.io-adapter</a>
+(by inheriting from it) or you can use the one we provide on top of
+<a class="reference external" href="https://redis.io/">Redis</a>:
+<a class="reference external" href="https://github.com/socketio/socket.io-redis">socket.io-redis</a>:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
 <span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">6379</span> <span class="p">}));</span>
 </pre></div>
 </div>
-<p>然后是以下电话:</p>
+<p>Then the following call:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;all sockets&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>将通过Redis的 <a class="reference external" href="https://redis.io/topics/pubsub">Pub/Sub 机制</a> 广播到每个节点.</p>
+<p>will be broadcast to every node through the <a class="reference external" href="https://redis.io/topics/pubsub">Pub/Sub
+mechanism</a> of Redis.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>使用Redis适配器时仍需要粘性会话.</p>
+<p>sticky-session is still needed when using the Redis adapter.</p>
 </div>
-<p>如果你想从nonsocket.io进程向它传递消息,你应该看看 <a class="reference external" href="/docs/rooms-and-namespaces/#Sending-messages-from-the-outside-world">“发送来自外部世界的消息”</a>.</p>
+<p>If you want to pass messages to it from non-socket.io processes, you
+should look into <a class="reference external" href="/docs/rooms-and-namespaces/#Sending-messages-from-the-outside-world">“Sending messages from the
+outside-world”</a>.</p>
 </section>
 </section>
 
@@ -247,14 +296,14 @@ backend nodes
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="migrating-from-0-9.html" class="btn btn-neutral float-left" title="从0.9迁移" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="logging-and-debugging.html" class="btn btn-neutral float-right" title="记录和调试" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="migrating-from-0-9.html" class="btn btn-neutral float-left" title="Migrating from 0.9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="logging-and-debugging.html" class="btn btn-neutral float-right" title="Logging and debugging" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

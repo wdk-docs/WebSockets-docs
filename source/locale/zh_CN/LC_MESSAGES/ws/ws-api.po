@@ -1,0 +1,1091 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 22:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/ws/ws-api.rst:2
+msgid "WS API Document"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:5
+msgid "Class: WebSocketServer"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:9
+msgid "This class represents a WebSocket server. It extends the `EventEmitter`."
+msgstr "本类代表一个WebSocket服务。它扩展自 `EventEmitter`"
+
+#: ../../source/ws/ws-api.rst:11
+msgid "new WebSocket.Server(options[, callback])"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:13
+msgid ""
+"Create a new server instance. One of `port`, `server` or `noServer` must "
+"be provided or an error is thrown."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst
+msgid "参数"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:15
+msgid "The hostname where to bind the server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:16
+msgid "The port where to bind the server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:17
+msgid "The maximum length of the queue of pending connections."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:18
+msgid "A pre-created Node.js HTTP/S server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:19
+msgid ""
+"A function which can be used to validate incoming connections. See "
+"description below."
+msgstr "一个用来验证接入有效性的函数。详情如下："
+
+#: ../../source/ws/ws-api.rst:20
+msgid ""
+"A function which can be used to handle the WebSocket subprotocols. See "
+"description below."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:21
+msgid "Accept only connections matching this path."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:22
+msgid "Enable no server mode."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:23
+msgid "Specifies whether or not to track clients."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:24
+msgid ""
+"Enable/disable permessage-deflate.  `perMessageDeflate` can be used to "
+"control the behavior of `permessage-deflate extension <permessage-"
+"deflate>`_. he extension is disabled when `false` (default value).  If an"
+" object is provided then that is extension parameters:    - "
+"**serverNoContextTakeover**: (*Boolean*) - Whether to use context "
+"takeover or not.   - **clientNoContextTakeover**: (*Boolean*) - "
+"Acknowledge disabling of client context takeover.   - "
+"**serverMaxWindowBits**: (*Number*) - The value of `windowBits`.   - "
+"**clientMaxWindowBits**: (*Number*) - Request a custom client window "
+"size.   - **zlibDeflateOptions**: (*Object*) - Additional options <zlib-"
+"options>`_ to pass to zlib on deflate.   - **zlibInflateOptions**: "
+"(*Object*) - Additional options <zlib-options>`_ to pass to zlib on "
+"inflate.   - **threshold**: (*Number*) - Payloads smaller than this will "
+"not be compressed. Defaults to 1024 bytes.   - **concurrencyLimit**: "
+"(*Number*) - The number of concurrent calls to zlib. Calls above this "
+"limit will be queued. Default 10. You usually won't need to touch this "
+"option. See `this issue <concurrency-limit>`_ for more details."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:24
+msgid "Enable/disable permessage-deflate."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:26
+msgid ""
+"`perMessageDeflate` can be used to control the behavior of `permessage-"
+"deflate extension <permessage-deflate>`_. he extension is disabled when "
+"`false` (default value)."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:29
+msgid "If an object is provided then that is extension parameters:"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:31
+msgid ""
+"**serverNoContextTakeover**: (*Boolean*) - Whether to use context "
+"takeover or not."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:32
+msgid ""
+"**clientNoContextTakeover**: (*Boolean*) - Acknowledge disabling of "
+"client context takeover."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:33
+msgid "**serverMaxWindowBits**: (*Number*) - The value of `windowBits`."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:34
+msgid "**clientMaxWindowBits**: (*Number*) - Request a custom client window size."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:35
+msgid ""
+"**zlibDeflateOptions**: (*Object*) - Additional options <zlib-options>`_ "
+"to pass to zlib on deflate."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:36
+msgid ""
+"**zlibInflateOptions**: (*Object*) - Additional options <zlib-options>`_ "
+"to pass to zlib on inflate."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:37
+msgid ""
+"**threshold**: (*Number*) - Payloads smaller than this will not be "
+"compressed. Defaults to 1024 bytes."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:38
+msgid ""
+"**concurrencyLimit**: (*Number*) - The number of concurrent calls to "
+"zlib. Calls above this limit will be queued. Default 10. You usually "
+"won't need to touch this option. See `this issue <concurrency-limit>`_ "
+"for more details."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:40 ../../source/ws/ws-api.rst:208
+msgid "The maximum allowed message size in bytes."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:41
+msgid ""
+"`callback` will be added as a listener for the `listening` event on the "
+"HTTP server when not operating in \"noServer\" mode."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:48
+msgid ""
+"An HTTP server is automatically created, started, and used if `port` is "
+"set."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:50
+msgid ""
+"To use an external HTTP/S server instead, specify only `server` or "
+"`noServer`. In this case the HTTP/S server must be started manually. The "
+"\"noServer\" mode allows the WebSocket server to be completly detached "
+"from the HTTP/S server. This makes it possible, for example, to share a "
+"single HTTP/S server between multiple WebSocket servers."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:54
+msgid "If `verifyClient` is not set then the handshake is automatically accepted."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:79
+msgid ""
+"The list of WebSocket subprotocols indicated by the client in the `Sec-"
+"WebSocket-Protocol` header."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:80 ../../source/ws/ws-api.rst:155
+#: ../../source/ws/ws-api.rst:169
+msgid "The client HTTP GET request."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:82
+msgid ""
+"The returned value sets the value of the `Sec-WebSocket-Protocol` header "
+"in the HTTP 101 response."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:84
+msgid "If returned value is `false` the header is not added in the response."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:86
+msgid ""
+"If `handleProtocols` is not set then the first of the client's requested "
+"subprotocols is used."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:89
+msgid ""
+"If a property is empty then either an offered configuration or a default "
+"value is used. When sending a fragmented message the length of the first "
+"fragment is compared to the threshold."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:91
+msgid "This determines if compression is used for the entire message."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:97
+msgid ""
+"Emitted when the server closes. This event depends on the `'close'` event"
+" of HTTP server only when it is created internally."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:99
+msgid "In all other cases, the event is emitted independently."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:103
+msgid "Emitted when the handshake is complete."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:105
+msgid ""
+"Useful for parsing authority headers, cookie headers, and other "
+"information."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:108
+msgid "the http GET request sent by the client."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:114
+msgid "Emitted when an error occurs on the underlying server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:118
+msgid ""
+"Emitted before the response headers are written to the socket as part of "
+"the handshake."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:120
+msgid "This allows you to inspect/modify the headers before they are sent."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:129
+msgid "Emitted when the underlying server has been bound."
+msgstr "当底层服务器被绑定时发出。"
+
+#: ../../source/ws/ws-api.rst:133
+msgid ""
+"Returns an object with `port`, `family`, and `address` properties "
+"specifying the bound address, the address family name, and port of the "
+"server as reported by the operating system if listening on an IP socket."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:135
+msgid ""
+"If the server is listening on a pipe or UNIX domain socket, the name is "
+"returned as a string."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:139
+msgid ""
+"Please note that this property is only added when the `clientTracking` is"
+" truthy."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst
+msgid "return"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:141
+msgid "A set that stores all connected clients."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst
+msgid "rtype"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:142
+msgid "Set"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:149
+msgid ""
+"Close the HTTP server if created internally, terminate all clients and "
+"call callback when done."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:151
+msgid ""
+"If an external HTTP server is used via the `server` or `noServer` "
+"constructor options, it must be closed manually."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:156
+msgid "The network socket between the server and client."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:157
+msgid "The first packet of the upgraded stream."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:158
+msgid ""
+"If the upgrade is successful, the `callback` is called with a `WebSocket`"
+" object as parameter."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:160
+msgid ""
+"Handle a HTTP upgrade request. When the HTTP server is created internally"
+" or when the HTTP server is passed via the `server` option, this method "
+"is called automatically."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:163
+msgid "When operating in \"noServer\" mode, this method must be called manually."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:171
+msgid "See if a given request should be handled by this server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:173
+msgid ""
+"By default this method validates the pathname of the request, matching it"
+" against the `path` option if provided."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:175
+msgid ""
+"The return value, `true` or `false`, determines whether or not to accept "
+"the handshake."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:177
+msgid "This method can be overridden when a custom handling logic is required."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:180
+msgid "Class: WebSocket"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:182
+#, fuzzy
+msgid "This class represents a WebSocket. It extends the `EventEmitter`."
+msgstr "本类代表一个WebSocket服务。它扩展自 `EventEmitter`"
+
+#: ../../source/ws/ws-api.rst:184
+msgid "Ready state constants"
+msgstr "准备好的状态常量"
+
+#: ../../source/ws/ws-api.rst:187
+msgid "Constant"
+msgstr "常量"
+
+#: ../../source/ws/ws-api.rst:187
+msgid "Value"
+msgstr "值"
+
+#: ../../source/ws/ws-api.rst:187
+msgid "Description"
+msgstr "描述"
+
+#: ../../source/ws/ws-api.rst:189
+msgid "CONNECTING"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:189
+msgid "0"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:189
+msgid "The connection is not yet open."
+msgstr "连接未打开"
+
+#: ../../source/ws/ws-api.rst:191
+msgid "OPEN"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:191
+msgid "1"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:191
+msgid "The connection is open and ready to communicate."
+msgstr "连接已打开并准备交流"
+
+#: ../../source/ws/ws-api.rst:193
+msgid "CLOSING"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:193
+msgid "2"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:193
+msgid "The connection is in the process of closing."
+msgstr "连接关闭中"
+
+#: ../../source/ws/ws-api.rst:195
+msgid "CLOSED"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:195
+msgid "3"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:195
+msgid "The connection is closed."
+msgstr "连接已关闭"
+
+#: ../../source/ws/ws-api.rst:200
+msgid "new WebSocket(address[, protocols][, options])"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:202
+msgid "The URL to which to connect."
+msgstr "连接用的URL"
+
+#: ../../source/ws/ws-api.rst:204
+msgid "The list of subprotocols."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:206
+msgid "Whether or not to follow redirects. Defaults to `false`."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:207
+msgid ""
+"Timeout in milliseconds for the handshake request. This is reset after "
+"every redirection."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:209
+msgid "The maximum number of redirects allowed. Defaults to 10."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:210
+msgid ""
+"Value of the `Origin` or `Sec-WebSocket-Origin` header depending on the "
+"`protocolVersion`."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:211
+msgid ""
+"Enable/disable permessage-deflate. `perMessageDeflate` default value is "
+"`true`. When using an object, parameters are the same of the server.The "
+"only difference is the direction of requests. For example, "
+"serverNoContextTakeover can be used to ask the server to disable context "
+"takeover."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:213
+msgid "Value of the `Sec-WebSocket-Version` header."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:214
+msgid ""
+"Specifies whether or not to skip UTF-8 validation for text and close "
+"messages. Defaults to false. Set to true only if the server is trusted."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:215
+msgid ""
+"Options given do not have any effect if parsed from the URL given with "
+"the address parameter."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:219
+msgid "Create a new WebSocket instance."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:221
+msgid "**UNIX Domain Sockets**"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:223
+msgid ""
+"`ws` supports making requests to UNIX domain sockets. To make one, use "
+"the following URL scheme:"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:229
+msgid ""
+"that `:` is the separator between the socket path and the URL path. If "
+"the URL path is omitted"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:235
+msgid "it defaults to `/`."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:239
+#, fuzzy
+msgid "Emitted when the connection is closed."
+msgstr "连接已关闭"
+
+#: ../../source/ws/ws-api.rst:241
+msgid ""
+"a numeric value indicating the status code explaining why the connection "
+"has been closed."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:242
+msgid "a human-readable string explaining why the connection has been closed."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:246
+msgid "Emitted when an error occurs."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:250
+msgid "Emitted when a message is received from the server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:255
+msgid "Emitted when the connection is established."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:261
+msgid "Emitted when a ping is received from the server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:267
+msgid "Emitted when a pong is received from the server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:274
+msgid ""
+"Emitted when the server response is not the expected one, for example a "
+"401 response."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:276
+msgid ""
+"This event gives the ability to read the response in order to extract "
+"useful information."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:278
+msgid ""
+"If the server sends an invalid response and there isn't a listener for "
+"this event, an error is emitted."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:284
+msgid ""
+"Emitted when response headers are received from the server as part of the"
+" handshake."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:286
+msgid ""
+"This allows you to read headers from the server, for example 'set-cookie'"
+" headers."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:290
+msgid "A string representing the event type to listen for."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:291
+msgid "The listener to add."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:293
+msgid "Register an event listener emulating the `EventTarget` interface."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:297
+msgid ""
+"A string indicating the type of binary data being transmitted by the "
+"connection."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:298 ../../source/ws/ws-api.rst:372
+#: ../../source/ws/ws-api.rst:406
+msgid "String"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:300
+msgid "This should be one of \"nodebuffer\", \"arraybuffer\" or \"fragments\"."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:302
+msgid "Defaults to \"nodebuffer\"."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:304
+msgid ""
+"Type \"fragments\" will emit the array of fragments as received from the "
+"sender, without copyfull concatenation, which is useful for the "
+"performance of binary protocols transferring large messages with multiple"
+" fragments."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:310
+msgid ""
+"The number of bytes of data that have been queued using calls to `send()`"
+" but not yet transmitted to the network."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:311 ../../source/ws/ws-api.rst:376
+msgid "Number"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:315
+msgid ""
+"Number} A numeric value indicating the status code explaining why the "
+"connection is being closed."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:316
+msgid "String} A human-readable string explaining why the connection is closing."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:318
+msgid "Initiate a closing handshake."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:322
+msgid "Object"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:323
+msgid "An object containing the negotiated extensions."
+msgstr "包含协商扩展的对象。"
+
+#: ../../source/ws/ws-api.rst
+msgid "返回类型"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:327 ../../source/ws/ws-api.rst:334
+#: ../../source/ws/ws-api.rst:341 ../../source/ws/ws-api.rst:348
+msgid "Function"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst
+msgid "返回"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:328
+msgid "An event listener to be called when connection is closed."
+msgstr "当连接关闭时调用事件监听器"
+
+#: ../../source/ws/ws-api.rst:330
+msgid "The listener receives a `CloseEvent` named \"close\"."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:335
+msgid "An event listener to be called when an error occurs."
+msgstr "发生错误时调用的事件"
+
+#: ../../source/ws/ws-api.rst:337
+msgid "The listener receives an `ErrorEvent` named \"error\"."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:342
+msgid "An event listener to be called when a message is received from the server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:344
+msgid "The listener receives a `MessageEvent` named \"message\"."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:349
+msgid "An event listener to be called when the connection is established."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:351
+msgid "The listener receives an `OpenEvent` named \"open\"."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:355
+msgid "The data to send in the ping frame."
+msgstr "在ping结构中发送的数据"
+
+#: ../../source/ws/ws-api.rst:356 ../../source/ws/ws-api.rst:364
+#: ../../source/ws/ws-api.rst:394
+msgid ""
+"Specifies whether `data` should be masked or not. Defaults to `true` when"
+" `websocket` is not a server client."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:357
+msgid "An optional callback which is invoked when the ping frame is written out."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:359
+msgid "Send a ping."
+msgstr "发送一个ping"
+
+#: ../../source/ws/ws-api.rst:363
+msgid "The data to send in the pong frame."
+msgstr "在pong结构中发送的数据"
+
+#: ../../source/ws/ws-api.rst:365
+msgid "An optional callback which is invoked when the pong frame is written out."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:367
+msgid "Send a pong."
+msgstr "发送一个pong"
+
+#: ../../source/ws/ws-api.rst:371
+msgid "The subprotocol selected by the server."
+msgstr "服务器选择的subprotocal"
+
+#: ../../source/ws/ws-api.rst:377
+msgid ""
+"The current state of the connection. This is one of the ready state "
+"constants."
+msgstr "当前链接状态。预备状态常量的一个。"
+
+#: ../../source/ws/ws-api.rst:382
+msgid "A string representing the event type to remove."
+msgstr "要删除的表示事件类型的字符"
+
+#: ../../source/ws/ws-api.rst:383
+msgid "The listener to remove."
+msgstr "要删除的监听器"
+
+#: ../../source/ws/ws-api.rst:385
+msgid "Removes an event listener emulating the `EventTarget` interface."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:390
+msgid "The data to send."
+msgstr "发送的数据"
+
+#: ../../source/ws/ws-api.rst:392
+msgid ""
+"Specifies whether `data` should be compressed or not.Defaults to `true` "
+"when permessage-deflate is enabled."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:393
+msgid ""
+"Specifies whether `data` should be sent as a binary or not. Default is "
+"autodetected."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:395
+msgid ""
+"Specifies whether `data` is the last fragment of a message or not. "
+"Defaults to `true`."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:396
+msgid ""
+"Function An optional callback which is invoked when `data` is written "
+"out.  Send `data` through the connection."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:396
+msgid "Function An optional callback which is invoked when `data` is written out."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:398
+msgid "Send `data` through the connection."
+msgstr "通过连接发送 `data`"
+
+#: ../../source/ws/ws-api.rst:402
+msgid "Forcibly close the connection."
+msgstr "强制关闭连接"
+
+#: ../../source/ws/ws-api.rst:407
+msgid "The URL of the WebSocket server. Server clients don't have this attribute."
+msgstr "WebSocket 服务器的 URL。服务器客户端没有这个属性。"
+
+#: ../../source/ws/ws-api.rst:410
+msgid "createWebSocketStream(websocket[, options])"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:414
+msgid "A WebSocket object."
+msgstr "一个对象"
+
+#: ../../source/ws/ws-api.rst:415
+msgid "Options to pass to the Duplex constructor."
+msgstr "通过双工构建传输选项"
+
+#: ../../source/ws/ws-api.rst:416
+msgid ""
+"Returns a Duplex stream that allows to use the Node.js streams API on top"
+" of a given WebSocket."
+msgstr "返回一个双攻流允许在给定的WebSocket之上使用Node.js流接口"
+
+#: ../../source/ws/ws-api.rst:419
+msgid "WS Error Codes"
+msgstr "WS错误码"
+
+#: ../../source/ws/ws-api.rst:421
+msgid ""
+"Errors emitted by the websocket may have a `.code` property, describing "
+"the specific type of error that has occurred:"
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:425
+msgid ""
+"A WebSocket frame was received with the FIN bit not set when it was "
+"expected."
+msgstr "A WebSocket frame was received with the FIN bit not set when it was expected."
+
+#: ../../source/ws/ws-api.rst:429
+msgid "An unmasked WebSocket frame was received by a WebSocket server."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:433
+msgid "A WebSocket close frame was received with an invalid close code."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:437
+msgid "A control frame with an invalid payload length was received."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:441
+msgid "A WebSocket frame was received with an invalid opcode."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:445
+msgid "A text or close frame was received containing invalid UTF-8 data."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:449
+msgid "A masked WebSocket frame was received by a WebSocket client."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:453
+msgid "A WebSocket frame was received with the RSV1 bit set unexpectedly."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:457
+msgid "A WebSocket frame was received with the RSV2 or RSV3 bit set unexpectedly."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:461
+msgid ""
+"A data frame was received with a length longer than the max supported "
+"length (2^53 - 1, due to JavaScript language limitations)."
+msgstr ""
+
+#: ../../source/ws/ws-api.rst:465
+msgid ""
+"A message was received with a length longer than the maximum supported "
+"length, as configured by the maxPayload option."
+msgstr ""
+
+#~ msgid "ws"
+#~ msgstr ""
+
+#~ msgid "If it is provided with a single argument then that is:"
+#~ msgstr ""
+
+#~ msgid "The value in the Origin header indicated by the client."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`true` if `req.connection.authorized` or "
+#~ "`req.connection.encrypted` is set."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The return value (Boolean) of the "
+#~ "function determines whether or not to"
+#~ " accept the handshake."
+#~ msgstr ""
+
+#~ msgid "if `verifyClient` is provided with two arguments then those are:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A callback that must be called by"
+#~ " the user upon inspection of the "
+#~ "`info` fields."
+#~ msgstr ""
+
+#~ msgid "Whether or not to accept the handshake."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When `result` is `false` this field "
+#~ "determines the HTTP error status code"
+#~ " to be sent to the client."
+#~ msgstr ""
+
+#~ msgid "When `result` is `false` this field determines the HTTP reason phrase."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When `result` is `false` this field "
+#~ "determines additional HTTP headers to be"
+#~ " sent to the client. For example, "
+#~ "`{ 'Retry-After': 120 }`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Emitted when the handshake is complete."
+#~ " `request` is the http GET request"
+#~ " sent by the client."
+#~ msgstr ""
+
+#~ msgid "error: Error"
+#~ msgstr ""
+
+#~ msgid "{Set}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A set that stores all connected "
+#~ "clients. Please note that this property"
+#~ " is only added when the "
+#~ "`clientTracking` is truthy."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Enable/disable permessage-deflate. "
+#~ "`perMessageDeflate` default value is `true`."
+#~ " When using an object, parameters are"
+#~ " the same of the server."
+#~ msgstr ""
+
+#~ msgid "Any other option allowed in `http.request()`_ or `https.request()`_."
+#~ msgstr ""
+
+#~ msgid "The only difference is the direction of requests."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For example, `serverNoContextTakeover` can be"
+#~ " used to ask the server to "
+#~ "disable context takeover."
+#~ msgstr ""
+
+#~ msgid "code: Number}"
+#~ msgstr ""
+
+#~ msgid "reason: String}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Emitted when the connection is closed."
+#~ " `code` is a numeric value indicating"
+#~ " the status code explaining why the"
+#~ " connection has been closed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`reason` is a human-readable string "
+#~ "explaining why the connection has been"
+#~ " closed."
+#~ msgstr ""
+
+#~ msgid "error: Error}"
+#~ msgstr ""
+
+#~ msgid "data: String|Buffer|ArrayBuffer|Buffer[]}"
+#~ msgstr ""
+
+#~ msgid "data: Buffer}"
+#~ msgstr ""
+
+#~ msgid "request: http.ClientRequest}"
+#~ msgstr ""
+
+#~ msgid "response: http.IncomingMessage}"
+#~ msgstr ""
+
+#~ msgid "type: String} A string representing the event type to listen for."
+#~ msgstr ""
+
+#~ msgid "listener: Function} The listener to add."
+#~ msgstr ""
+
+#~ msgid "{String}"
+#~ msgstr ""
+
+#~ msgid "{Number}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "code: Number} A numeric value indicating"
+#~ " the status code explaining why the"
+#~ " connection is being closed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "reason: String} A human-readable string"
+#~ " explaining why the connection is "
+#~ "closing."
+#~ msgstr ""
+
+#~ msgid "{Object}"
+#~ msgstr ""
+
+#~ msgid "{Function}"
+#~ msgstr ""
+
+#~ msgid "data: Any} The data to send in the ping frame."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "mask: Boolean} Specifies whether `data` "
+#~ "should be masked or not. Defaults "
+#~ "to `true` when `websocket` is not "
+#~ "a server client."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "callback: Function} An optional callback "
+#~ "which is invoked when the ping "
+#~ "frame is written out."
+#~ msgstr ""
+
+#~ msgid "data: Any} The data to send in the pong frame."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "callback: Function} An optional callback "
+#~ "which is invoked when the pong "
+#~ "frame is written out."
+#~ msgstr ""
+
+#~ msgid "type: String} A string representing the event type to remove."
+#~ msgstr ""
+
+#~ msgid "listener: Function} The listener to remove."
+#~ msgstr ""
+
+#~ msgid "data: Any} The data to send."
+#~ msgstr ""
+
+#~ msgid "options: Object}"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "compress: Boolean} Specifies whether `data`"
+#~ " should be compressed or not.Defaults "
+#~ "to `true` when permessage-deflate is "
+#~ "enabled."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "binary: Boolean} Specifies whether `data` "
+#~ "should be sent as a binary or "
+#~ "not. Default is autodetected."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "fin: Boolean} Specifies whether `data` "
+#~ "is the last fragment of a message"
+#~ " or not. Defaults to `true`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "callback: Function An optional callback "
+#~ "which is invoked when `data` is "
+#~ "written out."
+#~ msgstr ""
+

@@ -2,21 +2,21 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 11:04+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/server-api/Socket.rst:3
 msgid "Socket"
@@ -402,97 +402,4 @@ msgid ""
 "These are reserved events (along with ``connect``, ``newListener`` and "
 "``removeListener``) which cannot be used as event names."
 msgstr ""
-
-#~ msgid "**Note:** acknowledgements are not supported when broadcasting."
-#~ msgstr ""
-
-#~ msgid "socket.id"
-#~ msgstr ""
-
-#~ msgid "socket.rooms"
-#~ msgstr ""
-
-#~ msgid "socket.client"
-#~ msgstr ""
-
-#~ msgid "socket.conn"
-#~ msgstr ""
-
-#~ msgid "socket.request"
-#~ msgstr ""
-
-#~ msgid "socket.handshake"
-#~ msgstr ""
-
-#~ msgid "socket.use(fn)"
-#~ msgstr ""
-
-#~ msgid "socket.send([…args][, ack])"
-#~ msgstr ""
-
-#~ msgid "socket.emit(eventName[, …args][, ack])"
-#~ msgstr ""
-
-#~ msgid "socket.on(eventName, callback)"
-#~ msgstr ""
-
-#~ msgid "socket.once(eventName, listener)"
-#~ msgstr ""
-
-#~ msgid "socket.removeListener(eventName, listener)"
-#~ msgstr ""
-
-#~ msgid "socket.removeAllListeners([eventName])"
-#~ msgstr ""
-
-#~ msgid "socket.eventNames()"
-#~ msgstr ""
-
-#~ msgid "socket.join(room[, callback])"
-#~ msgstr ""
-
-#~ msgid "socket.join(rooms[, callback])"
-#~ msgstr ""
-
-#~ msgid "socket.leave(room[, callback])"
-#~ msgstr ""
-
-#~ msgid "socket.to(room)"
-#~ msgstr ""
-
-#~ msgid "socket.in(room)"
-#~ msgstr ""
-
-#~ msgid "socket.compress(value)"
-#~ msgstr ""
-
-#~ msgid "socket.disconnect(close)"
-#~ msgstr ""
-
-#~ msgid "Flag: ‘broadcast’"
-#~ msgstr ""
-
-#~ msgid "Flag: ‘volatile’"
-#~ msgstr ""
-
-#~ msgid "Flag: ‘binary’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘disconnect’"
-#~ msgstr ""
-
-#~ msgid "``server namesp ace disconnect` `"
-#~ msgstr ""
-
-#~ msgid "``client namesp ace disconnect` `"
-#~ msgstr ""
-
-#~ msgid "``ping timeout` `"
-#~ msgstr ""
-
-#~ msgid "Event: ‘error’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘disconnecting’"
-#~ msgstr ""
 

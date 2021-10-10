@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>从0.9迁移 &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Migrating from 0.9 &mdash; WebSockets Docs v2019.0613 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="使用多个节点" href="using-multiple-nodes.html" />
-    <link rel="prev" title="房间和名称空间" href="rooms-and-namespaces.html" /> 
+    <link rel="next" title="Using multiple nodes" href="using-multiple-nodes.html" />
+    <link rel="prev" title="Rooms and namespaces" href="rooms-and-namespaces.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,37 +41,39 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="info.html">介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">房间和名称空间</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">从0.9迁移</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#authentication-differences">验证差异</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#log-differences">记录差异</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#shortcuts">快捷键</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configuration-differences">配置差异</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#parser-protocol-differences">解析器/协议差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">introduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Migrating from 0.9</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#authentication-differences">Authentication differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#log-differences">Log differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-differences">Configuration differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parser-protocol-differences">Parser / Protocol differences</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">使用多个节点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">记录和调试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-and-debugging.html">Logging and debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html">内幕</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">在引擎盖下</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faq.html">常见问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Internals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">Serve API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">Release history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -88,9 +90,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-          <li><a href="index.html">文档</a> &raquo;</li>
-      <li>从0.9迁移</li>
+          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
+          <li><a href="index.html">Docs</a> &raquo;</li>
+      <li>Migrating from 0.9</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/docs/migrating-from-0-9.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -101,13 +103,17 @@
            <div itemprop="articleBody">
              
   <section id="migrating-from-0-9">
-<h1>从0.9迁移<a class="headerlink" href="#migrating-from-0-9" title="永久链接至标题"></a></h1>
-<p>对于大多数应用程序, 过渡到1.0应该是完全无缝的, 没有任何打嗝.也就是说, 我们已经完成了一些简化某些API的工作, 并且我们已经更改了一些内部结构, 因此对于大多数现有用户来说, 这是一个推荐的读取.</p>
+<h1>Migrating from 0.9<a class="headerlink" href="#migrating-from-0-9" title="永久链接至标题"></a></h1>
+<p>For most applications, the transition to 1.0 should be completely
+seamless and devoid of any hiccups. That said, we’ve done some work to
+streamline some APIs, and we have changed some internals, so this is a
+recommended read for most existing users.</p>
 <section id="authentication-differences">
-<h2>验证差异<a class="headerlink" href="#authentication-differences" title="永久链接至标题"></a></h2>
+<h2>Authentication differences<a class="headerlink" href="#authentication-differences" title="永久链接至标题"></a></h2>
 <section id="socket-io-uses-middleware-now">
-<h3>Socket.io现在使用中间件<a class="headerlink" href="#socket-io-uses-middleware-now" title="永久链接至标题"></a></h3>
-<p>您可以通过 <code class="docutils literal notranslate"><span class="pre">io.use()</span></code> 为Socket.io服务器提供任意函数, 这些函数在创建套接字时运行.看看这个例子:</p>
+<h3>Socket.io uses middleware now<a class="headerlink" href="#socket-io-uses-middleware-now" title="永久链接至标题"></a></h3>
+<p>You can give a Socket.io server arbitrary functions via <code class="docutils literal notranslate"><span class="pre">io.use()</span></code>
+that are run when a socket is created. Check out this example:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">srv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">createServer</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">srv</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">run</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
@@ -127,8 +133,10 @@
 </div>
 </section>
 <section id="so-its-cleaner-to-do-auth-via-middleware-now">
-<h3>… 所以它更干净, 现在通过中间件做auth<a class="headerlink" href="#so-its-cleaner-to-do-auth-via-middleware-now" title="永久链接至标题"></a></h3>
-<p>不推荐使用旧的 <code class="docutils literal notranslate"><span class="pre">io.set()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">io.get()</span></code> 方法, 仅支持向后兼容.以下是旧授权示例到中间件样式的转换.</p>
+<h3>… so its cleaner to do auth via middleware now<a class="headerlink" href="#so-its-cleaner-to-do-auth-via-middleware-now" title="永久链接至标题"></a></h3>
+<p>The old <code class="docutils literal notranslate"><span class="pre">io.set()</span></code> and <code class="docutils literal notranslate"><span class="pre">io.get()</span></code> methods are deprecated and only
+supported for backwards compatibility. Here is a translation of an old
+authorization example into middleware-style.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;authorization&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">handshakeData</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// make sure the handshake data looks good</span>
   <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// error first, &#39;authorized&#39; boolean second</span>
@@ -148,7 +156,7 @@
 </div>
 </section>
 <section id="namespace-authorization">
-<h3>命名空间授权？<a class="headerlink" href="#namespace-authorization" title="永久链接至标题"></a></h3>
+<h3>Namespace authorization?<a class="headerlink" href="#namespace-authorization" title="永久链接至标题"></a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/namespace&#39;</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">handshakeData</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">request</span><span class="p">;</span>   <span class="nx">next</span><span class="p">();</span>
 <span class="p">});</span><span class="sb">``</span>
@@ -157,41 +165,52 @@
 </section>
 </section>
 <section id="log-differences">
-<h2>记录差异<a class="headerlink" href="#log-differences" title="永久链接至标题"></a></h2>
+<h2>Log differences<a class="headerlink" href="#log-differences" title="永久链接至标题"></a></h2>
 <section id="logging-is-now-based-on-debug">
-<h3>现在, 日志记录基于调试<a class="headerlink" href="#logging-is-now-based-on-debug" title="永久链接至标题"></a></h3>
-<p>要打印所有调试日志记录, 请将环境变量DEBUG设置为<em>.即: ``DEBUG=</em> node index.js``</p>
-<p>仅打印与socket.io相关的日志记录: <code class="docutils literal notranslate"><span class="pre">DEBUG=socket.io:*</span> <span class="pre">node</span> <span class="pre">index.js</span></code>.</p>
-<p>仅从套接字对象打印日志记录: <code class="docutils literal notranslate"><span class="pre">DEBUG=socket.io:socket</span> <span class="pre">node</span> <span class="pre">index.js</span></code>.</p>
-<p>希望这种模式在这一点上有意义. socket.io/lib中文件的名称等同于它们的调试名称.</p>
-<p>调试也适用于浏览器;日志将持久保存到localstorage.</p>
-<p>要使用: 打开开发人员控制台并输入 <code class="docutils literal notranslate"><span class="pre">localStorage.debug</span> <span class="pre">=</span> <span class="pre">'socket.io:</span> <span class="pre">*'</span></code> (或任何调试级别), 然后刷新页面.一切都记录下来, 直到你运行 <code class="docutils literal notranslate"><span class="pre">localStorage.debug</span> <span class="pre">=</span> <span class="pre">''</span></code></p>
-<p>有关详细信息, 请参阅调试文档 <a class="reference external" href="https://www.npmjs.org/package/debug">here</a>.</p>
+<h3>Logging is now based on debug<a class="headerlink" href="#logging-is-now-based-on-debug" title="永久链接至标题"></a></h3>
+<p>To print all debug logging, set the environment variable DEBUG to *.
+ie: <code class="docutils literal notranslate"><span class="pre">DEBUG=*</span> <span class="pre">node</span> <span class="pre">index.js</span></code></p>
+<p>To print only socket.io related logging:
+<code class="docutils literal notranslate"><span class="pre">DEBUG=socket.io:*</span> <span class="pre">node</span> <span class="pre">index.js</span></code>.</p>
+<p>To print logging only from the socket object:
+<code class="docutils literal notranslate"><span class="pre">DEBUG=socket.io:socket</span> <span class="pre">node</span> <span class="pre">index.js</span></code>.</p>
+<p>This pattern should hopefully be making sense at this point. The names
+of the files in socket.io/lib are equivalent to their debug names.</p>
+<p>Debug also works in the browser; logs are persisted to localstorage.</p>
+<p>To use: open the developer console and type
+<code class="docutils literal notranslate"><span class="pre">localStorage.debug</span> <span class="pre">=</span> <span class="pre">'socket.io:*'</span></code> (or any debug level) and then
+refresh the page. Everything is logged until you run
+<code class="docutils literal notranslate"><span class="pre">localStorage.debug</span> <span class="pre">=</span> <span class="pre">''</span></code></p>
+<p>See more at the debug documentation
+<a class="reference external" href="https://www.npmjs.org/package/debug">here</a>.</p>
 </section>
 </section>
 <section id="shortcuts">
-<h2>快捷键<a class="headerlink" href="#shortcuts" title="永久链接至标题"></a></h2>
-<p>一般情况下, 常见事物有一些新的快捷方式.旧版本应该仍然有用, 但快捷方式很好.</p>
+<h2>Shortcuts<a class="headerlink" href="#shortcuts" title="永久链接至标题"></a></h2>
+<p>In general there are some new shortcuts for common things. The old
+versions should still work, but shortcuts are nice.</p>
 <section id="broadcasting-to-all-clients-in-default-namespace">
-<h3>广播到默认命名空间中的所有客户端<a class="headerlink" href="#broadcasting-to-all-clients-in-default-namespace" title="永久链接至标题"></a></h3>
-<p>先前:</p>
+<h3>Broadcasting to all clients in default namespace<a class="headerlink" href="#broadcasting-to-all-clients-in-default-namespace" title="永久链接至标题"></a></h3>
+<p>Previously:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;eventname&#39;</span><span class="p">,</span> <span class="s1">&#39;eventdata&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>现在:</p>
+<p>Now:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;eventname&#39;</span><span class="p">,</span> <span class="s1">&#39;eventdata&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>整齐.请注意, 在这两种情况下, 这些消息都会到达连接到默认 ‘/’ 命名空间的所有客户端, 但不会到达其他命名空间中的客户端.</p>
+<p>Neat. Note that in both cases, these messages reach all clients
+connected to the default ‘/’ namespace, but not clients in other
+namespaces.</p>
 </section>
 <section id="starting-the-server">
-<h3>启动服务器<a class="headerlink" href="#starting-the-server" title="永久链接至标题"></a></h3>
-<p>先前:</p>
+<h3>Starting the server<a class="headerlink" href="#starting-the-server" title="永久链接至标题"></a></h3>
+<p>Previously:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">80</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* options */</span> <span class="p">});</span>
 </pre></div>
 </div>
-<p>现在:</p>
+<p>Now:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">({</span> <span class="cm">/* options */</span> <span class="p">});</span>
 </pre></div>
@@ -199,26 +218,30 @@
 </section>
 </section>
 <section id="configuration-differences">
-<h2>配置差异<a class="headerlink" href="#configuration-differences" title="永久链接至标题"></a></h2>
+<h2>Configuration differences<a class="headerlink" href="#configuration-differences" title="永久链接至标题"></a></h2>
 <section id="io-set-is-gone">
-<h3>io.set消失了<a class="headerlink" href="#io-set-is-gone" title="永久链接至标题"></a></h3>
-<p>而是像这样在服务器初始化中进行配置:</p>
+<h3>io.set is gone<a class="headerlink" href="#io-set-is-gone" title="永久链接至标题"></a></h3>
+<p>Instead do configuration in server initialization like this:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)({</span>
   <span class="c1">// options go here</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>日志级别等选项已不复存在. <code class="docutils literal notranslate"><span class="pre">io.set('transports')</span></code>, <code class="docutils literal notranslate"><span class="pre">io.set('heartbeat</span> <span class="pre">interval')</span></code>, <code class="docutils literal notranslate"><span class="pre">io.set('heartbeat</span> <span class="pre">timeout'</span></code> 和 <code class="docutils literal notranslate"><span class="pre">io.set('resource'</span> <span class="pre">)</span></code> 仍然支持向后兼容性.</p>
+<p>Options like log-level are gone. <code class="docutils literal notranslate"><span class="pre">io.set('transports')</span></code>,
+<code class="docutils literal notranslate"><span class="pre">io.set('heartbeat</span> <span class="pre">interval')</span></code>, <code class="docutils literal notranslate"><span class="pre">io.set('heartbeat</span> <span class="pre">timeout'</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">io.set('resource')</span></code> are still supported for backwards compatibility.</p>
 </section>
 <section id="setting-resource-path">
-<h3>设置资源路径<a class="headerlink" href="#setting-resource-path" title="永久链接至标题"></a></h3>
-<p>之前的 <code class="docutils literal notranslate"><span class="pre">resource</span></code> 选项相当于新的 <code class="docutils literal notranslate"><span class="pre">path</span></code> 选项, 但在开头需要一个 <code class="docutils literal notranslate"><span class="pre">/</span></code> .例如, 以下配置:</p>
+<h3>Setting resource path<a class="headerlink" href="#setting-resource-path" title="永久链接至标题"></a></h3>
+<p>The previous <code class="docutils literal notranslate"><span class="pre">resource</span></code> option is equivalent to the new <code class="docutils literal notranslate"><span class="pre">path</span></code>
+option, but needs a <code class="docutils literal notranslate"><span class="pre">/</span></code> in the beginning. For example, the following
+configuration:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;localhost:3000&#39;</span><span class="p">,</span> <span class="p">{</span>
   <span class="s1">&#39;resource&#39;</span><span class="o">:</span> <span class="s1">&#39;path/to/socket.io&#39;</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>变:</p>
+<p>becomes:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">&#39;localhost:3000&#39;</span><span class="p">,</span> <span class="p">{</span>
   <span class="s1">&#39;path&#39;</span><span class="o">:</span> <span class="s1">&#39;/path/to/socket.io&#39;</span><span class="p">;</span>
 <span class="p">});</span>
@@ -227,11 +250,16 @@
 </section>
 </section>
 <section id="parser-protocol-differences">
-<h2>解析器/协议差异<a class="headerlink" href="#parser-protocol-differences" title="永久链接至标题"></a></h2>
-<p>这仅适用于更新其他语言的socket.io实现, 自定义socket.io客户端等.</p>
+<h2>Parser / Protocol differences<a class="headerlink" href="#parser-protocol-differences" title="永久链接至标题"></a></h2>
+<p>This is only relevant for updating things like socket.io implementations
+in other languages, custom socket.io clients, etc.</p>
 <section id="difference-1-packet-encoding">
-<h3>差异1  - 数据包编码<a class="headerlink" href="#difference-1-packet-encoding" title="永久链接至标题"></a></h3>
-<p>解析现在是基于类和异步的.编码调用使用编码数组作为唯一参数调用回调, 而不是返回单个编码字符串.应按顺序将每个编码写入传输.这更灵活, 使二进制数据传输工作.这是一个例子:</p>
+<h3>Difference 1 – packet encoding<a class="headerlink" href="#difference-1-packet-encoding" title="永久链接至标题"></a></h3>
+<p>Parsing is now class based and asynchronous. Instead of returning a
+single encoded string, encode calls callback with an array of encodings
+as the only argument. Each encoding should be written to the transport
+in order. This is more flexible and makes binary data transport work.
+Here’s an example:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">encoding</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">packet</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">encoding</span><span class="p">);</span> <span class="c1">// fully encoded packet</span>
 </pre></div>
@@ -247,8 +275,10 @@
 </div>
 </section>
 <section id="difference-2-packet-decoding">
-<h3>差异2  - 分组解码<a class="headerlink" href="#difference-2-packet-decoding" title="永久链接至标题"></a></h3>
-<p>解码更进一步, 并且基于事件.这样做是因为一些对象(包含二进制的)在多个部分中被编码和解码.这个例子应该有帮助:</p>
+<h3>Difference 2 – packet decoding<a class="headerlink" href="#difference-2-packet-decoding" title="永久链接至标题"></a></h3>
+<p>Decoding takes things a step further and is event-based. This is done
+because some objects (binary-containing) are both encoded and decoded in
+multiple parts. This example should help:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">packet</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">decoding</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">packet</span><span class="p">);</span> <span class="c1">// formed socket.io packet to handle</span>
 </pre></div>
@@ -270,14 +300,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="rooms-and-namespaces.html" class="btn btn-neutral float-left" title="房间和名称空间" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="using-multiple-nodes.html" class="btn btn-neutral float-right" title="使用多个节点" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rooms-and-namespaces.html" class="btn btn-neutral float-left" title="Rooms and namespaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="using-multiple-nodes.html" class="btn btn-neutral float-right" title="Using multiple nodes" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

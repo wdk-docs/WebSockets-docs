@@ -2,39 +2,39 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-18 19:50+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/ws/ws.rst:2
 msgid "ws"
-msgstr "ws"
+msgstr ""
 
 #: ../../source/ws/ws.rst:6
 msgid "This class represents a WebSocket server. It extends the `EventEmitter`."
-msgstr "此类表示WebSocket服务器。它扩展了 `EventEmitter` 。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:8
 msgid "new WebSocket.Server(options[, callback])"
-msgstr "new WebSocket.Server(options[, callback])"
+msgstr ""
 
 #: ../../source/ws/ws.rst:10
 msgid ""
 "Create a new server instance. One of `port`, `server` or `noServer` must "
 "be provided or an error is thrown."
-msgstr "创建一个新的服务器实例。必须提供 `port`,  `server` 或 `noServer` 之一或抛出错误。"
+msgstr ""
 
 #: ../../source/ws/ws.rst
 msgid "参数"
@@ -42,43 +42,43 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:12
 msgid "The hostname where to bind the server."
-msgstr "主机名绑定服务器的位置。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:13
 msgid "The port where to bind the server."
-msgstr "绑定服务器的端口。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:14
 msgid "The maximum length of the queue of pending connections."
-msgstr "挂起连接队列的最大长度。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:15
 msgid "A pre-created Node.js HTTP/S server."
-msgstr "预先创建的 Node.js HTTP/S 服务器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:16
 msgid ""
 "A function which can be used to validate incoming connections. See "
 "description below."
-msgstr "一种可用于验证传入连接的功能。见下面的描述。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:17
 msgid ""
 "A function which can be used to handle the WebSocket subprotocols. See "
 "description below."
-msgstr "一种可用于处理WebSocket子协议的函数。见下面的描述。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:18
 msgid "Accept only connections matching this path."
-msgstr "仅接受与此路径匹配的连接。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:19
 msgid "Enable no server mode."
-msgstr "不启用服务器模式。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:20
 msgid "Specifies whether or not to track clients."
-msgstr "指定是否跟踪客户端。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:21
 msgid ""
@@ -103,66 +103,56 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:21
 msgid "Enable/disable permessage-deflate."
-msgstr "启用/禁用渗透 - 放气。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:23
-#, fuzzy
 msgid ""
 "`perMessageDeflate` can be used to control the behavior of `permessage-"
 "deflate extension <permessage-deflate>`_. he extension is disabled when "
 "`false` (default value)."
 msgstr ""
-"`perMessageDeflate` 可用于控制 `permessage-deflate extension <permessage-"
-"deflate>`_ 的行为。"
 
 #: ../../source/ws/ws.rst:26
 msgid "If an object is provided then that is extension parameters:"
-msgstr "如果提供了一个对象, 那么这就是扩展参数:"
+msgstr ""
 
 #: ../../source/ws/ws.rst:28
-#, fuzzy
 msgid ""
 "**serverNoContextTakeover**: (*Boolean*) - Whether to use context "
 "takeover or not."
-msgstr "`serverNoContextTakeover` {Boolean}是否使用上下文接管。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:29
-#, fuzzy
 msgid ""
 "**clientNoContextTakeover**: (*Boolean*) - Acknowledge disabling of "
 "client context takeover."
-msgstr "`clientNoContextTakeover` {Boolean}确认禁用客户端上下文接管。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:30
-#, fuzzy
 msgid "**serverMaxWindowBits**: (*Number*) - The value of `windowBits`."
-msgstr "`serverMaxWindowBits` {Number} `windowBits`的值。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:31
-#, fuzzy
 msgid "**clientMaxWindowBits**: (*Number*) - Request a custom client window size."
-msgstr "`clientMaxWindowBits` {Number} 请求自定义客户端窗口大小。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:32
-#, fuzzy
 msgid ""
 "**zlibDeflateOptions**: (*Object*) - Additional options <zlib-options>`_ "
 "to pass to zlib on deflate."
-msgstr "`zlibDeflateOptions` {Object}`附加选项<zlib-options>`_在deflate上传递给zlib。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:33
-#, fuzzy
 msgid ""
 "**zlibInflateOptions**: (*Object*) - Additional options <zlib-options>`_ "
 "to pass to zlib on inflate."
-msgstr "`zlibInflateOptions` {Object}`附加选项<zlib-options>`_在inflate上传递给zlib。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:34
-#, fuzzy
 msgid ""
 "**threshold**: (*Number*) - Payloads smaller than this will not be "
 "compressed. Defaults to 1024 bytes."
-msgstr "`threshold` {Number}小于此的有效负载不会被压缩。默认为1024字节。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:35
 msgid ""
@@ -174,19 +164,19 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:37 ../../source/ws/ws.rst:193
 msgid "The maximum allowed message size in bytes."
-msgstr "`maxPayload` 允许的最大邮件大小（字节）。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:38
 msgid ""
 "`callback` will be added as a listener for the `listening` event on the "
 "HTTP server when not operating in \"noServer\" mode."
-msgstr "当不在 “noServer” 模式下运行时, `callback` 将被添加为HTTP服务器上 `listening` 事件的监听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:45
 msgid ""
 "An HTTP server is automatically created, started, and used if `port` is "
 "set."
-msgstr "如果设置了 `port` , 则会自动创建, 启动和使用HTTP服务器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:47
 msgid ""
@@ -199,16 +189,15 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:51
 msgid "If `verifyClient` is not set then the handshake is automatically accepted."
-msgstr "如果未设置 `verifyClient`, 则自动接受握手。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:55
 msgid "If it is provided with a single argument then that is:"
-msgstr "如果它提供了单个参数, 那么就是:"
+msgstr ""
 
 #: ../../source/ws/ws.rst:57
-#, fuzzy
 msgid "The value in the Origin header indicated by the client."
-msgstr "`origin` {String} 客户端指示的Origin标头中的值。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:58 ../../source/ws/ws.rst:77
 #: ../../source/ws/ws.rst:146 ../../source/ws/ws.rst:159
@@ -216,77 +205,68 @@ msgid "The client HTTP GET request."
 msgstr ""
 
 #: ../../source/ws/ws.rst:59
-#, fuzzy
 msgid ""
 "`true` if `req.connection.authorized` or `req.connection.encrypted` is "
 "set."
 msgstr ""
-"如果设置了`req.connection.authorized`或`req.connection.encrypted`, 则为`secure` "
-"{Boolean}`true`。"
 
 #: ../../source/ws/ws.rst:61
 msgid ""
 "The return value (Boolean) of the function determines whether or not to "
 "accept the handshake."
-msgstr "函数的返回值（布尔值）确定是否接受握手。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:65
 msgid "if `verifyClient` is provided with two arguments then those are:"
-msgstr "如果`verifyClient`提供了两个参数, 那么它们就是:"
+msgstr ""
 
 #: ../../source/ws/ws.rst:67
-#, fuzzy
 msgid ""
 "A callback that must be called by the user upon inspection of the `info` "
 "fields."
-msgstr "`cb` {Function}用户在检查`info`字段时必须调用的回调函数。此回调中的参数是："
+msgstr ""
 
 #: ../../source/ws/ws.rst:69
-#, fuzzy
 msgid "Whether or not to accept the handshake."
-msgstr "`result` {Boolean} 是否接受握手。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:70
-#, fuzzy
 msgid ""
 "When `result` is `false` this field determines the HTTP error status code"
 " to be sent to the client."
-msgstr "`code` {Number}当`result`为`false`时, 该字段确定要发送给客户端的HTTP错误状态代码。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:71
-#, fuzzy
 msgid "When `result` is `false` this field determines the HTTP reason phrase."
-msgstr "`name` {String}当`result`为'false`时, 该字段确定HTTP原因短语。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:72
-#, fuzzy
 msgid ""
 "When `result` is `false` this field determines additional HTTP headers to"
 " be sent to the client. For example, `{ 'Retry-After': 120 }`."
-msgstr "`code` {Number}当`result`为`false`时, 该字段确定要发送给客户端的HTTP错误状态代码。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:76
-#, fuzzy
 msgid ""
 "The list of WebSocket subprotocols indicated by the client in the `Sec-"
 "WebSocket-Protocol` header."
-msgstr "`protocols` {Array}客户端在`Sec-WebSocket-Protocol`头中指示的WebSocket子协议列表。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:79
 msgid ""
 "The returned value sets the value of the `Sec-WebSocket-Protocol` header "
 "in the HTTP 101 response."
-msgstr "返回值设置HTTP 101响应中的`Sec-WebSocket-Protocol`头的值。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:81
 msgid "If returned value is `false` the header is not added in the response."
-msgstr "如果返回值为“false”, 则不在响应中添加标头。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:83
 msgid ""
 "If `handleProtocols` is not set then the first of the client's requested "
 "subprotocols is used."
-msgstr "如果未设置 `handleProtocols`, 则使用客户端请求的第一个子协议。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:86
 msgid ""
@@ -297,52 +277,51 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:88
 msgid "This determines if compression is used for the entire message."
-msgstr "这确定是否对整个消息使用压缩。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:94
 msgid ""
 "Emitted when the server closes. This event depends on the `'close'` event"
 " of HTTP server only when it is created internally."
-msgstr "服务器关闭时发出。此事件仅在内部创建时依赖于HTTP服务器的“close”事件。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:96
 msgid "In all other cases, the event is emitted independently."
-msgstr "在所有其他情况下, 事件是独立发出的。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:103
 msgid ""
 "Emitted when the handshake is complete. `request` is the http GET request"
 " sent by the client."
-msgstr "握手完成时发出。 `request`是客户端发送的http GET请求。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:105
 msgid ""
 "Useful for parsing authority headers, cookie headers, and other "
 "information."
-msgstr "用于解析权限标头, cookie标头和其他信息。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:109
-#, fuzzy
 msgid "error: Error"
-msgstr "`error` {Error}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:111
 msgid "Emitted when an error occurs on the underlying server."
-msgstr "在底层服务器上发生错误时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:118
 msgid ""
 "Emitted before the response headers are written to the socket as part of "
 "the handshake."
-msgstr "在响应标头作为握手的一部分写入套接字之前发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:120
 msgid "This allows you to inspect/modify the headers before they are sent."
-msgstr "这允许您在发送标头之前检查/修改标头。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:124
 msgid "Emitted when the underlying server has been bound."
-msgstr "绑定基础服务器时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:128
 msgid ""
@@ -355,92 +334,90 @@ msgstr ""
 msgid ""
 "If the server is listening on a pipe or UNIX domain socket, the name is "
 "returned as a string."
-msgstr "如果服务器正在侦听管道或UNIX域套接字, 则该名称将作为字符串返回。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:134
 msgid "{Set}"
-msgstr "{Set}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:136
 msgid ""
 "A set that stores all connected clients. Please note that this property "
 "is only added when the `clientTracking` is truthy."
-msgstr "存储所有连接客户端的集合。请注意, 只有当`clientTracking`真实时, 才会添加此属性。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:140
 msgid ""
 "Close the HTTP server if created internally, terminate all clients and "
 "call callback when done."
-msgstr "如果在内部创建, 则关闭HTTP服务器, 终止所有客户端并在完成后调用回调。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:142
 msgid ""
 "If an external HTTP server is used via the `server` or `noServer` "
 "constructor options, it must be closed manually."
-msgstr "如果通过`server`或`noServer`构造函数选项使用外部HTTP服务器, 则必须手动关闭它。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:147
-#, fuzzy
 msgid "The network socket between the server and client."
-msgstr "`socket` {net.Socket} 服务器和客户端之间的网络套接字。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:148
-#, fuzzy
 msgid "The first packet of the upgraded stream."
-msgstr "`head` {Buffer} 升级流的第一个数据包。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:151
 msgid ""
 "Handle a HTTP upgrade request. When the HTTP server is created internally"
 " or when the HTTP server is passed via the `server` option, this method "
 "is called automatically."
-msgstr "处理HTTP升级请求。当在内部创建HTTP服务器或通过`server`选项传递HTTP服务器时，将自动调用此方法。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:153
 msgid "When operating in \"noServer\" mode, this method must be called manually."
-msgstr "在“noServer”模式下操作时, 必须手动调用此方法。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:155
 msgid ""
 "If the upgrade is successful, the `callback` is called with a `WebSocket`"
 " object as parameter."
-msgstr "如果升级成功, 则使用`WebSocket`对象作为参数调用`callback`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:161
 msgid "See if a given request should be handled by this server."
-msgstr "查看此服务器是否应处理给定请求。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:163
 msgid ""
 "By default this method validates the pathname of the request, matching it"
 " against the `path` option if provided."
-msgstr "默认情况下, 此方法验证请求的路径名, 并将其与`path`选项（如果提供）匹配。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:165
 msgid ""
 "The return value, `true` or `false`, determines whether or not to accept "
 "the handshake."
-msgstr "返回值“true”或“false”确定是否接受握手。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:167
 msgid "This method can be overridden when a custom handling logic is required."
-msgstr "当需要自定义处理逻辑时, 可以覆盖此方法。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:169
 msgid "Ready state constants"
-msgstr "就绪状态常数"
+msgstr ""
 
 #: ../../source/ws/ws.rst:172
 msgid "Constant"
-msgstr "不变"
+msgstr ""
 
 #: ../../source/ws/ws.rst:172
 msgid "Value"
-msgstr "值"
+msgstr ""
 
 #: ../../source/ws/ws.rst:172
 msgid "Description"
-msgstr "描述"
+msgstr ""
 
 #: ../../source/ws/ws.rst:174
 msgid "CONNECTING"
@@ -448,11 +425,11 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:174
 msgid "0"
-msgstr "0"
+msgstr ""
 
 #: ../../source/ws/ws.rst:174
 msgid "The connection is not yet open."
-msgstr "连接尚未打开。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:176
 msgid "OPEN"
@@ -460,100 +437,91 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:176
 msgid "1"
-msgstr "1"
+msgstr ""
 
 #: ../../source/ws/ws.rst:176
 msgid "The connection is open and ready to communicate."
-msgstr "连接已打开并准备好进行通信。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:178
 msgid "CLOSING"
-msgstr "CLOSING"
+msgstr ""
 
 #: ../../source/ws/ws.rst:178
 msgid "2"
-msgstr "2"
+msgstr ""
 
 #: ../../source/ws/ws.rst:178
 msgid "The connection is in the process of closing."
-msgstr "连接正在关闭。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:180
 msgid "CLOSED"
-msgstr "CLOSED"
+msgstr ""
 
 #: ../../source/ws/ws.rst:180
 msgid "3"
-msgstr "3"
+msgstr ""
 
 #: ../../source/ws/ws.rst:180
 msgid "The connection is closed."
-msgstr "连接已关闭。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:185
 msgid "The URL to which to connect."
 msgstr ""
 
 #: ../../source/ws/ws.rst:186
-#, fuzzy
 msgid "The list of subprotocols."
-msgstr "`protocols` {String | Array} 子协议清单。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:187
-#, fuzzy
 msgid "Whether or not to follow redirects. Defaults to `false`."
 msgstr ""
-"`followRedirects` {Boolean} Whether or not to follow redirects. Defaults "
-"to `false`."
 
 #: ../../source/ws/ws.rst:188
-#, fuzzy
 msgid ""
 "Timeout in milliseconds for the handshake request. This is reset after "
 "every redirection."
-msgstr "`handshakeTimeout` {Number}握手请求的超时时间（以毫秒为单位）。每次重定向后都会重置。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:189
-#, fuzzy
 msgid "The maximum number of redirects allowed. Defaults to 10."
-msgstr "`maxRedirects` {Number}允许的最大重定向数。默认为10。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:190
-#, fuzzy
 msgid ""
 "Enable/disable permessage-deflate. `perMessageDeflate` default value is "
 "`true`. When using an object, parameters are the same of the server."
-msgstr "`perMessageDeflate`默认值为`true`。使用对象时, 参数与服务器相同。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:191
-#, fuzzy
 msgid "Value of the `Sec-WebSocket-Version` header."
-msgstr "`protocolVersion` {Number}`Sec-WebSocket-Version`标题的值。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:192
-#, fuzzy
 msgid ""
 "Value of the `Origin` or `Sec-WebSocket-Origin` header depending on the "
 "`protocolVersion`."
-msgstr "`origin` {String}`origin`或`Sec-WebSocket-Origin`头的值取决于`protocolVersion`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:198
 msgid "Any other option allowed in `http.request()`_ or `https.request()`_."
-msgstr "`http.request（）`_或`https.request（）`_中允许的任何其他选项。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:201
 msgid "The only difference is the direction of requests."
-msgstr "唯一的区别是请求的方向。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:203
 msgid ""
 "For example, `serverNoContextTakeover` can be used to ask the server to "
 "disable context takeover."
-msgstr "例如, `serverNoContextTakeover`可用于请求服务器禁用上下文接管。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:205
 msgid "Create a new WebSocket instance."
-msgstr "创建一个新的WebSocket实例。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:207
 msgid "**UNIX Domain Sockets**"
@@ -563,147 +531,138 @@ msgstr ""
 msgid ""
 "`ws` supports making requests to UNIX domain sockets. To make one, use "
 "the following URL scheme:"
-msgstr "`ws`支持向UNIX域套接字发出请求。要制作一个, 请使用以下URL方案："
+msgstr ""
 
 #: ../../source/ws/ws.rst:215
 msgid ""
 "that `:` is the separator between the socket path and the URL path. If "
 "the URL path is omitted"
-msgstr "`：`是套接字路径和URL路径之间的分隔符。如果省略URL路径"
+msgstr ""
 
 #: ../../source/ws/ws.rst:221
 msgid "it defaults to `/`."
-msgstr "它默认为`/`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:225
-#, fuzzy
 msgid "code: Number}"
-msgstr "`code` {Number}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:226
-#, fuzzy
 msgid "reason: String}"
-msgstr "`reason` {String}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:228
 msgid ""
 "Emitted when the connection is closed. `code` is a numeric value "
 "indicating the status code explaining why the connection has been closed."
-msgstr "连接关闭时发出。 `code`是一个数值, 表示状态代码, 解释连接关闭的原因。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:230
 msgid ""
 "`reason` is a human-readable string explaining why the connection has "
 "been closed."
-msgstr "`reason`是一个人类可读的字符串, 解释连接已关闭的原因。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:234
-#, fuzzy
 msgid "error: Error}"
-msgstr "`error` {Error}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:236
 msgid "Emitted when an error occurs."
-msgstr "发生错误时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:240
-#, fuzzy
 msgid "data: String|Buffer|ArrayBuffer|Buffer[]}"
-msgstr "`data` {String|Buffer|ArrayBuffer|Buffer[]}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:242
 msgid "Emitted when a message is received from the server."
-msgstr "从服务器收到消息时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:246
 msgid "Emitted when the connection is established."
-msgstr "建立连接时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:250 ../../source/ws/ws.rst:256
-#, fuzzy
 msgid "data: Buffer}"
-msgstr "`data` {Buffer}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:252
 msgid "Emitted when a ping is received from the server."
-msgstr "从服务器收到ping时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:258
 msgid "Emitted when a pong is received from the server."
-msgstr "从服务器收到乒乓时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:262
-#, fuzzy
 msgid "request: http.ClientRequest}"
-msgstr "`request` {http.ClientRequest}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:263 ../../source/ws/ws.rst:273
-#, fuzzy
 msgid "response: http.IncomingMessage}"
-msgstr "`response` {http.IncomingMessage}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:265
 msgid ""
 "Emitted when the server response is not the expected one, for example a "
 "401 response."
-msgstr "当服务器响应不是预期的响应时发出, 例如401响应。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:267
 msgid ""
 "This event gives the ability to read the response in order to extract "
 "useful information."
-msgstr "此事件使您能够读取响应以提取有用信息。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:269
 msgid ""
 "If the server sends an invalid response and there isn't a listener for "
 "this event, an error is emitted."
-msgstr "如果服务器发送无效响应并且没有此事件的侦听器, 则会发出错误。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:275
 msgid ""
 "Emitted when response headers are received from the server as part of the"
 " handshake."
-msgstr "在作为握手的一部分从服务器接收响应头时发出。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:277
 msgid ""
 "This allows you to read headers from the server, for example 'set-cookie'"
 " headers."
-msgstr "这允许您从服务器读取标头, 例如“set-cookie”标头。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:281
-#, fuzzy
 msgid "type: String} A string representing the event type to listen for."
-msgstr "`type` {String} 表示要侦听的事件类型的字符串。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:282
-#, fuzzy
 msgid "listener: Function} The listener to add."
-msgstr "`listener` {Function} 要添加的监听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:284
 msgid "Register an event listener emulating the `EventTarget` interface."
-msgstr "注册一个模拟`EventTarget`接口的事件监听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:288 ../../source/ws/ws.rst:367
 #: ../../source/ws/ws.rst:406
 msgid "{String}"
-msgstr "{String}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:290
 msgid ""
 "A string indicating the type of binary data being transmitted by the "
 "connection."
-msgstr "一个字符串, 指示连接传输的二进制数据的类型。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:292
 msgid "This should be one of \"nodebuffer\", \"arraybuffer\" or \"fragments\"."
-msgstr "这应该是\\“nodebuffer \\”, \\“arraybuffer \\”或\\“fragments \\”之一。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:294
 msgid "Defaults to \"nodebuffer\"."
-msgstr "Defaults to \"nodebuffer\"."
+msgstr ""
 
 #: ../../source/ws/ws.rst:296
 msgid ""
@@ -715,386 +674,173 @@ msgstr ""
 
 #: ../../source/ws/ws.rst:300 ../../source/ws/ws.rst:373
 msgid "{Number}"
-msgstr "{Number}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:302
 msgid ""
 "The number of bytes of data that have been queued using calls to `send()`"
 " but not yet transmitted to the network."
-msgstr "使用调用“send（）”但尚未传输到网络排队的数据的字节数。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:306
-#, fuzzy
 msgid ""
 "code: Number} A numeric value indicating the status code explaining why "
 "the connection is being closed."
-msgstr "使用称为“send（）”但尚未传输到网络进行排队的数据的字节数。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:307
-#, fuzzy
 msgid ""
 "reason: String} A human-readable string explaining why the connection is "
 "closing."
-msgstr "`reason` {String}一个人类可读的字符串, 解释连接关闭的原因。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:309
 msgid "Initiate a closing handshake."
-msgstr "发起结束握手。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:313
 msgid "{Object}"
-msgstr "{Object}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:315
 msgid "An object containing the negotiated extensions."
-msgstr "包含协商扩展的对象。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:319 ../../source/ws/ws.rst:327
 #: ../../source/ws/ws.rst:335 ../../source/ws/ws.rst:343
 msgid "{Function}"
-msgstr "{Function}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:321
 msgid "An event listener to be called when connection is closed."
-msgstr "连接关闭时要调用的事件侦听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:323
 msgid "The listener receives a `CloseEvent` named \"close\"."
-msgstr "监听器接收名为“close”的`CloseEvent`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:329
 msgid "An event listener to be called when an error occurs."
-msgstr "发生错误时要调用的事件侦听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:331
 msgid "The listener receives an `ErrorEvent` named \"error\"."
-msgstr "监听器收到一个名为“error”的`ErrorEvent`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:337
 msgid "An event listener to be called when a message is received from the server."
-msgstr "从服务器收到消息时要调用的事件侦听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:339
 msgid "The listener receives a `MessageEvent` named \"message\"."
-msgstr "监听器接收名为“message”的`MessageEvent`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:345
 msgid "An event listener to be called when the connection is established."
-msgstr "建立连接时要调用的事件侦听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:347
 msgid "The listener receives an `OpenEvent` named \"open\"."
-msgstr "监听器接收名为“open”的`OpenEvent`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:351
-#, fuzzy
 msgid "data: Any} The data to send in the ping frame."
-msgstr "`data` {Any} 要在ping帧中发送的数据。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:352 ../../source/ws/ws.rst:360
 #: ../../source/ws/ws.rst:393
-#, fuzzy
 msgid ""
 "mask: Boolean} Specifies whether `data` should be masked or not. Defaults"
 " to `true` when `websocket` is not a server client."
-msgstr "`mask` {Boolean}指定是否应该屏蔽`data`。当`websocket`不是服务器客户端时, 默认为“true”。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:353
-#, fuzzy
 msgid ""
 "callback: Function} An optional callback which is invoked when the ping "
 "frame is written out."
-msgstr "`callback` {Function}一个可选的回调函数, 在写出ping帧时调用。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:355
 msgid "Send a ping."
-msgstr "Send a ping."
+msgstr ""
 
 #: ../../source/ws/ws.rst:359
-#, fuzzy
 msgid "data: Any} The data to send in the pong frame."
-msgstr "`data` {Any} The data to send in the pong frame."
+msgstr ""
 
 #: ../../source/ws/ws.rst:361
-#, fuzzy
 msgid ""
 "callback: Function} An optional callback which is invoked when the pong "
 "frame is written out."
-msgstr "`callback` {Function}一个可选的回调函数, 在写出pong框架时调用。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:363
 msgid "Send a pong."
-msgstr "Send a pong."
+msgstr ""
 
 #: ../../source/ws/ws.rst:369
 msgid "The subprotocol selected by the server."
-msgstr "服务器选择的子协议。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:375
 msgid ""
 "The current state of the connection. This is one of the ready state "
 "constants."
-msgstr "连接的当前状态。这是就绪状态常量之一。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:380
-#, fuzzy
 msgid "type: String} A string representing the event type to remove."
-msgstr "`type` {String} 表示要删除的事件类型的字符串。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:381
-#, fuzzy
 msgid "listener: Function} The listener to remove."
-msgstr "`listener` {Function}要删除的侦听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:383
 msgid "Removes an event listener emulating the `EventTarget` interface."
-msgstr "删除模拟`EventTarget`接口的事件侦听器。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:388
-#, fuzzy
 msgid "data: Any} The data to send."
-msgstr "`data` {Any} 要发送的数据。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:389
-#, fuzzy
 msgid "options: Object}"
-msgstr "`options` {Object}"
+msgstr ""
 
 #: ../../source/ws/ws.rst:391
-#, fuzzy
 msgid ""
 "compress: Boolean} Specifies whether `data` should be compressed or "
 "not.Defaults to `true` when permessage-deflate is enabled."
-msgstr "`compress` {Boolean}指定是否应该压缩`data`。启用permessage-deflate时, 默认为'true`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:392
-#, fuzzy
 msgid ""
 "binary: Boolean} Specifies whether `data` should be sent as a binary or "
 "not. Default is autodetected."
-msgstr "`binary` {Boolean}指定`data`是否应该以二进制形式发送。默认值是自动检测的。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:394
-#, fuzzy
 msgid ""
 "fin: Boolean} Specifies whether `data` is the last fragment of a message "
 "or not. Defaults to `true`."
-msgstr "`fin` {Boolean}指定`data`是否是消息的最后一个片段。默认为“true”。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:396
-#, fuzzy
 msgid ""
 "callback: Function An optional callback which is invoked when `data` is "
 "written out."
-msgstr "`callback` {Function}写出`data`时调用的可选回调函数。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:398
 msgid "Send `data` through the connection."
-msgstr "通过连接发送`data`。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:402
 msgid "Forcibly close the connection."
-msgstr "强行关闭连接。"
+msgstr ""
 
 #: ../../source/ws/ws.rst:408
 msgid "The URL of the WebSocket server. Server clients don't have this attribute."
-msgstr "WebSocket服务器的URL。服务器客户端没有此属性。"
-
-#~ msgid "Class: WebSocket.Server"
-#~ msgstr "Class: WebSocket.Server"
-
-#~ msgid ""
-#~ "`server` {http.Server|https.Server} A pre-"
-#~ "created Node.js HTTP/S server."
-#~ msgstr "`server` {http.Server|https.Server} 预先创建的Node.js HTTP/S服务器。"
-
-#~ msgid "`callback` {Function}"
-#~ msgstr "`callback` {Function}"
-
-#~ msgid ""
-#~ "To use an external HTTP/S server "
-#~ "instead, specify only `server` or "
-#~ "`noServer`."
-#~ msgstr "要使用外部 HTTP/S 服务器, 请仅指定 `server` 或 `noServer`。"
-
-#~ msgid ""
-#~ "In this case the HTTP/S server "
-#~ "must be started manually. The "
-#~ "\"noServer\" mode allows the WebSocket "
-#~ "server to be completly detached from "
-#~ "the HTTP/S server."
-#~ msgstr "在这种情况下, 必须手动启动HTTP/S服务器。 “noServer” 模式允许WebSocket服务器与HTTP/S服务器完全分离。"
-
-#~ msgid ""
-#~ "This makes it possible, for example, "
-#~ "to share a single HTTP/S server "
-#~ "between multiple WebSocket servers."
-#~ msgstr "例如, 这使得可以在多个WebSocket服务器之间共享单个HTTP/S服务器。"
-
-#~ msgid "`info` {Object}"
-#~ msgstr "`info` {Object}"
-
-#~ msgid "`req` {http.IncomingMessage} The client HTTP GET request."
-#~ msgstr "`req` {http.IncomingMessage} 客户端HTTP GET请求。"
-
-#~ msgid "`info` {Object} Same as above."
-#~ msgstr "`info` {Object} Same as above."
-
-#~ msgid ""
-#~ "`headers` {Object} When `result` is "
-#~ "`false` this field determines additional "
-#~ "HTTP headers to be sent to the "
-#~ "client. For example, `{ 'Retry-After':"
-#~ " 120 }`."
-#~ msgstr ""
-
-#~ msgid "`handleProtocols` takes two arguments:"
-#~ msgstr "`handleProtocols` 有两个论点:"
-
-#~ msgid "`request` {http.IncomingMessage} The client HTTP GET request."
-#~ msgstr "`request` {http.IncomingMessage} 客户端HTTP GET请求。"
-
-#~ msgid "he extension is disabled when `false` (default value)."
-#~ msgstr "当`false`（默认值）时, 他的扩展名被禁用。"
-
-#~ msgid ""
-#~ "`concurrencyLimit` {Number} The number of "
-#~ "concurrent calls to zlib. Calls above"
-#~ " this limit will be queued. Default"
-#~ " 10. You usually won't need to "
-#~ "touch this option. See `this issue "
-#~ "<concurrency-limit>`_ for more details."
-#~ msgstr ""
-
-#~ msgid "Event: 'close'"
-#~ msgstr "Event: 'close'"
-
-#~ msgid "Event: 'connection'"
-#~ msgstr "Event: 'connection'"
-
-#~ msgid "`socket` {WebSocket}"
-#~ msgstr "`socket` {WebSocket}"
-
-#~ msgid "`request` {http.IncomingMessage}"
-#~ msgstr "`request` {http.IncomingMessage}"
-
-#~ msgid "Event: 'error'"
-#~ msgstr "Event: 'error'"
-
-#~ msgid "Event: 'headers'"
-#~ msgstr "Event: 'headers'"
-
-#~ msgid "`headers` {Array}"
-#~ msgstr "`headers` {Array}"
-
-#~ msgid "Event: 'listening'"
-#~ msgstr "Event: 'listening'"
-
-#~ msgid "server.address()"
-#~ msgstr "server.address()"
-
-#~ msgid "server.clients"
-#~ msgstr "server.clients"
-
-#~ msgid "server.close([callback])"
-#~ msgstr "server.close([callback])"
-
-#~ msgid "server.handleUpgrade(request, socket, head, callback)"
-#~ msgstr "server.handleUpgrade(request, socket, head, callback)"
-
-#~ msgid "`callback` {Function}."
-#~ msgstr "`callback` {Function}."
-
-#~ msgid "server.shouldHandle(request)"
-#~ msgstr "server.shouldHandle(request)"
-
-#~ msgid "Class: WebSocket"
-#~ msgstr "Class: WebSocket"
-
-#~ msgid "This class represents a WebSocket. It extends the `EventEmitter`."
-#~ msgstr "此类表示WebSocket。它扩展了`EventEmitter`。"
-
-#~ msgid "new WebSocket(address[, protocols][, options])"
-#~ msgstr "new WebSocket(address[, protocols][, options])"
-
-#~ msgid "`address` {String   | url.URL} The URL to which to connect."
-#~ msgstr "`address` {String   | url.URL} 要连接的URL。"
-
-#~ msgid "`perMessageDeflate` {Boolean|Object} Enable/disable permessage-deflate."
-#~ msgstr "`perMessageDeflate` {Boolean|Object} 启用/禁用渗透 - 放气。"
-
-#~ msgid "`maxPayload` {Number} The maximum allowed message size in bytes."
-#~ msgstr "`maxPayload` {Number} 允许的最大邮件大小（字节）。"
-
-#~ msgid "#### UNIX Domain Sockets"
-#~ msgstr "#### UNIX Domain Sockets"
-
-#~ msgid "Event: 'message'"
-#~ msgstr "Event: 'message'"
-
-#~ msgid "Event: 'open'"
-#~ msgstr "Event: 'open'"
-
-#~ msgid "Event: 'ping'"
-#~ msgstr "Event: 'ping'"
-
-#~ msgid "Event: 'pong'"
-#~ msgstr "Event: 'pong'"
-
-#~ msgid "Event: 'unexpected-response'"
-#~ msgstr "Event: 'unexpected-response'"
-
-#~ msgid "Event: 'upgrade'"
-#~ msgstr "Event: 'upgrade'"
-
-#~ msgid "websocket.addEventListener(type, listener)"
-#~ msgstr "websocket.addEventListener(type, listener)"
-
-#~ msgid "websocket.binaryType"
-#~ msgstr "websocket.binaryType"
-
-#~ msgid "websocket.bufferedAmount"
-#~ msgstr "websocket.bufferedAmount"
-
-#~ msgid "websocket.close([code[, reason]])"
-#~ msgstr "websocket.close([code[, reason]])"
-
-#~ msgid "websocket.extensions"
-#~ msgstr "websocket.extensions"
-
-#~ msgid "websocket.onclose"
-#~ msgstr "websocket.onclose"
-
-#~ msgid "websocket.onerror"
-#~ msgstr "websocket.onerror"
-
-#~ msgid "websocket.onmessage"
-#~ msgstr "websocket.onmessage"
-
-#~ msgid "websocket.onopen"
-#~ msgstr "websocket.onopen"
-
-#~ msgid "websocket.ping([data[, mask]][, callback])"
-#~ msgstr "websocket.ping([data[, mask]][, callback])"
-
-#~ msgid "websocket.pong([data[, mask]][, callback])"
-#~ msgstr "websocket.pong([data[, mask]][, callback])"
-
-#~ msgid "websocket.protocol"
-#~ msgstr "websocket.protocol"
-
-#~ msgid "websocket.readyState"
-#~ msgstr "websocket.readyState"
-
-#~ msgid "websocket.removeEventListener(type, listener)"
-#~ msgstr "websocket.removeEventListener(type, listener)"
-
-#~ msgid "websocket.send(data[, options][, callback])"
-#~ msgstr "websocket.send(data[, options][, callback])"
-
-#~ msgid "websocket.terminate()"
-#~ msgstr "websocket.terminate()"
-
-#~ msgid "websocket.url"
-#~ msgstr "websocket.url"
+msgstr ""
 

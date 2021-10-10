@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="服务端API" href="../server-api/index.html" />
+    <link rel="next" title="Serve API" href="../server-api/index.html" />
     <link rel="prev" title="Socket" href="Socket.html" /> 
 </head>
 
@@ -41,24 +41,26 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">文档</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">客户端 API</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Client API</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="IO.html">IO</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Manager</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">Serve API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">Release history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -75,8 +77,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-          <li><a href="index.html">客户端 API</a> &raquo;</li>
+          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
+          <li><a href="index.html">Client API</a> &raquo;</li>
       <li>Manager</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/client-api/Manager.rst.txt" rel="nofollow"> 查看页面源码</a>
@@ -100,13 +102,13 @@
 <li><p><strong>options</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
-<p>可用选项:</p>
+<p>Available options:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -114,31 +116,51 @@
 <col style="width: 46%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>选项</p></th>
-<th class="head"><p>默认值</p></th>
-<th class="head"><p>描述</p></th>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">/socket.io</span></code></p></td>
-<td><p>在服务器端捕获的路径的名称</p></td>
+<td><p>name of the path that
+is captured on the
+server side</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reconnection</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>是否自动重新连接</p></td>
+<td><p>whether to reconnect automatically</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Infinity</span></code></p></td>
-<td><p>放弃之前的重新连接尝试次数</p></td>
+<td><p>number of reconnection
+attempts before giving
+up</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reconnectionDelay</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
-<td><p>在尝试重新连接之前最初等待多长时间(<code class="docutils literal notranslate"><span class="pre">1000</span></code>).受+/- <code class="docutils literal notranslate"><span class="pre">randomizationFactor</span></code> 的影响,例如默认的初始延迟将在500到1500ms之间.</p></td>
+<td><p>how long to initially
+wait before attempting
+a new reconnection
+(<code class="docutils literal notranslate"><span class="pre">1000</span></code>). Affected by
++/-
+<code class="docutils literal notranslate"><span class="pre">randomizationFactor</span></code>
+,
+for example the default
+initial delay will be
+between 500 to 1500ms.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reconnectionDelayMax</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></td>
-<td><p>重新连接之间等待的最长时间(<code class="docutils literal notranslate"><span class="pre">5000</span></code>).如上所述,每次尝试都将重新连接延迟增加2倍以及随机化</p></td>
+<td><p>maximum amount of time
+to wait between
+reconnections
+(<code class="docutils literal notranslate"><span class="pre">5000</span></code>). Each
+attempt increases the
+reconnection delay by
+2x along with a
+randomization as above</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">randomizationFactor</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
@@ -148,26 +170,47 @@ randomizationFactor &lt;=
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">20000</span></code></p></td>
-<td><p>在发出 <code class="docutils literal notranslate"><span class="pre">connect_error</span></code> 和 <code class="docutils literal notranslate"><span class="pre">connect_timeout</span></code> 事件之前的连接超时</p></td>
+<td><p>connection timeout
+before a
+<code class="docutils literal notranslate"><span class="pre">connect_error</span></code> and
+<code class="docutils literal notranslate"><span class="pre">connect_timeout</span></code>
+events are emitted</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">autoConnect</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>通过将此设置为false,只要您认为合适,就必须调用 <code class="docutils literal notranslate"><span class="pre">manager.open</span></code></p></td>
+<td><p>by setting this false,
+you have to call
+<code class="docutils literal notranslate"><span class="pre">manager.open</span></code>
+whenever you decide
+it’s appropriate</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">query</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p>连接命名空间时发送的其他查询参数(然后在服务器端的 <code class="docutils literal notranslate"><span class="pre">socket.handshake.quer</span> <span class="pre">y</span></code> 对象中找到)</p></td>
+<td><p>additional query
+parameters that are
+sent when connecting a
+namespace (then found
+in
+<code class="docutils literal notranslate"><span class="pre">socket.handshake.quer</span>
+<span class="pre">y</span></code>
+object on the
+server-side)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">parser</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>要使用的解析器.默认为socket.io附带的 <code class="docutils literal notranslate"><span class="pre">Parser</span></code> 的实例.请参阅 <a class="reference external" href="https://github.com/socketio/socket.io-parser">socket.io-parser</a>.</p></td>
+<td><p>the parser to use.
+Defaults to an instance
+of the <code class="docutils literal notranslate"><span class="pre">Parser</span></code> that
+ships with socket.io.
+See
+<a class="reference external" href="https://github.com/socketio/socket.io-parser">socket.io-parser</a>.</p></td>
 </tr>
 </tbody>
 </table>
-<p>底层Engine.IO客户端的可用选项:</p>
+<p>Available options for the underlying Engine.IO client:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 30%" />
@@ -175,78 +218,162 @@ randomizationFactor &lt;=
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>选项</p></th>
-<th class="head"><p>默认值</p></th>
-<th class="head"><p>描述</p></th>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">upgrade</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>客户端是否应该尝试将传输从长轮询升级到更好的状态.</p></td>
+<td><p>whether the client
+should try to upgrade
+the transport from
+long-polling to
+something better.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">forceJSONP</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>强制JSONP进行轮询传输.</p></td>
+<td><p>forces JSONP for
+polling transport.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jsonp</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>确定是否在必要时使用JSONP进行轮询.如果禁用(通过设置为false),则会发出错误(如果没有其他传输可用,则说“没有传输可用”).如果另一个传输可用于打开连接(例如WebSocket),则将使用该传输.</p></td>
+<td><p>determines whether to
+use JSONP when
+necessary for polling.
+If disabled (by
+settings to false) an
+error will be emitted
+(saying “No transports
+available”) if no other
+transports are
+available. If another
+transport is available
+for opening a
+connection
+(e.g. WebSocket) that
+transport will be used
+instead.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">forceBase</span>
 <span class="pre">64</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>即使XHR2 responseType可用,也强制基本64编码用于轮询传输,即使使用的标准支持二进制,也使用WebSocket.</p></td>
+<td><p>forces base 64 encoding
+for polling transport
+even when XHR2
+responseType is
+available and WebSocket
+even if the used
+standard supports
+binary.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enablesXDR</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>为IE8启用XDomainRequest,以避免因点击声音加载条形闪烁.默认为 <code class="docutils literal notranslate"><span class="pre">false</span></code>,因为XDomainRequest有一个不发送cookie的缺陷.</p></td>
+<td><p>enables XDomainRequest
+for IE8 to avoid
+loading bar flashing
+with click sound.
+default to <code class="docutils literal notranslate"><span class="pre">false</span></code>
+because XDomainRequest
+has a flaw of not
+sending cookie.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">timestampRequests</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>是否为每个传输请求添加时间戳.注意：除非将此选项显式设置为 <code class="docutils literal notranslate"><span class="pre">false</span></code>,否则始终会标记轮询请求</p></td>
+<td><p>whether to add the
+timestamp with each
+transport request.
+Note: polling requests
+are always stamped
+unless this option is
+explicitly set to
+<code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">timestampParam</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
-<td><p>时间戳参数</p></td>
+<td><p>the timestamp
+parameter</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">policyPort</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">843</span></code></p></td>
-<td><p>策略服务器侦听的端口</p></td>
+<td><p>port the policy server
+listens on</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transports</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">['polling',</span> <span class="pre">'websocket']</span></code></p></td>
-<td><p>要尝试的传输列表(按顺序). <code class="docutils literal notranslate"><span class="pre">Engine</span></code> 总是试图直接与第一个连接,前提是它的特征检测测试通过.</p></td>
+<td><p>a list of transports to
+try (in order).
+<code class="docutils literal notranslate"><span class="pre">Engine</span></code> always
+attempts to connect
+directly with the first
+one, provided the
+feature detection test
+for it passes.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transportOptions</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p>选项的哈希值,由传输名称索引,覆盖给定传输的公共选项</p></td>
+<td><p>hash of options,
+indexed by transport
+name, overriding the
+common options for the
+given transport</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rememberUpgrade</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>如果为true,并且先前与服务器的websocket连接成功,则连接尝试将绕过正常的升级过程并最初尝试websocket.传输错误后的连接尝试将使用正常的升级过程.建议您仅在使用SSL/TLS连接时打开此选项,或者如果您知道网络未阻止websockets.</p></td>
+<td><p>If true and if the
+previous websocket
+connection to the
+server succeeded, the
+connection attempt will
+bypass the normal
+upgrade process and
+will initially try
+websocket. A connection
+attempt following a
+transport error will
+use the normal upgrade
+process. It is
+recommended you turn
+this on only when using
+SSL/TLS connections, or
+if you know that your
+network does not block
+websockets.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">onlyBinaryUpgrades</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>运输升级是否应限于支持二进制数据的运输</p></td>
+<td><p>whether transport
+upgrades should be
+restricted to
+transports supporting
+binary data</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">requestTimeout</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
-<td><p>xhr-polling请求的超时(以毫秒为单位)(<code class="docutils literal notranslate"><span class="pre">0</span></code>)(<em>仅用于轮询传输</em>)</p></td>
+<td><p>timeout for xhr-polling
+requests in
+milliseconds (<code class="docutils literal notranslate"><span class="pre">0</span></code>)
+(<em>only for polling
+transport</em>)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">protocols</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>子协议列表(参见`MDN参考 &lt;<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers">https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers</a> #Subprotocols&gt;`_)(<em>仅适用于websocket传输</em>)</p></td>
+<td><p>a list of subprotocols
+(see <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#Subprotocols">MDN
+reference</a>)
+(<em>only for websocket
+transport</em>)</p></td>
 </tr>
 </tbody>
 </table>
-<p>底层Engine.IO客户端的Node.js-only选项：</p>
+<p>Node.js-only options for the underlying Engine.IO client:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 38%" />
@@ -254,94 +381,146 @@ randomizationFactor &lt;=
 <col style="width: 39%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>选项</p></th>
-<th class="head"><p>默认值</p></th>
-<th class="head"><p>描述</p></th>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">agent</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">http.Agent</span></code> 使用</p></td>
+<td><p>the <code class="docutils literal notranslate"><span class="pre">http.Agent</span></code> to
+use</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pfx</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>用于SSL的证书,私钥和CA证书.</p></td>
+<td><p>Certificate, Private
+key and CA certificates
+to use for SSL.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>用于SSL的私钥.</p></td>
+<td><p>Private key to use for
+SSL.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">passphrase</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>私钥或pfx的密码短语.</p></td>
+<td><p>A string of passphrase
+for the private key or
+pfx.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cert</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>公共x509证书使用.</p></td>
+<td><p>Public x509 certificate
+to use.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ca</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>用于检查远程主机的授权证书或授权证书数组.</p></td>
+<td><p>An authority
+certificate or array of
+authority certificates
+to check the remote
+host against.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ciphers</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>描述要使用或排除的密码的字符串.有关格式的详细信息,请参阅 <a class="reference external" href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">cipher格式列表</a>.</p></td>
+<td><p>A string describing the
+ciphers to use or
+exclude. Consult the
+<a class="reference external" href="http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT">cipher format
+list</a>
+for details on the
+format.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rejectUnauthorized</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>如果为true,则根据提供的CA列表验证服务器证书.如果验证失败,则会发出“错误”事件.在发送HTTP请求之前,验证发生在连接级别.</p></td>
+<td><p>If true, the server
+certificate is verified
+against the list of
+supplied CAs. An
+‘error’ event is
+emitted if verification
+fails. Verification
+happens at the
+connection level,
+before the HTTP request
+is sent.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">perMessageDeflate</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
-<td><p>WebSocket permessage-deflate扩展的参数(参见 <a class="reference external" href="https://github.com/einaros/ws">ws module</a> api docs).设置为“false”以禁用.</p></td>
+<td><p>parameters of the
+WebSocket
+permessage-deflate
+extension (see <a class="reference external" href="https://github.com/einaros/ws">ws
+module</a>
+api docs). Set to
+<code class="docutils literal notranslate"><span class="pre">false</span></code> to disable.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">extraHeaders</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p>将每个请求传递给服务器的标头(通过xhr-polling和websockets).然后可以在握手期间或特殊代理中使用这些值.</p></td>
+<td><p>Headers that will be
+passed for each request
+to the server (via
+xhr-polling and via
+websockets). These
+values then can be used
+during handshake or for
+special proxies.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">forceNode</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td><p>对websockets使用NodeJS实现 - 即使有可用的本机Browser-Websocket,默认情况下优先于NodeJS实现. (这在使用nw.js或者电子等混合平台时非常有用)</p></td>
+<td><p>Uses NodeJS
+implementation for
+websockets - even if
+there is a native
+Browser-Websocket
+available, which is
+preferred by default
+over the NodeJS
+implementation. (This
+is useful when using
+hybrid platforms like
+nw.js or electron)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">localAddress</span></code></p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><p>要连接的本地IP地址</p></td>
+<td><p>the local IP address to
+connect to</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.reconnection">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnection</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnection" title="永久链接至目标"></a></dt>
-<dd><p>设置``reconnection`` 选项,如果没有传递参数则返回它.</p>
+<dd><p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnection</span></code> option, or returns it if no parameters are passed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager|Boolean</span></code></p>
 </dd>
 </dl>
@@ -350,14 +529,14 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.reconnectionAttempts">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnectionAttempts</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionAttempts" title="永久链接至目标"></a></dt>
-<dd><p>设置 <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code> 选项,如果没有传递参数则返回它.</p>
+<dd><p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code> option, or returns it if no parameters are passed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p>
 </dd>
 </dl>
@@ -366,14 +545,14 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.reconnectionDelay">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnectionDelay</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionDelay" title="永久链接至目标"></a></dt>
-<dd><p>设置 <code class="docutils literal notranslate"><span class="pre">reconnectionDelay</span></code> 选项,如果没有传递参数则返回它.</p>
+<dd><p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnectionDelay</span></code> option, or returns it if no parameters are passed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p>
 </dd>
 </dl>
@@ -382,14 +561,14 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.reconnectionDelayMax">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">reconnectionDelayMax</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.reconnectionDelayMax" title="永久链接至目标"></a></dt>
-<dd><p>设置 <code class="docutils literal notranslate"><span class="pre">reconnectionDelayMax</span></code> 选项,如果没有传递参数则返回它.</p>
+<dd><p>Sets the <code class="docutils literal notranslate"><span class="pre">reconnectionDelayMax</span></code> option, or returns it if no parameters are passed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p>
 </dd>
 </dl>
@@ -398,14 +577,14 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.timeout">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">timeout</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">value</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.timeout" title="永久链接至目标"></a></dt>
-<dd><p>设置 <code class="docutils literal notranslate"><span class="pre">timeout</span></code> 选项,如果没有传递参数则返回它.</p>
+<dd><p>Sets the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> option, or returns it if no parameters are passed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager|Number</span></code></p>
 </dd>
 </dl>
@@ -414,15 +593,15 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.open">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.open" title="永久链接至目标"></a></dt>
-<dd><p>如果管理器使用 <code class="docutils literal notranslate"><span class="pre">autoConnect</span></code> 启动到 <code class="docutils literal notranslate"><span class="pre">false</span></code>,则启动新的连接尝试.</p>
-<p><code class="docutils literal notranslate"><span class="pre">callback</span></code> 参数是可选的,一旦尝试失败/成功就会被调用.</p>
+<dd><p>If the manager was initiated with <code class="docutils literal notranslate"><span class="pre">autoConnect</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>, launch a new connection attempt.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">callback</span></code> argument is optional and will be called once the attempt fails/succeeds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>callback</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Manager</span></code></p>
 </dd>
 </dl>
@@ -431,13 +610,13 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.connect">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#manager.connect" title="永久链接至目标"></a></dt>
-<dd><p>同义词 <a class="reference external" href="#manageropencallback">manager.open([callback])</a>.</p>
+<dd><p>Synonym of <a class="reference external" href="#manageropencallback">manager.open([callback])</a>.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="manager.socket">
 <span class="sig-prename descclassname"><span class="pre">manager.</span></span><span class="sig-name descname"><span class="pre">socket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nsp</span></em>, <em class="sig-param"><span class="pre">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#manager.socket" title="永久链接至目标"></a></dt>
-<dd><p>为给定的命名空间创建一个新的 <code class="docutils literal notranslate"><span class="pre">Socket</span></code>.</p>
+<dd><p>Creates a new <code class="docutils literal notranslate"><span class="pre">Socket</span></code> for the given namespace.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -445,7 +624,7 @@ randomizationFactor &lt;=
 <li><p><strong>options</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">返回</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Socket</span></code></p>
 </dd>
 </dl>
@@ -454,11 +633,11 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.connect_error">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">connect_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect_error" title="永久链接至目标"></a></dt>
-<dd><p>因连接错误而被解雇.</p>
+<dd><p>Fired upon a connection error.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>error</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – 错误对象</p></li>
+<li><p><strong>error</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – error object</p></li>
 </ul>
 </dd>
 </dl>
@@ -467,17 +646,17 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.connect_timeout">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">connect_timeout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect_timeout" title="永久链接至目标"></a></dt>
-<dd><p>在连接超时时触发.</p>
+<dd><p>Fired upon a connection timeout.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.reconnect">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">attempt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect" title="永久链接至目标"></a></dt>
-<dd><p>成功重新连接后被解雇.</p>
+<dd><p>Fired upon a successful reconnection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 重新连接尝试次数</p></li>
+<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – reconnection attempt number</p></li>
 </ul>
 </dd>
 </dl>
@@ -486,11 +665,11 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.reconnect_attempt">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect_attempt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">attempt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_attempt" title="永久链接至目标"></a></dt>
-<dd><p>试图重新连接时被解雇.</p>
+<dd><p>Fired upon an attempt to reconnect.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 重新连接尝试次数</p></li>
+<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – reconnection attempt number</p></li>
 </ul>
 </dd>
 </dl>
@@ -499,11 +678,11 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.reconnecting">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnecting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">attempt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnecting" title="永久链接至目标"></a></dt>
-<dd><p>试图重新连接时被解雇.</p>
+<dd><p>Fired upon an attempt to reconnect.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 重新连接尝试次数</p></li>
+<li><p><strong>attempt</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – reconnection attempt number</p></li>
 </ul>
 </dd>
 </dl>
@@ -512,11 +691,11 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.reconnect_error">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_error" title="永久链接至目标"></a></dt>
-<dd><p>在重新连接尝试错误时触发.</p>
+<dd><p>Fired upon a reconnection attempt error.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>error</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – 错误对象</p></li>
+<li><p><strong>error</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Object()</span></code></span>) – error object</p></li>
 </ul>
 </dd>
 </dl>
@@ -525,23 +704,23 @@ randomizationFactor &lt;=
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.reconnect_failed">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">reconnect_failed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.reconnect_failed" title="永久链接至目标"></a></dt>
-<dd><p>在 <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code> 中无法重新连接时被触发.</p>
+<dd><p>Fired when couldn’t reconnect within <code class="docutils literal notranslate"><span class="pre">reconnectionAttempts</span></code>.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.ping">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.ping" title="永久链接至目标"></a></dt>
-<dd><p>ping数据包写入服务器时触发.</p>
+<dd><p>Fired when a ping packet is written out to the server.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="Event.pong">
 <span class="sig-prename descclassname"><span class="pre">Event.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Event.pong" title="永久链接至目标"></a></dt>
-<dd><p>从服务器收到乒乓时触发.</p>
+<dd><p>Fired when a pong is received from the server.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ms</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 自 <code class="docutils literal notranslate"><span class="pre">ping</span></code> 包以来经过的ms数(即：等待时间).</p></li>
+<li><p><strong>ms</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – number of ms elapsed since <code class="docutils literal notranslate"><span class="pre">ping</span></code> packet (i.e.: latency).</p></li>
 </ul>
 </dd>
 </dl>
@@ -554,13 +733,13 @@ randomizationFactor &lt;=
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Socket.html" class="btn btn-neutral float-left" title="Socket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="../server-api/index.html" class="btn btn-neutral float-right" title="服务端API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../server-api/index.html" class="btn btn-neutral float-right" title="Serve API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

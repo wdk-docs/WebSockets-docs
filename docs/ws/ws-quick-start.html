@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ws: a Node.js WebSocket library &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ws: a Node.js WebSocket library</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/ws/ws-quick-start.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ws-a-node-js-websocket-library">
+<h1>ws: a Node.js WebSocket library<a class="headerlink" href="#ws-a-node-js-websocket-library" title="永久链接至标题"></a></h1>
+<p>ws is a simple to use, blazing fast, and thoroughly tested WebSocket client and server implementation.</p>
+<p>Passes the quite extensive Autobahn test suite: <a class="reference external" href="server-report">server</a>, <a class="reference external" href="client-report">client</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>This module does not work in the browser.
+The client in the docs is a reference to a back end with the role of a client in the WebSocket communication.
+Browser clients must use the native <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">WebSocket</a> object.
+To make the same code work seamlessly on Node.js and the browser,
+you can use one of the many wrappers available on npm,
+like <a class="reference external" href="https://github.com/heineiuo/isomorphic-ws">isomorphic-ws</a>.</p>
+</div>
+<section id="protocol-support">
+<h2>Protocol support<a class="headerlink" href="#protocol-support" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p><strong>HyBi drafts 07-12</strong> (Use the option <cite>protocolVersion: 8</cite>)</p></li>
+<li><p><strong>HyBi drafts 13-17</strong> (Current default, alternatively option <cite>protocolVersion: 13</cite>)</p></li>
+</ul>
+</section>
+<section id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="永久链接至标题"></a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">ws</span>
+</pre></div>
+</div>
+<section id="opt-in-for-performance-and-spec-compliance">
+<h3>Opt-in for performance and spec compliance<a class="headerlink" href="#opt-in-for-performance-and-spec-compliance" title="永久链接至标题"></a></h3>
+<p>There are 2 optional modules that can be installed along side with the ws module.
+These modules are binary addons which improve certain operations.
+Prebuilt binaries are available for the most popular platforms so you don’t necessarily need to have a C++ compiler installed on your machine.</p>
+<ul class="simple">
+<li><p><cite>npm install –save-optional bufferutil</cite>: Allows to efficiently perform operations such as masking and unmasking the data payload of the WebSocket frames.</p></li>
+<li><p><cite>npm install –save-optional utf-8-validate</cite>: Allows to efficiently check if a message contains valid UTF-8 as required by the spec.</p></li>
+</ul>
+</section>
+</section>
+<section id="api-docs">
+<h2>API docs<a class="headerlink" href="#api-docs" title="永久链接至标题"></a></h2>
+<p>See <span class="xref std std-doc">ws</span> for Node.js-like docs for the ws classes.</p>
+</section>
+<section id="websocket-compression">
+<h2>WebSocket compression<a class="headerlink" href="#websocket-compression" title="永久链接至标题"></a></h2>
+<p>ws supports the <a class="reference external" href="permessage-deflate">permessage-deflate extension</a> which enables
+the client and server to negotiate a compression algorithm and its parameters,
+and then selectively apply it to the data payloads of each WebSocket message.</p>
+<p>The extension is disabled by default on the server and enabled by default on the client.
+It adds a significant overhead in terms of performance and memory consumption so we suggest to enable it only if it is really needed.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Node.js has a variety of issues with high-performance compression,
+where increased concurrency, especially on Linux,
+can lead to <a class="reference external" href="node-zlib-bug">catastrophic memory fragmentation</a> and slow performance.
+If you intend to use permessage-deflate in production,
+it is worthwhile to set up a test representative of your workload and ensure Node.js/zlib will handle it with
+acceptable performance and memory usage.</p>
+</div>
+<p>Tuning of permessage-deflate can be done via the options defined below. You can
+also use <cite>zlibDeflateOptions</cite> and <cite>zlibInflateOptions</cite>, which is passed directly
+into the creation of <a class="reference external" href="node-zlib-deflaterawdocs">raw deflate/inflate streams</a>.</p>
+<p>See <a class="reference external" href="ws-server-options">the docs</a> for more options.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">wss</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="mf">8080</span><span class="p">,</span>
+  <span class="nx">perMessageDeflate</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">zlibDeflateOptions</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// See zlib defaults.</span>
+      <span class="nx">chunkSize</span><span class="o">:</span> <span class="mf">1024</span><span class="p">,</span>
+      <span class="nx">memLevel</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
+      <span class="nx">level</span><span class="o">:</span> <span class="mf">3</span>
+    <span class="p">},</span>
+    <span class="nx">zlibInflateOptions</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">chunkSize</span><span class="o">:</span> <span class="mf">10</span> <span class="o">*</span> <span class="mf">1024</span>
+    <span class="p">},</span>
+    <span class="c1">// Other options settable:</span>
+    <span class="nx">clientNoContextTakeover</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Defaults to negotiated value.</span>
+    <span class="nx">serverNoContextTakeover</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Defaults to negotiated value.</span>
+    <span class="nx">serverMaxWindowBits</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span> <span class="c1">// Defaults to negotiated value.</span>
+    <span class="c1">// Below options specified as default values.</span>
+    <span class="nx">concurrencyLimit</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span> <span class="c1">// Limits zlib concurrency for perf.</span>
+    <span class="nx">threshold</span><span class="o">:</span> <span class="mf">1024</span> <span class="c1">// Size (in bytes) below which messages</span>
+    <span class="c1">// should not be compressed.</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The client will only use the extension if it is supported and enabled on the server.
+To always disable the extension on the client set the <cite>perMessageDeflate</cite> option to <cite>false</cite>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://www.host.com/path&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">perMessageDeflate</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="usage-examples">
+<h2>Usage examples<a class="headerlink" href="#usage-examples" title="永久链接至标题"></a></h2>
+<section id="sending-and-receiving-text-data">
+<h3>Sending and receiving text data<a class="headerlink" href="#sending-and-receiving-text-data" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://www.host.com/path&#39;</span><span class="p">);</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">open</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">incoming</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="sending-binary-data">
+<h3>Sending binary data<a class="headerlink" href="#sending-binary-data" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://www.host.com/path&#39;</span><span class="p">);</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">open</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Float32Array</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">/</span> <span class="mf">2</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="simple-server">
+<h3>Simple server<a class="headerlink" href="#simple-server" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">wss</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">8080</span> <span class="p">});</span>
+
+<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">incoming</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;received: %s&#39;</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="external-http-s-server">
+<h3>External HTTP/S server<a class="headerlink" href="#external-http-s-server" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;https&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">https</span><span class="p">.</span><span class="nx">createServer</span><span class="p">({</span>
+  <span class="nx">cert</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;/path/to/cert.pem&#39;</span><span class="p">),</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;/path/to/key.pem&#39;</span><span class="p">)</span>
+<span class="p">});</span>
+<span class="kd">const</span> <span class="nx">wss</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">server</span> <span class="p">});</span>
+
+<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">incoming</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;received: %s&#39;</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">8080</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-servers-sharing-a-single-http-s-server">
+<h3>Multiple servers sharing a single HTTP/S server<a class="headerlink" href="#multiple-servers-sharing-a-single-http-s-server" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">wss1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">noServer</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="kd">const</span> <span class="nx">wss2</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">noServer</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+
+<span class="nx">wss1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">});</span>
+
+<span class="nx">wss2</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;upgrade&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">upgrade</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">socket</span><span class="p">,</span> <span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">pathname</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">pathname</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="s1">&#39;/foo&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">wss1</span><span class="p">.</span><span class="nx">handleUpgrade</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">socket</span><span class="p">,</span> <span class="nx">head</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">done</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">wss1</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="nx">ws</span><span class="p">,</span> <span class="nx">request</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="s1">&#39;/bar&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">wss2</span><span class="p">.</span><span class="nx">handleUpgrade</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">socket</span><span class="p">,</span> <span class="nx">head</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">done</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">wss2</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="nx">ws</span><span class="p">,</span> <span class="nx">request</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">socket</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">8080</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="server-broadcast">
+<h3>Server broadcast<a class="headerlink" href="#server-broadcast" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">wss</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">8080</span> <span class="p">});</span>
+
+<span class="c1">// Broadcast to all.</span>
+<span class="nx">wss</span><span class="p">.</span><span class="nx">broadcast</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">broadcast</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">wss</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="nx">each</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">OPEN</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">incoming</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Broadcast to everyone else.</span>
+    <span class="nx">wss</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="nx">each</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">client</span> <span class="o">!==</span> <span class="nx">ws</span> <span class="o">&amp;&amp;</span> <span class="nx">client</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">OPEN</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="echo-websocket-org-demo">
+<h3>echo.websocket.org demo<a class="headerlink" href="#echo-websocket-org-demo" title="永久链接至标题"></a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;wss://echo.websocket.org/&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">origin</span><span class="o">:</span> <span class="s1">&#39;https://websocket.org&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">open</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;connected&#39;</span><span class="p">);</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+<span class="p">});</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">close</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;disconnected&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">incoming</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Roundtrip time: </span><span class="si">${</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">data</span><span class="si">}</span><span class="sb"> ms`</span><span class="p">);</span>
+
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">timeout</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+  <span class="p">},</span> <span class="mf">500</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="other-examples">
+<h3>Other examples<a class="headerlink" href="#other-examples" title="永久链接至标题"></a></h3>
+<p>For a full example with a browser client communicating with a ws server, see the examples folder.</p>
+<p>Otherwise, see the test cases.</p>
+</section>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="永久链接至标题"></a></h2>
+<p>… How to get the IP address of the client?</p>
+<blockquote>
+<div><p>The remote IP address can be obtained from the raw socket.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">wss</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">8080</span> <span class="p">});</span>
+<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">ip</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">remoteAddress</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>When the server runs behind a proxy like NGINX, the de-facto standard is to use the <cite>X-Forwarded-For</cite> header.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">ip</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-forwarded-for&#39;</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\s*,\s*/</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>… How to detect and close broken connections?</p>
+<blockquote>
+<div><p>Sometimes the link between the server and the client can be interrupted in a way
+that keeps both the server and the client unaware of the broken state of the
+connection (e.g. when pulling the cord).</p>
+<p>In these cases ping messages can be used as a means to verify that the remote endpoint is still responsive.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">noop</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="kd">function</span> <span class="nx">heartbeat</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">isAlive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">wss</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">8080</span> <span class="p">});</span>
+
+<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">connection</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">isAlive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pong&#39;</span><span class="p">,</span> <span class="nx">heartbeat</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="nx">ping</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">wss</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="nx">each</span><span class="p">(</span><span class="nx">ws</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">ws</span><span class="p">.</span><span class="nx">isAlive</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="k">return</span> <span class="nx">ws</span><span class="p">.</span><span class="nx">terminate</span><span class="p">();</span>
+
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">isAlive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">ping</span><span class="p">(</span><span class="nx">noop</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">},</span> <span class="mf">30000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Pong messages are automatically sent in response to ping messages as required by the spec.</p>
+<p>Just like the server example above your clients might as well lose connection
+without knowing it. You might want to add a ping listener on your clients to
+prevent that. A simple implementation would be:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">heartbeat</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">clearTimeout</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">pingTimeout</span><span class="p">);</span>
+
+  <span class="c1">// Use `WebSocket#terminate()` and not `WebSocket#close()`. Delay should be</span>
+  <span class="c1">// equal to the interval at which your server sends out pings plus a</span>
+  <span class="c1">// conservative assumption of the latency.</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">pingTimeout</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">terminate</span><span class="p">();</span>
+  <span class="p">},</span> <span class="mf">30000</span> <span class="o">+</span> <span class="mf">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;wss://echo.websocket.org/&#39;</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="nx">heartbeat</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="nx">heartbeat</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">clear</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">clearTimeout</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">pingTimeout</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>… How to connect via a proxy?</p>
+<blockquote>
+<div><p>Use a custom <cite>http.Agent</cite> implementation like <a class="reference external" href="https://github.com/TooTallNate/node-https-proxy-agent">https-proxy-agent</a> or <a class="reference external" href="https://github.com/TooTallNate/node-socks-proxy-agent">socks-proxy-agent</a> .</p>
+</div></blockquote>
+</section>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="永久链接至标题"></a></h2>
+<p>We’re using the GitHub <a class="reference external" href="changelog">releases</a> for changelog entries.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="永久链接至标题"></a></h2>
+<p>[MIT](LICENSE)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

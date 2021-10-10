@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>记录和调试 &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Logging and debugging &mdash; WebSockets Docs v2019.0613 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Emit cheatsheet" href="emit-cheatsheet.html" />
-    <link rel="prev" title="使用多个节点" href="using-multiple-nodes.html" /> 
+    <link rel="prev" title="Using multiple nodes" href="using-multiple-nodes.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,33 +41,35 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started.html">聊天 - 入门</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">文档</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="info.html">介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">房间和名称空间</a></li>
-<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">从0.9迁移</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">使用多个节点</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">记录和调试</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#available-debugging-scopes">可用的调试范围</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="info.html">introduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rooms-and-namespaces.html">Rooms and namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrating-from-0-9.html">Migrating from 0.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multiple-nodes.html">Using multiple nodes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Logging and debugging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#available-debugging-scopes">Available debugging scopes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="emit-cheatsheet.html">Emit cheatsheet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html">内幕</a></li>
-<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">在引擎盖下</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faq.html">常见问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Internals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html#under-the-hood">Under the hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">客户端 API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">服务端API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">演示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server-api/index.html">Serve API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">发布历史记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">Release history</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -84,9 +86,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io 文档</a> &raquo;</li>
-          <li><a href="index.html">文档</a> &raquo;</li>
-      <li>记录和调试</li>
+          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
+          <li><a href="index.html">Docs</a> &raquo;</li>
+      <li>Logging and debugging</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/docs/logging-and-debugging.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -97,26 +99,38 @@
            <div itemprop="articleBody">
              
   <section id="logging-and-debugging">
-<h1>记录和调试<a class="headerlink" href="#logging-and-debugging" title="永久链接至标题"></a></h1>
-<p>Socket.IO现在完全由一个名为 <a class="reference external" href="https://github.com/visionmedia/debug">debug</a> 的简约但功能强大的实用工具配备,由TJ Holowaychuk提供.</p>
-<p>在1.0之前,Socket.IO服务器将默认将所有内容记录到控制台.对于许多用户来说这很烦人(尽管对其他用户非常有用),所以现在我们默认默认情况下是完全无声的.</p>
-<p>基本思想是Socket.IO使用的每个模块都提供不同的调试范围,使您可以深入了解内部.默认情况下,所有输出都被抑制,您可以通过提供 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> env变量(Node.JS)或 <code class="docutils literal notranslate"><span class="pre">localStorage.debug</span></code> 属性(浏览器)来选择查看消息.</p>
-<p>您可以在我们的主页上看到它的实际效果：</p>
+<h1>Logging and debugging<a class="headerlink" href="#logging-and-debugging" title="永久链接至标题"></a></h1>
+<p>Socket.IO is now completely instrumented by a minimalistic yet
+tremendously powerful utility called
+<a class="reference external" href="https://github.com/visionmedia/debug">debug</a> by TJ Holowaychuk.</p>
+<p>Before 1.0, the Socket.IO server would default to logging everything out
+to the console. This turned out to be annoyingly verbose for many users
+(although extremely useful for others), so now we default to being
+completely silent by default.</p>
+<p>The basic idea is that each module used by Socket.IO provides different
+debugging scopes that give you insight into the internals. By default,
+all output is suppressed, and you can opt into seeing messages by
+supplying the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> env variable (Node.JS) or the
+<code class="docutils literal notranslate"><span class="pre">localStorage.debug</span></code> property (Browsers).</p>
+<p>You can see it in action for example on our homepage:</p>
 <video id="debugging-vid" data-setup='{"autoplay":true,"loop":true, "techOrder": ["html5", "flash"], "height": 300}' class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/IL9alTr0eO.mp4" type="video/mp4"></video><section id="available-debugging-scopes">
-<h2>可用的调试范围<a class="headerlink" href="#available-debugging-scopes" title="永久链接至标题"></a></h2>
-<p>查看可用信息的最佳方法是使用 <code class="docutils literal notranslate"><span class="pre">*</span></code>：</p>
+<h2>Available debugging scopes<a class="headerlink" href="#available-debugging-scopes" title="永久链接至标题"></a></h2>
+<p>The best way to see what information is available is to use the <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">DEBUG</span><span class="o">=*</span> <span class="nx">node</span> <span class="nx">yourfile</span><span class="p">.</span><span class="nx">js</span>
 </pre></div>
 </div>
-<p>或在浏览器中：</p>
+<p>or in the browser:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">debug</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>然后按照你感兴趣的范围进行过滤.你可以在 <code class="docutils literal notranslate"><span class="pre">*</span></code> 前加上范围,如果有多个则用逗号分隔.例如,要仅从Node.js上的socket.io客户端查看调试语句,请尝试以下操作：</p>
+<p>And then filter by the scopes you’re interested in. You can prefix the
+<code class="docutils literal notranslate"><span class="pre">*</span></code> with scopes, separated by comma if there is more than one. For
+example, to only see debug statements from the socket.io client on
+Node.js try this:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">DEBUG</span><span class="o">=</span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">:</span><span class="nx">client</span><span class="o">*</span> <span class="nx">node</span> <span class="nx">yourfile</span><span class="p">.</span><span class="nx">js</span>
 </pre></div>
 </div>
-<p>要查看来自引擎 <em>和</em> socket.io的所有调试消息：</p>
+<p>To see all debug messages from the engine <em>and</em> socket.io:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">DEBUG</span><span class="o">=</span><span class="nx">engine</span><span class="p">,</span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">*</span> <span class="nx">node</span> <span class="nx">yourfile</span><span class="p">.</span><span class="nx">js</span>
 </pre></div>
 </div>
@@ -127,14 +141,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="using-multiple-nodes.html" class="btn btn-neutral float-left" title="使用多个节点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="using-multiple-nodes.html" class="btn btn-neutral float-left" title="Using multiple nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="emit-cheatsheet.html" class="btn btn-neutral float-right" title="Emit cheatsheet" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

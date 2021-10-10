@@ -19,6 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="koa-easy-ws" href="koa-easy-ws.html" />
     <link rel="prev" title="ws: a Node.js WebSocket library" href="quick-start.html" /> 
 </head>
 
@@ -40,14 +41,17 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="koa-websocket.html">koa-websocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html">ws: a Node.js WebSocket library</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="koa-easy-ws.html">koa-easy-ws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-room.html">Websocket multi room based on ws.js</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -80,25 +84,25 @@
 <dl class="js class">
 <dt class="sig sig-object js" id="WebSocket.Server">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">Server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">{host</span></em>, <em class="sig-param"><span class="pre">port</span></em>, <em class="sig-param"><span class="pre">server</span></em>, <em class="sig-param"><span class="pre">noServer...}</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.Server" title="永久链接至目标"></a></dt>
-<dd><p>此类表示WebSocket服务器。它扩展了 <cite>EventEmitter</cite> 。</p>
+<dd><p>This class represents a WebSocket server. It extends the <cite>EventEmitter</cite>.</p>
 <p>new WebSocket.Server(options[, callback])</p>
-<p>创建一个新的服务器实例。必须提供 <cite>port</cite>,  <cite>server</cite> 或 <cite>noServer</cite> 之一或抛出错误。</p>
+<p>Create a new server instance. One of <cite>port</cite>, <cite>server</cite> or <cite>noServer</cite> must be provided or an error is thrown.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>host</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – 主机名绑定服务器的位置。</p></li>
-<li><p><strong>port</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 绑定服务器的端口。</p></li>
-<li><p><strong>backlog</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – 挂起连接队列的最大长度。</p></li>
-<li><p><strong>server</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.Server</span> <span class="pre">|</span> <span class="pre">https.Server()</span></code></span>) – 预先创建的 Node.js HTTP/S 服务器。</p></li>
-<li><p><strong>verifyClient</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – 一种可用于验证传入连接的功能。见下面的描述。</p></li>
-<li><p><strong>handleProtocols</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – 一种可用于处理WebSocket子协议的函数。见下面的描述。</p></li>
-<li><p><strong>path</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – 仅接受与此路径匹配的连接。</p></li>
-<li><p><strong>noServer</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – 不启用服务器模式。</p></li>
-<li><p><strong>clientTracking</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – 指定是否跟踪客户端。</p></li>
-<li><p><strong>perMessageDeflate</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean</span> <span class="pre">|</span> <span class="pre">Object()</span></code></span>) – <p>启用/禁用渗透 - 放气。</p>
+<li><p><strong>host</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – The hostname where to bind the server.</p></li>
+<li><p><strong>port</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – The port where to bind the server.</p></li>
+<li><p><strong>backlog</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – The maximum length of the queue of pending connections.</p></li>
+<li><p><strong>server</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">http.Server</span> <span class="pre">|</span> <span class="pre">https.Server()</span></code></span>) – A pre-created Node.js HTTP/S server.</p></li>
+<li><p><strong>verifyClient</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – A function which can be used to validate incoming connections. See description below.</p></li>
+<li><p><strong>handleProtocols</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – A function which can be used to handle the WebSocket subprotocols. See description below.</p></li>
+<li><p><strong>path</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – Accept only connections matching this path.</p></li>
+<li><p><strong>noServer</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – Enable no server mode.</p></li>
+<li><p><strong>clientTracking</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean()</span></code></span>) – Specifies whether or not to track clients.</p></li>
+<li><p><strong>perMessageDeflate</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean</span> <span class="pre">|</span> <span class="pre">Object()</span></code></span>) – <p>Enable/disable permessage-deflate.</p>
 <p><cite>perMessageDeflate</cite> can be used to control the behavior of <a class="reference external" href="permessage-deflate">permessage-deflate extension</a>.
 he extension is disabled when <cite>false</cite> (default value).</p>
-<p>如果提供了一个对象, 那么这就是扩展参数:</p>
+<p>If an object is provided then that is extension parameters:</p>
 <blockquote>
 <div><ul>
 <li><p><strong>serverNoContextTakeover</strong>: (<em>Boolean</em>) - Whether to use context takeover or not.</p></li>
@@ -112,22 +116,22 @@ he extension is disabled when <cite>false</cite> (default value).</p>
 </ul>
 </div></blockquote>
 </p></li>
-<li><p><strong>maxPayload</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
-<li><p><strong>callback</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – 当不在 “noServer” 模式下运行时, <cite>callback</cite> 将被添加为HTTP服务器上 <cite>listening</cite> 事件的监听器。</p></li>
+<li><p><strong>maxPayload</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – The maximum allowed message size in bytes.</p></li>
+<li><p><strong>callback</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Function()</span></code></span>) – <cite>callback</cite> will be added as a listener for the <cite>listening</cite> event on the HTTP server when not operating in “noServer” mode.</p></li>
 </ul>
 </dd>
 </dl>
-<p>如果设置了 <cite>port</cite> , 则会自动创建, 启动和使用HTTP服务器。</p>
+<p>An HTTP server is automatically created, started, and used if <cite>port</cite> is set.</p>
 <p>To use an external HTTP/S server instead, specify only <cite>server</cite> or <cite>noServer</cite>.
 In this case the HTTP/S server must be started manually. The “noServer” mode allows the WebSocket server to be completly detached from the HTTP/S server.
 This makes it possible, for example, to share a single HTTP/S server between multiple WebSocket servers.</p>
-<p>如果未设置 <cite>verifyClient</cite>, 则自动接受握手。</p>
+<p>If <cite>verifyClient</cite> is not set then the handshake is automatically accepted.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="verifyClient">
 <span class="sig-name descname"><span class="pre">verifyClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">{origin</span></em>, <em class="sig-param"><span class="pre">req</span></em>, <em class="sig-param"><span class="pre">secure}</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">cb</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient" title="永久链接至目标"></a></dt>
-<dd><p>如果它提供了单个参数, 那么就是:</p>
+<dd><p>If it is provided with a single argument then that is:</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -137,13 +141,13 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd>
 </dl>
-<p>函数的返回值（布尔值）确定是否接受握手。</p>
+<p>The return value (Boolean) of the function determines whether or not to accept the handshake.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="verifyClient.cb">
 <span class="sig-prename descclassname"><span class="pre">verifyClient.</span></span><span class="sig-name descname"><span class="pre">cb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">result</span></em>, <em class="sig-param"><span class="pre">code</span></em>, <em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">headers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#verifyClient.cb" title="永久链接至目标"></a></dt>
-<dd><p>如果`verifyClient`提供了两个参数, 那么它们就是:</p>
+<dd><p>if <cite>verifyClient</cite> is provided with two arguments then those are:</p>
 <p>A callback that must be called by the user upon inspection of the <cite>info</cite> fields.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
@@ -168,18 +172,18 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd>
 </dl>
-<p>返回值设置HTTP 101响应中的`Sec-WebSocket-Protocol`头的值。</p>
-<p>如果返回值为“false”, 则不在响应中添加标头。</p>
-<p>如果未设置 <cite>handleProtocols</cite>, 则使用客户端请求的第一个子协议。</p>
+<p>The returned value sets the value of the <cite>Sec-WebSocket-Protocol</cite> header in the HTTP 101 response.</p>
+<p>If returned value is <cite>false</cite> the header is not added in the response.</p>
+<p>If <cite>handleProtocols</cite> is not set then the first of the client’s requested subprotocols is used.</p>
 </dd></dl>
 
 <p>If a property is empty then either an offered configuration or a default value is used. When sending a fragmented message the length of the first fragment is compared to the threshold.</p>
-<p>这确定是否对整个消息使用压缩。</p>
+<p>This determines if compression is used for the entire message.</p>
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.close">
 <span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.close" title="永久链接至目标"></a></dt>
-<dd><p>服务器关闭时发出。此事件仅在内部创建时依赖于HTTP服务器的“close”事件。</p>
-<p>在所有其他情况下, 事件是独立发出的。</p>
+<dd><p>Emitted when the server closes. This event depends on the <cite>‘close’</cite> event of HTTP server only when it is created internally.</p>
+<p>In all other cases, the event is emitted independently.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -193,8 +197,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd>
 </dl>
-<p>握手完成时发出。 <a href="#id1"><span class="problematic" id="id2">`</span></a>request`是客户端发送的http GET请求。</p>
-<p>用于解析权限标头, cookie标头和其他信息。</p>
+<p>Emitted when the handshake is complete. <cite>request</cite> is the http GET request sent by the client.</p>
+<p>Useful for parsing authority headers, cookie headers, and other information.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -203,7 +207,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>error: Error</p></li>
 </ul>
-<p>在底层服务器上发生错误时发出。</p>
+<p>Emitted when an error occurs on the underlying server.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -217,21 +221,21 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd>
 </dl>
-<p>在响应标头作为握手的一部分写入套接字之前发出。</p>
-<p>这允许您在发送标头之前检查/修改标头。</p>
+<p>Emitted before the response headers are written to the socket as part of the handshake.</p>
+<p>This allows you to inspect/modify the headers before they are sent.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.listening">
 <span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">listening</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.listening" title="永久链接至目标"></a></dt>
-<dd><p>绑定基础服务器时发出。</p>
+<dd><p>Emitted when the underlying server has been bound.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="server.address">
 <span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.address" title="永久链接至目标"></a></dt>
 <dd><p>Returns an object with <cite>port</cite>, <cite>family</cite>, and <cite>address</cite> properties specifying the bound address, the address family name, and port of the server as reported by the operating system if listening on an IP socket.</p>
-<p>如果服务器正在侦听管道或UNIX域套接字, 则该名称将作为字符串返回。</p>
+<p>If the server is listening on a pipe or UNIX domain socket, the name is returned as a string.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -240,14 +244,14 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Set}</p></li>
 </ul>
-<p>存储所有连接客户端的集合。请注意, 只有当`clientTracking`真实时, 才会添加此属性。</p>
+<p>A set that stores all connected clients. Please note that this property is only added when the <cite>clientTracking</cite> is truthy.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="server.close">
 <span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标"></a></dt>
-<dd><p>如果在内部创建, 则关闭HTTP服务器, 终止所有客户端并在完成后调用回调。</p>
-<p>如果通过`server`或`noServer`构造函数选项使用外部HTTP服务器, 则必须手动关闭它。</p>
+<dd><p>Close the HTTP server if created internally, terminate all clients and call callback when done.</p>
+<p>If an external HTTP server is used via the <cite>server</cite> or <cite>noServer</cite> constructor options, it must be closed manually.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -263,9 +267,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd>
 </dl>
-<p>处理HTTP升级请求。当在内部创建HTTP服务器或通过`server`选项传递HTTP服务器时，将自动调用此方法。</p>
-<p>在“noServer”模式下操作时, 必须手动调用此方法。</p>
-<p>如果升级成功, 则使用`WebSocket`对象作为参数调用`callback`。</p>
+<p>Handle a HTTP upgrade request. When the HTTP server is created internally or when the HTTP server is passed via the <cite>server</cite> option, this method is called automatically.</p>
+<p>When operating in “noServer” mode, this method must be called manually.</p>
+<p>If the upgrade is successful, the <cite>callback</cite> is called with a <cite>WebSocket</cite> object as parameter.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -278,13 +282,13 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd>
 </dl>
-<p>查看此服务器是否应处理给定请求。</p>
-<p>默认情况下, 此方法验证请求的路径名, 并将其与`path`选项（如果提供）匹配。</p>
-<p>返回值“true”或“false”确定是否接受握手。</p>
-<p>当需要自定义处理逻辑时, 可以覆盖此方法。</p>
+<p>See if a given request should be handled by this server.</p>
+<p>By default this method validates the pathname of the request, matching it against the <cite>path</cite> option if provided.</p>
+<p>The return value, <cite>true</cite> or <cite>false</cite>, determines whether or not to accept the handshake.</p>
+<p>This method can be overridden when a custom handling logic is required.</p>
 </dd></dl>
 
-<p>就绪状态常数</p>
+<p>Ready state constants</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -292,27 +296,27 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <col style="width: 72%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>不变</p></th>
-<th class="head"><p>值</p></th>
-<th class="head"><p>描述</p></th>
+<tr class="row-odd"><th class="head"><p>Constant</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>CONNECTING</p></td>
 <td><p>0</p></td>
-<td><p>连接尚未打开。</p></td>
+<td><p>The connection is not yet open.</p></td>
 </tr>
 <tr class="row-odd"><td><p>OPEN</p></td>
 <td><p>1</p></td>
-<td><p>连接已打开并准备好进行通信。</p></td>
+<td><p>The connection is open and ready to communicate.</p></td>
 </tr>
 <tr class="row-even"><td><p>CLOSING</p></td>
 <td><p>2</p></td>
-<td><p>连接正在关闭。</p></td>
+<td><p>The connection is in the process of closing.</p></td>
 </tr>
 <tr class="row-odd"><td><p>CLOSED</p></td>
 <td><p>3</p></td>
-<td><p>连接已关闭。</p></td>
+<td><p>The connection is closed.</p></td>
 </tr>
 </tbody>
 </table>
@@ -330,29 +334,29 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <li><p><strong>perMessageDeflate</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Boolean</span> <span class="pre">|</span> <span class="pre">Object()</span></code></span>) – Enable/disable permessage-deflate. <cite>perMessageDeflate</cite> default value is <cite>true</cite>. When using an object, parameters are the same of the server.</p></li>
 <li><p><strong>protocolVersion</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – Value of the <cite>Sec-WebSocket-Version</cite> header.</p></li>
 <li><p><strong>origin</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">String()</span></code></span>) – Value of the <cite>Origin</cite> or <cite>Sec-WebSocket-Origin</cite> header depending on the <cite>protocolVersion</cite>.</p></li>
-<li><p><strong>maxPayload</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – <cite>maxPayload</cite> 允许的最大邮件大小（字节）。</p></li>
+<li><p><strong>maxPayload</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">Number()</span></code></span>) – The maximum allowed message size in bytes.</p></li>
 </ul>
 </dd>
 </dl>
-<p><a href="#id1"><span class="problematic" id="id2">`</span></a>http.request（）`_或`https.request（）`_中允许的任何其他选项。</p>
+<p>Any other option allowed in <a class="reference external" href="https://nodejs.org/api/http.html#http_http_request_options_callback">http.request()</a> or <a class="reference external" href="https://nodejs.org/api/https.html#https_https_request_options_callback">https.request()</a>.</p>
 </dd></dl>
 
-<p>唯一的区别是请求的方向。</p>
-<p>例如, <a href="#id1"><span class="problematic" id="id2">`</span></a>serverNoContextTakeover`可用于请求服务器禁用上下文接管。</p>
-<p>创建一个新的WebSocket实例。</p>
+<p>The only difference is the direction of requests.</p>
+<p>For example, <cite>serverNoContextTakeover</cite> can be used to ask the server to disable context takeover.</p>
+<p>Create a new WebSocket instance.</p>
 <p><strong>UNIX Domain Sockets</strong></p>
-<p><a href="#id1"><span class="problematic" id="id2">`</span></a>ws`支持向UNIX域套接字发出请求。要制作一个, 请使用以下URL方案：</p>
+<p><cite>ws</cite> supports making requests to UNIX domain sockets. To make one, use the following URL scheme:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ws+unix:///absolute/path/to/uds_socket:/pathname?search_params
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p><a href="#id1"><span class="problematic" id="id2">`</span></a>：<a href="#id3"><span class="problematic" id="id4">`</span></a>是套接字路径和URL路径之间的分隔符。如果省略URL路径</p>
+<p>that <cite>:</cite> is the separator between the socket path and the URL path. If the URL path is omitted</p>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ws+unix:///absolute/path/to/uds_socket
 </pre></div>
 </div>
-<p>它默认为`/<a href="#id1"><span class="problematic" id="id2">`</span></a>。</p>
+<p>it defaults to <cite>/</cite>.</p>
 <dl class="js function">
 <dt class="sig sig-object js" id="id0">
 <span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="永久链接至目标"></a></dt>
@@ -360,8 +364,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <li><p>code: Number}</p></li>
 <li><p>reason: String}</p></li>
 </ul>
-<p>连接关闭时发出。 <a href="#id1"><span class="problematic" id="id2">`</span></a>code`是一个数值, 表示状态代码, 解释连接关闭的原因。</p>
-<p><a href="#id1"><span class="problematic" id="id2">`</span></a>reason`是一个人类可读的字符串, 解释连接已关闭的原因。</p>
+<p>Emitted when the connection is closed. <cite>code</cite> is a numeric value indicating the status code explaining why the connection has been closed.</p>
+<p><cite>reason</cite> is a human-readable string explaining why the connection has been closed.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -370,7 +374,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>error: Error}</p></li>
 </ul>
-<p>发生错误时发出。</p>
+<p>Emitted when an error occurs.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -379,13 +383,13 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>data: String|Buffer|ArrayBuffer|Buffer[]}</p></li>
 </ul>
-<p>从服务器收到消息时发出。</p>
+<p>Emitted when a message is received from the server.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.open">
 <span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.open" title="永久链接至目标"></a></dt>
-<dd><p>建立连接时发出。</p>
+<dd><p>Emitted when the connection is established.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -394,7 +398,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>data: Buffer}</p></li>
 </ul>
-<p>从服务器收到ping时发出。</p>
+<p>Emitted when a ping is received from the server.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -403,7 +407,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>data: Buffer}</p></li>
 </ul>
-<p>从服务器收到乒乓时发出。</p>
+<p>Emitted when a pong is received from the server.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -413,9 +417,9 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <li><p>request: http.ClientRequest}</p></li>
 <li><p>response: http.IncomingMessage}</p></li>
 </ul>
-<p>当服务器响应不是预期的响应时发出, 例如401响应。</p>
-<p>此事件使您能够读取响应以提取有用信息。</p>
-<p>如果服务器发送无效响应并且没有此事件的侦听器, 则会发出错误。</p>
+<p>Emitted when the server response is not the expected one, for example a 401 response.</p>
+<p>This event gives the ability to read the response in order to extract useful information.</p>
+<p>If the server sends an invalid response and there isn’t a listener for this event, an error is emitted.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -424,8 +428,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>response: http.IncomingMessage}</p></li>
 </ul>
-<p>在作为握手的一部分从服务器接收响应头时发出。</p>
-<p>这允许您从服务器读取标头, 例如“set-cookie”标头。</p>
+<p>Emitted when response headers are received from the server as part of the handshake.</p>
+<p>This allows you to read headers from the server, for example ‘set-cookie’ headers.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -435,7 +439,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <li><p>type: String} A string representing the event type to listen for.</p></li>
 <li><p>listener: Function} The listener to add.</p></li>
 </ul>
-<p>注册一个模拟`EventTarget`接口的事件监听器。</p>
+<p>Register an event listener emulating the <cite>EventTarget</cite> interface.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -444,8 +448,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{String}</p></li>
 </ul>
-<p>一个字符串, 指示连接传输的二进制数据的类型。</p>
-<p>这应该是“nodebuffer ”, “arraybuffer ”或“fragments ”之一。</p>
+<p>A string indicating the type of binary data being transmitted by the connection.</p>
+<p>This should be one of “nodebuffer”, “arraybuffer” or “fragments”.</p>
 <p>Defaults to “nodebuffer”.</p>
 <p>Type “fragments” will emit the array of fragments as received from the sender, without copyfull concatenation, which is useful for the performance of binary protocols transferring large messages with multiple fragments.</p>
 </dd></dl>
@@ -456,7 +460,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Number}</p></li>
 </ul>
-<p>使用调用“send（）”但尚未传输到网络排队的数据的字节数。</p>
+<p>The number of bytes of data that have been queued using calls to <cite>send()</cite> but not yet transmitted to the network.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -466,7 +470,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <li><p>code: Number} A numeric value indicating the status code explaining why the connection is being closed.</p></li>
 <li><p>reason: String} A human-readable string explaining why the connection is closing.</p></li>
 </ul>
-<p>发起结束握手。</p>
+<p>Initiate a closing handshake.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -475,7 +479,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Object}</p></li>
 </ul>
-<p>包含协商扩展的对象。</p>
+<p>An object containing the negotiated extensions.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -484,8 +488,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
-<p>连接关闭时要调用的事件侦听器。</p>
-<p>监听器接收名为“close”的`CloseEvent`。</p>
+<p>An event listener to be called when connection is closed.</p>
+<p>The listener receives a <cite>CloseEvent</cite> named “close”.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -494,8 +498,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
-<p>发生错误时要调用的事件侦听器。</p>
-<p>监听器收到一个名为“error”的`ErrorEvent`。</p>
+<p>An event listener to be called when an error occurs.</p>
+<p>The listener receives an <cite>ErrorEvent</cite> named “error”.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -504,8 +508,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
-<p>从服务器收到消息时要调用的事件侦听器。</p>
-<p>监听器接收名为“message”的`MessageEvent`。</p>
+<p>An event listener to be called when a message is received from the server.</p>
+<p>The listener receives a <cite>MessageEvent</cite> named “message”.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -514,8 +518,8 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Function}</p></li>
 </ul>
-<p>建立连接时要调用的事件侦听器。</p>
-<p>监听器接收名为“open”的`OpenEvent`。</p>
+<p>An event listener to be called when the connection is established.</p>
+<p>The listener receives an <cite>OpenEvent</cite> named “open”.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -546,7 +550,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{String}</p></li>
 </ul>
-<p>服务器选择的子协议。</p>
+<p>The subprotocol selected by the server.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -555,7 +559,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{Number}</p></li>
 </ul>
-<p>连接的当前状态。这是就绪状态常量之一。</p>
+<p>The current state of the connection. This is one of the ready state constants.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -567,7 +571,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </ul>
 </dd></dl>
 
-<p>删除模拟`EventTarget`接口的事件侦听器。</p>
+<p>Removes an event listener emulating the <cite>EventTarget</cite> interface.</p>
 <dl class="js function">
 <dt class="sig sig-object js" id="websocket.send">
 <span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data[,</span> <span class="pre">options][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.send" title="永久链接至目标"></a></dt>
@@ -583,7 +587,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 </li>
 <li><p>callback: Function An optional callback which is invoked when <cite>data</cite> is written out.</p>
 <blockquote>
-<div><p>通过连接发送`data`。</p>
+<div><p>Send <cite>data</cite> through the connection.</p>
 </div></blockquote>
 </li>
 </ul>
@@ -592,7 +596,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dl class="js function">
 <dt class="sig sig-object js" id="websocket.terminate">
 <span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.terminate" title="永久链接至目标"></a></dt>
-<dd><p>强行关闭连接。</p>
+<dd><p>Forcibly close the connection.</p>
 </dd></dl>
 
 <dl class="js function">
@@ -601,7 +605,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <dd><ul class="simple">
 <li><p>{String}</p></li>
 </ul>
-<p>WebSocket服务器的URL。服务器客户端没有此属性。</p>
+<p>The URL of the WebSocket server. Server clients don’t have this attribute.</p>
 </dd></dl>
 
 </section>
@@ -611,6 +615,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="quick-start.html" class="btn btn-neutral float-left" title="ws: a Node.js WebSocket library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="koa-easy-ws.html" class="btn btn-neutral float-right" title="koa-easy-ws" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

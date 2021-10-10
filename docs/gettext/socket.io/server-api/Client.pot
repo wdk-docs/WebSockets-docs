@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2021, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 22:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/server-api/Client.rst:2
+msgid "Client"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Client.rst:4
+msgid "The ``Client`` class represents an incoming transport (engine.io) connection. A ``Client`` can be associated with many multiplexed ``Socket``\\ s that belong to different ``Namespace``\\ s."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Client.rst:10
+msgid "*(engine.Socket)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Client.rst:12
+msgid "A reference to the underlying ``engine.io`` ``Socket`` connection."
+msgstr ""
+
+#: ../../source/socket.io/server-api/Client.rst:16
+msgid "*(Request)*"
+msgstr ""
+
+#: ../../source/socket.io/server-api/Client.rst:18
+msgid "A getter proxy that returns the reference to the ``request`` that originated the engine.io connection. Useful for accessing request headers such as ``Cookie`` or ``User-Agent``."
+msgstr ""

@@ -5,5 +5,7 @@ ws documentation
    :maxdepth: 2
 
    koa-websocket
-   quick-start
-   ws
+   wx-quick-start
+   ws-api
+   koa-easy-ws
+   multi-room

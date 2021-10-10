@@ -2,25 +2,25 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 11:04+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/server-api/Namespace.rst:2
 msgid "Namespace"
-msgstr "命名空间"
+msgstr ""
 
 #: ../../source/socket.io/server-api/Namespace.rst:4
 msgid ""
@@ -182,60 +182,4 @@ msgid ""
 "only be *broadcast* to the current node (when the `Redis adapter "
 "<https://github.com/socketio/socket.io-redis>`_ is used)."
 msgstr ""
-
-#~ msgid ""
-#~ "**Note:** the adapter of the main "
-#~ "namespace can be accessed with "
-#~ "``io.of('/').adapter``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Note:** acknowledgements are not supported"
-#~ " when emitting from namespace."
-#~ msgstr ""
-
-#~ msgid "namespace.name"
-#~ msgstr ""
-
-#~ msgid "namespace.connected"
-#~ msgstr ""
-
-#~ msgid "namespace.adapter"
-#~ msgstr ""
-
-#~ msgid "namespace.to(room)"
-#~ msgstr ""
-
-#~ msgid "namespace.in(room)"
-#~ msgstr ""
-
-#~ msgid "namespace.emit(eventName[, …args])"
-#~ msgstr ""
-
-#~ msgid "acknowledgements are not supported when emitting from"
-#~ msgstr ""
-
-#~ msgid "namespace."
-#~ msgstr "命名空间"
-
-#~ msgid "namespace.clients(callback)"
-#~ msgstr ""
-
-#~ msgid "namespace.use(fn)"
-#~ msgstr ""
-
-#~ msgid "Event: ‘connect’"
-#~ msgstr ""
-
-#~ msgid "Event: ‘connection’"
-#~ msgstr ""
-
-#~ msgid "Flag: ‘volatile’"
-#~ msgstr ""
-
-#~ msgid "Flag: ‘binary’"
-#~ msgstr ""
-
-#~ msgid "Flag: ‘local’"
-#~ msgstr ""
 

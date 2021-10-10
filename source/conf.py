@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'WebSockets Docs'
-copyright = '2019, BandCap'
+copyright = '2019-2021, BandCap'
 author = 'BandCap'
 
 # The full version, including alpha/beta/rc tags
@@ -34,7 +34,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
-    'recommonmark'
+    'myst_parser',
+    # 'sphinx_js'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

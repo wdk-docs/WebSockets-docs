@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the WebSockets Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 17:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../source/ws/multi-room.rst:2
+msgid "基于 ws.js 的 Websocket 多房间"
+msgstr ""
+
+#: ../../source/ws/multi-room.rst:4
+msgid "> `多房间 <https://gist.github.com/Globik/5a63e8683ab1d1c2c72fd25a798ae2d8>`_"
+msgstr ""
+
+#: ../../source/ws/multi-room.rst:7
+msgid "index.html"
+msgstr ""
+
+#: ../../source/ws/multi-room.rst:50
+msgid "server.js"
+msgstr ""
+
+#~ msgid "Websocket multi room based on ws.js"
+#~ msgstr ""
+
+#~ msgid "> https://gist.github.com/Globik/5a63e8683ab1d1c2c72fd25a798ae2d8"
+#~ msgstr ""
+

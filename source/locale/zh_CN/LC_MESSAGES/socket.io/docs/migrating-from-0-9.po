@@ -2,25 +2,25 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-14 11:03+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:2
 msgid "Migrating from 0.9"
-msgstr "从0.9迁移"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:4
 msgid ""
@@ -28,78 +28,78 @@ msgid ""
 "seamless and devoid of any hiccups. That said, we’ve done some work to "
 "streamline some APIs, and we have changed some internals, so this is a "
 "recommended read for most existing users."
-msgstr "对于大多数应用程序, 过渡到1.0应该是完全无缝的, 没有任何打嗝.也就是说, 我们已经完成了一些简化某些API的工作, 并且我们已经更改了一些内部结构, 因此对于大多数现有用户来说, 这是一个推荐的读取."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:10
 msgid "Authentication differences"
-msgstr "验证差异"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:13
 msgid "Socket.io uses middleware now"
-msgstr "Socket.io现在使用中间件"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:15
 msgid ""
 "You can give a Socket.io server arbitrary functions via ``io.use()`` that"
 " are run when a socket is created. Check out this example:"
-msgstr "您可以通过 ``io.use()`` 为Socket.io服务器提供任意函数, 这些函数在创建套接字时运行.看看这个例子: "
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:37
 msgid "… so its cleaner to do auth via middleware now"
-msgstr "… 所以它更干净, 现在通过中间件做auth"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:39
 msgid ""
 "The old ``io.set()`` and ``io.get()`` methods are deprecated and only "
 "supported for backwards compatibility. Here is a translation of an old "
 "authorization example into middleware-style."
-msgstr "不推荐使用旧的 ``io.set()`` 和 ``io.get()`` 方法, 仅支持向后兼容.以下是旧授权示例到中间件样式的转换."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:50
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:201
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:224
 msgid "vs."
-msgstr "vs."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:64
 msgid "Namespace authorization?"
-msgstr "命名空间授权？"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:73
 msgid "Log differences"
-msgstr "记录差异"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:76
 msgid "Logging is now based on debug"
-msgstr "现在, 日志记录基于调试"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:78
 msgid ""
 "To print all debug logging, set the environment variable DEBUG to \\*. "
 "ie: ``DEBUG=* node index.js``"
-msgstr "要打印所有调试日志记录, 请将环境变量DEBUG设置为\\ *.即: ``DEBUG=* node index.js``"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:81
 msgid ""
 "To print only socket.io related logging: ``DEBUG=socket.io:* node "
 "index.js``."
-msgstr "仅打印与socket.io相关的日志记录: ``DEBUG=socket.io:* node index.js``."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:84
 msgid ""
 "To print logging only from the socket object: ``DEBUG=socket.io:socket "
 "node index.js``."
-msgstr "仅从套接字对象打印日志记录: ``DEBUG=socket.io:socket node index.js``."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:87
 msgid ""
 "This pattern should hopefully be making sense at this point. The names of"
 " the files in socket.io/lib are equivalent to their debug names."
-msgstr "希望这种模式在这一点上有意义. socket.io/lib中文件的名称等同于它们的调试名称."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:90
 msgid "Debug also works in the browser; logs are persisted to localstorage."
-msgstr "调试也适用于浏览器;日志将持久保存到localstorage."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:92
 msgid ""
@@ -107,60 +107,58 @@ msgid ""
 "'socket.io:*'`` (or any debug level) and then refresh the page. "
 "Everything is logged until you run ``localStorage.debug = ''``"
 msgstr ""
-"要使用: 打开开发人员控制台并输入 ``localStorage.debug "
-"= 'socket.io: *'`` (或任何调试级别), 然后刷新页面.一切都记录下来, 直到你运行 ``localStorage.debug = ''``"
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:97
 msgid ""
 "See more at the debug documentation `here "
 "<https://www.npmjs.org/package/debug>`_."
-msgstr "有关详细信息, 请参阅调试文档 `here <https://www.npmjs.org/package/debug>`_."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:101
 msgid "Shortcuts"
-msgstr "快捷键"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:103
 msgid ""
 "In general there are some new shortcuts for common things. The old "
 "versions should still work, but shortcuts are nice."
-msgstr "一般情况下, 常见事物有一些新的快捷方式.旧版本应该仍然有用, 但快捷方式很好."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:107
 msgid "Broadcasting to all clients in default namespace"
-msgstr "广播到默认命名空间中的所有客户端"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:109
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:128
 msgid "Previously:"
-msgstr "先前:"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:115
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:135
 msgid "Now:"
-msgstr "现在:"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:121
 msgid ""
 "Neat. Note that in both cases, these messages reach all clients connected"
 " to the default ‘/’ namespace, but not clients in other namespaces."
-msgstr "整齐.请注意, 在这两种情况下, 这些消息都会到达连接到默认 ‘/’ 命名空间的所有客户端, 但不会到达其他命名空间中的客户端."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:126
 msgid "Starting the server"
-msgstr "启动服务器"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:143
 msgid "Configuration differences"
-msgstr "配置差异"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:146
 msgid "io.set is gone"
-msgstr "io.set消失了"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:148
 msgid "Instead do configuration in server initialization like this:"
-msgstr "而是像这样在服务器初始化中进行配置:"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:156
 msgid ""
@@ -168,38 +166,35 @@ msgid ""
 "``io.set('heartbeat interval')``, ``io.set('heartbeat timeout'``, and "
 "``io.set('resource')`` are still supported for backwards compatibility."
 msgstr ""
-"日志级别等选项已不复存在. ``io.set('transports')``, ``io.set('heartbeat "
-"interval')``, ``io.set('heartbeat timeout'`` 和 ``io.set('resource' "
-")`` 仍然支持向后兼容性."
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:161
 msgid "Setting resource path"
-msgstr "设置资源路径"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:163
 msgid ""
 "The previous ``resource`` option is equivalent to the new ``path`` "
 "option, but needs a ``/`` in the beginning. For example, the following "
 "configuration:"
-msgstr "之前的 ``resource`` 选项相当于新的 ``path`` 选项, 但在开头需要一个 ``/`` .例如, 以下配置:"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:173
 msgid "becomes:"
-msgstr "变:"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:182
 msgid "Parser / Protocol differences"
-msgstr "解析器/协议差异"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:184
 msgid ""
 "This is only relevant for updating things like socket.io implementations "
 "in other languages, custom socket.io clients, etc."
-msgstr "这仅适用于更新其他语言的socket.io实现, 自定义socket.io客户端等."
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:188
 msgid "Difference 1 – packet encoding"
-msgstr "差异1  - 数据包编码"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:190
 msgid ""
@@ -208,25 +203,16 @@ msgid ""
 "as the only argument. Each encoding should be written to the transport in"
 " order. This is more flexible and makes binary data transport work. "
 "Here’s an example:"
-msgstr "解析现在是基于类和异步的.编码调用使用编码数组作为唯一参数调用回调, 而不是返回单个编码字符串.应按顺序将每个编码写入传输.这更灵活, 使二进制数据传输工作.这是一个例子:"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:213
 msgid "Difference 2 – packet decoding"
-msgstr "差异2  - 分组解码"
+msgstr ""
 
 #: ../../source/socket.io/docs/migrating-from-0-9.rst:215
 msgid ""
 "Decoding takes things a step further and is event-based. This is done "
 "because some objects (binary-containing) are both encoded and decoded in "
 "multiple parts. This example should help:"
-msgstr "解码更进一步, 并且基于事件.这样做是因为一些对象(包含二进制的)在多个部分中被编码和解码.这个例子应该有帮助:"
-
-#~ msgid ""
-#~ "\\`\\ ``js io.of('/namespace').use(function(socket, "
-#~ "next) {   var handshakeData = "
-#~ "socket.request;   next(); });``"
-#~ msgstr ""
-#~ "\\`\\ ``js io.of('/namespace').use(function(socket, "
-#~ "next) {   var handshakeData = "
-#~ "socket.request;   next(); });``"
+msgstr ""
 

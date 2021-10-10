@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="ws: a Node.js WebSocket library" href="quick-start.html" />
+    <link rel="next" title="WS API Document" href="ws-api.html" />
     <link rel="prev" title="ws documentation" href="index.html" /> 
 </head>
 
@@ -41,20 +41,26 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">koa-websocket</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source">Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faq">FAQ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html">ws: a Node.js WebSocket library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ws.html">ws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ws-api.html">WS API Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="koa-easy-ws.html">koa-easy-ws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-room.html">基于 ws.js 的 Websocket 多房间</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -163,6 +169,294 @@
 </pre></div>
 </div>
 </section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
+<p>koa router</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-router&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">websockify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-websocket&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">koa</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">router</span><span class="p">();</span>
+
+<span class="nx">websockify</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/*&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="o">*</span> <span class="nx">get</span><span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">yield</span> <span class="nx">next</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">routes</span><span class="p">()).</span><span class="nx">use</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">allowedMethods</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>simple</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-route&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">websockify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-websocket&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">websockify</span><span class="p">(</span><span class="nx">koa</span><span class="p">());</span>
+
+<span class="c1">// Note it&#39;s app.ws.use and not app.use</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;/test/:id&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="o">*</span> <span class="nx">all</span><span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// `this` is the regular koa context created from the `ws`</span>
+  <span class="c1">// onConnection `socket.upgradeReq` object.</span>
+  <span class="c1">// The websocket is added to the context on `this.websocket`.</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Do something with the message from client</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="c1">// Yielding `next` will pass the context (this) on to the next ws middleware</span>
+  <span class="k">yield</span> <span class="nx">next</span><span class="p">;</span>
+<span class="p">}));</span>
+
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="test">
+<h2>Test<a class="headerlink" href="#test" title="永久链接至标题"></a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;assert&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-route&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">koaws</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-websocket&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;should route ws messages seperately&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">koaws</span><span class="p">(</span><span class="ow">new</span> <span class="nx">Koa</span><span class="p">());</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">message</span> <span class="o">===</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;/abc&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}));</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;/abc&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}));</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">route</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="s1">&#39;/def&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ctx</span><span class="p">.</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}));</span>
+
+  <span class="kd">let</span> <span class="nx">server</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="nx">before</span><span class="p">((</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">server</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">after</span><span class="p">((</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">server</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sends 123 message to any route&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="sb">`ws://localhost:</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="si">}</span><span class="sb">/not-a-route`</span><span class="p">);</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">message</span> <span class="o">===</span> <span class="s1">&#39;123&#39;</span><span class="p">);</span>
+      <span class="nx">done</span><span class="p">();</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sends abc message to abc route&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="sb">`ws://localhost:</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="si">}</span><span class="sb">/abc`</span><span class="p">);</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">message</span> <span class="o">===</span> <span class="s1">&#39;abc&#39;</span><span class="p">);</span>
+      <span class="nx">done</span><span class="p">();</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sends def message to def route&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="sb">`ws://localhost:</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="si">}</span><span class="sb">/def`</span><span class="p">);</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;def&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">message</span> <span class="o">===</span> <span class="s1">&#39;def&#39;</span><span class="p">);</span>
+      <span class="nx">done</span><span class="p">();</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;handles urls with query parameters&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="sb">`ws://localhost:</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="si">}</span><span class="sb">/abc?foo=bar`</span><span class="p">);</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">message</span> <span class="o">===</span> <span class="s1">&#39;abc&#39;</span><span class="p">);</span>
+      <span class="nx">done</span><span class="p">();</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;should support custom ws server options&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">koaws</span><span class="p">(</span><span class="ow">new</span> <span class="nx">Koa</span><span class="p">(),</span> <span class="p">{</span>
+    <span class="nx">handleProtocols</span><span class="p">(</span><span class="nx">protocols</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">protocols</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;bad_protocol&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
+      <span class="k">return</span> <span class="nx">protocols</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+
+  <span class="kd">let</span> <span class="nx">server</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="nx">before</span><span class="p">((</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">server</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">after</span><span class="p">((</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">server</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;reject bad protocol use wsOptions&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="sb">`ws://localhost:</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="si">}</span><span class="sb">/abc`</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;bad_protocol&#39;</span><span class="p">]);</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+      <span class="nx">done</span><span class="p">();</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;should support custom http server options&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// The cert is self-signed.</span>
+  <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_TLS_REJECT_UNAUTHORIZED</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">secureApp</span> <span class="o">=</span> <span class="nx">koaws</span><span class="p">(</span><span class="ow">new</span> <span class="nx">Koa</span><span class="p">(),</span> <span class="p">{},</span> <span class="p">{</span>
+    <span class="nx">key</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./test/key.pem&#39;</span><span class="p">),</span>
+    <span class="nx">cert</span><span class="o">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./test/cert.pem&#39;</span><span class="p">),</span>
+  <span class="p">});</span>
+
+  <span class="kd">let</span> <span class="nx">server</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="nx">before</span><span class="p">((</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">server</span> <span class="o">=</span> <span class="nx">secureApp</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">after</span><span class="p">((</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">server</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="nx">done</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;supports wss protocol&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="sb">`wss://localhost:</span><span class="si">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="si">}</span><span class="sb">/abc`</span><span class="p">);</span>
+    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+      <span class="nx">done</span><span class="p">();</span>
+      <span class="nx">ws</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="source">
+<h2>Source<a class="headerlink" href="#source" title="永久链接至标题"></a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;https&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;koa-compose&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">co</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;co&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ws</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">WebSocketServer</span> <span class="o">=</span> <span class="nx">ws</span><span class="p">.</span><span class="nx">Server</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)(</span><span class="s1">&#39;koa:websockets&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">KoaWebSocketServer</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">app</span> <span class="o">=</span> <span class="nx">app</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">middleware</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="nx">KoaWebSocketServer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">listen</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">listen</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocketServer</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">onConnection</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="nx">KoaWebSocketServer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">onConnection</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">onConnection</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Connection received&#39;</span><span class="p">);</span>
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Error occurred:&#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="kd">const</span> <span class="nx">fn</span> <span class="o">=</span> <span class="nx">co</span><span class="p">.</span><span class="nx">wrap</span><span class="p">(</span><span class="nx">compose</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">middleware</span><span class="p">));</span>
+
+  <span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">websocket</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">;</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">path</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">pathname</span><span class="p">;</span>
+
+  <span class="nx">fn</span><span class="p">(</span><span class="nx">context</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="nx">KoaWebSocketServer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">use</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">use</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">middleware</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">middleware</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">wsOptions</span><span class="p">,</span> <span class="nx">httpsOptions</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">oldListen</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">listen</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Attaching server...&#39;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">typeof</span> <span class="nx">httpsOptions</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">httpsServer</span> <span class="o">=</span> <span class="nx">https</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">httpsOptions</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">callback</span><span class="p">());</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="nx">httpsServer</span><span class="p">.</span><span class="nx">listen</span><span class="p">(...</span><span class="nx">args</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="nx">oldListen</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">server</span><span class="o">:</span> <span class="nx">app</span><span class="p">.</span><span class="nx">server</span> <span class="p">};</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">wsOptions</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">wsOptions</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">wsOptions</span><span class="p">,</span> <span class="nx">key</span><span class="p">))</span> <span class="p">{</span>
+          <span class="nx">options</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">wsOptions</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">app</span><span class="p">.</span><span class="nx">server</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">ws</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">KoaWebSocketServer</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">app</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="永久链接至标题"></a></h2>
+<p>… Get total number of connected clients on each new connection</p>
+<blockquote>
+<div><p>&gt; <a class="reference external" href="https://github.com/websockets/ws/issues/1087">https://github.com/websockets/ws/issues/1087</a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">app</span><span class="p">.</span><span class="nx">ws</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">size</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
 <section id="api">
 <h2>API<a class="headerlink" href="#api" title="永久链接至标题"></a></h2>
 <dl class="js function">
@@ -185,13 +479,13 @@ passed in, koa-websocket will use the built-in Node HTTPS server to provide supp
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="ws documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="quick-start.html" class="btn btn-neutral float-right" title="ws: a Node.js WebSocket library" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ws-api.html" class="btn btn-neutral float-right" title="WS API Document" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

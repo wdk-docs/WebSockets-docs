@@ -2,25 +2,25 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-17 11:24+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/socket.io-protocol.rst:3
 msgid "socket.io-protocol"
-msgstr "socket.io-protocol"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:5
 msgid ""
@@ -30,36 +30,32 @@ msgid ""
 "<https://github.com/learnboost/socket.io-client>`_ and `socket.io "
 "<https://github.com/learnboost/socket.io>`_."
 msgstr ""
-"本文档描述了Socket.IO协议.有关参考JavaScript实现,请查看 `socket.io-parser "
-"<https://github.com/learnboost/socket.io-parser>`_, `socket.io-client "
-"<https://github.com /learnboost/socket.io-client>`_ 和 `socket.io "
-"<https://github.com/learnboost/socket.io>`_."
 
 #: ../../source/socket.io/socket.io-protocol.rst:12
 msgid "Protocol version"
-msgstr "协议版本"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:14
 msgid "**Current protocol revision:** `4`."
-msgstr "**当前协议修订:** `4`."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:17
 msgid "Parser API"
-msgstr "API解析器"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:20
 msgid "Parser#Encoder"
-msgstr "解析器#编码器"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:22
 msgid ""
 "An object that encodes socket.io packets to engine.io-transportable form."
 " Its only public method is Encoder#encode."
-msgstr "将socket.io数据包编码为engine.io-transportable形式的对象.它唯一的公共方法是 Encoder#coding."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:26
 msgid "Encoder#encode(Object:packet, Function:callback)"
-msgstr "Encoder#encode(Object:packet, Function:callback)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:28
 msgid ""
@@ -71,8 +67,6 @@ msgid ""
 " binary data was held in the initial packet. The remaining items will be "
 "the raw binary data to fill in the placeholders post-decoding."
 msgstr ""
-"将 `Packet` "
-"对象编码为engine.io兼容编码数组.如果对象是纯JSON,则数组将包含单个项,即socket.io编码的字符串.如果对象包含二进制数据(ArrayBuffer,Buffer,Blob或File),则数组的第一项将是包含数据包相关元数据的字符串,而JSON将包含占位符,其中二进制数据保存在初始数据包中.其余项目将是原始二进制数据,以填充解码后的占位符."
 
 #: ../../source/socket.io/socket.io-protocol.rst:36
 msgid ""
@@ -82,18 +76,16 @@ msgid ""
 "any implementation is that each item in the array is transported "
 "sequentially."
 msgstr ""
-"调用回调函数时,编码数组作为唯一参数.在socket.io-"
-"parser实现中,回调将数组中的每个项目写入engine.io进行传输.任何实现的期望是数组中的每个项目按顺序传输."
 
 #: ../../source/socket.io/socket.io-protocol.rst:42
 msgid "Parser#Decoder"
-msgstr "解析器#解码器"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:45
 msgid ""
 "An object that decodes data from engine.io into complete socket.io "
 "packets."
-msgstr "将engine.io中的数据解码为完整的socket.io数据包的对象."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:47
 msgid ""
@@ -102,12 +94,10 @@ msgid ""
 "order in which the encodings are received) and to listen to the Decoder's"
 " 'decoded' events to handle fully decoded packets."
 msgstr ""
-"使用解码器的预期工作流程是在从engine.io接收任何编码时(按照接收编码的顺序)调用 `Decoder#add` 方法,并监听解码器的 "
-"'decoded' 事件以完全处理解码后的包."
 
 #: ../../source/socket.io/socket.io-protocol.rst:53
 msgid "Decoder#add(Object:encoding)"
-msgstr "Decoder#add(Object:encoding)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:55
 msgid ""
@@ -118,38 +108,35 @@ msgid ""
 "in the original packet. Once the final binary data encoding is passed to "
 "add, the full socket.io packet is reconstructed."
 msgstr ""
-"从engine.io传输解码单个编码对象.在非二进制分组的情况下,一个编码参数用于重建完整分组.如果数据包的类型为 `BINARY_EVENT` "
-"或者 "
-"`ACK`,则需要额外的add添加调用,一个用于原始数据包中的每个二进制数据.一旦最终的二进制数据编码被传递给add,就会重建完整的socket.io数据包."
 
 #: ../../source/socket.io/socket.io-protocol.rst:62
 msgid ""
 "After a packet is fully decoded, the Decoder emits a 'decoded' event (via"
 " Emitter) with the decoded packet as the sole argument. Listeners to this"
 " event should treat the packet as ready-to-go."
-msgstr "在完全解码分组之后,解码器发出“解码”事件(通过发射器),其中解码的分组作为唯一参数.此事件的监听者应将数据包视为准备就绪."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:67
 msgid "Decoder#destroy()"
-msgstr "Decoder#destroy()"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:69
 msgid ""
 "Deallocates the Decoder instance's resources. Should be called in the "
 "event of a disconnect mid-decoding, etc. to prevent memory leaks."
-msgstr "释放Decoder实例的资源.应该在断开中间解码等情况下调用,以防止内存泄漏."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:73
 msgid "Parser#types"
-msgstr "Parser#types"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:76
 msgid "Array of packet type keys."
-msgstr "数据包类型键的数组."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:79
 msgid "Packet"
-msgstr "Packet"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:82
 msgid ""
@@ -157,57 +144,55 @@ msgid ""
 "indicates what namespace it belongs to (see \"Multiplexing\") and a "
 "`type` key that can be one of the following:"
 msgstr ""
-"每个数据包都表示为一个带有 `nsp` 键的 vanilla `Object`, 它指示它所属的命名空间(参见 "
-"\"Multiplexing\")和一个 `type` 键,它可以是以下之一:"
 
 #: ../../source/socket.io/socket.io-protocol.rst:86
 msgid "`Packet#CONNECT` (`0`)"
-msgstr "`Packet#CONNECT` (`0`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:87
 msgid "`Packet#DISCONNECT` (`1`)"
-msgstr "`Packet#DISCONNECT` (`1`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:88
 msgid "`Packet#EVENT` (`2`)"
-msgstr "`Packet#EVENT` (`2`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:89
 msgid "`Packet#ACK` (`3`)"
-msgstr "`Packet#ACK` (`3`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:90
 msgid "`Packet#ERROR` (`4`)"
-msgstr "`Packet#ERROR` (`4`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:91
 msgid "`Packet#BINARY_EVENT` (`5`)"
-msgstr "`Packet#BINARY_EVENT` (`5`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:92
 msgid "`Packet#BINARY_ACK` (`6`)"
-msgstr "`Packet#BINARY_ACK` (`6`)"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:95
 msgid "EVENT"
-msgstr "EVENT"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:97
 msgid ""
 "`data` (`Array`) a list of arguments, the first of which is the event "
 "name. Arguments can contain any type of field that can result of `JSON` "
 "decoding, including objects and arrays of arbitrary size."
-msgstr "`data` (`Array`) 参数列表, 第一个是事件名称. 参数可以包含任何类型的可以导致 `JSON` 解码的字段, 包括任意大小的对象和数组. "
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:99
 msgid ""
 "`id` (`Number`) if the `id` identifier is present, it indicates that the "
 "server wishes to be acknowledged of the reception of this event."
-msgstr "`id` (`Number`) 如果存在 `id` 标识符, 则表示服务器希望确认接收到该事件. "
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:102
 msgid "BINARY_EVENT"
-msgstr "BINARY_EVENT"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:104
 msgid ""
@@ -220,97 +205,97 @@ msgid ""
 "`{base64: true, data: <base64_bin_encoding>}`. When a `BINARY_EVENT` or "
 "`ACK` packet is initially decoded, all of the binary data items will be "
 "placeholders, and will be filled by additional calls to `Decoder#add`."
-msgstr "`data` (`Array`) 参见 `EVENT` `data`, 但除此之外, 任何参数都可能包含非JSON任意二进制数据. 对于编码, 二进制数据被认为是Buffer, ArrayBuffer, Blob或File. 解码时, 所有二进制数据服务器端都是Buffer;在现代客户端上, 二进制数据是一个ArrayBuffer. 在不支持二进制文件的旧浏览器中, 每个二进制数据项都被替换为如下对象: `{base64:true, data:<base64_bin_encoding>}`. 当最初解码“BINARY_EVENT”或“ACK”数据包时, 所有二进制数据项都将是占位符, 并且将通过对“Decoder＃add”的附加调用来填充. "
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:106
 #: ../../source/socket.io/socket.io-protocol.rst:112
 #: ../../source/socket.io/socket.io-protocol.rst:118
 msgid "`id` (`Number`) see `EVENT` `id`."
-msgstr "`id` (`Number`) see `EVENT` `id`."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:109
 msgid "ACK"
-msgstr "ACK"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:111
 msgid ""
 "`data` (`Array`) see `EVENT` `data`. Encoded as string like the `EVENT` "
 "type above. Should be used when an ACK function is not called with binary"
 " data."
-msgstr "`data` (`Array`) 参见 `EVENT` `data`. 编码为字符串，如上面的“EVENT”类型. 在没有使用二进制数据调用ACK函数时应该使用. "
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:115
 msgid "BINARY_ACK"
-msgstr "BINARY_ACK"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:117
 msgid ""
 "`data` (`Array`) see `ACK` `data`. Used when the arguments for an ACK "
 "function contain binary data; encodes packet in the `BINARY_EVENT` style "
 "documented above."
-msgstr "`data` (`Array`) see `ACK` `data`. 当ACK函数的参数包含二进制数据时使用;以上面记录的 `BINARY_EVENT` 样式对数据包进行编码. "
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:121
 msgid "ERROR"
-msgstr "错误"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:123
 msgid "`data` (`Mixed`) error data"
-msgstr "`data` (`Mixed`) 错误数据"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:126
 msgid "Transport"
-msgstr "运输"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:127
 msgid ""
 "The socket.io protocol can be delivered over a variety of transports. "
 "`socket.io-client <http://github.com/learnboost/socket.io-client>`_"
-msgstr "socket.io协议可以通过各种传输方式提供. `socket.io-client <http://github.com/learnboost/socket.io-client>`_"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:130
 msgid ""
 "is the implementation of the protocol for the browser and Node.JS over "
 "`engine.io-client <http://github.com/learnboost/engine.io-client>`_."
-msgstr "是通过 `engine.io-client <http://github.com/learnboost/engine.io-client>`_ 实现浏览器和Node.JS的协议."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:133
 msgid ""
 "`socket.io <http://github.com/learnboost/socket.io>`_ is the server "
 "implementation of the protocol over `engine.io "
 "<http://github.com/learnboost/engine.io>`_."
-msgstr "`socket.io <http://github.com/learnboost/socket.io>`_ 是 `engine.io <http://github.com/learnboost/engine.io>`_ 上协议的服务器实现."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:138
 msgid "Multiplexing"
-msgstr "复"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:140
 msgid ""
 "Socket.IO has built-in multiplexing support, which means that each packet"
 " always belongs to a given `namespace`, identified by a path string (like"
 " `/this`). The corresponding key in the `Packet` object is `nsp`."
-msgstr "Socket.IO具有内置的多路复用支持,这意味着每个 `命名空间`, 由路径字符串(如 `/this`)标识. `Packet` 对象中的对应键是 `nsp`."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:144
 msgid ""
 "When the socket.io transport connection is established, a connection "
 "attempt to the `/` namespace is assumed (ie: the server behaves as if the"
 " client had sent a `CONNECT` packet to the `/` namespace)."
-msgstr "当建立socket.io传输连接时,假定连接尝试到 `/` 命名空间(即:服务器的行为就好像客户端已将 `CONNECT` 包发送到 `/` 命名空间)."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:148
 msgid ""
 "In order to support multiplexing of multiple sockets under the same "
 "transport, additional `CONNECT` packets can be sent by the client to "
 "arbitrary namespace URIs (eg: `/another`)."
-msgstr "为了支持在同一传输下多路复用多个套接字,客户端可以将额外的 `CONNECT` 数据包发送到任意名称空间URI(例如: `/another`)."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:152
 msgid ""
 "When the server responds with a `CONNECT` packet to the corresponding "
 "namespace, the multiplexed socket is considered connected."
-msgstr "当服务器以 `CONNECT` 数据包响应相应的命名空间时,多路复用的套接字被认为是连接的."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:155
 msgid ""
@@ -318,7 +303,7 @@ msgid ""
 "a multiplexed socket connection error, such as authentication errors. The"
 " associated error payload varies according to each error, and can be "
 "user-defined."
-msgstr "或者,服务器可以使用 `ERROR` 数据包进行响应,以指示多路复用的套接字连接错误,例如身份验证错误.相关的错误有效负载根据每个错误而变化,并且可以是用户定义的."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:160
 msgid ""
@@ -326,42 +311,13 @@ msgid ""
 " client can then send and receive `EVENT` packets. If any of the parties "
 "receives an `EVENT` packet with an `id` field, an `ACK` packet is "
 "expected to confirm the reception of said packet."
-msgstr "在服务器接收到给定 `nsp` 的 `CONNECT` 包后,客户端可以发送和接收 `EVENT` 包.如果任何一方接收到具有 `id` 字段的 `EVENT` 分组,则期望“ACK”分组确认所述分组的接收."
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:166
 msgid "License"
-msgstr "执照"
+msgstr ""
 
 #: ../../source/socket.io/socket.io-protocol.rst:168
 msgid "MIT"
-msgstr "MIT"
-
-#~ msgid "`data` (`Array`) a list of arguments, the first of which is the event"
-#~ msgstr "`data` (`Array`) 参数列表,第一个是事件"
-
-#~ msgid "server wishes to be acknowledged of the reception of this event."
-#~ msgstr "服务器希望被承认接收此事件."
-
-#~ msgid ""
-#~ "`data` (`Array`) see `EVENT` `data`, but"
-#~ " with addition that any of the "
-#~ "arguments"
-#~ msgstr "`data`(`Array`)参见`EVENT``数据`,但添加了任何参数"
-
-#~ msgid ""
-#~ "Should be used when an ACK "
-#~ "function is not called with binary "
-#~ "data. - `id` (`Number`) see `EVENT` "
-#~ "`id`."
-#~ msgstr "在没有使用二进制数据调用ACK函数时应该使用. - `id`(`Number`)见`EVENT``id`."
-
-#~ msgid "`data` (`Array`) see `ACK` `data`. Used when the arguments for an ACK"
-#~ msgstr "`data` (`Array`) see `ACK` `data`. 用于ACK的参数"
-
-#~ msgid ""
-#~ "function contain binary data; encodes "
-#~ "packet in the `BINARY_EVENT` style "
-#~ "documented above. - `id` (`Number`) see"
-#~ " `EVENT` `id`."
-#~ msgstr "函数包含二进制数据;以上面记录的`BINARY_EVENT`样式对数据包进行编码. - `id`(`Number`)见`EVENT``id`."
+msgstr ""
 

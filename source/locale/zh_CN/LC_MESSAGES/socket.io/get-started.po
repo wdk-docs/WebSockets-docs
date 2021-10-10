@@ -2,36 +2,36 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 20:53+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/get-started.rst:2
 msgid "Chat - Get Started"
-msgstr "聊天 - 入门"
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:4
 msgid ""
 "In this guide we’ll create a basic chat application. It requires almost "
 "no basic prior knowledge of Node.JS or Socket.IO, so it’s ideal for users"
 " of all knowledge levels."
-msgstr "在本指南中,我们将创建一个基本的聊天应用程序.它几乎不需要Node.JS或Socket.IO的基本先验知识,因此它是所有知识水平用户的理想选择."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:9
 msgid "Introduction"
-msgstr "介绍"
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:11
 msgid ""
@@ -39,25 +39,25 @@ msgid ""
 " (PHP) has traditionally been very hard. It involves polling the server "
 "for changes, keeping track of timestamps, and it’s a lot slower than it "
 "should be."
-msgstr "使用像LAMP(PHP)这样的流行Web应用程序堆栈编写聊天应用程序传统上非常困难.它涉及轮询服务器以进行更改,跟踪时间戳,并且它比它应该慢得多."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:16
 msgid ""
 "Sockets have traditionally been the solution around which most real-time "
 "chat systems are architected, providing a bi-directional communication "
 "channel between a client and a server."
-msgstr "传统上,套接字是大多数实时聊天系统所构建的解决方案,在客户端和服务器之间提供双向通信通道."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:20
 msgid ""
 "This means that the server can *push* messages to clients. Whenever you "
 "write a chat message, the idea is that the server will get it and push it"
 " to all other connected clients."
-msgstr "这意味着服务器可以*向客户端推送*消息.每当您编写聊天消息时,其想法是服务器将获取它并将其推送到所有其他连接的客户端."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:25
 msgid "The web framework"
-msgstr "Web框架"
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:27
 msgid ""
@@ -65,274 +65,274 @@ msgid ""
 "and a list of messages. We’re going to use the Node.JS web framework "
 "``express`` to this end. Make sure `Node.JS <https://nodejs.org>`_ is "
 "installed."
-msgstr "使用流行的Web应用程序堆栈(如LAMP(PHP))编写聊天应用程序一直非常困难.它涉及轮询服务器以进行更改,跟踪时间戳,并且应该比它应该慢得多."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:32
 msgid ""
 "First let’s create a ``package.json`` manifest file that describes our "
 "project. I recommend you place it in a dedicated empty directory (I’ll "
 "call mine ``chat-example``)."
-msgstr "首先让我们创建一个描述我们项目的 ``package.json`` 清单文件.我建议你把它放在一个专用的空目录中(我称之为 ``chat-example``)."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:45
 msgid ""
 "Now, in order to easily populate the ``dependencies`` with the things we "
 "need, we’ll use ``npm install --save``:"
-msgstr "现在,为了使用我们需要的东西轻松填充 ``dependencies``,我们将使用 ``npm install --save``:"
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:52
 msgid ""
 "Now that express is installed we can create an ``index.js`` file that "
 "will setup our application."
-msgstr "现在已经安装了express,我们可以创建一个 ``index.js`` 文件来设置我们的应用程序."
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:68
 msgid "This translates into the following:"
-msgstr "这转化为以下内容:"
+msgstr ""
 
 #: ../../source/socket.io/get-started.rst:70
 msgid ""
 "Express initializes ``app`` to be a function handler that you can supply "
 "to an HTTP server (as seen in line 2)."
-msgstr "Express初始化 ``app`` 是一个可以提供给HTTP服务器的函数处理程序(如第2行所示)."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:77
+#: ../../source/socket.io/get-started.rst:73
 msgid ""
 "We define a route handler ``/`` that gets called when we hit our website "
 "home."
-msgstr "我们定义了一个路由处理程序 ``/``,当我们访问我们的网站时,它会被调用."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:84
+#: ../../source/socket.io/get-started.rst:76
 msgid "We make the http server listen on port 3000."
-msgstr "我们使http服务器侦听端口3000."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:90
+#: ../../source/socket.io/get-started.rst:78
 msgid "If you run ``node index.js`` you should see the following:"
-msgstr "如果你运行 ``node index.js``,你应该看到以下内容:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:92
+#: ../../source/socket.io/get-started.rst:80
 msgid "And if you point your browser to ``http://localhost:3000``:"
-msgstr "如果你将浏览器指向 ``http://localhost:3000``:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:95
+#: ../../source/socket.io/get-started.rst:83
 msgid "Serving HTML"
-msgstr "提供HTML"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:97
+#: ../../source/socket.io/get-started.rst:85
 msgid ""
 "So far in ``index.js`` we’re calling ``res.send`` and pass it a HTML "
 "string. Our code would look very confusing if we just placed our entire "
 "application’s HTML there. Instead, we’re going to create a ``index.html``"
 " file and serve it."
-msgstr "到目前为止,在 ``index.js`` 中我们调用 ``res.send`` 并传递一个HTML字符串.如果我们将整个应用程序的HTML放在那里,我们的代码看起来会很混乱.相反,我们将创建一个 ``index.html`` 文件并提供服务."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:102
+#: ../../source/socket.io/get-started.rst:90
 msgid "Let’s refactor our route handler to use ``sendFile`` instead:"
-msgstr "让我们重构我们的路由处理程序,改为使用 ``sendFile``:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:110
+#: ../../source/socket.io/get-started.rst:98
 msgid "And populate ``index.html`` with the following:"
-msgstr "并使用以下内容填充 ``index.html``:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:137
+#: ../../source/socket.io/get-started.rst:125
 msgid ""
 "If you restart the process (by hitting Control+C and running ``node "
 "index`` again) and refresh the page it should look like this:"
-msgstr "如果你重新启动进程(通过点击Control + C并再次运行 ``node index``)并刷新页面它应该看起来像这样:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:141
+#: ../../source/socket.io/get-started.rst:129
 msgid "Integrating Socket.IO"
-msgstr "集成Socket.IO"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:143
+#: ../../source/socket.io/get-started.rst:131
 msgid "Socket.IO is composed of two parts:"
-msgstr "Socket.IO由两部分组成:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:145
+#: ../../source/socket.io/get-started.rst:133
 msgid ""
 "A server that integrates with (or mounts on) the Node.JS HTTP Server: "
 "`socket.io <https://github.com/socketio/socket.io>`_"
-msgstr "与Node.JS HTTP服务器集成(或安装)的服务器: `socket.io <https://github.com/socketio/socket.io>`_"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:147
+#: ../../source/socket.io/get-started.rst:135
 msgid ""
 "A client library that loads on the browser side: `socket.io-client "
 "<https://github.com/socketio/socket.io-client>`_"
-msgstr "在浏览器端加载的客户端库: `socket.io-client <https://github.com/socketio/socket.io-client>`_"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:150
+#: ../../source/socket.io/get-started.rst:138
 msgid ""
 "During development, ``socket.io`` serves the client automatically for us,"
 " as we’ll see, so for now we only have to install one module:"
-msgstr "在开发过程中, ``socket.io`` 会自动为我们服务,正如我们所见,所以现在我们只需要安装一个模块:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:157
+#: ../../source/socket.io/get-started.rst:145
 msgid ""
 "That will install the module and add the dependency to ``package.json``. "
 "Now let’s edit ``index.js`` to add it:"
-msgstr "这将安装模块并将依赖项添加到 ``package.json``.现在让我们编辑 ``index.js`` 来添加它:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:178
+#: ../../source/socket.io/get-started.rst:166
 msgid ""
 "Notice that I initialize a new instance of ``socket.io`` by passing the "
 "``http`` (the HTTP server) object. Then I listen on the ``connection`` "
 "event for incoming sockets, and I log it to the console."
-msgstr "请注意,我通过传递 ``http`` （HTTP服务器）对象来初始化 ``socket.io`` 的新实例.然后我在 ``connection`` 事件中听取传入​​的套接字,然后将其记录到控制台."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:182
+#: ../../source/socket.io/get-started.rst:170
 msgid "Now in index.html I add the following snippet before the ``</body>``:"
-msgstr "现在在index.html中,我在 ``</body>`` 之前添加了以下代码片段:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:191
+#: ../../source/socket.io/get-started.rst:179
 msgid ""
 "That’s all it takes to load the ``socket.io-client``, which exposes a "
 "``io`` global (and the endpoint ``GET /socket.io/socket.io.js``), and "
 "then connect."
-msgstr "这就是加载 ``socket.io-client`` 所需要的,它暴露了一个 ``io`` 全局（以及端点 ``GET/socket.io/socket.io.js``）,然后连接."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:195
+#: ../../source/socket.io/get-started.rst:183
 msgid ""
 "If you would like to use the local version of the client-side JS file, "
 "you can find it at ``node_modules/socket.io-client/dist/socket.io.js``."
-msgstr "如果您想使用本地版本的客户端JS文件,可以在 ``node_modules/socket.io-client/dist/socket.io.js`` 找到它."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:198
+#: ../../source/socket.io/get-started.rst:186
 msgid ""
 "Notice that I’m not specifying any URL when I call ``io()``, since it "
 "defaults to trying to connect to the host that serves the page."
-msgstr "请注意,当我调用 ``io（）`` 时,我没有指定任何URL,因为它默认尝试连接到为页面提供服务的主机."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:201
+#: ../../source/socket.io/get-started.rst:189
 msgid ""
 "If you now reload the server and the website you should see the console "
 "print “a user connected”."
-msgstr "如果您现在重新加载服务器和网站,您应该看到控制台打印“用户已连接”."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:204
+#: ../../source/socket.io/get-started.rst:192
 msgid "Try opening several tabs, and you’ll see several messages:"
-msgstr "尝试打开几个标签,您会看到几条消息:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:206
+#: ../../source/socket.io/get-started.rst:194
 msgid "Each socket also fires a special ``disconnect`` event:"
-msgstr "每个套接字还会触发一个特殊的 ``disconnect`` 事件:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:217
+#: ../../source/socket.io/get-started.rst:205
 msgid "Then if you refresh a tab several times you can see it in action:"
-msgstr "然后,如果您多次刷新选项卡,则可以看到它的实际效果:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:220
+#: ../../source/socket.io/get-started.rst:208
 msgid "Emitting events"
-msgstr "发出事件"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:222
+#: ../../source/socket.io/get-started.rst:210
 msgid ""
 "The main idea behind Socket.IO is that you can send and receive any "
 "events you want, with any data you want. Any objects that can be encoded "
 "as JSON will do, and `binary data </blog/introducing-socket-"
 "io-1-0/#binary>`_ is supported too."
-msgstr "Socket.IO背后的主要思想是,您可以使用您想要的任何数据发送和接收您想要的任何事件.任何可以编码为JSON的对象都可以,并且也支持 `binary data </blog/introduction-socket-io-1-0/#binary>`_."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:227
+#: ../../source/socket.io/get-started.rst:215
 msgid ""
 "Let’s make it so that when the user types in a message, the server gets "
 "it as a ``chat message`` event. The ``script`` section in ``index.html`` "
 "should now look as follows:"
-msgstr "让我们这样做,当用户键入消息时,服务器将其作为“聊天消息”事件获取. ``index.html`` 中的 ``script`` 部分现在看起来如下:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:247
+#: ../../source/socket.io/get-started.rst:235
 msgid "And in ``index.js`` we print out the ``chat message`` event:"
-msgstr "在 ``index.js`` 中我们打印出 ``chat message`` 事件:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:257
+#: ../../source/socket.io/get-started.rst:245
 msgid "The result should be like the following video:"
-msgstr "结果应该像下面的视频:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:272
+#: ../../source/socket.io/get-started.rst:254
 msgid "Broadcasting"
-msgstr "广播"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:274
+#: ../../source/socket.io/get-started.rst:256
 msgid ""
 "The next goal is for us to emit the event from the server to the rest of "
 "the users."
-msgstr "下一个目标是让我们从服务器向其他用户发出事件."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:277
+#: ../../source/socket.io/get-started.rst:259
 msgid "In order to send an event to everyone, Socket.IO gives us the ``io.emit``:"
-msgstr "为了向每个人发送一个事件,Socket.IO给了我们 ``io.emit``:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:284
+#: ../../source/socket.io/get-started.rst:266
 msgid ""
 "If you want to send a message to everyone except for a certain socket, we"
 " have the ``broadcast`` flag:"
-msgstr "如果你想向除了某个套接字以外的所有人发送消息,我们有 ``broadcast`` 标志:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:293
+#: ../../source/socket.io/get-started.rst:275
 msgid ""
 "In this case, for the sake of simplicity we’ll send the message to "
 "everyone, including the sender."
-msgstr "在这种情况下,为了简单起见,我们会将消息发送给所有人,包括发件人."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:304
+#: ../../source/socket.io/get-started.rst:286
 msgid ""
 "And on the client side when we capture a ``chat message`` event we’ll "
 "include it in the page. The total client-side JavaScript code now amounts"
 " to:"
-msgstr "在客户端,当我们捕获 ``chat message`` 事件时,我们会将其包含在页面中.现在总客户端JavaScript代码相当于:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:325
+#: ../../source/socket.io/get-started.rst:307
 msgid ""
 "And that completes our chat application, in about 20 lines of code! This "
 "is what it looks like:"
-msgstr "这完成了我们的聊天应用程序,大约20行代码！这就是它的样子:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:341
+#: ../../source/socket.io/get-started.rst:317
 msgid "Homework"
-msgstr "家庭作业"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:343
+#: ../../source/socket.io/get-started.rst:319
 msgid "Here are some ideas to improve the application:"
-msgstr "以下是一些改进应用程序的想法:"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:345
+#: ../../source/socket.io/get-started.rst:321
 msgid ""
 "Broadcast a message to connected users when someone connects or "
 "disconnects."
-msgstr "当有人连接或断开连接时,向连接的用户广播消息."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:347
+#: ../../source/socket.io/get-started.rst:323
 msgid "Add support for nicknames."
-msgstr "添加对昵称的支持."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:348
+#: ../../source/socket.io/get-started.rst:324
 msgid ""
 "Don’t send the same message to the user that sent it himself. Instead, "
 "append the message directly as soon as he presses enter."
-msgstr "不要向发送它的用户发送相同的消息.而是在他按下回车后直接附加消息."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:350
+#: ../../source/socket.io/get-started.rst:326
 msgid "Add “{user} is typing” functionality."
-msgstr "添加  “{user} 正在输入” 功能."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:351
+#: ../../source/socket.io/get-started.rst:327
 msgid "Show who’s online."
-msgstr "显示谁在线."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:352
+#: ../../source/socket.io/get-started.rst:328
 msgid "Add private messaging."
-msgstr "添加私人消息."
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:353
+#: ../../source/socket.io/get-started.rst:329
 msgid "Share your improvements!"
-msgstr "分享您的改进！"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:356
+#: ../../source/socket.io/get-started.rst:332
 msgid "Getting this example"
-msgstr "获得该例"
+msgstr ""
 
-#: ../../source/socket.io/get-started.rst:358
+#: ../../source/socket.io/get-started.rst:334
 msgid ""
 "You can find it on GitHub `here <https://github.com/socketio/chat-"
 "example>`_."
-msgstr "你可以在GitHub上找到它 `这里 <https://github.com/socketio/chat-example>`_."
+msgstr ""
 

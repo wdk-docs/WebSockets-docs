@@ -2,29 +2,29 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 21:18+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/docs/faq.rst:2
 msgid "FAQ"
-msgstr "常见问题"
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:5
 msgid "Can I use wildcards in events?"
-msgstr "我可以在活动中使用通配符吗?"
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:7
 msgid ""
@@ -32,34 +32,30 @@ msgid ""
 "<https://github.com/hden/socketio-wildcard>`_ by Hao-kang Den. It "
 "provides a Socket.IO middleware to deal with wildcards."
 msgstr ""
-"不是直接在Socket.IO中,而是通过 Hao-kang Den 查看 `这个插件 <https://github.com/hden"
-"/socketio-wildcard>`_.它提供了一个Socket.IO中间件来处理通配符."
 
 #: ../../source/socket.io/docs/faq.rst:12
 msgid "Socket.IO with Apache Cordova?"
-msgstr "使用Apache Cordova的Socket.IO?"
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:14
 msgid "Take a look at :doc:`this tutorial <../socket-io-with-apache-cordova>`_."
-msgstr "看看本教程 :doc:`this tutorial <../socket-io-with-apache-cordova>`."
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:17
 msgid "Socket.IO on iOS?"
-msgstr "iOS上的Socket.IO?"
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:19
 msgid "Take a look at `SIOSocket <https://github.com/MegaBits/SIOSocket>`_."
-msgstr "看一下 `SIOSocket <https://github.com/MegaBits/SIOSocket>`_."
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:22
 msgid "Socket.IO on Android?"
-msgstr "Android上的Socket.IO?"
+msgstr ""
 
 #: ../../source/socket.io/docs/faq.rst:24
 msgid ""
 "Take a look at `socket.io-client.java <https://github.com/nkzawa/socket"
 ".io-client.java>`_."
 msgstr ""
-"看看 `socket.io-client.java <https://github.com/nkzawa/socket.io-"
-"client.java>`_."
 

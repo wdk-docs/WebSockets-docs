@@ -2,21 +2,21 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 20:53+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/_posts/20170513-2-0-0.rst:2
 msgid "Socket.IO 2.0.0"
@@ -47,8 +47,8 @@ msgstr ""
 msgid ""
 "it is now possible to provide a custom parser according to the needs of "
 "your application (`#2829 "
-"<https://github.com/socketio/socket.io/pull/2829>`_). Please take a look"
-" at the `example "
+"<https://github.com/socketio/socket.io/pull/2829>`_). Please take a look "
+"at the `example "
 "<https://github.com/socketio/socket.io/tree/master/examples/custom-"
 "parsers>`_ for more information."
 msgstr ""

@@ -38,9 +38,10 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API documention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="awesome.html">令人敬畏的WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.io/index.html">socket.io documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ws/index.html">ws documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blogs/index.html">Blogs</a></li>
 </ul>
 
         </div>
@@ -78,7 +79,6 @@
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#S"><strong>S</strong></a>
- | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
  
 </div>
@@ -91,15 +91,17 @@
 </li>
       <li><a href="api/CloseEvent.html#CloseEvent">CloseEvent() (类)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/CloseEvent.html#CloseEvent.code">CloseEvent.code (CloseEvent 属性)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/CloseEvent.html#CloseEvent.initCloseEvent">CloseEvent.initCloseEvent() (CloseEvent 方法)</a>
 </li>
       <li><a href="api/CloseEvent.html#CloseEvent.reason">CloseEvent.reason (CloseEvent 属性)</a>
 </li>
       <li><a href="api/CloseEvent.html#CloseEvent.wasClean">CloseEvent.wasClean (CloseEvent 属性)</a>
+</li>
+      <li><a href="ws/ws-api.html#createWebSocketStream">createWebSocketStream() (內置函数)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -183,7 +185,7 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ws/ws.html#handleProtocols">handleProtocols() (內置函数)</a>
+      <li><a href="ws/ws-api.html#handleProtocols">handleProtocols() (內置函数)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -267,8 +269,6 @@
 </li>
       <li><a href="socket.io/server-api/API.html#id0">new Server() (类)</a>, <a href="socket.io/server-api/API.html#id1">[1]</a>, <a href="socket.io/server-api/API.html#new-Server">[2]</a>
 </li>
-      <li><a href="ws/ws.html#new-WebSocket">new WebSocket() (类)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -277,19 +277,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="socket.io/server-api/API.html#server.adapter">server.adapter() (server 方法)</a>
 </li>
-      <li><a href="ws/ws.html#server.address">server.address() (server 方法)</a>
-</li>
       <li><a href="socket.io/server-api/API.html#id3">server.attach() (server 方法)</a>, <a href="socket.io/server-api/API.html#server.attach">[1]</a>
 </li>
       <li><a href="socket.io/server-api/API.html#server.bind">server.bind() (server 方法)</a>
 </li>
-      <li><a href="ws/ws.html#server.clients">server.clients() (server 方法)</a>
+      <li><a href="ws/ws-api.html#server.clients">server.clients (server 属性)</a>
 </li>
-      <li><a href="socket.io/server-api/API.html#server.close">server.close() (server 方法)</a>, <a href="ws/ws.html#server.close">[1]</a>
+      <li><a href="socket.io/server-api/API.html#server.close">server.close() (server 方法)</a>
 </li>
       <li><a href="socket.io/server-api/API.html#server.engine.generateId">server.engine.generateId (server.engine 属性)</a>
-</li>
-      <li><a href="ws/ws.html#server.handleUpgrade">server.handleUpgrade() (server 方法)</a>
 </li>
       <li><a href="socket.io/server-api/API.html#id4">server.listen() (server 方法)</a>, <a href="socket.io/server-api/API.html#server.listen">[1]</a>
 </li>
@@ -304,8 +300,6 @@
       <li><a href="socket.io/server-api/API.html#server.serveClient">server.serveClient() (server 方法)</a>
 </li>
       <li><a href="socket.io/server-api/API.html#server.server.origins">server.server.origins() (server.server 方法)</a>
-</li>
-      <li><a href="ws/ws.html#server.shouldHandle">server.shouldHandle() (server 方法)</a>
 </li>
       <li><a href="socket.io/server-api/API.html#server.sockets">server.sockets (server 属性)</a>
 </li>
@@ -323,10 +317,10 @@
 </li>
       <li><a href="socket.io/client-api/Socket.html#socket.connect">socket.connect() (socket 方法)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="socket.io/client-api/Socket.html#socket.connected">socket.connected (socket 属性)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="socket.io/server-api/Socket.html#socket.disconnect">socket.disconnect (socket 属性)</a>
 </li>
       <li><a href="socket.io/client-api/Socket.html#socket.disconnect">socket.disconnect() (socket 方法)</a>
@@ -376,38 +370,26 @@
   </ul></td>
 </tr></table>
 
-<h2 id="V">V</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ws/ws.html#verifyClient">verifyClient() (內置函数)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ws/ws.html#verifyClient.cb">verifyClient.cb() (verifyClient 方法)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/WebSocket.html#id0">WebSocket (None 属性)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket">WebSocket() (內置函数)</a>
+
+      <ul>
+        <li><a href="ws/ws-api.html#WebSocket">(类)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.addEventListener">websocket.addEventListener() (websocket 方法)</a>
-</li>
+      </ul></li>
       <li><a href="api/WebSocket.html#WebSocket.binaryType">WebSocket.binaryType (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.binaryType">websocket.binaryType() (websocket 方法)</a>
+      <li><a href="ws/ws-api.html#websocket.binaryType">websocket.binaryType (websocket 属性)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.bufferedAmount">WebSocket.bufferedAmount (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.bufferedAmount">websocket.bufferedAmount() (websocket 方法)</a>
+      <li><a href="ws/ws-api.html#websocket.bufferedAmount">websocket.bufferedAmount (websocket 属性)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.close">WebSocket.close() (WebSocket 方法)</a>
-</li>
-      <li><a href="ws/ws.html#websocket.close">websocket.close() (websocket 方法)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.CLOSED">WebSocket.CLOSED (全局变量或常量)</a>
 </li>
@@ -417,77 +399,69 @@
 </li>
       <li><a href="api/WebSocket.html#WebSocket.extensions">WebSocket.extensions (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.extensions">websocket.extensions() (websocket 方法)</a>
+      <li><a href="ws/ws-api.html#websocket.extensions">websocket.extensions (websocket 属性)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.onclose">WebSocket.onclose (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.onclose">websocket.onclose() (websocket 方法)</a>
-</li>
       <li><a href="api/WebSocket.html#WebSocket.onerror">WebSocket.onerror (WebSocket 属性)</a>
-</li>
-      <li><a href="ws/ws.html#websocket.onerror">websocket.onerror() (websocket 方法)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.onmessage">WebSocket.onmessage (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.onmessage">websocket.onmessage() (websocket 方法)</a>
-</li>
       <li><a href="api/WebSocket.html#WebSocket.onopen">WebSocket.onopen (WebSocket 属性)</a>
-</li>
-      <li><a href="ws/ws.html#websocket.onopen">websocket.onopen() (websocket 方法)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.OPEN">WebSocket.OPEN (全局变量或常量)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.ping">websocket.ping() (websocket 方法)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ws/ws.html#websocket.pong">websocket.pong() (websocket 方法)</a>
-</li>
       <li><a href="api/WebSocket.html#WebSocket.protocol">WebSocket.protocol (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.protocol">websocket.protocol() (websocket 方法)</a>
+      <li><a href="ws/ws-api.html#websocket.protocol">websocket.protocol (websocket 属性)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.readyState">WebSocket.readyState (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.readyState">websocket.readyState() (websocket 方法)</a>
-</li>
-      <li><a href="ws/ws.html#websocket.removeEventListener">websocket.removeEventListener() (websocket 方法)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ws/ws-api.html#websocket.readyState">websocket.readyState (websocket 属性)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.send">WebSocket.send() (WebSocket 方法)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.send">websocket.send() (websocket 方法)</a>
-</li>
-      <li><a href="ws/ws.html#WebSocket.Server">WebSocket.Server() (类)</a>
-</li>
-      <li><a href="ws/ws.html#websocket.terminate">websocket.terminate() (websocket 方法)</a>
+      <li><a href="ws/ws-api.html#WebSocket.Server">WebSocket.Server() (类)</a>
 </li>
       <li><a href="api/WebSocket.html#WebSocket.url">WebSocket.url (WebSocket 属性)</a>
 </li>
-      <li><a href="ws/ws.html#websocket.url">websocket.url() (websocket 方法)</a>
+      <li><a href="ws/ws-api.html#websocket.url">websocket.url (websocket 属性)</a>
 </li>
       <li><a href="ws/koa-websocket.html#websockify">websockify() (內置函数)</a>
 </li>
-      <li><a href="ws/ws.html#id0">ws.onEvent.close() (ws.onEvent 方法)</a>, <a href="ws/ws.html#ws.onEvent.close">[1]</a>
+      <li><a href="ws/ws-api.html#ws.onEvent.close">ws.onEvent.close() (ws.onEvent 方法)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.connection">ws.onEvent.connection() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#ws.onEvent.connection">ws.onEvent.connection() (ws.onEvent 方法)</a>
 </li>
-      <li><a href="ws/ws.html#id1">ws.onEvent.error() (ws.onEvent 方法)</a>, <a href="ws/ws.html#ws.onEvent.error">[1]</a>
+      <li><a href="ws/ws-api.html#ws.onEvent.error">ws.onEvent.error() (ws.onEvent 方法)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.headers">ws.onEvent.headers() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#ws.onEvent.headers">ws.onEvent.headers() (ws.onEvent 方法)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.listening">ws.onEvent.listening() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#ws.onEvent.listening">ws.onEvent.listening() (ws.onEvent 方法)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.message">ws.onEvent.message() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#WS_ERR_EXPECTED_FIN">WS_ERR_EXPECTED_FIN (全局变量或常量)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.open">ws.onEvent.open() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#WS_ERR_EXPECTED_MASK">WS_ERR_EXPECTED_MASK (全局变量或常量)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.ping">ws.onEvent.ping() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#WS_ERR_INVALID_CLOSE_CODE">WS_ERR_INVALID_CLOSE_CODE (全局变量或常量)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.pong">ws.onEvent.pong() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH">WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH (全局变量或常量)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.unexpected-response">ws.onEvent.unexpected-response() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#WS_ERR_INVALID_OPCODE">WS_ERR_INVALID_OPCODE (全局变量或常量)</a>
 </li>
-      <li><a href="ws/ws.html#ws.onEvent.upgrade">ws.onEvent.upgrade() (ws.onEvent 方法)</a>
+      <li><a href="ws/ws-api.html#WS_ERR_INVALID_UTF8">WS_ERR_INVALID_UTF8 (全局变量或常量)</a>
+</li>
+      <li><a href="ws/ws-api.html#WS_ERR_UNEXPECTED_MASK">WS_ERR_UNEXPECTED_MASK (全局变量或常量)</a>
+</li>
+      <li><a href="ws/ws-api.html#WS_ERR_UNEXPECTED_RSV_1">WS_ERR_UNEXPECTED_RSV_1 (全局变量或常量)</a>
+</li>
+      <li><a href="ws/ws-api.html#WS_ERR_UNEXPECTED_RSV_2_3">WS_ERR_UNEXPECTED_RSV_2_3 (全局变量或常量)</a>
+</li>
+      <li><a href="ws/ws-api.html#WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH">WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH (全局变量或常量)</a>
+</li>
+      <li><a href="ws/ws-api.html#WS_ERR_UNSUPPORTED_MESSAGE_LENGTH">WS_ERR_UNSUPPORTED_MESSAGE_LENGTH (全局变量或常量)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -501,7 +475,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019, BandCap.</p>
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 

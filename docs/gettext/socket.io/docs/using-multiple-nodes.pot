@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2021, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 22:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:2
+msgid "Using multiple nodes"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:5
+msgid "Sticky load balancing"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:7
+msgid "If you plan to distribute the load of connections among different processes or machines, you have to make sure that requests associated with a particular session id connect to the process that originated them."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:12
+msgid "This is due to certain transports like XHR Polling or JSONP Polling relying on firing several requests during the lifetime of the “socket”. Failing to enable sticky balancing will result in the dreaded:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:20
+msgid "Which means that the upgrade request was sent to a node which did not know the given socket id, hence the HTTP 400 response."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:23
+msgid "To illustrate why this is needed, consider the example of emitting an event to all connected clients:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:30
+msgid "Chances are that some of those clients might have an active bi-directional communication channel like ``WebSocket`` that we can write to immediately, but some of them might be using long-polling."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:34
+msgid "If they’re using long polling, they might or might not have sent a request that we can write to. They could be “in between” those requests. In those situations, it means we have to buffer messages in the process. In order for the client to successfully claim those messages when he sends his request, the easiest way is for him to connect to be routed to that same process."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:41
+msgid "As noted above, ``WebSocket`` transport do not have this limitation, since the underlying TCP connection is kept open between the client and the given server. That’s why you might find some suggestions to only use the ``WebSocket`` transport:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:53
+msgid "Both means that there is **NO FALLBACK** to long-polling when the websocket connection cannot be established, which is in fact one of the key feature of Socket.IO. In that case, you should maybe consider using raw `WebSocket <https://developer.mozilla.org/en-US/docs/Web/API/WebSocket>`_, or a thin wrapper like `robust-websocket <https://github.com/appuri/robust-websocket>`_."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:61
+msgid "To achieve sticky-session, there are two main solutions:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:63
+msgid "routing clients based on their originating address"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:65
+msgid "routing clients based on a cookie"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:68
+msgid "NginX configuration"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:70
+msgid "Within the ``http { }`` section of your ``nginx.conf`` file, you can declare a ``upstream`` section with a list of Socket.IO process you want to balance load between:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:104
+msgid "Notice the ``ip_hash`` instruction that indicates the connections will be sticky."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:107
+msgid "Make sure you also configure ``worker_processes`` in the topmost level to indicate how many workers NginX should use. You might also want to look into tweaking the ``worker_connections`` setting within the ``events { }`` block."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:112
+msgid "`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx>`_"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:115
+msgid "Apache HTTPD configuration"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:143
+msgid "`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd>`_"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:146
+msgid "HAProxy configuration"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:164
+msgid "`Example <https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy>`_"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:167
+msgid "Using Node.JS Cluster"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:169
+msgid "Just like NginX, Node.JS comes with built-in clustering support through the ``cluster`` module."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:172
+msgid "Fedor Indutny has created a module called `sticky session <https://github.com/indutny/sticky-session>`_ that ensures file descriptors (ie: connections) are routed based on the originating ``remoteAddress`` (ie: IP). Please note that this might lead to unbalanced routing, depending on the hashing method."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:178
+msgid "You could also assign a different port to each worker of the cluster, based on the cluster worker ID, and balance the load with the configuration that you can find above."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:183
+msgid "Passing events between nodes"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:185
+msgid "Now that you have multiple Socket.IO nodes accepting connections, if you want to broadcast events to everyone (or even everyone in a certain `room </docs/rooms-and-namespaces/#Rooms>`_) you’ll need some way of passing messages between processes or computers."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:190
+msgid "The interface in charge of routing messages is what we call the ``Adapter``. You can implement your own on top of the `socket.io-adapter <https://github.com/socketio/socket.io-adapter>`_ (by inheriting from it) or you can use the one we provide on top of `Redis <https://redis.io/>`_: `socket.io-redis <https://github.com/socketio/socket.io-redis>`_:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:203
+msgid "Then the following call:"
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:209
+msgid "will be broadcast to every node through the `Pub/Sub mechanism <https://redis.io/topics/pubsub>`_ of Redis."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:212
+msgid "sticky-session is still needed when using the Redis adapter."
+msgstr ""
+
+#: ../../source/socket.io/docs/using-multiple-nodes.rst:214
+msgid "If you want to pass messages to it from non-socket.io processes, you should look into `“Sending messages from the outside-world” </docs/rooms-and-namespaces/#Sending-messages-from-the-outside-world>`_."
+msgstr ""

@@ -1,5 +1,7 @@
 Awesome WebSockets
-============================
+======================
+
+> https://github.com/facundofarias/awesome-websockets
 
 A curated list of WebSockets related principles and technologies.
 
@@ -53,9 +55,6 @@ C
 C++
 ~~~
 
-.. raw:: html
-
-   <!-- #c-1 anchor -->
 
 -  `Websocketpp <https://github.com/zaphoyd/websocketpp>`_ - C++
    Websocket client/server library.
@@ -78,10 +77,6 @@ C++
 
 C#
 ~~
-
-.. raw:: html
-
-   <!-- #c-2 anchor -->
 
 -  `ASP.NET SignalR <http://signalr.net>`_ - Incredibly simple
    real-time web for .NET.
@@ -458,6 +453,6 @@ Table of contents generated with
 
 .. |Awesome| image:: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
    :target: https://github.com/sindresorhus/awesome
-.. |Awesome| image:: https://github.com/sindresorhus/awesome
+.. |Awesome2| image:: https://github.com/sindresorhus/awesome
 .. |CC0| image:: http://i.creativecommons.org/p/zero/1.0/88x31.png
    :target: http://creativecommons.org/publicdomain/zero/1.0/

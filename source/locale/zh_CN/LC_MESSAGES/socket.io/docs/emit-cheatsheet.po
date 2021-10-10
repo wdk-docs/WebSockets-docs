@@ -2,21 +2,21 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 21:03+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/docs/emit-cheatsheet.rst:2
 msgid "Emit cheatsheet"
@@ -26,7 +26,7 @@ msgstr ""
 msgid ""
 "The following events are reserved and should not be used as event names "
 "by your application:"
-msgstr "以下事件是保留的，不应被应用程序用作事件名称"
+msgstr ""
 
 #: ../../source/socket.io/docs/emit-cheatsheet.rst:62
 msgid "``error``"
@@ -59,13 +59,4 @@ msgstr ""
 #: ../../source/socket.io/docs/emit-cheatsheet.rst:69
 msgid "``pong``"
 msgstr ""
-
-#~ msgid ""
-#~ "**Note:** The following events are "
-#~ "reserved and should not be used as"
-#~ " event names by your application: -"
-#~ " ``error`` - ``connect`` - ``disconnect``"
-#~ " - ``disconnecting`` - ``newListener`` -"
-#~ " ``removeListener`` - ``ping`` - ``pong``"
-#~ msgstr ""
 

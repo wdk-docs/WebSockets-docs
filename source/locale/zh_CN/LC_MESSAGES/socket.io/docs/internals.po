@@ -2,33 +2,33 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-14 12:18+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/docs/internals.rst:2
 msgid "Internals"
-msgstr "内幕"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:5
 msgid "Dependency graph"
-msgstr "依赖图"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:7
 msgid "The Socket.IO codebase is split accross several repositories:"
-msgstr "Socket.IO代码库分布在几个存储库中:"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:9
 msgid "https://github.com/socketio/socket.io"
@@ -64,252 +64,223 @@ msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:18
 msgid "The following diagram displays the relationships between each project:"
-msgstr "下图显示了每个项目之间的关系:"
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:20
+#: ../../source/socket.io/docs/internals.rst:22
 msgid "Each project brings its own set of features:"
-msgstr "每个项目都有自己的一套功能:"
-
-#: ../../source/socket.io/docs/internals.rst:23
-msgid "engine.io-parser"
 msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:25
+msgid "engine.io-parser"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:27
 msgid ""
 "This is the JavaScript parser for the engine.io protocol encoding, shared"
 " by both `engine.io-client <https://github.com/socketio/engine.io-"
 "client>`_ and `engine.io <https://github.com/socketio/engine.io>`_."
 msgstr ""
-"这是engine.io协议编码的JavaScript解析器,由 `engine.io-client "
-"<https://github.com/socketio/engine.io-client>`_ 和 `engine.io "
-"<https：/共享/github.com/socketio/engine.io>`_ ."
 
-#: ../../source/socket.io/docs/internals.rst:30
+#: ../../source/socket.io/docs/internals.rst:32
 msgid ""
 "The specification for the protocol can be found here: "
 "https://github.com/socketio/engine.io-protocol"
-msgstr "协议的规范可以在这里找到: https://github.com/socketio/engine.io-protocol"
-
-#: ../../source/socket.io/docs/internals.rst:34
-msgid "engine.io"
 msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:36
+msgid "engine.io"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:38
 msgid ""
 "Engine.IO is the implementation of transport-based cross-browser/cross-"
 "device bi-directional communication layer for Socket.IO."
-msgstr "Engine.IO是为Socket.IO实现基于传输的跨浏览器/跨设备双向通信层."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:40
+#: ../../source/socket.io/docs/internals.rst:42
 msgid ""
 "Its main feature is the ability to swap transports on the fly. A "
 "connection (initiated by an `engine.io-client "
 "<https://github.com/socketio/engine.io-client>`_ counterpart) starts with"
 " XHR polling, but can then switch to WebSocket if possible."
 msgstr ""
-"它的主要特点是能够即时交换传输.连接(由 `engine.io-client "
-"<https://github.com/socketio/engine.io-client>`_ "
-"对应方启动)以XHR轮询开始,但如果可能,则可以切换到WebSocket."
 
-#: ../../source/socket.io/docs/internals.rst:46
-#: ../../source/socket.io/docs/internals.rst:63
+#: ../../source/socket.io/docs/internals.rst:48
+#: ../../source/socket.io/docs/internals.rst:65
 msgid ""
 "It uses the `engine.io-parser <https://github.com/socketio/engine.io-"
 "parser>`_ to encode/decode packets."
 msgstr ""
-"它使用 `engine.io-parser <https://github.com/socketio/engine.io-parser>`_ "
-"来编码/解码数据包."
 
-#: ../../source/socket.io/docs/internals.rst:51
+#: ../../source/socket.io/docs/internals.rst:53
 msgid "engine.io-client"
 msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:53
+#: ../../source/socket.io/docs/internals.rst:55
 msgid ""
 "This is the client for `Engine.IO "
 "<https://github.com/socketio/engine.io>`_, the implementation of "
 "transport-based cross-browser/cross-device bi-directional communication "
 "layer for `Socket.IO <https://github.com/socketio/socket.io>`_."
 msgstr ""
-"这是 `Engine.IO "
-"<https://github.com/socketio/engine.io>`_ 的客户端,用于 `Socket.IO的基于传输的跨浏览器/跨设备双向通信层的实现 <https://github.com/socketio/socket.io>`_"
 
-#: ../../source/socket.io/docs/internals.rst:59
+#: ../../source/socket.io/docs/internals.rst:61
 msgid ""
 "It runs in both the browser (including HTML5 `WebWorker "
 "<https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API>`_) and"
 " Node.js."
 msgstr ""
-"它在浏览器中运行（包括HTML5 `WebWorker <https://developer.mozilla.org/en-"
-"US/docs/Web/API/Web_Workers_API>`_）和Node.js."
 
-#: ../../source/socket.io/docs/internals.rst:68
+#: ../../source/socket.io/docs/internals.rst:70
 msgid "socket.io-adapter"
 msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:70
-msgid "This is the default Socket.IO in-memory adapter class."
-msgstr "这是默认的Socket.IO内存适配器类."
-
 #: ../../source/socket.io/docs/internals.rst:72
+msgid "This is the default Socket.IO in-memory adapter class."
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:74
 msgid ""
 "This module is not intended for end-user usage, but can be used as an "
 "interface to inherit from from other adapters you might want to build, "
 "like `socket.io-redis <https://github.com/socketio/socket.io-redis>`_."
 msgstr ""
-"此模块不适合最终用户使用,但可以用作从您可能要构建的其他适配器继承的接口,例如 `socket.io-redis "
-"<https://github.com/socketio/socket. IO-redis的>`_."
 
-#: ../../source/socket.io/docs/internals.rst:77
+#: ../../source/socket.io/docs/internals.rst:79
 msgid "socket.io-redis"
 msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:79
+#: ../../source/socket.io/docs/internals.rst:81
 msgid ""
 "This is the adapter using the Redis `Pub/Sub "
 "<https://redis.io/topics/pubsub>`_ mechanism to broadcast messages "
 "between multiple nodes."
-msgstr "这是使用Redis `Pub/Sub <https://redis.io/topics/pubsub>`_ 机制在多个节点之间广播消息的适配器."
-
-#: ../../source/socket.io/docs/internals.rst:84
-msgid "socket.io-parser"
 msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:86
+msgid "socket.io-parser"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:88
 msgid ""
 "A socket.io encoder and decoder written in JavaScript complying with "
 "version 3 of `socket.io-protocol <>`_. Used by `socket.io "
 "<https://github.com/socketio/socket.io>`_ and `socket.io-client "
 "<https://github.com/socketio/socket.io-client>`_."
 msgstr ""
-"用JavaScript编写的socket.io编码器和解码器,符合 `socket.io-protocol <>`_ 的版本3.由 `socket.io"
-" <https://github.com/socketio/socket.io>`_ 和 `socket.io-client "
-"<https://github.com/socketio/socket.io-client>`_ 使用."
 
-#: ../../source/socket.io/docs/internals.rst:92
+#: ../../source/socket.io/docs/internals.rst:94
 msgid "socket.io"
 msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:94
+#: ../../source/socket.io/docs/internals.rst:96
 msgid ""
 "Socket.IO brings some *syntactic sugar* over the Engine.IO “raw” API. It "
 "also brings two new concepts, ``Rooms`` and ``Namespaces``, which "
 "introduce a separation of concern between communication channels. Please "
 "see the associated documentation `there <https://socket.io/docs/rooms-"
 "and-namespaces/>`_."
-msgstr "Socket.IO为Engine.IO“raw”API带来了一些*语法糖*.它还带来了两个新概念, ``Rooms`` 和 ``Namespaces``,它们引入了沟通渠道之间的关注点.请参阅相关文档 `那里 <https://socket.io/docs/rooms-and-namespaces/>`_."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:100
+#: ../../source/socket.io/docs/internals.rst:102
 msgid ""
 "By default, it exposes a browser build of the client at "
 "``/socket.io/socket.io.js``."
-msgstr "默认情况下,它在 ``/socket.io/socket.io.js`` 中公开客户端的浏览器版本."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:103
-#: ../../source/socket.io/docs/internals.rst:118
+#: ../../source/socket.io/docs/internals.rst:105
+#: ../../source/socket.io/docs/internals.rst:120
 msgid ""
 "It uses the `socket.io-parser <https://github.com/socketio/socket.io-"
 "parser>`_ to encode/decode packets."
-msgstr "它使用 `socket.io-parser <https://github.com/socketio/socket.io-parser>`_ 来编码/解码数据包."
-
-#: ../../source/socket.io/docs/internals.rst:108
-msgid "socket.io-client"
 msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:110
+msgid "socket.io-client"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:112
 msgid ""
 "This is the client for `Socket.IO "
 "<https://github.com/socketio/socket.io>`_. It relies on `engine.io-client"
 " <https://github.com/socketio/engine.io-client>`_, which manages the "
 "transport swapping and the disconnection detection."
-msgstr "这是 `Socket.IO <https://github.com/socketio/socket.io>`_ 的客户端.它依赖于 `engine.io-client <https://github.com/socketio/engine.io-client>`_ ,它管理传输交换和断开连接检测."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:115
+#: ../../source/socket.io/docs/internals.rst:117
 msgid ""
 "It handles reconnection automatically, in case the underlying connection "
 "is severed."
-msgstr "它会自动处理重新连接,以防底层连接被切断."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:123
+#: ../../source/socket.io/docs/internals.rst:125
 msgid "Under the hood"
-msgstr "在引擎盖下"
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:126
+#: ../../source/socket.io/docs/internals.rst:128
 msgid "Connection"
-msgstr "连接"
-
-#: ../../source/socket.io/docs/internals.rst:132
-msgid "The following steps take place:"
-msgstr "执行以下步骤:"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:134
-msgid "on the client-side, a new ``engine.io-client`` instance is created"
-msgstr "在客户端,创建了一个新的 ``engine.io-client`` 实例"
+msgid "The following steps take place:"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:136
+msgid "on the client-side, a new ``engine.io-client`` instance is created"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:138
 msgid ""
 "the ``engine.io-client`` instance tries to establish a ``polling`` "
 "transport"
-msgstr "``engine.io-client`` 实例尝试建立一个 ``polling`` 传输"
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:149
+#: ../../source/socket.io/docs/internals.rst:151
 msgid "the ``engine.io`` server responds with:"
-msgstr "``engine.io`` 服务器响应："
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:163
+#: ../../source/socket.io/docs/internals.rst:165
 msgid "the content is encoded by the ``engine.io-parser`` as:"
-msgstr "内容由 ``engine.io-parser`` 编码为:"
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:180
+#: ../../source/socket.io/docs/internals.rst:182
 msgid "the content is then decoded by the ``engine.io-parser`` on the client-side"
-msgstr "然后,内容由客户端的 ``engine.io-parser`` 解码"
-
-#: ../../source/socket.io/docs/internals.rst:183
-msgid "an ``open`` event is emitted at the ``engine.io-client`` level"
-msgstr "在 ``engine.io-client`` 级别发出 ``open`` 事件"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:185
-msgid "a ``connect`` event is emitted at the ``socket.io-client`` level"
-msgstr "在 ``socket.io-client`` 级别发出 ``connect`` 事件"
+msgid "an ``open`` event is emitted at the ``engine.io-client`` level"
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:188
-msgid "Upgrade"
-msgstr "升级"
+#: ../../source/socket.io/docs/internals.rst:187
+msgid "a ``connect`` event is emitted at the ``socket.io-client`` level"
+msgstr ""
 
 #: ../../source/socket.io/docs/internals.rst:190
+msgid "Upgrade"
+msgstr ""
+
+#: ../../source/socket.io/docs/internals.rst:192
 msgid ""
 "Once all the buffers of the existing transport (XHR polling) are flushed,"
 " an upgrade gets tested on the side by sending a probe."
-msgstr "一旦刷新了现有传输的所有缓冲区（XHR轮询）,就会通过发送探测器在侧面测试升级."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:203
+#: ../../source/socket.io/docs/internals.rst:205
 msgid ""
 "a “ping” packet is sent by the client in a WebSocket frame, encoded as "
 "``2probe`` by the ``engine.io-parser``, with ``2`` being the “ping” "
 "message type."
-msgstr "客户端在WebSocket框架中发送“ping”数据包,由 ``engine.io-parser`` 编码为 ``2probe``,其中 ``2`` 为 “ping” 消息类型."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:207
+#: ../../source/socket.io/docs/internals.rst:209
 msgid ""
 "the server responds with a “pong” packet, encoded as ``3probe``, with "
 "``3`` being the “pong” message type."
-msgstr "服务器以“pong”包响应,编码为“3probe”,“3”为“pong”消息类型."
+msgstr ""
 
-#: ../../source/socket.io/docs/internals.rst:210
+#: ../../source/socket.io/docs/internals.rst:212
 msgid ""
 "upon receiving the “pong” packet, the upgrade is considered complete and "
 "all following messages go through the new transport."
-msgstr "收到“pong”数据包后,升级将被视为已完成,所有后续消息都将通过新传输."
-
-#~ msgid "title: Socket.IO — Internals permalink: /docs/internals/ type: docs —"
-#~ msgstr ""
-
-#~ msgid "## engine.io-client"
-#~ msgstr ""
-
-#~ msgid "## socket.io"
-#~ msgstr ""
-
-#~ msgid "## Connection"
-#~ msgstr ""
+msgstr ""
 

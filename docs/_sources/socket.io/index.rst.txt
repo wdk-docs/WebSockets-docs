@@ -12,3 +12,4 @@ socket.io documentation
    socket.io-protocol
    _posts/index
    socket-io-with-apache-cordova
+   weapp.socket.io

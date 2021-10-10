@@ -2,114 +2,113 @@
 # Copyright (C) 2019, BandCap
 # This file is distributed under the same license as the WebSockets Docs
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSockets Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-14 11:03+0800\n"
+"POT-Creation-Date: 2021-10-09 16:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:2
 msgid "Rooms and namespaces"
-msgstr "房间和名称空间"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:4
 msgid ""
 "Socket.IO allows you to “namespace” your sockets, which essentially means"
 " assigning different *endpoints* or *paths*."
-msgstr "Socket.IO允许您 “namespace” 套接字，这实际上意味着分配不同的 *endpoints* 或 *paths*。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:7
 msgid ""
 "This is a useful feature to minimize the number of resources (TCP "
 "connections) and at the same time separate concerns within your "
 "application by introducing separation between communication channels."
-msgstr "这是一个有用的功能，可以最大限度地减少资源(TCP连接)的数量，同时通过在通信通道之间引入分离来分离应用程序中的问题。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:12
 msgid "Default namespace"
-msgstr "默认命名空间"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:14
 msgid ""
 "We call the default namespace ``/`` and it’s the one Socket.IO clients "
 "connect to by default, and the one the server listens to by default."
-msgstr "我们调用默认命名空间 ``/``，它是默认情况下连接到的一个 Socket.IO 客户端，默认情况下是服务器监听的。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:17
 msgid "This namespace is identified by ``io.sockets`` or simply ``io``:"
-msgstr "这个命名空间由 ``io.sockets`` 或简单的 ``io`` 标识:"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:25
 msgid ""
 "Each namespace emits a ``connection`` event that receives each ``Socket``"
 " instance as a parameter"
-msgstr "每个命名空间都会发出一个 ``connection`` 事件，它接收每个 ``Socket`` 实例作为参数"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:35
 msgid "Custom namespaces"
-msgstr "自定义命名空间"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:37
 msgid ""
 "To set up a custom namespace, you can call the ``of`` function on the "
 "server-side:"
-msgstr "要设置自定义命名空间，可以在服务器端调用 ``of`` 函数:"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:48
 msgid ""
 "On the client side, you tell Socket.IO client to connect to that "
 "namespace:"
-msgstr "在客户端，您告诉Socket.IO客户端连接到该命名空间:"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:56
-#, fuzzy
 msgid ""
 "The namespace is an implementation detail of the Socket.IO protocol, and "
 "is not related to the actual URL of the underlying transport, which "
 "defaults to ``/socket.io/…``."
-msgstr "**重要说明：**命名空间是Socket.IO协议的实现细节，与底层传输的实际URL无关，默认为 ``/ socket.io/...``。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:61
 msgid "Rooms"
-msgstr "房间"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:63
 msgid ""
 "Within each namespace, you can also define arbitrary channels that "
 "sockets can ``join`` and ``leave``."
-msgstr "在每个命名空间中，您还可以定义套接字可以 ``join`` 和 ``leave`` 的任意通道。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:67
 msgid "Joining and leaving"
-msgstr "加入和离开"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:69
 msgid "You can call ``join`` to subscribe the socket to a given channel:"
-msgstr "您可以调用 ``join`` 来订阅套接字到给定的通道："
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:77
 msgid ""
 "And then simply use ``to`` or ``in`` (they are the same) when "
 "broadcasting or emitting:"
-msgstr "然后在广播或发射时简单地使用 ``to`` 或 ``in`` (它们是相同的):"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:84
 msgid "To leave a channel you call ``leave`` in the same fashion as ``join``."
-msgstr "要离开一个频道，你可以像 ``join`` 一样调用 ``leave`` 。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:87
 msgid "Default room"
-msgstr "默认房间"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:89
 msgid ""
@@ -117,56 +116,54 @@ msgid ""
 "unique identifier ``Socket#id``. For your convenience, each socket "
 "automatically joins a room identified by this id."
 msgstr ""
-"Socket.IO中的每个 ``Socket`` 都由一个随机的，不可思议的唯一标识符 ``Socket＃id`` "
-"标识。为方便起见，每个套接字自动加入由此ID标识的房间。"
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:93
 msgid "This makes it easy to broadcast messages to other sockets:"
-msgstr "这样可以轻松地将消息广播到其他套接字:"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:104
 msgid "Disconnection"
-msgstr "断开"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:106
 msgid ""
 "Upon disconnection, sockets ``leave`` all the channels they were part of "
 "automatically, and no special teardown is needed on your part."
-msgstr "断开连接时，插座 ``leave`` 它们自动成为所有通道，并且不需要特殊的拆卸。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:110
 msgid "Sending messages from the outside-world"
-msgstr "从外部世界发送消息"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:112
 msgid ""
 "In some cases, you might want to emit events to sockets in Socket.IO "
 "namespaces / rooms from outside the context of your Socket.IO processes."
-msgstr "在某些情况下，您可能希望从Socket.IO进程的上下文之外向Socket.IO命名空间/房间中的套接字发出事件。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:115
 msgid ""
 "There’s several ways to tackle this problem, like implementing your own "
 "channel to send messages into the process."
-msgstr "有几种方法可以解决这个问题，比如实现自己的通道将消息发送到进程中。"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:118
 msgid "To facilitate this use case, we created two modules:"
-msgstr "为了方便这个用例，我们创建了两个模块:"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:120
 msgid "`socket.io-redis <https://github.com/socketio/socket.io-redis>`_"
-msgstr "`socket.io-redis <https://github.com/socketio/socket.io-redis>`_"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:121
 msgid "`socket.io-emitter <https://github.com/socketio/socket.io-emitter>`_"
-msgstr "`socket.io-emitter <https://github.com/socketio/socket.io-emitter>`_"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:123
 msgid "By implementing the Redis ``Adapter``:"
-msgstr "通过实现Redis ``Adapter``:"
+msgstr ""
 
 #: ../../source/socket.io/docs/rooms-and-namespaces.rst:131
 msgid "you can then ``emit`` messages from any other process to any channel"
-msgstr "然后，您可以从任何其他进程 ``emit`` 消息到任何通道"
+msgstr ""
 

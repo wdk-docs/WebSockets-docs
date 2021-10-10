@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2021, BandCap
+# This file is distributed under the same license as the WebSockets Docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WebSockets Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-09 22:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:2
+msgid "Socket.IO — Apache Cordova"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:4
+msgid "Since Apache Cordova apps are written mostly in JS, it is actually really easy to use Socket.IO! Let’s walk through a small example."
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:7
+msgid "First we prepare a simple server:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:26
+msgid "This server will simply listen to Socket.IO client connections, and will emit some text to them via a ``text`` event."
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:29
+msgid "Now let’s get get down to the point. We want to start off by creating a new Cordova project to start modifying. Let’s start from scratch."
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:32
+msgid "Running"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:38
+msgid "will install the actual Cordova cli tool we use to create projects, install/remove dependencies, and launch our emulator among other things."
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:45
+msgid "will make a new project template for us to start modifying. Feel free to poke around the newly created folder, called ``socket.io-example`` and take a look at some of the created files."
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:49
+msgid "You should now be in the project folder. If you didn’t navigate there yet in command line, do it now with ``cd socket.io-example``."
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:52
+msgid "Since I’m developing this example on OS X, I’m going to build for iOS. You could do it similarly for Android. To add the build target, run the following:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:60
+msgid "Next we want to build all the native components. We can do this by running"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:67
+msgid "Now let’s actually run the template application to see that everything is working. If you are on OS X, you can install the iOS emulator like so"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:74
+msgid "You should see the emulator open up with something like this when running ``cordova emulate ios``:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:77
+msgid "Now that you see everything working with the actual setup, let’s start write some code. Open up ``www/index.html`` in your project directory. It should look something like this:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:128
+msgid "To begin, we need to get the Socket.IO-client script. We can take it from the CDN like so:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:137
+msgid "Now to add actual logic, let’s write things below the ``app.initialize`` call. We might want to make sure that the device has loaded the application before running any of our code. We can do this like so:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:151
+msgid "This event will fire when the application has fully loaded. To add some actual logic, we just need to fill in that function. Let’s make something that receives the data emitted by our server on socket connection, and bring a notification box to show that text. Here’s what you could do:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:171
+msgid "Let’s run the emulator again with ``cordova emulate ios``, and here’s what you should see:"
+msgstr ""
+
+#: ../../source/socket.io/socket-io-with-apache-cordova.rst:174
+msgid "That’s it! I hope this will help to get you started! Have fun hacking!"
+msgstr ""
