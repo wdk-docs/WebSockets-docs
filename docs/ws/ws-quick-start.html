@@ -18,7 +18,9 @@
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="搜索" href="../search.html" /> 
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="WS API Document" href="ws-api.html" />
+    <link rel="prev" title="koa-websocket" href="koa-websocket.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,12 +38,42 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">ws documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="koa-websocket.html">koa-websocket</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ws: a Node.js WebSocket library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#protocol-support">Protocol support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing">Installing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#opt-in-for-performance-and-spec-compliance">Opt-in for performance and spec compliance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api-docs">API docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#websocket-compression">WebSocket compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-examples">Usage examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sending-and-receiving-text-data">Sending and receiving text data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-binary-data">Sending binary data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simple-server">Simple server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#external-http-s-server">External HTTP/S server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-servers-sharing-a-single-http-s-server">Multiple servers sharing a single HTTP/S server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-broadcast">Server broadcast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#echo-websocket-org-demo">echo.websocket.org demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-examples">Other examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#faq">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changelog">Changelog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ws-api.html">WS API Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="koa-easy-ws.html">koa-easy-ws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-room.html">基于 ws.js 的 Websocket 多房间</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
 </ul>
 
@@ -59,6 +91,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">ws documentation</a> &raquo;</li>
       <li>ws: a Node.js WebSocket library</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/ws/ws-quick-start.rst.txt" rel="nofollow"> 查看页面源码</a>
@@ -435,7 +468,10 @@ prevent that. A simple implementation would be:</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="koa-websocket.html" class="btn btn-neutral float-left" title="koa-websocket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="ws-api.html" class="btn btn-neutral float-right" title="WS API Document" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

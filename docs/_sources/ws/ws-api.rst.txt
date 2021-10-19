@@ -130,7 +130,8 @@ This determines if compression is used for the entire message.
 
 .. js:method:: server.address()
 
-   Returns an object with `port`, `family`, and `address` properties specifying the bound address, the address family name, and port of the server as reported by the operating system if listening on an IP socket.
+   Returns an object with `port`, `family`, and `address` properties specifying the bound address, the address family name, 
+   and port of the server as reported by the operating system if listening on an IP socket.
 
    If the server is listening on a pipe or UNIX domain socket, the name is returned as a string.
 
@@ -408,7 +409,7 @@ it defaults to `/`.
 
 createWebSocketStream(websocket[, options])
 ------------------------------------------------
-
+ 
 .. js:function:: createWebSocketStream(websocket[, options])
 
    :param WebSocket websocket: A WebSocket object.

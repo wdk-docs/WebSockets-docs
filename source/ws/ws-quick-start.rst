@@ -4,7 +4,7 @@ ws: a Node.js WebSocket library
 ws is a simple to use, blazing fast, and thoroughly tested WebSocket client and server implementation.
 
 Passes the quite extensive Autobahn test suite: `server <server-report>`_, `client <client-report>`_.
-
+ 
 .. note::
    This module does not work in the browser.
    The client in the docs is a reference to a back end with the role of a client in the WebSocket communication.
