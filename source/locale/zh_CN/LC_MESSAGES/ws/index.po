@@ -20,5 +20,5 @@ msgstr ""
 
 #: ../../source/ws/index.rst:2
 msgid "ws documentation"
-msgstr ""
+msgstr "ws 文档"
 
