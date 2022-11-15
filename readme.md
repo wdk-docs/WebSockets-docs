@@ -83,22 +83,28 @@
 
 > https://github.com/mozilla/sphinx-js
 
-Install JSDoc (or TypeDoc if you're writing TypeScript). The tool must be on your $PATH, so you might want to install it globally:
+Install JSDoc (or TypeDoc if you're writing TypeScript). 
+The tool must be on your $PATH, so you might want to install it globally:
 
+```sh
 npm install -g jsdoc
 ...or...
 
 npm install -g typedoc
+```
+
 JSDoc 3.6.3 and TypeDoc 0.15.0 are known to work.
 
 Install sphinx-js, which will pull in Sphinx itself as a dependency:
-
+```sh
 pip install sphinx-js
+```
 Make a documentation folder in your project by running sphinx-quickstart and answering its questions:
-
+```sh
 cd my-project
+```
 sphinx-quickstart
-
+```
 > Root path for the documentation [.]: docs
 > Separate source and build directories (y/n) [n]:
 > Name prefix for templates and static dir [_]:
@@ -123,8 +129,10 @@ sphinx-quickstart
 > Create Makefile? (y/n) [y]:
 > Create Windows command file? (y/n) [y]:
 > In the generated Sphinx conf.py file, turn on sphinx_js by adding it to extensions:
-
+```
+```
 extensions = ['sphinx_js']
+```
 If you want to document TypeScript, add js_language = 'typescript' to conf.py as well.
 
 If your JS source code is anywhere but at the root of your project, add js_source_path = '../somewhere/else' on a line by itself in conf.py. The root of your JS source tree should be where that setting points, relative to the conf.py file. (The default, ../, works well when there is a docs folder at the root of your project and your source code lives directly inside the root.)
@@ -132,6 +140,7 @@ If your JS source code is anywhere but at the root of your project, add js_sourc
 If you have special JSDoc or TypeDoc configuration, add jsdoc_config_path = '../conf.json' (for example) to conf.py as well.
 
 If you're documenting only JS or TS and no other languages (like C), you can set your "primary domain" to JS in conf.py:
-
+```
 primary_domain = 'js'
+```
 (The domain is js even if you're writing TypeScript.) Then you can omit all the "js:" prefixes in the directives below.
