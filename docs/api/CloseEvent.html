@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CloseEvent &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>CloseEvent &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -32,20 +34,31 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">API documention</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="WebSocket.html">WebSocket</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">CloseEvent</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">构造器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">构造器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CloseEvent"><code class="docutils literal notranslate"><span class="pre">CloseEvent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CloseEvent.code"><code class="docutils literal notranslate"><span class="pre">CloseEvent.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CloseEvent.reason"><code class="docutils literal notranslate"><span class="pre">CloseEvent.reason</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CloseEvent.wasClean"><code class="docutils literal notranslate"><span class="pre">CloseEvent.wasClean</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CloseEvent.initCloseEvent"><code class="docutils literal notranslate"><span class="pre">CloseEvent.initCloseEvent()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#specifications">Specifications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#see-also">See also</a></li>
 </ul>
@@ -54,27 +67,27 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">API documention</a> &raquo;</li>
-      <li>CloseEvent</li>
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API 文档</a></li>
+      <li class="breadcrumb-item active">CloseEvent</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/CloseEvent.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -85,23 +98,23 @@
            <div itemprop="articleBody">
              
   <section id="closeevent">
-<span id="api-closeevent"></span><h1>CloseEvent<a class="headerlink" href="#closeevent" title="永久链接至标题"></a></h1>
+<span id="api-closeevent"></span><h1>CloseEvent<a class="headerlink" href="#closeevent" title="此标题的永久链接"></a></h1>
 <p>CloseEvent 会在连接关闭时发送给使用 WebSockets 的客户端. 它在 WebSocket 对象的 onclose 事件监听器中使用.</p>
 <section id="id1">
-<h2>构造器<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<h2>构造器<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h2>
 <dl class="js class">
 <dt class="sig sig-object js" id="CloseEvent">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CloseEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CloseEvent" title="永久链接至目标"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="n"><span class="pre">CloseEvent</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CloseEvent" title="永久链接至目标"></a></dt>
 <dd><p>创建一个 CloseEvent.</p>
 </dd></dl>
 
 </section>
 <section id="id2">
-<h2>属性<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<h2>属性<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
 <p>该接口也继承了其父类 Event 的属性.</p>
 <dl class="js attribute">
 <dt class="sig sig-object js" id="CloseEvent.code">
-<span class="sig-prename descclassname"><span class="pre">CloseEvent.</span></span><span class="sig-name descname"><span class="pre">code</span></span><a class="headerlink" href="#CloseEvent.code" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">CloseEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">code</span></span></span><a class="headerlink" href="#CloseEvent.code" title="永久链接至目标"></a></dt>
 <dd><p>只读 返回一个 unsigned short 类型的数字, 表示服务端发送的关闭码, 以下为已分配的状态码.</p>
 </dd></dl>
 
@@ -206,29 +219,29 @@
 </table>
 <dl class="js attribute">
 <dt class="sig sig-object js" id="CloseEvent.reason">
-<span class="sig-prename descclassname"><span class="pre">CloseEvent.</span></span><span class="sig-name descname"><span class="pre">reason</span></span><a class="headerlink" href="#CloseEvent.reason" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">CloseEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">reason</span></span></span><a class="headerlink" href="#CloseEvent.reason" title="永久链接至目标"></a></dt>
 <dd><p>只读 返回一个 DOMString 用以表示服务器关闭连接的原因. 这是由服务器和子协议决定的.</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="CloseEvent.wasClean">
-<span class="sig-prename descclassname"><span class="pre">CloseEvent.</span></span><span class="sig-name descname"><span class="pre">wasClean</span></span><a class="headerlink" href="#CloseEvent.wasClean" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">CloseEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">wasClean</span></span></span><a class="headerlink" href="#CloseEvent.wasClean" title="永久链接至目标"></a></dt>
 <dd><p>只读 返回一个 Boolean 用以表示连接是否完全关闭.</p>
 </dd></dl>
 
 </section>
 <section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="永久链接至标题"></a></h2>
+<h2>Methods<a class="headerlink" href="#methods" title="此标题的永久链接"></a></h2>
 <p>该接口也继承了其父类 Event 的属性.</p>
 <dl class="js function">
 <dt class="sig sig-object js" id="CloseEvent.initCloseEvent">
-<span class="sig-prename descclassname"><span class="pre">CloseEvent.</span></span><span class="sig-name descname"><span class="pre">initCloseEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CloseEvent.initCloseEvent" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">CloseEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">initCloseEvent</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CloseEvent.initCloseEvent" title="永久链接至目标"></a></dt>
 <dd><p>初始化创建的 CloseEvent 的值. 如果该事件已经被处理, 这个方法什么也不做. 不要直接使用这个方法, 使用 CloseEvent() ?构造器来代替.</p>
 </dd></dl>
 
 </section>
 <section id="specifications">
-<h2>Specifications<a class="headerlink" href="#specifications" title="永久链接至标题"></a></h2>
+<h2>Specifications<a class="headerlink" href="#specifications" title="此标题的永久链接"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 67%" />
@@ -250,7 +263,7 @@
 </table>
 </section>
 <section id="see-also">
-<h2>See also<a class="headerlink" href="#see-also" title="永久链接至标题"></a></h2>
+<h2>See also<a class="headerlink" href="#see-also" title="此标题的永久链接"></a></h2>
 <p>WebSocket</p>
 </section>
 </section>
@@ -258,7 +271,7 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="WebSocket.html" class="btn btn-neutral float-left" title="WebSocket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="MessageEvent.html" class="btn btn-neutral float-right" title="MessageEvent" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -266,12 +279,12 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

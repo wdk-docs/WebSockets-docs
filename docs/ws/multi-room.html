@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>基于 ws.js 的 Websocket 多房间 &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>基于 ws.js 的 Websocket 多房间 &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,12 +14,14 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Blogs" href="../blogs/index.html" />
+    <link rel="next" title="博客" href="../blogs/index.html" />
     <link rel="prev" title="koa-easy-ws" href="koa-easy-ws.html" /> 
 </head>
 
@@ -32,18 +34,18 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="koa-websocket.html">koa-websocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ws-quick-start.html">ws: a Node.js WebSocket library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ws-api.html">WS API Document</a></li>
@@ -51,25 +53,25 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">基于 ws.js 的 Websocket 多房间</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">ws documentation</a> &raquo;</li>
-      <li>基于 ws.js 的 Websocket 多房间</li>
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ws 文档</a></li>
+      <li class="breadcrumb-item active">基于 ws.js 的 Websocket 多房间</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/ws/multi-room.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -80,90 +82,90 @@
            <div itemprop="articleBody">
              
   <section id="ws-js-websocket">
-<h1>基于 ws.js 的 Websocket 多房间<a class="headerlink" href="#ws-js-websocket" title="永久链接至标题"></a></h1>
+<h1>基于 ws.js 的 Websocket 多房间<a class="headerlink" href="#ws-js-websocket" title="此标题的永久链接"></a></h1>
 <p>&gt; <a class="reference external" href="https://gist.github.com/Globik/5a63e8683ab1d1c2c72fd25a798ae2d8">多房间</a></p>
 <p>index.html</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>websocket<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Group: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;group&quot;</span><span class="p">&gt;</span>darwin<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
-        <span class="c">&lt;!-- a hardoced group name --&gt;</span>
+        <span class="cm">&lt;!-- a hardoced group name --&gt;</span>
         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;bjoin();&quot;</span><span class="p">&gt;</span>join group<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
         <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;out&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-            <span class="kd">var</span> <span class="nx">group</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">;</span>
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">group</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">;</span><span class="w"></span>
 
-            <span class="kd">var</span> <span class="nx">ws</span><span class="o">=</span><span class="ow">new</span>  <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost:5000&#39;</span><span class="p">);</span>
-            <span class="nx">ws</span><span class="p">.</span><span class="nx">onerror</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">e</span><span class="p">;}</span>
-            <span class="nx">ws</span><span class="p">.</span><span class="nx">onclose</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;closed&#39;</span><span class="o">+</span><span class="nx">e</span><span class="p">;}</span>
-            <span class="nx">ws</span><span class="p">.</span><span class="nx">onopen</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>
-                <span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;connected &#39;</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">ms</span><span class="p">){</span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">+=</span><span class="nx">ms</span><span class="p">.</span><span class="nx">data</span><span class="o">+</span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;}</span>
-            <span class="kd">function</span> <span class="nx">send</span><span class="p">(</span><span class="nx">msg</span><span class="p">){</span>
-                <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">msg</span><span class="o">:</span><span class="nx">msg</span><span class="p">}));</span>
-            <span class="p">}</span>
-            <span class="kd">function</span> <span class="nx">broadcast</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span><span class="nx">room</span><span class="p">){</span>
-                <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">room</span><span class="o">:</span><span class="nx">room</span><span class="p">,</span><span class="nx">msg</span><span class="o">:</span><span class="nx">msg</span><span class="p">}))</span>
-            <span class="p">}</span>
-            <span class="kd">function</span> <span class="nx">join</span><span class="p">(</span><span class="nx">room</span><span class="p">){</span>
-                <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">join</span><span class="o">:</span><span class="nx">room</span><span class="p">}));</span>
-            <span class="p">}</span>
-            <span class="kd">function</span> <span class="nx">bjoin</span><span class="p">(){</span>
-                <span class="c1">//alert(group);</span>
-                <span class="nx">join</span><span class="p">(</span><span class="nx">group</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="nx">text</span><span class="p">.</span><span class="nx">onchange</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
-                <span class="c1">//alert(el.target.value);</span>
-                <span class="nx">broadcast</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="nx">group</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">ws</span><span class="o">=</span><span class="ow">new</span><span class="w">  </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost:5000&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="nx">ws</span><span class="p">.</span><span class="nx">onerror</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">e</span><span class="p">;}</span><span class="w"></span>
+<span class="w">            </span><span class="nx">ws</span><span class="p">.</span><span class="nx">onclose</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;closed&#39;</span><span class="o">+</span><span class="nx">e</span><span class="p">;}</span><span class="w"></span>
+<span class="w">            </span><span class="nx">ws</span><span class="p">.</span><span class="nx">onopen</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">                </span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;connected &#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">ms</span><span class="p">){</span><span class="nx">out</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">+=</span><span class="nx">ms</span><span class="p">.</span><span class="nx">data</span><span class="o">+</span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;}</span><span class="w"></span>
+<span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">send</span><span class="p">(</span><span class="nx">msg</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">msg</span><span class="o">:</span><span class="nx">msg</span><span class="p">}));</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span><span class="nx">room</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">room</span><span class="o">:</span><span class="nx">room</span><span class="p">,</span><span class="nx">msg</span><span class="o">:</span><span class="nx">msg</span><span class="p">}))</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">join</span><span class="p">(</span><span class="nx">room</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">join</span><span class="o">:</span><span class="nx">room</span><span class="p">}));</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="kd">function</span><span class="w"> </span><span class="nx">bjoin</span><span class="p">(){</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//alert(group);</span><span class="w"></span>
+<span class="w">                </span><span class="nx">join</span><span class="p">(</span><span class="nx">group</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="nx">text</span><span class="p">.</span><span class="nx">onchange</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="c1">//alert(el.target.value);</span><span class="w"></span>
+<span class="w">                </span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="nx">group</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>server.js</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">http</span><span class="o">=</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">WebSocket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ws&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="o">=</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span><span class="w"></span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="k">static</span><span class="p">(</span><span class="s1">&#39;public&#39;</span><span class="p">));</span>
-<span class="kd">const</span> <span class="nx">bserver</span><span class="o">=</span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">webPort</span> <span class="o">=</span> <span class="mf">5000</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="k">static</span><span class="p">(</span><span class="s1">&#39;public&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bserver</span><span class="o">=</span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">webPort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5000</span><span class="p">;</span><span class="w"></span>
 
-<span class="nx">bserver</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">webPort</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Web server start. http://localhost:&#39;</span> <span class="o">+</span> <span class="nx">webPort</span> <span class="p">);</span>
-<span class="p">});</span>
-<span class="kd">const</span> <span class="nx">wss</span><span class="o">=</span><span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span><span class="nx">server</span><span class="o">:</span><span class="nx">bserver</span><span class="p">});</span>
+<span class="nx">bserver</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">webPort</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Web server start. http://localhost:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">webPort</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wss</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span><span class="nx">server</span><span class="o">:</span><span class="nx">bserver</span><span class="p">});</span><span class="w"></span>
 
-<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="nx">ws</span><span class="p">=&gt;{</span>
-    <span class="nx">ws</span><span class="p">.</span><span class="nx">room</span><span class="o">=</span><span class="p">[];</span>
-    <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">msg</span><span class="o">:</span><span class="s2">&quot;user joined&quot;</span><span class="p">}));</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;connected&#39;</span><span class="p">);</span>
-    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="nx">message</span><span class="p">=&gt;{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;message: &#39;</span><span class="p">,</span><span class="nx">message</span><span class="p">);</span>
-        <span class="c1">//try{</span>
-        <span class="kd">var</span> <span class="nx">messag</span><span class="o">=</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
-        <span class="c1">//}catch(e){console.log(e)}</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">join</span><span class="p">){</span><span class="nx">ws</span><span class="p">.</span><span class="nx">room</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">join</span><span class="p">)}</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">room</span><span class="p">){</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">message</span><span class="p">);}</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">msg</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;message: &#39;</span><span class="p">,</span><span class="nx">messag</span><span class="p">.</span><span class="nx">msg</span><span class="p">)}</span>
-    <span class="p">})</span>
+<span class="nx">wss</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="nx">ws</span><span class="p">=&gt;{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">room</span><span class="o">=</span><span class="p">[];</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">msg</span><span class="o">:</span><span class="s2">&quot;user joined&quot;</span><span class="p">}));</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;connected&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">=&gt;{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;message: &#39;</span><span class="p">,</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//try{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">messag</span><span class="o">=</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//}catch(e){console.log(e)}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">join</span><span class="p">){</span><span class="nx">ws</span><span class="p">.</span><span class="nx">room</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">join</span><span class="p">)}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">room</span><span class="p">){</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">message</span><span class="p">);}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">messag</span><span class="p">.</span><span class="nx">msg</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;message: &#39;</span><span class="p">,</span><span class="nx">messag</span><span class="p">.</span><span class="nx">msg</span><span class="p">)}</span><span class="w"></span>
+<span class="w">    </span><span class="p">})</span><span class="w"></span>
 
-    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span><span class="nx">e</span><span class="p">=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
-    <span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,(</span><span class="nx">e</span><span class="p">)=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;websocket closed&#39;</span><span class="o">+</span><span class="nx">e</span><span class="p">))</span>
-<span class="p">})</span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span><span class="nx">e</span><span class="p">=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,(</span><span class="nx">e</span><span class="p">)=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;websocket closed&#39;</span><span class="o">+</span><span class="nx">e</span><span class="p">))</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 
-<span class="kd">function</span> <span class="nx">broadcast</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span>
-    <span class="nx">wss</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">client</span><span class="p">=&gt;{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">room</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">message</span><span class="p">).</span><span class="nx">room</span><span class="p">)</span><span class="o">&gt;-</span><span class="mf">1</span><span class="p">){</span>
-            <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">})</span>
-<span class="p">}</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">message</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">wss</span><span class="p">.</span><span class="nx">clients</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">client</span><span class="p">=&gt;{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">room</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">message</span><span class="p">).</span><span class="nx">room</span><span class="p">)</span><span class="o">&gt;-</span><span class="mf">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -171,20 +173,20 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="koa-easy-ws.html" class="btn btn-neutral float-left" title="koa-easy-ws" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="../blogs/index.html" class="btn btn-neutral float-right" title="Blogs" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../blogs/index.html" class="btn btn-neutral float-right" title="博客" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

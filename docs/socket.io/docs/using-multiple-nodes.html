@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using multiple nodes &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Using multiple nodes &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
@@ -32,17 +34,17 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Docs</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="info.html">introduce</a></li>
@@ -73,27 +75,27 @@
 <li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
-          <li><a href="index.html">Docs</a> &raquo;</li>
-      <li>Using multiple nodes</li>
+      <li><a href="../../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">socket.io 文档</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Docs</a></li>
+      <li class="breadcrumb-item active">Using multiple nodes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/docs/using-multiple-nodes.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -104,9 +106,9 @@
            <div itemprop="articleBody">
              
   <section id="using-multiple-nodes">
-<h1>Using multiple nodes<a class="headerlink" href="#using-multiple-nodes" title="永久链接至标题"></a></h1>
+<h1>Using multiple nodes<a class="headerlink" href="#using-multiple-nodes" title="此标题的永久链接"></a></h1>
 <section id="sticky-load-balancing">
-<h2>Sticky load balancing<a class="headerlink" href="#sticky-load-balancing" title="永久链接至标题"></a></h2>
+<h2>Sticky load balancing<a class="headerlink" href="#sticky-load-balancing" title="此标题的永久链接"></a></h2>
 <p>If you plan to distribute the load of connections among different
 processes or machines, you have to make sure that requests associated
 with a particular session id connect to the process that originated
@@ -114,14 +116,14 @@ them.</p>
 <p>This is due to certain transports like XHR Polling or JSONP Polling
 relying on firing several requests during the lifetime of the “socket”.
 Failing to enable sticky balancing will result in the dreaded:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span> <span class="nx">during</span> <span class="nx">WebSocket</span> <span class="nx">handshake</span><span class="o">:</span> <span class="nx">Unexpected</span> <span class="nx">response</span> <span class="nx">code</span><span class="o">:</span> <span class="mf">400</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span><span class="w"> </span><span class="nx">during</span><span class="w"> </span><span class="nx">WebSocket</span><span class="w"> </span><span class="nx">handshake</span><span class="o">:</span><span class="w"> </span><span class="nx">Unexpected</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="mf">400</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Which means that the upgrade request was sent to a node which did not
 know the given socket id, hence the HTTP 400 response.</p>
 <p>To illustrate why this is needed, consider the example of emitting an
 event to all connected clients:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;all sockets&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;all sockets&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Chances are that some of those clients might have an active
@@ -137,10 +139,10 @@ that same process.</p>
 since the underlying TCP connection is kept open between the client and
 the given server. That’s why you might find some suggestions to only use
 the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> transport:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="s1">&#39;https://io.yourhost.com&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="c1">// WARNING: in that case, there is no fallback to long-polling</span>
-  <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span> <span class="s1">&#39;websocket&#39;</span> <span class="p">]</span> <span class="c1">// or [ &#39;websocket&#39;, &#39;polling&#39; ], which is the same thing</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">io</span><span class="p">(</span><span class="s1">&#39;https://io.yourhost.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// WARNING: in that case, there is no fallback to long-polling</span><span class="w"></span>
+<span class="w">  </span><span class="nx">transports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;websocket&#39;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="c1">// or [ &#39;websocket&#39;, &#39;polling&#39; ], which is the same thing</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Both means that there is <strong>NO FALLBACK</strong> to long-polling when the
@@ -157,37 +159,37 @@ or a thin wrapper like
 </ul>
 </section>
 <section id="nginx-configuration">
-<h2>NginX configuration<a class="headerlink" href="#nginx-configuration" title="永久链接至标题"></a></h2>
+<h2>NginX configuration<a class="headerlink" href="#nginx-configuration" title="此标题的永久链接"></a></h2>
 <p>Within the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">{</span> <span class="pre">}</span></code> section of your <code class="docutils literal notranslate"><span class="pre">nginx.conf</span></code> file, you can
 declare a <code class="docutils literal notranslate"><span class="pre">upstream</span></code> section with a list of Socket.IO process you want
 to balance load between:</p>
-<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">http</span> <span class="p">{</span>
-  <span class="kn">server</span> <span class="p">{</span>
-    <span class="kn">listen</span> <span class="mi">3000</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">io.yourhost.com</span><span class="p">;</span>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">http</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kn">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">3000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">io.yourhost.com</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
-      <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-      <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span><span class="w"></span>
 
-      <span class="kn">proxy_pass</span> <span class="s">http://nodes</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://nodes</span><span class="p">;</span><span class="w"></span>
 
-      <span class="c1"># enable WebSockets</span>
-      <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
-      <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
-      <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="c1"># enable WebSockets</span>
+<span class="w">      </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="kn">upstream</span> <span class="s">nodes</span> <span class="p">{</span>
-    <span class="c1"># enable sticky session based on IP</span>
-    <span class="kn">ip_hash</span><span class="p">;</span>
+<span class="w">  </span><span class="kn">upstream</span><span class="w"> </span><span class="s">nodes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># enable sticky session based on IP</span>
+<span class="w">    </span><span class="kn">ip_hash</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kn">server</span> <span class="n">app01</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">app02</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span>
-    <span class="kn">server</span> <span class="n">app03</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">app01</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">app02</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">app03</span><span class="p">:</span><span class="mi">3000</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">ip_hash</span></code> instruction that indicates the connections will
@@ -199,36 +201,36 @@ look into tweaking the <code class="docutils literal notranslate"><span class="p
 <p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-nginx">Example</a></p>
 </section>
 <section id="apache-httpd-configuration">
-<h2>Apache HTTPD configuration<a class="headerlink" href="#apache-httpd-configuration" title="永久链接至标题"></a></h2>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">Header</span> add Set-Cookie <span class="s2">&quot;SERVERID=sticky.%{BALANCER_WORKER_ROUTE}e; path=/&quot;</span> env=BALANCER_ROUTE_CHANGED
+<h2>Apache HTTPD configuration<a class="headerlink" href="#apache-httpd-configuration" title="此标题的永久链接"></a></h2>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">Header</span><span class="w"> </span>add<span class="w"> </span>Set-Cookie<span class="w"> </span><span class="s2">&quot;SERVERID=sticky.%{BALANCER_WORKER_ROUTE}e; path=/&quot;</span><span class="w"> </span>env=BALANCER_ROUTE_CHANGED<span class="w"></span>
 
-<span class="nt">&lt;Proxy</span> <span class="s">&quot;balancer://nodes_polling&quot;</span><span class="nt">&gt;</span>
-    <span class="nb">BalancerMember</span> <span class="s2">&quot;http://app01:3000&quot;</span> route=app01
-    <span class="nb">BalancerMember</span> <span class="s2">&quot;http://app02:3000&quot;</span> route=app02
-    <span class="nb">BalancerMember</span> <span class="s2">&quot;http://app03:3000&quot;</span> route=app03
-    <span class="nb">ProxySet</span> stickysession=SERVERID
-<span class="nt">&lt;/Proxy&gt;</span>
+<span class="nt">&lt;Proxy</span><span class="w"> </span><span class="s">&quot;balancer://nodes_polling&quot;</span><span class="nt">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">BalancerMember</span><span class="w"> </span><span class="s2">&quot;http://app01:3000&quot;</span><span class="w"> </span>route=app01<span class="w"></span>
+<span class="w">    </span><span class="nb">BalancerMember</span><span class="w"> </span><span class="s2">&quot;http://app02:3000&quot;</span><span class="w"> </span>route=app02<span class="w"></span>
+<span class="w">    </span><span class="nb">BalancerMember</span><span class="w"> </span><span class="s2">&quot;http://app03:3000&quot;</span><span class="w"> </span>route=app03<span class="w"></span>
+<span class="w">    </span><span class="nb">ProxySet</span><span class="w"> </span>stickysession=SERVERID<span class="w"></span>
+<span class="nt">&lt;/Proxy&gt;</span><span class="w"></span>
 
-<span class="nt">&lt;Proxy</span> <span class="s">&quot;balancer://nodes_ws&quot;</span><span class="nt">&gt;</span>
-    <span class="nb">BalancerMember</span> <span class="s2">&quot;ws://app01:3000&quot;</span> route=app01
-    <span class="nb">BalancerMember</span> <span class="s2">&quot;ws://app02:3000&quot;</span> route=app02
-    <span class="nb">BalancerMember</span> <span class="s2">&quot;ws://app03:3000&quot;</span> route=app03
-    <span class="nb">ProxySet</span> stickysession=SERVERID
-<span class="nt">&lt;/Proxy&gt;</span>
+<span class="nt">&lt;Proxy</span><span class="w"> </span><span class="s">&quot;balancer://nodes_ws&quot;</span><span class="nt">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">BalancerMember</span><span class="w"> </span><span class="s2">&quot;ws://app01:3000&quot;</span><span class="w"> </span>route=app01<span class="w"></span>
+<span class="w">    </span><span class="nb">BalancerMember</span><span class="w"> </span><span class="s2">&quot;ws://app02:3000&quot;</span><span class="w"> </span>route=app02<span class="w"></span>
+<span class="w">    </span><span class="nb">BalancerMember</span><span class="w"> </span><span class="s2">&quot;ws://app03:3000&quot;</span><span class="w"> </span>route=app03<span class="w"></span>
+<span class="w">    </span><span class="nb">ProxySet</span><span class="w"> </span>stickysession=SERVERID<span class="w"></span>
+<span class="nt">&lt;/Proxy&gt;</span><span class="w"></span>
 
-<span class="nb">RewriteEngine</span> <span class="k">On</span>
-<span class="nb">RewriteCond</span> %{HTTP:Upgrade} =websocket [NC]
-<span class="nb">RewriteRule</span> /(.*) balancer://nodes_ws/$1 [P,L]
-<span class="nb">RewriteCond</span> %{HTTP:Upgrade} !=websocket [NC]
-<span class="nb">RewriteRule</span> /(.*) balancer://nodes_polling/$1 [P,L]
+<span class="nb">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<span class="nb">RewriteCond</span><span class="w"> </span>%{HTTP:Upgrade}<span class="w"> </span>=websocket<span class="w"> </span>[NC]<span class="w"></span>
+<span class="nb">RewriteRule</span><span class="w"> </span>/(.*)<span class="w"> </span>balancer://nodes_ws/$1<span class="w"> </span>[P,L]<span class="w"></span>
+<span class="nb">RewriteCond</span><span class="w"> </span>%{HTTP:Upgrade}<span class="w"> </span>!=websocket<span class="w"> </span>[NC]<span class="w"></span>
+<span class="nb">RewriteRule</span><span class="w"> </span>/(.*)<span class="w"> </span>balancer://nodes_polling/$1<span class="w"> </span>[P,L]<span class="w"></span>
 
-<span class="nb">ProxyTimeout</span> <span class="m">3</span>
+<span class="nb">ProxyTimeout</span><span class="w"> </span><span class="m">3</span><span class="w"></span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-httpd">Example</a></p>
 </section>
 <section id="haproxy-configuration">
-<h2>HAProxy configuration<a class="headerlink" href="#haproxy-configuration" title="永久链接至标题"></a></h2>
+<h2>HAProxy configuration<a class="headerlink" href="#haproxy-configuration" title="此标题的永久链接"></a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span># Reference: http://blog.haproxy.com/2012/11/07/websockets-load-balancing-with-haproxy/
 
 listen chat
@@ -247,7 +249,7 @@ backend nodes
 <p><a class="reference external" href="https://github.com/socketio/socket.io/tree/master/examples/cluster-haproxy">Example</a></p>
 </section>
 <section id="using-node-js-cluster">
-<h2>Using Node.JS Cluster<a class="headerlink" href="#using-node-js-cluster" title="永久链接至标题"></a></h2>
+<h2>Using Node.JS Cluster<a class="headerlink" href="#using-node-js-cluster" title="此标题的永久链接"></a></h2>
 <p>Just like NginX, Node.JS comes with built-in clustering support through
 the <code class="docutils literal notranslate"><span class="pre">cluster</span></code> module.</p>
 <p>Fedor Indutny has created a module called <a class="reference external" href="https://github.com/indutny/sticky-session">sticky
@@ -260,7 +262,7 @@ based on the cluster worker ID, and balance the load with the
 configuration that you can find above.</p>
 </section>
 <section id="passing-events-between-nodes">
-<h2>Passing events between nodes<a class="headerlink" href="#passing-events-between-nodes" title="永久链接至标题"></a></h2>
+<h2>Passing events between nodes<a class="headerlink" href="#passing-events-between-nodes" title="此标题的永久链接"></a></h2>
 <p>Now that you have multiple Socket.IO nodes accepting connections, if you
 want to broadcast events to everyone (or even everyone in a certain
 <a class="reference external" href="/docs/rooms-and-namespaces/#Rooms">room</a>) you’ll need some way of
@@ -271,19 +273,19 @@ passing messages between processes or computers.</p>
 (by inheriting from it) or you can use the one we provide on top of
 <a class="reference external" href="https://redis.io/">Redis</a>:
 <a class="reference external" href="https://github.com/socketio/socket.io-redis">socket.io-redis</a>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">6379</span> <span class="p">}));</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">redis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span><span class="w"> </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">6379</span><span class="w"> </span><span class="p">}));</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Then the following call:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;all sockets&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;all sockets&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>will be broadcast to every node through the <a class="reference external" href="https://redis.io/topics/pubsub">Pub/Sub
 mechanism</a> of Redis.</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>sticky-session is still needed when using the Redis adapter.</p>
 </div>
 <p>If you want to pass messages to it from non-socket.io processes, you
@@ -295,7 +297,7 @@ outside-world”</a>.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="migrating-from-0-9.html" class="btn btn-neutral float-left" title="Migrating from 0.9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="logging-and-debugging.html" class="btn btn-neutral float-right" title="Logging and debugging" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -303,12 +305,12 @@ outside-world”</a>.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

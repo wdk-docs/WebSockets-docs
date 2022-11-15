@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'WebSockets Docs'
-copyright = '2019-2021, BandCap'
+copyright = '2019-2022, BandCap'
 author = 'BandCap'
 
 # The full version, including alpha/beta/rc tags
-release = 'v2019.0613'
+release = 'v2022.1115'
 
 
 # -- General configuration ---------------------------------------------------

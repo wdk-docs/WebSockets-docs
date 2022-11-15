@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>使用 NestJs 和 Redis 实现 WebSocket 集群 &mdash; WebSockets Docs v2022.1115 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients" href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">博客</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html">Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用 NestJs 和 Redis 实现 WebSocket 集群</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">要求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">存在的问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">解决方案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">测试场景</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">博客</a></li>
+      <li class="breadcrumb-item active">使用 NestJs 和 Redis 实现 WebSocket 集群</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/blogs/websocket-cluster-with-nestjs-and-redis.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nestjs-redis-websocket">
+<h1>使用 NestJs 和 Redis 实现 WebSocket 集群<a class="headerlink" href="#nestjs-redis-websocket" title="此标题的永久链接"></a></h1>
+<p>&gt; <a class="reference external" href="https://medium.com/&#64;mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed">https://medium.com/&#64;mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed</a></p>
+<p>扩展是后端应用程序生活中不可避免的一部分，一旦你决定将你的应用程序扩展到多个实例，
+你将面临处理多个客户端(手机、笔记本电脑等)的用户的问题，每个客户端都连接到你集群的一个随机实例。</p>
+<p>在本文中，我们将定义这个问题，并使用NestJs和Redis围绕它制定解决方案。</p>
+<section id="id1">
+<h2>要求<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h2>
+<ul class="simple">
+<li><p>有使用Nodejs和NestJs的经验</p></li>
+<li><p>安装Nodejs</p></li>
+<li><p>安装了NestJs CLI</p></li>
+<li><p>安装Redis</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>存在的问题<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+<p>在WebSocket上发出的消息需要在连接到我们实例的接收方的每个设备上发送。</p>
+</section>
+<section id="id3">
+<h2>解决方案<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
+<p>我们将处理消息到多个实例使用Redis PubSub流。
+为了在NestJs上完成这一点，我们将创建一个名为socket module的模块。
+我们将设置一个网关来处理套接字客户端，并设置一个服务来进行发现和连接到Redis并分发消息。</p>
+<p>我们将用循序渐进的指南来介绍这一点。
+将NestJs CLI安装为一个全局包</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># run with sudo if you are on ubuntu</span>
+npm i -g @nestjs/cli
+</pre></div>
+</div>
+<p>创建新的NestJS项目，依赖项也将通过此命令通过向导安装</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nest g socket-cluster-app
+</pre></div>
+</div>
+<p>生成我们讨论的Socket模块</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># go into project folder</span>
+<span class="nb">cd</span> socket-cluster-app/
+<span class="c1"># generate socket module</span>
+nest g module socket
+<span class="c1"># generate socket service</span>
+nest g service socket
+<span class="c1"># generate socket gateway</span>
+nest g gateway socket/socket
+</pre></div>
+</div>
+<p>使用 <cite>nest g</cite> 命令会自动将你的服务和套接字添加到相应的模块中</p>
+<p>安装WebSocket适配器</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm i @nestjs/platform-ws
+npm i @nestjs/websockets
+</pre></div>
+</div>
+<p>在 <cite>main.ts</cite> 文件中注册适配器</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">main.ts</span><a class="headerlink" href="#id5" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NestFactory</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@nestjs/core&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">WsAdapter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@nestjs/platform-ws&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AppModule</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./app.module&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">bootstrap</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="c1">// register adapter</span><span class="w"></span>
+<span class="w">     </span><span class="nx">app</span><span class="p">.</span><span class="nx">useWebSocketAdapter</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">WsAdapter</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">any</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="k">await</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">[</span><span class="s1">&#39;PORT&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="nx">bootstrap</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>然后，我们将在 <code class="docutils literal notranslate"><span class="pre">handleConnection</span></code> 调用中标识每个套接字，并将 <code class="docutils literal notranslate"><span class="pre">userId</span></code> 属性放入每个客户机。
+在本例中，我们将通过客户端发送的令牌 <code class="docutils literal notranslate"><span class="pre">cookie</span></code> 设置 <code class="docutils literal notranslate"><span class="pre">userId</span></code>。
+在实际示例中，您需要验证令牌并通过查询数据库或某些身份验证服务将 <code class="docutils literal notranslate"><span class="pre">userId</span></code> 分配给客户机。</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">src/socket.gateway.ts</span><a class="headerlink" href="#id6" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">OnGatewayConnection</span><span class="p">,</span><span class="w"> </span><span class="nx">OnGatewayDisconnect</span><span class="p">,</span><span class="w"> </span><span class="nx">WebSocketGateway</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@nestjs/websockets&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="kd">@WebSocketGateway</span><span class="p">()</span><span class="w"></span>
+<span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">SocketGateway</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">OnGatewayConnection</span><span class="p">,</span><span class="w"> </span><span class="nx">OnGatewayDisconnect</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="nx">connectedSockets</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">[]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="w">     </span><span class="k">async</span><span class="w"> </span><span class="nx">handleConnection</span><span class="p">(</span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="o">:</span><span class="w"> </span><span class="kt">Request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;cookie&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">                 </span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">                 </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span><span class="w"></span>
+<span class="w">                 </span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">                 </span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">             </span><span class="c1">// for this example, we simply set userId by token</span><span class="w"></span>
+<span class="w">             </span><span class="nx">client</span><span class="p">.</span><span class="nx">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">token</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">connectedSockets</span><span class="p">[</span><span class="nx">client</span><span class="p">.</span><span class="nx">userId</span><span class="p">])</span><span class="w"></span>
+<span class="w">                 </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedSockets</span><span class="p">[</span><span class="nx">client</span><span class="p">.</span><span class="nx">userId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedSockets</span><span class="p">[</span><span class="nx">client</span><span class="p">.</span><span class="nx">userId</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="nx">client</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="mf">4403</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;set JWT cookie to authenticate&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">     </span><span class="nx">handleDisconnect</span><span class="p">(</span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedSockets</span><span class="p">[</span><span class="nx">client</span><span class="p">.</span><span class="nx">userId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedSockets</span><span class="p">[</span><span class="nx">client</span><span class="p">.</span><span class="nx">userId</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>现在我们需要实现套接字服务，我们需要一个Redis包来在实例之间分发消息。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm i redis
+npm i --save-dev @types/redis
+</pre></div>
+</div>
+<p>套接字服务将有多个功能</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">constructor</span></code>, 第0步是在构造函数方法中为我们的服务分配一个随机id，并注入我们在最后一步中实现的“SocketGateWay”。</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">src/main.ts</span><a class="headerlink" href="#id7" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">socketGateway</span><span class="o">:</span><span class="w"> </span><span class="kt">SocketGateway</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">this</span><span class="p">.</span><span class="nx">serviceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SOCKET_CHANNEL_&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mf">26</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">onModuleInit</span></code>: 此外，我们在套接字服务中实现 <code class="docutils literal notranslate"><span class="pre">onModuleInit</span></code> 功能，它将创建并连接到3个Redis客户端。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">redisClient</span></code> 用于通过发现通道更新服务密钥</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriberClient</span></code> 获取分布式消息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">publisherClient</span></code> 将消息分发到其他实例</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">src/socket/socket.service.ts</span><a class="headerlink" href="#id8" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="nx">onModuleInit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">redisClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">newRedisClient</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">subscriberClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">newRedisClient</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">publisherClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">newRedisClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">subscriberClient</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">serviceId</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">subscriberClient</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">channel</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">userId</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">userId</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">channelDiscovery</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">newRedisClient</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">createClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">        </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">6379</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>createClient从“redis”包中导入</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">channelDiscovery</span></code>: 将在Redis上保存其serviceId，过期时间为3秒。
+它还将开始自重复超时，每2秒重新执行一次。
+这样，所有实例都可以访问更新后的套接字服务列表，以便分发消息。
+在测试此服务时，清除发现间隔超时是防止打开处理程序问题的好方法。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">src/socket/socket.service.ts</span><a class="headerlink" href="#id9" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">channelDiscovery</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">redisClient</span><span class="p">.</span><span class="nx">setex</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">serviceId</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">().</span><span class="nx">toString</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">discoveryInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">channelDiscovery</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">async</span><span class="w"> </span><span class="nx">onModuleDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">discoveryInterval</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">discoveryInterval</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sendMessage</span></code> 最后一步是向特定用户的每个连接的客户端发送消息。我们将消息发送到连接的客户端，并将此消息分发到其他实例。 <code class="docutils literal notranslate"><span class="pre">if(!fromRedisChannel)</span></code> 将阻止在消息已经被另一个实例分发的情况下分发。</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">src/socket/socket.service.ts</span><a class="headerlink" href="#id10" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="nx">sendMessage</span><span class="p">(</span><span class="nx">userId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="nx">fromRedisChannel</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">socketGateway</span><span class="p">.</span><span class="nx">connectedSockets</span><span class="p">[</span><span class="nx">userId</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">socket</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">fromRedisChannel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">redisClient</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="s1">&#39;SOCKET_CHANNEL_&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">ids</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">ids</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">serviceId</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">publisherClient</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="w"></span>
+<span class="w">                    </span><span class="nx">id</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"></span>
+<span class="w">                        </span><span class="nx">payload</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nx">userId</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}),</span><span class="w"></span>
+<span class="w">                </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h2>测试场景<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
+<p>好了，我们完成了，现在我们可以设置我们的测试场景了。</p>
+<p>首先，我们将创建一个简单的测试脚本，该脚本将连接到我们的一个实例并打印接收到的消息。</p>
+<p>运行 <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">i</span> <span class="pre">ws</span></code> 安装 <code class="docutils literal notranslate"><span class="pre">ws</span></code> 包</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>const <span class="nv">ws</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;ws&#39;</span><span class="o">)</span><span class="p">;</span>
+const <span class="nv">port</span> <span class="o">=</span> <span class="m">3001</span><span class="p">;</span>
+const <span class="nv">socket</span> <span class="o">=</span> new ws<span class="o">(</span><span class="sb">`</span>ws://localhost:<span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="sb">`</span>, <span class="o">{</span>
+    headers: <span class="o">{</span> Cookie: <span class="s1">&#39;token=user1&#39;</span> <span class="o">}</span>,
+<span class="o">})</span><span class="p">;</span>
+socket.on<span class="o">(</span><span class="s1">&#39;message&#39;</span>, <span class="nv">data</span> <span class="o">=</span>&gt; <span class="o">{</span>
+    console.log<span class="o">(</span><span class="sb">`</span>Received message<span class="sb">`</span>, data<span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+socket.on<span class="o">(</span><span class="s1">&#39;open&#39;</span>, <span class="nv">data</span> <span class="o">=</span>&gt; <span class="o">{</span>
+    console.log<span class="o">(</span><span class="sb">`</span>Connected to port <span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="sb">`</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+socket.on<span class="o">(</span><span class="s1">&#39;close&#39;</span>, <span class="nv">data</span> <span class="o">=</span>&gt; <span class="o">{</span>
+    console.log<span class="o">(</span><span class="sb">`</span>Disconnected from port <span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="sb">`</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>然后向套接字服务添加一个简单的间隔，用于向user1发送时间。</p>
+<p>最后，依次运行以下命令</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">PORT</span><span class="o">=</span><span class="m">3001</span> npm start
+<span class="nv">PORT</span><span class="o">=</span><span class="m">3002</span> npm start
+node test-script.js
+</pre></div>
+</div>
+<p>测试脚本应该每3秒记录一个来自两个实例的消息。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># output</span>
+Received message <span class="m">8</span>:21:55 AM <span class="p">|</span> from server on port <span class="m">3001</span>
+Received message <span class="m">8</span>:21:57 AM <span class="p">|</span> from server on port <span class="m">3002</span>
+</pre></div>
+</div>
+<p>这表明，现在我们的服务能够将来自不同实例的WebSocket消息分发到特定的客户机。</p>
+<p>我们在本文中所做的工作的完整示例可以在 <a class="reference external" href="https://github.com/m-esm/socket-cluster-app">https://github.com/m-esm/socket-cluster-app</a> 上找到</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html" class="btn btn-neutral float-left" title="Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

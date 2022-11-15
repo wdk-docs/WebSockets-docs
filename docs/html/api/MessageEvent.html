@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MessageEvent &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Awesome WebSockets" href="../awesome.html" />
+    <link rel="prev" title="CloseEvent" href="CloseEvent.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API documention</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WebSocket.html">WebSocket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CloseEvent.html">CloseEvent</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MessageEvent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">构造函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent"><code class="docutils literal notranslate"><span class="pre">MessageEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent.data"><code class="docutils literal notranslate"><span class="pre">MessageEvent.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent.origin"><code class="docutils literal notranslate"><span class="pre">MessageEvent.origin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent.lastEventId"><code class="docutils literal notranslate"><span class="pre">MessageEvent.lastEventId</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent.source"><code class="docutils literal notranslate"><span class="pre">MessageEvent.source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent.ports"><code class="docutils literal notranslate"><span class="pre">MessageEvent.ports</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">方法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MessageEvent.initMessageEvent"><code class="docutils literal notranslate"><span class="pre">MessageEvent.initMessageEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">规范</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">参见</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API documention</a></li>
+      <li class="breadcrumb-item active">MessageEvent</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/MessageEvent.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="messageevent">
+<span id="api-messageevent"></span><h1>MessageEvent<a class="headerlink" href="#messageevent" title="此标题的永久链接"></a></h1>
+<p>MessageEvent 是接口代表一段被目标对象接收的消息。</p>
+<p>用来代表下列情况的消息</p>
+<ul class="simple">
+<li><p>Server-sent events (参见 <code class="xref js js-attr docutils literal notranslate"><span class="pre">EventSource.onmessage</span></code>).</p></li>
+<li><p>Web sockets (参见 <a class="reference internal" href="WebSocket.html#WebSocket.onmessage" title="WebSocket.onmessage"><code class="xref js js-attr docutils literal notranslate"><span class="pre">WebSocket.onmessage</span></code></a> 属性).</p></li>
+<li><p>Cross-document messaging (参见 Window.postMessage() 和 Window.onmessage).</p></li>
+<li><p>Channel messaging (参见 MessagePort.postMessage() 和MessagePort.onmessage).</p></li>
+<li><p>Cross-worker/document messaging (参见上面两个入口, 还有 Worker.postMessage(), Worker.onmessage, ServiceWorkerGlobalScope.onmessage, 等等.)</p></li>
+<li><p>Broadcast channels (参见 Broadcastchannel.postMessage()) 和 BroadcastChannel.onmessage).</p></li>
+<li><p>WebRTC data channels (参见 RTCDataChannel.onmessage).</p></li>
+</ul>
+<p>通过这个事件触发的动作被定义为一个函数，该函数作为相关message事件 (例如使用前文所列的onmessage 处理器)的事件处理器。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>此特性在 Web Worker 中可用。</p>
+</div>
+<section id="id1">
+<h2>构造函数<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h2>
+<dl class="js function">
+<dt class="sig sig-object js" id="MessageEvent">
+<span class="sig-name descname"><span class="n"><span class="pre">MessageEvent</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MessageEvent" title="永久链接至目标"></a></dt>
+<dd><p>创建一个新的 <strong>消息事件</strong> 。</p>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h2>属性<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+<p>继承其父类 Event 的属性。</p>
+<dl class="js attribute">
+<dt class="sig sig-object js" id="MessageEvent.data">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">MessageEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#MessageEvent.data" title="永久链接至目标"></a></dt>
+<dd><p>只读 返回 DOMString, Blob 或者 ArrayBuffer，包含来自发送者的数据。</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="MessageEvent.origin">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">MessageEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">origin</span></span></span><a class="headerlink" href="#MessageEvent.origin" title="永久链接至目标"></a></dt>
+<dd><p>返回一个表示消息发送者来源的USVString</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="MessageEvent.lastEventId">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">MessageEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">lastEventId</span></span></span><a class="headerlink" href="#MessageEvent.lastEventId" title="永久链接至目标"></a></dt>
+<dd><p>只读 DOMString representing a unique ID for the event.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="MessageEvent.source">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">MessageEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">source</span></span></span><a class="headerlink" href="#MessageEvent.source" title="永久链接至目标"></a></dt>
+<dd><p>MessageEventSource (可以是 WindowProxy, MessagePort, 或 ServiceWorker 对象) 代表消息发送者.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="MessageEvent.ports">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">MessageEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ports</span></span></span><a class="headerlink" href="#MessageEvent.ports" title="永久链接至目标"></a></dt>
+<dd><p>MessagePort对象数组，表示消息正通过特定通道（数据通道）发送的相关端口（适用于通道消息传输或者向一个共享线程（shared work ）发送消息时）。</p>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h2>方法<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
+<p>继承父类 Event 的方法。</p>
+<dl class="js function">
+<dt class="sig sig-object js" id="MessageEvent.initMessageEvent">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">MessageEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">initMessageEvent</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MessageEvent.initMessageEvent" title="永久链接至目标"></a></dt>
+<dd><p>… 不要再使用: 使用 <a class="reference internal" href="#MessageEvent" title="MessageEvent"><code class="xref js js-func docutils literal notranslate"><span class="pre">MessageEvent()</span></code></a>。</p>
+</dd></dl>
+
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
+<p>在我们的基础共享线程示例 Basic shared worker example (run shared worker)中,我们有两个HTML页, 每一页都用简单的js代码去执行简单的计算. 不同的脚本使用同一个worker文件去执行计算 — 它们都可以访问那个worker文件，即使它们（scripts）运行在不同的窗口.</p>
+<p>下面的代码片段展示了使用SharedWorker()构造器创建一个 SharedWorker对象。</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">myWorker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SharedWorker</span><span class="p">(</span><span class="s1">&#39;worker.js&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>接下来两份脚本通过一个SharedWorker.port方法创建的MessagePort对象访问worker。如果onmessage事件通过addEventListener被绑定，端口可以用start()方法手动开启：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">myWorker</span><span class="p">.</span><span class="nx">port</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>当端口被打开，两份脚本各自都可用 port.postMessage() 向worker传消息并用  port.onmessage处理它（worker）传来的消息:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">first</span><span class="p">.</span><span class="nx">onchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">myWorker</span><span class="p">.</span><span class="nx">port</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">([</span><span class="nx">first</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="nx">second</span><span class="p">.</span><span class="nx">value</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Message posted to worker&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">second</span><span class="p">.</span><span class="nx">onchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">myWorker</span><span class="p">.</span><span class="nx">port</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">([</span><span class="nx">first</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="nx">second</span><span class="p">.</span><span class="nx">value</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Message posted to worker&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">myWorker</span><span class="p">.</span><span class="nx">port</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">result1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Message received from worker&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>在worker内部我们使用SharedWorkerGlobalScope.onconnect 处理器来连接前文说到相同端口. 与worker相关联的端口可以在connect事件的ports 属性中访问到 — 接着我们使用MessagePort start() 方法打开端口,  onmessage 处理器来处理主线程传来的消息。</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">onconnect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">ports</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">port</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">workerResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Result: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">port</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">workerResult</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">port</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span><span class="w"> </span><span class="c1">// Required when using addEventListener. Otherwise called implicitly by onmessage setter.</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>规范<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 51%" />
+<col style="width: 35%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Specification</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HTML Living Standard MessageEvent</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LS</span></code> Living Standard</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>浏览器兼容性</p>
+</section>
+<section id="id6">
+<h2>参见<a class="headerlink" href="#id6" title="此标题的永久链接"></a></h2>
+<ul class="simple">
+<li><p>ExtendableMessageEvent，与此接口类似，但适合用于更灵活的场景。</p></li>
+<li><p>WebSocket API</p></li>
+<li><p>WebRTC API</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="CloseEvent.html" class="btn btn-neutral float-left" title="CloseEvent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../awesome.html" class="btn btn-neutral float-right" title="Awesome WebSockets" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

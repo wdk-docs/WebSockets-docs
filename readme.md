@@ -1,5 +1,13 @@
 # ws
 
+## 使用
+
+```sh
+pip install sphinx
+pip install sphinx-autobuild
+sphinx-autobuild source docs
+```
+
 ## 国际翻译
 
 > https://www.sphinx-doc.org/zh_CN/master/usage/advanced/intl.html

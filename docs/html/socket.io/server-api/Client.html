@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Demos" href="../demos/index.html" />
+    <link rel="prev" title="Socket" href="Socket.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Serve API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="API.html">Server API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Namespace.html">Namespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#client.conn"><code class="docutils literal notranslate"><span class="pre">client.conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#client.request"><code class="docutils literal notranslate"><span class="pre">client.request()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">Release history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">socket.io documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Serve API</a></li>
+      <li class="breadcrumb-item active">Client</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/socket.io/server-api/Client.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="client">
+<h1>Client<a class="headerlink" href="#client" title="此标题的永久链接"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">Client</span></code> class represents an incoming transport (engine.io)
+connection. A <code class="docutils literal notranslate"><span class="pre">Client</span></code> can be associated with many multiplexed
+<code class="docutils literal notranslate"><span class="pre">Socket</span></code>s that belong to different <code class="docutils literal notranslate"><span class="pre">Namespace</span></code>s.</p>
+<dl class="js function">
+<dt class="sig sig-object js" id="client.conn">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">conn</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#client.conn" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p><em>(engine.Socket)</em></p></li>
+</ul>
+<p>A reference to the underlying <code class="docutils literal notranslate"><span class="pre">engine.io</span></code> <code class="docutils literal notranslate"><span class="pre">Socket</span></code> connection.</p>
+<dl class="js function">
+<dt class="sig sig-object js" id="client.request">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">request</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#client.request" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p><em>(Request)</em></p></li>
+</ul>
+<p>A getter proxy that returns the reference to the <code class="docutils literal notranslate"><span class="pre">request</span></code> that
+originated the engine.io connection. Useful for accessing request
+headers such as <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> or <code class="docutils literal notranslate"><span class="pre">User-Agent</span></code>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="Socket.html" class="btn btn-neutral float-left" title="Socket" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../demos/index.html" class="btn btn-neutral float-right" title="Demos" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

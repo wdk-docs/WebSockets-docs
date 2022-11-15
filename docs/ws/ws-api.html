@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WS API Document &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>WS API Document &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -32,50 +34,108 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws documentation</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ws 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="koa-websocket.html">koa-websocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ws-quick-start.html">ws: a Node.js WebSocket library</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">WS API Document</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#class-websocketserver">Class: WebSocketServer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#class-websocket">Class: WebSocket</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#createwebsocketstream-websocket-options">createWebSocketStream(websocket[, options])</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ws-error-codes">WS错误码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class-websocketserver">Class: WebSocketServer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.Server"><code class="docutils literal notranslate"><span class="pre">WebSocket.Server</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#handleProtocols"><code class="docutils literal notranslate"><span class="pre">handleProtocols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.close"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.connection"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.connection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.error"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.headers"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.headers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.listening"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.listening()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server.address"><code class="docutils literal notranslate"><span class="pre">server.address()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server.clients"><code class="docutils literal notranslate"><span class="pre">server.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server.close"><code class="docutils literal notranslate"><span class="pre">server.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server.handleUpgrade"><code class="docutils literal notranslate"><span class="pre">server.handleUpgrade()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server.shouldHandle"><code class="docutils literal notranslate"><span class="pre">server.shouldHandle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#class-websocket">Class: WebSocket</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket"><code class="docutils literal notranslate"><span class="pre">WebSocket</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.message"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.open"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.ping"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.ping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.pong"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.pong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.unexpected-response"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.unexpected-response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ws.onEvent.upgrade"><code class="docutils literal notranslate"><span class="pre">ws.onEvent.upgrade()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.addEventListener"><code class="docutils literal notranslate"><span class="pre">websocket.addEventListener()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.binaryType"><code class="docutils literal notranslate"><span class="pre">websocket.binaryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.bufferedAmount"><code class="docutils literal notranslate"><span class="pre">websocket.bufferedAmount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.close"><code class="docutils literal notranslate"><span class="pre">websocket.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.extensions"><code class="docutils literal notranslate"><span class="pre">websocket.extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.onclose"><code class="docutils literal notranslate"><span class="pre">websocket.onclose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.onerror"><code class="docutils literal notranslate"><span class="pre">websocket.onerror()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.onmessage"><code class="docutils literal notranslate"><span class="pre">websocket.onmessage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.onopen"><code class="docutils literal notranslate"><span class="pre">websocket.onopen()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.ping"><code class="docutils literal notranslate"><span class="pre">websocket.ping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.pong"><code class="docutils literal notranslate"><span class="pre">websocket.pong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.protocol"><code class="docutils literal notranslate"><span class="pre">websocket.protocol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.readyState"><code class="docutils literal notranslate"><span class="pre">websocket.readyState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.removeEventListener"><code class="docutils literal notranslate"><span class="pre">websocket.removeEventListener()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.send"><code class="docutils literal notranslate"><span class="pre">websocket.send()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.terminate"><code class="docutils literal notranslate"><span class="pre">websocket.terminate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#websocket.url"><code class="docutils literal notranslate"><span class="pre">websocket.url</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#createwebsocketstream-websocket-options">createWebSocketStream(websocket[, options])</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#createWebSocketStream"><code class="docutils literal notranslate"><span class="pre">createWebSocketStream()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ws-error-codes">WS错误码</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_EXPECTED_FIN"><code class="docutils literal notranslate"><span class="pre">WS_ERR_EXPECTED_FIN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_EXPECTED_MASK"><code class="docutils literal notranslate"><span class="pre">WS_ERR_EXPECTED_MASK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_INVALID_CLOSE_CODE"><code class="docutils literal notranslate"><span class="pre">WS_ERR_INVALID_CLOSE_CODE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH"><code class="docutils literal notranslate"><span class="pre">WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_INVALID_OPCODE"><code class="docutils literal notranslate"><span class="pre">WS_ERR_INVALID_OPCODE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_INVALID_UTF8"><code class="docutils literal notranslate"><span class="pre">WS_ERR_INVALID_UTF8</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_UNEXPECTED_MASK"><code class="docutils literal notranslate"><span class="pre">WS_ERR_UNEXPECTED_MASK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_UNEXPECTED_RSV_1"><code class="docutils literal notranslate"><span class="pre">WS_ERR_UNEXPECTED_RSV_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_UNEXPECTED_RSV_2_3"><code class="docutils literal notranslate"><span class="pre">WS_ERR_UNEXPECTED_RSV_2_3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH"><code class="docutils literal notranslate"><span class="pre">WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WS_ERR_UNSUPPORTED_MESSAGE_LENGTH"><code class="docutils literal notranslate"><span class="pre">WS_ERR_UNSUPPORTED_MESSAGE_LENGTH</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="koa-easy-ws.html">koa-easy-ws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi-room.html">基于 ws.js 的 Websocket 多房间</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">ws documentation</a> &raquo;</li>
-      <li>WS API Document</li>
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ws 文档</a></li>
+      <li class="breadcrumb-item active">WS API Document</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/ws/ws-api.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -86,12 +146,12 @@
            <div itemprop="articleBody">
              
   <section id="ws-api-document">
-<h1>WS API Document<a class="headerlink" href="#ws-api-document" title="永久链接至标题"></a></h1>
+<h1>WS API Document<a class="headerlink" href="#ws-api-document" title="此标题的永久链接"></a></h1>
 <section id="class-websocketserver">
-<h2>Class: WebSocketServer<a class="headerlink" href="#class-websocketserver" title="永久链接至标题"></a></h2>
+<h2>Class: WebSocketServer<a class="headerlink" href="#class-websocketserver" title="此标题的永久链接"></a></h2>
 <dl class="js class">
 <dt class="sig sig-object js" id="WebSocket.Server">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">Server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">{host</span></em>, <em class="sig-param"><span class="pre">port</span></em>, <em class="sig-param"><span class="pre">server</span></em>, <em class="sig-param"><span class="pre">noServer...}</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.Server" title="永久链接至目标"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Server</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">{host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noServer...}</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.Server" title="永久链接至目标"></a></dt>
 <dd><p>本类代表一个WebSocket服务。它扩展自 <cite>EventEmitter</cite></p>
 <p>new WebSocket.Server(options[, callback])</p>
 <p>Create a new server instance. One of <cite>port</cite>, <cite>server</cite> or <cite>noServer</cite> must be provided or an error is thrown.</p>
@@ -138,7 +198,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 
 <dl class="js function">
 <dt class="sig sig-object js" id="handleProtocols">
-<span class="sig-name descname"><span class="pre">handleProtocols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">protocols</span></em>, <em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#handleProtocols" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">handleProtocols</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#handleProtocols" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -156,14 +216,14 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 <p>This determines if compression is used for the entire message.</p>
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.close">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.close" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.close" title="永久链接至目标"></a></dt>
 <dd><p>Emitted when the server closes. This event depends on the <cite>‘close’</cite> event of HTTP server only when it is created internally.</p>
 <p>In all other cases, the event is emitted independently.</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.connection">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">socket</span></em>, <em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.connection" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">connection</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">socket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.connection" title="永久链接至目标"></a></dt>
 <dd><p>Emitted when the handshake is complete.</p>
 <p>Useful for parsing authority headers, cookie headers, and other information.</p>
 <dl class="field-list simple">
@@ -178,7 +238,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.error">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.error" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.error" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -190,7 +250,7 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.headers">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">headers</span></em>, <em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.headers" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">headers</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.headers" title="永久链接至目标"></a></dt>
 <dd><p>Emitted before the response headers are written to the socket as part of the handshake.</p>
 <p>This allows you to inspect/modify the headers before they are sent.</p>
 <dl class="field-list simple">
@@ -205,13 +265,13 @@ This makes it possible, for example, to share a single HTTP/S server between mul
 
 <dl class="js function">
 <dt class="sig sig-object js" id="ws.onEvent.listening">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">listening</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.listening" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">listening</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.listening" title="永久链接至目标"></a></dt>
 <dd><p>当底层服务器被绑定时发出。</p>
 </dd></dl>
 
 <dl class="js method">
 <dt class="sig sig-object js" id="server.address">
-<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.address" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">address</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.address" title="永久链接至目标"></a></dt>
 <dd><p>Returns an object with <cite>port</cite>, <cite>family</cite>, and <cite>address</cite> properties specifying the bound address, the address family name,
 and port of the server as reported by the operating system if listening on an IP socket.</p>
 <p>If the server is listening on a pipe or UNIX domain socket, the name is returned as a string.</p>
@@ -219,7 +279,7 @@ and port of the server as reported by the operating system if listening on an IP
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="server.clients">
-<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">clients</span></span><a class="headerlink" href="#server.clients" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">clients</span></span></span><a class="headerlink" href="#server.clients" title="永久链接至目标"></a></dt>
 <dd><p>Please note that this property is only added when the <cite>clientTracking</cite> is truthy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return</dt>
@@ -233,14 +293,14 @@ and port of the server as reported by the operating system if listening on an IP
 
 <dl class="js method">
 <dt class="sig sig-object js" id="server.close">
-<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">callback</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.close" title="永久链接至目标"></a></dt>
 <dd><p>Close the HTTP server if created internally, terminate all clients and call callback when done.</p>
 <p>If an external HTTP server is used via the <cite>server</cite> or <cite>noServer</cite> constructor options, it must be closed manually.</p>
 </dd></dl>
 
 <dl class="js method">
 <dt class="sig sig-object js" id="server.handleUpgrade">
-<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">handleUpgrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">request</span></em>, <em class="sig-param"><span class="pre">socket</span></em>, <em class="sig-param"><span class="pre">head</span></em>, <em class="sig-param"><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.handleUpgrade" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">handleUpgrade</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">socket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.handleUpgrade" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -258,7 +318,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="server.shouldHandle">
-<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">shouldHandle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.shouldHandle" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">shouldHandle</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.shouldHandle" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -274,7 +334,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 </section>
 <section id="class-websocket">
-<h2>Class: WebSocket<a class="headerlink" href="#class-websocket" title="永久链接至标题"></a></h2>
+<h2>Class: WebSocket<a class="headerlink" href="#class-websocket" title="此标题的永久链接"></a></h2>
 <p>This class represents a WebSocket. It extends the <cite>EventEmitter</cite>.</p>
 <p>准备好的状态常量</p>
 <table class="docutils align-default">
@@ -310,7 +370,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 </table>
 <dl class="js class">
 <dt class="sig sig-object js" id="WebSocket">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">WebSocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">address[,</span> <span class="pre">protocols][,</span> <span class="pre">{followRedirects,...}]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket" title="永久链接至目标"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="n"><span class="pre">WebSocket</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">address[,</span> <span class="pre">protocols][,</span> <span class="pre">{followRedirects,...}]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket" title="永久链接至目标"></a></dt>
 <dd><p>new WebSocket(address[, protocols][, options])</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
@@ -338,7 +398,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="admonition-title">备注</p>
 <p>that <cite>:</cite> is the separator between the socket path and the URL path. If the URL path is omitted</p>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ws+unix:///absolute/path/to/uds_socket
@@ -347,7 +407,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 <p>it defaults to <cite>/</cite>.</p>
 <dl class="js method">
 <dt class="sig sig-object js" id="id0">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="永久链接至目标"></a></dt>
 <dd><p>Emitted when the connection is closed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
@@ -361,7 +421,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="id1">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -373,7 +433,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="ws.onEvent.message">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.message" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">message</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.message" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -385,13 +445,13 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="ws.onEvent.open">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.open" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">open</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.open" title="永久链接至目标"></a></dt>
 <dd><p>Emitted when the connection is established.</p>
 </dd></dl>
 
 <dl class="js method">
 <dt class="sig sig-object js" id="ws.onEvent.ping">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.ping" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ping</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.ping" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -404,7 +464,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="ws.onEvent.pong">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.pong" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pong</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.pong" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -417,7 +477,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="ws.onEvent.unexpected-response">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">unexpected-response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.unexpected-response" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">unexpected-response</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.unexpected-response" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -433,7 +493,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="ws.onEvent.upgrade">
-<span class="sig-prename descclassname"><span class="pre">ws.onEvent.</span></span><span class="sig-name descname"><span class="pre">upgrade</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.upgrade" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">ws</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">onEvent</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">upgrade</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ws.onEvent.upgrade" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -447,7 +507,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.addEventListener">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">addEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span></em>, <em class="sig-param"><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.addEventListener" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">addEventListener</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listener</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.addEventListener" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -461,7 +521,7 @@ When the HTTP server is created internally or when the HTTP server is passed via
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="websocket.binaryType">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">binaryType</span></span><a class="headerlink" href="#websocket.binaryType" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">binaryType</span></span></span><a class="headerlink" href="#websocket.binaryType" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return</dt>
 <dd class="field-odd"><p>A string indicating the type of binary data being transmitted by the connection.</p>
@@ -479,7 +539,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="websocket.bufferedAmount">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">bufferedAmount</span></span><a class="headerlink" href="#websocket.bufferedAmount" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">bufferedAmount</span></span></span><a class="headerlink" href="#websocket.bufferedAmount" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return</dt>
 <dd class="field-odd"><p>The number of bytes of data that have been queued using calls to <cite>send()</cite> but not yet transmitted to the network.</p>
@@ -492,7 +552,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.close">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">code</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">reason</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.close" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.close" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -506,7 +566,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="websocket.extensions">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">extensions</span></span><a class="headerlink" href="#websocket.extensions" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">extensions</span></span></span><a class="headerlink" href="#websocket.extensions" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Rtype</dt>
 <dd class="field-odd"><p>Object</p>
@@ -519,7 +579,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.onclose">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onclose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onclose" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onclose</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onclose" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
 <dd class="field-odd"><p>Function</p>
@@ -533,7 +593,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.onerror">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onerror</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onerror" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onerror</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onerror" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
 <dd class="field-odd"><p>Function</p>
@@ -547,7 +607,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.onmessage">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onmessage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onmessage" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onmessage</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onmessage" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
 <dd class="field-odd"><p>Function</p>
@@ -561,7 +621,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.onopen">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">onopen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onopen" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onopen</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.onopen" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
 <dd class="field-odd"><p>Function</p>
@@ -575,7 +635,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.ping">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[data[,</span> <span class="pre">mask]][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.ping" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ping</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[data[,</span> <span class="pre">mask]][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.ping" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -590,7 +650,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.pong">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">pong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[data[,</span> <span class="pre">mask]][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.pong" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pong</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">[data[,</span> <span class="pre">mask]][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.pong" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -605,7 +665,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="websocket.protocol">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">protocol</span></span><a class="headerlink" href="#websocket.protocol" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">protocol</span></span></span><a class="headerlink" href="#websocket.protocol" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return</dt>
 <dd class="field-odd"><p>服务器选择的subprotocal</p>
@@ -618,7 +678,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="websocket.readyState">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">readyState</span></span><a class="headerlink" href="#websocket.readyState" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">readyState</span></span></span><a class="headerlink" href="#websocket.readyState" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Rtype</dt>
 <dd class="field-odd"><p>Number</p>
@@ -631,7 +691,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.removeEventListener">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">removeEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span></em>, <em class="sig-param"><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.removeEventListener" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">removeEventListener</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listener</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.removeEventListener" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -645,7 +705,7 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.send">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data[,</span> <span class="pre">options][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.send" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">send</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data[,</span> <span class="pre">options][,</span> <span class="pre">callback]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#websocket.send" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -665,13 +725,13 @@ which is useful for the performance of binary protocols transferring large messa
 
 <dl class="js method">
 <dt class="sig sig-object js" id="websocket.terminate">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.terminate" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">terminate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#websocket.terminate" title="永久链接至目标"></a></dt>
 <dd><p>强制关闭连接</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="websocket.url">
-<span class="sig-prename descclassname"><span class="pre">websocket.</span></span><span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#websocket.url" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">websocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">url</span></span></span><a class="headerlink" href="#websocket.url" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Rtype</dt>
 <dd class="field-odd"><p>String</p>
@@ -684,10 +744,10 @@ which is useful for the performance of binary protocols transferring large messa
 
 </section>
 <section id="createwebsocketstream-websocket-options">
-<h2>createWebSocketStream(websocket[, options])<a class="headerlink" href="#createwebsocketstream-websocket-options" title="永久链接至标题"></a></h2>
+<h2>createWebSocketStream(websocket[, options])<a class="headerlink" href="#createwebsocketstream-websocket-options" title="此标题的永久链接"></a></h2>
 <dl class="js function">
 <dt class="sig sig-object js" id="createWebSocketStream">
-<span class="sig-name descname"><span class="pre">createWebSocketStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">websocket</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">options</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createWebSocketStream" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">createWebSocketStream</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">websocket</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createWebSocketStream" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -703,71 +763,71 @@ which is useful for the performance of binary protocols transferring large messa
 
 </section>
 <section id="ws-error-codes">
-<h2>WS错误码<a class="headerlink" href="#ws-error-codes" title="永久链接至标题"></a></h2>
+<h2>WS错误码<a class="headerlink" href="#ws-error-codes" title="此标题的永久链接"></a></h2>
 <p>Errors emitted by the websocket may have a <cite>.code</cite> property, describing the specific type of error that has occurred:</p>
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_EXPECTED_FIN">
-<span class="sig-name descname"><span class="pre">WS_ERR_EXPECTED_FIN</span></span><a class="headerlink" href="#WS_ERR_EXPECTED_FIN" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_EXPECTED_FIN</span></span></span><a class="headerlink" href="#WS_ERR_EXPECTED_FIN" title="永久链接至目标"></a></dt>
 <dd><p>A WebSocket frame was received with the FIN bit not set when it was expected.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_EXPECTED_MASK">
-<span class="sig-name descname"><span class="pre">WS_ERR_EXPECTED_MASK</span></span><a class="headerlink" href="#WS_ERR_EXPECTED_MASK" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_EXPECTED_MASK</span></span></span><a class="headerlink" href="#WS_ERR_EXPECTED_MASK" title="永久链接至目标"></a></dt>
 <dd><p>An unmasked WebSocket frame was received by a WebSocket server.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_INVALID_CLOSE_CODE">
-<span class="sig-name descname"><span class="pre">WS_ERR_INVALID_CLOSE_CODE</span></span><a class="headerlink" href="#WS_ERR_INVALID_CLOSE_CODE" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_INVALID_CLOSE_CODE</span></span></span><a class="headerlink" href="#WS_ERR_INVALID_CLOSE_CODE" title="永久链接至目标"></a></dt>
 <dd><p>A WebSocket close frame was received with an invalid close code.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH">
-<span class="sig-name descname"><span class="pre">WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH</span></span><a class="headerlink" href="#WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH</span></span></span><a class="headerlink" href="#WS_ERR_INVALID_CONTROL_PAYLOAD_LENGTH" title="永久链接至目标"></a></dt>
 <dd><p>A control frame with an invalid payload length was received.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_INVALID_OPCODE">
-<span class="sig-name descname"><span class="pre">WS_ERR_INVALID_OPCODE</span></span><a class="headerlink" href="#WS_ERR_INVALID_OPCODE" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_INVALID_OPCODE</span></span></span><a class="headerlink" href="#WS_ERR_INVALID_OPCODE" title="永久链接至目标"></a></dt>
 <dd><p>A WebSocket frame was received with an invalid opcode.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_INVALID_UTF8">
-<span class="sig-name descname"><span class="pre">WS_ERR_INVALID_UTF8</span></span><a class="headerlink" href="#WS_ERR_INVALID_UTF8" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_INVALID_UTF8</span></span></span><a class="headerlink" href="#WS_ERR_INVALID_UTF8" title="永久链接至目标"></a></dt>
 <dd><p>A text or close frame was received containing invalid UTF-8 data.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_UNEXPECTED_MASK">
-<span class="sig-name descname"><span class="pre">WS_ERR_UNEXPECTED_MASK</span></span><a class="headerlink" href="#WS_ERR_UNEXPECTED_MASK" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_UNEXPECTED_MASK</span></span></span><a class="headerlink" href="#WS_ERR_UNEXPECTED_MASK" title="永久链接至目标"></a></dt>
 <dd><p>A masked WebSocket frame was received by a WebSocket client.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_UNEXPECTED_RSV_1">
-<span class="sig-name descname"><span class="pre">WS_ERR_UNEXPECTED_RSV_1</span></span><a class="headerlink" href="#WS_ERR_UNEXPECTED_RSV_1" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_UNEXPECTED_RSV_1</span></span></span><a class="headerlink" href="#WS_ERR_UNEXPECTED_RSV_1" title="永久链接至目标"></a></dt>
 <dd><p>A WebSocket frame was received with the RSV1 bit set unexpectedly.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_UNEXPECTED_RSV_2_3">
-<span class="sig-name descname"><span class="pre">WS_ERR_UNEXPECTED_RSV_2_3</span></span><a class="headerlink" href="#WS_ERR_UNEXPECTED_RSV_2_3" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_UNEXPECTED_RSV_2_3</span></span></span><a class="headerlink" href="#WS_ERR_UNEXPECTED_RSV_2_3" title="永久链接至目标"></a></dt>
 <dd><p>A WebSocket frame was received with the RSV2 or RSV3 bit set unexpectedly.</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH">
-<span class="sig-name descname"><span class="pre">WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH</span></span><a class="headerlink" href="#WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH</span></span></span><a class="headerlink" href="#WS_ERR_UNSUPPORTED_DATA_PAYLOAD_LENGTH" title="永久链接至目标"></a></dt>
 <dd><p>A data frame was received with a length longer than the max supported length (2^53 - 1, due to JavaScript language limitations).</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WS_ERR_UNSUPPORTED_MESSAGE_LENGTH">
-<span class="sig-name descname"><span class="pre">WS_ERR_UNSUPPORTED_MESSAGE_LENGTH</span></span><a class="headerlink" href="#WS_ERR_UNSUPPORTED_MESSAGE_LENGTH" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WS_ERR_UNSUPPORTED_MESSAGE_LENGTH</span></span></span><a class="headerlink" href="#WS_ERR_UNSUPPORTED_MESSAGE_LENGTH" title="永久链接至目标"></a></dt>
 <dd></dd></dl>
 
 <p>A message was received with a length longer than the maximum supported length, as configured by the maxPayload option.</p>
@@ -777,7 +837,7 @@ which is useful for the performance of binary protocols transferring large messa
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="ws-quick-start.html" class="btn btn-neutral float-left" title="ws: a Node.js WebSocket library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="koa-easy-ws.html" class="btn btn-neutral float-right" title="koa-easy-ws" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -785,12 +845,12 @@ which is useful for the performance of binary protocols transferring large messa
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

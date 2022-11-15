@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introducing Socket.IO 1.0 &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Introducing Socket.IO 1.0 &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
@@ -32,17 +34,17 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
@@ -85,27 +87,27 @@
 <li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
-          <li><a href="index.html">Release history</a> &raquo;</li>
-      <li>Introducing Socket.IO 1.0</li>
+      <li><a href="../../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">socket.io 文档</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Release history</a></li>
+      <li class="breadcrumb-item active">Introducing Socket.IO 1.0</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/_posts/20140528-1.0.0.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -116,7 +118,7 @@
            <div itemprop="articleBody">
              
   <section id="introducing-socket-io-1-0">
-<h1>Introducing Socket.IO 1.0<a class="headerlink" href="#introducing-socket-io-1-0" title="永久链接至标题"></a></h1>
+<h1>Introducing Socket.IO 1.0<a class="headerlink" href="#introducing-socket-io-1-0" title="此标题的永久链接"></a></h1>
 <p>The first version of Socket.IO was created shortly after Node.JS made
 its first appearance. I had been looking for a framework that easily
 enabled me to push data from a server to a client for a long time, and
@@ -143,7 +145,7 @@ feel free to jump to the parts that are most interesting to you:</p>
 <li><p><a class="reference external" href="#Credits">Credits</a></p></li>
 </ol>
 <section id="id1">
-<h2>New engine<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<h2>New engine<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h2>
 <p>The Socket.IO codebase no longer deals with transports and browser
 incompatibilities. That work has been relegated to a new module we’ve
 been perfecting for months called Engine.IO that implements a
@@ -189,16 +191,16 @@ which relies on timeouts, this means that <em>none of your users will have
 a degraded experience</em>.</p>
 </section>
 <section id="id2">
-<h2>Binary support<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<h2>Binary support<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
 <p>Users have been asking for the ability to send binary data for a while,
 especially after <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> added support for it.</p>
 <p>The main issue was that if we had modeled our binary support after the
 <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> API, its usefulness would have been fairly limited.
 <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> requires that you put your Socket either into “string
 mode” or “binary mode”:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost&#39;</span><span class="p">);</span>
-<span class="nx">socket</span><span class="p">.</span><span class="nx">binaryType</span> <span class="o">=</span> <span class="s1">&#39;arraybuffer&#39;</span><span class="p">;</span>
-<span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="ow">new</span> <span class="nb">ArrayBuffer</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">socket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">binaryType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;arraybuffer&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">ArrayBuffer</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This is good for a low-level API, which is why Engine.IO now supports
@@ -206,15 +208,15 @@ it, but application developers most likely don’t want to send <em>only
 blobs</em>, or encode everything as a blob manually prior to sending it out.</p>
 <p>Socket.IO now supports emitting <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> (from Node.JS), <code class="docutils literal notranslate"><span class="pre">Blob</span></code>,
 <code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code> and even <code class="docutils literal notranslate"><span class="pre">File</span></code>, as part of any datastructure:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
-  <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;image.png&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">buf</span><span class="p">){</span>
-    <span class="c1">// it&#39;s possible to embed binary data</span>
-    <span class="c1">// within arbitrarily-complex objects</span>
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">image</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">buffer</span><span class="o">:</span> <span class="nx">buf</span> <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;image.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">buf</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// it&#39;s possible to embed binary data</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// within arbitrarily-complex objects</span><span class="w"></span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">buffer</span><span class="o">:</span><span class="w"> </span><span class="nx">buf</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>To test how useful it would be to support binary in this particular way
@@ -224,10 +226,10 @@ emulator, node-canvas, socket.io we came up with a server-rendered
 collaborative game that even works on IE8. Check it out on
 <a class="reference external" href="http://weplay.io">http://weplay.io</a> (source code here).</p>
 <video id="weplay-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%" poster="https://i.cloudup.com/aNZqxnZzHv.png"><source src="https://i.cloudup.com/transcoded/KL-0r-E2Gj.mp4" type="video/mp4"></video><p>The relevant code that sends the image data is:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">self</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">toBuffer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">buf</span><span class="p">){</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
-  <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">);</span>
-<span class="p">});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">self</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">toBuffer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">buf</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;frame&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">buf</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The next experiment was to run an instance of QEMU running an image of
@@ -243,13 +245,13 @@ it’s best to notify clients <em>only</em> of the pieces of the screen that
 changed. For example, if you move your mouse around, only little pieces
 of the screen that surround the cursor are broadcasted. The node-rfb2
 module gives us a <code class="docutils literal notranslate"><span class="pre">rect</span></code> event with objects like the following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nx">x</span><span class="o">:</span> <span class="mf">103</span><span class="p">,</span>
-  <span class="nx">y</span><span class="o">:</span> <span class="mf">150</span><span class="p">,</span>
-  <span class="nx">width</span><span class="o">:</span> <span class="mf">200</span><span class="p">,</span>
-  <span class="nx">height</span><span class="o">:</span> <span class="mf">250</span><span class="p">,</span>
-  <span class="nx">data</span><span class="o">:</span> <span class="nx">Buffer</span>
-<span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">103</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">250</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">Buffer</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>It then became clear to me that our support for binary data would be
@@ -259,7 +261,7 @@ object around, and let Socket.IO do the rest.</p>
 shooters:</p>
 <video id="cs-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/Ra6PJnoLBq.mp4" type="video/mp4"></video></section>
 <section id="id3">
-<h2>Automated Testing<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<h2>Automated Testing<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
 <p>Every commit to the Socket.IO codebase now triggers a testing matrix
 totaling to 25 browsers, including Android and iOS.</p>
 <p>We accomplish this by having <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> seamlessly set up a reverse
@@ -269,7 +271,7 @@ which is in charge of virtualizing and executing browsers on all the
 environments we care about.</p>
 </section>
 <section id="id4">
-<h2>Scalability<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<h2>Scalability<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
 <p>We simplified the approach towards rooms and multi-node scalability
 dramatically. Instead of storing and/or replicating data across nodes,
 Socket.IO is now only concerned with passing events around.</p>
@@ -281,9 +283,9 @@ This ensures that long-polling connections for example always route
 requests to the same node where buffers of messages could be stored.</p></li>
 <li><p>Implement the socket.io-redis adapter.</p></li>
 </ul>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="nx">port</span><span class="o">:</span> <span class="mf">6379</span> <span class="p">}));</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">redis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-redis&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">adapter</span><span class="p">(</span><span class="nx">redis</span><span class="p">({</span><span class="w"> </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">6379</span><span class="w"> </span><span class="p">}));</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We have deprecated the <code class="docutils literal notranslate"><span class="pre">Socket#set</span></code> and <code class="docutils literal notranslate"><span class="pre">Socket#get</span></code> APIs. Packets
@@ -292,7 +294,7 @@ broadcast, and we don’t deal with storage.</p>
 <p>This leads directly into our next goal: integration with other backends.</p>
 </section>
 <section id="id5">
-<h2>Integration<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<h2>Integration<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h2>
 <p>Chances are good that your existing application deployments are written
 in a variety of languages and frameworks, and are not just limited to
 Node.JS. Even if it was all Node.JS, you probably at some point want to
@@ -303,24 +305,24 @@ part of your backend might end up in charge of <em>producing</em> messages.</p>
 <p>To that end we’re introducing the socket.io-emitter project which hooks
 into socket.io-redis to easily allow you to emit events to browsers from
 anywhere:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-emitter&#39;</span><span class="p">)();</span>
-<span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="ow">new</span> <span class="nb">Date</span><span class="p">);</span>
-<span class="p">},</span> <span class="mf">5000</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-emitter&#39;</span><span class="p">)();</span><span class="w"></span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">);</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Tony Kovanen already created a PHP implementation:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="nx">$emitter</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">SocketIOEmitter</span><span class="p">(</span><span class="nx">array</span><span class="p">(</span><span class="s1">&#39;port&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;6379&#39;</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">));</span>
-<span class="nx">$emitter</span><span class="o">-&gt;</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;wow&#39;</span><span class="p">);</span>
-<span class="o">?&gt;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span><span class="w"></span>
+<span class="nx">$emitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SocketIOEmitter</span><span class="p">(</span><span class="nx">array</span><span class="p">(</span><span class="s1">&#39;port&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;6379&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;host&#39;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="nx">$emitter</span><span class="o">-&gt;</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;wow&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="o">?&gt;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This makes it really easy to turn any existing application into a
 realtime application!</p>
 </section>
 <section id="id6">
-<h2>Better debugging<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<h2>Better debugging<a class="headerlink" href="#id6" title="此标题的永久链接"></a></h2>
 <p>Socket.IO is now completely instrumented by a minimalistic yet
 tremendously powerful utility called debug by TJ Holowaychuk.</p>
 <p>In the past, the Socket.IO server would default to logging everything
@@ -339,29 +341,29 @@ supplying the <code class="docutils literal notranslate"><span class="pre">DEBUG
 <p>You can see it in action for example on our homepage:</p>
 <video id="debugging-vid" data-setup="{&quot;autoplay&quot;:true,&quot;loop&quot;:true, &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;], &quot;height&quot;: 300}" class="video-js vjs-default-skin" autoplay loop width="100%"><source src="https://i.cloudup.com/transcoded/IL9alTr0eO.mp4" type="video/mp4"></video></section>
 <section id="id7">
-<h2>Streamlined APIs<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<h2>Streamlined APIs<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">socket.io</span></code> module now exports the attachment function directly
 (previously <code class="docutils literal notranslate"><span class="pre">.listen</span></code>). It’s even easier now to attach socket.io to a
 HTTP server:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">srv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">Server</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">srv</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">srv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">Server</span><span class="p">();</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">srv</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>or to make it listen on some port:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">8080</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">8080</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Before, to refer to everyone connected you had to use <code class="docutils literal notranslate"><span class="pre">io.sockets</span></code>.
 Now you can call directly on <code class="docutils literal notranslate"><span class="pre">io</span></code>:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
-  <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi everyone&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hi everyone&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="id8">
-<h2>CDN delivery<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<h2>CDN delivery<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h2>
 <p>One of the best decisions we made early on was that implementing a
 Socket.IO server would not only give you access to the realtime
 protocol, but Socket.IO itself would also serve the client.</p>
@@ -378,7 +380,7 @@ free, forever, and has built-in SSL support:</p>
 </div>
 </section>
 <section id="id9">
-<h2>Future innovation<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+<h2>Future innovation<a class="headerlink" href="#id9" title="此标题的永久链接"></a></h2>
 <p>The core Socket.IO projects will continue to improve with lots of more
 frequent releases, with the sole goal of improving reliability, speed
 and making the codebase smaller and easier to maintain. Socket.IO 2.0
@@ -388,24 +390,24 @@ bundling some modules like the JSON serializer.</p>
 core codebases. The most important projects that I’ll be closely
 watching are the following:</p>
 <section id="socket-io-stream">
-<h3>socket.io-stream<a class="headerlink" href="#socket-io-stream" title="永久链接至标题"></a></h3>
+<h3>socket.io-stream<a class="headerlink" href="#socket-io-stream" title="此标题的永久链接"></a></h3>
 <p>By adding this plugin, you’ll be able to send <code class="docutils literal notranslate"><span class="pre">Stream</span></code> objects so that
 you can write memory-efficient programs. In the first example we loaded
 a file into memory prior to emitting it, but the following should be
 possible:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span>
-<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-stream&#39;</span><span class="p">)(</span><span class="nx">io</span><span class="p">);</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span>
-  <span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s1">&#39;file.jpg&#39;</span><span class="p">));</span>
-<span class="p">});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io-stream&#39;</span><span class="p">)(</span><span class="nx">io</span><span class="p">);</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">socket</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s1">&#39;file.jpg&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>And on the client side you’ll receive a <code class="docutils literal notranslate"><span class="pre">Stream</span></code> object that emits
 <code class="docutils literal notranslate"><span class="pre">data</span></code> events.</p>
 </section>
 <section id="tooling">
-<h3>Tooling<a class="headerlink" href="#tooling" title="永久链接至标题"></a></h3>
+<h3>Tooling<a class="headerlink" href="#tooling" title="此标题的永久链接"></a></h3>
 <p>When you use Socket.IO you don’t care about transports, packets, frames,
 TCP or WebSocket. You care about what events are sent back and forth.</p>
 <p>Our goal is to have plugins for Web Inspector, Firefox Developer Tools
@@ -415,7 +417,7 @@ and what their parameters are.</p>
 Ghani (Github) and David Cummings (Twitter).</p>
 </section>
 <section id="new-languages-and-frameworks">
-<h3>New languages and frameworks<a class="headerlink" href="#new-languages-and-frameworks" title="永久链接至标题"></a></h3>
+<h3>New languages and frameworks<a class="headerlink" href="#new-languages-and-frameworks" title="此标题的永久链接"></a></h3>
 <p>A lot of effort has gone into specing and documenting the Engine.IO
 protocol and Socket.IO protocol.</p>
 <p>The main goal behind this is that the Node.JS servers and clients become
@@ -425,7 +427,7 @@ for 2014 and beyond.</p>
 </section>
 </section>
 <section id="id10">
-<h2>Credits<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+<h2>Credits<a class="headerlink" href="#id10" title="此标题的永久链接"></a></h2>
 <p>This release has been a big team effort. Special thanks go out to our
 new core team:</p>
 <ul class="simple">
@@ -474,7 +476,7 @@ home to Open Source innovation.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="20150120-native-socket-io-and-android.html" class="btn btn-neutral float-left" title="Native Socket.IO and Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="../socket-io-with-apache-cordova.html" class="btn btn-neutral float-right" title="Socket.IO — Apache Cordova" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -482,12 +484,12 @@ home to Open Source innovation.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

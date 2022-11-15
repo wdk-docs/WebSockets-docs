@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Socket.IO — Apache Cordova &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Socket.IO — Apache Cordova &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -32,17 +34,17 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="get-started.html">Chat - Get Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/index.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client-api/index.html">Client API</a></li>
@@ -54,26 +56,26 @@
 <li class="toctree-l2"><a class="reference internal" href="weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">socket.io documentation</a> &raquo;</li>
-      <li>Socket.IO — Apache Cordova</li>
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">socket.io 文档</a></li>
+      <li class="breadcrumb-item active">Socket.IO — Apache Cordova</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/socket.io/socket-io-with-apache-cordova.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -84,24 +86,24 @@
            <div itemprop="articleBody">
              
   <section id="socket-io-apache-cordova">
-<h1>Socket.IO — Apache Cordova<a class="headerlink" href="#socket-io-apache-cordova" title="永久链接至标题"></a></h1>
+<h1>Socket.IO — Apache Cordova<a class="headerlink" href="#socket-io-apache-cordova" title="此标题的永久链接"></a></h1>
 <p>Since Apache Cordova apps are written mostly in JS, it is actually
 really easy to use Socket.IO! Let’s walk through a small example.</p>
 <p>First we prepare a simple server:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">createServer</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">server</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">).</span><span class="nx">createServer</span><span class="p">();</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)(</span><span class="nx">server</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">socket</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;socket connected&#39;</span><span class="p">);</span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">socket</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;socket connected&#39;</span><span class="p">);</span><span class="w"></span>
 
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;socket disconnected&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;socket disconnected&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
 
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;wow. such event. very real time.&#39;</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;wow. such event. very real time.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This server will simply listen to Socket.IO client connections, and will
@@ -109,12 +111,12 @@ emit some text to them via a <code class="docutils literal notranslate"><span cl
 <p>Now let’s get get down to the point. We want to start off by creating a
 new Cordova project to start modifying. Let’s start from scratch.</p>
 <p>Running</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">npm</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">cordova</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="o">-</span><span class="nx">g</span><span class="w"> </span><span class="nx">cordova</span><span class="w"></span>
 </pre></div>
 </div>
 <p>will install the actual Cordova cli tool we use to create projects,
 install/remove dependencies, and launch our emulator among other things.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cordova</span> <span class="nx">create</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">-</span><span class="nx">example</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">example</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">-</span><span class="nx">example</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cordova</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">-</span><span class="nx">example</span><span class="w"> </span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">example</span><span class="w"> </span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">-</span><span class="nx">example</span><span class="w"></span>
 </pre></div>
 </div>
 <p>will make a new project template for us to start modifying. Feel free to
@@ -125,17 +127,17 @@ yet in command line, do it now with <code class="docutils literal notranslate"><
 <p>Since I’m developing this example on OS X, I’m going to build for iOS.
 You could do it similarly for Android. To add the build target, run the
 following:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cordova</span> <span class="nx">platform</span> <span class="nx">add</span> <span class="nx">ios</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cordova</span><span class="w"> </span><span class="nx">platform</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">ios</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Next we want to build all the native components. We can do this by
 running</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cordova</span> <span class="nx">build</span> <span class="nx">ios</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">cordova</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="nx">ios</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now let’s actually run the template application to see that everything
 is working. If you are on OS X, you can install the iOS emulator like so</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">brew</span> <span class="nx">install</span> <span class="nx">ios</span><span class="o">-</span><span class="nx">sim</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">brew</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">ios</span><span class="o">-</span><span class="nx">sim</span><span class="w"></span>
 </pre></div>
 </div>
 <p>You should see the emulator open up with something like this when
@@ -144,29 +146,29 @@ running <code class="docutils literal notranslate"><span class="pre">cordova</sp
 write some code. Open up <code class="docutils literal notranslate"><span class="pre">www/index.html</span></code> in your project directory.
 It should look something like this:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">    Licensed to the Apache Software Foundation (ASF) under one</span>
-<span class="c">    or more contributor license agreements.  See the NOTICE file</span>
-<span class="c">    distributed with this work for additional information</span>
-<span class="c">    regarding copyright ownership.  The ASF licenses this file</span>
-<span class="c">    to you under the Apache License, Version 2.0 (the</span>
-<span class="c">    &quot;License&quot;); you may not use this file except in compliance</span>
-<span class="c">    with the License.  You may obtain a copy of the License at</span>
+<span class="cm">&lt;!--</span>
+<span class="cm">    Licensed to the Apache Software Foundation (ASF) under one</span>
+<span class="cm">    or more contributor license agreements.  See the NOTICE file</span>
+<span class="cm">    distributed with this work for additional information</span>
+<span class="cm">    regarding copyright ownership.  The ASF licenses this file</span>
+<span class="cm">    to you under the Apache License, Version 2.0 (the</span>
+<span class="cm">    &quot;License&quot;); you may not use this file except in compliance</span>
+<span class="cm">    with the License.  You may obtain a copy of the License at</span>
 
-<span class="c">    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="cm">    http://www.apache.org/licenses/LICENSE-2.0</span>
 
-<span class="c">    Unless required by applicable law or agreed to in writing,</span>
-<span class="c">    software distributed under the License is distributed on an</span>
-<span class="c">    &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span>
-<span class="c">     KIND, either express or implied.  See the License for the</span>
-<span class="c">    specific language governing permissions and limitations</span>
-<span class="c">    under the License.</span>
-<span class="c">--&gt;</span>
+<span class="cm">    Unless required by applicable law or agreed to in writing,</span>
+<span class="cm">    software distributed under the License is distributed on an</span>
+<span class="cm">    &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span>
+<span class="cm">     KIND, either express or implied.  See the License for the</span>
+<span class="cm">    specific language governing permissions and limitations</span>
+<span class="cm">    under the License.</span>
+<span class="cm">--&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;format-detection&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;telephone=no&quot;</span> <span class="p">/&gt;</span>
-        <span class="c">&lt;!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 --&gt;</span>
+        <span class="cm">&lt;!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 --&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi&quot;</span> <span class="p">/&gt;</span>
         <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/index.css&quot;</span> <span class="p">/&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msapplication-tap-highlight&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="p">/&gt;</span>
@@ -182,9 +184,9 @@ It should look something like this:</p>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;cordova.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/index.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
-            <span class="nx">app</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
-        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="nx">app</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -199,12 +201,12 @@ from the CDN like so:</p>
 <p>Now to add actual logic, let’s write things below the <code class="docutils literal notranslate"><span class="pre">app.initialize</span></code>
 call. We might want to make sure that the device has loaded the
 application before running any of our code. We can do this like so:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span><span class="w"></span>
 
-  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;deviceready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// code goes here</span>
-  <span class="p">});</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;deviceready&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// code goes here</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -213,16 +215,16 @@ actual logic, we just need to fill in that function. Let’s make
 something that receives the data emitted by our server on socket
 connection, and bring a notification box to show that text. Here’s what
 you could do:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span><span class="w"></span>
 
-  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;deviceready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-       <span class="p">});</span>
-     <span class="p">});</span>
-  <span class="p">});</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;deviceready&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="p">});</span><span class="w"></span>
+<span class="w">     </span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="p">});</span><span class="w"></span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -234,7 +236,7 @@ what you should see:</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="_posts/20140528-1.0.0.html" class="btn btn-neutral float-left" title="Introducing Socket.IO 1.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="weapp.socket.io.html" class="btn btn-neutral float-right" title="weapp.socket.io" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -242,12 +244,12 @@ what you should see:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

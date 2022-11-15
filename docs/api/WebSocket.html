@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebSocket &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>WebSocket &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,13 +14,15 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="CloseEvent" href="CloseEvent.html" />
-    <link rel="prev" title="API documention" href="index.html" /> 
+    <link rel="prev" title="API 文档" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,20 +34,46 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">API documention</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API 文档</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">WebSocket</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">常量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">构造函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket"><code class="docutils literal notranslate"><span class="pre">WebSocket()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">常量</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.CONNECTING"><code class="docutils literal notranslate"><span class="pre">WebSocket.CONNECTING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.OPEN"><code class="docutils literal notranslate"><span class="pre">WebSocket.OPEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.CLOSING"><code class="docutils literal notranslate"><span class="pre">WebSocket.CLOSING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.CLOSED"><code class="docutils literal notranslate"><span class="pre">WebSocket.CLOSED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.binaryType"><code class="docutils literal notranslate"><span class="pre">WebSocket.binaryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.bufferedAmount"><code class="docutils literal notranslate"><span class="pre">WebSocket.bufferedAmount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.extensions"><code class="docutils literal notranslate"><span class="pre">WebSocket.extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.onclose"><code class="docutils literal notranslate"><span class="pre">WebSocket.onclose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.onerror"><code class="docutils literal notranslate"><span class="pre">WebSocket.onerror</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.onmessage"><code class="docutils literal notranslate"><span class="pre">WebSocket.onmessage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.onopen"><code class="docutils literal notranslate"><span class="pre">WebSocket.onopen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.protocol"><code class="docutils literal notranslate"><span class="pre">WebSocket.protocol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.readyState"><code class="docutils literal notranslate"><span class="pre">WebSocket.readyState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.url"><code class="docutils literal notranslate"><span class="pre">WebSocket.url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">WebSocket</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">方法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.close"><code class="docutils literal notranslate"><span class="pre">WebSocket.close()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WebSocket.send"><code class="docutils literal notranslate"><span class="pre">WebSocket.send()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">规范</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">浏览器兼容性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">另见</a></li>
@@ -56,27 +84,27 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">API documention</a> &raquo;</li>
-      <li>WebSocket</li>
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API 文档</a></li>
+      <li class="breadcrumb-item active">WebSocket</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/WebSocket.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -87,13 +115,13 @@
            <div itemprop="articleBody">
              
   <section id="websocket">
-<span id="api-websocket"></span><h1>WebSocket<a class="headerlink" href="#websocket" title="永久链接至标题"></a></h1>
+<span id="api-websocket"></span><h1>WebSocket<a class="headerlink" href="#websocket" title="此标题的永久链接"></a></h1>
 <p>WebSocket 对象提供了用于创建和管理 WebSocket 连接，以及可以通过该连接发送和接收数据的 API。</p>
 <section id="id1">
-<h2>构造函数<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<h2>构造函数<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h2>
 <dl class="js function">
 <dt class="sig sig-object js" id="WebSocket">
-<span class="sig-name descname"><span class="pre">WebSocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">url</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">protocols</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WebSocket</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">protocols</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket" title="永久链接至目标"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">返回</dt>
 <dd class="field-odd"><p>返回一个 WebSocket 对象</p>
@@ -103,134 +131,134 @@
 
 </section>
 <section id="id2">
-<h2>常量<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<h2>常量<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
 <dl class="js data">
 <dt class="sig sig-object js" id="WebSocket.CONNECTING">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">CONNECTING</span></span><a class="headerlink" href="#WebSocket.CONNECTING" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTING</span></span></span><a class="headerlink" href="#WebSocket.CONNECTING" title="永久链接至目标"></a></dt>
 <dd><p>0</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WebSocket.OPEN">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">OPEN</span></span><a class="headerlink" href="#WebSocket.OPEN" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">OPEN</span></span></span><a class="headerlink" href="#WebSocket.OPEN" title="永久链接至目标"></a></dt>
 <dd><p>1</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WebSocket.CLOSING">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">CLOSING</span></span><a class="headerlink" href="#WebSocket.CLOSING" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CLOSING</span></span></span><a class="headerlink" href="#WebSocket.CLOSING" title="永久链接至目标"></a></dt>
 <dd><p>2</p>
 </dd></dl>
 
 <dl class="js data">
 <dt class="sig sig-object js" id="WebSocket.CLOSED">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">CLOSED</span></span><a class="headerlink" href="#WebSocket.CLOSED" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CLOSED</span></span></span><a class="headerlink" href="#WebSocket.CLOSED" title="永久链接至目标"></a></dt>
 <dd><p>3</p>
 </dd></dl>
 
 <p>以上是WebSocket 构造函数的原型中存在的一些常量，可通过 WebSocket.readyState 对照上述常量判断 WebSocket 连接 当前所处的状态</p>
 </section>
 <section id="id3">
-<h2>属性<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<h2>属性<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.binaryType">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">binaryType</span></span><a class="headerlink" href="#WebSocket.binaryType" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">binaryType</span></span></span><a class="headerlink" href="#WebSocket.binaryType" title="永久链接至目标"></a></dt>
 <dd><p>使用二进制的数据类型连接</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.bufferedAmount">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">bufferedAmount</span></span><a class="headerlink" href="#WebSocket.bufferedAmount" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">bufferedAmount</span></span></span><a class="headerlink" href="#WebSocket.bufferedAmount" title="永久链接至目标"></a></dt>
 <dd><p>只读 未发送至服务器的字节数</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.extensions">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">extensions</span></span><a class="headerlink" href="#WebSocket.extensions" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">extensions</span></span></span><a class="headerlink" href="#WebSocket.extensions" title="永久链接至目标"></a></dt>
 <dd><p>只读 服务器选择的扩展</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.onclose">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">onclose</span></span><a class="headerlink" href="#WebSocket.onclose" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onclose</span></span></span><a class="headerlink" href="#WebSocket.onclose" title="永久链接至目标"></a></dt>
 <dd><p>用于指定连接关闭后的回调函数</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.onerror">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">onerror</span></span><a class="headerlink" href="#WebSocket.onerror" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onerror</span></span></span><a class="headerlink" href="#WebSocket.onerror" title="永久链接至目标"></a></dt>
 <dd><p>用于指定连接失败后的回调函数</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.onmessage">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">onmessage</span></span><a class="headerlink" href="#WebSocket.onmessage" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onmessage</span></span></span><a class="headerlink" href="#WebSocket.onmessage" title="永久链接至目标"></a></dt>
 <dd><p>用于指定当从服务器接受到信息时的回调函数</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.onopen">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">onopen</span></span><a class="headerlink" href="#WebSocket.onopen" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">onopen</span></span></span><a class="headerlink" href="#WebSocket.onopen" title="永久链接至目标"></a></dt>
 <dd><p>用于指定连接成功后的回调函数</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.protocol">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">protocol</span></span><a class="headerlink" href="#WebSocket.protocol" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">protocol</span></span></span><a class="headerlink" href="#WebSocket.protocol" title="永久链接至目标"></a></dt>
 <dd><p>只读 服务器选择的下属协议</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.readyState">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">readyState</span></span><a class="headerlink" href="#WebSocket.readyState" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">readyState</span></span></span><a class="headerlink" href="#WebSocket.readyState" title="永久链接至目标"></a></dt>
 <dd><p>只读 当前的链接状态</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="WebSocket.url">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#WebSocket.url" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">url</span></span></span><a class="headerlink" href="#WebSocket.url" title="永久链接至目标"></a></dt>
 <dd><p>只读</p>
 </dd></dl>
 
 <dl class="js attribute">
 <dt class="sig sig-object js" id="id0">
-<span class="sig-name descname"><span class="pre">WebSocket</span></span><a class="headerlink" href="#id0" title="永久链接至目标"></a></dt>
+<span class="sig-name descname"><span class="n"><span class="pre">WebSocket</span></span></span><a class="headerlink" href="#id0" title="永久链接至目标"></a></dt>
 <dd><p>的绝对路径</p>
 </dd></dl>
 
 </section>
 <section id="id4">
-<h2>方法<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<h2>方法<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
 <dl class="js function">
 <dt class="sig sig-object js" id="WebSocket.close">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">code</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">reason</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.close" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.close" title="永久链接至目标"></a></dt>
 <dd><p>关闭当前链接</p>
 </dd></dl>
 
 <dl class="js function">
 <dt class="sig sig-object js" id="WebSocket.send">
-<span class="sig-prename descclassname"><span class="pre">WebSocket.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.send" title="永久链接至目标"></a></dt>
+<span class="sig-prename descclassname"><span class="n"><span class="pre">WebSocket</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">send</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket.send" title="永久链接至目标"></a></dt>
 <dd><p>向服务器发送数据</p>
 </dd></dl>
 
 <p>示例</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create WebSocket connection.</span>
-<span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost:8080&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create WebSocket connection.</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">socket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://localhost:8080&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Connection opened</span>
-<span class="nx">socket</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello Server!&#39;</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="c1">// Connection opened</span><span class="w"></span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello Server!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="c1">// Listen for messages</span>
-<span class="nx">socket</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Message from server &#39;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="c1">// Listen for messages</span><span class="w"></span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Message from server &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="id5">
-<h2>规范<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<h2>规范<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 54%" />
@@ -252,11 +280,11 @@
 </table>
 </section>
 <section id="id6">
-<h2>浏览器兼容性<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<h2>浏览器兼容性<a class="headerlink" href="#id6" title="此标题的永久链接"></a></h2>
 <p>Update compatibility data on GitHub</p>
 </section>
 <section id="id7">
-<h2>另见<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<h2>另见<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
 <p>Writing WebSocket client applications</p>
 </section>
 </section>
@@ -264,20 +292,20 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="API documention" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="API 文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="CloseEvent.html" class="btn btn-neutral float-right" title="CloseEvent" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

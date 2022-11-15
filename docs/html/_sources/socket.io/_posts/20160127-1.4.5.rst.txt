@@ -1,0 +1,16 @@
+Socket.IO 1.4.5
+================================
+
+
+We just published some quick fixes!
+
+-  Fixed ``socket.io-client`` usage with
+   `NativeScript <https://www.nativescript.org/>`_.
+-  Fixed graceful close of the attached http ``Server`` of ``socket.io``
+   and ``engine.io``.
+
+Get the latest client from the CDN:
+
+.. code:: html
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>

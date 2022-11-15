@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Socket.IO C++ &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Socket.IO C++ &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
@@ -32,17 +34,17 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
@@ -88,27 +90,27 @@
 <li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
-          <li><a href="index.html">Release history</a> &raquo;</li>
-      <li>Socket.IO C++</li>
+      <li><a href="../../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">socket.io 文档</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Release history</a></li>
+      <li class="breadcrumb-item active">Socket.IO C++</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/_posts/20150413-socket-io-cpp.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -119,7 +121,7 @@
            <div itemprop="articleBody">
              
   <section id="socket-io-c">
-<h1>Socket.IO C++<a class="headerlink" href="#socket-io-c" title="永久链接至标题"></a></h1>
+<h1>Socket.IO C++<a class="headerlink" href="#socket-io-c" title="此标题的永久链接"></a></h1>
 <p>I’m really proud to announce the first release of the Socket.IO C++
 Client on GitHub!</p>
 <p>Based on Boost and WebSocket++, this full-featured Socket.IO 1.0 client
@@ -130,7 +132,7 @@ and CLI chat clients!</p>
 communicates using a Socket.IO Node.JS chat server. Keep reading for
 step-by-step instructions.</p>
 <p style="text-align: center"></p><section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="此标题的永久链接"></a></h2>
 <p>If you’d like to follow along, begin by cloning the socket.io-client-cpp
 repository using the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
@@ -146,25 +148,25 @@ repository using the following:</p>
 QT.</p>
 </section>
 <section id="creating-a-qt-gui-application">
-<h2>Creating a QT GUI Application<a class="headerlink" href="#creating-a-qt-gui-application" title="永久链接至标题"></a></h2>
+<h2>Creating a QT GUI Application<a class="headerlink" href="#creating-a-qt-gui-application" title="此标题的永久链接"></a></h2>
 <p>Launch the QT Creator.</p>
 <p>On the welcome page, select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Project</span></code>, then create a
 <code class="docutils literal notranslate"><span class="pre">QT</span> <span class="pre">Widget</span> <span class="pre">Application.</span></code> Name it <code class="docutils literal notranslate"><span class="pre">SioChatDemo.</span></code></p>
 <p>The project structure should look like this:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">SioChatDemo</span>
-    <span class="o">|</span><span class="nx">__</span> <span class="nx">SioChatDemo</span><span class="p">.</span><span class="nx">pro</span>
-    <span class="o">|</span><span class="nx">__Headers</span>
-    <span class="o">|</span>   <span class="o">|</span><span class="nx">__mainwindow</span><span class="p">.</span><span class="nx">h</span>
-    <span class="o">|</span><span class="nx">__Sources</span>
-    <span class="o">|</span>   <span class="o">|</span><span class="nx">__main</span><span class="p">.</span><span class="nx">cpp</span>
-    <span class="o">|</span>   <span class="o">|</span><span class="nx">__mainwindow</span><span class="p">.</span><span class="nx">cpp</span>
-    <span class="o">|</span><span class="nx">__Forms</span>
-        <span class="o">|</span><span class="nx">__mainwindow</span><span class="p">.</span><span class="nx">ui</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">SioChatDemo</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="nx">__</span><span class="w"> </span><span class="nx">SioChatDemo</span><span class="p">.</span><span class="nx">pro</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="nx">__Headers</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w">   </span><span class="o">|</span><span class="nx">__mainwindow</span><span class="p">.</span><span class="nx">h</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="nx">__Sources</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w">   </span><span class="o">|</span><span class="nx">__main</span><span class="p">.</span><span class="nx">cpp</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w">   </span><span class="o">|</span><span class="nx">__mainwindow</span><span class="p">.</span><span class="nx">cpp</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="nx">__Forms</span><span class="w"></span>
+<span class="w">        </span><span class="o">|</span><span class="nx">__mainwindow</span><span class="p">.</span><span class="nx">ui</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="importing-an-sioclient">
-<h2>Importing an SioClient<a class="headerlink" href="#importing-an-sioclient" title="永久链接至标题"></a></h2>
+<h2>Importing an SioClient<a class="headerlink" href="#importing-an-sioclient" title="此标题的永久链接"></a></h2>
 <p>Lets copy the SioClient into the QT project under the subfolder
 <code class="docutils literal notranslate"><span class="pre">sioclient.</span></code></p>
 <p>Edit <code class="docutils literal notranslate"><span class="pre">SioChatDemo.pro</span></code> to configure paths and compile options by
@@ -189,7 +191,7 @@ names as <code class="docutils literal notranslate"><span class="pre">emit</span
 <p>Use <code class="docutils literal notranslate"><span class="pre">c++11</span></code> to ask for C++11 support.</p>
 </section>
 <section id="importing-boost">
-<h2>Importing Boost<a class="headerlink" href="#importing-boost" title="永久链接至标题"></a></h2>
+<h2>Importing Boost<a class="headerlink" href="#importing-boost" title="此标题的永久链接"></a></h2>
 <p>We now have our boost <code class="docutils literal notranslate"><span class="pre">headers</span></code> and a fat boost <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">lib</span></code> named
 <code class="docutils literal notranslate"><span class="pre">libboost.a</span></code>(non-win32) or <code class="docutils literal notranslate"><span class="pre">boost.lib</span></code>(win32).</p>
 <p>To import them, we need to edit <code class="docutils literal notranslate"><span class="pre">SioChatDemo.pro</span></code> again by adding a
@@ -205,7 +207,7 @@ header including the following:</p>
 </div>
 </section>
 <section id="create-the-main-window-ui">
-<h2>Create the Main Window UI<a class="headerlink" href="#create-the-main-window-ui" title="永久链接至标题"></a></h2>
+<h2>Create the Main Window UI<a class="headerlink" href="#create-the-main-window-ui" title="此标题的永久链接"></a></h2>
 <p>Create a simple UI by dragging and dropping a widget from the widget box
 on the left-hand side.</p>
 <p style="text-align: center"></p><p>It contains the following:</p>
@@ -219,7 +221,7 @@ on the left-hand side.</p>
 </ul>
 </section>
 <section id="add-slots-in-the-main-window">
-<h2>Add Slots in the Main Window<a class="headerlink" href="#add-slots-in-the-main-window" title="永久链接至标题"></a></h2>
+<h2>Add Slots in the Main Window<a class="headerlink" href="#add-slots-in-the-main-window" title="此标题的永久链接"></a></h2>
 <p>The following slots need to be added in the <code class="docutils literal notranslate"><span class="pre">mainwindow</span></code> class to
 handle UI events:</p>
 <ul class="simple">
@@ -230,7 +232,7 @@ handle UI events:</p>
 </ul>
 <p>Insert the following code into the <code class="docutils literal notranslate"><span class="pre">MainWindow</span></code> class in
 <code class="docutils literal notranslate"><span class="pre">mainwindow.h</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="nl">Q_SLOTS</span><span class="p">:</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Q_SLOTS</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">SendBtnClicked</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">TypingChanged</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">LoginClicked</span><span class="p">();</span><span class="w"></span>
@@ -239,7 +241,7 @@ handle UI events:</p>
 </div>
 </section>
 <section id="connect-the-ui-event-signal-and-slots">
-<h2>Connect the UI Event Signal and Slots<a class="headerlink" href="#connect-the-ui-event-signal-and-slots" title="永久链接至标题"></a></h2>
+<h2>Connect the UI Event Signal and Slots<a class="headerlink" href="#connect-the-ui-event-signal-and-slots" title="此标题的永久链接"></a></h2>
 <p>Open <code class="docutils literal notranslate"><span class="pre">mainwindow.ui</span></code> in the design mode. Switch to the
 <code class="docutils literal notranslate"><span class="pre">signals/slots</span></code> mode using <code class="docutils literal notranslate"><span class="pre">Menu-&gt;Edit-&gt;Edit</span> <span class="pre">Signals/Slots</span></code>.</p>
 <p>Click and hold the widget and drag it to the window (the cursor will
@@ -250,15 +252,15 @@ Add the slot function names added in <code class="docutils literal notranslate">
 The result should look like this:</p>
 <p style="text-align: center"></p></section>
 <section id="adding-ui-refresh-signals-slots">
-<h2>Adding UI Refresh Signals/Slots<a class="headerlink" href="#adding-ui-refresh-signals-slots" title="永久链接至标题"></a></h2>
+<h2>Adding UI Refresh Signals/Slots<a class="headerlink" href="#adding-ui-refresh-signals-slots" title="此标题的永久链接"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sio::client</span></code> callbacks are not in the UI thread. However, the UI
 must be updated with those callbacks, so we need a signal for the non-UI
 thread to request the <code class="docutils literal notranslate"><span class="pre">slots</span></code> functions in the UI thread. To signal
 that <code class="docutils literal notranslate"><span class="pre">QListWidgetItem</span></code> has been added, insert the following:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// in mainwindow.h</span>
 <span class="nl">Q_SIGNALS</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">RequestAddListItem</span><span class="p">(</span><span class="n">QListWidgetItem</span><span class="w"> </span><span class="o">*</span><span class="n">item</span><span class="p">);</span><span class="w"></span>
-<span class="k">private</span><span class="w"> </span><span class="nl">Q_SLOTS</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">RequestAddListItem</span><span class="p">(</span><span class="n">QListWidgetItem</span><span class="w"> </span><span class="o">*</span><span class="n">item</span><span class="p">);</span><span class="w"></span>
+<span class="k">private</span><span class="w"> </span><span class="n">Q_SLOTS</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">AddListItem</span><span class="p">(</span><span class="n">QListWidgetItem</span><span class="w"> </span><span class="o">*</span><span class="n">item</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -275,7 +277,7 @@ that <code class="docutils literal notranslate"><span class="pre">QListWidgetIte
 </div>
 </section>
 <section id="setting-up-the-socket">
-<h2>Setting up the Socket<a class="headerlink" href="#setting-up-the-socket" title="永久链接至标题"></a></h2>
+<h2>Setting up the Socket<a class="headerlink" href="#setting-up-the-socket" title="此标题的永久链接"></a></h2>
 <p>For single-window applications, simply let <code class="docutils literal notranslate"><span class="pre">MainWindow</span></code> class hold the
 <code class="docutils literal notranslate"><span class="pre">sio::client</span></code> object by declaring a <code class="docutils literal notranslate"><span class="pre">unique_ptr</span></code> member of the
 <code class="docutils literal notranslate"><span class="pre">sio::client</span></code> and several event handling functions in
@@ -327,7 +329,7 @@ that <code class="docutils literal notranslate"><span class="pre">QListWidgetIte
 </div>
 </section>
 <section id="managing-connection-state">
-<h2>Managing Connection State<a class="headerlink" href="#managing-connection-state" title="永久链接至标题"></a></h2>
+<h2>Managing Connection State<a class="headerlink" href="#managing-connection-state" title="此标题的永久链接"></a></h2>
 <p>We have several connection listeners for connection events.</p>
 <p>First, we want to send a login message when were connected; we get the
 default <code class="docutils literal notranslate"><span class="pre">socket</span></code> from the <code class="docutils literal notranslate"><span class="pre">client</span></code> to do that.</p>
@@ -344,9 +346,9 @@ connect.</p>
 <p>````cpp void MainWindow::OnClosed(client::close_reason const&amp; reason) {
 //restore UI to pre-login state }</p>
 <p>void MainWindow::OnFailed() { //restore UI to pre-login state }</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">If</span> <span class="nx">we</span> <span class="nx">exit</span> <span class="nx">the</span> <span class="sb">`MainWindow`</span><span class="p">,</span> <span class="nx">we</span> <span class="nx">need</span> <span class="nx">to</span> <span class="nx">clear</span> <span class="nx">the</span> <span class="nx">event</span> <span class="nx">bindings</span> <span class="nx">and</span> <span class="nx">listeners</span><span class="p">.</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">If</span><span class="w"> </span><span class="nx">we</span><span class="w"> </span><span class="nx">exit</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="sb">`MainWindow`</span><span class="p">,</span><span class="w"> </span><span class="nx">we</span><span class="w"> </span><span class="nx">need</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">clear</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="nx">bindings</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">listeners</span><span class="p">.</span><span class="w"></span>
 
-<span class="nx">The</span> <span class="sb">`sio::client`</span> <span class="nx">object</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">destroyed</span> <span class="nx">using</span> <span class="sb">`unique_ptr`</span><span class="p">.</span>
+<span class="nx">The</span><span class="w"> </span><span class="sb">`sio::client`</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">destroyed</span><span class="w"> </span><span class="nx">using</span><span class="w"> </span><span class="sb">`unique_ptr`</span><span class="p">.</span><span class="w"></span>
 
 <span class="sb">```cpp</span>
 <span class="sb">MainWindow::~MainWindow()</span>
@@ -359,7 +361,7 @@ connect.</p>
 </div>
 </section>
 <section id="handling-socket-io-events">
-<h2>Handling Socket.IO Events<a class="headerlink" href="#handling-socket-io-events" title="永久链接至标题"></a></h2>
+<h2>Handling Socket.IO Events<a class="headerlink" href="#handling-socket-io-events" title="此标题的永久链接"></a></h2>
 <p>We’ll need to handle socket.io events in our functions they are bound
 to.</p>
 <p>For example, we need to show received messages in the list view.</p>
@@ -382,7 +384,7 @@ to.</p>
 </div>
 </section>
 <section id="wrapping-up-sending-the-message">
-<h2>Wrapping Up: Sending the Message<a class="headerlink" href="#wrapping-up-sending-the-message" title="永久链接至标题"></a></h2>
+<h2>Wrapping Up: Sending the Message<a class="headerlink" href="#wrapping-up-sending-the-message" title="此标题的永久链接"></a></h2>
 <p>When <code class="docutils literal notranslate"><span class="pre">sendBtn</span></code> is clicked, we need to send the text in <code class="docutils literal notranslate"><span class="pre">messageEdit</span></code>
 to the chatroom.</p>
 <p>Add the following code to <code class="docutils literal notranslate"><span class="pre">SendBtnClicked()</span></code>:</p>
@@ -406,7 +408,7 @@ to the chatroom.</p>
 </div>
 </section>
 <section id="further-reading">
-<h2>Further Reading<a class="headerlink" href="#further-reading" title="永久链接至标题"></a></h2>
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="此标题的永久链接"></a></h2>
 <p>You can run the demo project to get a closer look. Before you run it,
 please follow the instructions to make the Socket.io client library.</p>
 <p>Don’t forget to star the project on GitHub to get updates!</p>
@@ -416,7 +418,7 @@ please follow the instructions to make the Socket.io client library.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="20150714-p2p.html" class="btn btn-neutral float-left" title="Socket.IO P2P" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="20150309-ios.html" class="btn btn-neutral float-right" title="Socket.IO on iOS" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -424,12 +426,12 @@ please follow the instructions to make the Socket.io client library.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

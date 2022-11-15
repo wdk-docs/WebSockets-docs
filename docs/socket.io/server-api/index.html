@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serve API &mdash; WebSockets Docs v2019.0613 文档</title>
+  <title>Serve API &mdash; WebSockets Docs v2022.1115 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
@@ -32,17 +34,17 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="text" name="q" placeholder="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API 文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io 文档</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
@@ -60,26 +62,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">博客</a></li>
 </ul>
 
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../contents.html">WebSockets Docs</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../contents.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">socket.io documentation</a> &raquo;</li>
-      <li>Serve API</li>
+      <li><a href="../../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">socket.io 文档</a></li>
+      <li class="breadcrumb-item active">Serve API</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/socket.io/server-api/index.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -90,13 +92,81 @@
            <div itemprop="articleBody">
              
   <section id="serve-api">
-<h1>Serve API<a class="headerlink" href="#serve-api" title="永久链接至标题"></a></h1>
+<h1>Serve API<a class="headerlink" href="#serve-api" title="此标题的永久链接"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="API.html">Server API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Namespace.html">Namespace</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Socket.html">Socket</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Client.html">Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Server API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="API.html#new-Server"><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Server</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#id0"><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Server</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#id1"><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Server</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.sockets"><code class="docutils literal notranslate"><span class="pre">server.sockets</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.serveClient"><code class="docutils literal notranslate"><span class="pre">server.serveClient()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.path"><code class="docutils literal notranslate"><span class="pre">server.path()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.adapter"><code class="docutils literal notranslate"><span class="pre">server.adapter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.server.origins"><code class="docutils literal notranslate"><span class="pre">server.server.origins()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.origins"><code class="docutils literal notranslate"><span class="pre">server.origins()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.attach"><code class="docutils literal notranslate"><span class="pre">server.attach()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#id3"><code class="docutils literal notranslate"><span class="pre">server.attach()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.listen"><code class="docutils literal notranslate"><span class="pre">server.listen()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#id4"><code class="docutils literal notranslate"><span class="pre">server.listen()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.bind"><code class="docutils literal notranslate"><span class="pre">server.bind()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.onconnection"><code class="docutils literal notranslate"><span class="pre">server.onconnection()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.of"><code class="docutils literal notranslate"><span class="pre">server.of()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.close"><code class="docutils literal notranslate"><span class="pre">server.close()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API.html#server.engine.generateId"><code class="docutils literal notranslate"><span class="pre">server.engine.generateId</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Namespace.html">Namespace</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.name"><code class="docutils literal notranslate"><span class="pre">namespace.name</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.connected"><code class="docutils literal notranslate"><span class="pre">namespace.connected</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.adapter"><code class="docutils literal notranslate"><span class="pre">namespace.adapter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.to"><code class="docutils literal notranslate"><span class="pre">namespace.to</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.in"><code class="docutils literal notranslate"><span class="pre">namespace.in</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.namespace.emit"><code class="docutils literal notranslate"><span class="pre">namespace.namespace.emit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.clients"><code class="docutils literal notranslate"><span class="pre">namespace.clients</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#namespace.use"><code class="docutils literal notranslate"><span class="pre">namespace.use</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#Event.connect"><code class="docutils literal notranslate"><span class="pre">Event.connect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#Event.connection"><code class="docutils literal notranslate"><span class="pre">Event.connection()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#Flag.volatile"><code class="docutils literal notranslate"><span class="pre">Flag.volatile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#Flag.binary"><code class="docutils literal notranslate"><span class="pre">Flag.binary()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Namespace.html#Flag.local"><code class="docutils literal notranslate"><span class="pre">Flag.local()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Socket.html">Socket</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.id"><code class="docutils literal notranslate"><span class="pre">socket.id</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.rooms"><code class="docutils literal notranslate"><span class="pre">socket.rooms</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.client"><code class="docutils literal notranslate"><span class="pre">socket.client</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.conn"><code class="docutils literal notranslate"><span class="pre">socket.conn</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.request"><code class="docutils literal notranslate"><span class="pre">socket.request</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.handshake"><code class="docutils literal notranslate"><span class="pre">socket.handshake</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.use"><code class="docutils literal notranslate"><span class="pre">socket.use</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.send"><code class="docutils literal notranslate"><span class="pre">socket.send</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.emit"><code class="docutils literal notranslate"><span class="pre">socket.emit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.on"><code class="docutils literal notranslate"><span class="pre">socket.on</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.once"><code class="docutils literal notranslate"><span class="pre">socket.once</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.removeListener"><code class="docutils literal notranslate"><span class="pre">socket.removeListener</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.removeAllListeners"><code class="docutils literal notranslate"><span class="pre">socket.removeAllListeners</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.eventNames"><code class="docutils literal notranslate"><span class="pre">socket.eventNames</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.join"><code class="docutils literal notranslate"><span class="pre">socket.join</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#id0"><code class="docutils literal notranslate"><span class="pre">socket.join</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.leave"><code class="docutils literal notranslate"><span class="pre">socket.leave</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.to"><code class="docutils literal notranslate"><span class="pre">socket.to</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.in"><code class="docutils literal notranslate"><span class="pre">socket.in</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.compress"><code class="docutils literal notranslate"><span class="pre">socket.compress</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#socket.disconnect"><code class="docutils literal notranslate"><span class="pre">socket.disconnect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#Flag.broadcast"><code class="docutils literal notranslate"><span class="pre">Flag.broadcast</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#Flag.volatile"><code class="docutils literal notranslate"><span class="pre">Flag.volatile</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#Flag.binary"><code class="docutils literal notranslate"><span class="pre">Flag.binary</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#Event.disconnect"><code class="docutils literal notranslate"><span class="pre">Event.disconnect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#Event.error"><code class="docutils literal notranslate"><span class="pre">Event.error</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Socket.html#Event.disconnecting"><code class="docutils literal notranslate"><span class="pre">Event.disconnecting</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Client.html">Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Client.html#client.conn"><code class="docutils literal notranslate"><span class="pre">client.conn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Client.html#client.request"><code class="docutils literal notranslate"><span class="pre">client.request()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -104,7 +174,7 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="../client-api/Manager.html" class="btn btn-neutral float-left" title="Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="API.html" class="btn btn-neutral float-right" title="Server API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
@@ -112,12 +182,12 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
   </div>
 
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

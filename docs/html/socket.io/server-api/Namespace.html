@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namespace &mdash; WebSockets Docs v2019.0613 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Socket" href="Socket.html" />
+    <link rel="prev" title="Server API" href="API.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">socket.io documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">Chat - Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-api/index.html">Client API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Serve API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="API.html">Server API</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Namespace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.name"><code class="docutils literal notranslate"><span class="pre">namespace.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.connected"><code class="docutils literal notranslate"><span class="pre">namespace.connected</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.adapter"><code class="docutils literal notranslate"><span class="pre">namespace.adapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.to"><code class="docutils literal notranslate"><span class="pre">namespace.to</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.in"><code class="docutils literal notranslate"><span class="pre">namespace.in</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.namespace.emit"><code class="docutils literal notranslate"><span class="pre">namespace.namespace.emit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.clients"><code class="docutils literal notranslate"><span class="pre">namespace.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namespace.use"><code class="docutils literal notranslate"><span class="pre">namespace.use</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Event.connect"><code class="docutils literal notranslate"><span class="pre">Event.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Event.connection"><code class="docutils literal notranslate"><span class="pre">Event.connection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Flag.volatile"><code class="docutils literal notranslate"><span class="pre">Flag.volatile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Flag.binary"><code class="docutils literal notranslate"><span class="pre">Flag.binary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Flag.local"><code class="docutils literal notranslate"><span class="pre">Flag.local()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Socket.html">Socket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Client.html">Client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/index.html">Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket.io-protocol.html">socket.io-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../_posts/index.html">Release history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../socket-io-with-apache-cordova.html">Socket.IO — Apache Cordova</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weapp.socket.io.html">weapp.socket.io</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blogs/index.html">Blogs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">socket.io documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Serve API</a></li>
+      <li class="breadcrumb-item active">Namespace</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/socket.io/server-api/Namespace.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="namespace">
+<h1>Namespace<a class="headerlink" href="#namespace" title="此标题的永久链接"></a></h1>
+<p>Represents a pool of sockets connected under a given scope identified by a pathname (eg: <code class="docutils literal notranslate"><span class="pre">/chat</span></code>).</p>
+<p>A client always connects to <code class="docutils literal notranslate"><span class="pre">/</span></code> (the main namespace), then potentially
+connect to other namespaces (while using the same underlying
+connection).</p>
+<p>For the how and why, please take a look at: <a class="reference external" href="/docs/rooms-and-namespaces/">Rooms and Namespaces</a>.</p>
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.name">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#namespace.name" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><em>(String)</em></p></li>
+</ul>
+<p>The namespace identifier property.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.connected">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">connected</span></span></span><a class="headerlink" href="#namespace.connected" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><em>(Object)</em></p></li>
+</ul>
+<p>The hash of <code class="docutils literal notranslate"><span class="pre">Socket</span></code> objects that are connected to this namespace, indexed by <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.adapter">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">adapter</span></span></span><a class="headerlink" href="#namespace.adapter" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><em>(Adapter)</em></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">Adapter</span></code> used for the namespace. Useful when using the
+<code class="docutils literal notranslate"><span class="pre">Adapter</span></code> based on <a class="reference external" href="https://github.com/socketio/socket.io-redis">Redis</a>,
+as it exposes methods to manage sockets and rooms accross your cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>the adapter of the main namespace can be accessed with <code class="docutils literal notranslate"><span class="pre">io.of('/').adapter</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.to">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">to</span></span></span><a class="headerlink" href="#namespace.to" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">room</span></code> <em>(String)</em></p></li>
+<li><p><strong>Returns</strong> <code class="docutils literal notranslate"><span class="pre">Namespace</span></code> for chaining</p></li>
+</ul>
+<p>Sets a modifier for a subsequent event emission that the event will only
+be <em>broadcasted</em> to clients that have joined the given <code class="docutils literal notranslate"><span class="pre">room</span></code>.</p>
+<p>To emit to multiple rooms, you can call <code class="docutils literal notranslate"><span class="pre">to</span></code> several times.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">adminNamespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="nx">adminNamespace</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;level1&#39;</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">some</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.in">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">in</span></span></span><a class="headerlink" href="#namespace.in" title="永久链接至目标"></a></dt>
+<dd><p>Synonym of <a class="reference external" href="#namespace-to-room">namespace.to(room)</a>.</p>
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.namespace.emit">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">emit</span></span></span><a class="headerlink" href="#namespace.namespace.emit" title="永久链接至目标"></a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eventName</span></code> <em>(String)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code></p></li>
+</ul>
+<p>Emits an event to all connected clients. The following two are
+equivalent:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event sent to all connected clients&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// main namespace</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">chat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/chat&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">chat</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event sent to all connected clients in chat namespace&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>acknowledgements are not supported when emitting from namespace.</p>
+</div>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.clients">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">clients</span></span></span><a class="headerlink" href="#namespace.clients" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> <em>(Function)</em></p></li>
+</ul>
+<p>Gets a list of client IDs connected to this namespace (across all nodes if applicable).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;socket.io&#39;</span><span class="p">)();</span><span class="w"></span>
+<span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/chat&#39;</span><span class="p">).</span><span class="nx">clients</span><span class="p">((</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">clients</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clients</span><span class="p">);</span><span class="w"> </span><span class="c1">// =&gt; [PZDoMHjiu8PYfRiKAAAF, Anw2LatarvGVVXEIAAAD]</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p>An example to get all clients in namespace’s room:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/chat&#39;</span><span class="p">).</span><span class="ow">in</span><span class="p">(</span><span class="s1">&#39;general&#39;</span><span class="p">).</span><span class="nx">clients</span><span class="p">((</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">clients</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clients</span><span class="p">);</span><span class="w"> </span><span class="c1">// =&gt; [Anw2LatarvGVVXEIAAAD]</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p>As with broadcasting, the default is all clients from the default
+namespace (‘/’):</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">clients</span><span class="p">((</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">clients</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clients</span><span class="p">);</span><span class="w"> </span><span class="c1">// =&gt; [6em3d4TJP8Et9EMNAAAA, G5p55dHhGgUnLUctAAAB]</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="js attribute">
+<dt class="sig sig-object js" id="namespace.use">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">use</span></span></span><a class="headerlink" href="#namespace.use" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fn</span></code> <em>(Function)</em></p></li>
+</ul>
+<p>Registers a middleware, which is a function that gets executed for every
+incoming <code class="docutils literal notranslate"><span class="pre">Socket</span></code>, and receives as parameters the socket and a
+function to optionally defer execution to the next registered
+middleware.</p>
+<p>Errors passed to middleware callbacks are sent as special <code class="docutils literal notranslate"><span class="pre">error</span></code>
+packets to clients.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">socket</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">cookie</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">next</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="nx">next</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Authentication error&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.connect">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Event</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">connect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connect" title="永久链接至目标"></a></dt>
+<dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">socket</span></code> <em>(Socket)</em> socket connection with client</p></li>
+</ul>
+<p>Fired upon a connection from client.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">socket</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/admin&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">socket</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Event.connection">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Event</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">connection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event.connection" title="永久链接至目标"></a></dt>
+<dd><p>Synonym of <a class="reference external" href="#Event-‘connect’">Event: ‘connect’</a>.</p>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Flag.volatile">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Flag</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">volatile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Flag.volatile" title="永久链接至目标"></a></dt>
+<dd><p>Sets a modifier for a subsequent event emission that the event data may
+be lost if the clients are not ready to receive messages (because of
+network slowness or other issues, or because they’re connected through
+long polling and is in the middle of a request-response cycle).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="kr">volatile</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">some</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// the clients may or may not receive it</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Flag.binary">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Flag</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">binary</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Flag.binary" title="永久链接至目标"></a></dt>
+<dd><p>Specifies whether there is binary data in the emitted data.
+Increases performance when specified. Can be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">binary</span><span class="p">(</span><span class="kc">false</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">some</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="Flag.local">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">Flag</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">local</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Flag.local" title="永久链接至目标"></a></dt>
+<dd><p>Sets a modifier for a subsequent event emission that the event data will only be <em>broadcast</em> to the current node
+(when the <a class="reference external" href="https://github.com/socketio/socket.io-redis">Redis adapter</a> is used).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">io</span><span class="p">.</span><span class="nx">local</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;an event&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">some</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="API.html" class="btn btn-neutral float-left" title="Server API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="Socket.html" class="btn btn-neutral float-right" title="Socket" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2021, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
