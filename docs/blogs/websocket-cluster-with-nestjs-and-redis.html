@@ -21,6 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="NestJS 使用 ws 模块的正确姿势" href="native-websock-in-nestjs.html" />
     <link rel="prev" title="Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients" href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html" /> 
 </head>
 
@@ -54,6 +55,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">测试场景</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="native-websock-in-nestjs.html">NestJS 使用 ws 模块的正确姿势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scalable-websockets-with-nestjs-and-redis.html">使用NestJS和Redis扩展WebSocketss</a></li>
 </ul>
 </li>
 </ul>
@@ -85,7 +88,7 @@
              
   <section id="nestjs-redis-websocket">
 <h1>使用 NestJs 和 Redis 实现 WebSocket 集群<a class="headerlink" href="#nestjs-redis-websocket" title="此标题的永久链接"></a></h1>
-<p>&gt; <a class="reference external" href="https://medium.com/&#64;mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed">https://medium.com/&#64;mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed</a></p>
+<p><a class="reference external" href="https://medium.com/&#64;mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed">https://medium.com/&#64;mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed</a></p>
 <p>扩展是后端应用程序生活中不可避免的一部分，一旦你决定将你的应用程序扩展到多个实例，
 你将面临处理多个客户端(手机、笔记本电脑等)的用户的问题，每个客户端都连接到你集群的一个随机实例。</p>
 <p>在本文中，我们将定义这个问题，并使用NestJs和Redis围绕它制定解决方案。</p>
@@ -240,7 +243,10 @@ npm i --save-dev @types/redis
 </pre></div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
 <p>createClient从“redis”包中导入</p>
+</div>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">channelDiscovery</span></code>: 将在Redis上保存其serviceId，过期时间为3秒。
@@ -338,6 +344,7 @@ Received message <span class="m">8</span>:21:57 AM <span class="p">|</span> from
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html" class="btn btn-neutral float-left" title="Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="native-websock-in-nestjs.html" class="btn btn-neutral float-right" title="NestJS 使用 ws 模块的正确姿势" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

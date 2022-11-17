@@ -1,14 +1,7 @@
 Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients
 ============================================================================
 
-> https://karlhadwen.medium.com/node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients-44a8e26a953e
-
-
-Karl Hadwen
-Karl Hadwen
-
-May 29·6 min read
-
+https://karlhadwen.medium.com/node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients-44a8e26a953e
 
 
 
@@ -23,7 +16,7 @@ Install our dependencies
 yarn add express ws
 If you are using npm, you can install the dependencies that we need for this tutorial by using npm install express ws
 
-.. code:: json
+.. code-block:: json
 
     {
       "name": "rtm",
@@ -41,7 +34,7 @@ Don’t worry if your version numbers on the dependencies are different, the aut
 Creating our server.js file
 
 
-.. code:: js
+.. code-block:: js
 
     const express = require('express');
     const http = require('http');
@@ -210,7 +203,7 @@ Once we have a connection to the server, we simply console.log a message that st
         
     ws.onopen = () => {
       console.log('Connection opened!');
-    }
+    } 
 
 Following the above, we then proceed to check for a message. 
 

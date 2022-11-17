@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NestJS 使用 ws 模块的正确姿势 &mdash; WebSockets Docs v2022.1115 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="使用NestJS和Redis扩展WebSocketss" href="scalable-websockets-with-nestjs-and-redis.html" />
+    <link rel="prev" title="使用 NestJs 和 Redis 实现 WebSocket 集群" href="websocket-cluster-with-nestjs-and-redis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">博客</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html">Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket-cluster-with-nestjs-and-redis.html">使用 NestJs 和 Redis 实现 WebSocket 集群</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NestJS 使用 ws 模块的正确姿势</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">概念</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gateway">Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adapter">Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">其他东西</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">实践</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">分布式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">小结</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scalable-websockets-with-nestjs-and-redis.html">使用NestJS和Redis扩展WebSocketss</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">博客</a></li>
+      <li class="breadcrumb-item active">NestJS 使用 ws 模块的正确姿势</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/blogs/native-websock-in-nestjs.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nestjs-ws">
+<h1>NestJS 使用 ws 模块的正确姿势<a class="headerlink" href="#nestjs-ws" title="此标题的永久链接"></a></h1>
+<p><a class="reference external" href="https://xknow.net/native-websock-in-nestjs/">https://xknow.net/native-websock-in-nestjs/</a></p>
+<p>最近在用 WebSocket 搞点事情，但是又不想用 socket.io，便决定用 ws 模块来实现后台的业务。无奈 NestJS 对 ws 模块的文档描述有限，结合 ws 模块的使用方式和 NestJS 提供的实例，整理了一份使用 ws 模块的正确姿势。同时，基于业务的需求，还对其进行了分布式的支持。</p>
+<section id="id1">
+<h2>概念<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h2>
+<p>不得不说，在 NestJS 中，从接触之初，就有着太多的概念，比如一个中间件，划分出了守卫、管道、拦截器等等。在 NestJS 中使用 Websockets，也是有着几个概念，不过也比较简单，这里总结一下各自的内容。</p>
+</section>
+<section id="gateway">
+<h2>Gateway<a class="headerlink" href="#gateway" title="此标题的永久链接"></a></h2>
+<p>在 Nest.js 中 WebSocket 的处理单元被称为 Gateway ，其实就是类似于普通 HTTP 模块中的 Controller。&#64;SubscribeMessage() 装饰器可以看做是匹配响应用的 Pattern，或者当做 Router。</p>
+<p>Gateway 本质上也是一个 Provider，经由 NestJS 实例化，并在实例化的时候依据元信息创建 Websocket Server。NestJS 支持两种平台，也就是 socket.io 和 ws，NestJS在 socket.io 平台下的功能多一些，也是倚赖 socket.io 所提供的高级特性。ws 模块与之比起来，功能性上逊色了不少。不过 NestJS 文档中讲，ws 模块比 socket.io 快很多，但是大部分时候没必要，用 socket.io 就挺好。</p>
+<p>可是我还是用了，出于一些业务情景的考量，最后还是选了 ws 模块，所以接下来讲如何接入 ws 模块。</p>
+</section>
+<section id="adapter">
+<h2>Adapter<a class="headerlink" href="#adapter" title="此标题的永久链接"></a></h2>
+<p>字面意思就叫适配器。在文档中，适配器相关的内容是放在了最后一个章节，这是因为以 socket.io 为主来讲解 Websocket 在 NestJS 中的用法的情况下，这个的确没那么重要。但我要着重写一下，是因为用 ws 模块的话，写一个合适的 Adapter 就至关重要了。</p>
+<p>当然，可以直接复制文档中的 ws-adapter.ts 这个代码块的内容，作为适配器来使用。这里对一些关键的内容做一定的说明。</p>
+<p>首先 WsAdapter 这个类是实现了 WebSocketAdapter 这个接口：</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Observable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;rxjs&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">WsMessageHandler</span><span class="o">&lt;</span><span class="nx">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">WebSocketAdapter</span><span class="o">&lt;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TServer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">any</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">any</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">TOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">any</span><span class="w"></span>
+<span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">create</span><span class="p">(</span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">TOptions</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">TServer</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">bindClientConnect</span><span class="p">(</span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="kt">TServer</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="kt">Function</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">bindClientDisconnect</span><span class="o">?</span><span class="p">(</span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">TClient</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="kt">Function</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">bindMessageHandlers</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="kt">TClient</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">handlers</span><span class="o">:</span><span class="w"> </span><span class="kt">WsMessageHandler</span><span class="p">[],</span><span class="w"></span>
+<span class="w">    </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">close</span><span class="p">(</span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="kt">TServer</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">create</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<p>这个方法会让 NestJS App 在使用 app.useWebSocketAdapter() 后被调用，来创建一个 WebSocket Server 对象。</p>
+<p>bindClientConnect()
+该方法会拿到 Gateway 类中的 handleConnection() 方法作为第二个 callback 参数。从示例代码中便能看出是拿到 callback 方法的引用后，与 WebSocket Server 的 connection 事件做了一个绑定。</p>
+<p>bindClientDisconnect()
+该方法与 bindClientConnect() 一样，不过对应的是 Gateway 类中的 handleDisconnect() 方法。</p>
+<p>bindMessageHandlers()
+该方法会拿到在 Gateway 类中通过 &#64;SubscribeMessage() 装饰器标记的方法列表，并根据消息的主题进行路由。官方示例的方式，也是 &#64;nestjs/common 包中提供的路由方式，是通过 payload 中的 event 字段实现的，在装饰器中所写的字符串，自然也就是用来匹配 event 字段所用。</p>
+<p>当然，如果想实现更高级的特性，甚至可以写成常规意义上的路由格式甚至正则表达式，然后在此处自定义实现自己的路由机制。</p>
+<p>close()
+这个方法没有过多探究，盲猜是实例销毁前会执行的吧，我是照着文档写上把服务关闭即可。</p>
+</section>
+<section id="id2">
+<h2>其他东西<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+<p>剩下的诸如 Exception filters、Pipes、Guards 这些与 NestJS 中的概念基本一致，也是在消息到达真正的处理函数之前的一些中间件，来实现鉴权、数据转换、异常捕获等的处理。</p>
+</section>
+<section id="id3">
+<h2>实践<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
+<p>如果使用 NestJS 所提供的 WebSocket Adapter，那么实际实现一个 WebSocket 服务端，只需要写一个 Gateway 即可，还是非常简单的：</p>
+<p>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+import { Server } from ‘ws’;
+import {</p>
+<blockquote>
+<div><p>SubscribeMessage,
+WebSocketGateway,
+WebSocketServer,</p>
+</div></blockquote>
+<p>} from <a class="reference external" href="mailto:'&#37;&#52;&#48;nestjs/websockets">‘<span>&#64;</span>nestjs/websockets</a>’;
+import * as WebSocket from ‘ws’;
+import { IncomingMessage } from ‘http’;</p>
+<p>&#64;WebSocketGateway(4000)
+export class TestGateway {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>async handleConnection(client: WebSocket, request: IncomingMessage) {</dt><dd><p>console.log(request.url);</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="simple">
+<dt>handleDisconnect(client: WebSocket) {</dt><dd><p>console.log(client);</p>
+</dd>
+</dl>
+<p>}</p>
+<p>&#64;SubscribeMessage(‘event’)
+onEvent(client: any, data: any): any {</p>
+<blockquote>
+<div><p>console.log(data);
+return {</p>
+<blockquote>
+<div><p>event: ‘event’,
+response: ‘text’,</p>
+</div></blockquote>
+<p>};</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}
+其中 handleConnection() 是定义在 OnGatewayConnection 接口中的方法，用来响应客户端连接到服务端的事件，在上文中的 Adapter 中有提到过。</p>
+<p>handleDisconnect() 同上，响应客户端断开的事件。不过是定义在 OnGatewayDisconnect 接口中。这里不得不吐槽一下，加上一个 afterInit() 方法，NestJS 像是生怕人把三个方法一起写了似的，将之分散在三个接口里。</p>
+<p>&#64;SubscribeMessage() 标记的便是响应特定 Pattern 的方法了，正如前面所说，如果自己实现一个适配器的话，还可以用更复杂的表达式来实现这个效果了。</p>
+</section>
+<section id="id4">
+<h2>分布式<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
+<p>除了简单的在一个实例中启动一个 WebSocket 服务端，考虑到多节点、多实例的情况下，再通过负载均衡的方式来使用各节点，要再加一点功能，来实现分布式的架构。</p>
+<p>首先分析一下场景。我们可以使用 Nginx 来反代 WebSocket 请求，这样粗略均匀地将连接分配给了各个实例，如果是客户端发送了消息，会发送到建立连接的实例，处理请求的服务端拿到 socket 连接，再回应信息。如果说只是持有 socket 的服务端在做处理并且不断返回信息倒也还好，可是在我的实际使用中出现了另一种情况：HTTP 请求接口，然后再给指定的客户端发送消息，比如管理面板上，将某个客户端强制下线。</p>
+<p>socket 不一定在同一个实例上，所以就需要找到正确的实例来发送此次请求。这就是做分布式的意义，除此之外，复杂的系统可能还要共享房间信息、跨服务的两个终端聊天等，这种需求建议可以直接 socket.io + Redis Adapter（逃。</p>
+<p>利用一套发布订阅的机制，是较容易实现的方式，可选的方式包括 Redis 的发布订阅功能，或者使用分布式的消息队列，如 RabbitMQ 等。</p>
+<p>我在这里的实现思路比较简单，简述一下给各位看官提供一些思路。依赖 Redis 的发布订阅功能，在客户端连接到服务器后，订阅一个 ClientID 的频道：</p>
+<p>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+class TestGateway {</p>
+<blockquote>
+<div><dl>
+<dt>async handleConnection() {</dt><dd><p>const redisClient = await this.redisService.getClient(‘WebSocketSubscriber’);
+await redisClient.subscribe(clientId as string, err =&gt; {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if (err) {</dt><dd><p>console.log(<cite>订阅到频道 ${clientId} 失败</cite>, err.message);
+return;</p>
+</dd>
+</dl>
+<p>}
+console.log(<cite>已订阅到频道 ${clientId}</cite>);</p>
+</div></blockquote>
+<p>});</p>
+<dl class="simple">
+<dt>redisClient.on(‘message’, (channel, message) =&gt; {</dt><dd><p>client.send(message);</p>
+</dd>
+</dl>
+<p>});</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+发布消息的时候是发送到 Redis 中 ClientID 表示的频道:</p>
+<p>1
+2
+3
+4
+5
+export class TestService {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>async publish(clientId: string, data: any) {</dt><dd><p>await redisClient.publish(clientId, JSON.stringify(data));</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+用新建的 Golang WebSocket 客户端项目试了一下，舒畅。</p>
+<p>哦对了，Redis 发布和订阅需要是两个连接，我太菜了，踩了坑。</p>
+</section>
+<section id="id5">
+<h2>小结<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h2>
+<p>迫于 NestJS 文档的零散，这里集中讲述了一下在 NestJS 中实现 WebSocket 的一些思路和注意事项，希望对看到文章的同学有所帮助。</p>
+<p>在 NestJS 里用 WebSocket，只要理解了相应的概念，写起来还是很简单且舒适的，需要开发的代码量挺少，抽象的各种中间件也能清楚表达功能含义。</p>
+<p>仔细想想，我在分布式章节用到的这个 ClientID 就是 MQTT 中的 Topic 的概念哦。那我为什么不直接用一个 MQTT Broker 来跟客户端通讯？</p>
+<p>写都写了，好好用。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="websocket-cluster-with-nestjs-and-redis.html" class="btn btn-neutral float-left" title="使用 NestJs 和 Redis 实现 WebSocket 集群" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="scalable-websockets-with-nestjs-and-redis.html" class="btn btn-neutral float-right" title="使用NestJS和Redis扩展WebSocketss" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>从ws切换到socket.io &mdash; WebSockets Docs v2022.1115 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="使用NestJS和Redis扩展WebSockets" href="scalable-websockets-with-nestjs-and-redis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../contents.html" class="icon icon-home"> WebSockets Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../awesome.html">Awesome WebSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../socket.io/index.html">socket.io 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws/index.html">ws 文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">博客</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="node-js-websocket-tutorial-real-time-chat-room-using-multiple-clients.html">Node.js WebSocket Tutorial — Real-Time Chat Room using Multiple Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websocket-cluster-with-nestjs-and-redis.html">使用 NestJs 和 Redis 实现 WebSocket 集群</a></li>
+<li class="toctree-l2"><a class="reference internal" href="native-websock-in-nestjs.html">NestJS 使用 ws 模块的正确姿势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scalable-websockets-with-nestjs-and-redis.html">使用NestJS和Redis扩展WebSockets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">从ws切换到socket.io</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">WebSockets Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../contents.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">博客</a></li>
+      <li class="breadcrumb-item active">从ws切换到socket.io</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/blogs/switching-from-ws-to-socket-io.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wssocket-io">
+<h1>从ws切换到socket.io<a class="headerlink" href="#wssocket-io" title="此标题的永久链接"></a></h1>
+<p><a class="reference external" href="https://medium.com/&#64;toshvelaga/switching-from-ws-to-socket-io-d66343ca900d">Switching from ws to socket.io</a></p>
+<img alt="stock image from unsplash on ws" src="https://miro.medium.com/max/1400/1*ZWJXXd2QmNltOWbILH32mg.webp" />
+<p>我最初在Node服务器上使用ws和React前端的原生websockets实现构建了我的SaaS应用程序。
+我这么做是因为我有在初创公司使用原生实现的经验，所以我认为使用我最舒服的方式会更快。
+本机实现工作得很好，但问题是，我可以在网上找到的每个例子都使用socket.io。
+事实是 <em>socket.io</em> 仍然非常受欢迎，几乎每个在线的开源webRTC项目都使用socket.io。
+我没有从头开始构建所有的东西，而是决定构建这个优秀的 <a class="reference external" href="https://github.com/0x5eba/Video-Meeting">开源回购</a>，它使用 <em>socket.io</em> 来加快开发时间。
+此外， <em>socket.io</em> 还有一些优点，比如很棒的文档、大型社区、检查连接是否完好的 <a class="reference external" href="https://stackoverflow.com/questions/7061362/advantage-disadvantage-of-using-socketio-heartbeats">心跳</a>，以及在需要创建房间并向连接的客户端 <a class="reference external" href="https://socket.io/docs/v3/broadcasting-events/">发送消息</a> 时可以加快开发速度的内置方法。</p>
+<p>移植我的应用并不困难，我遇到的唯一问题是，我的应用再次在本地运行，但在生产环境中无法运行。
+我必须做一些配置才能让它在生产环境中工作，这涉及到编辑我的Nginx配置。</p>
+<p>在服务器端，设置非常简单。
+下面是我在服务器上的新套接字设置:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">OLD WS INITIALIZATION</span><a class="headerlink" href="#id7" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">wss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">.</span><span class="nx">Server</span><span class="p">({</span><span class="w"> </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">WS_PORT</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Listening on PORT </span><span class="si">${</span><span class="nx">WS_PORT</span><span class="si">}</span><span class="sb"> for websockets`</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="p">})</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">NEW SOCKET.IO INITIALIZATION</span><a class="headerlink" href="#id8" title="此代码块的永久链接"></a></div>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Server</span><span class="p">(</span><span class="nx">WS_PORT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="cm">/* options */</span><span class="w"></span>
+<span class="w">     </span><span class="nx">cors</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="nx">origin</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="p">},</span><span class="w"></span>
+<span class="w"> </span><span class="p">})</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>在客户端这里是我的主要逻辑发生在一个useEffect钩子。
+socket.io的一个独特之处在于，它首先通过HTTP长轮询建立连接，然后升级到websocket连接。
+从 <a class="reference external" href="https://socket.io/docs/v3/how-it-works/">文档</a> 中可以更详细地了解它是如何工作的。
+所以我不能让它像这样工作，所以我添加了一个选项，只使用websockets，不使用任何HTTP长轮询。
+这就是为什么你会在代码中看到 <code class="docutils literal notranslate"><span class="pre">{transports:</span> <span class="pre">['</span> <span class="pre">websocket</span> <span class="pre">']}</span></code>。</p>
+<img alt="From the socket.io docs. HTTP long polling → websockets" src="https://miro.medium.com/max/1400/1*vVSMG1rcwhmw1Ze6W8HOwg.webp" />
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">socket</span><span class="p">.</span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;production&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="nx">io</span><span class="p">(</span><span class="nx">productionWsUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">streamUrlParams</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">transports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;websocket&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="nx">io</span><span class="p">(</span><span class="nx">developmentWsUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">streamUrlParams</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">transports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;websocket&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">socket</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// either with send()</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;WebSocket Open&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">})</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;close the socket&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// undefined</span><span class="w"></span>
+<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="nx">facebookUrl</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">youtubeUrl</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">twitchStreamKey</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">customRtmpServer</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">customRtmpStreamKey</span><span class="p">,</span><span class="w"></span>
+<span class="p">])</span><span class="w"></span>
+</pre></div>
+</div>
+<p>我必须做的最后一件事是更改我的Nginx配置，因为我在AWS EC2上运行我的服务器。
+这是我更新的Nginx服务器块。</p>
+<div class="highlight-Nginx notranslate"><div class="highlight"><pre><span></span><span class="c1"># Requests for socket.io are passed on to Node on port 3001</span>
+<span class="k">location</span><span class="w"> </span><span class="p">~</span><span class="sr">*</span><span class="w"> </span><span class="s">\.io</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$http_host</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-NginX-Proxy</span><span class="w"> </span><span class="s">false</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:3001</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_redirect</span><span class="w"> </span><span class="no">off</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>总的来说，从ws切换到套接字io是相当容易的。
+<em>socket.io</em> 显然增加了更多的开销，但是它有很棒的文档和社区支持。
+此外， <em>socket.io</em> 比普通的websockets更容易水平扩展，并且有一些内置的方法可以使向每个连接的客户端广播消息更简单。
+尽管如此，还是有 <a class="reference external" href="https://dzone.com/articles/socketio-the-good-the-bad-and-the-ugly">明显的缺点</a>。
+要了解更详细的对比，请查看这篇优秀的 <a class="reference external" href="https://itnext.io/differences-between-websockets-and-socket-io-a9e5fa29d3dc">博客文章</a>。
+至于我的项目，我希望使用 <em>socket.io</em> 继续加速开发。
+希望这篇文章对你有帮助。
+如果是这样，就鼓掌吧:)</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="scalable-websockets-with-nestjs-and-redis.html" class="btn btn-neutral float-left" title="使用NestJS和Redis扩展WebSockets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2019-2022, BandCap.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

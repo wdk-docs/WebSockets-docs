@@ -1,0 +1,9 @@
+日志类别 生成时间 日志信息 连接信息
+INITSYNC 2022年11月17日 12:20:01 Initial sync attempt failed -- attempts left: 9 cause: CallbackCanceled: error fetching oplog during initial sync: initial syncer is shutting down repl-writer-worker-7
+INITSYNC 2022年11月17日 12:20:01 collection clone for '91pintuan.addresses' failed due to Location16465: Error cloning collection '91pintuan.addresses' :: caused by :: Error querying collection '91pintuan.addresses :: caused by :: recv failed while exhausting cursor repl-writer-worker-7
+INITSYNC 2022年11月17日 12:19:45 Initial sync attempt failed -- attempts left: 9 cause: CallbackCanceled: error fetching oplog during initial sync: initial syncer is shutting down replication-1
+INITSYNC 2022年11月17日 12:19:45 collection clone for '91pintuan.addresses' failed due to CallbackCanceled: Error cloning collection '91pintuan.addresses' :: caused by :: this task has been canceled by a previously invoked task replication-1
+INITSYNC 2022年11月17日 12:19:30 Initial sync attempt failed -- attempts left: 9 cause: CallbackCanceled: error fetching oplog during initial sync: initial syncer is shutting down replication-0
+INITSYNC 2022年11月17日 12:19:30 collection clone for '91pintuan.addresses' failed due to CallbackCanceled: Error cloning collection '91pintuan.addresses' :: caused by :: this task has been canceled by a previously invoked task replication-0
+INITSYNC 2022年11月17日 12:19:15 Initial sync attempt failed -- attempts left: 9 cause: CallbackCanceled: error fetching oplog during initial sync: initial syncer is shutting down replication-1
+INITSYNC 2022年11月17日 12:19:15 collection clone for '91pintuan.addresses' failed due to CallbackCanceled: Error cloning collection '91pintuan.addresses' :: caused by :: Error querying collection '91pintuan.addresses :: caused by :: Collection cloning cancelled. replication-1

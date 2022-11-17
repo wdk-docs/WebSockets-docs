@@ -1,7 +1,7 @@
 使用 NestJs 和 Redis 实现 WebSocket 集群
 =============================================
 
-> https://medium.com/@mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed
+https://medium.com/@mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed
 
 扩展是后端应用程序生活中不可避免的一部分，一旦你决定将你的应用程序扩展到多个实例，
 你将面临处理多个客户端(手机、笔记本电脑等)的用户的问题，每个客户端都连接到你集群的一个随机实例。
@@ -172,14 +172,14 @@
         }
 
     .. note::
-    createClient从“redis”包中导入
+        createClient从“redis”包中导入
 
 - ``channelDiscovery``: 将在Redis上保存其serviceId，过期时间为3秒。
   它还将开始自重复超时，每2秒重新执行一次。
   这样，所有实例都可以访问更新后的套接字服务列表，以便分发消息。
   在测试此服务时，清除发现间隔超时是防止打开处理程序问题的好方法。
 
-
+ 
     .. code-block:: ts
         :caption: src/socket/socket.service.ts
 
